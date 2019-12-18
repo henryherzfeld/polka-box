@@ -215,11 +215,27 @@
             }
         },
         {
+            "Key": "70917f1e-17c9-4c51-8d6a-9aee04690c08",
+            "Value": {
+                "id": "07724f2f-8b1e-4ff3-b01e-c52a22cc6853",
+                "resourcePath": "objects\\game\\game.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "8085665a-f901-4976-b535-946bcc9f4e69",
             "Value": {
                 "id": "914e1afe-5cad-444f-886a-2363fe30180a",
                 "resourcePath": "views\/8085665a-f901-4976-b535-946bcc9f4e69.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "81ddf47e-5503-43e3-b3dd-032ba32eaab3",
+            "Value": {
+                "id": "56f8997c-d1c4-4277-a3b9-3bae6667c1d8",
+                "resourcePath": "objects\\obj_camera\\obj_camera.yy",
+                "resourceType": "GMObject"
             }
         },
         {

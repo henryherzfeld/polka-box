@@ -16,6 +16,15 @@ if(place_meeting(x, y+y_move, obj_collision)) {
 	y_move = 0;
 }
 
+var inst = instance_place(x, y, obj_transition);
+
+if (inst != noone) {
+	with (game) {
+		spawn_room = inst.target_room;
+		do_transition = true;
+	}
+}
+
 x += x_move;
 y += y_move;
 
