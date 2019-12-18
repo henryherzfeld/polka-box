@@ -18,3 +18,4 @@ if(place_meeting(x, y+y_move, obj_collision)) {
 
 x += x_move;
 y += y_move;
+
