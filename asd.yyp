@@ -66,7 +66,7 @@
             "Key": "1b0eb815-632d-48a4-972e-3e4a3b4afcaf",
             "Value": {
                 "id": "34fc2059-2dab-46bb-bfe9-cae810bce609",
-                "resourcePath": "sprites\/sprite01\/sprite01.yy",
+                "resourcePath": "sprites\\spr_collision\\spr_collision.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -204,6 +204,14 @@
                 "id": "c4621477-daf9-4d46-95b9-0e94609c3a8d",
                 "resourcePath": "objects\\object6\\object6.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6ca0922b-5717-4eae-998c-92cbbea497af",
+            "Value": {
+                "id": "0193a3ce-6882-49e9-b6e9-8351ebfbf7a4",
+                "resourcePath": "sprites\\spr_transition\\spr_transition.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -367,6 +375,14 @@
             }
         },
         {
+            "Key": "d103f725-e927-4493-9861-820049c4c910",
+            "Value": {
+                "id": "377ff1cc-c180-492c-b44f-0c40453e7210",
+                "resourcePath": "objects\\obj_transition\\obj_transition.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d7eb6d55-5661-4cd9-b31c-34c1162b1bb5",
             "Value": {
                 "id": "c34cd9cf-abc2-42c0-a357-fea5479da971",
@@ -447,11 +463,27 @@
             }
         },
         {
+            "Key": "f602323c-ddcf-4682-a258-41c3cbc8179f",
+            "Value": {
+                "id": "3af7782c-77c2-40dd-9ebb-8237de862392",
+                "resourcePath": "rooms\\dont_touch_me\\dont_touch_me.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "f8eb5075-852b-4ed6-86e3-0ba9b11c76b9",
             "Value": {
                 "id": "0ea21f43-3255-4ba3-89c5-8cf620910275",
                 "resourcePath": "sprites\\spr_plant\\spr_plant.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ffd6c840-81f9-4ca0-9957-e71cb7e88ee5",
+            "Value": {
+                "id": "0fd6221d-0af3-431a-9092-e3705ff7aa9d",
+                "resourcePath": "rooms\\dont_touch_me_2\\dont_touch_me_2.yy",
+                "resourceType": "GMRoom"
             }
         }
     ],
