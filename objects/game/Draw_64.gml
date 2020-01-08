@@ -10,6 +10,7 @@ if (do_transition) {
 			room_goto(spawn_room);
 		}
 	} else {
+			alarm[0] = 2 * room_speed;
 			black_alpha -= 0.1;
 			if (black_alpha <= 0){
 				 do_transition = false;

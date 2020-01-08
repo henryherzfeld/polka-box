@@ -12,5 +12,6 @@ black_alpha = 0;
 
 
 spawn_x = 0;
-spawn_y = 0;
+spawn_y = 160;
+
 do_transition = false;
