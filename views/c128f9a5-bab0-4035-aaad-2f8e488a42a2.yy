@@ -7,8 +7,7 @@
         "dbb73fe5-a60f-4511-9bc9-b5674a6f7f2d",
         "11e9ba4e-4458-445f-862c-c6ac6c23d24d",
         "cf3d871e-6f59-4bf1-9197-219db8a778d1",
-        "676ce78c-387c-4ca8-b13d-c9ef83a0ddf5",
-        "e730e626-f658-4800-ab77-2c186d9e00f3"
+        "676ce78c-387c-4ca8-b13d-c9ef83a0ddf5"
     ],
     "filterType": "GMObject",
     "folderName": "Scenery",

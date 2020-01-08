@@ -5,13 +5,13 @@
     "name": "obj_microscope",
     "eventList": [
         {
-            "id": "52773f23-7388-44de-a5e5-b5b3c77df32c",
+            "id": "cd469315-8e94-44eb-9d75-23f53e48d31c",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
-            "collisionObjectId": "e730e626-f658-4800-ab77-2c186d9e00f3",
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 4,
+            "eventtype": 3,
             "m_owner": "907ee489-0db1-4338-97cd-f714d4ff6b9e"
         }
     ],

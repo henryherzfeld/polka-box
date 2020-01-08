@@ -1,19 +1,10 @@
 {
-    "id": "ec84c209-1288-4d9c-929b-585cfcc6fe67",
+    "id": "761f8478-44f5-4d08-bcdd-5e00e4abfedd",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_shovel",
+    "name": "obj_soil_grass",
     "eventList": [
-        {
-            "id": "ad39886a-376e-4f79-91bc-2bd21388b142",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "ec84c209-1288-4d9c-929b-585cfcc6fe67"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
@@ -33,6 +24,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "72239edb-2b77-427b-a90e-ce40d40f320c",
+    "spriteId": "388478f2-a2d2-4eee-8986-7cb135d60d76",
     "visible": true
 }

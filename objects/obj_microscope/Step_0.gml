@@ -1,0 +1,11 @@
+/// @description Check coll with polka
+
+var inst = instance_place(x, y, polka);
+
+if (inst != noone){
+	with (InventoryManager) {
+		//Add Shovel
+		itemAddInventory(enum_item_type.microscope);	
+	}
+	instance_destroy();
+}

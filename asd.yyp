@@ -199,6 +199,14 @@
             }
         },
         {
+            "Key": "388478f2-a2d2-4eee-8986-7cb135d60d76",
+            "Value": {
+                "id": "a8e8c1dd-0fd3-4bfc-a169-8dafaf1d0098",
+                "resourcePath": "sprites\\grass_tile_1\\grass_tile_1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3896aea4-fd87-4d53-b875-52f3cd921fde",
             "Value": {
                 "id": "f96907bd-16ec-4bef-a586-908bda8c5d67",
@@ -351,6 +359,14 @@
             }
         },
         {
+            "Key": "761f8478-44f5-4d08-bcdd-5e00e4abfedd",
+            "Value": {
+                "id": "e550534f-549c-4cbd-a644-93281f8f0c30",
+                "resourcePath": "objects\\obj_soil_grass\\obj_soil_grass.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "7d8abb93-099c-411f-8887-66d7d21182a7",
             "Value": {
                 "id": "a8868421-ac7d-4b94-9b77-1bbbba0796c5",
@@ -420,6 +436,14 @@
                 "id": "0a51185f-78ea-4129-b270-af0c90052923",
                 "resourcePath": "views\/92d42c46-96c2-439d-8e99-b6694a200143.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "972f9e7d-1e07-47a6-ae03-805b7a720154",
+            "Value": {
+                "id": "0f9ac613-0d19-4775-9822-196a47470abc",
+                "resourcePath": "sprites\\digged_in_soil_tile\\digged_in_soil_tile.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -647,6 +671,14 @@
             }
         },
         {
+            "Key": "e0d49ea4-c990-4d81-b59e-5a5bd25be5e7",
+            "Value": {
+                "id": "78601289-f8eb-41bf-88c6-eb4e3f0b24b4",
+                "resourcePath": "objects\\obj_soil_hole\\obj_soil_hole.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "e19f6f96-c130-4cc9-bdc4-31773009027a",
             "Value": {
                 "id": "106e5cbc-12ce-4685-a627-8bb2fa5369a0",
@@ -683,14 +715,6 @@
             "Value": {
                 "id": "fdc5b27b-8e14-40bb-b81b-21ea1af827dd",
                 "resourcePath": "objects\\object7\\object7.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "e730e626-f658-4800-ab77-2c186d9e00f3",
-            "Value": {
-                "id": "b13fcbee-64db-4582-a2f3-5f16cd7136f9",
-                "resourcePath": "objects\\obj_player\\obj_player.yy",
                 "resourceType": "GMObject"
             }
         },
