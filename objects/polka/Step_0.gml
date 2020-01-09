@@ -42,7 +42,7 @@ if(input_interact){
 	
 	var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_NPC, false, false)
 	if(inst != noone){
-		x += 10;
+		scr_create_textbox(inst.text)
 	}
 }
 
