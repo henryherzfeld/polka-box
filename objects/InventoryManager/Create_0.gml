@@ -14,5 +14,5 @@ itemAddData(enum_item_type.none,spr_inventory_slot,"",0,scr_use_item_callback_de
 itemAddData(enum_item_type.microscope,spr_inventory_item_microscope,"microscope",0,scr_use_item_callback_demo);
 itemAddData(enum_item_type.pitchfork,spr_inventory_item_pitchfork,"pitchfork",0,scr_use_item_callback_pitchfork);
 itemAddData(enum_item_type.shovel,spr_inventory_item_shovel,"shovel",0,scr_use_item_callback_shovel);
-itemAddData(enum_item_type.tape,spr_inventory_item_tape_measure,"tape",0,scr_use_item_callback_demo);
+itemAddData(enum_item_type.tape,spr_inventory_item_tape_measure,"tape",0,scr_use_item_callback_tape);
 itemAddData(enum_item_type.trowel,spr_inventory_item_trowel,"trowel",0,scr_use_item_callback_demo);

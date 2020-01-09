@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_soil_hole",
     "eventList": [
-        
+        {
+            "id": "07eb7875-4afa-4120-ad71-0c92bcfd811c",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "e0d49ea4-c990-4d81-b59e-5a5bd25be5e7"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

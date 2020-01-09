@@ -6,6 +6,8 @@ input_up = keyboard_check(vk_up);
 input_interact = keyboard_check_pressed(ord("E"));
 input_space = keyboard_check_pressed(vk_space)
 
+radius = 20;
+
 //Calculate intended movement
 y_move = (input_down - input_up) * spd;
 if (!y_move) { x_move = (input_right - input_left) * spd; }
@@ -17,6 +19,9 @@ if(place_meeting(x+x_move, y, obj_collision)) {
 if(place_meeting(x, y+y_move, obj_collision)) {
 	y_move = 0;
 }
+
+x += x_move;
+y += y_move;
 
 //Check for collision with transition object
 var inst = instance_place(x, y, obj_transition);
@@ -33,7 +38,6 @@ if (inst != noone) {
 }
 
 //Check for collision with NPC
-radius = 10;
 if(input_interact){
 	
 	var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_NPC, false, false)
@@ -74,6 +78,16 @@ if(input_space){
 				instance_create_layer(x,y,"Instances",obj_soil_grass);		//Createing an instance with hole sprite assigneed
 				itemEquiped = noone;										//Item is destroy after single use
 		        break;
+				
+			case enum_item_type.tape:
+				//Use tape
+				var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, obj_soil_hole, false, false)
+				if(inst != noone){
+					x += 100;
+					show_debug_message(inst.temperature);
+				}
+				itemEquiped = noone;
+				break;
 
 		    default:
 		        // code here
@@ -82,7 +96,4 @@ if(input_space){
 
 	}
 }
-
-x += x_move;
-y += y_move;
 
