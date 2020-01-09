@@ -11,7 +11,7 @@ spawn_room = -1;
 black_alpha = 0;
 
 
-spawn_x = 0;
-spawn_y = 160;
+spawn_x = 170;
+spawn_y = 300;
 
 do_transition = false;
