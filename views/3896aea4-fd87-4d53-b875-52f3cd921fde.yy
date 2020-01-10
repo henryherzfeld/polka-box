@@ -12,7 +12,8 @@
         "1b11b4c6-1c3b-44f9-8e38-b0744af5244c",
         "30a388d5-af67-413e-9f3a-ecf428ee5899",
         "bf89a380-9fa6-408e-9be6-03c44c21e10b",
-        "2d7527c5-40e4-43e5-bcad-a7a6f9280eb3"
+        "2d7527c5-40e4-43e5-bcad-a7a6f9280eb3",
+        "5bc4ff7d-921a-4c6d-a248-33f345da7080"
     ],
     "filterType": "GMSprite",
     "folderName": "farm_spr",

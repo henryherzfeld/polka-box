@@ -20,8 +20,10 @@ if(place_meeting(x, y+y_move, obj_collision)) {
 	y_move = 0;
 }
 
-x += x_move;
-y += y_move;
+if(!in_dialogue){
+	x += x_move;
+	y += y_move;
+}
 
 //Check for collision with transition object
 var inst = instance_place(x, y, obj_transition);
@@ -38,11 +40,12 @@ if (inst != noone) {
 }
 
 //Check for collision with NPC
-if(input_interact){
+if(input_interact and !in_dialogue){
 	
 	var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_NPC, false, false)
 	if(inst != noone){
 		scr_create_textbox(inst.text)
+		in_dialogue = true;
 	}
 }
 
