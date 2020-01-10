@@ -6,3 +6,4 @@ spd = 3
 x_move = 0;
 y_move = 0;
 in_dialogue = false;
+interactable = false;

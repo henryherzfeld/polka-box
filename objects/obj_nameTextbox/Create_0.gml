@@ -24,8 +24,7 @@ text_y=box_y+y_buffer;
 name_text_x=namebox_x+(namebox_width/2);
 name_text_y=namebox_y+(namebox_height/2);
 
-text="WOW SCIENCE IS COOL AND GREAT AND BLAH BLAH BALLSFDLJFSDKLGNSLD";
-name="Science Bot";
+name="";
 
 text_col=c_black;
 name_text_col=c_black;

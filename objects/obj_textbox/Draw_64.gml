@@ -7,7 +7,6 @@ if (first){
 	first = false;
 }
 
-N = ds_map_size(text);
 n = array_length_1d(current);
 options = current[n-1]
 
@@ -22,7 +21,6 @@ else {
 		preview = text[? options[i]];
 		show_debug_message(preview);
 		selection_x = string_width(preview[0])
-		selection_y = string_height(preview[0])
 		
 		var col1 = c_white;										
 		var mx = device_mouse_x_to_gui(0);						//Mouse's X pos relative to the display (not the game world)
@@ -48,7 +46,6 @@ else {
 		_y += option_padding;
 		
 	}
-	
 
 	back = options[i];
 	col2 = c_white;

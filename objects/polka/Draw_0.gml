@@ -6,3 +6,7 @@ if (itemEquiped != noone) {
 		var itemSprite = InventoryManager.itemDef[itemEquiped,enum_item_state.sprite];	//get the Sprite data of the item from Inventory Manager
 		draw_sprite(itemSprite,0,x,y);//Draw the equiped Item
 	}
+	
+if(interactable){
+	draw_text(x+7, y-10, "E")	
+}

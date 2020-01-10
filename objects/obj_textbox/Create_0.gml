@@ -1,5 +1,12 @@
 /// @description Calculate and set draw coords from txtbox sprites
 
+//var namebox = instance_create_layer(0, 0, "Text", obj_nameTextbox)
+
+//with (namebox) {
+//	name = self.name;
+//	portrait = self.portrait;
+//}
+
 interact_key = vk_space;
 page = 0;
 n = 0;
@@ -17,4 +24,11 @@ gui_width = display_get_gui_width();
 textbox_x = (gui_width / 2) - (box_width / 2);
 textbox_y = gui_height - box_height;
 
+selection_y = string_height("M")
+
 global.hide_inventory = true;
+
+with (polka) {
+	interactable = false;
+}
+

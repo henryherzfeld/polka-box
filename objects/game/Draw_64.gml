@@ -1,5 +1,7 @@
 /// @description Room transition
 // You can write your code in this editor
+draw_set_font(font_comic);
+
 
 if (do_transition) {
 	
@@ -24,3 +26,5 @@ if (do_transition) {
 	draw_set_alpha(1);
 
 }
+
+draw_text(display_get_gui_width() - string_width(objective) - objective_padding, string_height(objective), objective);

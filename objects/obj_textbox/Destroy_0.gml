@@ -4,4 +4,6 @@
 global.hide_inventory = false;
 with(polka){
 	in_dialogue = false;
+	interactable = false;
 }
+

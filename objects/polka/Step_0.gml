@@ -6,7 +6,7 @@ input_up = keyboard_check(vk_up);
 input_interact = keyboard_check_pressed(ord("E"));
 input_space = keyboard_check_pressed(vk_space)
 
-radius = 20;
+radius = 30;
 
 //Calculate intended movement
 y_move = (input_down - input_up) * spd;
@@ -44,7 +44,7 @@ if(input_interact and !in_dialogue){
 	
 	var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_NPC, false, false)
 	if(inst != noone){
-		scr_create_textbox(inst.text)
+		scr_create_textbox(inst.text, inst.name, inst.portrait, inst.scripts);
 		in_dialogue = true;
 	}
 }
@@ -60,7 +60,7 @@ if(inst != noone){
 			if (show_chest == false) {
 			    //Open Chest
 				show_chest = true;
-				}
+			}
 		}
 	}
 }
@@ -100,3 +100,14 @@ if(input_space){
 	}
 }
 
+//check for nearby interactable for overhead prompt
+if (!in_dialogue){
+	var interactable_1 = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_NPC, false, false)
+	var interactable_2 = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_item, false, false)
+	if (interactable_1 or interactable_2){
+		interactable = true;
+	}
+else{
+	interactable = false;
+}
+}
