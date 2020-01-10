@@ -1,6 +1,6 @@
 /// @description Draw textbox
 draw_sprite(spr_textbox,0,textbox_x,textbox_y);
-draw_set_font(font_comic);
+draw_set_font(font);
 
 if (first){
 	current = text[? "greet"];
@@ -19,7 +19,6 @@ else {
 	for (var i = 0; i < array_length_1d(options) - 1; i++){
 	
 		preview = text[? options[i]];
-		show_debug_message(preview);
 		selection_x = string_width(preview[0])
 		
 		var col1 = c_white;										

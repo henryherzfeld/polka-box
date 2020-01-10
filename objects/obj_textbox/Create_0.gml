@@ -1,11 +1,13 @@
 /// @description Calculate and set draw coords from txtbox sprites
 
-//var namebox = instance_create_layer(0, 0, "Text", obj_nameTextbox)
+box=spr_textbox;
+frame=spr_portrait_frame;
+portrait=spr_portrait;
+namebox=spr_namebox;
 
-//with (namebox) {
-//	name = self.name;
-//	portrait = self.portrait;
-//}
+text_col=c_black;
+name_text_col=c_black;
+font=font_comic;
 
 interact_key = vk_space;
 page = 0;
@@ -15,8 +17,8 @@ first = true;
 option_padding = 25;
 exiting = false;
 
-box_width=sprite_get_width(spr_textbox);
-box_height=sprite_get_height(spr_textbox);
+box_width=sprite_get_width(box);
+box_height=sprite_get_height(box);
 
 gui_height = display_get_gui_height();
 gui_width = display_get_gui_width();

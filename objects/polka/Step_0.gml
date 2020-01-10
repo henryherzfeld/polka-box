@@ -65,6 +65,24 @@ if(inst != noone){
 	}
 }
 
+//Check for collision with trigger
+var inst = instance_place(x, y, obj_trigger);
+
+if(inst != noone){
+	with (inst) {
+		scripts = inst.scripts;
+		if(is_array(scripts)){
+			n = array_length_1d(scripts);
+			for (var i = 0; i < n; i++){
+				args = scripts[i];
+				if(is_array(args)){
+					script_execute(args[0], args[1], args[2], args[3]);
+				}
+			}
+		}
+	}
+}
+
 //Check for used item
 if(input_space){
 	if (itemEquiped != noone) {
