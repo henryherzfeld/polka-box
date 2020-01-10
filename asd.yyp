@@ -295,6 +295,14 @@
             }
         },
         {
+            "Key": "40894a46-ab9f-4bc9-b8b7-f67cd7190e8b",
+            "Value": {
+                "id": "ac8f6a68-5143-4f80-aa55-336001b6535b",
+                "resourcePath": "objects\\NPC_Villy\\NPC_Villy.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "411020d4-64a0-471c-9c91-0a2dbe79d94f",
             "Value": {
                 "id": "f82231d6-fad4-4a02-ac0a-683f01f62287",

@@ -20,6 +20,7 @@ else {
 	for (var i = 0; i < array_length_1d(options) - 1; i++){
 	
 		preview = text[? options[i]];
+		show_debug_message(preview);
 		selection_x = string_width(preview[0])
 		selection_y = string_height(preview[0])
 		
@@ -51,6 +52,9 @@ else {
 
 	back = options[i];
 	col2 = c_white;
+	
+	var mx = device_mouse_x_to_gui(0);						//Mouse's X pos relative to the display (not the game world)
+	var my = device_mouse_y_to_gui(0);						//Mouse's Y pos relative to the display (not the game world)
 
 	// Testing mouse location with selection box for back button
 	if (point_in_rectangle(mx, my, textbox_x + 300, textbox_y + 10, textbox_x + 310, textbox_y +20)){
