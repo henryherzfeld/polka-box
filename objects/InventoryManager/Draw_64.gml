@@ -1,6 +1,6 @@
 /// @description Draw
 
-if(!global.hide_inventory){
+if(global.show_inventory){
 	//Draw the Rectangle (Inventory Panel)
 	var width = 256;									//Width of the inventory
 	var height = 64;									//Height of the inventory

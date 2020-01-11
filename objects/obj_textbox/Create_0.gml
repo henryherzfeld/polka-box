@@ -26,7 +26,7 @@ textbox_y = gui_height - box_height;
 textbox_padded_x = textbox_x + text_padding;
 textbox_padded_y = textbox_y + text_padding;
 
-global.hide_inventory = true;
+global.show_inventory = false;
 exiting = false;
 first = true;
 page = 0;

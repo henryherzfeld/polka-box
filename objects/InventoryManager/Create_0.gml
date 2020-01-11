@@ -17,4 +17,4 @@ itemAddData(enum_item_type.shovel,spr_inventory_item_shovel,"shovel",0,scr_use_i
 itemAddData(enum_item_type.tape,spr_inventory_item_tape_measure,"tape",0,scr_use_item_callback_tape);
 itemAddData(enum_item_type.trowel,spr_inventory_item_trowel,"trowel",0,scr_use_item_callback_demo);
 
-global.hide_inventory = false;
+global.show_inventory = true;
