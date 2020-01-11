@@ -1,19 +1,22 @@
 /// @description Calculate and set draw coords from txtbox sprites
 
-box=spr_textbox2;
+box=spr_textbox;
 frame=spr_portrait_frame;
 portrait=spr_portrait;
 namebox=spr_namebox;
 
 text_col=c_white;
-highlight_col=c_ltgray;
+highlight_col=c_ltgray
 name_text_col=c_black;
-text_padding=10;
 font=font_comic;
 
 interact_key = vk_space;
-
+page = 0;
+n = 0;
+draw_options = false;
+first = true;
 option_padding = 25;
+exiting = false;
 
 box_width=sprite_get_width(box);
 box_height=sprite_get_height(box);
@@ -23,17 +26,10 @@ gui_width = display_get_gui_width();
 
 textbox_x = (gui_width / 2) - (box_width / 2);
 textbox_y = gui_height - box_height;
-textbox_padded_x = textbox_x + text_padding;
-textbox_padded_y = textbox_y + text_padding;
-
-global.hide_inventory = true;
-exiting = false;
-first = true;
-page = 0;
-n = 0;
-draw_options = false;
 
 selection_y = string_height("M")
+
+global.hide_inventory = true;
 
 with (polka) {
 	interactable = false;

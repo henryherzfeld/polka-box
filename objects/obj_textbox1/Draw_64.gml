@@ -1,5 +1,5 @@
 /// @description Draw textbox
-draw_sprite(spr_textbox2,0,textbox_x,textbox_y);
+draw_sprite(spr_textbox,0,textbox_x,textbox_y);
 draw_set_font(font);
 
 //Test to produce initial greeting text for dialogue
@@ -13,7 +13,7 @@ options = current[n-1]        // get last item of current dialogue array for opt
 
 //
 if (!draw_options){
-	draw_text_ext_color(textbox_padded_x, textbox_padded_y, current[page], string_height(current[page]), box_width-10, text_col,text_col,text_col,text_col,true);
+	draw_text_ext_color(textbox_x, textbox_y, current[page], string_height(current[page]), box_width-10, text_col,text_col,text_col,text_col,true);
 } 
 else {
 	_y = 0;
@@ -38,8 +38,8 @@ else {
 				if(options[i] = "EXIT"){exiting = true;}
 			}
 		}
-		draw_text(textbox_padded_x, textbox_padded_y + _y, preview[0]);
-		draw_rectangle_color(textbox_padded_x, textbox_padded_y + _y, textbox_padded_x + selection_x, textbox_padded_y + _y + selection_y,col1,col1,col1,col1,true);	
+		draw_text(textbox_x, textbox_y + _y, preview[0]);
+		draw_rectangle_color(textbox_x, textbox_y + _y, textbox_x + selection_x, textbox_y + _y + selection_y,col1,col1,col1,col1,true);	
 		
 		_y += option_padding;
 		

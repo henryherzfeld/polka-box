@@ -2,7 +2,7 @@
     "id": "635b281a-025f-429d-8975-3d745db8b8b0",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_textbox2",
+    "name": "sprite49",
     "For3D": false,
     "HTile": false,
     "VTile": false,

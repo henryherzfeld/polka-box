@@ -55,10 +55,8 @@ var inst = instance_place(x, y, obj_chest)
 if(inst != noone){
 	with (inst) {
 	    // Check if we can open the chest
-		if (canOpen == true) {
-			//Chest is close, open it!
+		if (canOpen and polka.input_interact) {
 			if (show_chest == false) {
-			    //Open Chest
 				show_chest = true;
 			}
 		}
