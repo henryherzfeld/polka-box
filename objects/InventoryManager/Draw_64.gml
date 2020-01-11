@@ -2,14 +2,19 @@
 
 if(global.show_inventory){
 	//Draw the Rectangle (Inventory Panel)
+
 	var width = 256;									//Width of the inventory
 	var height = 64;									//Height of the inventory
 	var x1 = width;										//x1 pos of the rectangele ( 0 + width) Top-Left edge
-	var y1 = display_get_gui_height() - height;			//Y1 postion (top-left edge) relative to bottom of the screen
+	var y1 = display_get_gui_height() - height - anim_count;			//Y1 postion (top-left edge) relative to bottom of the screen
 	var x2 = display_get_gui_width() - width;			//Y1 postion (top-left edge) relative to bottom of the screen
-	var y2 = display_get_gui_height();					//Y1 postion (top-left edge) relative to bottom of the screen
+	var y2 = display_get_gui_height() - anim_count;					//Y1 postion (top-left edge) relative to bottom of the screen
 
 	draw_rectangle(x1,y1,x2,y2,false);					//Draw the Rectangle at the bottom of the display
+	if(open){											//If inventory is open we need to draw the lower portion
+		draw_rectangle(x1, y2, x2, y2 + anim_count, false)
+	}
+	
 
 	///Loop through all the object
 	var itemIndex = 0;	//Use to index the items in inventory slot
