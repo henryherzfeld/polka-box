@@ -36,6 +36,7 @@ draw_options = false;
 selection_y = string_height("M")
 
 with (polka) {
+	in_dialogue = true;
 	interactable = false;
 }
 

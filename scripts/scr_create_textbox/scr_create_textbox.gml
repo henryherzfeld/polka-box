@@ -2,7 +2,7 @@
 ///@arg text
 ///@arg name
 ///@arg potrait
-///@arg flags
+///@arg scripts
 
 var tbox = instance_create_layer(0, 0, "Text", obj_textbox)
 

@@ -7,7 +7,7 @@ input_interact = keyboard_check_pressed(ord("E"));
 input_space = keyboard_check_pressed(vk_space)
 
 radius = 30;
-
+show_debug_message(move_override)
 //Calculate intended movement
 y_move = (input_down - input_up) * spd;
 if (!y_move) { x_move = (input_right - input_left) * spd; }
@@ -20,7 +20,7 @@ if(place_meeting(x, y+y_move, obj_collision)) {
 	y_move = 0;
 }
 
-if(!in_dialogue){
+if(!in_dialogue and !move_override){
 	x += x_move;
 	y += y_move;
 }
@@ -45,7 +45,6 @@ if(input_interact and !in_dialogue){
 	var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_NPC, false, false)
 	if(inst != noone){
 		scr_create_textbox(inst.text, inst.name, inst.portrait, inst.scripts);
-		in_dialogue = true;
 	}
 }
 
