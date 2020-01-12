@@ -399,6 +399,14 @@
             }
         },
         {
+            "Key": "3d641934-d891-4157-9556-45835d2a9360",
+            "Value": {
+                "id": "61df15bc-6bd4-4fc4-9041-a23f9e9bafd4",
+                "resourcePath": "sprites\\spr_villie_walk_back\\spr_villie_walk_back.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "402b361c-0066-41d5-bca4-52a10a9eb0da",
             "Value": {
                 "id": "81bf1c9f-eb0b-4265-8bdb-dbc7592ed82f",
@@ -587,6 +595,14 @@
             "Value": {
                 "id": "da0bf75c-d2d6-4ceb-8aa6-5f798d87a2ba",
                 "resourcePath": "sprites\/spr_textbox2\/spr_textbox2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "63a03200-8db4-4804-9058-0a7de446e365",
+            "Value": {
+                "id": "7c96d184-54a5-46a6-9345-a9305df10fb6",
+                "resourcePath": "sprites\\spr_villie_walk_left\\spr_villie_walk_left.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -999,6 +1015,14 @@
             }
         },
         {
+            "Key": "b914a5ed-ceec-44ea-badd-50b035af18cc",
+            "Value": {
+                "id": "a85388f5-8938-4d02-b718-8adce87589a4",
+                "resourcePath": "sprites\\spr_villie_walk_right\\spr_villie_walk_right.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ba97e3dd-24aa-43bd-80bc-76ca13019f49",
             "Value": {
                 "id": "30815431-b700-486c-829b-0e997d5953e0",
@@ -1276,6 +1300,14 @@
                 "id": "ca395986-d425-4b4c-9053-aba02b0b23ef",
                 "resourcePath": "objects\/obj_shovel\/obj_shovel.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "ee5d3d77-54a3-4f58-9ba1-7a623fe358ae",
+            "Value": {
+                "id": "087af5b0-9768-4eb5-8ef7-a557e111db42",
+                "resourcePath": "sprites\\spr_villie_walk_front\\spr_villie_walk_front.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
