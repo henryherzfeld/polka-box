@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "021efe04-59cb-494b-801c-c3ea0297962a",
+            "Value": {
+                "id": "6fc9be3d-c9cb-43b8-965b-02d01c5be4d0",
+                "resourcePath": "sprites\\spr_polka_walk_right\\spr_polka_walk_right.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0896c95d-862a-466c-99bb-83f04d10d7f3",
             "Value": {
                 "id": "b44916d9-9f2a-4cce-b717-070995ed48b0",
@@ -147,6 +155,14 @@
             "Value": {
                 "id": "ceaed93b-e1f1-4ecc-92f4-ceecef2e80ca",
                 "resourcePath": "sprites\/spr_deadsoil\/spr_deadsoil.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1c54b011-7826-4982-abe1-b2e500811574",
+            "Value": {
+                "id": "4317c4de-cf27-4a65-8929-1f0037a0f496",
+                "resourcePath": "sprites\\spr_polka_walk_front\\spr_polka_walk_front.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -316,6 +332,14 @@
                 "id": "53aaa8fc-3286-42ab-83fd-424fb21e7c93",
                 "resourcePath": "scripts\/scr_create_textbox\/scr_create_textbox.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "373b3819-ea05-4e81-bc69-5eaca771cee9",
+            "Value": {
+                "id": "30f7d5e2-d073-418b-91da-73d7a58c1057",
+                "resourcePath": "sprites\\spr_polka_walk_left\\spr_polka_walk_left.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -692,6 +716,14 @@
                 "id": "e550534f-549c-4cbd-a644-93281f8f0c30",
                 "resourcePath": "objects\/obj_soil_grass\/obj_soil_grass.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "777d2c1e-4aec-4b74-aa01-c7aa20b8e7b8",
+            "Value": {
+                "id": "c01f21d2-35f1-4726-b89f-1b6736d652c7",
+                "resourcePath": "sprites\\spr_polka_walk_back\\spr_polka_walk_back.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

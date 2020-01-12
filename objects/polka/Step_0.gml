@@ -23,6 +23,7 @@ if(place_meeting(x, y+y_move, obj_collision)) {
 if(!in_dialogue and !move_override){
 	x += x_move;
 	y += y_move;
+	
 }
 
 //Check for collision with transition object
