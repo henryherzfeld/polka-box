@@ -72,7 +72,7 @@ if(global.show_inventory){
 				///Check If mouse is on the slot, if we are on the slot make white outline to red
 				if (point_in_rectangle(mx,my,slot_x1,slot_y1,slot_x2,slot_y2,)){
 					col = c_red;														//Change the color to red
-		
+						
 					//If clicked when inside the slot
 					if (mouse_check_button_pressed(mb_left)) {
 						//Slot Selected
