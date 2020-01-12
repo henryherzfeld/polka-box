@@ -1607,6 +1607,14 @@
             }
         },
         {
+            "Key": "ddaa5190-29dc-4e46-8bfe-debcbcb133c5",
+            "Value": {
+                "id": "d6a7e5b3-d051-4e59-96ab-cad8f93cb27f",
+                "resourcePath": "rooms\/dont_touch_me_22\/dont_touch_me_22.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "ddba381d-822f-46b1-b9df-eb22916be8f1",
             "Value": {
                 "id": "a6343484-54eb-4441-b57e-01ac9d8c5bee",
