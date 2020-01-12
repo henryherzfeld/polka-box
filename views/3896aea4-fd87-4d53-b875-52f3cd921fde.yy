@@ -17,7 +17,14 @@
         "777d2c1e-4aec-4b74-aa01-c7aa20b8e7b8",
         "1c54b011-7826-4982-abe1-b2e500811574",
         "373b3819-ea05-4e81-bc69-5eaca771cee9",
-        "021efe04-59cb-494b-801c-c3ea0297962a"
+        "021efe04-59cb-494b-801c-c3ea0297962a",
+        "a9039e7f-84bf-4e0a-ab67-c91fc748d465",
+        "021b85cb-fd03-460f-8545-d6b67c5c07ac",
+        "06f596e7-6c59-4386-a416-aa713be17ebc",
+        "a89ec5ed-af9c-4d03-909f-bb91c21827ce",
+        "6ad9d0d8-ff71-488b-b36c-e4fd5ba1bda2",
+        "54a62dcf-1a7a-46b9-95f5-dc724e4cc3ee",
+        "1d1638c8-5d1d-43c0-8c69-35bfe16562bf"
     ],
     "filterType": "GMSprite",
     "folderName": "farm_spr",
