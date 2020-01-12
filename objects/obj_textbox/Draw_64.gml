@@ -1,6 +1,8 @@
 /// @description Draw textbox
 draw_sprite(spr_textbox2,0,textbox_x,textbox_y);
 draw_set_font(font);
+draw_set_valign(fa_top);										
+draw_set_halign(fa_left);										
 
 //Test to produce initial greeting text for dialogue
 if (first){

@@ -4,3 +4,6 @@
 if(find_weeravay){
 	objective = "Find weeravay"
 }
+else if(behind_tree){
+	objective = "You are behind a tree"
+}

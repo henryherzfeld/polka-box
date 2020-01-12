@@ -2,7 +2,6 @@
 // You can write your code in this editor
 input_inventory_open = keyboard_check_pressed(ord("I"))
 
-show_debug_message(open)
 
 // setting incrementor or decrementor depedning on inventory state
 if (input_inventory_open){

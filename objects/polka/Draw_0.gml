@@ -8,5 +8,7 @@ if (itemEquiped != noone) {
 	}
 	
 if(interactable){
-	draw_text(x+7, y-10, "E")	
+	draw_set_valign(fa_center);										//Draw the text from the bottom
+	draw_set_halign(fa_center);										//Draw the text from the left
+	draw_text(x+12, y-10, "E")	
 }

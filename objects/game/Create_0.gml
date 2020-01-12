@@ -21,5 +21,6 @@ objective_padding = 100;
 
 //FLAGS
 find_weeravay = false;
+behind_tree = false;
 
 draw_set_font(font);

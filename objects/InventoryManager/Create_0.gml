@@ -6,6 +6,7 @@ inv_move = 2;
 distance = 100;
 open = false;
 
+
 //Create the inventory array, Basicly slots and giving then a default value i.e enum_item_type.none == 0
 inventorySlot[MAX_INV_ITEMS] = enum_item_type.none;
 

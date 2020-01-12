@@ -89,23 +89,20 @@ if(input_space){
 		    case enum_item_type.shovel:
 				//Use Shovel
 				instance_create_layer(x,y,"Instances",obj_soil_hole);		//Createing an instance with hole sprite assigneed
-				itemEquiped = noone;	
 		        break;
 			
 		    case enum_item_type.pitchfork:
 				//Use Shovel
-				instance_create_layer(x,y,"Instances",obj_soil_grass);		//Createing an instance with hole sprite assigneed
-				itemEquiped = noone;										//Item is destroy after single use
+				instance_create_layer(x,y,"Instances",obj_soil_grass);		//Createing an instance with hole sprite assigneed									//Item is destroy after single use
 		        break;
 				
 			case enum_item_type.tape:
 				//Use tape
 				var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, obj_soil_hole, false, false)
 				if(inst != noone){
-					x += 100;
-					show_debug_message(inst.temperature);
+					inst.draw_temp = true;
+					inst.alarm[0] = room_speed * 2;
 				}
-				itemEquiped = noone;
 				break;
 
 		    default:
