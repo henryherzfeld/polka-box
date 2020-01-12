@@ -727,6 +727,14 @@
             }
         },
         {
+            "Key": "75e4e709-138b-484e-8d14-47817ace5def",
+            "Value": {
+                "id": "e14b803b-d090-40eb-8564-0df07f92f524",
+                "resourcePath": "sprites\\spr_weeraway_crying\\spr_weeraway_crying.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "761f8478-44f5-4d08-bcdd-5e00e4abfedd",
             "Value": {
                 "id": "e550534f-549c-4cbd-a644-93281f8f0c30",
