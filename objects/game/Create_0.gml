@@ -20,7 +20,7 @@ objective = "None";
 objective_padding = 100;
 
 //FLAGS
-find_weeravay = false;
+find_weeraway = false;
 behind_tree = false;
 
 draw_set_font(font);

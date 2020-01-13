@@ -567,6 +567,14 @@
             }
         },
         {
+            "Key": "3d762631-4e64-45e7-9bcc-aa324b14253b",
+            "Value": {
+                "id": "115f9f94-dd66-4094-ad20-afc1f2472bcd",
+                "resourcePath": "views\\3d762631-4e64-45e7-9bcc-aa324b14253b.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "402b361c-0066-41d5-bca4-52a10a9eb0da",
             "Value": {
                 "id": "81bf1c9f-eb0b-4265-8bdb-dbc7592ed82f",
@@ -586,7 +594,7 @@
             "Key": "40894a46-ab9f-4bc9-b8b7-f67cd7190e8b",
             "Value": {
                 "id": "ac8f6a68-5143-4f80-aa55-336001b6535b",
-                "resourcePath": "objects\/NPC_Villy\/NPC_Villy.yy",
+                "resourcePath": "objects\\obj_npc_test\\obj_npc_test.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -738,7 +746,7 @@
             "Key": "558662d0-de09-4aaf-9a69-8a1b31e935ec",
             "Value": {
                 "id": "128a2880-9c1d-4cdf-aafb-586a6b4c8d32",
-                "resourcePath": "objects\/object43\/object43.yy",
+                "resourcePath": "objects\\obj_npc_weeraway\\obj_npc_weeraway.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -898,7 +906,7 @@
             "Key": "699ce278-c273-420e-8d6b-77aa18f2b016",
             "Value": {
                 "id": "c603dba8-04da-467b-9293-a07d9f654431",
-                "resourcePath": "objects\/object44\/object44.yy",
+                "resourcePath": "objects\\obj_npc_poppy\\obj_npc_poppy.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1468,14 +1476,6 @@
                 "id": "30815431-b700-486c-829b-0e997d5953e0",
                 "resourcePath": "tilesets\/tileset1\/tileset1.yy",
                 "resourceType": "GMTileSet"
-            }
-        },
-        {
-            "Key": "bbfc2bb6-9c92-4461-a60a-6153a3c47ff7",
-            "Value": {
-                "id": "1f678f78-d4d4-4989-9627-69531c42f6e7",
-                "resourcePath": "objects\/test_NPC\/test_NPC.yy",
-                "resourceType": "GMObject"
             }
         },
         {

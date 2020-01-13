@@ -2,7 +2,7 @@
     "id": "558662d0-de09-4aaf-9a69-8a1b31e935ec",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "object43",
+    "name": "obj_npc_weeraway",
     "eventList": [
         {
             "id": "cdec3613-3713-4c54-aab8-ca8173ed5044",
