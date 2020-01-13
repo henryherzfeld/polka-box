@@ -13,6 +13,11 @@ if(game.find_weeraway){
 	text[? "A2_1"] = ["How long have they been dying?", "VILLY WEERAWAY: I first noticed some of them dying a few weeks ago. The problem got worse. I tried to stop them from dying. Nothing I did worked.", ["A2", "A2_1", "A2_2", "GREET"]]
 	text[? "A2_2"] = ["What kinds of crops do you grow?", "VILLY WEERAWAY: For 30 years, I’ve worked on this farm. Since I was little and I farmed with my father, I’ve always grown corn, potatoes, carrots, turnips, and other vegetables.", ["A2", "A2_1", "A2_2", "GREET"]]
 	text[? "EXIT"] = ["Ok", []]
+	
+	scripts = [
+	[scr_change_variable, game.id, "find_poppy", true]
+]
+
 } else{
 	text[? "GREET"] = ["Hi", "VILLY WEERAWAY: Go away!", ["EXIT", "GREET"]]
 	text[? "EXIT"] = ["Hm, okay.", []]

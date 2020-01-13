@@ -21,6 +21,6 @@ objective_padding = 100;
 
 //FLAGS
 find_weeraway = false;
-behind_tree = false;
+find_poppy = false;
 
 draw_set_font(font);

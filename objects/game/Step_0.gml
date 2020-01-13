@@ -2,8 +2,10 @@
 // You can write your code in this editor
 
 if(find_weeraway){
-	objective = "Find weeravay"
+	objective = "Find Weeraway"
 }
-else if(behind_tree){
-	objective = "You are behind a tree"
+
+
+if(find_poppy){
+	objective = "Find Poppy"
 }
