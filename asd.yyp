@@ -1271,6 +1271,14 @@
             }
         },
         {
+            "Key": "9b1a6463-37d7-4dbf-a138-b1a66b83dfa8",
+            "Value": {
+                "id": "8b1298c3-9153-4e1d-b198-00aa1a92cb90",
+                "resourcePath": "scripts\\scr_cutscene_change_room\\scr_cutscene_change_room.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9dacc2e9-c31e-46a2-81ea-96ed995b4334",
             "Value": {
                 "id": "580ef42b-276e-487c-939f-5b85979ec114",
@@ -1974,6 +1982,7 @@
         "21330375-9416-4732-951b-046972792927",
         "58690371-050d-4176-9278-0f1f8559a49d",
         "9368af14-7ebb-467d-8372-acc85901ea9d",
+        "9b1a6463-37d7-4dbf-a138-b1a66b83dfa8",
         "35e47bd1-5914-451b-afd3-9bebdb5bcb65"
     ],
     "tutorial": ""
