@@ -9,7 +9,7 @@ text_col=c_white;
 highlight_col=c_ltgray;
 name_text_col=c_black;
 text_padding=10;
-font=font_comic;
+font=font_small;
 
 interact_key = vk_space;
 
