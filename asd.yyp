@@ -290,7 +290,7 @@
             "Key": "2248efbf-5ee3-44db-a735-9597779e7b5d",
             "Value": {
                 "id": "51825c46-be53-4174-9710-0082d0a744b9",
-                "resourcePath": "rooms\\rm_weeraway_interior\\rm_weeraway_interior.yy",
+                "resourcePath": "rooms\\rm_weeraway_interior_test\\rm_weeraway_interior_test.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1170,7 +1170,7 @@
             "Key": "8a359d37-6f6d-446f-9298-1266280af104",
             "Value": {
                 "id": "ce4e7480-a541-4e9f-83b5-d1ce23c2a7d3",
-                "resourcePath": "rooms\\rm_farmer_interior\\rm_farmer_interior.yy",
+                "resourcePath": "rooms\\rm_weeraway_interior\\rm_weeraway_interior.yy",
                 "resourceType": "GMRoom"
             }
         },
