@@ -7,17 +7,27 @@ input_interact = keyboard_check_pressed(ord("E"));
 input_space = keyboard_check_pressed(vk_space)
 
 radius = 30;
-show_debug_message(move_override)
+
 //Calculate intended movement
 y_move = (input_down - input_up) * spd;
 if (!y_move) { x_move = (input_right - input_left) * spd; }
 
-//Check for collision with collision object
-if(place_meeting(x+x_move, y, obj_collision)) {
-	x_move = 0;
+if(y_move > x_move){
+	if(y_move > 0){
+		
+	}
 }
-if(place_meeting(x, y+y_move, obj_collision)) {
-	y_move = 0;
+
+//Check for collision with collision object
+if(x_move != 0){
+	if(place_meeting(x+x_move, y, obj_collision)) {
+		x_move = 0;
+	}
+}
+if(y_move != 0){
+	if(place_meeting(x, y+y_move, obj_collision)) {
+		y_move = 0;
+	}
 }
 
 if(!in_dialogue and !move_override){
