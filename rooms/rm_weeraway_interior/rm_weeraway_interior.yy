@@ -1,6 +1,6 @@
 
 {
-    "name": "interior_test",
+    "name": "rm_weeraway_interior",
     "id": "2248efbf-5ee3-44db-a735-9597779e7b5d",
     "creationCodeFile": "",
     "inheritCode": false,

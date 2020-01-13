@@ -290,7 +290,7 @@
             "Key": "2248efbf-5ee3-44db-a735-9597779e7b5d",
             "Value": {
                 "id": "51825c46-be53-4174-9710-0082d0a744b9",
-                "resourcePath": "rooms\/interior_test\/interior_test.yy",
+                "resourcePath": "rooms\\rm_weeraway_interior\\rm_weeraway_interior.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -698,7 +698,7 @@
             "Key": "4e0b2b5d-d61d-40fd-8b22-3b9aa5586bad",
             "Value": {
                 "id": "031195eb-a4fa-46b6-80df-7441f4839c63",
-                "resourcePath": "rooms\/poppy_room\/poppy_room.yy",
+                "resourcePath": "rooms\\rm_poppy_interior\\rm_poppy_interior.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1047,6 +1047,14 @@
             }
         },
         {
+            "Key": "8074ce49-15bf-451d-8bfc-83aa901b5360",
+            "Value": {
+                "id": "80ee26b1-49f4-4894-9265-eb6bf5d7ef99",
+                "resourcePath": "views\\8074ce49-15bf-451d-8bfc-83aa901b5360.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "8085665a-f901-4976-b535-946bcc9f4e69",
             "Value": {
                 "id": "914e1afe-5cad-444f-886a-2363fe30180a",
@@ -1162,7 +1170,7 @@
             "Key": "8a359d37-6f6d-446f-9298-1266280af104",
             "Value": {
                 "id": "ce4e7480-a541-4e9f-83b5-d1ce23c2a7d3",
-                "resourcePath": "rooms\/fsrmer_room\/fsrmer_room.yy",
+                "resourcePath": "rooms\\rm_farmer_interior\\rm_farmer_interior.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1316,6 +1324,14 @@
                 "id": "65fc3ec2-120d-40d9-bd3f-e6c7a82c0b38",
                 "resourcePath": "scripts\/scr_cutscene_end_action\/scr_cutscene_end_action.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a317d554-439e-476f-9e6a-ae061630e65e",
+            "Value": {
+                "id": "43ebab69-d2a4-4fe9-8900-d9199b9cd908",
+                "resourcePath": "rooms\\dont_touch_me_211\\dont_touch_me_211.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
