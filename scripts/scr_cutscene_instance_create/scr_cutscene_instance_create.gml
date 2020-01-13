@@ -2,7 +2,7 @@
 ///@arg x
 ///@arg y
 ///@arg layer_id
-///@ard obj
+///@arg obj
 
 var inst = instance_create_layer(argument0, argument1, argument2, argument3);
 

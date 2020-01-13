@@ -74,9 +74,10 @@ if(inst != noone){
 			for (var i = 0; i < n; i++){
 				args = scripts[i];
 				if(is_array(args)){
-					script_execute(args[0], args[1], args[2], args[3]);
+					scr_script_execute_array_1d(args);
 				}
 			}
+			instance_destroy();
 		}
 	}
 }
@@ -96,11 +97,12 @@ if(input_space){
 				instance_create_layer(x,y,"Instances",obj_soil_grass);		//Createing an instance with hole sprite assigneed									//Item is destroy after single use
 		        break;
 				
-			case enum_item_type.tape:
+			case enum_item_type.tensiometer:
 				//Use tape
 				var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, obj_soil_hole, false, false)
 				if(inst != noone){
 					inst.draw_temp = true;
+					inst.units = "kpa";
 					inst.alarm[0] = room_speed * 2;
 				}
 				break;

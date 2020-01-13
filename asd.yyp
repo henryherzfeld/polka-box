@@ -194,7 +194,7 @@
             "Key": "1a03279e-2c47-4b6d-a524-efa9584b0372",
             "Value": {
                 "id": "4e83b8d6-ed68-4142-a0c1-79961b7c3ec3",
-                "resourcePath": "sprites\/sprite39\/sprite39.yy",
+                "resourcePath": "sprites\\spr_inventory_item_tensiometer\\spr_inventory_item_tensiometer.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -615,6 +615,14 @@
             }
         },
         {
+            "Key": "417caa51-89d6-4bc8-8ee9-2d1f3c1b35c0",
+            "Value": {
+                "id": "8b463a2d-43f0-4778-80c8-737eaf9dad3f",
+                "resourcePath": "scripts\\scr_use_item_callback_tensiometer\\scr_use_item_callback_tensiometer.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "429ece4e-3a95-4cf5-a227-be5f2a9598c9",
             "Value": {
                 "id": "2b51a36d-0eb9-4199-83b4-f724fef11f29",
@@ -747,6 +755,14 @@
             "Value": {
                 "id": "128a2880-9c1d-4cdf-aafb-586a6b4c8d32",
                 "resourcePath": "objects\\obj_npc_weeraway\\obj_npc_weeraway.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "55b5910a-30b8-4507-b817-25f84242d822",
+            "Value": {
+                "id": "d12fbbec-50c1-4acb-ba38-8cd57fb48cec",
+                "resourcePath": "objects\\obj_tensiometer\\obj_tensiometer.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1972,6 +1988,7 @@
         "bca1e20c-52c2-4d8d-a298-21fca7426a08",
         "fdad8569-895e-4032-b1bc-47718e09cfe8",
         "39e17d80-b216-4213-8e74-bc9ed66b9c40",
+        "417caa51-89d6-4bc8-8ee9-2d1f3c1b35c0",
         "2fc1609e-3241-4a81-b462-5158b1f37aa9",
         "38979d44-18fe-41c4-8bd8-51967ef72260",
         "a28b8b13-442d-4993-8a1f-e322e2136e83",

@@ -16,11 +16,14 @@ spawn_y = 300;
 
 do_transition = false;
 
-objective = "None";
+objective = "";
 objective_padding = 100;
 
 //FLAGS
 find_weeraway = false;
 find_poppy = false;
+examine_crops = false;
+report_crops_to_poppy = false;
+measure_soil_moisture = false;
 
 draw_set_font(font);

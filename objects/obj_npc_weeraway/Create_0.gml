@@ -15,7 +15,8 @@ if(game.find_weeraway){
 	text[? "EXIT"] = ["Ok", []]
 	
 	scripts = [
-	[scr_change_variable, game.id, "find_poppy", true]
+	[scr_change_variable, game.id, "find_poppy", true],
+	[scr_change_variable, game.id, "find_weeraway", false]
 ]
 
 } else{

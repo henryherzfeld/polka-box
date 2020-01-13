@@ -55,7 +55,7 @@ repeat(noOfItem){
 				    //Slot Selected		
 					itemAddInventory(item[slot_no]);						//Add item to Inventory			
 					canOpen = false;										//Disable the Chest
-					alarm[0] = room_speed * 2;								//Timer the enable the chest after 2 sec
+					alarm[0] = room_speed * .5;								//Timer the enable the chest after 2 sec
 					show_chest = false;										//Close the chest
 					}
 				}

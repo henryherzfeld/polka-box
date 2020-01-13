@@ -1,5 +1,6 @@
 /// @description Set internal temperature variable
 
 
-temperature = random_range(70, 100);
+reading = random_range(50, 60);
 draw_temp = false;
+units = "";

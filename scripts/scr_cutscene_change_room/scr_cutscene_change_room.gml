@@ -10,3 +10,5 @@ with(game){
 	spawn_room = argument0;
 	do_transition = true;
 }
+
+scr_cutscene_end_action();

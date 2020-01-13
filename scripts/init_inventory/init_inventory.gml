@@ -9,8 +9,9 @@ enum enum_item_type {
 	shovel = 3,
 	tape = 4,
 	trowel = 5,
+	tensiometer = 6,
 	//ADD new item here
-	//new_item = 6;
+	//new_item = 7;
 	length,
 	}
 enum enum_item_state {
@@ -25,4 +26,4 @@ enum enum_item_state {
 	
 //Declare the constants	
 #macro MAX_ACTIVE_INV_ITEMS 4	//Maximum no of active items tobe added in inventory 
-#macro MAX_INV_ITEMS 5			//Maximum on of items to be in inventory (no of inventory slot)
+#macro MAX_INV_ITEMS 10			//Maximum on of items to be in inventory (no of inventory slot)

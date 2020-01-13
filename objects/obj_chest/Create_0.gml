@@ -7,9 +7,9 @@ image_index = 0;			//Always on 1st image
 //No of content = size of array - 1
 //Item[0] = enum_item_type.shovel
 //Item[1] = enum_item_type.pitchfork
-//Item[2] = enum_item_type.tape
+//Item[2] = enum_item_type.tape 
 
-item = [enum_item_type.shovel,enum_item_type.pitchfork,enum_item_type.tape];
+item = [enum_item_type.shovel,enum_item_type.pitchfork,enum_item_type.tensiometer];
 
 ///Get the data of the items from the inventory manager, so we can use respective sprite,name etc
 for (var i = 0; i < 3; ++i) {

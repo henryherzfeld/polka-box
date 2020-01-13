@@ -1,23 +1,23 @@
 {
-    "id": "699ce278-c273-420e-8d6b-77aa18f2b016",
+    "id": "55b5910a-30b8-4507-b817-25f84242d822",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_npc_",
+    "name": "obj_tensiometer",
     "eventList": [
         {
-            "id": "545d5d23-ff63-4a29-a959-4feb2ec8dd87",
+            "id": "a8477b72-9693-434a-9123-60d33ada863a",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "699ce278-c273-420e-8d6b-77aa18f2b016"
+            "eventtype": 3,
+            "m_owner": "55b5910a-30b8-4507-b817-25f84242d822"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "19dafe6a-df83-4216-9481-df605d1a4d64",
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -33,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "56fcbe1f-b9aa-4baa-9ac4-bfee073cba9e",
+    "spriteId": "1a03279e-2c47-4b6d-a524-efa9584b0372",
     "visible": true
 }
