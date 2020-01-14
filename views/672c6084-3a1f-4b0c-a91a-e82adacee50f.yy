@@ -12,7 +12,9 @@
         "1f78baa3-dbec-4d7b-a8c5-a898c2d78376",
         "c80168da-3c45-4880-a56d-08291dacc326",
         "777d2c1e-4aec-4b74-aa01-c7aa20b8e7b8",
-        "1c54b011-7826-4982-abe1-b2e500811574"
+        "1c54b011-7826-4982-abe1-b2e500811574",
+        "44a047d4-8213-47c2-a794-60a915ffb4a1",
+        "60c50714-24fa-4c64-aa5f-d93d2547cebb"
     ],
     "filterType": "GMSprite",
     "folderName": "Characters",
