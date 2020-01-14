@@ -51,8 +51,8 @@ if(global.show_inventory){
 	///We will only process further if the slot is not empty
 			if (itemType != enum_item_type.none) {
 
-					var itemSprite	= itemDef[itemType,enum_item_state.sprite];		//Sprite for the respective type of the item from the itemDef array
-					var itemAmount	= itemDef[itemType,enum_item_state.amount];		//Amount of the respective type of the item from the itemDef array
+//					var itemSprite	= itemDef[itemType,enum_item_state.sprite];		//Sprite for the respective type of the item from the itemDef array
+//					var itemAmount	= itemDef[itemType,enum_item_state.amount];		//Amount of the respective type of the item from the itemDef array
 
 		
 					draw_sprite_stretched(itemSprite,0,itemX,itemY,48,48);			//Draw the item Sprite

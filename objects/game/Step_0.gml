@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+show_debug_message(prompt_measure_soil_moisture)
 if(find_weeraway){
 	objective = "Find Weeraway"
 }

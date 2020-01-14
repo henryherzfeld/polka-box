@@ -23,8 +23,9 @@ objective_padding = 100;
 find_weeraway = false;
 find_poppy = false;
 examine_crops = false;
-report_crops_to_poppy = false;
+report_crops_to_poppy = true;
 measure_soil_moisture = false;
+prompt_measure_soil_moisture = false;
 
 draw_set_font(font);
 

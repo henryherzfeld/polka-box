@@ -39,6 +39,22 @@ if(game.find_poppy and !game.examine_crops){
 		[scr_change_variable, game.id, "find_poppy", false]
 	]
 } else if (game.report_crops_to_poppy){
+	text[? "GREET"] = ["VILLY POPPY: What did you find?", ["A1", "A1_1", "GREET"]]
+
+	text[? "A1"] = ["The farmer's crops are brown, dry, and wilting.", "VILLY POPPY: Really? How interesting!", ["EXIT", "GREET"]]
+
+	text[? "A1_1"] = ["The farmer's crops are green, healthy, and strong.", "VILLY POPPY: Are you sure? You might want to check again.", ["A1", "A1_1", "GREET"]]
+
+	text[? "EXIT"] = ["Ok", []]
+	
+	scripts = [
+	[scr_change_variable, game.id, "prompt_measure_soil_moisture", true],
+	[scr_change_variable, game.id, "report_crops_to_poppy", false]
+	]
+	
+} else if (game.prompt_measure_soil_moisture){
+	
+
 /// (They visit the botanist again) — TELL: The farmer's crops are not getting enough nutrients. Their leaves look dry, brown, and wilted 
 	text[? "GREET"] = ["VILLY POPPY: The plants are getting enough air and sunlight. The sun has been bright. The air is plenty. Perhaps they're not getting enough water? You can tell from the soil moisture is a plant is getting enough.", ["A1", "A1_1", "A1_2", "GREET"]]
 
@@ -52,7 +68,7 @@ if(game.find_poppy and !game.examine_crops){
 	
 	scripts = [
 	[scr_change_variable, game.id, "measure_soil_moisture", true],
-	[scr_change_variable, game.id, "report_crops_to_poppy", false]
+	[scr_change_variable, game.id, "prompt_measure_soil_moisture", false]
 	]
 } else{
 	text[? "GREET"] = ["Hi", "VILLY POPPY: Go away!", ["EXIT", "GREET"]]
