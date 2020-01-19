@@ -10,5 +10,6 @@ interactable = false;
 move_override = false;
 moving = false;
 
-
+name = "Polka";
+portrait = spr_portrait;
 facing = -1;

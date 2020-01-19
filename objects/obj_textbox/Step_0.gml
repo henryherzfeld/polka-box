@@ -13,7 +13,7 @@ if (keyboard_check_pressed(interact_key)){
 	
 			for (var i = 0; i < n; ++i){
 				args = scripts[i]
-				script_execute(args[0], args[1], args[2], args[3])
+				scr_script_execute_array_1d(args)
 				}
 			}
 			

@@ -32,6 +32,8 @@ first = true;
 page = 0;
 n = 0;
 draw_options = false;
+speaker = noone;
+
 
 selection_y = string_height("M")
 

@@ -16,7 +16,7 @@ spawn_y = 325;
 
 do_transition = false;
 
-objective = "";h
+objective = "";
 objective_padding = 100;
 
 //FLAGS
