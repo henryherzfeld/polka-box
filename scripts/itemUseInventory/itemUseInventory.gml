@@ -7,4 +7,4 @@ var itemType = argument[0];
 var itemScript = InventoryManager.itemDef[itemType,enum_item_state.callback_script]
 
 script_execute(itemScript);			//Execute the call back script
-itemRemoveInventory(itemType);		//Decrease the value from the inventory
+//itemRemoveInventory(itemType);		//Decrease the value from the inventory

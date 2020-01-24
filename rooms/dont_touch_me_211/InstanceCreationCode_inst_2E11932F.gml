@@ -1,7 +1,7 @@
 
-text = ds_map_create();
+text = ds_map_create(); 
 
-text[? "GREET"] = ["What do you observe about the farmer's plants?", ["EXIT", "GREET"]]
+text[? "GREET"] = ["What do you observe about the farmer's plants?", ["EXIT", "GREET"], [noone]]
 text[? "EXIT"] = ["Leave", []]
 
 var dialogue_scripts = [

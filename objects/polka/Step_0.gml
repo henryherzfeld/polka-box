@@ -88,7 +88,7 @@ if(input_interact and !in_dialogue){
 	
 	var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_NPC, false, false)
 	if(inst != noone){
-		scr_create_textbox1(inst.text, inst.name, inst.portrait, inst.scripts);
+		scr_create_textbox(inst.text, inst.name, inst.portrait, inst.scripts);
 	}
 }
 
