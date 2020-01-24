@@ -1,4 +1,4 @@
-/// @description Draw textbox
+  /// @description Draw textbox
 draw_sprite(spr_textbox2,0,textbox_x,textbox_y);
 draw_set_font(font);
 draw_set_valign(fa_top);										

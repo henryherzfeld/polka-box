@@ -42,24 +42,31 @@ if(x_move != 0 or y_move != 0){
 	}
 }
 
-
-
 //Check for collision with collision object
 if(x_move != 0){
 	if(place_meeting(x+x_move, y, obj_collision)) {
+		repeat(abs(x_move)){
+			if(!place_meeting(x+sign(x_move), y, obj_collision)){
+				x += sign(x_move);	
+			} else { break; }
+		}
 		x_move = 0;
 	}
 }
 if(y_move != 0){
 	if(place_meeting(x, y+y_move, obj_collision)) {
-		y_move = 0;
+		repeat(abs(y_move)){
+			if(!place_meeting(x, y+sign(y_move), obj_collision)){
+				y += sign(y_move);	
+			} else { break; }
+		}
+		 y_move = 0;
 	}
 }
 
 if(!in_dialogue and !move_override){
 	x += x_move;
 	y += y_move;
-	
 }
 
 //Check for collision with transition object

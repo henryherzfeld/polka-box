@@ -22,5 +22,5 @@ draw_set_halign(fa_center); draw_set_valign(fa_middle);
 draw_text_color(name_text_x, name_text_y,name,c,c,c,c,1);
 draw_set_halign(fa_left); draw_set_valign(fa_top);
 
-//Draw Text
+//Draw Text 
 draw_text_ext_color(box_x, box_y,text,text_height,box_width,c,c,c,c,1);

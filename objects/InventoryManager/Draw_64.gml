@@ -1,4 +1,4 @@
-/// @description Draw
+ /// @description Draw
 
 if(global.show_inventory){
 	//Draw the Rectangle (Inventory Panel)
@@ -20,7 +20,7 @@ if(global.show_inventory){
 	var itemIndex = 0;	//Use to index the items in inventory slot
 
 	//Loop through all the inventory slots
-	//repeat (MAX_ACTIVE_INV_ITEMS) {
+	repeat (MAX_ACTIVE_INV_ITEMS) {
 		for (var itemIndex = 0; itemIndex < MAX_INV_ITEMS; ++itemIndex) {
 		//Get Values from the InventoryManager
 		// Draw the content	
@@ -50,7 +50,7 @@ if(global.show_inventory){
 	
 	///We will only process further if the slot is not empty
 			if (itemType != enum_item_type.none) {
-
+					show_debug_message(inventorySlot);
 					var itemSprite	= itemDef[itemType,enum_item_state.sprite];		//Sprite for the respective type of the item from the itemDef array
 					var itemAmount	= itemDef[itemType,enum_item_state.amount];		//Amount of the respective type of the item from the itemDef array
 
@@ -86,4 +86,4 @@ if(global.show_inventory){
 
 	}
 }	
-
+}

@@ -8,10 +8,10 @@ open = false;
 
 
 //Create the inventory array, Basicly slots and giving then a default value i.e enum_item_type.none == 0
-inventorySlot[MAX_INV_ITEMS] = enum_item_type.none;
+inventorySlot = array_create(MAX_INV_ITEMS, enum_item_type.none);
 
 //Create an array to store the item properties, giving them defalt value of noone
-itemDef[enum_item_type.length,enum_item_state.length] = noone;
+itemDef = ds_grid_create(enum_item_type.length, enum_item_state.length);
 
 ///Define Properties to the items
 //Here we define the properties of the items

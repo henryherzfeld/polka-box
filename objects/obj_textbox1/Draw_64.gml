@@ -12,7 +12,6 @@ if (first){
 }
 
 n = array_length_1d(current);
-show_debug_message(speaker)
 options = current[n-2];        // get last item of current dialogue array for options array
 speakers = current[n-1];
 
@@ -44,7 +43,7 @@ else {
 			//If We are on the option and clicked, then move into dialogue
 			if (mouse_check_button_pressed(mb_left)) {
 				draw_options = false;
-				page = 0;
+				page = 1;
 				current = text[? options[i]];
 				if(options[i] = "EXIT"){exiting = true;}
 			}
@@ -70,11 +69,25 @@ else {
 
 		if (mouse_check_button_pressed(mb_left)) {
 			draw_options = false;
-			page = 0;
+			page = 1;
 			current = text[? back];
+			
+			// testing if exit is in back button PROBABLY NOT NECESSARY
+			if(options[i] = "EXIT"){exiting = true;}
 			}
 	}
 	draw_rectangle_color(textbox_x + 300, textbox_y + 10, textbox_x + 310, textbox_y + 20,col2,col2,col2,col2,true);
 }
 
-if(speaker != noone){ draw_text(0, 0, speaker.name); draw_sprite(speaker.portrait, 0, 30, 0)}
+
+//Draw Portrait Back
+draw_sprite(frame,0,port_x,port_y);
+
+//Draw Portrait Frame
+draw_sprite(frame,1,port_x,port_y);
+
+//Draw Namebox
+draw_sprite(namebox,0,namebox_x,namebox_y);
+
+//Drawing player portrait and name
+if(speaker != noone){ draw_text(namebox_x, namebox_y, speaker.name); draw_sprite(speaker.portrait, 0, port_x, port_y)}
