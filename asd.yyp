@@ -1223,11 +1223,27 @@
             }
         },
         {
+            "Key": "71f3e0a2-f6ab-4ad4-a288-4d9930bf7097",
+            "Value": {
+                "id": "5f9aca39-6c2a-4e9d-b4ba-431e531db2ff",
+                "resourcePath": "sprites\/sprite123\/sprite123.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "72239edb-2b77-427b-a90e-ce40d40f320c",
             "Value": {
                 "id": "ded1b29b-3db3-436d-8114-e385f47c9a5c",
                 "resourcePath": "sprites\/spr_inventory_item_shovel\/spr_inventory_item_shovel.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "74937149-ae78-41c6-82ce-8702978d8bfc",
+            "Value": {
+                "id": "3b0c32ef-4661-41a2-8259-7263ddc76409",
+                "resourcePath": "objects\/object87\/object87.yy",
+                "resourceType": "GMObject"
             }
         },
         {
