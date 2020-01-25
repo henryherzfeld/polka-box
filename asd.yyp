@@ -122,7 +122,7 @@
             "Key": "0d82b3fe-81fd-4acc-b12a-330e6c3230a8",
             "Value": {
                 "id": "9e550b40-3e72-4bdf-816b-44afab8794da",
-                "resourcePath": "rooms\\testing_dialogue\\testing_dialogue.yy",
+                "resourcePath": "rooms\/testing_dialogue\/testing_dialogue.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -194,7 +194,7 @@
             "Key": "1a03279e-2c47-4b6d-a524-efa9584b0372",
             "Value": {
                 "id": "4e83b8d6-ed68-4142-a0c1-79961b7c3ec3",
-                "resourcePath": "sprites\\spr_inventory_item_tensiometer\\spr_inventory_item_tensiometer.yy",
+                "resourcePath": "sprites\/spr_inventory_item_tensiometer\/spr_inventory_item_tensiometer.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -274,7 +274,7 @@
             "Key": "1f78baa3-dbec-4d7b-a8c5-a898c2d78376",
             "Value": {
                 "id": "97e33281-bf04-4037-bfea-a07ffab2d7ef",
-                "resourcePath": "sprites\\spr_polka_stand_back\\spr_polka_stand_back.yy",
+                "resourcePath": "sprites\/spr_polka_stand_back\/spr_polka_stand_back.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -298,7 +298,7 @@
             "Key": "2248efbf-5ee3-44db-a735-9597779e7b5d",
             "Value": {
                 "id": "51825c46-be53-4174-9710-0082d0a744b9",
-                "resourcePath": "rooms\\rm_weeraway_interior_test\\rm_weeraway_interior_test.yy",
+                "resourcePath": "rooms\/rm_weeraway_interior_test\/rm_weeraway_interior_test.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -570,7 +570,7 @@
             "Key": "3d762631-4e64-45e7-9bcc-aa324b14253b",
             "Value": {
                 "id": "115f9f94-dd66-4094-ad20-afc1f2472bcd",
-                "resourcePath": "views\\3d762631-4e64-45e7-9bcc-aa324b14253b.yy",
+                "resourcePath": "views\/3d762631-4e64-45e7-9bcc-aa324b14253b.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -578,7 +578,7 @@
             "Key": "4001cf67-c84f-4309-88c9-c1d535344e12",
             "Value": {
                 "id": "4f73198d-412e-4618-8ae2-c9e9c4c4b17f",
-                "resourcePath": "sprites\\spr_textbox3\\spr_textbox3.yy",
+                "resourcePath": "sprites\/spr_textbox3\/spr_textbox3.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -602,7 +602,7 @@
             "Key": "40894a46-ab9f-4bc9-b8b7-f67cd7190e8b",
             "Value": {
                 "id": "ac8f6a68-5143-4f80-aa55-336001b6535b",
-                "resourcePath": "objects\\obj_npc_test\\obj_npc_test.yy",
+                "resourcePath": "objects\/obj_npc_test\/obj_npc_test.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -626,8 +626,16 @@
             "Key": "417caa51-89d6-4bc8-8ee9-2d1f3c1b35c0",
             "Value": {
                 "id": "8b463a2d-43f0-4778-80c8-737eaf9dad3f",
-                "resourcePath": "scripts\\scr_use_item_callback_tensiometer\\scr_use_item_callback_tensiometer.yy",
+                "resourcePath": "scripts\/scr_use_item_callback_tensiometer\/scr_use_item_callback_tensiometer.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "4192bdd7-fa6c-4b61-aec1-a0492c3a243e",
+            "Value": {
+                "id": "f4d13087-edc6-40b5-82e2-ec82844132ce",
+                "resourcePath": "rooms\/rm_polka_interior\/rm_polka_interior.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -642,7 +650,7 @@
             "Key": "42c1d225-4062-4434-abf6-763e22f3589c",
             "Value": {
                 "id": "c0f8b89f-ea73-4d3f-9ace-4fdf4953adda",
-                "resourcePath": "sprites\\spr_polka_stand_right\\spr_polka_stand_right.yy",
+                "resourcePath": "sprites\/spr_polka_stand_right\/spr_polka_stand_right.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -666,7 +674,7 @@
             "Key": "44a047d4-8213-47c2-a794-60a915ffb4a1",
             "Value": {
                 "id": "33ca19d6-eba7-48d7-b472-811efb29970d",
-                "resourcePath": "sprites\\spr_polka_walk_right\\spr_polka_walk_right.yy",
+                "resourcePath": "sprites\/spr_polka_walk_right\/spr_polka_walk_right.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -706,7 +714,7 @@
             "Key": "4929d877-1c8a-40d0-8d3c-332c0cfd37af",
             "Value": {
                 "id": "fbc06dc9-41f4-455c-a086-c99e7077b584",
-                "resourcePath": "objects\\obj_main_menu_UI\\obj_main_menu_UI.yy",
+                "resourcePath": "objects\/obj_main_menu_UI\/obj_main_menu_UI.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -746,7 +754,7 @@
             "Key": "4e0b2b5d-d61d-40fd-8b22-3b9aa5586bad",
             "Value": {
                 "id": "031195eb-a4fa-46b6-80df-7441f4839c63",
-                "resourcePath": "rooms\\rm_poppy_interior\\rm_poppy_interior.yy",
+                "resourcePath": "rooms\/rm_poppy_interior\/rm_poppy_interior.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -786,7 +794,7 @@
             "Key": "558662d0-de09-4aaf-9a69-8a1b31e935ec",
             "Value": {
                 "id": "128a2880-9c1d-4cdf-aafb-586a6b4c8d32",
-                "resourcePath": "objects\\obj_npc_weeraway\\obj_npc_weeraway.yy",
+                "resourcePath": "objects\/obj_npc_weeraway\/obj_npc_weeraway.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -794,7 +802,7 @@
             "Key": "55b5910a-30b8-4507-b817-25f84242d822",
             "Value": {
                 "id": "d12fbbec-50c1-4acb-ba38-8cd57fb48cec",
-                "resourcePath": "objects\\obj_tensiometer\\obj_tensiometer.yy",
+                "resourcePath": "objects\/obj_tensiometer\/obj_tensiometer.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -874,7 +882,7 @@
             "Key": "60c50714-24fa-4c64-aa5f-d93d2547cebb",
             "Value": {
                 "id": "9b7ea7ee-40d6-4ac5-a3f4-5eb14c1066df",
-                "resourcePath": "sprites\\spr_polka_walk_left\\spr_polka_walk_left.yy",
+                "resourcePath": "sprites\/spr_polka_walk_left\/spr_polka_walk_left.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -962,7 +970,7 @@
             "Key": "699ce278-c273-420e-8d6b-77aa18f2b016",
             "Value": {
                 "id": "c603dba8-04da-467b-9293-a07d9f654431",
-                "resourcePath": "objects\\obj_npc_poppy\\obj_npc_poppy.yy",
+                "resourcePath": "objects\/obj_npc_poppy\/obj_npc_poppy.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1066,7 +1074,7 @@
             "Key": "75ac291e-7061-4bcb-8e8a-3b3545332d41",
             "Value": {
                 "id": "7a13c231-ee03-4745-ada6-aff97a10fd94",
-                "resourcePath": "options\\html5\\options_html5.yy",
+                "resourcePath": "options\/html5\/options_html5.yy",
                 "resourceType": "GMHtml5Options"
             }
         },
@@ -1122,7 +1130,7 @@
             "Key": "8074ce49-15bf-451d-8bfc-83aa901b5360",
             "Value": {
                 "id": "80ee26b1-49f4-4894-9265-eb6bf5d7ef99",
-                "resourcePath": "views\\8074ce49-15bf-451d-8bfc-83aa901b5360.yy",
+                "resourcePath": "views\/8074ce49-15bf-451d-8bfc-83aa901b5360.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -1234,7 +1242,7 @@
             "Key": "8a359d37-6f6d-446f-9298-1266280af104",
             "Value": {
                 "id": "ce4e7480-a541-4e9f-83b5-d1ce23c2a7d3",
-                "resourcePath": "rooms\\rm_weeraway_interior\\rm_weeraway_interior.yy",
+                "resourcePath": "rooms\/rm_weeraway_interior\/rm_weeraway_interior.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1330,7 +1338,7 @@
             "Key": "9b1a6463-37d7-4dbf-a138-b1a66b83dfa8",
             "Value": {
                 "id": "8b1298c3-9153-4e1d-b198-00aa1a92cb90",
-                "resourcePath": "scripts\\scr_cutscene_change_room\\scr_cutscene_change_room.yy",
+                "resourcePath": "scripts\/scr_cutscene_change_room\/scr_cutscene_change_room.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1402,7 +1410,7 @@
             "Key": "a2f6c03f-26fa-45b4-bbfd-230483a33bda",
             "Value": {
                 "id": "9d0bf0c3-dde0-4176-b63e-60f893ff8d7c",
-                "resourcePath": "sprites\\spr_stars_bg\\spr_stars_bg.yy",
+                "resourcePath": "sprites\/spr_stars_bg\/spr_stars_bg.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1410,7 +1418,7 @@
             "Key": "a317d554-439e-476f-9e6a-ae061630e65e",
             "Value": {
                 "id": "43ebab69-d2a4-4fe9-8900-d9199b9cd908",
-                "resourcePath": "rooms\\dont_touch_me_211\\dont_touch_me_211.yy",
+                "resourcePath": "rooms\/dont_touch_me_211\/dont_touch_me_211.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1642,7 +1650,7 @@
             "Key": "c80168da-3c45-4880-a56d-08291dacc326",
             "Value": {
                 "id": "d941bc9e-8a05-4cf4-97ac-c27b34a31870",
-                "resourcePath": "sprites\\spr_polka_stand_front\\spr_polka_stand_front.yy",
+                "resourcePath": "sprites\/spr_polka_stand_front\/spr_polka_stand_front.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1674,7 +1682,7 @@
             "Key": "cd392b4e-3c1e-4ea8-8aee-0b8a00b84ba0",
             "Value": {
                 "id": "426b44ac-170e-4e01-8705-e8bb6f386c22",
-                "resourcePath": "rooms\\tutorial_room\\tutorial_room.yy",
+                "resourcePath": "rooms\/tutorial_room\/tutorial_room.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1754,7 +1762,7 @@
             "Key": "db6d58f6-52f3-40a8-a817-035c85f840d8",
             "Value": {
                 "id": "b1979adf-0088-4635-9248-2b800eb837b4",
-                "resourcePath": "objects\\obj_textbox\\obj_textbox.yy",
+                "resourcePath": "objects\/obj_textbox\/obj_textbox.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1858,7 +1866,7 @@
             "Key": "e3faba23-24d0-45d9-b718-fe756169f669",
             "Value": {
                 "id": "eecc4b26-ad3e-4415-9986-e04cfd619397",
-                "resourcePath": "rooms\\main_menu\\main_menu.yy",
+                "resourcePath": "rooms\/main_menu\/main_menu.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1994,7 +2002,7 @@
             "Key": "f450cdba-11f8-4b69-ba88-232963e96a9a",
             "Value": {
                 "id": "401b24ce-4a8b-422b-bf38-ab7e9e1b222e",
-                "resourcePath": "sprites\\spr_polka_stand_left\\spr_polka_stand_left.yy",
+                "resourcePath": "sprites\/spr_polka_stand_left\/spr_polka_stand_left.yy",
                 "resourceType": "GMSprite"
             }
         },
