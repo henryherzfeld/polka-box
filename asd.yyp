@@ -841,8 +841,8 @@
         {
             "Key": "4929d877-1c8a-40d0-8d3c-332c0cfd37af",
             "Value": {
-                "id": "fbc06dc9-41f4-455c-a086-c99e7077b584",
-                "resourcePath": "objects\/obj_main_menu_UI\/obj_main_menu_UI.yy",
+                "id": "00f2438d-b560-4f98-8eb0-7a4eb6c0deff",
+                "resourcePath": "objects\\obj_main_menu_UI\\obj_main_menu_UI.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1316,6 +1316,14 @@
                 "id": "e5b5f441-9de0-43ab-bbc7-b0e6b646bcc6",
                 "resourcePath": "scripts\/scr_cutscene_move_character\/scr_cutscene_move_character.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "7fae4a7f-b7da-4fdd-bae7-1d6957b6221f",
+            "Value": {
+                "id": "ee76c65f-f15c-48a7-ac82-8163446b8e36",
+                "resourcePath": "objects\\obj_npc_villy\\obj_npc_villy.yy",
+                "resourceType": "GMObject"
             }
         },
         {
