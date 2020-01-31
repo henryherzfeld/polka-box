@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 font = font_comic
-debug = false;
+debug = true;
 randomize();
 
 gui_width = display_get_gui_width();
