@@ -1,11 +1,32 @@
 /// @description Insert description here
-// You can write your code in this editor
+n_options = array_length_1d(options);
 
-var mx = device_mouse_x_to_gui(0);						//Mouse's X pos relative to the display (not the game world)
-var my = device_mouse_y_to_gui(0);						//Mouse's Y pos relative to the display (not the game world)
-var m_click_in_box = false;
+if(keyboard_check_pressed(vk_up)){
+	--selected;	
+} else if (keyboard_check_pressed(vk_down)){
+	++selected;
+}
 
-if(point_in_rectangle(mx, my, textbox_x, textbox_y, textbox_x + box_width, textbox_y + box_height) and mouse_check_button_pressed(mb_left)){m_click_in_box = true;}
+// clamping selecting between 0 and n_options - 1
+selected = clamp(selected, 0, n_options-1)
+
+
+// Test for interact input to move current page forward
+if (keyboard_check_pressed(interact_key)){
+	if(page < n - 3){
+		++page;
+	} else if (draw_options){
+		draw_options = false;
+		page = 1;
+		current = text[? options[selected]];
+		if(options[selected] = "EXIT"){exiting = true;}
+	}
+	else{
+		draw_options = true;
+	}
+}
+
+
 
 if(exiting){
 	if (is_array(scripts)){
@@ -18,15 +39,3 @@ if(exiting){
 	}	
 	instance_destroy();
 }
-
-if (keyboard_check_pressed(interact_key) or m_click_in_box){
-	if(page < n - 3){
-		++page;
-	}
-	else{
-		draw_options = true;
-	}
-}
-
-
-

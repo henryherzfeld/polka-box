@@ -33,22 +33,29 @@ else {
 		
 		var col1 = c_white;
 		var col2 = c_white;
-		var mx = device_mouse_x_to_gui(0);						//Mouse's X pos relative to the display (not the game world)
-		var my = device_mouse_y_to_gui(0);						//Mouse's Y pos relative to the display (not the game world)
+		//var mx = device_mouse_x_to_gui(0);						//Mouse's X pos relative to the display (not the game world)
+		//var my = device_mouse_y_to_gui(0);						//Mouse's Y pos relative to the display (not the game world)
 
 		// Testing mouse location within selection box for dialogue choice
-		if (point_in_rectangle(mx, my, textbox_padded_x, textbox_padded_y + _y, textbox_padded_x + selection_x, textbox_padded_y + _y + selection_y)){
+		//if (point_in_rectangle(mx, my, textbox_padded_x, textbox_padded_y + _y, textbox_padded_x + selection_x, textbox_padded_y + _y + selection_y)){
+		
+		if(i = selected){
 			col1 = c_red;
 			col2 = c_gray;
+		}
+
+			
+
 								
 			//If We are on the option and clicked, then move into dialogue
-			if (mouse_check_button_pressed(mb_left)) {
+			/*if (mouse_check_button_pressed(mb_left)) {
 				draw_options = false;
 				page = 1;
 				current = text[? options[i]];
 				if(options[i] = "EXIT"){exiting = true;}
-			}
-		}
+			}*/
+		//}
+
 		draw_text_color(textbox_padded_x, textbox_padded_y + _y, preview[0], col2, col2, col2, col2, true);
 		draw_rectangle_color(textbox_padded_x, textbox_padded_y + _y, textbox_padded_x + selection_x, textbox_padded_y + _y + selection_y,col1,col1,col1,col1,true);	
 		
@@ -56,27 +63,14 @@ else {
 		
 	}
 
-	back = options[i];
-	
 	//Back button
+	back = options[i];
 	col2 = c_white;
 	
-	var mx = device_mouse_x_to_gui(0);						//Mouse's X pos relative to the display (not the game world)
-	var my = device_mouse_y_to_gui(0);						//Mouse's Y pos relative to the display (not the game world)
-
-	// Testing mouse location with selection box for back button
-	if (point_in_rectangle(mx, my, textbox_x + box_width - 30, textbox_y, textbox_x + box_width, textbox_y + 30)){
-		col2 = c_red;
-
-		if (mouse_check_button_pressed(mb_left)) {
-			draw_options = false;
-			page = 1;
-			current = text[? back];
-			
-			// testing if exit is in back button PROBABLY NOT NECESSARY
-			if(options[i] = "EXIT"){exiting = true;}
-			}
+	if(selected = n_options-1){
+		col2 = c_red;	
 	}
+
 	draw_rectangle_color(textbox_x + box_width - 30, textbox_y, textbox_x + box_width, textbox_y + 30, col2,col2,col2,col2,true);
 }
 

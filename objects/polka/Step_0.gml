@@ -26,19 +26,21 @@ if(x_move != 0){
 }
 
 //Assign walking sprite according to direction facing
-if(x_move != 0 or y_move != 0){
-	switch(facing){
-		case 0: sprite_index = spr_polka_walk_back; break;
-		case 90: sprite_index = spr_polka_walk_right; break;
-		case 180: sprite_index = spr_polka_walk_front; break;
-		case 270: sprite_index = spr_polka_walk_left; break;
-	}
-} else { // assign standing  sprite if polka is not moving
-	switch(facing){
-		case 0: sprite_index = spr_polka_stand_back; break;
-		case 90: sprite_index = spr_polka_stand_right; break;
-		case 180: sprite_index = spr_polka_stand_front; break;
-		case 270: sprite_index = spr_polka_stand_left; break;
+if(!in_dialogue){
+	if(x_move != 0 or y_move != 0){
+		switch(facing){
+			case 0: sprite_index = spr_polka_walk_back; break;
+			case 90: sprite_index = spr_polka_walk_right; break;
+			case 180: sprite_index = spr_polka_walk_front; break;
+			case 270: sprite_index = spr_polka_walk_left; break;
+		}
+	} else { // assign standing  sprite if polka is not moving
+		switch(facing){
+			case 0: sprite_index = spr_polka_stand_back; break;
+			case 90: sprite_index = spr_polka_stand_right; break;
+			case 180: sprite_index = spr_polka_stand_front; break;
+			case 270: sprite_index = spr_polka_stand_left; break;
+		}
 	}
 }
 

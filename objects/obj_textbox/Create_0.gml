@@ -43,6 +43,7 @@ page = 0;
 n = 0;
 draw_options = false;
 speaker = noone;
+selected = 0;
 
 with (polka) {
 	in_dialogue = true;
