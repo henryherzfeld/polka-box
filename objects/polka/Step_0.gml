@@ -133,18 +133,27 @@ if(input_space){
 	
 		switch (itemEquiped) {
 		    case enum_item_type.shovel:
+				var cs = obj_tile_manager.cell_size;
+				var xx = obj_tile_manager.x_proj div cs;
+				var yy = obj_tile_manager.y_proj div cs;
+
+				xx = xx*cs;
+				yy = yy*cs;
+			
+			
 				//Use Shovel
-				instance_create_layer(x,y,"Instances",obj_soil_hole);		//Createing an instance with hole sprite assigneed
+				instance_create_layer(xx,yy,"Instances",obj_soil_hole);		//Createing an instance with hole sprite assigneed
 		        break;
 			
 		    case enum_item_type.pitchfork:
 				//Use Shovel
-				instance_create_layer(x,y,"Instances",obj_soil_grass);		//Createing an instance with hole sprite assigneed									//Item is destroy after single use
+				instance_create_layer(x,y,"Instances",obj_soil_grass);		//Createing an instance with hole sprite assigneed
 		        break;
 				
 			case enum_item_type.tensiometer:
 				//Use tape
-				var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, obj_soil_hole, false, false)
+				var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, obj_tensiometer_tile, false, false)
+				
 				if(inst != noone){
 					inst.draw_temp = true;
 					inst.units = "kpa";

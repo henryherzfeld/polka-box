@@ -1231,6 +1231,14 @@
             }
         },
         {
+            "Key": "5dbee845-2d4c-4a4d-a505-6673c07d6fe2",
+            "Value": {
+                "id": "22b3d0a9-5112-497a-9e4d-2f59ac0e541d",
+                "resourcePath": "objects\\obj_tensiometer_tile\\obj_tensiometer_tile.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "5ec0588e-44ed-447d-8fb3-7c21c313be3a",
             "Value": {
                 "id": "54e40c0c-a9cd-4e43-bcc6-b35868c253b4",
