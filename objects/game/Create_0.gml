@@ -16,17 +16,6 @@ spawn_y = 325;
 
 do_transition = false;
 
-objective = "";
-objective_padding = 100;
-
-//FLAGS
-find_weeraway = false; 
-find_poppy = false;
-examine_crops = false;
-report_crops_to_poppy = false;
-measure_soil_moisture = false;
-prompt_measure_soil_moisture = false;
-
 draw_set_font(font);
 
 // Creating direction enumerator for player transitions

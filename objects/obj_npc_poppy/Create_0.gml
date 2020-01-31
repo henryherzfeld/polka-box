@@ -4,7 +4,7 @@ event_inherited();
 
 text = ds_map_create();    
 
-if(game.find_poppy and !game.examine_crops){
+if(flags.find_poppy and !flags.examine_crops){
 	text[? "GREET"] = ["Hi", ["A1", "A1_1", "A1_2", "GREET"], [polka]]
 
 	text[? "A1"] = ["What do crops need to live?", "Plants need air, sunlight, water, and soil.", ["A2", "A2_1", "A2_2", "A2_3", "A2_4", "GREET"], [polka, id]]
@@ -35,10 +35,10 @@ if(game.find_poppy and !game.examine_crops){
 	
 	scripts = [
 		[scr_change_variable, obj_cutscene.id, "active", true],
-		[scr_change_variable, game.id, "examine_crops", true],
-		[scr_change_variable, game.id, "find_poppy", false]
+		[scr_change_variable, flags.id, "examine_crops", true],
+		[scr_change_variable, flags.id, "find_poppy", false]
 	]
-} else if (game.report_crops_to_poppy){
+} else if (flags.report_crops_to_poppy){
 	text[? "GREET"] = ["What did you find?", ["A1", "A1_1", "GREET"], [id]]
 
 	text[? "A1"] = ["The farmer's crops are brown, dry, and wilting.", "Really? How interesting!", ["EXIT", "GREET"], [polka, id]]
@@ -48,11 +48,11 @@ if(game.find_poppy and !game.examine_crops){
 	text[? "EXIT"] = ["Ok", []]
 	
 	scripts = [
-	[scr_change_variable, game.id, "prompt_measure_soil_moisture", true],
-	[scr_change_variable, game.id, "report_crops_to_poppy", false]
+	[scr_change_variable, flags.id, "prompt_measure_soil_moisture", true],
+	[scr_change_variable, flags.id, "report_crops_to_poppy", false]
 	]
 	
-} else if (game.prompt_measure_soil_moisture){
+} else if (flags.prompt_measure_soil_moisture){
 	
 
 /// (They visit the botanist again) — TELL: The farmer's crops are not getting enough nutrients. Their leaves look dry, brown, and wilted 
@@ -67,8 +67,8 @@ if(game.find_poppy and !game.examine_crops){
 	text[? "EXIT"] = ["Ok", []]
 	
 	scripts = [
-	[scr_change_variable, game.id, "measure_soil_moisture", true],
-	[scr_change_variable, game.id, "prompt_measure_soil_moisture", false]
+	[scr_change_variable, flags.id, "measure_soil_moisture", true],
+	[scr_change_variable, flags.id, "prompt_measure_soil_moisture", false]
 	]
 } else{
 	text[? "GREET"] = ["Hi", "Go away!", ["EXIT", "GREET"], [polka, id]]

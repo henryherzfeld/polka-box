@@ -3,7 +3,7 @@
 
 event_inherited();
 
-if(polka.in_dialogue and game.find_weeraway){
+if(polka.in_dialogue and flags.find_weeraway){
 	crying = false;
 }
 

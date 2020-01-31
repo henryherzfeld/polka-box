@@ -24,5 +24,5 @@ name = "Villy";
 portrait = spr_portrait;
 
 scripts = [
-	[scr_change_variable, game.id, "find_weeraway", true],
+	[scr_change_variable, flags.id, "find_weeraway", true],
 ]
