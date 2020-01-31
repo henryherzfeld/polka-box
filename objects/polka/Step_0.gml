@@ -6,7 +6,7 @@ input_up = keyboard_check(vk_up);
 input_interact = keyboard_check_pressed(ord("E"));
 input_space = keyboard_check_pressed(vk_space)
 
-radius = 30;
+
 
 //Calculate intended movement
 y_move = (input_down - input_up) * spd;
@@ -95,7 +95,7 @@ if(input_interact and !in_dialogue){
 }
 
 //Check for collision with chest
-var inst = instance_place(x, y, obj_chest)
+var inst = collision_rectangle(obj_tile_manager.x_proj-radius, obj_tile_manager.y_proj+radius, obj_tile_manager.x_proj+radius, obj_tile_manager.y_proj+radius, obj_chest, false, true)
 
 if(inst != noone){
 	with (inst) {
@@ -133,7 +133,9 @@ if(input_space){
 	
 		switch (itemEquiped) {
 		    case enum_item_type.shovel:
-				var cs = obj_tile_manager.cell_size;
+			
+			//Finding an snapped-to tile coordinate
+				var cs = cell_size;
 				var xx = obj_tile_manager.x_proj div cs;
 				var yy = obj_tile_manager.y_proj div cs;
 
@@ -152,8 +154,7 @@ if(input_space){
 				
 			case enum_item_type.tensiometer:
 				//Use tape
-				var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, obj_tensiometer_tile, false, false)
-				
+				var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, obj_soil_hole, false, false)
 				if(inst != noone){
 					inst.draw_temp = true;
 					inst.units = "kpa";

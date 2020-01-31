@@ -9,6 +9,7 @@ in_dialogue = false;
 interactable = false;
 move_override = false;
 moving = false;
+radius = 30;
 
 name = "Polka";
 portrait = spr_portrait;

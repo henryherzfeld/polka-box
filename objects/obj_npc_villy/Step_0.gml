@@ -3,7 +3,19 @@
 event_inherited();
 
 if(idle_movement){
-	if(moving) {
+	if(!moving) {
+		
+		alarm[0] = 20 * random_range(0, idle_move_wait_max);
+		
+		//set target destination
+		x_move = random_range(-1*idle_move, idle_move);
+		y_move = random_range(-1*idle_move, idle_move);
+
+		//movement
+		x += x_move;
+		y += y_move;
+	
+	} else {
 
 		//Assign facing variable with movement's direction, default to xmovement
 		if(x_move != 0){
@@ -18,16 +30,6 @@ if(idle_movement){
 			}
 		}
 
-		//movement
-		x += x_move;
-		y += y_move;
-	
-	} else {
-		alarm[0] = 20 * random_range(0, idle_move_wait_max);
-		
-		//set target destination
-		x_move = random_range(-1*idle_move, idle_move);
-		y_move = random_range(-1*idle_move, idle_move);
 	}
 	
 	//Assign walking sprite according to direction facing

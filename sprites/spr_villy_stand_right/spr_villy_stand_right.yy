@@ -2,7 +2,7 @@
     "id": "ba0e55f4-0716-4b66-94f6-f97034da8362",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "sprite95",
+    "name": "spr_villy_stand_right",
     "For3D": false,
     "HTile": false,
     "VTile": false,
