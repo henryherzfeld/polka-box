@@ -43,10 +43,7 @@ else {
 			col1 = c_red;
 			col2 = c_gray;
 		}
-
 			
-
-								
 			//If We are on the option and clicked, then move into dialogue
 			/*if (mouse_check_button_pressed(mb_left)) {
 				draw_options = false;

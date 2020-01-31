@@ -17,7 +17,13 @@ if (keyboard_check_pressed(interact_key)){
 		++page;
 	} else if (draw_options){
 		draw_options = false;
-		page = 1;
+		
+		if(options[selected] = "GREET"){
+			page = 0;
+		} else {
+			page = 1;
+		}
+		
 		current = text[? options[selected]];
 		if(options[selected] = "EXIT"){exiting = true;}
 	}
