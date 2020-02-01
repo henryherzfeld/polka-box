@@ -4,6 +4,7 @@
 count = 0;
 page = 0;
 
+spawn_room = rm_polka_interior;
 box = spr_textbox2;
 
 box_width=sprite_get_width(box);

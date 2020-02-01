@@ -10,6 +10,7 @@ interactable = false;
 move_override = false;
 moving = false;
 radius = 30;
+npc = noone;
 
 name = "Polka";
 portrait = spr_portrait;

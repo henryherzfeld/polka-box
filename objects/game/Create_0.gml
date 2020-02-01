@@ -11,8 +11,8 @@ gui_height = display_get_gui_height();
 spawn_room = -1;
 black_alpha = 0;
 
-spawn_x = 493;
-spawn_y = 325;
+spawn_x = 255;
+spawn_y = 76;
 
 do_transition = false;
 

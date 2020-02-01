@@ -12,6 +12,6 @@ yy = yy*cs;
 
 
 if(game.debug){
-	draw_circle_color(x_proj, y_proj, 5, c_yellow, c_yellow, true);
+	draw_circle_color(x_proj, y_proj, 12, c_yellow, c_yellow, true);
 	draw_rectangle_color(xx, yy, xx+cs, yy+cs, c_navy, c_navy, c_navy, c_navy, true);
 }

@@ -6,8 +6,6 @@ input_up = keyboard_check(vk_up);
 input_interact = keyboard_check_pressed(ord("E"));
 input_space = keyboard_check_pressed(vk_space)
 
-
-
 //Calculate intended movement
 y_move = (input_down - input_up) * spd;
 if (!y_move) { x_move = (input_right - input_left) * spd; }
@@ -86,16 +84,15 @@ if (inst != noone) {
 }
 
 //Check for collision with NPC
+npc = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_NPC, false, true);
 if(input_interact and !in_dialogue){
-	
-	var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_NPC, false, false)
-	if(inst != noone){
-		scr_create_textbox(inst.text, inst.name, inst.portrait, inst.scripts);
+	if(npc != noone){
+		scr_create_textbox(npc.text, npc.name, npc.portrait, npc.scripts);
 	}
 }
 
 //Check for collision with chest
-var inst = collision_rectangle(obj_tile_manager.x_proj-radius, obj_tile_manager.y_proj+radius, obj_tile_manager.x_proj+radius, obj_tile_manager.y_proj+radius, obj_chest, false, true)
+var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_chest, false, true);
 
 if(inst != noone){
 	with (inst) {
@@ -135,7 +132,7 @@ if(input_space){
 		    case enum_item_type.shovel:
 			
 			//Finding an snapped-to tile coordinate
-				var cs = cell_size;
+				var cs = obj_tile_manager.cell_size;
 				var xx = obj_tile_manager.x_proj div cs;
 				var yy = obj_tile_manager.y_proj div cs;
 
@@ -154,7 +151,7 @@ if(input_space){
 				
 			case enum_item_type.tensiometer:
 				//Use tape
-				var inst = collision_rectangle(x-radius, y-radius, x+radius, y+radius, obj_soil_hole, false, false)
+				var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_tensiometer_tile, false, true);
 				if(inst != noone){
 					inst.draw_temp = true;
 					inst.units = "kpa";

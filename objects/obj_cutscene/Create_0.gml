@@ -11,4 +11,4 @@ y_dest = -1;
 in_dialogue = false;
 dialogue_inst = -1;
 
-active = true;
+active = false;

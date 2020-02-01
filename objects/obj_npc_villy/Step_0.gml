@@ -20,7 +20,7 @@ if(idle_movement){
 				xx = (x + -irandom_range(0, 1) * irandom_range(0, cs*idle_range)) div cs;
 				yy = (y + -irandom_range(0, 1) * irandom_range(0, cs*idle_range)) div cs;
 			
-				//New random coordinates
+				//New random coordinates clamped to positive values
 				xx = xx*cs * sign(xx);
 				yy = yy*cs * sign(yy);
 				
