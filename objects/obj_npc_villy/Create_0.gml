@@ -4,8 +4,13 @@ event_inherited();
 
 idle_movement = true;
 moving = false;
-idle_move_wait_max = 9;
-idle_move = 1;
+
+spd = 1;
+
+idle_range = 10;
+idle_sleep_max = 300;
+idle_sleep_min = 50;
+counter = 1;
 
 facing = 180;
 
@@ -14,3 +19,6 @@ y_move = 0;
 
 x_dest = -1;
 y_dest = -1;
+
+xx = x;
+yy = y;

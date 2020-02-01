@@ -1,35 +1,63 @@
-/// @description Insert description here
-// You can write your code in this editor
+         /// @description Insert description here
+
 event_inherited();
 
 if(idle_movement){
-	if(!moving) {
-		
-		alarm[0] = 20 * random_range(0, idle_move_wait_max);
-		
-		//set target destination
-		x_move = random_range(-1*idle_move, idle_move);
-		y_move = random_range(-1*idle_move, idle_move);
 
-		//movement
+	//Manage x_move and y_move
+	if(xx = x and yy = y){
+		
+		// Wait for specified amount before assigning movement
+		if (counter mod idle_sleep_max = 0){
+			counter = 1;
+			idle_sleep_max = irandom_range(1, idle_sleep_max - idle_sleep_min) + idle_sleep_min;
+
+			//check for collision
+			while(!place_free(xx, yy) or (xx = x and yy = y)){
+				var cs = obj_tile_manager.cell_size;
+				
+				// Random quad directio move from current position divided by cell size
+				xx = (x + -irandom_range(0, 1) * irandom_range(0, cs*idle_range)) div cs;
+				yy = (y + -irandom_range(0, 1) * irandom_range(0, cs*idle_range)) div cs;
+			
+				//New random coordinates
+				xx = xx*cs * sign(xx);
+				yy = yy*cs * sign(yy);
+				
+			}
+			
+			show_debug_message(xx);
+			show_debug_message(yy);
+		
+		}
+		++counter;
+	} else if(point_distance(x, y, xx, yy) > spd){
+		var dir = point_direction(x, y, xx, yy);
+		x_move = lengthdir_x(spd, dir);
+		y_move = lengthdir_y(spd, dir);
+		
 		x += x_move;
 		y += y_move;
-	
+		
+	//Check if we're close to our target and set position to target
 	} else {
-
-		//Assign facing variable with movement's direction, default to xmovement
-		if(x_move != 0){
-			switch(sign(x_move)){
-				case 1: facing = dir.right; break;
-				case -1: facing = dir.left; break;
-			}
-		} else if (y_move != 0) {
-			switch(sign(y_move)){
-				case 1: facing = dir.down; break;
-				case -1: facing = dir.up; break;
-			}
+		x = xx;
+		y = yy;
+		x_move = 0;
+		y_move = 0;
+	}
+	
+	//Assign facing variable with movement's direction, default to xmovement
+	if(x_move != 0){
+		switch(sign(x_move)){
+			case 1: facing = dir.right; break;
+			case -1: facing = dir.left; break;
 		}
-
+	} else if (y_move != 0) {
+		switch(sign(y_move)){
+			case 1: facing = dir.down; break;
+			case -1: facing = dir.up; break;
+		}
 	}
 	
 	//Assign walking sprite according to direction facing
@@ -48,4 +76,8 @@ if(idle_movement){
 			case 270: sprite_index = spr_villy_stand_left; break;
 		}
 	}
+	
+	x += x_move;
+	y += y_move;
+
 }
