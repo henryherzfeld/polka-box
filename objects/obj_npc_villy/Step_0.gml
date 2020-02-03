@@ -13,24 +13,26 @@ if(idle_movement){
 			idle_sleep_max = irandom_range(1, idle_sleep_max - idle_sleep_min) + idle_sleep_min;
 
 			//check for collision
-			while(!place_free(xx, yy) or (xx = x and yy = y)){
+			while(xx = x and yy = y){
 				var cs = obj_tile_manager.cell_size;
 				
 				// Random quad directio move from current position divided by cell size
-				xx = (x + -irandom_range(0, 1) * irandom_range(0, cs*idle_range)) div cs;
-				yy = (y + -irandom_range(0, 1) * irandom_range(0, cs*idle_range)) div cs;
-			
-				//New random coordinates clamped to positive values
-				xx = xx*cs * sign(xx);
-				yy = yy*cs * sign(yy);
+				xx = (x + (irandom_range(0, 1) * 2 - 1) * irandom_range(0, cs*idle_range)) div cs;
+				yy = (y + (irandom_range(0, 1) * 2 - 1) * irandom_range(0, cs*idle_range)) div cs;
 				
+				//New random coordinates clamped to positive values
+				xx = (xx*cs) * sign(xx);
+				yy = (yy*cs) * sign(yy);
+				
+				if(collision_line(x, y, xx, yy, obj_collision, false, true)){
+					xx = x;
+					yy = y;
+					exit;
+				}	
 			}
-			
-			show_debug_message(xx);
-			show_debug_message(yy);
-		
 		}
 		++counter;
+		
 	} else if(point_distance(x, y, xx, yy) > spd){
 		var dir = point_direction(x, y, xx, yy);
 		x_move = lengthdir_x(spd, dir);

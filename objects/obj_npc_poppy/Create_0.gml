@@ -8,4 +8,4 @@ text[? "GREET"] = ["Hi", "Go away!", ["EXIT", "GREET"], [polka, id]]
 text[? "EXIT"] = ["Hm, okay.", [], [polka]]	
 
 name = "Villy Poppy";
-portrait = spr_portrait;
+portrait = spr_portrait_poppy;

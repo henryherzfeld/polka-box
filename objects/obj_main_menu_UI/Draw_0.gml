@@ -7,5 +7,10 @@ draw_text(240, 140, "Click on an Item to Equip It");
 draw_text(250, 190, "Press Space to Use an Item");
 draw_text(270, 270, "Press Any Key to Begin");
 */
-draw_sprite(box, 0, 79, 104)
-draw_text_ext(90, 115, text[page], string_height(text[page]), box_width-30);
+
+if(intro){
+	draw_sprite(box, 0, 79, 104)
+	draw_text_ext(90, 115, text[page], string_height(text[page]), box_width-30);
+} else {
+	draw_text(280, 320, "Press any key to continue..");
+}

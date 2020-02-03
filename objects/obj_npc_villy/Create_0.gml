@@ -4,12 +4,12 @@ event_inherited();
 
 idle_movement = true;
 moving = false;
-counter = 1;
 
 spd = .5;
 idle_range = 5;
 idle_sleep_max = 500;
 idle_sleep_min = 200;
+counter = irandom_range(idle_sleep_min, idle_sleep_max);
 
 facing = 180;
 

@@ -16,7 +16,7 @@ if(flags.find_weeraway){
 	text[? "A3_1"] = ["Where are your crops?", "In the fields beside the house.", ["A3", "A3_1", "A3_2", "GREET"], [polka, id]] 
 	text[? "A3_2"] = ["What are you giving your crops?", "Water and fresh soil. And a bucket of love and prayers. But those don't seem to be working...", ["A3", "A3_1", "A3_2", "GREET"], [polka, id]] 
 	
-	text[? "EXIT"] = ["Ok", [], [polka]]
+	text[? "EXIT"] = ["Ok", [], []]
 	
 	scripts = [
 	[scr_change_variable, flags.id, "find_poppy", true],                                
@@ -29,6 +29,6 @@ if(flags.find_weeraway){
 }
 
 name = "Villy Weeraway";
-portrait = spr_portrait;
+portrait = spr_portrait_weerarway;
 
 crying = true;

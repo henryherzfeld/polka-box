@@ -5,16 +5,6 @@
     "name": "obj_npc_villy",
     "eventList": [
         {
-            "id": "1636687c-da2e-48bb-883f-1b6528d3b002",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 2,
-            "m_owner": "7fae4a7f-b7da-4fdd-bae7-1d6957b6221f"
-        },
-        {
             "id": "a8a78efd-9f1a-40bd-9485-6021aa434de9",
             "modelName": "GMEvent",
             "mvc": "1.0",

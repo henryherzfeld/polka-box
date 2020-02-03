@@ -3,6 +3,7 @@
 
 count = 0;
 page = 0;
+intro = false;
 
 spawn_room = rm_polka_interior;
 box = spr_textbox2;

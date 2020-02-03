@@ -3,6 +3,7 @@
 image_speed = 0;			//No animation for Chest
 image_index = 0;			//Always on 1st image
 
+
 //Item Array
 //No of content = size of array - 1
 //Item[0] = enum_item_type.shovel

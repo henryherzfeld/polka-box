@@ -24,7 +24,7 @@ if(x_move != 0){
 }
 
 //Assign walking sprite according to direction facing
-if(!in_dialogue){
+if(!in_dialogue and !move_override){
 	if(x_move != 0 or y_move != 0){
 		switch(facing){
 			case 0: sprite_index = spr_polka_walk_back; break;
@@ -92,10 +92,10 @@ if(input_interact and !in_dialogue){
 }
 
 //Check for collision with chest
-var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_chest, false, true);
+chest = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_chest, false, true);
 
-if(inst != noone){
-	with (inst) {
+if(chest != noone){
+	with (chest) {
 	    // Check if we can open the chest
 		if (canOpen and polka.input_interact) {
 			if (show_chest == false) {
@@ -166,7 +166,7 @@ if(input_space){
 
 	}
 }
-
+/*
 //check for nearby interactable for overhead prompt
 if (!in_dialogue){
 	var interactable_1 = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_NPC, false, false)
@@ -176,5 +176,5 @@ if (!in_dialogue){
 	}
 else{
 	interactable = false;
-}
+	}
 }

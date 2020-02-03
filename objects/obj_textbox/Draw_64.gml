@@ -86,5 +86,5 @@ if(speaker != noone){
 	draw_text(namebox_x, namebox_y, speaker.name); 
 	
 	//Draw Portrait Sprite
-	draw_sprite(speaker.portrait, 0, port_x, port_y);
+	draw_sprite_stretched(speaker.portrait, 0, port_x, port_y, port_width, port_height);
 }
