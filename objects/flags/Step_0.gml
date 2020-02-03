@@ -10,11 +10,11 @@ if(find_poppy){
 }
 
 if(examine_crops){
-	objective = "Examine the crops"
+	objective = "0/1 clues found"
 }
 
 if(report_crops_to_poppy){
-	objective = "Report to Villy Poppy your findings"	
+	objective = "1/1 clues found"	
 }
 
 

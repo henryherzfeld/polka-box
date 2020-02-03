@@ -4,7 +4,7 @@
 gui_height = display_get_gui_height();
 gui_width = display_get_gui_width();
 
-spd = 2;
+spd = 4;
 spacing = 200;
 anim_max = spacing*2;
 anim_count = anim_max;

@@ -1543,6 +1543,14 @@
             }
         },
         {
+            "Key": "7311a8b5-93db-47d3-9bf0-3dc869fa0d4f",
+            "Value": {
+                "id": "dbb562d7-d982-4498-b70f-8385570715d1",
+                "resourcePath": "sprites\\spr_mouse_pressed\\spr_mouse_pressed.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "73443881-3e6b-416c-b884-890e41dafd35",
             "Value": {
                 "id": "1330cc9a-52c2-4531-979a-95b4ff2ea969",
