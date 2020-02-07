@@ -12,5 +12,5 @@ if(intro){
 	draw_sprite(box, 0, 79, 104)
 	draw_text_ext(90, 115, text[page], string_height(text[page]), box_width-30);
 } else {
-	draw_text(280, 320, "Press any key to continue..");
+	draw_text(280, 320, "Press Enter to continue..");
 }

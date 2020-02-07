@@ -9,6 +9,7 @@ if(keyboard_check_pressed(vk_anykey) and intro){
 	
 	++page;
 } else if (keyboard_check_pressed(vk_anykey)){
-	intro = true;
+
+	instance_create_layer(0, 0, "Instances", obj_nameprompt);
 	
 }

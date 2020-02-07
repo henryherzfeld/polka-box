@@ -5,6 +5,8 @@ font = font_comic
 debug = false;
 randomize();
 
+name = "Default"
+
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 base_width = 1500;
