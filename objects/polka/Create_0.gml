@@ -12,6 +12,6 @@ moving = false;
 radius = 30;
 npc = noone;
 
-name = "Polka";
-portrait = spr_portrait;
+name = game.name;
+portrait = spr_portrait_polka;
 facing = -1;

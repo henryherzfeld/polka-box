@@ -14,9 +14,10 @@ var itemSprite  = argument[1];
 var itemName	= argument[2];
 var itemAmount	= argument[3];
 var itemScript	= argument[4];
+var itemDescription = argument[5];
 
 itemDef[itemType,enum_item_state.sprite] = itemSprite;			// = itemDef[ 0, 0];	///Sprite Data in array
 itemDef[itemType,enum_item_state.name] = itemName;				// = itemDef[ 0, 1];	///Name Data in array
 itemDef[itemType,enum_item_state.amount] = itemAmount;			// = itemDef[ 0, 2];	///Amount Data in array
 itemDef[itemType,enum_item_state.callback_script] = itemScript;	// = itemDef[ 0, 3];	///Script Data in array
-
+itemDef[itemType,enum_item_state.description] = itemDescription;

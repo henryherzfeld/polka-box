@@ -21,10 +21,12 @@ for (var i = 0; i < 3; ++i) {
 		//Get the Data of item from itemDef Array
 		var itemSprite	= itemDef[itemType,enum_item_state.sprite];		//Get the Sprite of the item
 		var itemName	= itemDef[itemType,enum_item_state.name];		//Get the Name of the item
+		var itemDescription = itemDef[itemType,enum_item_state.description]
 		}
 	//Save the data in itemData Array, so we can use it in the draw event	
 	itemData[i,0] = itemName;				
 	itemData[i,1] = itemSprite;
+	itemData[i,2] = itemDescription;
 }
 ///Chest Stat 
 show_chest = false;			//Use to check if chest is open/close (displaying on screen or not)

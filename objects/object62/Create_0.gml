@@ -21,7 +21,7 @@ text[? "A2_2"] = ["There's nothing else to eat?", "The food prices have shot up 
 text[? "EXIT"] = ["Ok", [], []]
 
 name = "Villy";
-portrait = spr_portrait;
+portrait = spr_portrait_villy_green;
 
 scripts = [
 	[scr_change_variable, flags.id, "find_weeraway", true],

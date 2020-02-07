@@ -19,6 +19,7 @@ enum enum_item_state {
 	name,
 	amount,
 	callback_script,
+	description,
 	//ADD new item property
 	//new_property
 	length,

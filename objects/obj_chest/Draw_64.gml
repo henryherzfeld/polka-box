@@ -49,6 +49,7 @@ repeat(noOfItem){
 			var my = device_mouse_y_to_gui(0);						//Mouse's Y pos relative to the display (not the game world)
 			///Check If mouse is on the slot, if we are on the slot make white outline to red
 			if (point_in_rectangle(mx,my,slot_x1,slot_y1,slot_x2,slot_y2,)){
+				draw_text(mx, my, itemData[slot_no,2])
 				col = c_red;										//Change Color to Red
 				//If We are on the slot and clicked, than add the item to inventory
 				if (mouse_check_button_pressed(mb_left)) {

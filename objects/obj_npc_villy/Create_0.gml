@@ -21,3 +21,6 @@ y_dest = -1;
 
 xx = x;
 yy = y;
+
+name = "Villy";
+portrait = spr_portrait;
