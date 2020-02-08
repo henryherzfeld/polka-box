@@ -4,11 +4,11 @@ event_inherited();
 
 text = ds_map_create();    
 
-text[? "GREET"] = ["What's going on?", "The people of this town are starving!", ["A1", "A1_1", "A1_2", "GREET"], [polka, id]]
+text[? "GREET"] = ["What's going on?", "We're doomed, " + game.name + "! The people of this town are starving!", ["A1", "A1_1", "A1_2", "GREET"], [polka, id]]
 
 text[? "A1"] = ["Why are you starving?", "The farmers aren't giving enough food.", ["A2", "A2_1", "A2_2", "GREET"], [polka, id]]
 
-text[? "A1_1"] = ["Who are you?", "I'm a baker at the bazaar. I need my food if I have to work. I can't live off of just bread and cupcakes!", ["A1", "A1_1", "A1_2", "GREET"], [polka, id]]
+text[? "A1_1"] = ["Why aren't you at work?", "I need my food if I have to work. I'm a baker at the bazaar. I can't live off of just bread and cupcakes!", ["A1", "A1_1", "A1_2", "GREET"], [polka, id]]
 
 text[? "A1_2"] = ["How long have you been starving for?", "For the past few days!", ["A1", "A1_1", "A1_2", "GREET"], [polka, id]]
 
