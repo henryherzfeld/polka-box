@@ -4,8 +4,8 @@ event_inherited();
 
 text = ds_map_create();    
 
-text[? "GREET"] = ["Hi", "Go away!", ["EXIT", "GREET"], [polka, id]]
-text[? "EXIT"] = ["Hm, okay.", [], [polka]]	
+text[? "GREET"] = ["Hi", "Hey " + game.name + ", I'm a little busy right now.", ["EXIT", "GREET"], [polka, id]]
+text[? "EXIT"] = ["Oh, okay.", [], [polka]]	
 
 name = "Villy Poppy";
 portrait = spr_portrait_poppy;
