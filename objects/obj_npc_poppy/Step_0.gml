@@ -37,13 +37,20 @@ if(flags.find_poppy and !flags.examine_crops){
 		[scr_change_variable, flags.id, "find_poppy", false]
 	]
 } else if (flags.report_crops_to_poppy){
-	text[? "GREET"] = ["What did you find?", ["A1", "A1_1", "GREET"], [id]]
 
-	text[? "A1"] = ["The farmer's crops are brown, dry, and wilting.", "Really? How interesting!", ["EXIT", "GREET"], [polka, id]]
+//The player TELLS Poppy about how the farmer's plants are not getting enough nutrients
 
-	text[? "A1_1"] = ["The farmer's crops are green, healthy, and strong.", "Are you sure? You might want to check again.", ["A1", "A1_1", "GREET"], [polka, id]]
+text[? "GREET"] = ["What did you find?", ["A1", "A1_1", "GREET"], [id]]
 
-	text[? "EXIT"] = ["Ok", []]
+text[? "A1"] = ["The farmer's crops are not getting enough nutrients.", "Really? Well, that's interesting! How did you find out?", ["A2", "A2_1", "GREET"], [polka, id]]
+
+text[? "A1_1"] = ["The farmer's crops are getting enough nutrients.", "Are you sure? You might want to check again.", ["A1", "A1_1", "GREET"], [polka, id]]
+
+text[? "A2"] = ["Their leaves look dry, brown, and wilted.", "Good work.", ["EXIT", "GREET", [polka, id]]
+
+text[? "A2_1"] = ["The farmer's crops are green, healthy, and strong.", "Are you sure? You might want to check again.", ["A2", "A2_1", "GREET"], [polka, id]]
+
+text[? "EXIT"] = ["Thanks", []]
 	
 	scripts = [
 	[scr_change_variable, flags.id, "prompt_measure_soil_moisture", true],
