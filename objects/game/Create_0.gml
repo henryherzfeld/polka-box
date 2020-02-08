@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+send_event("A", "B", "C");
 font = font_comic
 debug = false;
 randomize();

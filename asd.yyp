@@ -1943,6 +1943,14 @@
             }
         },
         {
+            "Key": "8881a463-2564-4cde-ac03-4eb7d2c8b360",
+            "Value": {
+                "id": "5dfada9a-acbd-4bf8-bc7c-b157e78cc461",
+                "resourcePath": "rooms\\room15\\room15.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "89bee33f-55b9-4875-9834-cb4ee9fe3bd6",
             "Value": {
                 "id": "be30f788-d6b4-4fd1-bd8e-df4678f2ecf0",
@@ -2847,14 +2855,6 @@
             }
         },
         {
-            "Key": "db39c4b2-3c43-4102-982a-4e4898748fa7",
-            "Value": {
-                "id": "fcb201e8-0c84-41e4-97df-f481217ec087",
-                "resourcePath": "rooms\\room15\\room15.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "db6d58f6-52f3-40a8-a817-035c85f840d8",
             "Value": {
                 "id": "b1979adf-0088-4635-9248-2b800eb837b4",
@@ -3116,6 +3116,14 @@
                 "id": "087af5b0-9768-4eb5-8ef7-a557e111db42",
                 "resourcePath": "sprites\/spr_villy_walk_front\/spr_villy_walk_front.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ef21af83-eec5-422f-9b2c-884de67612d6",
+            "Value": {
+                "id": "14574d75-0a23-4adb-8cc3-2a81aa704325",
+                "resourcePath": "extensions\\GAnalytics\\GAnalytics.yy",
+                "resourceType": "GMExtension"
             }
         },
         {

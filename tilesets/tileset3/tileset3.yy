@@ -11,7 +11,7 @@
             "closed_edge": false,
             "name": "grass_high",
             "tiles": [
-                33,
+                48,
                 30,
                 31,
                 28,
@@ -28,39 +28,29 @@
                 45,
                 0
             ]
-        },
-        {
-            "id": "c14685c5-5782-47c0-9dfb-21215aeaa246",
-            "modelName": "GMAutoTileSet",
-            "mvc": "1.0",
-            "closed_edge": false,
-            "name": "water",
-            "tiles": [
-                89,
-                80,
-                82,
-                97,
-                96,
-                90,
-                103,
-                86,
-                98,
-                102,
-                88,
-                87,
-                81,
-                94,
-                95,
-                115
-            ]
         }
     ],
     "macroPageTiles": {
         "SerialiseData": null,
-        "SerialiseHeight": 0,
-        "SerialiseWidth": 0,
+        "SerialiseHeight": 4,
+        "SerialiseWidth": 4,
         "TileSerialiseData": [
-            
+            110,
+            110,
+            110,
+            110,
+            110,
+            110,
+            111,
+            110,
+            86,
+            87,
+            119,
+            110,
+            94,
+            95,
+            110,
+            110
         ]
     },
     "out_columns": 11,
