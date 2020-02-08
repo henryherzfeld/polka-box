@@ -8,7 +8,7 @@ if(flags.find_poppy and !flags.examine_crops){
 
 	text[? "A1"] = ["What do crops need to live?", "Plants need air, sunlight, water, and soil.", ["A2", "A2_1", "A2_2", "A2_3", "A2_4", "GREET"], [polka, id]]
 
-	text[? "A1_1"] = ["Who are you?", "Hi, there! Good to see you. I'm Villy Poppy! I study plants, how they work, and how we can use them to improve our lives.", ["A1", "A1_1", "A1_2", "GREET"], [polka, id]]
+	text[? "A1_1"] = ["Can you help me?", "Hi there, " + game.name + "! Good to see you. Well, I study plants, how they work, and how we can use them to improve our lives. So it really depends on what you need help with!", ["A1", "A1_1", "A1_2", "GREET"], [polka, id]]
 
 	text[? "A1_2"] = ["What are you working on?", "I'm looking at chamomile! It's a really cool plant that looks like a daisy. I'm checking out how chamomile makes people more relaxed and calm. It can help parents that are stressed out by this whole farming problem.", ["A1", "A1_1", "A1_2", "GREET"], [polka, id]]
 
@@ -24,7 +24,7 @@ if(flags.find_poppy and !flags.examine_crops){
 	text[? "A2_4"] = ["Why do plants need soil?", "Soil has important nutrients. If there isn't enough soil, then the plant isn't getting enough nutrients.", ["A2", "A2_1", "A2_2", "A2_3", "A2_4", "GREET"], [polka, id]]
 
 
-	text[? "A3"] = ["What nutrients do plants need?", "Ah, of course! Great question. Plants need nitrogen (N), phosphorous (P), and potassium (K) to grow. They're known as NPK.", ["EXIT", "GREET"], [polka, id]]
+	text[? "A3"] = ["What nutrients do plants need?", "Ah, of course! Great question, " + game.name + ". Plants need nitrogen (N), phosphorous (P), and potassium (K) to grow. They're known as NPK.", ["EXIT", "GREET"], [polka, id]]
 
 	text[? "A3_1"] = ["Why are plants green?", "Chlorophyll is a pigment that gives plants their green color. Chlorophyll absorbs the sunlight needed for plants to make food. It absorbs red and blue light. It reflects green light. That's why we see plants as green.", ["A3", "A3_1", "A3_2", "GREET"], [polka, id]]
 
