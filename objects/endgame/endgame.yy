@@ -1,48 +1,28 @@
 {
-    "id": "efc12572-ca92-4d71-bda5-f899418e2dec",
+    "id": "a5c20121-3edd-4694-be85-95879c6b1781",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "polka",
+    "name": "endgame",
     "eventList": [
         {
-            "id": "4b571609-5da6-4d92-bd2c-b87586e83404",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "efc12572-ca92-4d71-bda5-f899418e2dec"
-        },
-        {
-            "id": "89a8a489-fd10-455b-b861-6e425bf64250",
+            "id": "b7afa1f7-1c1e-485a-af0a-6970b65b0f05",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "efc12572-ca92-4d71-bda5-f899418e2dec"
+            "m_owner": "a5c20121-3edd-4694-be85-95879c6b1781"
         },
         {
-            "id": "10bc5639-adf0-47b1-badb-ac846e48b864",
+            "id": "693519d6-3e27-41ba-bdb1-c3ee99265f92",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 8,
-            "m_owner": "efc12572-ca92-4d71-bda5-f899418e2dec"
-        },
-        {
-            "id": "a2fbb832-d5cb-4d61-8eb4-37961390cdd7",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 2,
-            "m_owner": "efc12572-ca92-4d71-bda5-f899418e2dec"
+            "m_owner": "a5c20121-3edd-4694-be85-95879c6b1781"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -63,6 +43,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "c80168da-3c45-4880-a56d-08291dacc326",
+    "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true
 }

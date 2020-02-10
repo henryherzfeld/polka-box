@@ -1,6 +1,6 @@
  /// @description Insert description here
 // You can write your code in this editor
-if(room != main_menu){
+if(room != main_menu and room != fin){
 	polka.x = spawn_x;
 	polka.y = spawn_y;
 }

@@ -2023,6 +2023,14 @@
             }
         },
         {
+            "Key": "8c445a7e-e781-4e26-b1ca-2ce3a424821a",
+            "Value": {
+                "id": "c0005848-8331-4b93-a739-cb97efab68ba",
+                "resourcePath": "rooms\\fin\\fin.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "8ddad653-bb2b-4363-a677-4dde06687041",
             "Value": {
                 "id": "740adb95-7c80-4085-81cf-62ea66e4aafd",
@@ -2324,6 +2332,14 @@
                 "id": "ff15422d-253b-4b30-ab1a-34dd944de324",
                 "resourcePath": "sprites\/sprite33\/sprite33.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a5c20121-3edd-4694-be85-95879c6b1781",
+            "Value": {
+                "id": "40aad38d-a41a-4fcb-b325-fa091f01ca66",
+                "resourcePath": "objects\\endgame\\endgame.yy",
+                "resourceType": "GMObject"
             }
         },
         {
