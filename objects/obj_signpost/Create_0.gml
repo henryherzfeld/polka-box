@@ -11,7 +11,7 @@ anim_count = anim_max;
 txt_col = c_black;
 
 draw = false;
-coll_range = 30;
+coll_range = 15;
 
 text = "default text goes here lorem ipsum dolor blah blah blah";
 text_padding = 100;
