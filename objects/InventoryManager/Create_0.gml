@@ -24,5 +24,7 @@ itemAddData(enum_item_type.shovel,spr_inventory_item_shovel,"shovel",0,scr_use_i
 itemAddData(enum_item_type.tape,spr_inventory_item_tape_measure,"tape",0,scr_use_item_callback_tape, "Measures length");
 itemAddData(enum_item_type.trowel,spr_inventory_item_trowel,"trowel",0,scr_use_item_callback_demo, "Trowel");
 itemAddData(enum_item_type.tensiometer,spr_inventory_item_tensiometer,"tensiometer",0,scr_use_item_callback_tensiometer, "Collects soil moisture");
+itemAddData(enum_item_type.empty_tube,spr_empty_test_tube,"empty test tube",0,scr_use_item_callback_empty_test_tube, "Used to hold small amounts of a material");
+itemAddData(enum_item_type.water_tube,spr_water_test_tube,"water filled test tube",0,scr_use_item_callback_water_test_tube, "A test tube filled with water");
 
 global.show_inventory = true;

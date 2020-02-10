@@ -82,7 +82,7 @@
             "Key": "03d95542-dc85-4f2f-b774-e91418a2c654",
             "Value": {
                 "id": "d767249f-75a3-4cdf-9d5f-78c0f772bb73",
-                "resourcePath": "sprites\/sprite126\/sprite126.yy",
+                "resourcePath": "sprites\\spr_empty_test_tube\\spr_empty_test_tube.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -215,6 +215,14 @@
             }
         },
         {
+            "Key": "1074286e-7296-4bf5-b263-a7112e12d5d9",
+            "Value": {
+                "id": "661f6db0-21d2-4354-b78f-e1a3f6a5f1a7",
+                "resourcePath": "scripts\\scr_use_item_callback_empty_test_tube\\scr_use_item_callback_empty_test_tube.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1084c445-41e5-4f19-87bc-37d42c115268",
             "Value": {
                 "id": "0f1da10e-c245-4144-86ad-23898c082806",
@@ -306,7 +314,7 @@
             "Key": "1927dcf2-4880-4a9e-b722-992a6a76fd1d",
             "Value": {
                 "id": "4205d962-8d22-4c74-bb28-c6a137234892",
-                "resourcePath": "sprites\/sprite124\/sprite124.yy",
+                "resourcePath": "sprites\\spr_water_test_tube\\spr_water_test_tube.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -484,6 +492,14 @@
                 "id": "3455b914-1ff4-4a8b-bd40-d81795eeefbc",
                 "resourcePath": "scripts\/itemUseInventory\/itemUseInventory.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "20df3013-5762-444a-9dd2-82d7b1ebcd6e",
+            "Value": {
+                "id": "82988ac2-4595-4fb8-8380-b434033c890c",
+                "resourcePath": "objects\\obj_water_tube_tile\\obj_water_tube_tile.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1079,6 +1095,14 @@
             }
         },
         {
+            "Key": "469a2259-84f6-4b6e-8bbc-d8e19c5e9e4a",
+            "Value": {
+                "id": "59a5d74c-e4f7-4ae5-a27e-4ed123963d2b",
+                "resourcePath": "objects\\obj_microscope_tile\\obj_microscope_tile.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "46e286b4-7572-4a01-88fb-7c3fda217799",
             "Value": {
                 "id": "36941887-07bf-4bfd-b547-0fcfec6fe336",
@@ -1193,8 +1217,8 @@
         {
             "Key": "50486908-1339-42d4-93d3-dccc02f95b11",
             "Value": {
-                "id": "25e12095-32b5-43a5-a238-3da77559b4fe",
-                "resourcePath": "objects\/InventoryManager\/InventoryManager.yy",
+                "id": "30b55661-7ce6-4eac-bc97-d613ac23aa5c",
+                "resourcePath": "objects\\InventoryManager\\InventoryManager.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1212,6 +1236,14 @@
                 "id": "940e8830-b60e-439f-a201-0ee03542f5a0",
                 "resourcePath": "sprites\/sprite168\/sprite168.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5384cc25-e4c1-4fc5-838b-8119cdb96c6b",
+            "Value": {
+                "id": "ee7c5885-520d-41a7-9f69-ac8ebaf7bfa2",
+                "resourcePath": "views\\5384cc25-e4c1-4fc5-838b-8119cdb96c6b.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -2519,6 +2551,14 @@
             }
         },
         {
+            "Key": "bd063f9e-ca08-426e-aa6e-066f1bf70551",
+            "Value": {
+                "id": "11dcb850-5a17-4d6b-8f43-bb90126f6113",
+                "resourcePath": "scripts\\scr_use_item_callback_water_test_tube\\scr_use_item_callback_water_test_tube.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "bf3da588-35ed-4cca-969a-9abb14ee5da3",
             "Value": {
                 "id": "0728301b-5f78-493a-980a-9c215e07b013",
@@ -3129,8 +3169,8 @@
         {
             "Key": "efc12572-ca92-4d71-bda5-f899418e2dec",
             "Value": {
-                "id": "994e7f0b-790f-46f3-b9f5-62186a50e852",
-                "resourcePath": "objects\/polka\/polka.yy",
+                "id": "dfcb3d01-c9f4-4be3-8f18-9e070ef7dd6f",
+                "resourcePath": "objects\\polka\\polka.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3307,7 +3347,9 @@
         "7c7731bd-69c3-4fb9-931c-94ee2c2c337f",
         "35e47bd1-5914-451b-afd3-9bebdb5bcb65",
         "0e0a68c5-5fbe-4ac2-800a-4f2144f69c77",
-        "02cdf6fe-72ac-4a41-bccc-f08c9ca1c58d"
+        "02cdf6fe-72ac-4a41-bccc-f08c9ca1c58d",
+        "bd063f9e-ca08-426e-aa6e-066f1bf70551",
+        "1074286e-7296-4bf5-b263-a7112e12d5d9"
     ],
     "tutorial": ""
 }

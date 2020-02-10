@@ -10,7 +10,7 @@ image_index = 0;			//Always on 1st image
 //Item[1] = enum_item_type.pitchfork
 //Item[2] = enum_item_type.tape 
 
-item = [enum_item_type.shovel,enum_item_type.pitchfork,enum_item_type.tensiometer];
+item = [enum_item_type.shovel,enum_item_type.pitchfork,enum_item_type.empty_tube];
 
 ///Get the data of the items from the inventory manager, so we can use respective sprite,name etc
 for (var i = 0; i < 3; ++i) {

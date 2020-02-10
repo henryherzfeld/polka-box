@@ -130,27 +130,21 @@ if(input_space){
 	
 		switch (itemEquiped) {
 		    case enum_item_type.shovel:
-			
-			//Finding an snapped-to tile coordinate
+				//Finding a snapped-to tile coordinate
 				var cs = obj_tile_manager.cell_size;
 				var xx = obj_tile_manager.x_proj div cs;
 				var yy = obj_tile_manager.y_proj div cs;
-
 				xx = xx*cs;
 				yy = yy*cs;
-			
-			
-				//Use Shovel
+				
 				instance_create_layer(xx,yy,"Instances",obj_soil_hole);		//Createing an instance with hole sprite assigneed
 		        break;
 			
 		    case enum_item_type.pitchfork:
-				//Use Shovel
 				instance_create_layer(x,y,"Instances",obj_soil_grass);		//Createing an instance with hole sprite assigneed
 		        break;
 				
 			case enum_item_type.tensiometer:
-				//Use tape
 				var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_tensiometer_tile, false, true);
 				if(inst != noone){
 					inst.draw_temp = true;
@@ -158,12 +152,23 @@ if(input_space){
 					inst.alarm[0] = room_speed * 2;
 				}
 				break;
-
+				
+			case enum_item_type.empty_tube:
+				if(collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_water_tube_tile, false, true)){
+					itemEquiped = enum_item_type.water_tube;
+					itemRemoveInventory(enum_item_type.empty_tube)
+					itemAddInventory(enum_item_type.water_tube)
+				}
+				
+			case enum_item_type.water_tube:
+				if(collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_microscope_tile, false, true)){
+					itemEquiped = noone;
+					itemRemoveInventory(enum_item_type.water_tube)
+				}
 		    default:
 		        // code here
 		        break;
 		}
-
 	}
 }
 /*

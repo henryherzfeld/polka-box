@@ -46,7 +46,7 @@ text[? "A1"] = ["The farmer's crops are not getting enough nutrients.", "Really?
 
 text[? "A1_1"] = ["The farmer's crops are getting enough nutrients.", "Are you sure? You might want to check again.", ["A1", "A1_1", "GREET"], [polka, id]]
 
-text[? "A2"] = ["Their leaves look dry, brown, and wilted.", "Good work.", ["EXIT", "GREET", [polka, id]]
+text[? "A2"] = ["Their leaves look dry, brown, and wilted.", "Good work.", ["EXIT", "GREET"], [polka, id]]
 
 text[? "A2_1"] = ["The farmer's crops are green, healthy, and strong.", "Are you sure? You might want to check again.", ["A2", "A2_1", "GREET"], [polka, id]]
 
