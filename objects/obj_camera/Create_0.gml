@@ -3,5 +3,5 @@
 
 following = polka;
 
-h_border = 0;
-v_border = 0;
+h_border = 32;
+v_border = 32;
