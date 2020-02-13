@@ -33,7 +33,7 @@ if(report_crops_to_poppy){
 }
 
 
-if(measure_soil_moisture){
+if(measure_soil_moisture and room != fin){
 	if(objective != "Measure the soil's moisture"){
 		objective = "Measure the soil's moisture"
 		event = true;

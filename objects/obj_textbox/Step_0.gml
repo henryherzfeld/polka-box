@@ -1,20 +1,11 @@
 /// @description Insert description here
-n_options = array_length_1d(options);
 
-if(keyboard_check_pressed(vk_up)){
-	--selected;	
-} else if (keyboard_check_pressed(vk_down)){
-	++selected;
-}
-
-// clamping selecting between 0 and n_options - 1
-selected = clamp(selected, 0, n_options-1)
-
-
-// Test for interact input to move current page forward
+// Test for interact input to move curr_seq page forward
 if (keyboard_check_pressed(interact_key)){
 	if(page < n - 3){
-		++page;
+		page++;
+		page_change = true;
+
 	} else if (draw_options){
 		draw_options = false;
 		
@@ -23,8 +14,9 @@ if (keyboard_check_pressed(interact_key)){
 		} else {
 			page = 1;
 		}
+	
+		curr_seq = text[? options[selected]];
 		
-		current = text[? options[selected]];
 		if(options[selected] = "EXIT"){exiting = true;}
 	}
 	else{
@@ -32,7 +24,25 @@ if (keyboard_check_pressed(interact_key)){
 	}
 }
 
+if(page_change){
+	page_change = false;
+	speakers = curr_seq[n-1];
+	speaker = speakers[page];
+	options = curr_seq[n-2];        // get last item of curr_seq dialogue array for options array
+	n_options = array_length_1d(options);
+	curr_string = curr_seq[page];
+	
+}
 
+// moving up and down through options using arrow keys
+if(keyboard_check_pressed(vk_up)){
+	--selected;	
+} else if (keyboard_check_pressed(vk_down)){
+	++selected;
+}
+
+// clamping selecting between 0 and n_options - 1
+selected = clamp(selected, 0, n_options-1)
 
 if(exiting){
 	if (is_array(scripts)){

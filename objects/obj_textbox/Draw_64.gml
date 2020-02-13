@@ -7,29 +7,31 @@ draw_set_halign(fa_left);
 
 //Test to produce initial greeting text for dialogue
 if (first){
-	current = text[? "GREET"];
 	first = false;
+	
+	curr_seq = text[? "GREET"];
+	n = array_length_1d(curr_seq);
+	options = curr_seq[n-2];        // get last item of curr_seq dialogue array for options array
+	speakers = curr_seq[n-1];
+	speaker = speakers[page];
+	curr_string = curr_seq[page];
 }
 
-n = array_length_1d(current);
-options = current[n-2];        // get last item of current dialogue array for options array
-speakers = current[n-1];
-
-//deciding to draw an option selection or the current speaker's text
+//deciding to draw an option selection or the curr_seq speaker's text
 if (!draw_options){
-
-	speaker = speakers[page];
-	draw_text_ext_color(textbox_padded_x, textbox_padded_y, current[page], string_height(current[page]), box_width-10, text_col,text_col,text_col,text_col,true);
+	
+	//draw_text_ext_color(textbox_padded_x, textbox_padded_y, curr_string, string_height(curr_seq[page]), box_width-10, text_col,text_col,text_col,text_col,true);
+	draw_text_color(textbox_padded_x, textbox_padded_y, curr_string, text_col, text_col, text_col, text_col, true);
 }
 else {
 	_y = 0;
 	speaker = noone;
 	
-	for (var i = 0; i < array_length_1d(options) - 1; i++){
-	
-		preview = text[? options[i]];
-		selection_x = string_width(preview[0]);
-		selection_y = string_height("M")
+	for (var i = 0; i < n_options - 1; i++){
+		show_debug_message(options)
+		var preview = text[? options[i]];
+		var selection_x = string_width(preview[0]);
+		var selection_y = string_height("M")
 		
 		var col1 = c_white;
 		var col2 = c_white;
@@ -48,7 +50,7 @@ else {
 			/*if (mouse_check_button_pressed(mb_left)) {
 				draw_options = false;
 				page = 1;
-				current = text[? options[i]];
+				curr_seq = text[? options[i]];
 				if(options[i] = "EXIT"){exiting = true;}
 			}*/
 		//}

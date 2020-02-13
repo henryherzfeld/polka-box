@@ -50,3 +50,4 @@ with (polka) {
 	interactable = false;
 }
 
+page_change = true;
