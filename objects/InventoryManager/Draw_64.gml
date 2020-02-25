@@ -3,16 +3,15 @@
 if(global.show_inventory){
 	//Draw the Rectangle (Inventory Panel)
 
-	var width = 256;									//Width of the inventory
-	var height = 64;									//Height of the inventory
+									//Height of the inventory
 	var x1 = width;										//x1 pos of the rectangele ( 0 + width) Top-Left edge
-	var y1 = display_get_gui_height() - height - anim_count;			//Y1 postion (top-left edge) relative to bottom of the screen
-	var x2 = display_get_gui_width() - width;			//Y1 postion (top-left edge) relative to bottom of the screen
-	var y2 = display_get_gui_height() - anim_count;					//Y1 postion (top-left edge) relative to bottom of the screen
+	var y1 = game.gui_height - height - anim_count;			//Y1 postion (top-left edge) relative to bottom of the screen
+	var x2 = game.gui_width - width;			//Y1 postion (top-left edge) relative to bottom of the screen
+	var y2 = game.gui_height - anim_count;					//Y1 postion (top-left edge) relative to bottom of the screen
 
-	draw_rectangle(x1,y1,x2,y2,false);					//Draw the Rectangle at the bottom of the display
+	draw_rectangle_color(x1,y1,x2,y2,bg_color,bg_color,bg_color,bg_color,false);					//Draw the Rectangle at the bottom of the display
 	if(open){											//If inventory is open we need to draw the lower portion
-		draw_rectangle(x1, y2, x2, y2 + anim_count, false)
+		draw_rectangle_color(x1-anim_count, y2-anim_count, x2+anim_count, y2+anim_count, bg_color,bg_color,bg_color,bg_color,false);
 	}
 	
 

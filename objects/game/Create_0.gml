@@ -24,9 +24,7 @@ do_transition = false;
 
 draw_set_font(font);
 
-villies = ds_list_create();
-x_coords = ds_list_create();
-y_coords = ds_list_create();
+
 
 // Creating direction enumerator for player transitions
 enum dir {

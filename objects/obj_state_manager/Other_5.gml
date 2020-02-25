@@ -1,6 +1,6 @@
 /// @description Insert description here
-// You can write your code in this editor
-if(room = dont_touch_me_211){
+
+if(room = erosion_village){
 	if(!ds_list_empty(villies)){
 		ds_list_destroy(x_coords);
 		ds_list_destroy(y_coords);

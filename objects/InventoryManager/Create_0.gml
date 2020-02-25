@@ -1,11 +1,19 @@
 /// @description Init
 
+//inventory animate parameters
 anim_count = 0;
 animate = false;
-inv_move = 2;
-distance = 100;
+inv_move = -20;
+
 open = false;
 
+//inventory draw parameters
+width = 256;		
+height = 64;
+distance = 600;
+bg_color = c_olive;
+
+notebook_id = instance_create_layer(0,0,"Meta",obj_notebook);;
 
 //Create the inventory array, Basicly slots and giving then a default value i.e enum_item_type.none == 0
 inventorySlot = array_create(MAX_INV_ITEMS, enum_item_type.none);

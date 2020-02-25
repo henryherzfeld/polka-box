@@ -13,3 +13,6 @@ if (browser_width != width || browser_height != height){
     height = min(base_height, browser_height);
     scr_scale_canvas(base_width, base_height, width, height, true);
 }
+
+gui_width = display_get_gui_width();
+gui_height = display_get_gui_height();

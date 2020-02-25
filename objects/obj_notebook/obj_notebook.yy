@@ -1,54 +1,34 @@
 {
-    "id": "50486908-1339-42d4-93d3-dccc02f95b11",
+    "id": "a158bfc1-2205-4109-97e2-0dad81274585",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "InventoryManager",
+    "name": "obj_notebook",
     "eventList": [
         {
-            "id": "a01e9d7d-acce-44c6-9c3c-999c6b40314d",
+            "id": "45ea8c93-4f33-4133-a41d-18efbb91bf78",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "50486908-1339-42d4-93d3-dccc02f95b11"
+            "m_owner": "a158bfc1-2205-4109-97e2-0dad81274585"
         },
         {
-            "id": "e16c41ff-13b7-42c6-825b-e51cd35bf79c",
+            "id": "ad14b54c-6813-45d4-8f0a-81db4ce693e5",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 64,
             "eventtype": 8,
-            "m_owner": "50486908-1339-42d4-93d3-dccc02f95b11"
-        },
-        {
-            "id": "b3d60cb3-48d9-4a3a-87a4-5dd3646a7d36",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "50486908-1339-42d4-93d3-dccc02f95b11"
-        },
-        {
-            "id": "c3106885-649b-43fd-840c-0c9cae12cfa4",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 2,
-            "m_owner": "50486908-1339-42d4-93d3-dccc02f95b11"
+            "m_owner": "a158bfc1-2205-4109-97e2-0dad81274585"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
-    "persistent": true,
+    "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
     "physicsFriction": 0.2,
