@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "04532fb0-7e4a-4b18-816a-c2b52a02c34c",
+            "Value": {
+                "id": "11f26090-9ff1-4f5a-810b-b0c3cbacce08",
+                "resourcePath": "views\\04532fb0-7e4a-4b18-816a-c2b52a02c34c.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "06f596e7-6c59-4386-a416-aa713be17ebc",
             "Value": {
                 "id": "e2dbf984-0581-4511-80a4-f12c92c244d5",
@@ -332,6 +340,14 @@
                 "id": "b104b80d-9e8e-460c-a801-c6e1c32c21c2",
                 "resourcePath": "sprites\/spr_portrait_poppy\/spr_portrait_poppy.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "18bf1894-3b5f-4101-a810-9381cfe7d562",
+            "Value": {
+                "id": "b8595ed7-50b8-47fb-91cc-2fb06a7f6ebb",
+                "resourcePath": "objects\\obj_badge_manager\\obj_badge_manager.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1991,6 +2007,14 @@
             }
         },
         {
+            "Key": "839afd29-cdc4-4c64-843d-fb62ea31dcd4",
+            "Value": {
+                "id": "7cbc5355-c3ad-45f2-98c2-29192506bf10",
+                "resourcePath": "scripts\\scr_init_badges\\scr_init_badges.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "855e61c7-2358-4574-b1e4-fae23f362cc3",
             "Value": {
                 "id": "cfc5c1aa-ef08-4ee3-b97b-4c9f0185e310",
@@ -2687,6 +2711,14 @@
             }
         },
         {
+            "Key": "bd334740-6a1a-4e19-83b4-2e08e0815041",
+            "Value": {
+                "id": "14d8928d-ad9f-41cc-8a60-624b2f5e2a34",
+                "resourcePath": "views\\bd334740-6a1a-4e19-83b4-2e08e0815041.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "bf3da588-35ed-4cca-969a-9abb14ee5da3",
             "Value": {
                 "id": "0728301b-5f78-493a-980a-9c215e07b013",
@@ -2967,6 +2999,14 @@
             }
         },
         {
+            "Key": "d63fe2e5-490f-4c67-b594-1f44d646a12c",
+            "Value": {
+                "id": "c9a2449f-2422-4858-858e-15ae024ffe14",
+                "resourcePath": "sprites\\spr_badge_score\\spr_badge_score.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d6f15c29-4076-43c5-b8c9-61e4ebd49bcb",
             "Value": {
                 "id": "a0de5dbf-77be-4f2c-9a2e-f83ee9f4d598",
@@ -3084,6 +3124,14 @@
                 "id": "1fd456c5-ab13-4523-8596-744e34e324c5",
                 "resourcePath": "scripts\/array_find_index\/array_find_index.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "dfa428b4-135f-4257-8941-d8089084e5cc",
+            "Value": {
+                "id": "1f31beb3-5bfe-4a67-9762-cc83d140be84",
+                "resourcePath": "sprites\\spr_badge_lvl_complete\\spr_badge_lvl_complete.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3423,11 +3471,27 @@
             }
         },
         {
+            "Key": "fc58d6bc-f7fc-4495-a8aa-c94dddb6ebd0",
+            "Value": {
+                "id": "cb0192f9-4b86-4af1-9cc3-c959de0d8a60",
+                "resourcePath": "sprites\\spr_badge_time\\spr_badge_time.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "fcf4c6f0-6303-4c9b-8dee-fc45197013a4",
             "Value": {
                 "id": "c0752028-9622-43d7-a049-3d53cd175b18",
                 "resourcePath": "sprites\\spr_portrait_villy_green\\spr_portrait_villy_green.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fd1e0ef8-08ad-4f46-b7e0-23a6b1c53ae5",
+            "Value": {
+                "id": "0aee660a-20f2-4777-af1f-e6e2091a1872",
+                "resourcePath": "scripts\\scr_badge_add_data\\scr_badge_add_data.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -3461,6 +3525,8 @@
         "fdad8569-895e-4032-b1bc-47718e09cfe8",
         "39e17d80-b216-4213-8e74-bc9ed66b9c40",
         "417caa51-89d6-4bc8-8ee9-2d1f3c1b35c0",
+        "bd063f9e-ca08-426e-aa6e-066f1bf70551",
+        "1074286e-7296-4bf5-b263-a7112e12d5d9",
         "2fc1609e-3241-4a81-b462-5158b1f37aa9",
         "38979d44-18fe-41c4-8bd8-51967ef72260",
         "a28b8b13-442d-4993-8a1f-e322e2136e83",
@@ -3476,11 +3542,11 @@
         "35e47bd1-5914-451b-afd3-9bebdb5bcb65",
         "0e0a68c5-5fbe-4ac2-800a-4f2144f69c77",
         "02cdf6fe-72ac-4a41-bccc-f08c9ca1c58d",
-        "bd063f9e-ca08-426e-aa6e-066f1bf70551",
-        "1074286e-7296-4bf5-b263-a7112e12d5d9",
         "9b2ebad3-ac02-4060-b5b2-b5d34fc99ae8",
         "3e9b11e9-bdc7-4a2c-a116-2e4c8cf7028e",
-        "8f85b1c7-972c-461b-9dce-5c5fc9e5db5b"
+        "8f85b1c7-972c-461b-9dce-5c5fc9e5db5b",
+        "839afd29-cdc4-4c64-843d-fb62ea31dcd4",
+        "fd1e0ef8-08ad-4f46-b7e0-23a6b1c53ae5"
     ],
     "tutorial": ""
 }
