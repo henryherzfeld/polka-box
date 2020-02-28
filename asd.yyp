@@ -1207,6 +1207,14 @@
             }
         },
         {
+            "Key": "4cb402b9-a338-4321-9049-77265961b064",
+            "Value": {
+                "id": "a7b5d2f2-948b-44d0-8434-02720e1a31c2",
+                "resourcePath": "sprites\\spr_pbar_long_bg\\spr_pbar_long_bg.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4ce34cf3-3859-4360-808f-db2d8890479e",
             "Value": {
                 "id": "aede83c6-4f08-4f67-afea-f99e95716a11",
@@ -1228,6 +1236,14 @@
                 "id": "031195eb-a4fa-46b6-80df-7441f4839c63",
                 "resourcePath": "rooms\/rm_poppy_interior\/rm_poppy_interior.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "4edcfac8-f80e-4a4e-9347-75640633473c",
+            "Value": {
+                "id": "b6d22d03-a9b1-4128-a9b0-3e72231385b7",
+                "resourcePath": "sprites\\spr_pbar_bg\\spr_pbar_bg.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1388,6 +1404,14 @@
                 "id": "22b3d0a9-5112-497a-9e4d-2f59ac0e541d",
                 "resourcePath": "objects\/obj_tensiometer_tile\/obj_tensiometer_tile.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5dd99f83-1e65-4dd4-be32-5b113a0e4d1d",
+            "Value": {
+                "id": "161b37ea-d0e8-4729-8ce1-18257e394b2e",
+                "resourcePath": "sprites\\spr_pbar_empty\\spr_pbar_empty.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2295,6 +2319,14 @@
             }
         },
         {
+            "Key": "a177be85-2ba8-407c-81a8-aea7107c5f6e",
+            "Value": {
+                "id": "1ef568c5-b512-4a75-8249-df4e6742c2f6",
+                "resourcePath": "views\\a177be85-2ba8-407c-81a8-aea7107c5f6e.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "a1f88629-c3a6-43db-8f5f-f5b65ff4adad",
             "Value": {
                 "id": "411e0d53-77ee-4e5d-bcd4-50d30296fd44",
@@ -2500,6 +2532,14 @@
                 "id": "c67a212f-e53e-45c1-a3bb-5df282a879a2",
                 "resourcePath": "objects\/object91\/object91.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b0303ade-eaa2-4468-8143-360907ca2b76",
+            "Value": {
+                "id": "a2b7c47b-eb2f-4c2d-a461-bc4a13a52f41",
+                "resourcePath": "sprites\\spr_pbar_long_empty\\spr_pbar_long_empty.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
