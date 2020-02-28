@@ -24,8 +24,6 @@ do_transition = false;
 
 draw_set_font(font);
 
-
-
 // Creating direction enumerator for player transitions
 enum dir {
 	up = 0,
