@@ -9,7 +9,6 @@ draw_sprite(pbar, 0, x1, y_offset)
 // Timer
 timer_text = minutes + ":" + seconds;
 draw_text(20, y_offset, timer_text);
-alarm[0] = 1;
 
 // Hearts
 for(i = 1; i <= 3; ++i){

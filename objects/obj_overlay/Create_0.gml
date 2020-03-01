@@ -18,3 +18,5 @@ time = 1000;
 x_heart = 1200;
 margin_heart = 10;
 w_heart = sprite_get_width(spr_heart_full);
+
+alarm[0] = room_speed;
