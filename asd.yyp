@@ -471,6 +471,14 @@
             }
         },
         {
+            "Key": "1c72ece0-0b37-403a-89d7-d8970aec11af",
+            "Value": {
+                "id": "b76bbf9e-6874-4850-8839-466844a76f45",
+                "resourcePath": "sprites\\spr_pbar_big\\spr_pbar_big.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1d1638c8-5d1d-43c0-8c69-35bfe16562bf",
             "Value": {
                 "id": "39d91cb4-4f23-4866-9672-9bba9624f4da",

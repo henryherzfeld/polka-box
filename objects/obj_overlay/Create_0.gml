@@ -1,5 +1,5 @@
 /// @description Insert description here
-pbar = spr_pbar_long_empty;
+pbar = spr_pbar_big;
 bar_col = c_green;
 w_pbar = sprite_get_width(pbar) - 2;
 h_pbar = sprite_get_height(pbar) - 2;

@@ -7,7 +7,8 @@
         "b0303ade-eaa2-4468-8143-360907ca2b76",
         "4cb402b9-a338-4321-9049-77265961b064",
         "5dd99f83-1e65-4dd4-be32-5b113a0e4d1d",
-        "4edcfac8-f80e-4a4e-9347-75640633473c"
+        "4edcfac8-f80e-4a4e-9347-75640633473c",
+        "1c72ece0-0b37-403a-89d7-d8970aec11af"
     ],
     "filterType": "GMSprite",
     "folderName": "progress_bar",
