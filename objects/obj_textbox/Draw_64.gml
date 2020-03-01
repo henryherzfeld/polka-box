@@ -14,15 +14,32 @@ if (first){
 	options = curr_seq[n-2];        // get last item of curr_seq dialogue array for options array
 	speakers = curr_seq[n-1];
 	speaker = speakers[page];
-	curr_string = curr_seq[page];
-	curr_string = scr_wrap_text(curr_string, box_width);
+	
+	string_ = curr_seq[page];
+	string_wrapped = scr_wrap_text(string_, box_width);
+	string_len = string_length(string_wrapped)
 }
 
 //deciding to draw an option selection or the curr_seq speaker's text
 if (!draw_options){
 	
-	//draw_text_ext_color(textbox_padded_x, textbox_padded_y, curr_string, string_height(curr_seq[page]), box_width-10, text_col,text_col,text_col,text_col,true);
-	draw_text_color(textbox_padded_x, textbox_padded_y, curr_string, text_col, text_col, text_col, text_col, true);
+	show_debug_message(counter);
+	if(!pause and counter < string_len){
+		counter += 1;
+		
+		switch (string_char_at(string_wrapped, counter)){
+			case ",": pause = true; alarm[0] = 15; break;
+			case ".": pause = true; alarm[0] = 25; break;
+			case "?": pause = true; alarm[0] = 25; break;
+			case "!": pause = true; alarm[0] = 25; break;
+		}
+		
+	}
+	
+
+	var substr = string_copy(string_wrapped, 1, counter);
+	
+	draw_text_color(textbox_padded_x, textbox_padded_y, substr, text_col, text_col, text_col, text_col, true);
 }
 else {
 	_y = 0;

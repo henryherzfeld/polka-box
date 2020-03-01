@@ -33,8 +33,12 @@ if(page_change){
 	speaker = speakers[page];
 	options = curr_seq[n-2];        // get last item of curr_seq dialogue array for options array
 	n_options = array_length_1d(options);
-	curr_string = curr_seq[page];
-	curr_string = scr_wrap_text(curr_string, box_width);
+	
+	string_ = curr_seq[page];
+	string_wrapped = scr_wrap_text(string_, box_width);
+	string_len = string_length(string_wrapped)
+	
+	counter = 0;
 	
 }
 

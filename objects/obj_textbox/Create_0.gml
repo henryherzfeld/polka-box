@@ -51,3 +51,6 @@ with (polka) {
 }
 
 page_change = true;
+
+counter = 0;
+pause = false;
