@@ -47,8 +47,14 @@ else {
 	
 	for (var i = 0; i < n_options - 1; i++){
 
-		var preview = text[? options[i]];
-		var selection_x = string_width(preview[0]);
+		var seq = text[? options[i]];
+		var preview_len = string_length(seq[0]);
+		var preview = string_copy(seq[0], 0, max_preview_len);
+		
+		if(preview_len >  max_preview_len){preview = string_insert("...", preview, max_preview_len+1);}
+		
+		
+		var selection_x = string_width(preview);
 		var selection_y = string_height("M")
 		
 		var col1 = c_white;
@@ -73,7 +79,7 @@ else {
 			}*/
 		//}
 
-		draw_text_color(textbox_padded_x, textbox_padded_y + _y, preview[0], col2, col2, col2, col2, true);
+		draw_text_color(textbox_padded_x, textbox_padded_y + _y, preview, col2, col2, col2, col2, true);
 		draw_rectangle_color(textbox_padded_x, textbox_padded_y + _y, textbox_padded_x + selection_x, textbox_padded_y + _y + selection_y,col1,col1,col1,col1,true);	
 		
 		_y += selection_y + 2;

@@ -17,7 +17,7 @@ text[? "EXIT"] = ["Bye Bye", []]
 
 
 text[? "GREET"] = ["Me", "You", "Me", "You", ["A1", "EXIT", "EXIT"], [polka, id, polka, id]]
-text[? "A1"] = ["Me", "You", "Me", "You", ["GREET", "EXIT", "EXIT"], [polka, id, polka, id]]
+text[? "A1"] = ["Meeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "You", "Me", "You", ["GREET", "EXIT", "EXIT"], [polka, id, polka, id]]
 text[? "EXIT"] = ["Bye Bye", [], [polka]]
 
 name = "Villy";

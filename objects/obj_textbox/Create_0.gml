@@ -42,6 +42,8 @@ first = true;
 page = 0;
 n = 0;
 draw_options = false;
+max_preview_len = 45;
+
 speaker = noone;
 selected = 0;
 
