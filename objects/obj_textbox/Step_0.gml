@@ -50,7 +50,7 @@ if(keyboard_check_pressed(vk_up)){
 }
 
 // clamping selecting between 0 and n_options - 1
-selected = clamp(selected, 0, n_options-1)
+selected = clamp(selected, 0, n_options-2)
 
 if(exiting){
 	if (is_array(scripts)){

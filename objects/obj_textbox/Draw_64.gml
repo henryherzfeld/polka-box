@@ -85,7 +85,7 @@ else {
 		_y += selection_y + 2;
 		
 	}
-
+/*
 	//Back button
 	back = options[i];
 	col2 = c_white;
@@ -95,6 +95,7 @@ else {
 	}
 
 	draw_rectangle_color(textbox_x + box_width - 30, textbox_y, textbox_x + box_width, textbox_y + 30, col2,col2,col2,col2,true);
+	*/
 }
 
 //Drawing player Portrait and Namebox
