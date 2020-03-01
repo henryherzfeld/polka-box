@@ -13,7 +13,7 @@ x1 = (gui_width - w_pbar)/2;
 x2 = w_pbar;
 y_offset = 10;
 
-time = 1000;
+time = 1200;
 
 x_heart = 1200;
 margin_heart = 10;

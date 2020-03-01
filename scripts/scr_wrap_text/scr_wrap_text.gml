@@ -2,17 +2,19 @@
 ///@arg0 text
 ///@arg1 max_length
 
-text = argument0;
+str = argument0;
 max_len = argument1;
-str_len = string_length(text);
+str_len = string_length(str);
 count = 0;
 
 repeat(str_len){
-	substr = string_copy(str_len, 0, count);
-	show_debug_message(substr);
+	substr = string_copy(str, 0, count);
+
 	if(string_width(substr) > max_len){
-		string_insert("\n", text, count);
+		str = string_insert("\n", str, count);
 		count += 1;
 	}
 	count += 1;
 }
+
+return str;

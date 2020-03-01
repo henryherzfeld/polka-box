@@ -15,6 +15,7 @@ if (first){
 	speakers = curr_seq[n-1];
 	speaker = speakers[page];
 	curr_string = curr_seq[page];
+	curr_string = scr_wrap_text(curr_string, box_width);
 }
 
 //deciding to draw an option selection or the curr_seq speaker's text
