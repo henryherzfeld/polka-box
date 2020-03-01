@@ -4,11 +4,8 @@
 minutes = string(time div 60);
 seconds = string(time mod 60);
 
+curr_prog = flags.progress;
 
 if(string_length(seconds) = 1){
 	seconds = string_insert("0", seconds, 0);
-}
-
-if(keyboard_check_pressed(vk_backspace)){
-	curr_prog++;
 }

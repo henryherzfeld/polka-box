@@ -10,8 +10,6 @@ if(draw){
 	//Badges
 	var count = 0;
 	repeat(enum_badge_type.length){
-		show_debug_message(count);
-		show_debug_message(enum_badge_state.sprite_col);
 		var sprite_col = badge_def[count, enum_badge_state.sprite_col];
 		var sprite_bw = badge_def[count, enum_badge_state.sprite_bw];
 		var name = badge_def[count, enum_badge_state.name];

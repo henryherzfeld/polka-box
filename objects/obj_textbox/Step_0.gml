@@ -2,9 +2,10 @@
 
 // Test for interact input to move curr_seq page forward
 if (keyboard_check_pressed(interact_key)){
+	page_change = true;
+	
 	if(page < n - 3){
 		page++;
-		page_change = true;
 
 	} else if (draw_options){
 		draw_options = false;
@@ -16,8 +17,9 @@ if (keyboard_check_pressed(interact_key)){
 		}
 	
 		curr_seq = text[? options[selected]];
+		n = array_length_1d(curr_seq);
 		
-		if(options[selected] = "EXIT"){exiting = true;}
+		if(options[selected] = "EXIT"){exiting = true; page_change = false;}
 	}
 	else{
 		draw_options = true;
@@ -25,6 +27,7 @@ if (keyboard_check_pressed(interact_key)){
 }
 
 if(page_change){
+	
 	page_change = false;
 	speakers = curr_seq[n-1];
 	speaker = speakers[page];

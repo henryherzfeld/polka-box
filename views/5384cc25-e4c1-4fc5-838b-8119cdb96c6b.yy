@@ -6,7 +6,10 @@
     "children": [
         "5dbee845-2d4c-4a4d-a505-6673c07d6fe2",
         "20df3013-5762-444a-9dd2-82d7b1ebcd6e",
-        "469a2259-84f6-4b6e-8bbc-d8e19c5e9e4a"
+        "469a2259-84f6-4b6e-8bbc-d8e19c5e9e4a",
+        "f2a9f33e-6996-407a-b77b-83cb5138e649",
+        "d103f725-e927-4493-9861-820049c4c910",
+        "343022a1-40dc-4d0e-9bb7-883e3dc0bbbe"
     ],
     "filterType": "GMObject",
     "folderName": "Meta Tiles",

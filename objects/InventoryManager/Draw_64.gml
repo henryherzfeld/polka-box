@@ -49,7 +49,6 @@ if(global.show_inventory){
 	
 	///We will only process further if the slot is not empty
 			if (itemType != enum_item_type.none) {
-					show_debug_message(inventorySlot);
 					var itemSprite	= itemDef[itemType,enum_item_state.sprite];		//Sprite for the respective type of the item from the itemDef array
 					var itemAmount	= itemDef[itemType,enum_item_state.amount];		//Amount of the respective type of the item from the itemDef array
 

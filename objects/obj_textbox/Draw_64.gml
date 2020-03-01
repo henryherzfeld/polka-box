@@ -28,7 +28,7 @@ else {
 	speaker = noone;
 	
 	for (var i = 0; i < n_options - 1; i++){
-		show_debug_message(options)
+
 		var preview = text[? options[i]];
 		var selection_x = string_width(preview[0]);
 		var selection_y = string_height("M")

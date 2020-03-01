@@ -1,5 +1,4 @@
 /// @description Insert description here
-show_debug_message(tut_step);
 switch (tut_step){
 	case 0: if(room = rm_polka_interior){
 				tut_step += 1;

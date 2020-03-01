@@ -1,6 +1,5 @@
 /// @description Insert description here
 
-
 if(find_weeraway){
 	if(objective != "Find Weeraway"){
 		objective = "Find Weeraway"
@@ -49,6 +48,9 @@ if(room = fin){
 }
 
 if(event){
+	show_debug_message("event fired");
 	send_event("Objective", objective, "na")
+	progress += 1;
+	show_debug_message(progress);
 	event = false;
 }
