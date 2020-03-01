@@ -17,7 +17,7 @@ if (first){
 	
 	string_ = curr_seq[page];
 	string_wrapped = scr_wrap_text(string_, box_width);
-	string_len = string_length(string_wrapped)
+	string_len = string_length(string_wrapped);
 }
 
 //deciding to draw an option selection or the curr_seq speaker's text
@@ -59,6 +59,11 @@ else {
 		
 		var col1 = c_white;
 		var col2 = c_white;
+		
+		// Setting color of option preview text if we've visited it before
+		if(visited[? options[i]]){
+			col2 = c_gray;
+		}
 		//var mx = device_mouse_x_to_gui(0);						//Mouse's X pos relative to the display (not the game world)
 		//var my = device_mouse_y_to_gui(0);						//Mouse's Y pos relative to the display (not the game world)
 
@@ -67,7 +72,6 @@ else {
 		
 		if(i = selected){
 			col1 = c_red;
-			col2 = c_gray;
 		}
 			
 			//If We are on the option and clicked, then move into dialogue

@@ -2,7 +2,7 @@
 
 tut_step = 0;
 draw = false;
-draw_time = 10;
+draw_time = 5;
 radius = polka.radius;
 
 counter = 0;

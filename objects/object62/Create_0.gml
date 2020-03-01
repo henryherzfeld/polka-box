@@ -26,3 +26,8 @@ portrait = spr_portrait_villy_green;
 scripts = [
 	[scr_change_variable, flags.id, "find_weeraway", true],
 ]
+
+draw = false;
+
+counter = 0;
+blink_freq = 50;

@@ -17,11 +17,11 @@ switch (tut_step){
 	case 2: var inst = instance_find(obj_textbox, 0);
 			if(inst != noone){
 				if(inst.draw_options){
-				tut_step += 1;	
-				draw = true;
-				alarm[0] = draw_time * room_speed;
-				break;
+					tut_step += 1;	
+					draw = true;
+					alarm[0] = draw_time * room_speed;
 				}
+				break;
 			}
 			
 	

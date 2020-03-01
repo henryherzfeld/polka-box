@@ -46,6 +46,7 @@ max_preview_len = 45;
 
 speaker = noone;
 selected = 0;
+visited = ds_map_create();
 
 with (polka) {
 	in_dialogue = true;

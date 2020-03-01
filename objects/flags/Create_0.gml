@@ -17,4 +17,4 @@ gui_height = display_get_gui_height();
 event = true;
 
 progress = 0;
-max_progress = 10;
+max_progress = 11;

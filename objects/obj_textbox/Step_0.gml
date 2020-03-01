@@ -9,6 +9,7 @@ if (keyboard_check_pressed(interact_key)){
 
 	} else if (draw_options){
 		draw_options = false;
+		visited[? options[selected]] = true;
 		
 		if(options[selected] = "GREET"){
 			page = 0;
@@ -23,6 +24,7 @@ if (keyboard_check_pressed(interact_key)){
 	}
 	else{
 		draw_options = true;
+		
 	}
 }
 
@@ -36,7 +38,7 @@ if(page_change){
 	
 	string_ = curr_seq[page];
 	string_wrapped = scr_wrap_text(string_, box_width);
-	string_len = string_length(string_wrapped)
+	string_len = string_length(string_wrapped);
 	
 	counter = 0;
 	
