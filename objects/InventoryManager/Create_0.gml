@@ -11,7 +11,7 @@ open = false;
 width = 256;		
 height = 64;
 distance = 600;
-bg_color = c_olive;
+bg_color = c_gray;
 
 notebook_id = instance_create_layer(0,0,"Meta",obj_notebook);;
 

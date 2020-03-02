@@ -97,9 +97,11 @@ chest = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_t
 if(chest != noone){
 	with (chest) {
 	    // Check if we can open the chest
-		if (canOpen and polka.input_space) {
-			if (show_chest == false) {
-				show_chest = true;
+		if(polka.input_space){
+			if (canOpen and !flags.find_poppy and !flags.find_weeraway and !flags.start) {
+				if (show_chest = false) {
+					show_chest = true;
+				}
 			}
 		}
 	}

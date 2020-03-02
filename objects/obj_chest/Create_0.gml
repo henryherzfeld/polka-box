@@ -31,3 +31,4 @@ for (var i = 0; i < 3; ++i) {
 ///Chest Stat 
 show_chest = false;			//Use to check if chest is open/close (displaying on screen or not)
 canOpen = true;				//If we can open the chest, as we collide and open the chest,
+draw_txt = false;

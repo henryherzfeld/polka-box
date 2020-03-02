@@ -25,6 +25,7 @@ portrait = spr_portrait_villy_green;
 
 scripts = [
 	[scr_change_variable, flags.id, "find_weeraway", true],
+	[scr_change_variable, flags.id, "start", false],
 ]
 
 draw = false;

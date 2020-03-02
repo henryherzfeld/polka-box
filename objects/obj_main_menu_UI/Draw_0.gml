@@ -11,6 +11,7 @@ draw_text(270, 270, "Press Any Key to Begin");
 if(intro){
 	draw_sprite(box, 0, 79, 104)
 	draw_text_ext(90, 115, text[page], string_height(text[page]), box_width-30);
+	draw_text(260, 310, "Press any key to continue..")
 } else {
-	draw_text(240, 310, "Type your name and press enter to start...");
+	draw_text(220, 310, "Type your name and press enter to start..");
 }

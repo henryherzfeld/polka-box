@@ -1,6 +1,7 @@
  /// @description Insert description here
 
 //FLAGS
+start = true;
 find_weeraway = false; 
 find_poppy = false;
 examine_crops = false;

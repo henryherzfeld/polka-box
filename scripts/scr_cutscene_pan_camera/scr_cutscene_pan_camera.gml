@@ -25,7 +25,7 @@ var yy = y_dest;
 
 with(obj_camera){
 
-	if(point_distance(x, y, xx, yy) > spd){
+	if(point_distance(x, y, xx, yy) >= spd){
 		var dir = point_direction(x, y, xx, yy);
 		var ldirx = lengthdir_x(spd, dir);
 		var ldiry = lengthdir_y(spd, dir);
