@@ -11,11 +11,13 @@ if (keyboard_check_pressed(interact_key)){
 		draw_options = false;
 		visited[? options[selected]] = true;
 		
+		
 		if(options[selected] = "GREET"){
 			page = 0;
 		} else {
-			page = 1;
+			page = 0;
 		}
+		
 	
 		curr_seq = text[? options[selected]];
 		n = array_length_1d(curr_seq);
@@ -27,16 +29,21 @@ if (keyboard_check_pressed(interact_key)){
 		
 	}
 }
-
+show_debug_message(n);
+show_debug_message(curr_seq);
 if(page_change){
 	
 	page_change = false;
-	speakers = curr_seq[n-1];
-	speaker = speakers[page];
-	options = curr_seq[n-2];        // get last item of curr_seq dialogue array for options array
+	
+	if(array_length_1d(curr_seq) >= 2){
+		string_ = curr_seq[page];
+		speakers = curr_seq[n-1];
+		options = curr_seq[n-2];        // get last item of curr_seq dialogue array for options array
+		speaker = speakers[page];
+	}
+	
 	n_options = array_length_1d(options);
 	
-	string_ = curr_seq[page];
 	string_wrapped = scr_wrap_text(string_, box_width);
 	string_len = string_length(string_wrapped);
 	
@@ -52,15 +59,15 @@ if(keyboard_check_pressed(vk_up)){
 }
 
 // clamping selecting between 0 and n_options - 1
-selected = clamp(selected, 0, n_options-2)
+selected = clamp(selected, 0, n_options-1);
 
 if(exiting){
 	if (is_array(scripts)){
 	n = array_length_1d(scripts);
 	
 	for (var i = 0; i < n; ++i){
-		args = scripts[i]
-		script_execute(args[0], args[1], args[2], args[3])
+		args = scripts[i];
+		script_execute(args[0], args[1], args[2], args[3]);
 		}
 	}	
 	instance_destroy();

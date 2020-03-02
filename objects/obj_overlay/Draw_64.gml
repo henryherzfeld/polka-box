@@ -16,3 +16,9 @@ for(i = 1; i <= 3; ++i){
 	if(polka.hearts - i >= 0){ spr = spr_heart_full; }
 	draw_sprite(spr, 0, x_heart + i * (w_heart + margin_heart), y_offset);
 }
+
+//Objectives
+draw_set_font(font_comic);
+
+draw_rectangle_color(gui_width - string_width(flags.objective) - 1*objective_padding, 200, gui_width, string_height(flags.objective) + 240, c_black, c_black, c_black, c_black, false)
+draw_text(gui_width - string_width(flags.objective) - objective_padding, string_height(flags.objective) + 200, flags.objective);

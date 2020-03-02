@@ -43,6 +43,8 @@ page = 0;
 n = 0;
 draw_options = false;
 max_preview_len = 45;
+n_options = 0;
+curr_seq = [];
 
 speaker = noone;
 selected = 0;

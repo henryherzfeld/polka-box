@@ -15,8 +15,10 @@ y_offset = 10;
 
 time = 1200;
 
-x_heart = 1200;
+x_heart = 1350;
 margin_heart = 10;
 w_heart = sprite_get_width(spr_heart_full);
+
+objective_padding = 100;
 
 alarm[0] = room_speed;
