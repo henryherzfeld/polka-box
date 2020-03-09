@@ -16,7 +16,7 @@ text[? "EXIT"] = ["Bye Bye", []]
 */
 
 
-text[? "GREET"] = ["Me", "You", "Me", "You", ["A1", "EXIT", "EXIT"], [polka, id, polka, id]]
+text[? "GREET"] = ["Me", ["You @ COLOR ME BABEEEE LA LA LA LA LA LA LA LA LA LA LA LA LA LA LA LA LAW LAW LA WEDWDA LA @ ", ["SCRIPT", obj_camera.id, "following", obj_chest]], "Me", "You", ["A1", "EXIT", "EXIT"], [polka, id, polka, id]]
 text[? "A1"] = ["Meeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "You", "Me", "You", ["GREET", "EXIT", "EXIT"], [polka, id, polka, id]]
 text[? "EXIT"] = ["Bye Bye", [], [polka]]
 

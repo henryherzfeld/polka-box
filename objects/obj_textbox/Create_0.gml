@@ -59,3 +59,12 @@ page_change = true;
 
 counter = 0;
 pause = false;
+
+xx=0;
+yy=0;
+row_offset = 0;
+
+string_object = noone;
+string_ = "";
+string_n_mods = 0;
+string_mods = [];

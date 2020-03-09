@@ -519,14 +519,6 @@
             }
         },
         {
-            "Key": "1f428d0f-8475-40f4-ae2c-eabf27844e8c",
-            "Value": {
-                "id": "016152ff-9798-4f6b-ac5a-d649f87a929e",
-                "resourcePath": "objects\/obj_nameTextbox\/obj_nameTextbox.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "1f78baa3-dbec-4d7b-a8c5-a898c2d78376",
             "Value": {
                 "id": "97e33281-bf04-4037-bfea-a07ffab2d7ef",
@@ -1615,14 +1607,6 @@
             }
         },
         {
-            "Key": "6a816e93-ecb4-46fc-aa95-8f12820b1d75",
-            "Value": {
-                "id": "7cd452d8-26ac-46a7-b726-97544fb08b81",
-                "resourcePath": "rooms\/room3\/room3.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "6ad9d0d8-ff71-488b-b36c-e4fd5ba1bda2",
             "Value": {
                 "id": "202f3905-98db-4fad-9b36-a2e736a859d8",
@@ -1884,6 +1868,14 @@
                 "id": "a2b9a1f6-2dd0-47de-b35b-86a8e4a4f864",
                 "resourcePath": "scripts\/scr_cutscene_pan_camera\/scr_cutscene_pan_camera.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "7cad8377-79ae-4919-8875-9d5e6df26c3b",
+            "Value": {
+                "id": "8150a763-a1c3-4e7d-af27-c6b37855c3bc",
+                "resourcePath": "objects\\object130\\object130.yy",
+                "resourceType": "GMObject"
             }
         },
         {

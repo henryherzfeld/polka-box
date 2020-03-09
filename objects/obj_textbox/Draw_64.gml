@@ -16,14 +16,23 @@ if (first){
 	speaker = speakers[page];
 	
 	string_ = curr_seq[page];
+	
 	string_wrapped = scr_wrap_text(string_, box_width);
 	string_len = string_length(string_wrapped);
 }
 
 //deciding to draw an option selection or the curr_seq speaker's text
 if (!draw_options){
+	var substr = string_copy(string_wrapped, 1, counter);
 	
-	show_debug_message(counter);
+	if(string_n_mods){
+		for(var i = 0; i < string_n_mods; i++){
+			show_debug_message(string_mods)
+		}
+	}
+	
+	
+
 	if(!pause and counter < string_len){
 		counter += 1;
 		
@@ -32,14 +41,32 @@ if (!draw_options){
 			case ".": pause = true; alarm[0] = 25; break;
 			case "?": pause = true; alarm[0] = 25; break;
 			case "!": pause = true; alarm[0] = 25; break;
+			case "\n": row_offset += 1; break;
+			// Testing for color character
+
+			case "@": 
+				pause = true;
+				alarm[0] = 25;
+				
+				//loop to find end of color segment
+				
+				string_wrapped = string_replace(string_wrapped, "@", "iiiii")
+				counter += 6 - 1;
+				string_len += 6 - 1;
+
+				color_substr = "asd";
+				xx = textbox_padded_x + string_width(substr)
+				yy = textbox_padded_y + string_height("M") * row_offset
+				
 		}
 		
 	}
 	
-
-	var substr = string_copy(string_wrapped, 1, counter);
 	
 	draw_text_color(textbox_padded_x, textbox_padded_y, substr, text_col, text_col, text_col, text_col, true);
+	if(xx){
+		draw_text_color(xx, yy, color_substr, c_blue, c_blue, c_red, c_red, true);
+	}
 }
 else {
 	_y = 0;
