@@ -36,4 +36,5 @@ itemAddData(enum_item_type.empty_tube,spr_empty_test_tube,"empty test tube",0,sc
 itemAddData(enum_item_type.water_tube,spr_water_test_tube,"water filled test tube",0,scr_use_item_callback_water_test_tube, "A test tube filled with water");
 itemAddData(enum_item_type.mag_glass,spr_water_test_tube,"magnifying glass",0,scr_use_item_callback_mag_glass, "Use to examine an object");
 
+itemAddInventory(enum_item_type.mag_glass);
 global.show_inventory = true;

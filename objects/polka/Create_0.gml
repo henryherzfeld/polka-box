@@ -17,5 +17,3 @@ portrait = spr_portrait_polka;
 facing = -1;
 
 hearts = 3;
-
-itemAddInventory(enum_item_type.mag_glass);
