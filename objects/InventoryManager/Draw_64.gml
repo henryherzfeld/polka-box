@@ -57,8 +57,8 @@ if(global.show_inventory){
 					//Draw Amount
 					draw_set_color(c_black);										//Set the draw color to black
 //					draw_set_font(font_small);										//Set the font to font_small
-					draw_set_valign(fa_center);										//Draw the text from the bottom
-					draw_set_halign(fa_center);										//Draw the text from the left
+//					draw_set_valign(fa_center);										//Draw the text from the bottom
+//					draw_set_halign(fa_center);										//Draw the text from the left
 					draw_text(itemX,slot_y2,itemAmount);							//Draw the amount text
 					draw_set_color(c_white);										//Set the color to white
 			

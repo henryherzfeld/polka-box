@@ -71,8 +71,8 @@ if(page_change){
 for(var i = 0; i < string_n_mods; i++){
 	curr_mod = string_mods[i];
 	if(curr_mod[0] == "SCRIPT"){
-		var input = [scr_change_variable];
-		array_copy(input, 1, curr_mod, 1, array_length_1d(curr_mod) - 1)
+		var input = [];
+		array_copy(input, 0, curr_mod, 1, array_length_1d(curr_mod) - 1)
 		scr_script_execute_array_1d(input)
 
 		// remove entry from script mods
@@ -81,7 +81,6 @@ for(var i = 0; i < string_n_mods; i++){
 		string_n_mods -= 1; 
 	}
 }
-
 
 
 // moving up and down through options using arrow keys

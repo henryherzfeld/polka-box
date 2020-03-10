@@ -12,6 +12,7 @@ enum enum_item_type {
 	tensiometer = 6,
 	empty_tube = 7,
 	water_tube = 8,
+	mag_glass = 9,
 	//ADD new item here
 	//new_item = 7;
 	length,

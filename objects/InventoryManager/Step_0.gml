@@ -12,7 +12,7 @@ if (input_inventory_open){
 		anim_count--;
 		//TODO properly destroy dangling notebook reference
 		if(notebook_id != noone){
-			notebook_id.draw = false;;
+			notebook_id.draw_evidence = false;
 		}
 	}
 }

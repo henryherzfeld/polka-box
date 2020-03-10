@@ -168,6 +168,14 @@ if(input_space){
 					itemEquiped = noone;
 					itemRemoveInventory(enum_item_type.water_tube)
 				}
+				
+			case enum_item_type.mag_glass:
+				if(collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, par_examinable, false, true)){
+					if(!par_examinable.draw_examine_box){
+						scr_draw_examine_obj(par_examinable)
+					}
+				}
+			
 		    default:
 		        // code here
 		        break;

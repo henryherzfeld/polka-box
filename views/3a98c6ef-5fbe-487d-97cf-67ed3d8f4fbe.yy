@@ -15,7 +15,8 @@
         "39e17d80-b216-4213-8e74-bc9ed66b9c40",
         "417caa51-89d6-4bc8-8ee9-2d1f3c1b35c0",
         "bd063f9e-ca08-426e-aa6e-066f1bf70551",
-        "1074286e-7296-4bf5-b263-a7112e12d5d9"
+        "1074286e-7296-4bf5-b263-a7112e12d5d9",
+        "6eed53bb-5482-4a27-9dba-73870f7cd8be"
     ],
     "filterType": "GMScript",
     "folderName": "Inventory",

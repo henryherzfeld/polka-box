@@ -1,6 +1,6 @@
 /// @description Insert description here
 
-if(draw){
+if(draw_evidence){
 	///Loop through all the object
 	var evi_index = 0;	//Use to index the items in inventory slot
 

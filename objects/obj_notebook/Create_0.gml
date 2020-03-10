@@ -9,7 +9,7 @@ y2 = game.gui_height;
 preview_spr = noone;
 
 bg_color = c_olive;
-draw = false;
+draw_evidence = false;
 
 evidence_slot = array_create(MAX_EVI_ITEMS, enum_evi_type.none);
 evi_def = ds_grid_create(enum_evi_type.length, enum_evi_state.length);

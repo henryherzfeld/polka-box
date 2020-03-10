@@ -34,5 +34,6 @@ itemAddData(enum_item_type.trowel,spr_inventory_item_trowel,"trowel",0,scr_use_i
 itemAddData(enum_item_type.tensiometer,spr_inventory_item_tensiometer,"tensiometer",0,scr_use_item_callback_tensiometer, "Collects soil moisture");
 itemAddData(enum_item_type.empty_tube,spr_empty_test_tube,"empty test tube",0,scr_use_item_callback_empty_test_tube, "Used to hold small amounts of a material");
 itemAddData(enum_item_type.water_tube,spr_water_test_tube,"water filled test tube",0,scr_use_item_callback_water_test_tube, "A test tube filled with water");
+itemAddData(enum_item_type.mag_glass,spr_water_test_tube,"magnifying glass",0,scr_use_item_callback_mag_glass, "Use to examine an object");
 
 global.show_inventory = true;

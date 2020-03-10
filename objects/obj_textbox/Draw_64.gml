@@ -25,9 +25,10 @@ if (first){
 if (!draw_options){
 	var substr = string_copy(string_wrapped, 1, counter);
 	
+	// string draw modifications
 	if(string_n_mods){
 		for(var i = 0; i < string_n_mods; i++){
-			show_debug_message(string_mods)
+			var curr_mod = string_mods[i];
 		}
 	}
 	
