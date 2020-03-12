@@ -16,7 +16,11 @@ text[? "EXIT"] = ["Bye Bye", []]
 */
 
 
-text[? "GREET"] = ["Me", ["You @ COLOR ME BABEEEE LA LA LA LA LA LA LA LA LA LA LA LA LA LA LA LA LAW LAW LA WEDWDA LA @ ", ["SCRIPT", scr_notebook_evi_prompt]], "Me", "You", ["A1", "EXIT", "EXIT"], [polka, id, polka, id]]
+text[? "GREET"] =	["Me", 
+					["You @ COLOR ME BABEEEE LA LA LA LA LA LA LA LA LA LA LA LA LA LA LA LA LAW LAW LA WEDWDA LA @ ", ["EVI_PROMPT", enum_evi_type.evidence2, "Correct", "Incorrect"]], 
+					"Me", "You", ["A1", "EXIT", "EXIT"], [polka, id, polka, id]]
+
+
 text[? "A1"] = ["Meeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "You", "Me", "You", ["GREET", "EXIT", "EXIT"], [polka, id, polka, id]]
 text[? "EXIT"] = ["Bye Bye", [], [polka]]
 

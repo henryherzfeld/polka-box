@@ -32,8 +32,6 @@ if (!draw_options){
 		}
 	}
 	
-	
-
 	if(!pause and counter < string_len){
 		counter += 1;
 		
@@ -43,8 +41,8 @@ if (!draw_options){
 			case "?": pause = true; alarm[0] = 25; break;
 			case "!": pause = true; alarm[0] = 25; break;
 			case "\n": row_offset += 1; break;
+			
 			// Testing for color character
-
 			case "@": 
 				pause = true;
 				alarm[0] = 25;
@@ -58,7 +56,6 @@ if (!draw_options){
 				color_substr = "asd";
 				xx = textbox_padded_x + string_width(substr)
 				yy = textbox_padded_y + string_height("M") * row_offset
-				
 		}
 		
 	}

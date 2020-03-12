@@ -5,7 +5,7 @@ draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 
 // Test for interact input to move curr_seq page forward
-if (keyboard_check_pressed(interact_key)){
+if (keyboard_check_pressed(interact_key) and !dialogue_pause){
 	page_change = true;
 	
 	if(page < n - 3){
@@ -34,6 +34,37 @@ if (keyboard_check_pressed(interact_key)){
 		draw_options = true;
 		
 	}
+}
+
+// Executing string modification scripts
+for(var i = 0; i < string_n_mods; i++){
+	curr_mod = string_mods[i];
+	if(curr_mod[0] == "SCRIPT"){
+		var input = [];
+		array_copy(input, 0, curr_mod, 1, array_length_1d(curr_mod) - 1)
+		scr_script_execute_array_1d(input);
+	}
+	
+	else if(curr_mod[0] == "EVI_PROMPT"){
+		scr_notebook_evi_prompt();
+		evidence_target = curr_mod[1];
+	}
+	// remove entry from script mods
+	array_copy(string_mods, 0, string_mods, 1, string_n_mods - 1);
+	i -= 1;
+	string_n_mods -= 1; 
+	
+}
+
+// checking if we made a choice for a piece of evidence during a evidence prompt
+if(evidence_choice != noone){
+	if(evidence_choice == evidence_target){
+		show_debug_message("evidence match");
+	}
+	
+	page_change = true;
+	evidence_choice = noone;
+	page++;
 }
 
 if(page_change){
@@ -67,22 +98,6 @@ if(page_change){
 	
 }
 
-// Executing string modification scripts
-for(var i = 0; i < string_n_mods; i++){
-	curr_mod = string_mods[i];
-	if(curr_mod[0] == "SCRIPT"){
-		var input = [];
-		array_copy(input, 0, curr_mod, 1, array_length_1d(curr_mod) - 1)
-		scr_script_execute_array_1d(input)
-
-		// remove entry from script mods
-		array_copy(string_mods, 0, string_mods, 1, string_n_mods - 1);
-		i -= 1;
-		string_n_mods -= 1; 
-	}
-}
-
-
 // moving up and down through options using arrow keys
 if(keyboard_check_pressed(vk_up)){
 	--selected;	
@@ -93,6 +108,8 @@ if(keyboard_check_pressed(vk_up)){
 // clamping selecting between 0 and n_options - 1
 selected = clamp(selected, 0, n_options-2);
 
+// executing all exit scripts upon final dialogue sequence
+// maybe this behavior should change in light of string "modifications"
 if(exiting){
 	if (is_array(scripts)){
 	n = array_length_1d(scripts);

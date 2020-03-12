@@ -1,6 +1,9 @@
 /// @description Insert description here
 
 if(draw_evidence){
+	
+	draw_rectangle_color(0, 0, game.gui_width, game.gui_height, bg_col, bg_col, bg_col, bg_col, false);
+	
 	///Loop through all the object
 	var evi_index = 0;	//Use to index the items in inventory slot
 
@@ -61,6 +64,12 @@ if(draw_evidence){
 						//Slot Selected
 						//Use the item in the inventory slot
 						itemUseInventory(evi_type);
+						if(polka.in_dialogue){
+							obj_textbox.dialogue_pause = false;
+							obj_textbox.evidence_choice = evi_type;
+						}
+						draw_evidence = false;
+						
 						}
 					}
 				}

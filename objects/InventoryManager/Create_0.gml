@@ -13,8 +13,6 @@ height = 64;
 distance = 600;
 bg_color = c_gray;
 
-notebook_id = instance_create_layer(0,0,"Meta",obj_notebook);;
-
 //Create the inventory array, Basicly slots and giving then a default value i.e enum_item_type.none == 0
 inventorySlot = array_create(MAX_INV_ITEMS, enum_item_type.none);
 
