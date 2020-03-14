@@ -3,7 +3,7 @@
 
 event_inherited();
 
-if(flags.find_poppy and !flags.examine_crops){
+if(scr_check_objective(enum_objective_type.find_poppy) and !flags.examine_crops){
 	text[? "GREET"] = ["Hi", ["A1", "A1_1", "A1_2", "GREET"], [polka]]
 
 	text[? "A1"] = ["What do crops need to live?", "Plants need air, sunlight, water, and soil.", ["A2", "A2_1", "A2_2", "A2_3", "A2_4", "GREET"], [polka, id]]
@@ -33,10 +33,10 @@ if(flags.find_poppy and !flags.examine_crops){
 	text[? "EXIT"] = ["Ok", []]
 	
 	scripts = [
-		[scr_change_variable, flags.id, "examine_crops", true],
-		[scr_change_variable, flags.id, "find_poppy", false]
+		[scr_activate_objective, enum_objective_type.examine_crops],
+		[scr_deactivate_objective, enum_objective_type.find_poppy]
 	]
-} else if (flags.report_crops_to_poppy){
+} else if (scr_check_objective(enum_objective_type.report_crops_to_poppy)){
 
 //The player TELLS Poppy about how the farmer's plants are not getting enough nutrients
 
@@ -53,11 +53,11 @@ text[? "A2_1"] = ["The farmer's crops are green, healthy, and strong.", "Are you
 text[? "EXIT"] = ["Thanks", []]
 	
 	scripts = [
-	[scr_change_variable, flags.id, "prompt_measure_soil_moisture", true],
-	[scr_change_variable, flags.id, "report_crops_to_poppy", false]
+	[scr_activate_objective, enum_objective_type.prompt_measure_soil_moisture],
+	[scr_deactivate_objective, enum_objective_type.report_crops_to_poppy]
 	]
 	
-} else if (flags.prompt_measure_soil_moisture){
+} else if (scr_check_objective(enum_objective_type.prompt_measure_soil_moisture)){
 	
 
 /// (They visit the botanist again) — TELL: The farmer's crops are not getting enough nutrients. Their leaves look dry, brown, and wilted 
@@ -72,7 +72,7 @@ text[? "EXIT"] = ["Thanks", []]
 	text[? "EXIT"] = ["Ok", []]
 	
 	scripts = [
-	[scr_change_variable, flags.id, "measure_soil_moisture", true],
-	[scr_change_variable, flags.id, "prompt_measure_soil_moisture", false]
+	[scr_activate_objective, enum_objective_type.measure_soil_moisture],
+	[scr_deactivate_objective, enum_objective_type.prompt_measure_soil_moisture]
 	]
 }

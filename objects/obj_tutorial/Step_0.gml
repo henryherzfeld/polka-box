@@ -29,7 +29,7 @@ switch (tut_step){
 			
 	
 	case 3: {
-		if(flags.find_poppy and !polka.in_dialogue){
+		if(scr_check_objective(enum_objective_type.find_poppy) and !polka.in_dialogue){
 				if(!counter){
 					text = ds_map_create();
 					text[? "GREET"] = ["Sometimes you will want to review or you may want to ask something different. You can always repeat the most recent conversation with a Villy Nilly", ["EXIT", "EXIT"], [noone]]
@@ -44,7 +44,7 @@ switch (tut_step){
 			}
 			
 	case 4: {
-			if(flags.examine_crops and !polka.in_dialogue){
+			if(scr_check_objective(enum_objective_type.examine_crops) and !polka.in_dialogue){
 				if(!counter){
 					text = ds_map_create();
 					text[? "GREET"] = ["Now let's take whatever the Villy Nilly has told us and do some investigating ourselves. What clues should we be looking for? What do we have to examine?", ["EXIT", "EXIT"], [noone]]
@@ -59,7 +59,7 @@ switch (tut_step){
 			}
 			
 	case 5: {
-			if(flags.report_crops_to_poppy and !polka.in_dialogue){
+			if(scr_check_objective(enum_objective_type.report_crops_to_poppy) and !polka.in_dialogue){
 				if(!counter){
 					text = ds_map_create();
 					text[? "GREET"] = ["Finding a clue will lead to more unanswered questions. Let’s go back and tell the Villy what we found out. We might get some answers.", ["EXIT", "EXIT"], [noone]]

@@ -23,7 +23,7 @@ if (keyboard_check_pressed(interact_key) and !dialogue_pause){
 			page = 1;
 		}
 		*/
-		
+		page = 0;
 	
 		curr_seq = text[? options[selected]];
 		n = array_length_1d(curr_seq);
@@ -116,7 +116,8 @@ if(exiting){
 	
 	for (var i = 0; i < n; ++i){
 		args = scripts[i];
-		script_execute(args[0], args[1], args[2], args[3]);
+		
+		scr_script_execute_array_1d(args);
 		}
 	}	
 	instance_destroy();

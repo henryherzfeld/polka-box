@@ -1,5 +1,5 @@
 /// @description Insert description here
-
+/*
 if(find_weeraway){
 	if(objective != "Find Weeraway"){
 		objective = "Find Weeraway"
@@ -46,11 +46,20 @@ if(room = fin){
 		event = true;
 	}
 }
-
-if(event){
-	show_debug_message("event fired");
+*/
+if(objective_change){
+	for(var i = 0; i < enum_objective_type.length; i++){
+		if(scr_check_objective(i)){
+			objective = ds_grid_get(objectives, i, enum_objective_state.text)
+		}
+	}
+	
 	//send_event("Objective", objective, "na")
 	progress += 1;
-	show_debug_message(progress);
-	event = false;
+	objective_change = false;
 }
+
+
+
+
+

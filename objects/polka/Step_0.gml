@@ -105,7 +105,7 @@ if(chest != noone){
 	with (chest) {
 	    // Check if we can open the chest
 		if(polka.input_space){
-			if (canOpen and !flags.find_poppy and !flags.find_weeraway and !flags.start) {
+			if (canOpen and !scr_check_objective(enum_objective_type.find_poppy) and !scr_check_objective(enum_objective_type.find_weeraway) and !scr_check_objective(enum_objective_type.start)) {
 				if (show_chest = false) {
 					show_chest = true;
 				}

@@ -24,8 +24,8 @@ name = "Villy";
 portrait = spr_portrait_villy_green;
 
 scripts = [
-	[scr_change_variable, flags.id, "find_weeraway", true],
-	[scr_change_variable, flags.id, "start", false],
+	[scr_activate_objective, enum_objective_type.find_weeraway],
+	[scr_deactivate_objective, enum_objective_type.start],
 ]
 
 draw = false;

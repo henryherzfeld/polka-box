@@ -3,8 +3,7 @@
 event_inherited();
  
 text = ds_map_create(); 
-
-if(flags.find_weeraway){
+if(scr_check_objective(enum_objective_type.find_weeraway)){
 	text[? "GREET"] = ["Hi", ["A1", "A1_1", "A1_2", "GREET"], [polka]]
 	text[? "A1"] = ["Why aren't you giving the villagers enough food?", "What can I do, " + game.name + "? The crops are dying!", ["A2", "A2_1", "A2_2", "GREET"], [polka, id]]
 	text[? "A1_1"] = ["What are you doing here?", "Hiding! I'm a miserable farmer whose… *sniff*... reputation is in ruins.", ["A1", "A1_1", "A1_2", "GREET"], [polka, id]]
@@ -19,8 +18,8 @@ if(flags.find_weeraway){
 	text[? "EXIT"] = ["Ok", [], []]
 	
 	scripts = [
-	[scr_change_variable, flags.id, "find_poppy", true],                                
-	[scr_change_variable, flags.id, "find_weeraway", false]
+	[scr_activate_objective, enum_objective_type.find_poppy],                                
+	[scr_deactivate_objective, enum_objective_type.find_weeraway]
 ]
 
 } else{

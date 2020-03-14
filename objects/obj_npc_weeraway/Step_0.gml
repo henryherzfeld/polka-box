@@ -3,7 +3,7 @@
 
 event_inherited();
 
-if(polka.in_dialogue and flags.find_weeraway){
+if(polka.in_dialogue and scr_check_objective(enum_objective_type.find_weeraway)){
 	crying = false;
 }
 
