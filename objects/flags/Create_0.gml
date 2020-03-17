@@ -23,3 +23,4 @@ objective_change = false;
 progress = 0;
 max_progress = enum_objective_type.length;
 
+coins = 0;

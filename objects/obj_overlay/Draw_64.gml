@@ -20,6 +20,10 @@ for(i = 1; i <= 3; ++i){
 	draw_sprite(spr, 0, x_heart + i * (w_heart + margin_heart), y_offset);
 }
 
+// Coin Counter
+draw_sprite(coin_spr, 0, x_coin, y_offset);
+draw_text(x_coin + w_coin, y_offset, "x" + string(flags.coins));
+
 //Objectives
 draw_set_font(font_comic);
 
