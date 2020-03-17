@@ -2175,6 +2175,14 @@
             }
         },
         {
+            "Key": "8dc5b951-418c-457f-98ac-4f126e3f74d5",
+            "Value": {
+                "id": "0094e110-4504-4cfe-8237-152da0407592",
+                "resourcePath": "objects\\obj_digable_tile\\obj_digable_tile.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "8ddad653-bb2b-4363-a677-4dde06687041",
             "Value": {
                 "id": "740adb95-7c80-4085-81cf-62ea66e4aafd",

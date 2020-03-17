@@ -105,7 +105,7 @@ if(chest != noone){
 	with (chest) {
 	    // Check if we can open the chest
 		if(polka.input_space){
-			if (canOpen and !scr_check_objective(enum_objective_type.find_poppy) and !scr_check_objective(enum_objective_type.find_weeraway) and !scr_check_objective(enum_objective_type.start)) {
+			if (canOpen and !scr_check_objective(enum_objective_type.find_poppy) and !scr_check_objective(enum_objective_type.find_weeraway) and !scr_check_objective(enum_objective_type.start) or game.debug) {
 				if (show_chest = false) {
 					show_chest = true;
 				}
@@ -146,7 +146,17 @@ if(input_space){
 				xx = xx*cs;
 				yy = yy*cs;
 				
+				var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_digable_tile, false, true);
+				if(inst){
+					if(!inst.dug){
+						inst.dug = true;
+						var dug_coins = irandom_range(3, 10)
+						flags.coins += dug_coins;
+						scr_fire_sm_noti(string(dug_coins) + " Coins Added")
+					}
+				} else {
 				instance_create_layer(xx,yy,"Instances",obj_soil_hole);		//Createing an instance with hole sprite assigneed
+				}
 		        break;
 			
 		    case enum_item_type.pitchfork:
