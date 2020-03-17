@@ -191,6 +191,14 @@
             }
         },
         {
+            "Key": "09ccd466-ab06-428e-9e12-d57944db25ce",
+            "Value": {
+                "id": "b87b35cd-18f0-4737-aae9-abc2f2889bbf",
+                "resourcePath": "scripts\\scr_fire_lg_noti\\scr_fire_lg_noti.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0a8bd4f9-d242-4493-b84b-07cc6f4b2bfe",
             "Value": {
                 "id": "d4303561-590d-4427-af15-74a0e4b7f74a",
@@ -2383,6 +2391,14 @@
             }
         },
         {
+            "Key": "9fb8425b-e52b-42b0-be33-a98964a31ce3",
+            "Value": {
+                "id": "73197762-439a-4db4-b1c5-876ef3c3fc48",
+                "resourcePath": "scripts\\scr_fire_sm_noti\\scr_fire_sm_noti.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a02d3647-95f5-497b-8a84-2b668983ab5e",
             "Value": {
                 "id": "3554a3cc-6eab-47f5-a904-f424b4553cc9",
@@ -3367,6 +3383,14 @@
             }
         },
         {
+            "Key": "e8585551-f916-4ce9-bce0-62149b37a675",
+            "Value": {
+                "id": "d1760418-8b88-49fd-924d-4ab5fc26418e",
+                "resourcePath": "views\\e8585551-f916-4ce9-bce0-62149b37a675.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "e92059d4-5af0-4d77-b427-ce16811b85a3",
             "Value": {
                 "id": "891b527e-08be-4a49-bb6f-f22d15dc1879",
@@ -3662,6 +3686,8 @@
         "fd1e0ef8-08ad-4f46-b7e0-23a6b1c53ae5",
         "67751388-4836-4f0c-bd1a-8b8a4f092627",
         "478025e7-896d-4e39-a190-cce0abd6c572",
+        "9fb8425b-e52b-42b0-be33-a98964a31ce3",
+        "09ccd466-ab06-428e-9e12-d57944db25ce",
         "6206500c-6ed6-4410-9c73-7d3363c70805",
         "9baf4a92-609e-414d-a977-639d0906bcf9",
         "042678ad-f060-41f6-92c4-76e1399a23d9",

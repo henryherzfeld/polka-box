@@ -27,3 +27,44 @@ draw_text_color(gui_width - string_width(flags.objective_text) - objective_paddi
 
 // Draw objective text
 draw_text_color(gui_width - string_width(flags.objective_text) - objective_padding, string_height(flags.objective_text) + 200, flags.objective_text, objective_text_col, objective_text_col, objective_text_col, objective_text_col, true);
+
+if(draw_sm_noti){
+	draw_sm_noti = false;
+	noti_sm_count = 1;
+	noti_sm_width = string_width(sm_noti_text);
+	noti_sm_height = string_width(sm_noti_text);
+}
+
+if(draw_lg_noti){
+	draw_lg_noti = false;
+	noti_lg_count = 1;
+}
+
+if(noti_sm_count){
+	if(noti_sm_count <= noti_sm_timeout){
+		draw_rectangle_color(game.gui_width - noti_sm_width - noti_sm_padding, game.gui_height - noti_sm_height - noti_sm_padding, game.gui_width, game.gui_height, noti_sm_bg_col, noti_sm_bg_col, noti_sm_bg_col, noti_sm_bg_col, false);
+		draw_text(game.gui_width - noti_sm_width - noti_sm_padding, game.gui_height - noti_sm_height - noti_sm_padding, sm_noti_text);
+		
+		noti_sm_count += 1;
+	} else {
+		noti_sm_count = 0;
+	}
+}
+
+if(noti_lg_count){
+	if(noti_lg_count <= noti_lg_timeout){
+		draw_rectangle(0, game.gui_height/2 - noti_lg_bg_size - noti_lg_bg_border_size, game.gui_width, game.gui_height/2 + noti_lg_bg_size + noti_lg_bg_border_size, false);
+		draw_rectangle_color(0, game.gui_height/2 - noti_lg_bg_size, game.gui_width, game.gui_height/2 + noti_lg_bg_size, noti_lg_bg_col, noti_lg_bg_col, noti_lg_bg_col, noti_lg_bg_col, false);
+		draw_set_halign(fa_center);
+		draw_set_font(font_large);
+		draw_text(game.gui_width/2, game.gui_height/2, lg_noti_text);
+		draw_set_halign(fa_left);
+		draw_set_font(font_comic);
+		
+		noti_lg_count += 1;
+	}
+	else {
+		noti_lg_count = 0;
+	}
+}
+
