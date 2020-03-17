@@ -13,6 +13,8 @@ scr_add_objective(enum_objective_type.prompt_measure_soil_moisture, "", enum_obj
 objective_text = "";
 objective = 0;
 objective_phase = 0;
+objective_phase_texts = ["Miscellaneous", "Ask Questions", "Collect Clues", "Analyze Clues"];
+objective_phase_text = objective_phase_texts[0];
 
 objective_change = false;
 

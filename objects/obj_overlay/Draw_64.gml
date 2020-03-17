@@ -23,7 +23,7 @@ draw_set_font(font_comic);
 draw_rectangle_color(gui_width - string_width(flags.objective_text) - 1*objective_padding, 200, gui_width, string_height(flags.objective_text)*2 + 240, objective_col, objective_col, objective_col, objective_col, false)
 
 // Draw objective phase text
-draw_text_color(gui_width - string_width(flags.objective_text) - objective_padding, 200, objective_phase_text, objective_text_col, objective_text_col, objective_text_col, objective_text_col, true);
+draw_text_color(gui_width - string_width(flags.objective_text) - objective_padding, 200, flags.objective_phase_text, objective_text_col, objective_text_col, objective_text_col, objective_text_col, true);
 
 // Draw objective text
 draw_text_color(gui_width - string_width(flags.objective_text) - objective_padding, string_height(flags.objective_text) + 200, flags.objective_text, objective_text_col, objective_text_col, objective_text_col, objective_text_col, true);

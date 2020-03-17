@@ -21,7 +21,6 @@ w_heart = sprite_get_width(spr_heart_full);
 
 objective_padding = 100;
 objective_col = c_black;
-objective_phase_text = "Miscellaneous";
 objective_text_col = c_white;
 
 alarm[0] = room_speed;
