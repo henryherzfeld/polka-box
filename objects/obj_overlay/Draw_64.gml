@@ -3,6 +3,10 @@
 // Progress Bar
 //var curr_prog = flags.progress;
 draw_rectangle_color(x1+3, y_offset, x1 + (x2 - ((max_prog - curr_prog) / max_prog)*x2), y_offset + h_pbar, bar_col, bar_col, bar_col, bar_col, false); 
+draw_set_halign(fa_center);
+draw_set_font(font_comic);
+draw_text(game.gui_width/2, h_pbar/2, string(curr_prog) + " / " + string(max_prog));
+draw_set_halign(fa_left);
 draw_sprite(pbar, 0, x1, y_offset)
  
 // Timer

@@ -23,10 +23,7 @@ text[? "EXIT"] = ["Ok", [], []]
 name = "Villy";
 portrait = spr_portrait_villy_green;
 
-scripts = [
-	[scr_activate_objective, enum_objective_type.find_weeraway],
-	[scr_deactivate_objective, enum_objective_type.start],
-]
+scripts = [];
 
 draw = false;
 

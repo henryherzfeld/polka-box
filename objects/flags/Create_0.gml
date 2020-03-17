@@ -10,6 +10,8 @@ scr_add_objective(enum_objective_type.report_crops_to_poppy, "1/1 clues found", 
 scr_add_objective(enum_objective_type.measure_soil_moisture, "Measure the soil's moisture", enum_objective_phase.collect_clues);
 scr_add_objective(enum_objective_type.prompt_measure_soil_moisture, "", enum_objective_phase.collect_clues);
 
+scr_activate_objective(enum_objective_type.start);
+
 objective_text = "";
 objective = 0;
 objective_phase = 0;

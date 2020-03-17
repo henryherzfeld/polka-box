@@ -1,8 +1,6 @@
 /// @description Insert description here
 
 draw_set_font(font);
-draw_set_valign(fa_top);										
-draw_set_halign(fa_left);
 
 // Test for interact input to move curr_seq page forward
 if (keyboard_check_pressed(interact_key) and !dialogue_pause){
@@ -122,3 +120,5 @@ if(exiting){
 	}	
 	instance_destroy();
 }
+
+draw_set_font(font_comic);

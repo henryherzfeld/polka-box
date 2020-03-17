@@ -3,5 +3,7 @@
 
 var type = argument[0];
 
-ds_grid_set(flags.objectives, type, enum_objective_state.active, true);
-flags.objective_change = true;
+if(!ds_grid_get(flags.objectives, type, enum_objective_state.active)){
+	ds_grid_set(flags.objectives, type, enum_objective_state.active, true);
+	flags.objective_change = true;
+}

@@ -144,3 +144,5 @@ if(speaker != noone){
 	//Draw Portrait Sprite
 	draw_sprite_stretched(speaker.portrait, 0, port_x, port_y, port_width, port_height);
 }
+
+draw_set_font(font_comic);

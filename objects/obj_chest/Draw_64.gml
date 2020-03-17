@@ -17,12 +17,14 @@ draw_rectangle_color(inv_x,inv_y,inv_x + inv_width,inv_y + inv_height,c_dkgray,c
 //Draw Title
 var tx = inv_x + inv_width/2;		//X positoin of the Title, i.e (Invetory's x position) + (Half Width of Inventory) . i.e Middle of the Rectangle
 var ty = inv_y + 8;					//Y positoin of the Title	//Some Offset from the top of the rectangle
-//draw_set_color(c_white);			//Colour of the Title
-//draw_set_valign(fa_top);			//Verticle Align (To Top)
-//draw_set_halign(fa_middle);			//Horizontal Align (to left)
-//draw_set_font(font_large);			//Using font_Large for Title
+draw_set_color(c_white);			//Colour of the Title
+draw_set_valign(fa_top);			//Verticle Align (To Top)
+draw_set_halign(fa_middle);			//Horizontal Align (to left)
+draw_set_font(font_large);			//Using font_Large for Title
 draw_text(tx,ty,"CHEST");			//Drawing The TEXT (TITLE) ar tx, ty
 
+draw_set_halign(fa_center)
+draw_set_font(font_comic);
 //Slot Positions and Values
 var xOffSet = 64;					//Slot X-OffSet For 1st Slot from where it'll be drawn relative to the rectangle of inventory
 var yOffSet = 80;					//Slot Y-OffSet For 1st Slot from where it'll be drawn relative to the rectangle of inventory
