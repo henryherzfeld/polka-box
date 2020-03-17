@@ -3,7 +3,7 @@
 
 event_inherited();
 
-if(scr_check_objective(enum_objective_type.find_poppy) and !flags.examine_crops){
+if(scr_check_objective(enum_objective_type.find_poppy) and !scr_check_objective(enum_objective_type.examine_crops)){
 	text[? "GREET"] = ["Hi", ["A1", "A1_1", "A1_2", "GREET"], [polka]]
 
 	text[? "A1"] = ["What do crops need to live?", "Plants need air, sunlight, water, and soil.", ["A2", "A2_1", "A2_2", "A2_3", "A2_4", "GREET"], [polka, id]]
