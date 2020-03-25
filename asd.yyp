@@ -727,6 +727,14 @@
             }
         },
         {
+            "Key": "2ca4da18-c3a9-407c-ab96-c0798bd0ef74",
+            "Value": {
+                "id": "6780c952-c00b-4137-aea8-2b18f2bb69fc",
+                "resourcePath": "sprites\\spr_bazaar_interior\\spr_bazaar_interior.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2cb83586-adc8-47a9-8566-0059ea8bbc64",
             "Value": {
                 "id": "3c55abec-421e-4fdc-b6ff-fca1c1793825",
@@ -1547,6 +1555,14 @@
             "Value": {
                 "id": "929ec8e6-d6ea-46c8-bd9d-a83add9cf36b",
                 "resourcePath": "sprites\/sprite136\/sprite136.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "652e46fb-8fc3-4cbe-9ca6-e35e7ac60429",
+            "Value": {
+                "id": "f6f7a252-ad6e-4299-ae90-bf71464abaa7",
+                "resourcePath": "sprites\\spr_bazaar_exterior\\spr_bazaar_exterior.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2823,6 +2839,14 @@
             }
         },
         {
+            "Key": "bfccfea3-0555-4514-bc75-1b6a21a2479f",
+            "Value": {
+                "id": "9484d04a-b620-4d24-8832-1dac7a047988",
+                "resourcePath": "rooms\\rm_bazaar_interior\\rm_bazaar_interior.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "c0016014-262a-42bb-9b81-a9c6ab6277e8",
             "Value": {
                 "id": "2255b607-b021-4cb5-8c36-a33718ee5863",
@@ -3220,6 +3244,14 @@
                 "id": "795aa81b-0add-4952-884a-ba0d56aee9af",
                 "resourcePath": "sprites\/sprite167\/sprite167.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "dec87fff-e5b2-42e3-8dd1-ee39879f3ec4",
+            "Value": {
+                "id": "96633662-9018-4816-be3f-399954d5bd50",
+                "resourcePath": "objects\\obj_bazaar_exterior\\obj_bazaar_exterior.yy",
+                "resourceType": "GMObject"
             }
         },
         {
