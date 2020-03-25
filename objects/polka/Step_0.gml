@@ -169,7 +169,7 @@ if(input_space){
 					inst.draw_temp = true;
 					inst.units = "kpa";
 					inst.alarm[0] = room_speed * 2;
-					alarm[0] = room_speed * 2;
+					if(scr_check_objective(enum_objective_type.measure_soil_moisture)){alarm[0] = room_speed * 2;}
 				}
 				break;
 				
