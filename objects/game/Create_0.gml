@@ -21,6 +21,9 @@ spawn_x = 255;
 spawn_y = 76;
 
 do_transition = false;
+start_room = rm_polka_interior;
+do_load = false;
+initial = true;
 
 draw_set_font(font);
 

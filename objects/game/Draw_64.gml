@@ -4,7 +4,6 @@ draw_set_font(font_comic);
 
 
 if (do_transition) {
-	
 	if (room != spawn_room) {
 		black_alpha += 0.1;
 		

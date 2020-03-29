@@ -19,6 +19,7 @@ objective_phase_texts = ["Miscellaneous", "Ask Questions", "Collect Clues", "Ana
 objective_phase_text = objective_phase_texts[0];
 
 objective_change = false;
+objective_update = false;
 
 progress = 0;
 max_progress = enum_objective_type.length;

@@ -16,6 +16,8 @@ y_offset = 10;
 
 // Timer
 time = 1200;
+minutes = "";
+seconds = "";
 alarm[0] = room_speed;
 
 // Hearts
@@ -48,8 +50,6 @@ noti_sm_width = 0;
 noti_sm_height = 0;
 noti_sm_padding = 100;
 
-scr_fire_sm_noti("asdasdasdasd")
-
 draw_lg_noti = false;
 noti_lg_count = 0;
 noti_lg_text = "";
@@ -57,5 +57,3 @@ noti_lg_bg_col = c_blue;
 
 noti_lg_bg_size = 150;
 noti_lg_bg_border_size = 20;
-
-scr_fire_lg_noti("ASDASSDASDSAD")

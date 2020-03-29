@@ -1,9 +1,10 @@
 
-if(objective_change){
+if(objective_change or objective_update){
 	for(var i = 0; i < enum_objective_type.length; i++){
 		if(scr_check_objective(i)){
 			
 			objective = i;
+			if(objective_update) {progress = i }
 			objective_text = ds_grid_get(objectives, i, enum_objective_state.text);
 			
 			// using temp to test for a change in objective phase, if so fire off a small notification
@@ -18,7 +19,12 @@ if(objective_change){
 		}
 	}
 	
-	//send_event("Objective", objective, "na")
-	progress += 1;
-	objective_change = false;
+	
+	if(objective_change){
+		//send_event("Objective", objective, "na")
+		progress += 1;
+		objective_change = false;
+	} else{
+	objective_update = false;
+	}
 }

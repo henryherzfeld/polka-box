@@ -89,7 +89,7 @@ if(page_change){
 	
 	n_options = array_length_1d(options);
 	
-	string_wrapped = scr_wrap_text(string_, box_width);
+	string_wrapped = scr_wrap_text(string_, box_width - 2*text_padding);
 	string_len = string_length(string_wrapped);
 	
 	counter = 0;
