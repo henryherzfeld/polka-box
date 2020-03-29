@@ -18,11 +18,11 @@ gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 
 if(initial){
-	if keyboard_check_pressed(ord("L")){
+	if file_exists("savedgame.sav"){
 	game.do_load = true;
 }
 	if(room == start_room){
-		if(game.do_load){ scr_construct_load_meta(); }
+		if(game.do_load){ scr_construct_load_meta(); game.do_load = false; }
 		else { scr_construct_meta(); }
 		initial = false;
 	}
