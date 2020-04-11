@@ -43,9 +43,9 @@ if(file_exists("savedgame.sav")){
 	//// ASSIGN IT ALLLLLLLL
 	// game_data
 	flags.coins = coins_;
-	polka.hearts = hearts_;
+	flags.hearts = hearts_;
 	game.name = name_;
-	obj_overlay.time = time_;
+	flags.time = time_;
 	
 	// grid_map
 	var objectives_ = ds_grid_create(enum_objective_type.length, enum_objective_state.length);

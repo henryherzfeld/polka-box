@@ -25,3 +25,7 @@ if (do_transition) {
 	draw_set_alpha(1);
 
 }
+
+if(pause){
+	draw_sprite_ext(screenshot, 0, 0, 0, 1, 1, 0, c_gray, 1);
+}

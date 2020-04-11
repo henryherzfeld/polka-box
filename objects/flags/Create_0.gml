@@ -25,3 +25,8 @@ progress = 0;
 max_progress = enum_objective_type.length;
 
 coins = 0;
+hearts = 3;
+
+time = 1200;
+paused_time = -1;
+alarm[0] = room_speed;

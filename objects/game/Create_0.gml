@@ -25,6 +25,9 @@ start_room = rm_polka_interior;
 do_load = false;
 initial = true;
 
+pause = false;
+screenshot = noone;
+
 draw_set_font(font);
 
 // Creating direction enumerator for player transitions

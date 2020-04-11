@@ -19,7 +19,6 @@ if(objective_change or objective_update){
 		}
 	}
 	
-	
 	if(objective_change){
 		//send_event("Objective", objective, "na")
 		progress += 1;
@@ -27,4 +26,10 @@ if(objective_change or objective_update){
 	} else{
 	objective_update = false;
 	}
+}
+
+if (game.pause){
+	time = paused_time;
+} else {
+	paused_time = -1;
 }

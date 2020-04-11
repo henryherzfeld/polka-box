@@ -8,6 +8,10 @@ if(keyboard_check_pressed(vk_backspace) and keyboard_check(vk_lcontrol)){
 	}
 }
 
+if(keyboard_check_pressed(vk_escape) and instance_find(menu_pause, 0) == noone){
+	instance_create_layer(0, 0, "Menus", menu_pause);
+}
+
 if(browser_width != width || browser_height != height){
     width = min(base_width, browser_width);
     height = min(base_height, browser_height);
@@ -26,4 +30,11 @@ if(initial){
 		else { scr_construct_meta(); }
 		initial = false;
 	}
+}
+
+if(pause){
+	scr_pause();
+}
+else {
+	scr_unpause();
 }

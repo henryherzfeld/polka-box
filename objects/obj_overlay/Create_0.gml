@@ -15,10 +15,9 @@ x2 = w_pbar;
 y_offset = 10;
 
 // Timer
-time = 1200;
 minutes = "";
 seconds = "";
-alarm[0] = room_speed;
+
 
 // Hearts
 x_heart = 1350;

@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+var time = flags.time;
+
 minutes = string(time div 60);
 seconds = string(time mod 60);
 
