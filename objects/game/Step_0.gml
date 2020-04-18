@@ -8,9 +8,21 @@ if(keyboard_check_pressed(vk_backspace) and keyboard_check(vk_lcontrol)){
 	}
 }
 
-if(keyboard_check_pressed(vk_escape) and instance_find(menu_pause, 0) == noone){
-	instance_create_layer(0, 0, "Menus", menu_pause);
+
+if(buffer != 0){
+	buffer -= 1;
 }
+if(keyboard_check_pressed(vk_escape)){
+	
+	var inst = instance_find(menu_pause, 0);
+	if(buffer == 0){
+		buffer = 5;
+		if(inst == noone){
+			instance_create_layer(0, 0, "Menus", menu_pause);
+		}
+	}
+}
+
 
 if(browser_width != width || browser_height != height){
     width = min(base_width, browser_width);
@@ -21,20 +33,18 @@ if(browser_width != width || browser_height != height){
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 
-if(initial){
-	if file_exists("savedgame.sav"){
-	game.do_load = true;
-}
-	if(room == start_room){
-		if(game.do_load){ scr_construct_load_meta(); game.do_load = false; }
-		else { scr_construct_meta(); }
-		initial = false;
-	}
-}
+if(pause_change){
 
-if(pause){
-	scr_pause();
-}
-else {
-	scr_unpause();
+	pause_change = false;
+
+	if pause { pause = false; }
+	else { pause = true; }
+
+	if(pause){
+		scr_pause();
+	}
+	else {
+		scr_unpause();
+	}
+
 }

@@ -28,5 +28,4 @@ if(destroy_menu){
 	ds_map_destroy(window_map);
 	ds_list_destroy(keys_list);
 	instance_destroy();
-	game.pause = false;
 }

@@ -46,6 +46,14 @@ with(par_button){
 				break;
 			}
 			
+			case enum_button_event.run_script_exit: {
+				if(is_array(attr)){ scr_script_execute_array_1d(attr) }
+				else { script_execute(attr); }
+				other.destroy_window = true; 
+				par_menu.destroy_menu = true;
+				break;
+			}
+			
 			case enum_button_event.exit_: {
 				other.destroy_window = true; 
 				par_menu.destroy_menu = true;

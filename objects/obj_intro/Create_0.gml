@@ -11,8 +11,6 @@ box = spr_textbox2;
 
 box_width=sprite_get_width(box);
 
-
-
 text = [
 		"It's been exactly 2 months since you first landed in the distant planet Euboxia. You were once the loyal helper to a great Star Lord in your outer space travels. However, your space ship was hit by a massive asteroid, and you crash-landed into the planet closest to you - Euboxia.",
 		"You caused the Villies quite a shock! The Villies are the beings on this planet - well-to-do, little people who have ordinary lives and jobs.",

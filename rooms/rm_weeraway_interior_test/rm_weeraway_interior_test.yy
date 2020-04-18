@@ -111,8 +111,8 @@
         },
         {
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
-            "name": "polka",
-            "id": "e52709f5-034d-4797-9023-41019e371032",
+            "name": "Characters",
+            "id": "e99f69b6-f799-4c9c-9bbd-0a3dd343c566",
             "depth": 300,
             "grid_x": 32,
             "grid_y": 32,

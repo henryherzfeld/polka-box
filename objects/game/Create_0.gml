@@ -26,7 +26,10 @@ do_load = false;
 initial = true;
 
 pause = false;
+pause_change = false;
 screenshot = noone;
+
+buffer = 10;
 
 draw_set_font(font);
 
@@ -37,3 +40,5 @@ enum dir {
 	down = 180,
 	left = 270
 }
+
+alarm[0] = room_speed;

@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "05bf4efa-8f8d-471c-bd2f-c1a875725036",
+            "Value": {
+                "id": "0b3235d7-b818-4687-bca7-2f394e40e36f",
+                "resourcePath": "scripts\\scr_exit\\scr_exit.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "06f596e7-6c59-4386-a416-aa713be17ebc",
             "Value": {
                 "id": "e2dbf984-0581-4511-80a4-f12c92c244d5",
@@ -204,6 +212,14 @@
                 "id": "b87b35cd-18f0-4737-aae9-abc2f2889bbf",
                 "resourcePath": "scripts\\scr_fire_lg_noti\\scr_fire_lg_noti.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "0a40d1dc-c76e-4c49-a635-b12c508559b8",
+            "Value": {
+                "id": "9d4a4601-483c-4bea-99cf-9273c7b6b82c",
+                "resourcePath": "views\\0a40d1dc-c76e-4c49-a635-b12c508559b8.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -556,6 +572,14 @@
                 "id": "97e33281-bf04-4037-bfea-a07ffab2d7ef",
                 "resourcePath": "sprites\/spr_polka_stand_back\/spr_polka_stand_back.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1fa7bec7-b7e4-43a4-b813-aa54ef9a85f4",
+            "Value": {
+                "id": "528abfd0-acaa-477c-b364-a52b2aa30bf2",
+                "resourcePath": "scripts\\scr_init_game\\scr_init_game.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1274,7 +1298,7 @@
             "Key": "4929d877-1c8a-40d0-8d3c-332c0cfd37af",
             "Value": {
                 "id": "00f2438d-b560-4f98-8eb0-7a4eb6c0deff",
-                "resourcePath": "objects\/obj_main_menu_UI\/obj_main_menu_UI.yy",
+                "resourcePath": "objects\\obj_intro\\obj_intro.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1372,6 +1396,14 @@
                 "id": "b6d22d03-a9b1-4128-a9b0-3e72231385b7",
                 "resourcePath": "sprites\\spr_pbar_bg\\spr_pbar_bg.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "4f06cb1d-33cd-4990-83b2-a815171b658a",
+            "Value": {
+                "id": "d01e986a-469e-4333-8ada-7d7011c29e93",
+                "resourcePath": "scripts\\scr_load_game_start\\scr_load_game_start.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1671,6 +1703,14 @@
             }
         },
         {
+            "Key": "6533d6e2-a919-4f09-8312-0a1e11c3df9f",
+            "Value": {
+                "id": "c4b5ab19-6c32-4815-935c-b7a3a00368ec",
+                "resourcePath": "scripts\\scr_new_game_start\\scr_new_game_start.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "658bac64-c238-4855-b77e-fc603d59f6fe",
             "Value": {
                 "id": "bf43f905-2088-4a38-beb6-9a2e4ffdd2e7",
@@ -1940,6 +1980,14 @@
                 "id": "b870c977-b01c-471a-851b-27c4110da0a4",
                 "resourcePath": "sprites\/sprite163\/sprite163.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "753fda92-e29b-4dd4-a17b-0c393175f860",
+            "Value": {
+                "id": "0aa44e8e-f8d5-47fc-952c-c92080646b49",
+                "resourcePath": "scripts\\scr_save_and_exit_to_main\\scr_save_and_exit_to_main.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2956,6 +3004,14 @@
                 "id": "d2a1d825-6e55-4fbe-9076-7b8e7ff3b104",
                 "resourcePath": "scripts\\scr_construct_load_meta\\scr_construct_load_meta.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b1716210-20b6-4ea8-be6a-64488afeefb0",
+            "Value": {
+                "id": "c70872ee-c798-462e-8f0e-3186ed3c2d19",
+                "resourcePath": "objects\\menu_main\\menu_main.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -4076,7 +4132,12 @@
         "7e9bfb68-e1a5-4e7e-a5e5-1997b431c593",
         "0d25f82b-b056-47a0-afea-a7cf2b442408",
         "746d2cee-b3b7-4846-b5eb-a98034bc633e",
+        "753fda92-e29b-4dd4-a17b-0c393175f860",
         "8ab2b95c-6f7a-4700-b013-fa3cf1888f1e",
+        "4f06cb1d-33cd-4990-83b2-a815171b658a",
+        "05bf4efa-8f8d-471c-bd2f-c1a875725036",
+        "6533d6e2-a919-4f09-8312-0a1e11c3df9f",
+        "1fa7bec7-b7e4-43a4-b813-aa54ef9a85f4",
         "461115e4-da3f-40d9-abbc-3a3425a1afa8",
         "35ad9534-2342-49db-92b7-b9839834fe35",
         "3ea0cbb9-ae97-4162-83d4-983bf499fdf2",

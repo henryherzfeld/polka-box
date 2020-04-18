@@ -18,6 +18,7 @@ menu_ptr = noone;
 enum enum_button_event{
 	new_window,
 	run_script,
+	run_script_exit,
 	exit_
 }
 

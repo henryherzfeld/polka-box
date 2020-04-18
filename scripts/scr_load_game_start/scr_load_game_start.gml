@@ -1,6 +1,6 @@
-///@description scr_construct_meta
+///@description scr_load_game_start
 
-scr_construct_meta();
+scr_init_game();
 
 if(file_exists("savedgame.sav")){
 	
@@ -45,9 +45,9 @@ if(file_exists("savedgame.sav")){
 	//// ASSIGN IT ALLLLLLLL
 	// game_data
 	flags.coins = coins_;
-	polka.hearts = hearts_;
+	flags.hearts = hearts_;
 	game.name = name_;
-	game.time = time_;
+	flags.time = time_;
 	
 	// grid_map
 	var objectives_ = ds_grid_create(enum_objective_type.length, enum_objective_state.length);
@@ -58,6 +58,7 @@ if(file_exists("savedgame.sav")){
 	
 	// loc_data
 	room_goto(room_);
+
 	game.spawn_x = x_;
 	game.spawn_y = y_;
 	

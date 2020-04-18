@@ -2,8 +2,8 @@
 // You can write your code in this editor
 
 if (keyboard_check_pressed(vk_enter)){
-	game.name = curr_name
-	obj_main_menu_UI.intro = true;
+	game.name = curr_name;
+	obj_intro.intro = true;
 	instance_destroy();
 }
 

@@ -2,12 +2,11 @@
 {
     "name": "erosion_village",
     "id": "8881a463-2564-4cde-ac03-4eb7d2c8b360",
-    "creationCodeFile": "",
+    "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,
     "inheritCreationOrder": false,
     "inheritLayers": false,
     "instanceCreationOrderIDs": [
-        "df934074-323d-480a-90b3-022cf8efd47b",
         "2d4a8260-6425-4b55-ae6e-d539d6669cba",
         "85814289-30bc-43c9-a0c3-96ac8db30b15",
         "93269c08-5842-433a-969a-37f420b32fec",
@@ -298,7 +297,8 @@
         "85956a33-9f7d-4c97-8ad5-08f334c86944",
         "7e41b1d6-971f-4ac7-ba6e-5a3199a0c17e",
         "e3e58368-6648-4b85-bbea-1e4ff8c8bd64",
-        "fe5f5b97-e3e7-4077-87c9-71e873d97e7e"
+        "fe5f5b97-e3e7-4077-87c9-71e873d97e7e",
+        "df934074-323d-480a-90b3-022cf8efd47b"
     ],
     "IsDnD": false,
     "layers": [
@@ -754,7 +754,7 @@
                 },
                 {
                     "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
-                    "name": "characters",
+                    "name": "Characters",
                     "id": "a25894b2-218a-4495-8eb7-7238e7162ff7",
                     "depth": 900,
                     "grid_x": 32,
