@@ -4,6 +4,11 @@ mx = device_mouse_x_to_gui(0);
 my = device_mouse_y_to_gui(0);
 
 if (curr_window != noone) {
+	
+	if child_window_ptr != noone {
+		child_window_ptr.destroy_window = true;
+	}
+	
 	var inst = instance_create_layer(0, 0, "Menus", ui_window);
 	
 	var temp = window_map[? curr_window];
@@ -14,6 +19,7 @@ if (curr_window != noone) {
 	inst.button_grid = temp[| 3];
 	inst.menu_ptr = id;
 	curr_window = noone;
+	child_window_ptr = inst.id;
 }
 
 

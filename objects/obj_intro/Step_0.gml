@@ -16,7 +16,7 @@ if(keyboard_check_pressed(vk_space) and initial){
 if(keyboard_check_pressed(vk_anykey) and intro){
 	if (page >= array_length_1d(text) - 1){
 	room_goto(spawn_room)
-	scr_init_game();
+	scr_construct_meta();
 	}
 	
 	++page;

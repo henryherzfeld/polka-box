@@ -35,8 +35,9 @@ with(par_button){
 		// execute event
 		switch(event){
 			case enum_button_event.new_window: {
-				other.destroy_window = true;
 				other.menu_ptr.curr_window = attr;
+				//other.destroy_window = true;
+				
 				break;
 			}
 			

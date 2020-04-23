@@ -10,7 +10,8 @@
         "7e9bfb68-e1a5-4e7e-a5e5-1997b431c593",
         "0d25f82b-b056-47a0-afea-a7cf2b442408",
         "746d2cee-b3b7-4846-b5eb-a98034bc633e",
-        "753fda92-e29b-4dd4-a17b-0c393175f860"
+        "753fda92-e29b-4dd4-a17b-0c393175f860",
+        "4f06cb1d-33cd-4990-83b2-a815171b658a"
     ],
     "filterType": "GMScript",
     "folderName": "save_load",

@@ -1,6 +1,6 @@
 ///@description scr_load_game_start
 
-scr_init_game();
+scr_construct_meta();
 
 if(file_exists("savedgame.sav")){
 	

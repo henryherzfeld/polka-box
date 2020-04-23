@@ -575,14 +575,6 @@
             }
         },
         {
-            "Key": "1fa7bec7-b7e4-43a4-b813-aa54ef9a85f4",
-            "Value": {
-                "id": "528abfd0-acaa-477c-b364-a52b2aa30bf2",
-                "resourcePath": "scripts\\scr_init_game\\scr_init_game.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "1fd6960a-b1cd-4bce-9e0c-b5374ceba7d2",
             "Value": {
                 "id": "3455b914-1ff4-4a8b-bd40-d81795eeefbc",
@@ -1955,6 +1947,14 @@
             "Value": {
                 "id": "1330cc9a-52c2-4531-979a-95b4ff2ea969",
                 "resourcePath": "objects\/object96\/object96.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "73cd0959-dcb3-46ca-a9f6-ca1872cd9c96",
+            "Value": {
+                "id": "4a7f36e5-b224-4974-aa7f-e4189442c611",
+                "resourcePath": "objects\\obj_lighting\\obj_lighting.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -4007,6 +4007,14 @@
             }
         },
         {
+            "Key": "f95b3223-95e6-4966-a372-0d1692e551d3",
+            "Value": {
+                "id": "4c1a0ca5-afd6-4926-bb7a-84f1df9dfd3a",
+                "resourcePath": "objects\\obj_torch\\obj_torch.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f973cf9d-e584-4c30-8c00-fff2b35e96c2",
             "Value": {
                 "id": "d876b8d0-b89e-481a-8928-41319b15bb1e",
@@ -4133,12 +4141,11 @@
         "0d25f82b-b056-47a0-afea-a7cf2b442408",
         "746d2cee-b3b7-4846-b5eb-a98034bc633e",
         "753fda92-e29b-4dd4-a17b-0c393175f860",
-        "8ab2b95c-6f7a-4700-b013-fa3cf1888f1e",
         "4f06cb1d-33cd-4990-83b2-a815171b658a",
+        "8ab2b95c-6f7a-4700-b013-fa3cf1888f1e",
+        "461115e4-da3f-40d9-abbc-3a3425a1afa8",
         "05bf4efa-8f8d-471c-bd2f-c1a875725036",
         "6533d6e2-a919-4f09-8312-0a1e11c3df9f",
-        "1fa7bec7-b7e4-43a4-b813-aa54ef9a85f4",
-        "461115e4-da3f-40d9-abbc-3a3425a1afa8",
         "35ad9534-2342-49db-92b7-b9839834fe35",
         "3ea0cbb9-ae97-4162-83d4-983bf499fdf2",
         "53366b95-57de-4942-9249-62f83b561126",

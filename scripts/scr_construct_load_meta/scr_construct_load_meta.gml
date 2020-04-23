@@ -4,7 +4,7 @@ scr_construct_meta();
 
 if(file_exists("savedgame.sav")){
 	
-	// get objects from JSON
+	// get objects from JSON 
 	var wrapper = scr_load_string_from_JSON("savedgame.sav");
 	
 	// unpack list from map wrapper

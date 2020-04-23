@@ -1,4 +1,4 @@
- /// @description Draw
+  /// @description Draw
 
 if(global.show_inventory){
 	//Draw the Rectangle (Inventory Panel)

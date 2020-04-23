@@ -97,7 +97,7 @@ if(input_interact and !in_dialogue){
 		scr_create_textbox(npc.text, npc.name, npc.portrait, npc.scripts);
 	}
 }
-
+     
 //Check for collision with chest
 chest = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_chest, false, true);
 
