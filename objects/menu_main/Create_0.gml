@@ -22,7 +22,7 @@ scr_grid_add_button(200, 500, "Exit", enum_button_type.click, enum_button_event.
 scr_add_window("main_main", 200, 200, "Pause Menu");
 
 button_grid = ds_grid_create(1, 6);
-scr_grid_add_button(200, 200, "Back", enum_button_type.click, enum_button_event.new_window, "main_main");
+scr_grid_add_button(200, 500, "Save Settings \nand Go Back", enum_button_type.click, enum_button_event.new_window, "main_main");
 scr_add_window("settings", 200, 200, "Settings");
 
 par_ptr.curr_window = "main_main";

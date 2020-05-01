@@ -1,5 +1,5 @@
 /// @function itemAddInventory(type);
-/// @description Add item to inventory, return true on success and false in faliur
+/// @description Add item to inventory, return true on success and false in faliure
 /// Checks if a slot is empty, if empty then assign it the item, else failure
 /// @param {enum} type Type of the item
 

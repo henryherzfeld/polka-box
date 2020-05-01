@@ -15,5 +15,6 @@ fire = false;
 attr = -1;
 
 update = false;
+enabled = false;
 
 text = -1;

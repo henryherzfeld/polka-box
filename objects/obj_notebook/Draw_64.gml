@@ -38,8 +38,8 @@ if(draw_evidence){
 	
 	///We will only process further if the slot is not empty
 			if (evi_type != enum_evi_type.none) {
-					var evi_sprite	= evi_def[# evi_type,enum_evi_state.sprite];		//Sprite for the respective type of the item from the itemDef array
 
+					var evi_sprite	= evi_def[evi_type,enum_evi_state.sprite];		//Sprite for the respective type of the item from the itemDef array
 		
 					draw_sprite_stretched(evi_sprite,0,evi_x,evi_y,48,48);			//Draw the item Sprite
 					//Draw Amount
@@ -63,12 +63,11 @@ if(draw_evidence){
 					if (mouse_check_button_pressed(mb_left)) {
 						//Slot Selected
 						//Use the item in the inventory slot
-						itemUseInventory(evi_type);
-						if(polka.in_dialogue){
-							obj_textbox.dialogue_pause = false;
-							obj_textbox.evidence_choice = evi_type;
+						if(obj_quiz_manager.pending_choice){
+							obj_quiz_manager.choice = evi_type;
+							draw_evidence = false;
 						}
-						draw_evidence = false;
+						
 						
 						}
 					}
@@ -82,3 +81,6 @@ if(draw_evidence){
 } else {
 	preview_spr = noone;
 }
+
+draw_set_valign(fa_top);
+draw_set_halign(fa_top);		

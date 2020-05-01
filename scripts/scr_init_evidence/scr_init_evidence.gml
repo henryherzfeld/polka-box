@@ -15,7 +15,6 @@ show_debug_message(enum_evi_type.length);
 enum enum_evi_state {
 	sprite,
 	name,
-	callback_script,
 	description,
 	//ADD new item property
 	//new_property

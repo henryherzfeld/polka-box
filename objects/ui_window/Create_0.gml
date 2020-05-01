@@ -19,9 +19,13 @@ enum enum_button_event{
 	new_window,
 	run_script,
 	run_script_exit,
+	quiz_multi,
+	quiz_checkbox,
 	exit_
 }
 
 enum enum_button_type{
 	click,
+	checkbox,
+	radio
 }

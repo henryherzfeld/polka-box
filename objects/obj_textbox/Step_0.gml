@@ -30,39 +30,34 @@ if (keyboard_check_pressed(interact_key) and !dialogue_pause){
 	}
 	else{
 		draw_options = true;
-		
 	}
 }
 
 // Executing string modification scripts
 for(var i = 0; i < string_n_mods; i++){
 	curr_mod = string_mods[i];
-	if(curr_mod[0] == "SCRIPT"){
-		var input = [];
-		array_copy(input, 0, curr_mod, 1, array_length_1d(curr_mod) - 1)
-		scr_script_execute_array_1d(input);
+	
+	switch(curr_mod[0]){
+		case "SCRIPT": {
+			var input = [];
+			array_copy(input, 0, curr_mod, 1, array_length_1d(curr_mod) - 1)
+			scr_script_execute_array_1d(input);
+			break;
+		}
+			
+		case "QUIZ": {
+			dialogue_pause = true;
+			obj_quiz_manager.questions = curr_mod[1];
+			obj_quiz_manager.quizzer_id = curr_mod[2];
+			break;
+		}
 	}
 	
-	else if(curr_mod[0] == "EVI_PROMPT"){
-		scr_notebook_evi_prompt();
-		evidence_target = curr_mod[1];
-	}
 	// remove entry from script mods
 	array_copy(string_mods, 0, string_mods, 1, string_n_mods - 1);
 	i -= 1;
 	string_n_mods -= 1; 
 	
-}
-
-// checking if we made a choice for a piece of evidence during a evidence prompt
-if(evidence_choice != noone){
-	if(evidence_choice == evidence_target){
-		show_debug_message("evidence match");
-	}
-	
-	page_change = true;
-	evidence_choice = noone;
-	page++;
 }
 
 if(page_change){
@@ -114,7 +109,6 @@ if(exiting){
 	
 	for (var i = 0; i < n; ++i){
 		args = scripts[i];
-		
 		scr_script_execute_array_1d(args);
 		}
 	}	

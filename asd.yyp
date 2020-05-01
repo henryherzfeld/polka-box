@@ -319,6 +319,14 @@
             }
         },
         {
+            "Key": "11742001-b01a-4e9b-a2aa-c95014ae6664",
+            "Value": {
+                "id": "0283280e-2ea0-46ab-b6f4-e04721b0a7a3",
+                "resourcePath": "scripts\\scr_evi_add_notebook\\scr_evi_add_notebook.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "11e9ba4e-4458-445f-862c-c6ac6c23d24d",
             "Value": {
                 "id": "68d9ab0c-6ded-4238-9ead-8b1bc5515337",
@@ -567,6 +575,14 @@
             }
         },
         {
+            "Key": "1ef0c0c6-3d26-4bd5-a12d-fcb27b9066a0",
+            "Value": {
+                "id": "8a7e4018-c8a8-4c0d-9d13-f4a5928deadb",
+                "resourcePath": "sprites\\spr_button_test_cross\\spr_button_test_cross.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1f78baa3-dbec-4d7b-a8c5-a898c2d78376",
             "Value": {
                 "id": "97e33281-bf04-4037-bfea-a07ffab2d7ef",
@@ -691,6 +707,14 @@
             "Value": {
                 "id": "03dda262-251a-4ea5-856c-0a35734246df",
                 "resourcePath": "objects\/object59\/object59.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2915c65a-009f-40fa-90ba-e92667446f6a",
+            "Value": {
+                "id": "80d7bb8c-d96e-43dd-9f94-d7a33e7e4564",
+                "resourcePath": "objects\\menu_quiz\\menu_quiz.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1156,6 +1180,14 @@
                 "id": "2b51a36d-0eb9-4199-83b4-f724fef11f29",
                 "resourcePath": "objects\/object47\/object47.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "42b0c753-4b48-42bd-9597-f816b530b10e",
+            "Value": {
+                "id": "98b3db32-df56-4d0c-ba4e-9ce77221b6bc",
+                "resourcePath": "scripts\\scr_array_sort\\scr_array_sort.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1655,6 +1687,14 @@
             }
         },
         {
+            "Key": "638a2cc9-99d0-4d95-9283-8decb10bf970",
+            "Value": {
+                "id": "ab1db838-6619-4c75-bea9-f2c8fde5a770",
+                "resourcePath": "objects\\obj_quiz_manager\\obj_quiz_manager.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "63a03200-8db4-4804-9058-0a7de446e365",
             "Value": {
                 "id": "7c96d184-54a5-46a6-9345-a9305df10fb6",
@@ -1740,14 +1780,6 @@
                 "id": "9401651b-b430-4208-8d68-ba15214b5d04",
                 "resourcePath": "views\/676ce78c-387c-4ca8-b13d-c9ef83a0ddf5.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "67751388-4836-4f0c-bd1a-8b8a4f092627",
-            "Value": {
-                "id": "5dd68140-c798-4e40-887d-9ce244aa1a28",
-                "resourcePath": "scripts\\scr_notebook_evi_prompt\\scr_notebook_evi_prompt.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -1951,14 +1983,6 @@
             }
         },
         {
-            "Key": "73cd0959-dcb3-46ca-a9f6-ca1872cd9c96",
-            "Value": {
-                "id": "4a7f36e5-b224-4974-aa7f-e4189442c611",
-                "resourcePath": "objects\\obj_lighting\\obj_lighting.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "746d2cee-b3b7-4846-b5eb-a98034bc633e",
             "Value": {
                 "id": "abad30b0-4642-4189-aee9-de99c948c81c",
@@ -2108,6 +2132,14 @@
                 "id": "c8bf244e-0d9d-4c77-bb5d-97657e9393d8",
                 "resourcePath": "objects\/object111\/object111.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "7c71b989-fd75-4fe2-bb8f-398fcb5151ca",
+            "Value": {
+                "id": "743bc4eb-0db7-48ee-8753-246bd8a9beb8",
+                "resourcePath": "scripts\\scr_create_quiz_response\\scr_create_quiz_response.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2972,6 +3004,14 @@
                 "id": "095a378d-56bc-4a42-add5-28a00d578ac3",
                 "resourcePath": "objects\/object109\/object109.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "affdd53b-22fc-4be2-91f5-ccff62907d55",
+            "Value": {
+                "id": "83e688bc-1341-44da-b22f-1f409d6a9b2c",
+                "resourcePath": "sprites\\spr_button_test_check\\spr_button_test_check.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4063,6 +4103,14 @@
             }
         },
         {
+            "Key": "fcfe8cb3-2305-4aae-82f6-97b7acd6a295",
+            "Value": {
+                "id": "0a5c506b-e90a-40c7-b34b-02b656a0bf67",
+                "resourcePath": "objects\\menu_radio_test\\menu_radio_test.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "fd1e0ef8-08ad-4f46-b7e0-23a6b1c53ae5",
             "Value": {
                 "id": "0aee660a-20f2-4777-af1f-e6e2091a1872",
@@ -4122,9 +4170,9 @@
         "9b2ebad3-ac02-4060-b5b2-b5d34fc99ae8",
         "3e9b11e9-bdc7-4a2c-a116-2e4c8cf7028e",
         "8f85b1c7-972c-461b-9dce-5c5fc9e5db5b",
+        "11742001-b01a-4e9b-a2aa-c95014ae6664",
         "839afd29-cdc4-4c64-843d-fb62ea31dcd4",
         "fd1e0ef8-08ad-4f46-b7e0-23a6b1c53ae5",
-        "67751388-4836-4f0c-bd1a-8b8a4f092627",
         "478025e7-896d-4e39-a190-cce0abd6c572",
         "9fb8425b-e52b-42b0-be33-a98964a31ce3",
         "09ccd466-ab06-428e-9e12-d57944db25ce",
@@ -4149,7 +4197,9 @@
         "35ad9534-2342-49db-92b7-b9839834fe35",
         "3ea0cbb9-ae97-4162-83d4-983bf499fdf2",
         "53366b95-57de-4942-9249-62f83b561126",
-        "b6ba8189-877d-47a2-b3a8-98088b917985"
+        "b6ba8189-877d-47a2-b3a8-98088b917985",
+        "42b0c753-4b48-42bd-9597-f816b530b10e",
+        "7c71b989-fd75-4fe2-bb8f-398fcb5151ca"
     ],
     "tutorial": ""
 }

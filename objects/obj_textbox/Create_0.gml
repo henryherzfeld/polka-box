@@ -71,7 +71,3 @@ string_n_mods = 0;
 string_mods = [];
 
 dialogue_pause = false;
-
-evidence_choice = noone;
-evidence_target = noone;
-evi_prompt_resp = [];

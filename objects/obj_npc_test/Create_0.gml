@@ -15,14 +15,20 @@ text[? "A2_2"] = ["There's nothing else to eat?", "The food prices have shot up 
 text[? "EXIT"] = ["Bye Bye", []]
 */
 
+questions = ds_list_create();
+questions[| 0] = [enum_question_type.evidence, enum_evi_type.evidence2, [["right! you're so awesome and funny"], ["wrong idiot", "how could you be so stupid?", "youve failed us"]]];
+questions[| 1] = [enum_question_type.multi, "Prompt multi", ["Right", "Wrong", "Wrong"], 0, [["Correct!!!!!"]]];
+questions[| 2] = [enum_question_type.checkbox, "Prompt checkbox", ["Right", "Wrong", "Right", "Right"], [0, 2, 3], []];
 
-text[? "GREET"] =	["Me", 
-					["You @ COLOR ME BABEEEE LA LA LA LA LA LA LA LA LA LA LA LA LA LA LA LA LAW LAW LA WEDWDA LA @ ", ["EVI_PROMPT", enum_evi_type.evidence2, "Correct", "Incorrect"]], 
-					"Me", "You", ["A1", "EXIT", "EXIT"], [polka, id, polka, id]]
+text[? "GREET"] =	["Hey I'm ready for the quiz!", "Okay here goes sucka",
+					["Good job on the quiz!", ["QUIZ", questions, id]], 
+					"Thanks", "Anything Else?", ["A1", "EXIT", "EXIT"], [polka, id, id, polka, id]]
 
 
-text[? "A1"] = ["Meeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "You", "Me", "You", ["GREET", "EXIT", "EXIT"], [polka, id, polka, id]]
+text[? "A1"] = ["Can I do another quiz?", "You", "Me", "You", ["GREET", "EXIT", "EXIT"], [polka, id, polka, id]]
 text[? "EXIT"] = ["Bye Bye", [], [polka]]
+
+
 
 name = "Villy";
 portrait = spr_portrait;

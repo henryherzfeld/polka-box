@@ -15,5 +15,6 @@ instance_activate_object(ui_window);
 instance_activate_object(par_button);
 instance_activate_object(flags);
 instance_activate_object(obj_state_manager);
+instance_activate_object(obj_tile_manager);
 instance_activate_object(InventoryManager);
 instance_activate_object(obj_notebook);
