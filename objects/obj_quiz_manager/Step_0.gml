@@ -25,7 +25,6 @@ if questions != noone and !response {
 			case 2: no_match_response = true;  match_response = true; break;
 		}
 		
-		
 		switch curr_question[0] {
 			case enum_question_type.evidence: {
 

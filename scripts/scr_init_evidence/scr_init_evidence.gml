@@ -23,4 +23,4 @@ enum enum_evi_state {
 	
 //Declare the constants	
 #macro MAX_ACTIVE_EVI_ITEMS 4	//Maximum no of active items tobe added in inventory 
-#macro MAX_EVI_ITEMS 10			//Maximum on of items to be in inventory (no of inventory slot)
+#macro MAX_EVI_ITEMS 32			//Maximum on of items to be in inventory (no of inventory slot)
