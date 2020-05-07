@@ -63,8 +63,14 @@ for (var ii = 0; ii < MAX_EVI_ITEMS; ++ii) {
 				//Slot Selected
 				//Use the item in the inventory slot
 				if(obj_quiz_manager.pending_choice){
-					obj_quiz_manager.choice = evi_type;
+					obj_quiz_manager.evi_choice = evi_type;
 					draw_evidence = false;
+					
+					// testing if a window is open, if so re-enable or un-disable it
+					var inst = instance_find(ui_window, 0);
+					if inst != noone {
+						ui_window.disable = false;
+					}
 				}		
 			}
 		}

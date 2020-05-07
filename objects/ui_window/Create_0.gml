@@ -15,12 +15,15 @@ text = -1;
 button_grid = -1;
 menu_ptr = noone;
 
+disable = false;
+
 enum enum_button_event{
 	new_window,
 	run_script,
 	run_script_exit,
 	quiz_multi,
 	quiz_checkbox,
+	quiz_evidence,
 	exit_
 }
 

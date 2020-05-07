@@ -26,6 +26,7 @@ if questions != noone and !response {
 		}
 		
 		switch curr_question[0] {
+			
 			case enum_question_type.evidence: {
 
 				target = curr_question[1];
@@ -41,7 +42,7 @@ if questions != noone and !response {
 			case enum_question_type.checkbox: {
 				choice = [];
 			}
-
+			case enum_question_type.evidence_multi:
 			case enum_question_type.multi: {
 				var inst = instance_create_layer(0, 0, "Menus", menu_quiz);
 				inst.type = curr_question[0];
@@ -59,6 +60,17 @@ if questions != noone and !response {
 
 	// checking if we made a choice for our prompt
 	if pending_choice {
+		
+		// finding the evidence button and setting
+		if evi_choice != noone {
+			var choice = evi_choice;
+			with par_button {
+				if event == enum_button_event.quiz_evidence {
+					var spr = obj_notebook.evi_def[choice, enum_evi_state.sprite];
+					sprite_draw = spr;
+				}
+			}
+		}
 		
 		// testing type of question against provided answer
 		switch curr_question[0] {
@@ -85,8 +97,15 @@ if questions != noone and !response {
 				} 
 				break;
 			}
-			case enum_question_type.multi:
-			case enum_question_type.evidence: {
+			case enum_question_type.evidence:
+				if(evi_choice != noone){
+					if(evi_choice == target){
+						match = true;
+						show_debug_message("match");
+					}
+				}
+				break;
+			case enum_question_type.multi: {
 				if(choice != noone){
 					if(choice == target){
 						match = true;
@@ -100,6 +119,7 @@ if questions != noone and !response {
 		if not instance_find(menu_quiz, 0) and not obj_notebook.draw_evidence {
 			pending_choice = false;
 			choice = noone; 
+			evi_choice = noone;
 			question_change = true;
 			
 			if match {

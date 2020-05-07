@@ -17,6 +17,7 @@ response = false;
 
 pending_choice = false;
 choice = noone;
+evi_choice = noone;
 target = noone;
 match = false;
 

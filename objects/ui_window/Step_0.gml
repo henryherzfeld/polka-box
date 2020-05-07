@@ -1,5 +1,7 @@
 /// @description Insert description here
 
+if disable { exit; }
+
 with(par_button){
 	
 	if object_index == but_checkbox {
@@ -9,6 +11,7 @@ with(par_button){
 	}
 	
 	if fire {
+		fire = false;
 
 		// execute event
 		switch(event){
@@ -17,6 +20,7 @@ with(par_button){
 				break;
 			}
 			
+			case enum_button_event.quiz_evidence:
 			case enum_button_event.run_script: {
 				// toggling checkbox enabled attribute for toggle behavior
 				if object_index == but_checkbox {
