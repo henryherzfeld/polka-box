@@ -12,16 +12,13 @@ if build_menu {
 	n = array_length_1d(question_data);
 
 	switch type {
+		case enum_question_type.evidence_checkbox: add_evi_select_but = true;
 		case enum_question_type.checkbox: {
 			var but_event = enum_button_event.quiz_checkbox;
 			break;
 		}
+		case enum_question_type.evidence_multi: add_evi_select_but = true;
 		case enum_question_type.multi: {
-			var but_event = enum_button_event.quiz_multi;
-			break;
-		}
-		case enum_question_type.evidence_multi: {
-			add_evi_select_but = true;
 			var but_event = enum_button_event.quiz_multi;
 			break;
 		}

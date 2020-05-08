@@ -38,7 +38,7 @@ if questions != noone and !response {
 				}
 				break;
 			}
-
+			case enum_question_type.evidence_checkbox:
 			case enum_question_type.checkbox: {
 				choice = [];
 			}
@@ -73,10 +73,19 @@ if questions != noone and !response {
 			}
 		}
 		
+		// we assume there is no evidence prompt
+		var evidence = false;
+		
 		// testing type of question against provided answer
 		switch curr_question[0] {
+			case enum_question_type.evidence_checkbox: var evidence = true;
 			case enum_question_type.checkbox: {
-				var n_target = array_length_1d(target);
+				
+				// if there is an evidence prompt unpack target array to target_temp
+				// otherwise just assign target_temp the target array
+				if evidence { var target_temp = target[1]; } 
+				else { var target_temp = target; }
+				var n_target = array_length_1d(target_temp);
 				var n_choice = array_length_1d(choice);
 				
 				if n_target == n_choice { 
@@ -84,14 +93,23 @@ if questions != noone and !response {
 				
 					var limit = min(n_target, n_choice);
 					
-					
 					var count = 0;
 					for(var i = 0; i < limit; i++){
-						if choice[i] == target[i] {
+						if choice[i] == target_temp[i] {
 							count += 1;
 						}
 					}
-					if count == n_target {
+					
+					// if there is an evidence prompt test if theres an evi_match
+					// otherwise just default to true
+					if evidence {
+						if target[0] == evi_choice { var evi_match = true;} 
+						else { var evi_match = false; }
+					} else {
+						var evi_match = true;
+					}
+					
+					if count == n_target and evi_match {
 						match = true;
 						show_debug_message("match");
 					}
