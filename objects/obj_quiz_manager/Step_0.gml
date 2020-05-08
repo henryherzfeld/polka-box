@@ -61,12 +61,13 @@ if questions != noone and !response {
 	// checking if we made a choice for our prompt
 	if pending_choice {
 		
-		// finding the evidence button and setting
+		// finding the evidence button and setting its sprite
+		// this is pretty inefficient
 		if evi_choice != noone {
-			var choice = evi_choice;
+			var evidence_choice = evi_choice;
 			with par_button {
 				if event == enum_button_event.quiz_evidence {
-					var spr = obj_notebook.evi_def[choice, enum_evi_state.sprite];
+					var spr = obj_notebook.evi_def[evidence_choice, enum_evi_state.sprite];
 					sprite_draw = spr;
 				}
 			}
@@ -97,7 +98,7 @@ if questions != noone and !response {
 				} 
 				break;
 			}
-			case enum_question_type.evidence:
+			case enum_question_type.evidence: {
 				if(evi_choice != noone){
 					if(evi_choice == target){
 						match = true;
@@ -105,6 +106,16 @@ if questions != noone and !response {
 					}
 				}
 				break;
+			}	
+			case enum_question_type.evidence_multi: {
+				if evi_choice != noone {
+					if evi_choice == target[0] and choice == target[1] {
+						match = true;
+						show_debug_message("match");		
+					}
+				}
+				break;
+			}
 			case enum_question_type.multi: {
 				if(choice != noone){
 					if(choice == target){
