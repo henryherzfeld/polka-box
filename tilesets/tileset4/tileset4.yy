@@ -209,7 +209,7 @@
             "modelName": "GMAutoTileSet",
             "mvc": "1.0",
             "closed_edge": false,
-            "name": "autotile_1",
+            "name": "normal_gras",
             "tiles": [
                 62,
                 65,
@@ -226,6 +226,31 @@
                 92,
                 91,
                 93,
+                0
+            ]
+        },
+        {
+            "id": "d7cfbaf0-8b2c-43d0-9b8a-8030f714e54e",
+            "modelName": "GMAutoTileSet",
+            "mvc": "1.0",
+            "closed_edge": false,
+            "name": "dark_patch",
+            "tiles": [
+                182,
+                368,
+                367,
+                152,
+                338,
+                181,
+                397,
+                151,
+                337,
+                398,
+                183,
+                153,
+                212,
+                211,
+                213,
                 0
             ]
         }
