@@ -3,6 +3,7 @@
 input_inventory_open = keyboard_check_pressed(ord("I"))
 
 // setting incrementor or decrementor depedning on inventory state
+/*
 if (input_inventory_open){
 	if(anim_count <= 0){animate = true; inv_move = -inv_move; anim_count++; open = true;}
 	else if(anim_count = distance){
@@ -11,6 +12,7 @@ if (input_inventory_open){
 		anim_count--;
 	}
 }
+*/
 
 if(anim_count = -1){
 	open = false;

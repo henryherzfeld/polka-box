@@ -7,11 +7,24 @@ inv_move = -20;
 
 open = false;
 
-//inventory draw parameters
-width = 256;		
-height = 64;
-distance = 600;
 bg_color = c_gray;
+
+//inventory draw parameters
+m_slotx = 0;
+m_sloty = 0;
+
+slot_width = 48;	//Slot Width
+slot_height = 48;	//Slot Height
+slot_buffer = 8;
+slot_col_max = MAX_INV_ITEMS;
+
+selected_slot = -1;
+
+slot_total_width = (slot_width + slot_buffer) * slot_col_max;
+slot_total_height = (slot_height + slot_buffer) * MAX_INV_ITEMS div slot_col_max; 
+
+slot_start_x = (game.gui_width - slot_total_width)/2;
+slot_start_y = game.gui_height - slot_total_height;
 
 //Create the inventory array, Basicly slots and giving then a default value i.e enum_item_type.none == 0
 inventorySlot = array_create(MAX_INV_ITEMS, enum_item_type.none);
