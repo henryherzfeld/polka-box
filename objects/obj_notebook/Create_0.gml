@@ -13,6 +13,9 @@ draw_evidence = false;
 slot_start_x = 256;
 slot_start_y = 300;
 
+m_slotx = 0;
+m_sloty = 0;
+
 slot_width = 48;	//Slot Width
 slot_height = 48;	//Slot Height
 slot_buffer = 8;

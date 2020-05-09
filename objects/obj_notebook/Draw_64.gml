@@ -44,14 +44,25 @@ for (var ii = 0; ii < MAX_EVI_ITEMS; ++ii) {
 		var i_mx = mx - slot_start_x;
 		var i_my = my - slot_start_y;
 		
+		var cell_xbuff = slot_width + slot_buffer;
+		var cell_ybuff = slot_height + slot_buffer;
+		
+		var nx = i_mx div cell_xbuff;
+		var ny = i_my div cell_ybuff;
+		
 		if i_mx > 0 and i_my > 0 and i_mx < slot_total_width and i_my < slot_total_height {				
 
-			var selected_x = i_mx div (slot_width + slot_buffer);
-			var selected_y = i_my div (slot_height + slot_buffer);
-		
-			selected_slot = selected_x + (selected_y * slot_col_max);
+			var selected_x = i_mx - (nx * cell_xbuff);
+			var selected_y = i_my - (ny * cell_ybuff);
 			
+			if selected_x < slot_width and selected_y < slot_height {
+				m_slotx = nx;
+				m_sloty = ny;
+			}
 		}
+		
+		// setting selected slot var via mos position
+		selected_slot = m_slotx + (m_sloty * slot_col_max);
 	
 		///Check If mouse is on the slot, if we are on the slot make white outline to red
 		if (ii == selected_slot){
