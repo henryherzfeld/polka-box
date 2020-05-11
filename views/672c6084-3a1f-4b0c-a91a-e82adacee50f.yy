@@ -4,20 +4,12 @@
     "mvc": "1.1",
     "name": "672c6084-3a1f-4b0c-a91a-e82adacee50f",
     "children": [
+        "bf65b0a5-3fc0-487b-b162-f117b6f6e637",
         "4b4cc0f7-5b02-4e88-bc64-9f4467b86d85",
         "f93429bc-5e55-4e63-81ba-3b13c8b336a0",
         "d507fe69-b01b-45a9-870b-33b2eb50e424",
-        "f450cdba-11f8-4b69-ba88-232963e96a9a",
-        "42c1d225-4062-4434-abf6-763e22f3589c",
-        "1f78baa3-dbec-4d7b-a8c5-a898c2d78376",
-        "c80168da-3c45-4880-a56d-08291dacc326",
-        "777d2c1e-4aec-4b74-aa01-c7aa20b8e7b8",
-        "1c54b011-7826-4982-abe1-b2e500811574",
-        "44a047d4-8213-47c2-a794-60a915ffb4a1",
-        "60c50714-24fa-4c64-aa5f-d93d2547cebb",
-        "362f1d6f-7503-4549-bdc4-632881e8002f",
-        "d9647e6e-38eb-4949-b466-1a253385d263",
-        "9b6d990c-77c5-4e05-a14a-e5a5a507d1c6"
+        "9b6d990c-77c5-4e05-a14a-e5a5a507d1c6",
+        "2da88341-98b4-432e-b08a-69ce741b2de8"
     ],
     "filterType": "GMSprite",
     "folderName": "Characters",

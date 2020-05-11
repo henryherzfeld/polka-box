@@ -6,8 +6,8 @@ y1 = -200;
 x2 = 0;
 y2 = 0;
 
-width = 100;
-height = 50;
+width = 0;
+height = 0;
 
 clicked = false;
 event = -1;

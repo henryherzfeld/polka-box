@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "084e61c3-d866-4f59-9078-acb2eb99c40b",
+            "Value": {
+                "id": "4dcfda5e-1e1f-4cd5-abc6-92d52a2ca73b",
+                "resourcePath": "sprites\\spr_polka_stand_right\\spr_polka_stand_right.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0896c95d-862a-466c-99bb-83f04d10d7f3",
             "Value": {
                 "id": "b44916d9-9f2a-4cce-b717-070995ed48b0",
@@ -530,7 +538,7 @@
             "Key": "1c54b011-7826-4982-abe1-b2e500811574",
             "Value": {
                 "id": "4317c4de-cf27-4a65-8929-1f0037a0f496",
-                "resourcePath": "sprites\/spr_polka_walk_front\/spr_polka_walk_front.yy",
+                "resourcePath": "sprites\\spr_polka_walk_front_v1\\spr_polka_walk_front_v1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -836,6 +844,14 @@
                 "id": "06be3210-5051-43b8-a0b2-1b0fa6276adc",
                 "resourcePath": "sprites\/spr_top\/spr_top.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2da88341-98b4-432e-b08a-69ce741b2de8",
+            "Value": {
+                "id": "1d5e6d88-69e6-4b28-910a-12bb6366d231",
+                "resourcePath": "views\\2da88341-98b4-432e-b08a-69ce741b2de8.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1218,7 +1234,7 @@
             "Key": "42c1d225-4062-4434-abf6-763e22f3589c",
             "Value": {
                 "id": "c0f8b89f-ea73-4d3f-9ace-4fdf4953adda",
-                "resourcePath": "sprites\/spr_polka_stand_right\/spr_polka_stand_right.yy",
+                "resourcePath": "sprites\\spr_polka_stand_right_v1\\spr_polka_stand_right_v1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1258,7 +1274,7 @@
             "Key": "44a047d4-8213-47c2-a794-60a915ffb4a1",
             "Value": {
                 "id": "33ca19d6-eba7-48d7-b472-811efb29970d",
-                "resourcePath": "sprites\/spr_polka_walk_right\/spr_polka_walk_right.yy",
+                "resourcePath": "sprites\\spr_polka_walk_right_v1\\spr_polka_walk_right_v1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1687,10 +1703,10 @@
             }
         },
         {
-            "Key": "60c50714-24fa-4c64-aa5f-d93d2547cebb",
+            "Key": "605d4304-cc63-4a37-ac38-ee958d09842e",
             "Value": {
-                "id": "9b7ea7ee-40d6-4ac5-a3f4-5eb14c1066df",
-                "resourcePath": "sprites\/spr_polka_walk_left\/spr_polka_walk_left.yy",
+                "id": "16f46b7a-8820-4ece-90c7-acd6dadb9ccb",
+                "resourcePath": "sprites\\spr_polka_walk_right\\spr_polka_walk_right.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1887,6 +1903,14 @@
             }
         },
         {
+            "Key": "6c5faa70-71d9-4aa5-bd65-1b3ea17d370b",
+            "Value": {
+                "id": "af88a127-3548-4305-9ebc-c2f4e9f86689",
+                "resourcePath": "sprites\\spr_polka_walk_front\\spr_polka_walk_front.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6ca0647b-94cb-4b8e-9dc4-a25af5dc33f5",
             "Value": {
                 "id": "c4621477-daf9-4d46-95b9-0e94609c3a8d",
@@ -1924,6 +1948,14 @@
                 "id": "29dd3b89-2f4c-4184-94b1-071ec52c8ac5",
                 "resourcePath": "views\\6d9664ed-0dfb-4880-9677-3b2e956c7c1d.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6ddc1c93-24e8-4dab-a427-5d3e4a1709d7",
+            "Value": {
+                "id": "98a40eea-0bd9-4464-acc6-262f98eeab84",
+                "resourcePath": "sprites\\spr_polka_walk_left\\spr_polka_walk_left.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2114,7 +2146,7 @@
             "Key": "777d2c1e-4aec-4b74-aa01-c7aa20b8e7b8",
             "Value": {
                 "id": "c01f21d2-35f1-4726-b89f-1b6736d652c7",
-                "resourcePath": "sprites\/spr_polka_walk_back\/spr_polka_walk_back.yy",
+                "resourcePath": "sprites\\spr_polka_walk_back_v1\\spr_polka_walk_back_v1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3303,6 +3335,14 @@
             }
         },
         {
+            "Key": "bf65b0a5-3fc0-487b-b162-f117b6f6e637",
+            "Value": {
+                "id": "1b669b58-2180-4fec-bb2a-d4adba168735",
+                "resourcePath": "views\\bf65b0a5-3fc0-487b-b162-f117b6f6e637.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "bf89a380-9fa6-408e-9be6-03c44c21e10b",
             "Value": {
                 "id": "8a44985d-80f9-45aa-b6ab-b1d6e5563498",
@@ -3364,6 +3404,14 @@
                 "id": "2bb1cad1-038b-4f4d-93c0-6e813c821bfb",
                 "resourcePath": "objects\/object58\/object58.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "c165e8ac-55c1-4a67-a462-f716b9887eab",
+            "Value": {
+                "id": "ca013296-7a7f-4f89-a583-7a6ac2455be7",
+                "resourcePath": "sprites\\spr_polka_walk_back\\spr_polka_walk_back.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3434,7 +3482,7 @@
             "Key": "c80168da-3c45-4880-a56d-08291dacc326",
             "Value": {
                 "id": "d941bc9e-8a05-4cf4-97ac-c27b34a31870",
-                "resourcePath": "sprites\/spr_polka_stand_front\/spr_polka_stand_front.yy",
+                "resourcePath": "sprites\\spr_polka_stand_front_v1\\spr_polka_stand_front_v1.yy",
                 "resourceType": "GMSprite"
             }
         },

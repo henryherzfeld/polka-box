@@ -34,10 +34,10 @@ if(!in_dialogue and !move_override){
 		}
 	} else { // assign standing  sprite if polka is not moving
 		switch(facing){
-			case 0: sprite_index = spr_polka_stand_back; break;
+			case 0: sprite_index = spr_polka_stand_right; break;
 			case 90: sprite_index = spr_polka_stand_right; break;
-			case 180: sprite_index = spr_polka_stand_front; break;
-			case 270: sprite_index = spr_polka_stand_left; break;
+			case 180: sprite_index = spr_polka_stand_right; break;
+			case 270: sprite_index = spr_polka_stand_right; break;
 		}
 	}
 } else {
