@@ -20,8 +20,12 @@ if enable_change {
 
 with(par_button){
 	
-	if object_index == but_checkbox or object_index == but_radio {
+	if object_index == but_checkbox {
 		if other.destroy_window {
+			fire = true;
+		}
+	} else if object_index == but_radio {
+		if other.destroy_window and enabled {
 			fire = true;
 		}
 	}
@@ -45,8 +49,8 @@ with(par_button){
 					temp[array_length_1d(attr)] = self.enabled;
 					scr_script_execute_array_1d(temp);
 				}
-				else if(is_array(attr)){ scr_script_execute_array_1d(attr) }
-				else { script_execute(attr); }
+				else if(is_array(attr)){ show_debug_message("yay");scr_script_execute_array_1d(attr) }
+				else { show_debug_message("no");script_execute(attr); }
 				break;
 			}
 			
