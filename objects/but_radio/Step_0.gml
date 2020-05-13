@@ -11,7 +11,7 @@ if clicked{
 	show_debug_message(attr);
 	clicked = false;
 	
-	enabled = !enabled;
+	enabled = true;
 	if enabled { 
 		spr = spr_enabled;
 		enable_change = true;
