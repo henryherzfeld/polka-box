@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "00a3d0f3-c8d8-4f65-8a5a-bf55dbeb061a",
+            "Value": {
+                "id": "b157c2a1-dd83-457a-95a9-548f028d7a80",
+                "resourcePath": "sprites\\spr_villy_walk_front\\spr_villy_walk_front.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "00ec010c-08bb-4d6f-b006-68c4a11d445c",
             "Value": {
                 "id": "44dbe834-fecb-4da6-9515-ae7ec8648941",
@@ -106,7 +114,7 @@
             "Key": "03f79657-2923-4812-844d-51db54c77f91",
             "Value": {
                 "id": "c2f0e3c6-b1f8-4177-a6ec-446ecd7f49c4",
-                "resourcePath": "sprites\/spr_villy_stand_back\/spr_villy_stand_back.yy",
+                "resourcePath": "sprites\\spr_villy_stand_back_v1\\spr_villy_stand_back_v1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -140,6 +148,14 @@
                 "id": "0b3235d7-b818-4687-bca7-2f394e40e36f",
                 "resourcePath": "scripts\\scr_exit\\scr_exit.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "065e750e-b356-4974-8f32-80f4161026ca",
+            "Value": {
+                "id": "7c51c599-4e34-4483-9295-349f1e4665df",
+                "resourcePath": "sprites\\spr_villy_stand_left\\spr_villy_stand_left.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -355,6 +371,14 @@
             "Value": {
                 "id": "b3e1fe02-426d-47c7-94ae-b9b436d9606e",
                 "resourcePath": "sprites\/sprite140\/sprite140.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "140f5b57-453e-4bb3-9077-13f4e2027f32",
+            "Value": {
+                "id": "a182f29c-ebe0-4a0d-8cdb-4101512707b8",
+                "resourcePath": "sprites\\spr_villy_walk_back\\spr_villy_walk_back.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -711,6 +735,14 @@
             }
         },
         {
+            "Key": "261400a1-0d45-40ac-aa44-a8413605e9b4",
+            "Value": {
+                "id": "56cc7c85-9fbf-4768-b105-acfd3d938463",
+                "resourcePath": "sprites\\spr_villy_walk_right\\spr_villy_walk_right.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "26d201b4-6a4c-47bc-85eb-6fac785c1afc",
             "Value": {
                 "id": "154e8d1a-3cf0-4430-92b6-61ea54b6701a",
@@ -762,7 +794,7 @@
             "Key": "29549828-6eb3-4ea3-bc34-8383419e0aeb",
             "Value": {
                 "id": "407bc908-37e9-474d-9c54-9f826e58d8f3",
-                "resourcePath": "sprites\/spr_villy_stand_front\/spr_villy_stand_front.yy",
+                "resourcePath": "sprites\\spr_villy_stand_front_v1\\spr_villy_stand_front_v1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -780,6 +812,14 @@
                 "id": "2985950b-1565-4cdf-8758-a20cd89790c4",
                 "resourcePath": "sprites\/sprite158\/sprite158.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2ad04ed0-0c0d-4141-9fa9-02e81d1f8199",
+            "Value": {
+                "id": "6f4ddaeb-80a2-44dd-a285-7600aa1b876a",
+                "resourcePath": "views\\2ad04ed0-0c0d-4141-9fa9-02e81d1f8199.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1007,6 +1047,14 @@
             }
         },
         {
+            "Key": "36c39853-9e48-4641-9a48-54568c59aa77",
+            "Value": {
+                "id": "b2dc23dd-cc8e-4cae-af1c-d76754130914",
+                "resourcePath": "sprites\\spr_villy_stand_right\\spr_villy_stand_right.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "380cb43d-c36b-4c57-b30d-edd2ddef2c4a",
             "Value": {
                 "id": "641f5c38-f502-4529-b47f-59c2495cd510",
@@ -1122,7 +1170,7 @@
             "Key": "3d641934-d891-4157-9556-45835d2a9360",
             "Value": {
                 "id": "61df15bc-6bd4-4fc4-9041-a23f9e9bafd4",
-                "resourcePath": "sprites\/spr_villy_walk_back\/spr_villy_walk_back.yy",
+                "resourcePath": "sprites\\spr_villy_walk_back_v1\\spr_villy_walk_back_v1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1407,6 +1455,14 @@
             }
         },
         {
+            "Key": "4a3651ad-1ab4-4dbb-8c6a-41a41f3b991d",
+            "Value": {
+                "id": "0b6b3d54-0a97-40db-8f7d-72cd743b278b",
+                "resourcePath": "sprites\\spr_villy_stand_front\\spr_villy_stand_front.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4a5bc73e-e6a8-47e9-a3e4-202e4abb440c",
             "Value": {
                 "id": "b02c723b-82ab-4f6d-b4ce-bdb7d9288181",
@@ -1459,6 +1515,14 @@
             "Value": {
                 "id": "ed56ec6a-919e-4845-86eb-1743b32d0920",
                 "resourcePath": "sprites\/sprite116\/sprite116.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "4c894286-f0aa-4927-8848-3d8ba78d9dce",
+            "Value": {
+                "id": "2088bbfe-e20b-4d09-9cae-c6d361cb9727",
+                "resourcePath": "sprites\\spr_villy_walk_left\\spr_villy_walk_left.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1658,7 +1722,7 @@
             "Key": "5829f32d-fbf1-4a3f-b5f4-4cc26dc56734",
             "Value": {
                 "id": "1427a996-b2ef-46c0-a1e7-9f27dab2ca11",
-                "resourcePath": "sprites\/spr_villy_stand_left\/spr_villy_stand_left.yy",
+                "resourcePath": "sprites\\spr_villy_stand_left_v1\\spr_villy_stand_left_v1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1818,7 +1882,7 @@
             "Key": "63a03200-8db4-4804-9058-0a7de446e365",
             "Value": {
                 "id": "7c96d184-54a5-46a6-9345-a9305df10fb6",
-                "resourcePath": "sprites\/spr_villy_walk_left\/spr_villy_walk_left.yy",
+                "resourcePath": "sprites\\spr_villy_walk_left_v1\\spr_villy_walk_left_v1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1860,6 +1924,14 @@
                 "id": "c4b5ab19-6c32-4815-935c-b7a3a00368ec",
                 "resourcePath": "scripts\\scr_new_game_start\\scr_new_game_start.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "658a2cd5-a89f-47a8-ac40-2a8fddd8566a",
+            "Value": {
+                "id": "5261bf84-e13f-44b1-bbda-64605b693d5f",
+                "resourcePath": "sprites\\spr_villy_stand_back\\spr_villy_stand_back.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3298,7 +3370,7 @@
             "Key": "b914a5ed-ceec-44ea-badd-50b035af18cc",
             "Value": {
                 "id": "a85388f5-8938-4d02-b718-8adce87589a4",
-                "resourcePath": "sprites\/spr_villy_walk_right\/spr_villy_walk_right.yy",
+                "resourcePath": "sprites\\spr_villy_walk_right_v1\\spr_villy_walk_right_v1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3314,7 +3386,7 @@
             "Key": "ba0e55f4-0716-4b66-94f6-f97034da8362",
             "Value": {
                 "id": "7bf84c72-7198-48b6-be46-d29271072270",
-                "resourcePath": "sprites\/spr_villy_stand_right\/spr_villy_stand_right.yy",
+                "resourcePath": "sprites\\spr_villy_stand_right_v1\\spr_villy_stand_right_v1.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4138,7 +4210,7 @@
             "Key": "ee5d3d77-54a3-4f58-9ba1-7a623fe358ae",
             "Value": {
                 "id": "087af5b0-9768-4eb5-8ef7-a557e111db42",
-                "resourcePath": "sprites\/spr_villy_walk_front\/spr_villy_walk_front.yy",
+                "resourcePath": "sprites\\spr_villy_walk_front_v1\\spr_villy_walk_front_v1.yy",
                 "resourceType": "GMSprite"
             }
         },
