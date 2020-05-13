@@ -1,4 +1,4 @@
-///@description cutscene_change_room
+///@description cutscene_pan_camera
 ///@arg x
 ///@arg y
 ///@arg relative

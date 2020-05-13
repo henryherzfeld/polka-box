@@ -1,3 +1,3 @@
 target_room = erosion_village;
-target_x = 278;
-target_y = 1070;
+target_x = 223;
+target_y = 921;

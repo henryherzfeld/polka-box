@@ -1111,6 +1111,14 @@
             }
         },
         {
+            "Key": "3d415dd0-ff61-4473-82da-c0875827ce55",
+            "Value": {
+                "id": "8d2d40b2-f625-495b-8260-471b22408dd8",
+                "resourcePath": "rooms\\erosion_forest\\erosion_forest.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "3d641934-d891-4157-9556-45835d2a9360",
             "Value": {
                 "id": "61df15bc-6bd4-4fc4-9041-a23f9e9bafd4",
@@ -1124,6 +1132,14 @@
                 "id": "115f9f94-dd66-4094-ad20-afc1f2472bcd",
                 "resourcePath": "views\/3d762631-4e64-45e7-9bcc-aa324b14253b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "3d9a6474-a6b2-41e9-ac26-2d1d21d5a564",
+            "Value": {
+                "id": "4069243a-d90d-4e3a-9ee8-0ced71811d37",
+                "resourcePath": "scripts\\scr_cutscene_pan_camera_char\\scr_cutscene_pan_camera_char.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4380,6 +4396,7 @@
         "9368af14-7ebb-467d-8372-acc85901ea9d",
         "9b1a6463-37d7-4dbf-a138-b1a66b83dfa8",
         "7c7731bd-69c3-4fb9-931c-94ee2c2c337f",
+        "3d9a6474-a6b2-41e9-ac26-2d1d21d5a564",
         "35e47bd1-5914-451b-afd3-9bebdb5bcb65",
         "0e0a68c5-5fbe-4ac2-800a-4f2144f69c77",
         "02cdf6fe-72ac-4a41-bccc-f08c9ca1c58d",

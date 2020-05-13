@@ -74,6 +74,8 @@ if(y_move != 0){
 if(!in_dialogue and !move_override){
 	x += x_move;
 	y += y_move;
+	curr_x = x;
+	curr_y = y;
 }
 
 //Check for collision with transition object

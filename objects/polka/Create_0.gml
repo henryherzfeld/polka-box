@@ -15,3 +15,6 @@ npc = noone;
 name = game.name;
 portrait = spr_portrait_polka;
 facing = -1;
+
+curr_x = 0;
+curr_y = 0;
