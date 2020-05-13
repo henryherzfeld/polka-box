@@ -2,9 +2,25 @@
 
 if disable { exit; }
 
+// disabling other radios relative to enabled radio context
+if enable_change {
+	enable_change = false;
+	
+	var curr_context = enabled_radio.context;
+	
+	for(i = 0; i < enabled_radio.n_context; i++){
+		var inst = curr_context[i];
+		
+		if inst.id != enabled_radio.id {
+			inst.enabled = false;
+		}	
+	}
+	enabled_radio = noone;
+}
+
 with(par_button){
 	
-	if object_index == but_checkbox {
+	if object_index == but_checkbox or object_index == but_radio {
 		if other.destroy_window {
 			fire = true;
 		}
@@ -22,6 +38,7 @@ with(par_button){
 			
 			case enum_button_event.quiz_evidence:
 			case enum_button_event.run_script: {
+				show_debug_message(attr);
 				// toggling checkbox enabled attribute for toggle behavior
 				if object_index == but_checkbox {
 					var temp = attr;
@@ -72,6 +89,8 @@ if(button_grid != -1){
 	var i = 0;
 	
 	repeat(ds_grid_width(button_grid)){
+		var build_radio = false;
+		
 		var but_x = button_grid[# i, 0];
 		var but_y = button_grid[# i, 1]
 		var but_text = button_grid[# i, 2];
@@ -86,7 +105,7 @@ if(button_grid != -1){
 			case enum_button_type.radio: {
 				but_obj = but_radio;
 				
-				
+				build_radio = true;
 				
 				break;
 			}
@@ -95,23 +114,50 @@ if(button_grid != -1){
 				
 				if is_array(but_attr){
 					if but_attr[0] == scr_change_variable {
-						var enabled = variable_instance_get(but_attr[1], but_attr[2]);
+						var is_enabled = variable_instance_get(but_attr[1], but_attr[2]);
 					}
 				}
 				break;
 			}
 		}
 
-		var inst = instance_create_layer(but_x, but_y, "Menus", but_obj)
-		inst.x1 = but_x;
-		inst.y1 = but_y;
-		inst.text = but_text;
-		inst.event = but_event;
-		inst.attr = but_attr;
-		if but_obj == but_checkbox and is_array(but_attr){
-			inst.enabled = enabled;
+		if build_radio {
+			var n = array_length_1d(but_x);
+			
+			var temp_context = [];
+
+			for(var j = 0; j < n; j++){
+				var inst = instance_create_layer(but_x[j], but_y[j], "Menus", but_obj);
+				
+				temp_context[j] = inst.id;
+				
+				inst.x1 = but_x[j];
+				inst.y1 = but_y[j];
+				inst.text = but_text[j];
+				inst.event = but_event;
+				inst.attr = but_attr[j];
+			}
+			
+			// assign context array to context member of all elements of current radio context array
+			for(var j = 0; j < n; j++){
+				var inst = temp_context[j];
+				inst.context = temp_context;
+				inst.n_context = n;
+				inst.update = true;
+			}
+		} else {
+
+			var inst = instance_create_layer(but_x, but_y, "Menus", but_obj);
+			inst.x1 = but_x;
+			inst.y1 = but_y;
+			inst.text = but_text;
+			inst.event = but_event;
+			inst.attr = but_attr;
+			if but_obj == but_checkbox and is_array(but_attr){
+				inst.enabled = is_enabled;
+			}
+			inst.update = true;
 		}
-		inst.update = true;
 		
 		i += 1;
 	}

@@ -8,18 +8,19 @@ var add_evi_select_but = false;
 
 if build_menu {
 	build_menu = false;
-	
-	n = array_length_1d(question_data);
+
 
 	switch type {
 		case enum_question_type.evidence_checkbox: add_evi_select_but = true;
 		case enum_question_type.checkbox: {
 			var but_event = enum_button_event.quiz_checkbox;
+			n = array_length_1d(question_data);
 			break;
 		}
 		case enum_question_type.evidence_multi: add_evi_select_but = true;
 		case enum_question_type.multi: {
 			var but_event = enum_button_event.quiz_multi;
+			n = 1;
 			break;
 		}
 	}
@@ -32,9 +33,26 @@ if build_menu {
 		button_grid = ds_grid_create(n+1, 6);
 	}
 	
-	for(var i = 0; i < n; i++) {
-		var option = question_data[i];
-		scr_grid_add_button(200, i*100, option, enum_button_type.checkbox, but_event, i);
+	
+	if but_event == enum_button_event.quiz_multi {
+		// creating x and y coordinate arrays for radio buttons
+		var xs = [];
+		var ys = [];
+		var answer_data = [];
+		
+		for(i = 0; i < array_length_1d(question_data); i++){
+			answer_data[i] = i;
+			xs[i] = 200;
+			ys[i] = i*100;
+		}
+		scr_grid_add_button(xs, ys, question_data, enum_button_type.radio, but_event, answer_data);
+		
+	} else {
+		for(var i = 0; i < n; i++) {
+			var option = question_data[i];
+
+			scr_grid_add_button(200, i*100, option, enum_button_type.checkbox, but_event, i);
+		}
 	}
 	
 	scr_grid_add_button(200, 600, "Submit", enum_button_type.click, enum_button_event.exit_, noone);

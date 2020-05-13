@@ -12,3 +12,7 @@ spr_w = sprite_get_width(spr);
 spr_h = sprite_get_height(spr);
 
 context = [];
+
+enable_change = false;
+
+n_context = 0;

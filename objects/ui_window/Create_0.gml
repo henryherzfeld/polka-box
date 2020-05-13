@@ -17,6 +17,10 @@ menu_ptr = noone;
 
 disable = false;
 
+enabled_radio = noone;
+enable_change = false;
+
+
 enum enum_button_event{
 	new_window,
 	run_script,
