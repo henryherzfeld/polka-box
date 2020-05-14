@@ -12,7 +12,7 @@
     "option_html5_flurry_enable": false,
     "option_html5_flurry_id": "",
     "option_html5_foldername": "html5game",
-    "option_html5_google_analytics_enable": true,
+    "option_html5_google_analytics_enable": false,
     "option_html5_google_tracking_id": "UA-158029764-1",
     "option_html5_icon": "${base_options_dir}\\html5\\fav.ico",
     "option_html5_index": "use_default",
@@ -35,5 +35,5 @@
         "minor": 0,
         "revision": 0
     },
-    "option_html5_webgl": 2
+    "option_html5_webgl": 1
 }
