@@ -253,6 +253,81 @@
                 213,
                 0
             ]
+        },
+        {
+            "id": "1f295d93-1228-4cf0-a236-653dbd391a54",
+            "modelName": "GMAutoTileSet",
+            "mvc": "1.0",
+            "closed_edge": false,
+            "name": "normal_swamp_patch",
+            "tiles": [
+                195,
+                371,
+                370,
+                165,
+                341,
+                194,
+                400,
+                164,
+                340,
+                401,
+                196,
+                166,
+                225,
+                224,
+                226,
+                0
+            ]
+        },
+        {
+            "id": "6be5ea45-986b-428d-990b-9abecec519de",
+            "modelName": "GMAutoTileSet",
+            "mvc": "1.0",
+            "closed_edge": false,
+            "name": "dark_swamp_patch",
+            "tiles": [
+                75,
+                78,
+                77,
+                45,
+                48,
+                74,
+                107,
+                44,
+                47,
+                108,
+                76,
+                46,
+                105,
+                104,
+                106,
+                0
+            ]
+        },
+        {
+            "id": "e2aaae14-9533-40dc-b6f1-38d948a95f4b",
+            "modelName": "GMAutoTileSet",
+            "mvc": "1.0",
+            "closed_edge": false,
+            "name": "autotile_1",
+            "tiles": [
+                381,
+                208,
+                207,
+                351,
+                178,
+                380,
+                237,
+                350,
+                177,
+                238,
+                382,
+                352,
+                411,
+                410,
+                412,
+                0
+            ]
         }
     ],
     "macroPageTiles": {
