@@ -1,3 +1,3 @@
 target_room = erosion_forest;
-target_x = 48;
-target_y = 513;                                                                              
+target_x = 44;
+target_y = 902;                                                                              
