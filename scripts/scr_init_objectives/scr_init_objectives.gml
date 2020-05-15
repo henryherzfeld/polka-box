@@ -1,14 +1,6 @@
 ///@description scr_init_objectives
 
 //defining objectives and objective types
-enum enum_objective_phase {
-	miscellaneous = 0,
-	ask_questions = 1,
-	collect_clues = 2,
-	analyze_clues = 3,
-	length = 4,
-}
-
 enum enum_objective_type {
 	start = 0,
 	find_weeraway = 1,

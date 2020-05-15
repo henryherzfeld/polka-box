@@ -1,8 +1,8 @@
 {
-    "id": "4ff84713-1dd4-41ed-bdf9-b17e42ca4921",
+    "id": "e36352a2-f62a-4fe7-b433-4800746762ed",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "test2",
+    "name": "scr_get_objective_phase",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -16,9 +16,9 @@ if(string_length(seconds) = 1){
 // Changing objective phase draw and text
 //show_debug_message(flags.objective_phase);
 
-switch(flags.objective_phase){
-	case enum_objective_phase.miscellaneous: {objective_col = c_navy; objective_text_col = c_white; break;}
-	case enum_objective_phase.ask_questions: {objective_col = c_red; objective_text_col = c_black; break;}
-	case enum_objective_phase.collect_clues: {objective_col = c_green; objective_text_col = c_white; break;}
-	case enum_objective_phase.analyze_clues: {objective_col= c_purple; objective_text_col = c_white; break;}
+if objective_change {
+	objective_change = false;
+	objective_col = scr_get_phase_state(flags.objective_phase, enum_phase_state.bg_color);
+	objective_text_col = scr_get_phase_state(flags.objective_phase, enum_phase_state.text_color);
+
 }

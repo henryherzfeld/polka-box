@@ -8,14 +8,15 @@ if(objective_change or objective_update){
 			objective_text = ds_grid_get(objectives, i, enum_objective_state.text);
 			
 			// using temp to test for a change in objective phase, if so fire off a small notification
-			var temp = scr_check_objective_phase(i)
-			objective_phase_text = objective_phase_texts[temp];
+			var temp = scr_get_objective_phase(i)
+			objective_phase_text = scr_get_phase_state(temp, enum_phase_state.text);
 			
 			if(objective_phase != temp){
-				scr_fire_sm_noti("New Phase: " + objective_phase_text);
+				show_debug_message(objective_phase_text);
+				scr_fire_lg_noti("New Phase: " + objective_phase_text);
 			}
 			
-			objective_phase = scr_check_objective_phase(i);
+			objective_phase = scr_get_objective_phase(i);
 		}
 	}
 	
@@ -23,6 +24,7 @@ if(objective_change or objective_update){
 		//send_event("Objective", objective, "na")
 		progress += 1;
 		objective_change = false;
+		obj_overlay.objective_change = true;
 	} else{
 	objective_update = false;
 	}

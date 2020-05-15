@@ -9,7 +9,8 @@
         "042678ad-f060-41f6-92c4-76e1399a23d9",
         "c83a5c8c-774e-4916-a8aa-41dc8ce27fe5",
         "f4421d0d-1173-49ea-b6b4-5954a22bce8f",
-        "e36352a2-f62a-4fe7-b433-4800746762ed"
+        "e36352a2-f62a-4fe7-b433-4800746762ed",
+        "bc21e13b-d73e-40d3-8280-fb098d2f7200"
     ],
     "filterType": "GMScript",
     "folderName": "Objectives",

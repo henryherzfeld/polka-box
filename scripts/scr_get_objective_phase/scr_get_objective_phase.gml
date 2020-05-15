@@ -1,4 +1,4 @@
-///@description scr_check_objective_phase
+///@description scr_get_objective_phase
 ///@arg0 type
 
 var type = argument[0];

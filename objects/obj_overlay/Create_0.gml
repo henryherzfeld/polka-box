@@ -34,6 +34,8 @@ objective_padding = 100;
 objective_col = c_black;
 objective_text_col = c_white;
 
+objective_change = true;
+
 // Notifications
 draw_sm_noti = false;
 
