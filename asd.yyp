@@ -1159,6 +1159,14 @@
             }
         },
         {
+            "Key": "3c35333c-e26c-43d6-9525-924b7991daf1",
+            "Value": {
+                "id": "345f4583-001a-4024-8683-dad27a465959",
+                "resourcePath": "objects\\obj_timer\\obj_timer.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "3d415dd0-ff61-4473-82da-c0875827ce55",
             "Value": {
                 "id": "8d2d40b2-f625-495b-8260-471b22408dd8",

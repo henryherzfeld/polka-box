@@ -57,6 +57,9 @@ if questions != noone and !response {
 		}
 		
 	}
+	
+	// out of time, fail question
+	if timer
 
 	// checking if we made a choice for our prompt
 	if pending_choice {
