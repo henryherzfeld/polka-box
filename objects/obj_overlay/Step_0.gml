@@ -14,8 +14,6 @@ if(string_length(seconds) = 1){
 
 
 // Changing objective phase draw and text
-//show_debug_message(flags.objective_phase);
-
 if objective_change {
 	objective_change = false;
 	objective_col = scr_get_phase_state(flags.objective_phase, enum_phase_state.bg_color);

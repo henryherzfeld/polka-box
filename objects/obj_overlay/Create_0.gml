@@ -55,6 +55,7 @@ draw_lg_noti = false;
 noti_lg_count = 0;
 noti_lg_text = "";
 noti_lg_bg_col = c_blue;
+noti_lg_text_col = c_white;
 
 noti_lg_bg_size = 150;
 noti_lg_bg_border_size = 20;

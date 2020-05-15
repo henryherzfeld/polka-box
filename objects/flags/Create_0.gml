@@ -25,8 +25,6 @@ objective_phase = scr_get_objective_phase(objective);
 
 objective_phase_text = scr_get_phase_state(objective_phase, enum_phase_state.text);
 
-show_debug_message(objective_phase_text);
-
 objective_change = false;
 objective_update = false;
 

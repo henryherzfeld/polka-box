@@ -40,7 +40,7 @@ if(draw_sm_noti){
 	draw_sm_noti = false;
 	noti_sm_count = 1;
 	noti_sm_width = string_width(sm_noti_text);
-	noti_sm_height = string_width(sm_noti_text);
+	noti_sm_height = string_height(sm_noti_text);
 }
 
 if(draw_lg_noti){
@@ -65,7 +65,7 @@ if(noti_lg_count){
 		draw_rectangle_color(0, game.gui_height/2 - noti_lg_bg_size, game.gui_width, game.gui_height/2 + noti_lg_bg_size, noti_lg_bg_col, noti_lg_bg_col, noti_lg_bg_col, noti_lg_bg_col, false);
 		draw_set_halign(fa_center);
 		draw_set_font(font_large);
-		draw_text(game.gui_width/2, game.gui_height/2, lg_noti_text);
+		draw_text_color(game.gui_width/2, game.gui_height/2, lg_noti_text, noti_lg_text_col,noti_lg_text_col,noti_lg_text_col,noti_lg_text_col,true);
 		draw_set_halign(fa_left);
 		draw_set_font(font_comic);
 		

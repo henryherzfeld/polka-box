@@ -4,19 +4,25 @@ if(objective_change or objective_update){
 		if(scr_check_objective(i)){
 			
 			objective = i;
-			if(objective_update) {progress = i }
+			if(objective_update) { progress = i }
 			objective_text = ds_grid_get(objectives, i, enum_objective_state.text);
 			
-			// using temp to test for a change in objective phase, if so fire off a small notification
-			var temp = scr_get_objective_phase(i)
-			objective_phase_text = scr_get_phase_state(temp, enum_phase_state.text);
+			// using temp to test for a change in objective phase, if so fire off a notification
+			var temp = scr_get_objective_phase(i);
 			
-			if(objective_phase != temp){
-				show_debug_message(objective_phase_text);
-				scr_fire_lg_noti("New Phase: " + objective_phase_text);
+			
+			if(objective_phase != temp) {
+				objective_phase = temp;
+				
+				// updating text
+				objective_phase_text = scr_get_phase_state(temp, enum_phase_state.text);
+				
+				// getting colors of phase for notification
+				var noti_bg_col = scr_get_phase_state(objective_phase, enum_phase_state.bg_color);
+				var noti_text_col = scr_get_phase_state(objective_phase, enum_phase_state.text_color);
+
+				scr_fire_lg_noti("New Phase: " + objective_phase_text, noti_bg_col, noti_text_col);
 			}
-			
-			objective_phase = scr_get_objective_phase(i);
 		}
 	}
 	
