@@ -173,6 +173,12 @@ if questions != noone and !response {
 					var inst = instance_find(obj_textbox, 0)
 					inst.alarm[1] = 1;
 				}
+			} else {
+				// incorrect answer
+				// test phase to determine if heart removed
+				if flags.objective_phase == enum_phase_type.miscellaneous {
+					flags.hearts -= 1;
+				}
 			}
 			
 			if no_match_response {

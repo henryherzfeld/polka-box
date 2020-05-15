@@ -28,6 +28,7 @@ if(objective_change or objective_update){
 	
 	if(objective_change){
 		//send_event("Objective", objective, "na")
+		scr_save_game();
 		progress += 1;
 		objective_change = false;
 		obj_overlay.objective_change = true;
@@ -40,4 +41,9 @@ if (game.pause){
 	time = paused_time;
 } else {
 	paused_time = -1;
+}
+
+// out of hearts
+if hearts <= 0 {
+	scr_load_game_start();
 }
