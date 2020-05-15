@@ -57,9 +57,6 @@ if questions != noone and !response {
 		}
 		
 	}
-	
-	// out of time, fail question
-	if timer
 
 	// checking if we made a choice for our prompt
 	if pending_choice {
@@ -148,7 +145,8 @@ if questions != noone and !response {
 			}
 		}
 		
-		if not instance_find(menu_quiz, 0) and not obj_notebook.draw_evidence {
+		if not instance_find(menu_quiz, 0) and not obj_notebook.draw_evidence{
+	
 			pending_choice = false;
 			choice = noone; 
 			evi_choice = noone;

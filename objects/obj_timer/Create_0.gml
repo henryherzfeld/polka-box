@@ -7,7 +7,9 @@ start = false;
 
 minutes = -1;
 seconds = -1;
+
 timer_text = "";
+h_text = string_height(timer_text);
 
 bar = spr_pbar_big;
 bar_col = c_green;

@@ -33,6 +33,16 @@ if build_menu {
 		button_grid = ds_grid_create(n+1, 6);
 	}
 	
+	// handling adding timer if in particular phase
+	if flags.objective_phase == enum_phase_type.miscellaneous {
+		timer_ptr = instance_create_layer(0, 0, "Menus", obj_timer);
+		timer_ptr.time = 5;
+		timer_ptr.xx = 500;
+		timer_ptr.yy = 40;
+		timer_ptr.start = true;
+		timer_ptr.on_finish = [scr_change_variable, object_get_parent(id).id, "destroy_menu", true];
+	}
+	
 	
 	if but_event == enum_button_event.quiz_multi {
 		// creating x and y coordinate arrays for radio buttons
@@ -60,4 +70,8 @@ if build_menu {
 	scr_add_window("Question", 0, 0, prompt);
 	
 	par_ptr.curr_window = "Question";
+}
+
+if destroy_menu {
+	instance_destroy(timer_ptr);
 }

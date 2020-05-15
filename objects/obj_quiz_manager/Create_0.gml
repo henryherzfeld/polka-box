@@ -23,7 +23,6 @@ match = false;
 
 n_questions = 0;
 
-
 enum enum_question_type {
 	evidence,
 	evidence_multi,
