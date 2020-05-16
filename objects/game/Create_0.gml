@@ -41,4 +41,4 @@ enum dir {
 	left = 270
 }
 
-alarm[0] = room_speed;
+//alarm[0] = room_speed;

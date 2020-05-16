@@ -21,6 +21,8 @@ evi_choice = noone;
 target = noone;
 match = false;
 
+submitted = false;
+
 n_questions = 0;
 
 enum enum_question_type {

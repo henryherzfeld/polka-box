@@ -33,6 +33,5 @@ if(destroy_menu){
 	// Destroying window map and keys list
 	ds_map_destroy(window_map);
 	ds_list_destroy(keys_list);
-	child_window_ptr.destroy_window = true;
 	instance_destroy();
 }

@@ -71,10 +71,10 @@ for (var ii = 0; ii < MAX_EVI_ITEMS; ++ii) {
 						
 			//If clicked when inside the slot
 			if (mouse_check_button_pressed(mb_left)) {
-				//Slot Selected
-				//Use the item in the inventory slot
+
 				if(obj_quiz_manager.pending_choice){
 					obj_quiz_manager.evi_choice = evi_type;
+					obj_quiz_manager.submitted = true;
 					draw_evidence = false;
 					
 					// testing if a window is open, if so re-enable or un-disable it

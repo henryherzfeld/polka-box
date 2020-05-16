@@ -145,7 +145,7 @@ if questions != noone and !response {
 			}
 		}
 		
-		if not instance_find(menu_quiz, 0) and not obj_notebook.draw_evidence{
+		if submitted {
 	
 			pending_choice = false;
 			choice = noone; 

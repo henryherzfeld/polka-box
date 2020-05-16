@@ -40,7 +40,7 @@ if build_menu {
 		timer_ptr.xx = 500;
 		timer_ptr.yy = 40;
 		timer_ptr.start = true;
-		timer_ptr.on_finish = [scr_change_variable, object_get_parent(id).id, "destroy_menu", true];
+		//timer_ptr.on_finish = [scr_change_variable, object_get_parent(id).id, "destroy_menu", true];
 	}
 	
 	
@@ -65,7 +65,8 @@ if build_menu {
 		}
 	}
 	
-	scr_grid_add_button(200, 600, "Submit", enum_button_type.click, enum_button_event.exit_, noone);
+	scr_grid_add_button(200, 600, "Submit", enum_button_type.click, enum_button_event.run_script_exit,
+						[scr_change_variable, obj_quiz_manager.id, "submitted", true]);
 	window_map = ds_map_create();
 	scr_add_window("Question", 0, 0, prompt);
 	
