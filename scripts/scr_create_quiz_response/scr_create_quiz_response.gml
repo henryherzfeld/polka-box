@@ -16,4 +16,5 @@ text = ds_map_create();
 text[? "GREET"] = response_text;
 text[? "EXIT"] = ["Ok.", [], [polka]]
 
-scr_create_textbox(text, quizzer_id.name, quizzer_id.portrait, [[scr_change_variable, obj_quiz_manager.id, "response", false]]);
+scr_create_textbox(text, quizzer_id.name, quizzer_id.portrait, [[scr_change_variable, obj_quiz_manager.id, "response", false],
+																[scr_change_variable, obj_quiz_manager.id, "question_change", true]]);

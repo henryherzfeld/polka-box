@@ -8,6 +8,8 @@ start = false;
 minutes = -1;
 seconds = -1;
 
+fired = false;
+
 timer_text = "";
 h_text = string_height(timer_text);
 

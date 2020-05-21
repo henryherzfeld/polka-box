@@ -23,5 +23,8 @@ if start {
 
 
 if time <= 0 {
-	scr_script_execute_array_1d(on_finish);
+	if not fired {
+		fired = true;
+		scr_script_execute_array_1d(on_finish);
+	}
 }

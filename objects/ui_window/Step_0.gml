@@ -2,6 +2,11 @@
 
 if disable { exit; }
 
+if(destroy_window){ 
+	with(par_button) { instance_destroy(); }
+	instance_destroy();
+}
+
 // disabling other radios relative to enabled radio context
 if enable_change {
 	enable_change = false;
@@ -20,6 +25,8 @@ if enable_change {
 
 with(par_button){
 	
+	// enable on leave behavior for buttons in a window
+	// does not fire in time for quiz behavior
 	if object_index == but_checkbox {
 		if other.destroy_window {
 			fire = true;
@@ -42,7 +49,7 @@ with(par_button){
 			
 			case enum_button_event.quiz_evidence:
 			case enum_button_event.run_script: {
-				show_debug_message(attr);
+
 				// toggling checkbox enabled attribute for toggle behavior
 				if object_index == but_checkbox {
 					var temp = attr;
@@ -162,13 +169,7 @@ if(button_grid != -1){
 			}
 			inst.update = true;
 		}
-		
 		i += 1;
 	}
 	button_grid = -1;
-}
-
-if(destroy_window){ 
-	with(par_button) { instance_destroy(); }
-	instance_destroy();
 }
