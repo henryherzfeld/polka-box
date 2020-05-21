@@ -6,6 +6,7 @@ questions = noone;
 quizzer_id = noone;
 
 question_idx = 0;
+prog = 0;
 
 initial = true;
 question_change = false;

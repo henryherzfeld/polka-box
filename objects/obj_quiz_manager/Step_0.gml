@@ -11,6 +11,7 @@ if questions != noone and !response {
 	}
 	
 	var curr_question = questions[| question_idx]
+	prog = question_idx;
 	
 	if question_change {
 		question_change = false;
@@ -203,11 +204,11 @@ if questions != noone and !response {
 			} else {
 				// incorrect answer
 				// test phase to determine if heart removed
-				/*
+
 				if flags.objective_phase == enum_phase_type.miscellaneous {
 					flags.hearts -= 1;
 				}
-				*/
+
 			}
 			
 			if no_match_response {

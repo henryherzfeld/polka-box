@@ -33,7 +33,7 @@ if build_menu {
 		button_grid = ds_grid_create(n+1, 6);
 	}
 	
-	// handling adding timer if in particular phase
+	// handling adding timer, progress bar
 	if flags.objective_phase == enum_phase_type.miscellaneous {
 		timer_ptr = instance_create_layer(0, 0, "Menus", obj_timer);
 		timer_ptr.time = 5;
@@ -41,6 +41,12 @@ if build_menu {
 		timer_ptr.yy = 40;
 		timer_ptr.start = true;
 		timer_ptr.on_finish = [scr_change_variable, obj_quiz_manager.id, "submitted", true];
+		
+		progress_ptr = instance_create_layer(0, 0, "Menus", obj_progress_bar);
+		progress_ptr.max_prog = obj_quiz_manager.n_questions;
+		progress_ptr.prog_ptr = obj_quiz_manager;
+		progress_ptr.xx = 500;
+		progress_ptr.yy = 120;
 	}
 	
 	
@@ -75,4 +81,5 @@ if build_menu {
 
 if destroy_menu {
 	instance_destroy(timer_ptr);
+	instance_destroy(progress_ptr);
 }

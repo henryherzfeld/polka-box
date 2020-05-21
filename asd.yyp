@@ -3191,6 +3191,14 @@
             }
         },
         {
+            "Key": "ade19462-de12-4132-9fc7-abc51f68401f",
+            "Value": {
+                "id": "e7b35320-a898-45a7-acfb-1ec93ae9f5fe",
+                "resourcePath": "objects\\obj_progress_bar\\obj_progress_bar.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ae080e98-5e06-4dc9-bbd7-b15ee5438c46",
             "Value": {
                 "id": "a9cf58e9-0132-4ffc-8ca5-9a5dacfcbab9",

@@ -6,3 +6,4 @@ build_menu = false;
 question_data = noone;
 
 timer_ptr = noone;
+progress_ptr = noone;
