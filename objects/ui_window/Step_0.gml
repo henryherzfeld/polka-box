@@ -86,9 +86,30 @@ with(par_button){
 			}
 			
 			case enum_button_event.quiz_checkbox: {
-				if self.enabled {
-					var n = array_length_1d(obj_quiz_manager.choice)
-					obj_quiz_manager.choice[n] = attr;
+				var n = array_length_1d(obj_quiz_manager.choice);
+				var in_choices = false;
+				
+				for(var i = 0; i < n; i++){
+					if attr == obj_quiz_manager.choice[i] {
+						var choice_idx = i;
+						in_choices = true;
+					}
+				}
+				
+				if not in_choices {
+					if self.enabled {
+						obj_quiz_manager.choice[n] = attr;
+					}
+				} else {
+					if not self.enabled {
+						var new_choices = [];
+						for(var j = 0; j < choice_idx; j++){
+							new_choices[j] = obj_quiz_manager.choice[j];
+						}
+						
+						array_copy(new_choices, choice_idx, obj_quiz_manager.choice, choice_idx + 1, n-choice_idx-1)
+						obj_quiz_manager.choice = new_choices;
+					}
 				}
 				break;
 			}

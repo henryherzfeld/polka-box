@@ -90,32 +90,38 @@ if questions != noone and !response {
 				var n_target = array_length_1d(target_temp);
 				var n_choice = array_length_1d(choice);
 				
-				if n_target == n_choice { 
-					choice = scr_array_sort(choice, true); 
-				
-					var limit = min(n_target, n_choice);
+					 
 					
-					var count = 0;
-					for(var i = 0; i < limit; i++){
-						if choice[i] == target_temp[i] {
-							count += 1;
+				// assume choice match is true
+				var choice_match = true;
+					
+				if n_choice != n_target {
+					choice_match = false;
+				} else {
+					var choice_sorted = scr_array_sort(choice, true);
+					
+					for(var i = 0; i < n_choice; i++){
+						if choice_sorted[i] != target[i] {
+							choice_match = false;
 						}
-					}
-					
-					// if there is an evidence prompt test if theres an evi_match
-					// otherwise just default to true
-					if evidence {
-						if target[0] == evi_choice { var evi_match = true;} 
-						else { var evi_match = false; }
-					} else {
-						var evi_match = true;
-					}
-					
-					if count == n_target and evi_match {
-						match = true;
-						show_debug_message("match");
-					}
+					}					
 				} 
+				
+				// if there is an evidence prompt test if theres an evi_match
+				// otherwise just default to true
+				if evidence {
+					if target[0] == evi_choice { var evi_match = true;} 
+					else { var evi_match = false; }
+				} else {
+					var evi_match = true;
+				}
+					
+				if choice_match and evi_match {
+					match = true;
+					show_debug_message("match");
+				} else {
+					match = false;
+				}
 				break;
 			}
 			case enum_question_type.evidence: {
@@ -123,6 +129,8 @@ if questions != noone and !response {
 					if(evi_choice == target){
 						match = true;
 						show_debug_message("match");
+					} else {
+						match = false;
 					}
 				}
 				break;
@@ -132,6 +140,8 @@ if questions != noone and !response {
 					if evi_choice == target[0] and choice == target[1] {
 						match = true;
 						show_debug_message("match");		
+					} else {
+						match = false;
 					}
 				}
 				break;
@@ -142,6 +152,8 @@ if questions != noone and !response {
 					if(choice == target){
 						match = true;
 						show_debug_message("match");
+					} else {
+						match = false;
 					}
 				}
 				break;
