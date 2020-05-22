@@ -48,6 +48,8 @@ n_options = 0;
 curr_seq = [];
 
 speaker = noone;
+page_data = [];
+
 selected = 0;
 visited = ds_map_create();
 

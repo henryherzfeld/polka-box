@@ -2,6 +2,30 @@
 
 draw_set_font(font);
 
+//Test to produce initial greeting text for dialogue
+if (first){
+	first = false;
+	
+	curr_seq = text[? "GREET"];
+	string_obj = curr_seq[page];
+	n = array_length_1d(curr_seq);
+	options = curr_seq[n-2];        // get last item of curr_seq dialogue array for options array
+	speakers = curr_seq[n-1];
+	speaker = speakers[page];
+
+	
+	// testing current string from current sequence for modifications
+	if(is_array(string_obj)){ 
+		string_ = string_obj[0];
+		string_n_mods = array_length_1d(string_obj) - 1;
+		array_copy(string_mods, 0, string_obj, 1, string_n_mods);
+	}
+	else { string_ = string_obj }
+	
+	string_wrapped = scr_wrap_text(string_, box_width - 2*text_padding);
+	string_len = string_length(string_wrapped);
+}
+
 // Test for interact input to move curr_seq page forward
 if (keyboard_check_pressed(interact_key) and !dialogue_pause){
 	page_change = true;
@@ -51,11 +75,15 @@ for(var i = 0; i < string_n_mods; i++){
 			obj_quiz_manager.quizzer_id = curr_mod[2];
 			break;
 		}
+		
+		case "COLOR": {
+			show_debug_message("COLOR")
+		}
 	}
 	
 	// remove entry from script mods
 	array_copy(string_mods, 0, string_mods, 1, string_n_mods - 1);
-	i -= 1;
+	i += 1;
 	string_n_mods -= 1; 
 	
 }
@@ -68,6 +96,7 @@ if(page_change){
 	
 	if(array_length_1d(curr_seq) >= 2){
 		string_obj = curr_seq[page];
+		n = array_length_1d(curr_seq);
 		speakers = curr_seq[n-1];
 		options = curr_seq[n-2];        // get last item of curr_seq dialogue array for options array
 		speaker = speakers[page];
@@ -105,9 +134,9 @@ selected = clamp(selected, 0, n_options-2);
 // maybe this behavior should change in light of string "modifications"
 if(exiting){
 	if (is_array(scripts)){
-	n = array_length_1d(scripts);
+	var n_scripts = array_length_1d(scripts);
 	
-	for (var i = 0; i < n; ++i){
+	for (var i = 0; i < n_scripts; ++i){
 		args = scripts[i];
 		scr_script_execute_array_1d(args);
 		}

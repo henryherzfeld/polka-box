@@ -5,32 +5,11 @@ draw_set_font(font);
 draw_set_valign(fa_top);										
 draw_set_halign(fa_left);										
 
-//Test to produce initial greeting text for dialogue
-if (first){
-	first = false;
-	
-	curr_seq = text[? "GREET"];
-	n = array_length_1d(curr_seq);
-	options = curr_seq[n-2];        // get last item of curr_seq dialogue array for options array
-	speakers = curr_seq[n-1];
-	speaker = speakers[page];
-	
-	string_ = curr_seq[page];
-	
-	string_wrapped = scr_wrap_text(string_, box_width - 2*text_padding);
-	string_len = string_length(string_wrapped);
-}
+if first { exit; }
 
 //deciding to draw an option selection or the curr_seq speaker's text
 if (!draw_options){
 	var substr = string_copy(string_wrapped, 1, counter);
-	
-	// string draw modifications
-	if(string_n_mods){
-		for(var i = 0; i < string_n_mods; i++){
-			var curr_mod = string_mods[i];
-		}
-	}
 	
 	if(!pause and counter < string_len){
 		counter += 1;
