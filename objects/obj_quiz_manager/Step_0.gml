@@ -1,7 +1,5 @@
 /// @description Insert description here
 
-show_debug_message([question_change, response, submitted])
-
 if questions != noone and !response {
 	if initial {
 		initial = false;
@@ -91,8 +89,6 @@ if questions != noone and !response {
 				var n_target = array_length_1d(target_temp);
 				var n_choice = array_length_1d(choice);
 				
-					 
-					
 				// assume choice match is true
 				var choice_match = true;
 					

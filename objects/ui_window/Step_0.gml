@@ -77,6 +77,9 @@ with(par_button){
 				par_menu.destroy_menu = true;
 				break;
 			}
+		}
+	} else {
+		switch(event) {
 			
 			case enum_button_event.quiz_multi: {
 				if self.enabled {
@@ -107,11 +110,11 @@ with(par_button){
 							new_choices[j] = obj_quiz_manager.choice[j];
 						}
 						
-						array_copy(new_choices, choice_idx, obj_quiz_manager.choice, choice_idx + 1, n-choice_idx-1)
-						obj_quiz_manager.choice = new_choices;
+					array_copy(new_choices, choice_idx, obj_quiz_manager.choice, choice_idx + 1, n-choice_idx-1)
+					obj_quiz_manager.choice = new_choices;
 					}
 				}
-				break;
+			break;
 			}
 		}
 	}

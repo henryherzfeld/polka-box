@@ -4,20 +4,20 @@
 event_inherited();
 
 par_ptr = par_menu;
-var add_evi_select_but = false;
+var add_evi_select = false;
 
 if build_menu {
 	build_menu = false;
 
 
 	switch type {
-		case enum_question_type.evidence_checkbox: add_evi_select_but = true;
+		case enum_question_type.evidence_checkbox: add_evi_select = true;
 		case enum_question_type.checkbox: {
 			var but_event = enum_button_event.quiz_checkbox;
 			n = array_length_1d(question_data);
 			break;
 		}
-		case enum_question_type.evidence_multi: add_evi_select_but = true;
+		case enum_question_type.evidence_multi: add_evi_select = true;
 		case enum_question_type.multi: {
 			var but_event = enum_button_event.quiz_multi;
 			n = 1;
@@ -26,7 +26,7 @@ if build_menu {
 	}
 	
 	// handling button grid size for introduction of evidence select button
-	if add_evi_select_but {
+	if add_evi_select {
 		button_grid = ds_grid_create(n+2, 6);
 		scr_grid_add_button(0, 0, "evidence", enum_button_type.click, enum_button_event.quiz_evidence, scr_open_evi_prompt);
 	} else {
@@ -36,7 +36,8 @@ if build_menu {
 	// handling adding timer, progress bar
 	if flags.objective_phase == enum_phase_type.miscellaneous {
 		timer_ptr = instance_create_layer(0, 0, "Menus", obj_timer);
-		timer_ptr.time = 5;
+		if add_evi_select { timer_ptr.time = 30; } 
+		else { timer_ptr.time = 20; }
 		timer_ptr.xx = 500;
 		timer_ptr.yy = 40;
 		timer_ptr.start = true;

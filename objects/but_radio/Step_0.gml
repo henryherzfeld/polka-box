@@ -8,10 +8,6 @@ if enabled { spr = spr_enabled; } else { spr = spr_disabled; }
 
 
 if clicked{
-	
-	if event == enum_button_event.quiz_multi {
-		fire = true;
-	}
 
 	clicked = false;
 	

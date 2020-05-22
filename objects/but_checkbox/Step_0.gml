@@ -7,11 +7,6 @@ if enabled { spr = spr_enabled; } else { spr = spr_disabled; }
 
 if clicked{
 	
-	if event == enum_button_event.quiz_checkbox {
-		fire = true;
-	}
-	
-	
 	clicked = false;
 
 	enabled = !enabled;
