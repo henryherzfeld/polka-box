@@ -67,6 +67,11 @@ xx=0;
 yy=0;
 row_offset = 0;
 
+sprite_draw = false;
+sprite_to_draw = noone;
+sprite_x = 0
+sprite_y = 0;
+
 string_object = noone;
 string_ = "";
 string_n_mods = 0;

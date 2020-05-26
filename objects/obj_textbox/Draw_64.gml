@@ -121,11 +121,15 @@ if(speaker != noone){
 	draw_text(namebox_x, namebox_y, speaker.name); 
 	
 	//Draw Portrait Sprite
-	
 	if(speaker.portrait == spr_portrait_weeraway){
 		draw_sprite(speaker.portrait, 0, port_x  + ((port_width - sprite_get_width(speaker.portrait) - 24)/2), port_y - 13)
 	} else{
 		draw_sprite_stretched(speaker.portrait, 0, port_x + portrait_padding, port_y, port_width - portrait_padding*2, port_height - portrait_padding);
+	}
+	
+	//If sprite_draw draw set sprite
+	if sprite_draw {
+		draw_sprite(sprite_to_draw, 0, textbox_x + (box_width - sprite_x) / 2, textbox_y-sprite_y);
 	}
 }
 

@@ -57,37 +57,6 @@ if (keyboard_check_pressed(interact_key) and !dialogue_pause){
 	}
 }
 
-// Executing string modification scripts
-for(var i = 0; i < string_n_mods; i++){
-	curr_mod = string_mods[i];
-	
-	switch(curr_mod[0]){
-		case "SCRIPT": {
-			var input = [];
-			array_copy(input, 0, curr_mod, 1, array_length_1d(curr_mod) - 1)
-			scr_script_execute_array_1d(input);
-			break;
-		}
-			
-		case "QUIZ": {
-			dialogue_pause = true;
-			obj_quiz_manager.questions = curr_mod[1];
-			obj_quiz_manager.quizzer_id = curr_mod[2];
-			break;
-		}
-		
-		case "COLOR": {
-			show_debug_message("COLOR")
-		}
-	}
-	
-	// remove entry from script mods
-	array_copy(string_mods, 0, string_mods, 1, string_n_mods - 1);
-	i += 1;
-	string_n_mods -= 1; 
-	
-}
-
 if(page_change){
 	
 	page_change = false;
@@ -117,6 +86,52 @@ if(page_change){
 	string_len = string_length(string_wrapped);
 	
 	counter = 0;
+	
+}
+
+// Executing string modification scripts
+for(var i = 0; i < string_n_mods; i++){
+	curr_mod = string_mods[i];
+	
+	switch(curr_mod[0]){
+		case "SCRIPT": {
+			var input = [];
+			array_copy(input, 0, curr_mod, 1, array_length_1d(curr_mod) - 1)
+			scr_script_execute_array_1d(input);
+			break;
+		}
+			
+		case "QUIZ": {
+			dialogue_pause = true;
+			obj_quiz_manager.questions = curr_mod[1];
+			obj_quiz_manager.quizzer_id = curr_mod[2];
+			break;
+		}
+		
+		case "COLOR": {
+			show_debug_message(counter)
+		}
+		
+		case "SPRITE": {
+			show_debug_message(sprite_draw);
+			sprite_draw = !sprite_draw;
+			show_debug_message(sprite_draw);
+			
+			if sprite_draw {
+				show_debug_message("HEER")
+				sprite_to_draw = curr_mod[1];
+				sprite_x = sprite_get_width(sprite_to_draw);
+				sprite_y = sprite_get_height(sprite_to_draw);
+
+			}
+
+		}
+	}
+	
+	// remove entry from script mods
+	array_copy(string_mods, 0, string_mods, 1, string_n_mods - 1);
+	i += 1;
+	string_n_mods -= 1; 
 	
 }
 
