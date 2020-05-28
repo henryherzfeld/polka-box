@@ -1,5 +1,18 @@
 /// @description Insert description here
 
+//updating parameters on canvas change
+if game.canvas_change {
+	port_x=(game.gui_width-box_width-port_width)*0.5;
+	port_y=(game.gui_height*0.98) - box_height;
+	textbox_x=port_x+port_width - 24;
+	textbox_y=port_y;
+	namebox_x=port_x;
+	namebox_y=port_y + port_height;
+	textbox_padded_x = textbox_x + text_padding;
+	textbox_padded_y = textbox_y + text_padding;
+}
+
+
 draw_set_font(font);
 
 //Test to produce initial greeting text for dialogue
@@ -28,12 +41,12 @@ if (first){
 
 // Test for interact input to move curr_seq page forward
 if (keyboard_check_pressed(interact_key) and !dialogue_pause){
-	page_change = true;
 	
-	if(page < n - 3){
+	if(page < n - 3 and text_drawn){
 		page++;
 
 	} else if (draw_options){
+		page_change = true;
 		draw_options = false;
 		visited[? options[selected]] = true;
 		
@@ -60,6 +73,8 @@ if (keyboard_check_pressed(interact_key) and !dialogue_pause){
 if(page_change){
 	
 	page_change = false;
+	text_drawn = false;
+	color_draw = false;
 	string_n_mods = 0;
 	string_mods = [];
 	
@@ -81,11 +96,12 @@ if(page_change){
 	}
 	
 	n_options = array_length_1d(options);
-	
+
 	string_wrapped = scr_wrap_text(string_, box_width - 2*text_padding);
 	string_len = string_length(string_wrapped);
 	
 	counter = 0;
+	color_idx = 0;
 	
 }
 
@@ -109,27 +125,67 @@ for(var i = 0; i < string_n_mods; i++){
 		}
 		
 		case "COLOR": {
-			show_debug_message(counter)
+			if not color_draw {
+				preprocess_idx = 0;
+				string_wrapped_arr[0] = string_;
+				string_len = string_length(string_wrapped_arr[0]);
+			}
+			
+			color_draw = true;
+			var color = curr_mod[1];
+			var start_ = curr_mod[2] - preprocess_idx;
+			var end_ = curr_mod[3] - preprocess_idx;
+			
+			var n_wrapped = array_length_1d(string_wrapped_arr);
+			var str_to_process = string_wrapped_arr[n_wrapped-1];
+			var n_str_to_process = string_length(str_to_process);
+			
+			var before = string_copy(str_to_process, 0, start_-1);
+			var colored = string_copy(str_to_process, start_, end_-start_+1);
+			var after = string_copy(str_to_process, end_+1, n_str_to_process-end_);
+			
+			// text 
+			string_wrapped_arr[n_wrapped-1] = scr_wrap_text(before, box_width - 2*text_padding);;
+			string_wrapped_arr[n_wrapped] = scr_wrap_text(colored, box_width - 2*text_padding);;
+			string_wrapped_arr[n_wrapped+1] = scr_wrap_text(after, box_width - 2*text_padding);;
+			/*
+			// color
+			string_wrapped_arr[n_wrapped-1] = noone;
+			string_wrapped_arr[n_wrapped] = color;
+			string_wrapped_arr[n_wrapped+1] = noone;
+			
+			// location
+			string_wrapped_arr[n_wrapped-1] = before;
+			string_wrapped_arr[n_wrapped] = color;
+			string_wrapped_arr[n_wrapped+1] = after;
+			*/
+			
+			
+			preprocess_idx = curr_mod[3];
+			
+			
+
+			break;
 		}
 		
 		case "SPRITE": {
-			show_debug_message(sprite_draw);
 			sprite_draw = !sprite_draw;
-			show_debug_message(sprite_draw);
-			
+
 			if sprite_draw {
-				show_debug_message("HEER")
+
 				sprite_to_draw = curr_mod[1];
 				sprite_x = sprite_get_width(sprite_to_draw);
 				sprite_y = sprite_get_height(sprite_to_draw);
 
 			}
-
+			break;
 		}
 	}
 	
 	// remove entry from script mods
-	array_copy(string_mods, 0, string_mods, 1, string_n_mods - 1);
+	var temp = [];
+	array_copy(temp, 0, string_mods, 1, string_n_mods - 1);
+	string_mods = temp;
 	i += 1;
 	string_n_mods -= 1; 
 	

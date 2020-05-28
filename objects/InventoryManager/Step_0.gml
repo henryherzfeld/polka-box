@@ -1,5 +1,13 @@
 /// @description Insert description here
-// You can write your code in this editor
+
+//update gui variables on canvas change
+if game.canvas_change {
+	slot_total_width = (slot_width + slot_buffer) * slot_col_max;
+	slot_total_height = (slot_height + slot_buffer) * MAX_INV_ITEMS div slot_col_max;
+	slot_start_x = (game.gui_width - slot_total_width)/2;
+	slot_start_y = game.gui_height - slot_total_height;
+}
+
 input_inventory_open = keyboard_check_pressed(ord("I"))
 
 // setting incrementor or decrementor depedning on inventory state

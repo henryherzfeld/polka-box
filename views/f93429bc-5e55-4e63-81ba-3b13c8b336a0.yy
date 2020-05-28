@@ -11,7 +11,8 @@
         "00a3d0f3-c8d8-4f65-8a5a-bf55dbeb061a",
         "140f5b57-453e-4bb3-9077-13f4e2027f32",
         "4c894286-f0aa-4927-8848-3d8ba78d9dce",
-        "261400a1-0d45-40ac-aa44-a8413605e9b4"
+        "261400a1-0d45-40ac-aa44-a8413605e9b4",
+        "02c66f53-63f2-42d8-8da1-a0501b580840"
     ],
     "filterType": "GMSprite",
     "folderName": "Villy",

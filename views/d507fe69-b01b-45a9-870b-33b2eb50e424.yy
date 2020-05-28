@@ -15,7 +15,8 @@
         "7c09e9d2-67ac-4307-9aed-8e806684ba4a",
         "e79529b6-ada4-4068-9071-b1480a54e89d",
         "85f53e91-d72a-48fa-be20-da66653a38c9",
-        "1067202b-166d-45b5-90f0-eecdf185a8c0"
+        "1067202b-166d-45b5-90f0-eecdf185a8c0",
+        "aef74456-512a-441d-8622-b10d14bd0a19"
     ],
     "filterType": "GMSprite",
     "folderName": "Poppy",

@@ -13,8 +13,7 @@
         "8a67f6b2-3a17-4828-a3ff-99276fd90fa3",
         "2a849c39-8dc9-41c8-813c-936e33044803",
         "ca30f27f-8136-44a5-a2c5-b15d03fdae69",
-        "7d597bef-5b8f-4137-a06d-61058bd1e7d7",
-        "1d33bec8-4f14-42be-8710-a2df643e0f96"
+        "ae34b6a1-661e-4831-9658-ddd2d16816e8"
     ],
     "filterType": "GMSprite",
     "folderName": "Weeraway",

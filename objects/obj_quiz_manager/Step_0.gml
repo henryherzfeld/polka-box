@@ -158,8 +158,6 @@ if questions != noone and !response {
 		}
 		
 		if submitted {
-			show_debug_message("submitted")
-			show_debug_message(choice);
 		
 			submitted = false;
 			pending_choice = false;

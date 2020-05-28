@@ -29,6 +29,8 @@ pause = false;
 pause_change = false;
 screenshot = noone;
 
+canvas_change = false;
+
 buffer = 10;
 
 draw_set_font(font);

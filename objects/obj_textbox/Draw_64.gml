@@ -9,41 +9,43 @@ if first { exit; }
 
 //deciding to draw an option selection or the curr_seq speaker's text
 if (!draw_options){
-	var substr = string_copy(string_wrapped, 1, counter);
 	
-	if(!pause and counter < string_len){
-		counter += 1;
-		
-		switch (string_char_at(string_wrapped, counter)){
-			case ",": pause = true; alarm[0] = 15; break;
-			case ".": pause = true; alarm[0] = 25; break;
-			case "?": pause = true; alarm[0] = 25; break;
-			case "!": pause = true; alarm[0] = 25; break;
-			case "\n": row_offset += 1; break;
-			
-			// Testing for color character
-			case "@": 
-				pause = true;
-				alarm[0] = 25;
-				
-				//loop to find end of color segment
-				
-				string_wrapped = string_replace(string_wrapped, "@", "iiiii")
-				counter += 6 - 1;
-				string_len += 6 - 1;
+	if not color_draw { 
+		var substr = string_copy(string_wrapped, 1, counter);
+	} else {
+		var substr = string_copy(string_wrapped_arr[color_idx], 1, counter);
+	}
 
-				color_substr = "asd";
-				xx = textbox_padded_x + string_width(substr)
-				yy = textbox_padded_y + string_height("M") * row_offset
-		}
+	if !pause {
+		if counter < string_len{
+			counter += 1;
 		
+			switch (string_char_at(string_wrapped, counter)){
+				case ",": pause = true; alarm[0] = 15; break;
+				case ".": pause = true; alarm[0] = 25; break;
+				case "?": pause = true; alarm[0] = 25; break;
+				case "!": pause = true; alarm[0] = 25; break;
+				case "\n": row_offset += 1; break;
+		
+			}
+		} else if color_draw and counter >= string_len {
+			if color_idx < array_length_1d(string_wrapped_arr)-1 {
+				counter = 0;
+				color_idx += 1;
+			
+				// adding new entry to xs
+			
+			}
+		} else {
+			text_drawn = true;
+		}
 	}
 	
-	
+	for(var i = 0; i < color_idx; i++){
+		draw_text_color(textbox_padded_x, textbox_padded_y, string_wrapped_arr[i], text_col, text_col, text_col, text_col, true);
+	}
 	draw_text_color(textbox_padded_x, textbox_padded_y, substr, text_col, text_col, text_col, text_col, true);
-	if(xx){
-		draw_text_color(xx, yy, color_substr, c_blue, c_blue, c_red, c_red, true);
-	}
+	
 }
 else {
 	_y = 0;
@@ -55,7 +57,7 @@ else {
 		var preview_len = string_length(seq[0]);
 		var preview = string_copy(seq[0], 0, max_preview_len);
 		
-		if(preview_len >  max_preview_len){preview = string_insert("...", preview, max_preview_len+1);}
+		if(preview_len > max_preview_len){preview = string_insert("...", preview, max_preview_len+1);}
 		
 		
 		var selection_x = string_width(preview);

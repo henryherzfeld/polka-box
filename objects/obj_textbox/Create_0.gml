@@ -14,9 +14,6 @@ font=font_mid;
 
 interact_key = vk_space;
 
-gui_height = display_get_gui_height();
-gui_width = display_get_gui_width();
-
 box_width=sprite_get_width(box);
 box_height=sprite_get_height(box);
 port_width=sprite_get_width(frame);
@@ -24,8 +21,8 @@ port_height=sprite_get_height(frame);
 namebox_width=sprite_get_width(namebox);
 namebox_height=sprite_get_height(namebox);
 
-port_x=(gui_width-box_width-port_width)*0.5;
-port_y=(gui_height*0.98) - box_height;
+port_x=(game.gui_width-box_width-port_width)*0.5;
+port_y=(game.gui_height*0.98) - box_height;
 textbox_x=port_x+port_width - 24;
 textbox_y=port_y;
 namebox_x=port_x;
@@ -67,10 +64,17 @@ xx=0;
 yy=0;
 row_offset = 0;
 
+color_draw = false;
+color_idx = 0;
+string_wrapped_arr = [];
+color_data = ds_list_create();
+
 sprite_draw = false;
 sprite_to_draw = noone;
 sprite_x = 0
 sprite_y = 0;
+
+text_drawn = false;
 
 string_object = noone;
 string_ = "";
