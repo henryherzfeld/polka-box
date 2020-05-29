@@ -46,6 +46,11 @@ if (!draw_options){
 	}
 	draw_text_color(textbox_padded_x, textbox_padded_y, substr, text_col, text_col, text_col, text_col, true);
 	
+	// drawing dialogue continue symbol
+	if text_drawn {
+		draw_sprite(spr_arrow, 0, textbox_x + box_width - 100, textbox_y + box_height - 100);
+	}
+	
 }
 else {
 	_y = 0;
@@ -107,7 +112,7 @@ else {
 	draw_rectangle_color(textbox_x + box_width - 30, textbox_y, textbox_x + box_width, textbox_y + 30, col2,col2,col2,col2,true);
 	*/
 }
-
+show_debug_message([page, n])
 //Drawing player Portrait and Namebox
 if(speaker != noone){
 	//Draw Portrait Back
@@ -123,7 +128,7 @@ if(speaker != noone){
 	draw_text(namebox_x, namebox_y, speaker.name); 
 	
 	//Draw Portrait Sprite
-	if(speaker.portrait == spr_portrait_weeraway){
+	if(speaker.portrait == spr_portrait_weeraway_neutral){
 		draw_sprite(speaker.portrait, 0, port_x  + ((port_width - sprite_get_width(speaker.portrait) - 24)/2), port_y - 13)
 	} else{
 		draw_sprite_stretched(speaker.portrait, 0, port_x + portrait_padding, port_y, port_width - portrait_padding*2, port_height - portrait_padding);

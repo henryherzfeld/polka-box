@@ -41,33 +41,39 @@ if (first){
 
 // Test for interact input to move curr_seq page forward
 if (keyboard_check_pressed(interact_key) and !dialogue_pause){
-	
-	if(page < n - 3 and text_drawn){
-		page++;
-
-	} else if (draw_options){
-		page_change = true;
-		draw_options = false;
-		visited[? options[selected]] = true;
+	if (draw_options){
+			draw_options = false;
+			page_change = true;
+			visited[? options[selected]] = true;
 		
-		/*
-		// skip first piece of dialogue in sequence
-		if(options[selected] = "GREET"){
+			/*
+			// skip first piece of dialogue in sequence
+			if(options[selected] = "GREET"){
+				page = 0;
+			} else {
+				page = 1;
+			}
+			*/
 			page = 0;
-		} else {
-			page = 1;
-		}
-		*/
-		page = 0;
 	
-		curr_seq = text[? options[selected]];
-		n = array_length_1d(curr_seq);
+			curr_seq = text[? options[selected]];
+			n = array_length_1d(curr_seq);
 		
-		if(options[selected] = "EXIT"){exiting = true; page_change = false;}
+			if(options[selected] = "EXIT"){exiting = true; page_change = false;}
+		}
+
+
+	if text_drawn {
+		page_change = true;
+		if(page < n - 3){
+			page++;
+		} else{
+			draw_options = true;
+		}
+	} else {
+		counter = string_len;
 	}
-	else{
-		draw_options = true;
-	}
+
 }
 
 if(page_change){

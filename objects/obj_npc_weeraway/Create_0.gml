@@ -28,6 +28,6 @@ if(scr_check_objective(enum_objective_type.find_weeraway)){
 }
 
 name = "Villy Weeraway";
-portrait = spr_portrait_weeraway;
+portrait = spr_portrait_weeraway_neutral;
 
 crying = true;
