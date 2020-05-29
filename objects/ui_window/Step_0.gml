@@ -1,5 +1,27 @@
 /// @description Insert description here
 
+// modify scaling on canvas change
+if game.canvas_change {
+	var prevx = x1;
+	var prevy = y1;
+	
+	x1 = (game.gui_width - window_w)/2;
+	y1 = (game.gui_height - window_h)/2;
+	
+	var newx = x1;
+	var newy = y1;
+	
+	with(par_button) {
+		var absx = x1 - prevx;
+		var absy = y1 - prevy;
+		
+		x1 = absx + newx;
+		y1 = absy + newy;
+		update = true;
+	}
+}
+
+
 if disable { exit; }
 
 if(destroy_window){ 
@@ -166,8 +188,8 @@ if(button_grid != -1){
 				
 				temp_context[j] = inst.id;
 				
-				inst.x1 = but_x[j];
-				inst.y1 = but_y[j];
+				inst.x1 = but_x[j] + x1;
+				inst.y1 = but_y[j] + y1;
 				inst.text = but_text[j];
 				inst.event = but_event;
 				inst.attr = but_attr[j];
@@ -183,8 +205,8 @@ if(button_grid != -1){
 		} else {
 
 			var inst = instance_create_layer(but_x, but_y, "Menus", but_obj);
-			inst.x1 = but_x;
-			inst.y1 = but_y;
+			inst.x1 = but_x + x1;
+			inst.y1 = but_y + y1;
 			inst.text = but_text;
 			inst.event = but_event;
 			inst.attr = but_attr;

@@ -28,7 +28,7 @@ if build_menu {
 	// handling button grid size for introduction of evidence select button
 	if add_evi_select {
 		button_grid = ds_grid_create(n+2, 6);
-		scr_grid_add_button(0, 0, "evidence", enum_button_type.click, enum_button_event.quiz_evidence, scr_open_evi_prompt);
+		scr_grid_add_button(300, 0, "evidence", enum_button_type.click, enum_button_event.quiz_evidence, scr_open_evi_prompt);
 	} else {
 		button_grid = ds_grid_create(n+1, 6);
 	}
@@ -59,7 +59,7 @@ if build_menu {
 		
 		for(i = 0; i < array_length_1d(question_data); i++){
 			answer_data[i] = i;
-			xs[i] = 200;
+			xs[i] = 0;
 			ys[i] = i*100;
 		}
 		scr_grid_add_button(xs, ys, question_data, enum_button_type.radio, but_event, answer_data);
@@ -72,7 +72,7 @@ if build_menu {
 		}
 	}
 	
-	scr_grid_add_button(200, 600, "Submit", enum_button_type.click, enum_button_event.run_script,
+	scr_grid_add_button(300, 400, "Submit", enum_button_type.click, enum_button_event.run_script,
 						[scr_change_variable, obj_quiz_manager.id, "submitted", true]);
 	window_map = ds_map_create();
 	scr_add_window("Question", 0, 0, prompt);

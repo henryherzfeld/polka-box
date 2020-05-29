@@ -3,7 +3,7 @@
 
 if disable { exit; }
 
-draw_sprite(spr, 0, x1, y1);
+draw_sprite(window_sprite, 0, x1, y1);
 
 with (par_button){
 	draw_sprite(spr, 0, x1, y1);
@@ -18,5 +18,5 @@ with (par_button){
 }
 
 if(text != -1){
-	draw_text(400, 475, text);
+	draw_text(x1 + ((window_w - string_width(text))/2), y1 + 20, text);
 }

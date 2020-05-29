@@ -2,10 +2,13 @@
 
 destroy_window = false;
 
-spr = spr_test_menu;
+window_sprite = spr_test_menu;
 
-x1 = 0;
-y1 = 0;
+window_h = sprite_get_height(window_sprite);
+window_w = sprite_get_width(window_sprite);
+
+x1 = (game.gui_width - window_w)/2;
+y1 = (game.gui_height - window_h)/2;
 
 x2 = 50;
 y2 = 50;
