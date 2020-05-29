@@ -4,11 +4,20 @@
     "mvc": "1.0",
     "name": "obj_shopkeeper",
     "eventList": [
-        
+        {
+            "id": "3dc22720-9220-4fb6-986d-905f5858204d",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "b90d9b90-f874-4f0b-bc7e-6196b54e154c"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "19dafe6a-df83-4216-9481-df605d1a4d64",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
