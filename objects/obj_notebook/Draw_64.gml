@@ -97,7 +97,7 @@ for (var ii = 0; ii < MAX_EVI_ITEMS; ++ii) {
 	draw_rectangle_color(slot_x1,slot_y1,slot_x2,slot_y2,col,col,col,col,true); //Draw Slot Rectangle			
 }
 	
-if(preview_spr != noone){draw_sprite(preview_spr, 0, 450, 600);}
+if(preview_spr != noone){draw_sprite(preview_spr, 0, slot_start_x, slot_start_y + game.gui_height / 2);}
 
 draw_set_valign(fa_top);
 draw_set_halign(fa_top);		

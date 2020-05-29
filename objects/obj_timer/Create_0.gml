@@ -18,7 +18,7 @@ bar_col = c_green;
 w_bar = sprite_get_width(bar) - 2;
 h_bar = sprite_get_height(bar) - 2;
 
-xx = 0;
-yy = 0;
+xx = (game.gui_width - w_bar) / 2;
+yy = 40;
 
 on_finish = -1;

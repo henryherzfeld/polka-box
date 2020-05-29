@@ -1,6 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if game.canvas_change {
+	x1 = (game.gui_width - w_pbar)/2;
+	x_heart = game.gui_width - 150;
+	x_coin = ((game.gui_width - 100)/2) * 1.5;
+}
+
 var time = flags.time;
 
 minutes = string(time div 60);

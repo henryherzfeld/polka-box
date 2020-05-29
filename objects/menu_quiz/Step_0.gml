@@ -38,16 +38,12 @@ if build_menu {
 		timer_ptr = instance_create_layer(0, 0, "Menus", obj_timer);
 		if add_evi_select { timer_ptr.time = 30; } 
 		else { timer_ptr.time = 20; }
-		timer_ptr.xx = 500;
-		timer_ptr.yy = 40;
 		timer_ptr.start = true;
 		timer_ptr.on_finish = [scr_change_variable, obj_quiz_manager.id, "submitted", true];
 		
 		progress_ptr = instance_create_layer(0, 0, "Menus", obj_progress_bar);
 		progress_ptr.max_prog = obj_quiz_manager.n_questions;
 		progress_ptr.prog_ptr = obj_quiz_manager;
-		progress_ptr.xx = 500;
-		progress_ptr.yy = 120;
 	}
 	
 	

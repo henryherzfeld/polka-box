@@ -10,9 +10,6 @@ bg_col = c_olive;
 draw_evidence = false;
 	
 //Slot Variables
-slot_start_x = 256;
-slot_start_y = 300;
-
 m_slotx = 0;
 m_sloty = 0;
 
@@ -25,6 +22,9 @@ selected_slot = -1;
 
 slot_total_width = (slot_width + slot_buffer) * slot_col_max;
 slot_total_height = (slot_height + slot_buffer) * MAX_EVI_ITEMS div slot_col_max; 
+
+slot_start_x = (game.gui_width - slot_total_width)/2;
+slot_start_y = (game.gui_height - slot_total_height)/2;
 
 evidence_slot = array_create(MAX_EVI_ITEMS, enum_evi_type.none);
 evi_def = ds_grid_create(enum_evi_type.length, enum_evi_state.length);

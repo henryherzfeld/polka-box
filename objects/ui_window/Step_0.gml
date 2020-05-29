@@ -1,6 +1,7 @@
 /// @description Insert description here
 
 // modify scaling on canvas change
+
 if game.canvas_change {
 	var prevx = x1;
 	var prevy = y1;

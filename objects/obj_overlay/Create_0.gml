@@ -1,6 +1,4 @@
 /// @description Insert description here
-gui_height = game.gui_height;
-gui_width = game.gui_width;
 
 // Progress Bar
 pbar = spr_pbar_big;
@@ -10,7 +8,7 @@ h_pbar = sprite_get_height(pbar) - 2;
 max_prog = flags.max_progress;
 curr_prog = 0;
 
-x1 = (gui_width - w_pbar)/2;
+x1 = (game.gui_width - w_pbar)/2;
 x2 = w_pbar;
 y_offset = 10;
 
@@ -18,15 +16,14 @@ y_offset = 10;
 minutes = "";
 seconds = "";
 
-
 // Hearts
-x_heart = 1350;
+x_heart = game.gui_width - 150;
 margin_heart = 10;
 w_heart = sprite_get_width(spr_heart_full);
 
 // Coin Counter
 coin_spr = spr_up_arrow;
-x_coin = 1100;
+x_coin = ((game.gui_width - 100)/2) * .75;
 w_coin = sprite_get_width(coin_spr);
 
 // Objectives

@@ -1,5 +1,9 @@
 /// @description Insert description here
 
+if game.canvas_change {
+	xx = (game.gui_width - w_bar) / 2;
+}
+
 // formatting minutes and seconds
 minutes = string(time div 60);
 seconds = string(time mod 60);
@@ -14,7 +18,6 @@ h_text = string_height(timer_text);
 if start { 
 	start = false;
 	time_start = time;
-	
 	
 	// start counting down
 	alarm[0] = room_speed;
