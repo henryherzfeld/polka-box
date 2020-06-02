@@ -2,7 +2,10 @@
 
 // modify scaling on canvas change
 
+if disable { exit; }
+
 if game.canvas_change {
+	
 	var prevx = x1;
 	var prevy = y1;
 	
@@ -12,21 +15,25 @@ if game.canvas_change {
 	var newx = x1;
 	var newy = y1;
 	
-	with(par_button) {
-		var absx = x1 - prevx;
-		var absy = y1 - prevy;
+	for(var i = 0; i < n_but; i++) {
+	var inst = button_context[i];
+		with inst {
+			var absx = x1 - prevx;
+			var absy = y1 - prevy;
 		
-		x1 = absx + newx;
-		y1 = absy + newy;
-		update = true;
+			x1 = absx + newx;
+			y1 = absy + newy;
+			update = true;
+		}
 	}
 }
 
-
-if disable { exit; }
-
 if(destroy_window){ 
-	with(par_button) { instance_destroy(); }
+	for(var i = 0; i < n_but; i++) {
+		var inst = button_context[i];
+		show_debug_message("asd");
+		with(inst) { instance_destroy(); }
+	}
 	instance_destroy();
 }
 
@@ -45,106 +52,115 @@ if enable_change {
 	}
 	enabled_radio = noone;
 }
+show_debug_message([n_but, button_context])
 
-with(par_button){
+
+if not build_buttons {
+	for(var i = 0; i < n_but; i++) {
 	
-	// enable on leave behavior for buttons in a window
-	// does not fire in time for quiz behavior
-	if object_index == but_checkbox {
-		if other.destroy_window {
-			fire = true;
-		}
-	} else if object_index == but_radio {
-		if other.destroy_window and enabled {
-			fire = true;
-		}
-	}
+		var but = button_context[i];
+		show_debug_message(but);
+			with but {
 	
-	if fire {
-		fire = false;
+			// enable on leave behavior for buttons in a window
+			// does not fire in time for quiz behavior
+			if object_index == but_checkbox {
+				if other.destroy_window {
+					fire = true;
+				}
+			} else if object_index == but_radio {
+				if other.destroy_window and enabled {
+					fire = true;
+				}
+			}
+	
+			if fire {
+				fire = false;
 
-		// execute event
-		switch(event){
-			case enum_button_event.new_window: {
-				other.menu_ptr.curr_window = attr;
-				break;
-			}
+				// execute event
+				switch(event){
+					case enum_button_event.new_window: {
+						other.menu_ptr.curr_window = attr;
+						break;
+					}
 			
-			case enum_button_event.quiz_evidence:
-			case enum_button_event.run_script: {
+					case enum_button_event.quiz_evidence:
+					case enum_button_event.run_script: {
 
-				// toggling checkbox enabled attribute for toggle behavior
-				if object_index == but_checkbox {
-					var temp = attr;
-					temp[array_length_1d(attr)] = self.enabled;
-					scr_script_execute_array_1d(temp);
-				}
-				else if(is_array(attr)){ scr_script_execute_array_1d(attr) }
-				else { script_execute(attr); }
-				break;
-			}
-			
-			case enum_button_event.run_script_exit: {
-				// toggling checkbox enabled attribute for toggle behavior
-				if object_index == but_checkbox {
-					var temp = attr;
-					temp[array_length_1d(attr)] = self.enabled;
-					scr_script_execute_array_1d(temp);
-				}
-				else if(is_array(attr)){ scr_script_execute_array_1d(attr) }
-				else { script_execute(attr); }
-			}
-			
-			case enum_button_event.exit_: {
-				other.destroy_window = true; 
-				par_menu.destroy_menu = true;
-				break;
-			}
-		}
-	} else {
-		switch(event) {
-			
-			case enum_button_event.quiz_multi: {
-				if self.enabled {
-					obj_quiz_manager.choice = attr;
-				}
-				break;
-			}
-			
-			case enum_button_event.quiz_checkbox: {
-				var n = array_length_1d(obj_quiz_manager.choice);
-				var in_choices = false;
-				
-				for(var i = 0; i < n; i++){
-					if attr == obj_quiz_manager.choice[i] {
-						var choice_idx = i;
-						in_choices = true;
-					}
-				}
-				
-				if not in_choices {
-					if self.enabled {
-						obj_quiz_manager.choice[n] = attr;
-					}
-				} else {
-					if not self.enabled {
-						var new_choices = [];
-						for(var j = 0; j < choice_idx; j++){
-							new_choices[j] = obj_quiz_manager.choice[j];
+						// toggling checkbox enabled attribute for toggle behavior
+						if object_index == but_checkbox {
+							var temp = attr;
+							temp[array_length_1d(attr)] = self.enabled;
+							scr_script_execute_array_1d(temp);
 						}
-						
-					array_copy(new_choices, choice_idx, obj_quiz_manager.choice, choice_idx + 1, n-choice_idx-1)
-					obj_quiz_manager.choice = new_choices;
+						else if(is_array(attr)){ scr_script_execute_array_1d(attr) }
+						else { script_execute(attr); }
+						break;
+					}
+			
+					case enum_button_event.run_script_exit: {
+						// toggling checkbox enabled attribute for toggle behavior
+						if object_index == but_checkbox {
+							var temp = attr;
+							temp[array_length_1d(attr)] = self.enabled;
+							scr_script_execute_array_1d(temp);
+						}
+						else if(is_array(attr)){ scr_script_execute_array_1d(attr) }
+						else { script_execute(attr); }
+					}
+			
+					case enum_button_event.exit_: {
+						other.destroy_window = true; 
+						par_menu.destroy_menu = true;
+						break;
 					}
 				}
-			break;
+			} else {
+				switch(event) {
+			
+					case enum_button_event.quiz_multi: {
+						if self.enabled {
+							obj_quiz_manager.choice = attr;
+						}
+						break;
+					}
+			
+					case enum_button_event.quiz_checkbox: {
+						var n = array_length_1d(obj_quiz_manager.choice);
+						var in_choices = false;
+				
+						for(var i = 0; i < n; i++){
+							if attr == obj_quiz_manager.choice[i] {
+								var choice_idx = i;
+								in_choices = true;
+							}
+						}
+				
+						if not in_choices {
+							if self.enabled {
+								obj_quiz_manager.choice[n] = attr;
+							}
+						} else {
+							if not self.enabled {
+								var new_choices = [];
+								for(var j = 0; j < choice_idx; j++){
+									new_choices[j] = obj_quiz_manager.choice[j];
+								}
+						
+							array_copy(new_choices, choice_idx, obj_quiz_manager.choice, choice_idx + 1, n-choice_idx-1)
+							obj_quiz_manager.choice = new_choices;
+							}
+						}
+					break;
+					}
+				}
 			}
 		}
 	}
-}
-
-if(button_grid != -1){
+} else {
+	build_buttons = false;
 	var i = 0;
+	var j = 0;
 	
 	repeat(ds_grid_width(button_grid)){
 		var build_radio = false;
@@ -184,28 +200,32 @@ if(button_grid != -1){
 			
 			var temp_context = [];
 
-			for(var j = 0; j < n; j++){
-				var inst = instance_create_layer(but_x[j], but_y[j], "Menus", but_obj);
+			for(var k = 0; k < n; k++){
+				var inst = instance_create_layer(but_x[k], but_y[k], "Menus", but_obj);
+				button_context[i+k] = inst.id;
 				
-				temp_context[j] = inst.id;
+				temp_context[k] = inst.id;
 				
-				inst.x1 = but_x[j] + x1;
-				inst.y1 = but_y[j] + y1;
-				inst.text = but_text[j];
+				inst.x1 = but_x[k] + x1;
+				inst.y1 = but_y[k] + y1;
+				inst.text = but_text[k];
 				inst.event = but_event;
-				inst.attr = but_attr[j];
+				inst.attr = but_attr[k];
 			}
+
+			j += n-1;
 			
 			// assign context array to context member of all elements of current radio context array
-			for(var j = 0; j < n; j++){
-				var inst = temp_context[j];
+			for(var k = 0; k < n; k++){
+				var inst = temp_context[k];
 				inst.context = temp_context;
 				inst.n_context = n;
 				inst.update = true;
 			}
 		} else {
-
+			show_debug_message([but_x, but_y, but_obj]);
 			var inst = instance_create_layer(but_x, but_y, "Menus", but_obj);
+			button_context[i+j] = inst.id;
 			inst.x1 = but_x + x1;
 			inst.y1 = but_y + y1;
 			inst.text = but_text;
@@ -218,5 +238,5 @@ if(button_grid != -1){
 		}
 		i += 1;
 	}
-	button_grid = -1;
+	n_but = i+j;
 }

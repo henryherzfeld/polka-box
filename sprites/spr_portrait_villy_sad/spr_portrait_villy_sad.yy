@@ -2,7 +2,7 @@
     "id": "1a9953e9-eb71-4c4d-8c0d-2ce932d8d846",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_portrat_villy_sad",
+    "name": "spr_portrait_villy_sad",
     "For3D": false,
     "HTile": false,
     "VTile": false,

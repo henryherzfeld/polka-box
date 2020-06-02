@@ -16,6 +16,10 @@ y2 = 50;
 text = -1;
 
 button_grid = -1;
+build_buttons = false;
+
+n_but = 0;
+button_context = array_create(30);
 menu_ptr = noone;
 
 disable = false;

@@ -43,4 +43,13 @@ enum dir {
 	left = 270
 }
 
+//portraits
+enum enum_portrait {
+	angry = 0,
+	happy = 1,
+	neutral = 2,
+	sad = 3,
+	length = 4
+}
+
 //alarm[0] = room_speed;

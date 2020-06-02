@@ -25,6 +25,13 @@ if (first){
 	options = curr_seq[n-2];        // get last item of curr_seq dialogue array for options array
 	speakers = curr_seq[n-1];
 	speaker = speakers[page];
+	// unpacking speaker data (portrait emotion) from speaker variable
+	if is_array(speaker) {
+		emotion = speaker[1];
+		speaker = speaker[0];
+	} else if speaker != noone {
+		emotion = enum_portrait.neutral
+	}
 
 	
 	// testing current string from current sequence for modifications
@@ -90,6 +97,14 @@ if(page_change){
 		speakers = curr_seq[n-1];
 		options = curr_seq[n-2];        // get last item of curr_seq dialogue array for options array
 		speaker = speakers[page];
+		
+		// unpacking speaker data (portrait emotion) from speaker variable
+		if is_array(speaker) {
+			emotion = speaker[1];
+			speaker = speaker[0];
+		} else if speaker != noone {
+			emotion = enum_portrait.neutral
+		}
 		
 		// testing current string from current sequence for modifications
 		if(is_array(string_obj)){ 

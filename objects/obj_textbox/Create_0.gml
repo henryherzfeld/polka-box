@@ -3,7 +3,7 @@
 box=spr_textbox_green;
 frame=spr_frame_green;
 portrait=spr_portrait;
-portrait_padding=48;
+portrait_padding=24;
 namebox=spr_namebox;
 
 text_col=c_white;
@@ -44,6 +44,7 @@ max_preview_len = 45;
 n_options = 0;
 curr_seq = [];
 
+emotion = enum_portrait.neutral;
 speaker = noone;
 page_data = [];
 

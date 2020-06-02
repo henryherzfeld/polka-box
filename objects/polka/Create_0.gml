@@ -13,7 +13,7 @@ radius = 30;
 npc = noone;
 
 name = game.name;
-portrait = spr_portrait_polka;
+portraits = array_create(enum_portrait.length, spr_portrait_polka);
 facing = -1;
 
 curr_x = 0;

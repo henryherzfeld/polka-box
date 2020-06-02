@@ -2,7 +2,7 @@
     "id": "f2532860-bab4-4795-8a44-5bf294cdf5dd",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_portrat_villy_happy",
+    "name": "spr_portrait_villy_happy",
     "For3D": false,
     "HTile": false,
     "VTile": false,

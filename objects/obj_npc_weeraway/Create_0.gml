@@ -1,11 +1,16 @@
  /// @description Villy Weeraway
 
 event_inherited();
- 
+
+portraits[enum_portrait.angry] = spr_portrait_weeraway_angry;
+portraits[enum_portrait.happy] = spr_portrait_weeraway_happy;
+portraits[enum_portrait.neutral] = spr_portrait_weeraway_neutral;
+portraits[enum_portrait.sad] = spr_portrait_weeraway_sad;
+
 text = ds_map_create(); 
 if(scr_check_objective(enum_objective_type.find_weeraway)){
 	text[? "GREET"] = ["Hi", ["A1", "A1_1", "A1_2", "GREET"], [polka]]
-	text[? "A1"] = ["Why aren't you giving the villagers enough food?", "What can I do, " + game.name + "? The crops are dying!", ["A2", "A2_1", "A2_2", "GREET"], [polka, id]]
+	text[? "A1"] = ["Why aren't you giving the villagers enough food?", "What can I do, " + game.name + "? The crops are dying!", ["A2", "A2_1", "A2_2", "GREET"], [polka, [id, enum_portrait.sad]]]
 	text[? "A1_1"] = ["What are you doing here?", "Hiding! I'm a miserable farmer whose… *sniff*... reputation is in ruins.", ["A1", "A1_1", "A1_2", "GREET"], [polka, id]]
 	text[? "A1_2"] = ["Why are you crying?", "I promised my kids that we'd be having Thanksgiving this year. They were so happy! But it seems like I'll have to break that promise.", ["A1", "A1_1", "A1_2", "GREET"], [polka, id]]
 	text[? "A2"] = ["Why are the crops dying?", "The crops don't have what they need to live. I don't know why! This will be the only year we haven't celebrated Thanksgiving if this problem isn't solved. My children might not even have enough to eat if we can't grow food!", ["A3", "A3_1", "A3_2", "GREET"], [polka, id]]
@@ -23,11 +28,10 @@ if(scr_check_objective(enum_objective_type.find_weeraway)){
 ]
 
 } else{
-	text[? "GREET"] = ["Hi", "Leave me alone, please!", ["EXIT", "GREET"], [polka, id]]
+	text[? "GREET"] = ["Hi", "Leave me alone, please!", ["EXIT", "GREET"], [polka, [id, enum_portrait.happy]]]
 	text[? "EXIT"] = ["Whoops, okay.", [], [polka]]
 }
 
 name = "Villy Weeraway";
-portrait = spr_portrait_weeraway_neutral;
 
 crying = true;

@@ -506,7 +506,7 @@
             "Key": "1a9953e9-eb71-4c4d-8c0d-2ce932d8d846",
             "Value": {
                 "id": "aec82cc2-5d65-426e-b957-daf89aaa397a",
-                "resourcePath": "sprites\\spr_portrat_villy_sad\\spr_portrat_villy_sad.yy",
+                "resourcePath": "sprites\\spr_portrait_villy_sad\\spr_portrait_villy_sad.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1106,7 +1106,7 @@
             "Key": "39122749-bdb0-4a37-8e6f-59ab367ddd0d",
             "Value": {
                 "id": "f667b0b6-dfae-43fd-98d2-631dc5da33d5",
-                "resourcePath": "objects\/object62\/object62.yy",
+                "resourcePath": "objects\\npc_green_villy\\npc_green_villy.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1506,7 +1506,7 @@
             "Key": "4aa3efbf-7593-4682-b85b-b63559f61e91",
             "Value": {
                 "id": "cedfd897-b2db-4961-9f7e-116bed9895c6",
-                "resourcePath": "sprites\\spr_portrat_villy_neutral\\spr_portrat_villy_neutral.yy",
+                "resourcePath": "sprites\\spr_portrait_villy_neutral\\spr_portrait_villy_neutral.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2746,7 +2746,7 @@
             "Key": "90c9652a-ca76-4fb6-9154-ca08e7fdc2e0",
             "Value": {
                 "id": "72c7df4c-3475-4d12-8ab2-729936114a9b",
-                "resourcePath": "sprites\\spr_portrat_villy_angry\\spr_portrat_villy_angry.yy",
+                "resourcePath": "sprites\\spr_portrait_villy_angry\\spr_portrait_villy_angry.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4370,7 +4370,7 @@
             "Key": "f2532860-bab4-4795-8a44-5bf294cdf5dd",
             "Value": {
                 "id": "79024f16-98be-4807-b084-8f72902f56f3",
-                "resourcePath": "sprites\\spr_portrat_villy_happy\\spr_portrat_villy_happy.yy",
+                "resourcePath": "sprites\\spr_portrait_villy_happy\\spr_portrait_villy_happy.yy",
                 "resourceType": "GMSprite"
             }
         },

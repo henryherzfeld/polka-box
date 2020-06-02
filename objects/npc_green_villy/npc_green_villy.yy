@@ -2,7 +2,7 @@
     "id": "39122749-bdb0-4a37-8e6f-59ab367ddd0d",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "object62",
+    "name": "npc_green_villy",
     "eventList": [
         {
             "id": "251312b2-8640-45b5-b7ae-c9678b158609",

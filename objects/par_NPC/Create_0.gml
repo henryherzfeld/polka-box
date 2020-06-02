@@ -3,7 +3,9 @@
 
 name = "Anonymous";
 scripts = -1;
-portrait = spr_portrait;
+
+portraits = array_create(enum_portrait.length, spr_portrait);
+
 textbox = spr_textbox_grey;
 
 text = ds_map_create();

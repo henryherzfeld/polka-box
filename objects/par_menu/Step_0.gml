@@ -13,10 +13,11 @@ if (curr_window != noone) {
 	
 	var temp = window_map[? curr_window];
 	
-	inst.x1 = temp[| 0];
-	inst.y1 = temp[| 1];
+//	inst.x1 = temp[| 0];
+//	inst.y1 = temp[| 1];
 	inst.text = temp[| 2];
 	inst.button_grid = temp[| 3];
+	inst.build_buttons = true;
 	inst.menu_ptr = id;
 	curr_window = noone;
 	child_window_ptr = inst.id;

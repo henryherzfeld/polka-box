@@ -2,6 +2,11 @@
  
 event_inherited();
 
+portraits[enum_portrait.angry] = spr_portrait_villy_angry;
+portraits[enum_portrait.happy] = spr_portrait_villy_happy;
+portraits[enum_portrait.neutral] = spr_portrait_villy_neutral;
+portraits[enum_portrait.sad] = spr_portrait_villy_sad;
+
 text = ds_map_create();    
 
 text[? "GREET"] = ["What's going on?", "We're doomed, " + game.name + "! The people of this town are starving!", ["A1", "A1_1", "A1_2", "GREET"], [polka, id]]
@@ -21,7 +26,6 @@ text[? "A2_2"] = ["There's nothing else to eat?", "The food prices have shot up 
 text[? "EXIT"] = ["Ok", [], []]
 
 name = "Villy";
-portrait = spr_portrait_villy_green;
 
 scripts = [];
 
