@@ -10,3 +10,5 @@ instance_create_layer(0, 0, "Meta", obj_overlay);
 instance_create_layer(0, 0, "Meta", obj_notebook);
 instance_create_layer(0, 0, "Meta", InventoryManager);
 instance_create_layer(0, 0, "Meta", obj_save_manager);
+instance_create_layer(0, 0, "Meta", obj_fun_fact_manager);
+instance_create_layer(0, 0, "Meta", obj_quiz_manager);

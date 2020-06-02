@@ -135,6 +135,17 @@ if(inst != noone){
 	}
 }
 
+
+//Check for collision with fun_fact
+var inst = instance_place(x, y, obj_fun_fact);
+
+if(inst != noone){
+	if not inst.visited {
+		obj_quiz_manager.questions = inst.question;
+		inst.visited = true;
+	}
+}
+
 //Check for used item
 if(input_space){
 	if (itemEquiped != noone) {

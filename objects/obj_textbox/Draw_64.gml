@@ -112,7 +112,7 @@ else {
 	draw_rectangle_color(textbox_x + box_width - 30, textbox_y, textbox_x + box_width, textbox_y + 30, col2,col2,col2,col2,true);
 	*/
 }
-show_debug_message([page, n])
+
 //Drawing player Portrait and Namebox
 if(speaker != noone){
 	//Draw Portrait Back

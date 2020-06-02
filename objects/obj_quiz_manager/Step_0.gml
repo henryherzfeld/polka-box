@@ -3,6 +3,7 @@
 if questions != noone and !response {
 	if initial {
 		initial = false;
+		polka.move_override = true;
 		n_questions = ds_list_size(questions);
 		question_change = true;
 		instance_deactivate_object(obj_textbox);
@@ -188,12 +189,15 @@ if questions != noone and !response {
 					question_idx += 1;
 				} else {
 					initial = true;
+					polka.move_override = false;
 					question_idx = 0;
 					questions = noone;
 					question_change = false;
 					instance_activate_object(obj_textbox);
 					var inst = instance_find(obj_textbox, 0)
-					inst.alarm[1] = 1;
+					if inst {
+						inst.alarm[1] = 1;
+					}
 				}
 			} else {
 				// incorrect answer

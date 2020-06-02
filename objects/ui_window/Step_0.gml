@@ -31,7 +31,7 @@ if game.canvas_change {
 if(destroy_window){ 
 	for(var i = 0; i < n_but; i++) {
 		var inst = button_context[i];
-		show_debug_message("asd");
+
 		with(inst) { instance_destroy(); }
 	}
 	instance_destroy();
@@ -52,14 +52,14 @@ if enable_change {
 	}
 	enabled_radio = noone;
 }
-show_debug_message([n_but, button_context])
+
 
 
 if not build_buttons {
 	for(var i = 0; i < n_but; i++) {
 	
 		var but = button_context[i];
-		show_debug_message(but);
+
 			with but {
 	
 			// enable on leave behavior for buttons in a window
@@ -223,7 +223,7 @@ if not build_buttons {
 				inst.update = true;
 			}
 		} else {
-			show_debug_message([but_x, but_y, but_obj]);
+
 			var inst = instance_create_layer(but_x, but_y, "Menus", but_obj);
 			button_context[i+j] = inst.id;
 			inst.x1 = but_x + x1;

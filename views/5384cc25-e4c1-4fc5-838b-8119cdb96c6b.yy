@@ -9,7 +9,8 @@
         "469a2259-84f6-4b6e-8bbc-d8e19c5e9e4a",
         "f2a9f33e-6996-407a-b77b-83cb5138e649",
         "d103f725-e927-4493-9861-820049c4c910",
-        "343022a1-40dc-4d0e-9bb7-883e3dc0bbbe"
+        "343022a1-40dc-4d0e-9bb7-883e3dc0bbbe",
+        "bfc7d8f7-809b-422a-b643-ae3c05330cca"
     ],
     "filterType": "GMObject",
     "folderName": "Meta Tiles",

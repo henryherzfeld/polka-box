@@ -1,38 +1,38 @@
 {
-    "id": "638a2cc9-99d0-4d95-9283-8decb10bf970",
+    "id": "7eeac5c5-fe03-4082-983e-0666ba7eab8e",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_quiz_manager",
+    "name": "obj_fun_fact_manager",
     "eventList": [
         {
-            "id": "a4965cb7-e4e6-4e95-aa15-93778867b92c",
+            "id": "eddbed40-bd2c-44cc-b222-54ff1868856e",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "638a2cc9-99d0-4d95-9283-8decb10bf970"
+            "m_owner": "7eeac5c5-fe03-4082-983e-0666ba7eab8e"
         },
         {
-            "id": "fde4fe53-69d8-4821-949b-f1df9e8fb9c5",
+            "id": "30d47c13-6bef-4441-8ad3-f4aae27da3a0",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "638a2cc9-99d0-4d95-9283-8decb10bf970"
+            "m_owner": "7eeac5c5-fe03-4082-983e-0666ba7eab8e"
         },
         {
-            "id": "74a4c862-46d1-4183-8cef-eee103986f82",
+            "id": "9ebb3c76-5729-483c-a2a5-2166b45d1f49",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 2,
-            "m_owner": "638a2cc9-99d0-4d95-9283-8decb10bf970"
+            "enumb": 4,
+            "eventtype": 7,
+            "m_owner": "7eeac5c5-fe03-4082-983e-0666ba7eab8e"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
