@@ -142,6 +142,7 @@ var inst = instance_place(x, y, obj_fun_fact);
 if(inst != noone){
 	if not inst.visited {
 		obj_quiz_manager.questions = inst.question;
+		obj_quiz_manager.fun_fact = true;
 		inst.visited = true;
 	}
 }

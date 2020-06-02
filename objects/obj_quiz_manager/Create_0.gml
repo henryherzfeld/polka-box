@@ -22,6 +22,8 @@ evi_choice = noone;
 target = noone;
 match = false;
 
+fun_fact = false;
+
 submitted = false;
 
 n_questions = 0;

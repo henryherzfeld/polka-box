@@ -37,6 +37,7 @@ if build_menu {
 	if flags.objective_phase == enum_phase_type.miscellaneous {
 		timer_ptr = instance_create_layer(0, 0, "Menus", obj_timer);
 		if add_evi_select { timer_ptr.time = 30; } 
+		else if obj_quiz_manager.fun_fact { timer_ptr.time = 10; } 
 		else { timer_ptr.time = 20; }
 		timer_ptr.start = true;
 		timer_ptr.on_finish = [scr_change_variable, obj_quiz_manager.id, "submitted", true];
