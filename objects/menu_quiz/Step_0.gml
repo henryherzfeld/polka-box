@@ -34,18 +34,17 @@ if build_menu {
 	}
 	
 	// handling adding timer, progress bar
-	if flags.objective_phase == enum_phase_type.miscellaneous {
-		timer_ptr = instance_create_layer(0, 0, "Menus", obj_timer);
-		if add_evi_select { timer_ptr.time = 30; } 
-		else if obj_quiz_manager.fun_fact { timer_ptr.time = 10; } 
-		else { timer_ptr.time = 20; }
-		timer_ptr.start = true;
-		timer_ptr.on_finish = [scr_change_variable, obj_quiz_manager.id, "submitted", true];
+	timer_ptr = instance_create_layer(0, 0, "Menus", obj_timer);
+	if add_evi_select { timer_ptr.time = 30; } 
+	else if obj_quiz_manager.fun_fact { timer_ptr.time = 10; } 
+	else { timer_ptr.time = 20; }
+	timer_ptr.start = true;
+	timer_ptr.on_finish = [scr_change_variable, obj_quiz_manager.id, "submitted", true];
 		
-		progress_ptr = instance_create_layer(0, 0, "Menus", obj_progress_bar);
-		progress_ptr.max_prog = obj_quiz_manager.n_questions;
-		progress_ptr.prog_ptr = obj_quiz_manager;
-	}
+	progress_ptr = instance_create_layer(0, 0, "Menus", obj_progress_bar);
+	progress_ptr.max_prog = obj_quiz_manager.n_questions;
+	progress_ptr.prog_ptr = obj_quiz_manager;
+
 	
 	
 	if but_event == enum_button_event.quiz_multi {

@@ -207,7 +207,7 @@ if questions != noone and !response {
 				}
 			} else {
 				// incorrect answer
-				// test phase to determine if heart removed
+
 
 				if fun_fact { 
 					scr_fire_sm_noti("Incorrect Answer");
@@ -218,7 +218,7 @@ if questions != noone and !response {
 					questions = noone;
 					question_change = false;
 					fun_fact = false;
-				}
+				}   // test phase to determine if heart removed
 				else if flags.objective_phase == enum_phase_type.miscellaneous {
 					flags.hearts -= 1;
 				}
