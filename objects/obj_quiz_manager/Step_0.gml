@@ -193,17 +193,33 @@ if questions != noone and !response {
 					question_idx = 0;
 					questions = noone;
 					question_change = false;
+					
+					if fun_fact { scr_fire_sm_noti("Correct Answer"); }
+					
+					fun_fact = false;
 					instance_activate_object(obj_textbox);
 					var inst = instance_find(obj_textbox, 0)
 					if inst {
 						inst.alarm[1] = 1;
 					}
+					
+	
 				}
 			} else {
 				// incorrect answer
 				// test phase to determine if heart removed
 
-				if flags.objective_phase == enum_phase_type.miscellaneous {
+				if fun_fact { 
+					scr_fire_sm_noti("Incorrect Answer");
+					questions = noone;
+					initial = true;
+					polka.move_override = false;
+					question_idx = 0;
+					questions = noone;
+					question_change = false;
+					fun_fact = false;
+				}
+				else if flags.objective_phase == enum_phase_type.miscellaneous {
 					flags.hearts -= 1;
 				}
 
