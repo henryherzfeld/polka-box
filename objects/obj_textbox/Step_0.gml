@@ -142,6 +142,7 @@ for(var i = 0; i < string_n_mods; i++){
 			dialogue_pause = true;
 			obj_quiz_manager.questions = curr_mod[1];
 			obj_quiz_manager.quizzer_id = curr_mod[2];
+			obj_quiz_manager.textbox_ptr = id;
 			break;
 		}
 		
@@ -233,6 +234,14 @@ if(exiting){
 		scr_script_execute_array_1d(args);
 		}
 	}	
+	
+	InventoryManager.disable = false;
+	with(polka){
+		in_dialogue = false;
+		interactable = false;
+			
+	}
+
 	instance_destroy();
 }
 

@@ -4,7 +4,7 @@
 anim_count = 0;
 animate = false;
 inv_move = -20;
-
+disable = false;
 open = false;
 
 bg_color = c_gray;
@@ -48,4 +48,3 @@ itemAddData(enum_item_type.water_tube,spr_water_test_tube,"water filled test tub
 itemAddData(enum_item_type.mag_glass,spr_water_test_tube,"magnifying glass",0,scr_use_item_callback_mag_glass, "Use to examine an object");
 
 itemAddInventory(enum_item_type.mag_glass);
-global.show_inventory = true;

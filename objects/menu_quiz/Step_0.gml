@@ -64,7 +64,7 @@ if build_menu {
 		for(var i = 0; i < n; i++) {
 			var option = question_data[i];
 
-			scr_grid_add_button(200, i*100, option, enum_button_type.checkbox, but_event, i);
+			scr_grid_add_button(0, i*100, option, enum_button_type.checkbox, but_event, i);
 		}
 	}
 	

@@ -33,8 +33,7 @@ textbox_padded_y = textbox_y + text_padding;
 //textbox_x = (gui_width / 2) - (box_width / 2);
 //textbox_y = gui_height - box_height;
 
-
-global.show_inventory = false;
+InventoryManager.disable = true;
 exiting = false;
 first = true;
 page = 0;

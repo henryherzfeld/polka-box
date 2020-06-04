@@ -3,9 +3,10 @@
 if questions != noone and !response {
 	if initial {
 		initial = false;
-		polka.move_override = true;
 		n_questions = ds_list_size(questions);
 		question_change = true;
+		
+		if fun_fact { polka.move_override = true; }
 		instance_deactivate_object(obj_textbox);
 	}
 	
@@ -86,7 +87,7 @@ if questions != noone and !response {
 				// otherwise just assign target_temp the target array
 				if evidence { var button_target = target[1]; } 
 				else { var button_target = target; }
-				show_debug_message(target);
+
 				var n_target = array_length_1d(button_target);
 				var n_choice = array_length_1d(choice);
 				
@@ -191,26 +192,26 @@ if questions != noone and !response {
 					question_idx += 1;
 				} else {
 					initial = true;
-					polka.move_override = false;
 					question_idx = 0;
 					questions = noone;
 					question_change = false;
 					
-					if fun_fact { scr_fire_sm_noti("Correct Answer"); }
-					
-					fun_fact = false;
-					instance_activate_object(obj_textbox);
-					var inst = instance_find(obj_textbox, 0);
-					if inst {
-						inst.alarm[1] = 1;
+					if fun_fact { 
+						fun_fact = false;
+						scr_fire_sm_noti("Correct Answer");
+						polka.move_override = false;
+					} 
+					else if textbox_ptr != noone {
+						instance_activate_object(textbox_ptr);
+						polka.in_dialogue = true;
+						polka.interactable = true;
+						InventoryManager.disable = true;
+						textbox_ptr.alarm[1] = 1;
+						textbox_ptr = noone;
 					}
-					
-	
 				}
 			} else {
 				// incorrect answer
-
-
 				if fun_fact { 
 					scr_fire_sm_noti("Incorrect Answer");
 					questions = noone;
@@ -232,7 +233,6 @@ if questions != noone and !response {
 				match_response = false; no_match_response = false;
 				show_debug_message("no match response");
 			}
-			
 		}
 	}
 }

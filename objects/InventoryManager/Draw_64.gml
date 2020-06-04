@@ -1,6 +1,6 @@
 /// @description Draw
 
-if !global.show_inventory { exit; }
+if disable { exit; }
 
 /*
 var x1 = width;										//x1 pos of the rectangele ( 0 + width) Top-Left edge

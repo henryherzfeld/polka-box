@@ -4,6 +4,7 @@
 questions = noone;
 
 quizzer_id = noone;
+textbox_ptr = noone;
 
 question_idx = 0;
 prog = 0;
