@@ -5,9 +5,9 @@ roll_max = 3;
 facts = ds_list_create();
 locations = ds_map_create();
 
-//erosion_village
 locations[? erosion_village] = [[314, 523], [631, 686], [338, 729], [545, 1347], [1354, 940], [1431, 580]];
 locations[? erosion_forest] = [[355, 972], [500, 715], [1078, 1105], [1200, 888], [1451, 229], [1459, 676]];
+
 scr_list_add_question(facts, enum_question_type.multi, "There are more microorganisms in a handful of soil than there are people on earth.", ["True", "False"], 0, noone);
 scr_list_add_question(facts, enum_question_type.multi, "It takes how many years to produce just under an inch of topsoil?", ["10", "100", "500", "1000"], 2, noone);
 scr_list_add_question(facts, enum_question_type.multi, "How much of the Earth is covered in water?", ["90%", "85%", "97%", "99%"], 2, noone);

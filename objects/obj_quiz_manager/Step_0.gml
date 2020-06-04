@@ -57,7 +57,6 @@ if questions != noone and !response {
 				break;
 			}
 		}
-		
 	}
 
 	// checking if we made a choice for our prompt
@@ -174,7 +173,7 @@ if questions != noone and !response {
 			
 			if match {
 				match = false;
-				show_debug_message("MATCH")
+				show_debug_message("MATCH");
 				
 				if match_response {
 					response = true;
@@ -198,7 +197,7 @@ if questions != noone and !response {
 					
 					fun_fact = false;
 					instance_activate_object(obj_textbox);
-					var inst = instance_find(obj_textbox, 0)
+					var inst = instance_find(obj_textbox, 0);
 					if inst {
 						inst.alarm[1] = 1;
 					}
@@ -222,7 +221,6 @@ if questions != noone and !response {
 				else if flags.objective_phase == enum_phase_type.miscellaneous {
 					flags.hearts -= 1;
 				}
-
 			}
 			
 			if no_match_response {

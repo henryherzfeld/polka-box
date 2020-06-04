@@ -53,111 +53,7 @@ if enable_change {
 	enabled_radio = noone;
 }
 
-
-
-if not build_buttons {
-	for(var i = 0; i < n_but; i++) {
-	
-		var but = button_context[i];
-
-			with but {
-	
-			// enable on leave behavior for buttons in a window
-			// does not fire in time for quiz behavior
-			if object_index == but_checkbox {
-				if other.destroy_window {
-					fire = true;
-				}
-			} else if object_index == but_radio {
-				if other.destroy_window and enabled {
-					fire = true;
-				}
-			}
-	
-			if fire {
-				fire = false;
-
-				// execute event
-				switch(event){
-					case enum_button_event.new_window: {
-						other.menu_ptr.curr_window = attr;
-						break;
-					}
-			
-					case enum_button_event.quiz_evidence:
-					case enum_button_event.run_script: {
-
-						// toggling checkbox enabled attribute for toggle behavior
-						if object_index == but_checkbox {
-							var temp = attr;
-							temp[array_length_1d(attr)] = self.enabled;
-							scr_script_execute_array_1d(temp);
-						}
-						else if(is_array(attr)){ scr_script_execute_array_1d(attr) }
-						else { script_execute(attr); }
-						break;
-					}
-			
-					case enum_button_event.run_script_exit: {
-						// toggling checkbox enabled attribute for toggle behavior
-						if object_index == but_checkbox {
-							var temp = attr;
-							temp[array_length_1d(attr)] = self.enabled;
-							scr_script_execute_array_1d(temp);
-						}
-						else if(is_array(attr)){ scr_script_execute_array_1d(attr) }
-						else { script_execute(attr); }
-					}
-			
-					case enum_button_event.exit_: {
-						other.destroy_window = true; 
-						par_menu.destroy_menu = true;
-						break;
-					}
-				}
-			} else {
-				switch(event) {
-			
-					case enum_button_event.quiz_multi: {
-						if self.enabled {
-							obj_quiz_manager.choice = attr;
-						}
-						break;
-					}
-			
-					case enum_button_event.quiz_checkbox: {
-						var n = array_length_1d(obj_quiz_manager.choice);
-						var in_choices = false;
-				
-						for(var i = 0; i < n; i++){
-							if attr == obj_quiz_manager.choice[i] {
-								var choice_idx = i;
-								in_choices = true;
-							}
-						}
-				
-						if not in_choices {
-							if self.enabled {
-								obj_quiz_manager.choice[n] = attr;
-							}
-						} else {
-							if not self.enabled {
-								var new_choices = [];
-								for(var j = 0; j < choice_idx; j++){
-									new_choices[j] = obj_quiz_manager.choice[j];
-								}
-						
-							array_copy(new_choices, choice_idx, obj_quiz_manager.choice, choice_idx + 1, n-choice_idx-1)
-							obj_quiz_manager.choice = new_choices;
-							}
-						}
-					break;
-					}
-				}
-			}
-		}
-	}
-} else {
+if build_buttons {
 	build_buttons = false;
 	var i = 0;
 	var j = 0;
@@ -239,4 +135,112 @@ if not build_buttons {
 		i += 1;
 	}
 	n_but = i+j;
+} else {
+	for(var i = 0; i < n_but; i++) {
+	
+		var but = button_context[i];
+
+			with but {
+	
+			// enable on leave behavior for buttons in a window
+			// does not fire in time for quiz behavior
+			if object_index == but_checkbox {
+				if other.destroy_window {
+					fire = true;
+				}
+			} else if object_index == but_radio {
+				if other.destroy_window and enabled {
+					fire = true;
+				}
+			}
+	
+			if fire {
+				fire = false;
+
+				// execute event
+				switch(event){
+					case enum_button_event.new_window: {
+						other.menu_ptr.curr_window = attr;
+						break;
+					}
+			
+					case enum_button_event.quiz_evidence:
+					case enum_button_event.run_script: {
+
+						// toggling checkbox enabled attribute for toggle behavior
+						if object_index == but_checkbox {
+							var temp = attr;
+							temp[array_length_1d(attr)] = self.enabled;
+							scr_script_execute_array_1d(temp);
+						}
+						else if(is_array(attr)){ scr_script_execute_array_1d(attr) }
+						else { script_execute(attr); }
+						break;
+					}
+			
+					case enum_button_event.run_script_exit: {
+						// toggling checkbox enabled attribute for toggle behavior
+						if object_index == but_checkbox {
+							var temp = attr;
+							temp[array_length_1d(attr)] = self.enabled;
+							scr_script_execute_array_1d(temp);
+						}
+						else if(is_array(attr)){ scr_script_execute_array_1d(attr) }
+						else { script_execute(attr); }
+					}
+			
+					case enum_button_event.exit_: {
+						other.destroy_window = true; 
+						par_menu.destroy_menu = true;
+						break;
+					}
+				}
+			} else {
+				switch(event) {
+			
+					case enum_button_event.quiz_multi: {
+						if self.enabled {
+							obj_quiz_manager.choice = attr;
+						}
+						break;
+					}
+			
+					case enum_button_event.quiz_checkbox: {
+						show_debug_message(obj_quiz_manager.choice);
+						
+						var n = array_length_1d(obj_quiz_manager.choice);
+						
+						var in_choices = false;
+						var choice_idx = 0;
+				
+						for(var j = 0; j < n; j++){
+							if attr == obj_quiz_manager.choice[j] {
+								choice_idx = j;
+								in_choices = true;
+							}
+						}
+				
+						if not in_choices {
+							if self.enabled {
+								obj_quiz_manager.choice[n] = attr;
+							}
+						// removing de-selected choice from quiz manager choices if any exist
+						} else if not self.enabled and n > 0 {
+							var new_choices = [];
+							
+							for(var k = 0; k < choice_idx; k++){
+								new_choices[k] = obj_quiz_manager.choice[k];
+							}
+					
+							array_copy(new_choices, choice_idx, obj_quiz_manager.choice, choice_idx + 1, n-choice_idx-1);
+							show_debug_message("asd")
+							show_debug_message(new_choices);
+							obj_quiz_manager.choice = new_choices;
+						}
+					break;
+					}
+				}
+			}
+		}
+	}
 }
