@@ -65,10 +65,10 @@ for (var ii = 0; ii < MAX_INV_ITEMS; ii++) {
 		var cell_xbuff = slot_width + slot_buffer;
 		var cell_ybuff = slot_height + slot_buffer;
 		
-		var nx = i_mx div cell_xbuff;
-		var ny = i_my div cell_ybuff;
-		
-		if i_mx > 0 and i_my > 0 and i_mx < slot_total_width and i_my < slot_total_height {				
+		if i_mx > 0 and i_my > 0 and i_mx < slot_total_width and i_my < slot_total_height {			
+			
+				var nx = i_mx div cell_xbuff;
+			var ny = i_my div cell_ybuff;
 
 			var selected_x = i_mx - (nx * cell_xbuff);
 			var selected_y = i_my - (ny * cell_ybuff);
@@ -77,12 +77,10 @@ for (var ii = 0; ii < MAX_INV_ITEMS; ii++) {
 				m_slotx = nx;
 				m_sloty = ny;
 			}
-		}
+			// setting selected slot var via mos position
+			selected_slot = m_slotx + (m_sloty * slot_col_max);
+		} else { selected_slot = noone; };
 		
-		// setting selected slot var via mos position
-		selected_slot = m_slotx + (m_sloty * slot_col_max);
-	
-	
 		///Check If mouse is on the slot, if we are on the slot make white outline to red
 		if (ii = selected_slot){
 			col = c_red;														//Change the color to red

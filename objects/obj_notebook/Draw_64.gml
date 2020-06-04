@@ -59,7 +59,9 @@ for (var ii = 0; ii < MAX_EVI_ITEMS; ++ii) {
 				m_slotx = nx;
 				m_sloty = ny;
 			}
-		}
+			// setting selected slot var via mos position
+			selected_slot = m_slotx + (m_sloty * slot_col_max);
+		} else { selected_slot = noone; };
 		
 		// setting selected slot var via mos position
 		selected_slot = m_slotx + (m_sloty * slot_col_max);
@@ -92,6 +94,8 @@ for (var ii = 0; ii < MAX_EVI_ITEMS; ++ii) {
 					}
 				}		
 			}
+		} else {
+			preview_spr = noone;
 		}
 	}
 	draw_rectangle_color(slot_x1,slot_y1,slot_x2,slot_y2,col,col,col,col,true); //Draw Slot Rectangle			
