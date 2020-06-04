@@ -19,7 +19,7 @@ if(file_exists("savedgame.sav")){
 scr_grid_add_button(0, 0, "New Game", enum_button_type.click, enum_button_event.run_script_exit, scr_new_game_start);
 scr_grid_add_button(0, 200, "Settings", enum_button_type.click, enum_button_event.new_window, "settings");
 scr_grid_add_button(0, 300, "Exit", enum_button_type.click, enum_button_event.run_script, scr_exit);
-scr_add_window("main_main", 200, 200, "Pause Menu");
+scr_add_window("main_main", 200, 200, "Main Menu");
 
 button_grid = ds_grid_create(1, 6);
 scr_grid_add_button(200, 500, "Save Settings \nand Go Back", enum_button_type.click, enum_button_event.new_window, "main_main");

@@ -81,24 +81,27 @@ if questions != noone and !response {
 		switch curr_question[0] {
 			case enum_question_type.evidence_checkbox: var evidence = true;
 			case enum_question_type.checkbox: {
-				
+				show_debug_message(target);
 				// if there is an evidence prompt unpack target array to target_temp
 				// otherwise just assign target_temp the target array
-				if evidence { var target_temp = target[1]; } 
-				else { var target_temp = target; }
-				var n_target = array_length_1d(target_temp);
+				if evidence { var button_target = target[1]; } 
+				else { var button_target = target; }
+				show_debug_message(target);
+				var n_target = array_length_1d(button_target);
 				var n_choice = array_length_1d(choice);
 				
 				// assume choice match is true
 				var choice_match = true;
-					
+				
+				show_debug_message([n_choice, n_target]);
 				if n_choice != n_target {
 					choice_match = false;
 				} else {
 					var choice_sorted = scr_array_sort(choice, true);
 					
 					for(var i = 0; i < n_choice; i++){
-						if choice_sorted[i] != target[i] {
+						
+						if choice_sorted[i] != button_target[i] {
 							choice_match = false;
 						}
 					}					

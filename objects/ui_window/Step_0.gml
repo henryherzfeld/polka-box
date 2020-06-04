@@ -206,8 +206,6 @@ if build_buttons {
 					}
 			
 					case enum_button_event.quiz_checkbox: {
-						show_debug_message(obj_quiz_manager.choice);
-						
 						var n = array_length_1d(obj_quiz_manager.choice);
 						
 						var in_choices = false;
@@ -233,8 +231,6 @@ if build_buttons {
 							}
 					
 							array_copy(new_choices, choice_idx, obj_quiz_manager.choice, choice_idx + 1, n-choice_idx-1);
-							show_debug_message("asd")
-							show_debug_message(new_choices);
 							obj_quiz_manager.choice = new_choices;
 						}
 					break;
