@@ -1,5 +1,4 @@
 /// @description Insert description here
-// You can write your code in this editor
 
 if disable { exit; }
 
@@ -13,8 +12,12 @@ with (par_button){
 	}
 	
 	if sprite_draw != noone {
-	draw_sprite(sprite_draw, x1, y1, 0);
+		draw_sprite(sprite_draw, 0, x1, y1);
 	}
+}
+
+if sprite_draw != noone {
+	draw_sprite(sprite_draw, 0, x1, y1 + window_h - sprite_get_height(sprite_draw));
 }
 
 if(text != -1){

@@ -3,12 +3,10 @@
 
 event_inherited();
 
-par_ptr = par_menu;
 var add_evi_select = false;
 
 if build_menu {
 	build_menu = false;
-
 
 	switch type {
 		case enum_question_type.evidence_checkbox: add_evi_select = true;
@@ -44,8 +42,6 @@ if build_menu {
 	progress_ptr = instance_create_layer(0, 0, "Menus", obj_progress_bar);
 	progress_ptr.max_prog = obj_quiz_manager.n_questions;
 	progress_ptr.prog_ptr = obj_quiz_manager;
-
-	
 	
 	if but_event == enum_button_event.quiz_multi {
 		// creating x and y coordinate arrays for radio buttons
@@ -73,8 +69,8 @@ if build_menu {
 	window_map = ds_map_create();
 	scr_add_window("Question", 0, 0, prompt);
 	
-	par_ptr.curr_window = "Question";
-}
+	curr_window = "Question";
+} 
 
 if destroy_menu {
 	instance_destroy(timer_ptr);

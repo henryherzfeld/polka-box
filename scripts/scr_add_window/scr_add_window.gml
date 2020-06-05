@@ -2,7 +2,7 @@
 ///@arg0 key
 ///@arg1 x
 ///@arg2 y
-///@arg3 text
+///@arg3 prompt
 
 var key = argument0;
 

@@ -21,6 +21,10 @@ if (curr_window != noone) {
 	inst.menu_ptr = id;
 	curr_window = noone;
 	child_window_ptr = inst.id;
+	
+	if sprite_draw != noone {
+		child_window_ptr.sprite_draw = sprite_draw;
+	}
 }
 
 

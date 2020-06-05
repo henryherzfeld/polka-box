@@ -10,3 +10,5 @@ destroy_menu = false;
 keys_list = ds_list_create();
 
 key_idx = 0;
+
+sprite_draw = noone;

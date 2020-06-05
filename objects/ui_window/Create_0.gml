@@ -25,6 +25,8 @@ menu_ptr = noone;
 disable = false;
 first = false;
 
+sprite_draw = noone;
+
 enabled_radio = noone;
 enable_change = false;
 

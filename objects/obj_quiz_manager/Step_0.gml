@@ -49,11 +49,15 @@ if questions != noone and !response {
 			case enum_question_type.multi: {
 				var inst = instance_create_layer(0, 0, "Menus", menu_quiz);
 				inst.type = curr_question[0];
-				inst.prompt = curr_question[1];
 				inst.question_data = curr_question[2];
-				inst.build_menu = true;
-				
 				target = curr_question[3];
+				
+				// unpacking sprite from prompt
+				var prompt = curr_question[1];
+				if is_array(prompt) { inst.prompt = prompt[0]; inst.sprite_draw = prompt[1]; }
+				else { inst.prompt = prompt; }
+				
+				inst.build_menu = true;
 				pending_choice = true;
 				break;
 			}
