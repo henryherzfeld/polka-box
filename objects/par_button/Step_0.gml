@@ -1,5 +1,7 @@
 /// @description Insert description here
 
+if disable { exit; }
+
 if(point_in_rectangle(par_menu.mx, par_menu.my, x1, y1, x2, y2) and mouse_check_button_pressed(mb_left)){
 	clicked = true;
 }

@@ -19,3 +19,5 @@ enabled = false;
 
 text = -1;
 sprite_draw = noone;
+
+disable = false;

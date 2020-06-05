@@ -23,6 +23,7 @@ button_context = array_create(30);
 menu_ptr = noone;
 
 disable = false;
+first = false;
 
 enabled_radio = noone;
 enable_change = false;

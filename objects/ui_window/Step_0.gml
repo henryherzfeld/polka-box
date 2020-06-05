@@ -2,7 +2,24 @@
 
 // modify scaling on canvas change
 
-if disable { exit; }
+if disable { 
+	if not first {
+		first = true;
+		for(var i = 0; i < n_but; i++) {
+			var inst = button_context[i];
+			inst.disable = true;
+		}
+	}
+	exit;
+} else {
+	if first {
+		first = false;
+		for(var i = 0; i < n_but; i++) {
+			var inst = button_context[i];
+			inst.disable = false;
+		}
+	}
+}
 
 if game.canvas_change {
 	
