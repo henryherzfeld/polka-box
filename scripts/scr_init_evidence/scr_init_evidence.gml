@@ -6,6 +6,7 @@ enum enum_evi_type {
 	none,
 	evidence1 = 1,
 	evidence2 = 2,
+	soil_moisture_tbl = 3,
 	//ADD new item here
 	//new_item = 7;
 	length,

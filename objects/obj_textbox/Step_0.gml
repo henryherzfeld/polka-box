@@ -91,7 +91,7 @@ if(page_change){
 	string_n_mods = 0;
 	string_mods = [];
 	
-	if(array_length_1d(curr_seq) >= 2){
+	if(array_length_1d(curr_seq) >= 2 and not draw_options) {
 		string_obj = curr_seq[page];
 		n = array_length_1d(curr_seq);
 		speakers = curr_seq[n-1];

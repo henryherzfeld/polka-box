@@ -93,7 +93,7 @@ if (inst != noone) {
 }
 
 //Check for collision with NPC
-var npc = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_NPC, false, true);
+npc = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_NPC, false, true);
 if(input_interact and !in_dialogue){
 	if(npc != noone){
 		scr_create_textbox(npc.text, npc.name, npc.portraits, npc.scripts);

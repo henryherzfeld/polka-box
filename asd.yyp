@@ -1799,6 +1799,14 @@
             }
         },
         {
+            "Key": "5b851dbd-8994-4709-91b4-cafe9dc0297c",
+            "Value": {
+                "id": "5e9fe31a-cd03-4fc6-a265-2eed10cd8e0a",
+                "resourcePath": "sprites\\spr_soil_moisture_table\\spr_soil_moisture_table.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5bc4ff7d-921a-4c6d-a248-33f345da7080",
             "Value": {
                 "id": "4becfbc0-44f1-43d2-8e59-ff3248cd0ee5",
@@ -3196,6 +3204,14 @@
                 "id": "40aad38d-a41a-4fcb-b325-fa091f01ca66",
                 "resourcePath": "objects\\endgame\\endgame.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "a6e8fedf-bc0c-4eac-8f4e-0ed3213e8a6a",
+            "Value": {
+                "id": "5a6f8fd6-9ad7-43ea-b3eb-21450af6769c",
+                "resourcePath": "sprites\\test_test\\test_test.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
