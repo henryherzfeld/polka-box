@@ -67,10 +67,11 @@ if (!draw_options){
 		var draw_col = text_col_default;
 		var n_col_drawn = 0;
 		var temp = 0;
+		var n_newline_draw_idxs = array_length_1d(newline_draw_idxs);
 		for(var i = 0; i < color_idx; i++) {
 			var drawn_col = text_col_default;
 		
-			if i == newline_draw_idxs[temp] {
+			if n_newline_draw_idxs and i == newline_draw_idxs[temp] {
 				temp += 1;
 			}
 

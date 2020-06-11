@@ -21,6 +21,13 @@ if disable {
 	}
 }
 
+if is_quiz {
+	window_sprite = spr_test_menu;
+	window_h = sprite_get_height(window_sprite);
+	window_w = sprite_get_width(window_sprite);
+	game.canvas_change = true;
+}
+
 if game.canvas_change {
 	
 	var prevx = x1;
@@ -72,6 +79,7 @@ if enable_change {
 
 if build_buttons {
 	build_buttons = false;
+	
 	var i = 0;
 	var j = 0;
 	

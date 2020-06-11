@@ -22,8 +22,13 @@ if (curr_window != noone) {
 	curr_window = noone;
 	child_window_ptr = inst.id;
 	
+	// assigning ui_window with quiz draw instructions
+	if is_quiz { inst.is_quiz = true; }
+	
 	if sprite_draw != noone {
-		child_window_ptr.sprite_draw = sprite_draw;
+		inst.sprite_draw = sprite_draw;
+		inst.sprite_h = sprite_get_height(sprite_draw);
+		inst.sprite_w = sprite_get_width(sprite_draw);
 	}
 }
 

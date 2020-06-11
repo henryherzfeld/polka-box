@@ -17,7 +17,10 @@ with (par_button){
 }
 
 if sprite_draw != noone {
-	draw_sprite(sprite_draw, 0, x1, y1 + window_h - sprite_get_height(sprite_draw));
+	var scale = 4;
+	var xx = x1 + (window_w - sprite_w*scale)/2;
+	var yy = y1 + (window_h - sprite_h*scale)/2;
+	draw_sprite_stretched(sprite_draw, 0, xx, yy, sprite_w*scale, sprite_h*scale);
 }
 
 if(text != -1){

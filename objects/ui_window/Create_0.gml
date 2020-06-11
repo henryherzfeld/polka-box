@@ -2,10 +2,13 @@
 
 destroy_window = false;
 
-window_sprite = spr_test_menu;
+window_sprite = spr_stars_bg;
 
 window_h = sprite_get_height(window_sprite);
 window_w = sprite_get_width(window_sprite);
+
+sprite_h = 0;
+sprite_w = 0;
 
 x1 = (game.gui_width - window_w)/2;
 y1 = (game.gui_height - window_h)/2;
@@ -24,6 +27,8 @@ menu_ptr = noone;
 
 disable = false;
 first = false;
+
+is_quiz = false;
 
 sprite_draw = noone;
 
