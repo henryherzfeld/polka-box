@@ -10,17 +10,15 @@ if first { exit; }
 //deciding to draw an option selection or the curr_seq speaker's text
 if (!draw_options){
 	
-	if not color_draw { 
-		var substr = string_copy(string_wrapped, 1, counter);
-	} else {
-		var substr = string_copy(string_wrapped_arr[color_idx], 1, counter);
-	}
-
 	if !pause {
 		if counter < string_len{
 			counter += 1;
+			
+			var curr_char;
+			if color_draw { curr_char = string_char_at(string_pre_arr[color_idx], counter)}
+			else { curr_char = string_char_at(string_wrapped, counter)}
 		
-			switch (string_char_at(string_wrapped, counter)){
+			switch (curr_char){
 				case ",": pause = true; alarm[0] = 15; break;
 				case ".": pause = true; alarm[0] = 25; break;
 				case "?": pause = true; alarm[0] = 25; break;
@@ -29,22 +27,63 @@ if (!draw_options){
 		
 			}
 		} else if color_draw and counter >= string_len {
-			if color_idx < array_length_1d(string_wrapped_arr)-1 {
-				counter = 0;
+			if color_idx < array_length_1d(string_pre_arr)-1 {
+				
 				color_idx += 1;
-			
-				// adding new entry to xs
-			
+				string_len = string_length(string_pre_arr[color_idx]);
+				counter = 0;
+
+				if newline_draw_offset < array_length_1d(newline_draw_idxs) {
+					if color_idx == newline_draw_idxs[newline_draw_offset] {
+						newline_draw_offset += 1;
+						newline_draw_change = true;
+					} 
+				} 
+
+				col_ys[color_idx] = string_height(string_pre_arr[color_idx-1])*newline_draw_offset;
+				
+				if newline_draw_change {
+					newline_draw_change = false;
+					col_xs[color_idx] = 0;
+				} else {
+					col_xs[color_idx] = string_width(string_pre_arr[color_idx-1]) + col_xs[color_idx-1];
+				}
+			} else {
+				text_drawn = true;
 			}
 		} else {
 			text_drawn = true;
 		}
 	}
 	
-	for(var i = 0; i < color_idx; i++){
-		draw_text_color(textbox_padded_x, textbox_padded_y, string_wrapped_arr[i], text_col, text_col, text_col, text_col, true);
+	if not color_draw { 
+		var substr = string_copy(string_wrapped, 1, counter);
+	} else {
+		var substr = string_copy(string_pre_arr[color_idx], 1, counter);
 	}
-	draw_text_color(textbox_padded_x, textbox_padded_y, substr, text_col, text_col, text_col, text_col, true);
+	
+	if color_draw {
+		
+		var draw_col = text_col_default;
+		var n_col_drawn = 0;
+		var temp = 0;
+		for(var i = 0; i < color_idx; i++) {
+			var drawn_col = text_col_default;
+		
+			if i == newline_draw_idxs[temp] {
+				temp += 1;
+			}
+
+			if not ((i+1-temp) mod 2) {
+				n_col_drawn += 1;
+				drawn_col = string_colors[(i-temp) div 2];
+			} else if not ((i-temp) mod 2) and i == color_idx-1 and n_col_drawn < array_length_1d(string_colors) { draw_col = string_colors[(i-temp) div 2]; }
+			draw_text_color(textbox_padded_x + col_xs[i], textbox_padded_y + col_ys[i], string_pre_arr[i], drawn_col, drawn_col, drawn_col, drawn_col, true);
+		}
+		draw_text_color(textbox_padded_x + col_xs[color_idx], textbox_padded_y + col_ys[color_idx], substr, draw_col, draw_col, draw_col, draw_col, true);
+	} else {
+		draw_text_color(textbox_padded_x, textbox_padded_y, substr, text_col, text_col, text_col, text_col, true);
+	}
 	
 	// drawing dialogue continue symbol
 	if text_drawn {
@@ -59,6 +98,7 @@ else {
 	for (var i = 0; i < n_options - 1; i++){
 
 		var seq = text[? options[i]];
+		if is_array(seq[0]) { seq = seq[0]; }
 		var preview_len = string_length(seq[0]);
 		var preview = string_copy(seq[0], 0, max_preview_len);
 		
@@ -138,7 +178,7 @@ if(speaker != noone){
 	
 	//If sprite_draw draw set sprite
 	if sprite_draw {
-		draw_sprite(sprite_to_draw, 0, textbox_x + (box_width - sprite_x) / 2, textbox_y-sprite_y);
+		draw_sprite(sprite_to_draw, 0, textbox_x + (box_width - sprite_x) / 2, textbox_y-sprite_y-game.gui_height/2);
 	}
 }
 

@@ -16,7 +16,7 @@ if game.canvas_change {
 draw_set_font(font);
 
 //Test to produce initial greeting text for dialogue
-if (first){
+if first {
 	first = false;
 	
 	curr_seq = text[? "GREET"];
@@ -78,9 +78,19 @@ if (keyboard_check_pressed(interact_key) and !dialogue_pause){
 			draw_options = true;
 		}
 	} else {
+		if color_draw {
+			color_text_drawn = true;
+		}
 		counter = string_len;
 	}
 
+}
+
+if color_text_drawn {
+	counter = string_len;
+	if color_idx == array_length_1d(string_pre_arr)-1 {
+		color_text_drawn = false;
+	}
 }
 
 if(page_change){
@@ -123,12 +133,18 @@ if(page_change){
 	
 	counter = 0;
 	color_idx = 0;
-	
+	curr_newline = 0;
+	string_pre_arr = [];
+	newline_draw_idxs = [];
+	newline_draw_offset = 0;
+	col_xs = array_create(20);
+	col_ys = array_create(20);
+	color_draw = false;
 }
 
 // Executing string modification scripts
-for(var i = 0; i < string_n_mods; i++){
-	curr_mod = string_mods[i];
+repeat(string_n_mods){
+	curr_mod = string_mods[0];
 	
 	switch(curr_mod[0]){
 		case "SCRIPT": {
@@ -149,17 +165,18 @@ for(var i = 0; i < string_n_mods; i++){
 		case "COLOR": {
 			if not color_draw {
 				preprocess_idx = 0;
-				string_wrapped_arr[0] = string_;
-				string_len = string_length(string_wrapped_arr[0]);
+				string_pre_arr[0] = string_;
+				string_colors = [];
 			}
 			
 			color_draw = true;
+			color_format = true;
 			var color = curr_mod[1];
 			var start_ = curr_mod[2] - preprocess_idx;
 			var end_ = curr_mod[3] - preprocess_idx;
 			
-			var n_wrapped = array_length_1d(string_wrapped_arr);
-			var str_to_process = string_wrapped_arr[n_wrapped-1];
+			var n_wrapped = array_length_1d(string_pre_arr);
+			var str_to_process = string_pre_arr[n_wrapped-1];
 			var n_str_to_process = string_length(str_to_process);
 			
 			var before = string_copy(str_to_process, 0, start_-1);
@@ -167,26 +184,14 @@ for(var i = 0; i < string_n_mods; i++){
 			var after = string_copy(str_to_process, end_+1, n_str_to_process-end_);
 			
 			// text 
-			string_wrapped_arr[n_wrapped-1] = scr_wrap_text(before, box_width - 2*text_padding);;
-			string_wrapped_arr[n_wrapped] = scr_wrap_text(colored, box_width - 2*text_padding);;
-			string_wrapped_arr[n_wrapped+1] = scr_wrap_text(after, box_width - 2*text_padding);;
-			/*
-			// color
-			string_wrapped_arr[n_wrapped-1] = noone;
-			string_wrapped_arr[n_wrapped] = color;
-			string_wrapped_arr[n_wrapped+1] = noone;
-			
-			// location
-			string_wrapped_arr[n_wrapped-1] = before;
-			string_wrapped_arr[n_wrapped] = color;
-			string_wrapped_arr[n_wrapped+1] = after;
-			*/
-			
-			
+			string_pre_arr[n_wrapped-1] = before;
+			string_pre_arr[n_wrapped] = colored;
+			string_pre_arr[n_wrapped+1] = after;
+
+			string_colors[array_length_1d(string_colors)] = color;
+	
 			preprocess_idx = curr_mod[3];
 			
-			
-
 			break;
 		}
 		
@@ -206,11 +211,67 @@ for(var i = 0; i < string_n_mods; i++){
 	
 	// remove entry from script mods
 	var temp = [];
-	array_copy(temp, 0, string_mods, 1, string_n_mods - 1);
+	array_copy(temp, 0, string_mods, 1, string_n_mods-1);
 	string_mods = temp;
-	i += 1;
 	string_n_mods -= 1; 
 	
+}
+
+// performing some second modifications on full preprocessed text array
+if color_format {
+	color_format = false;
+	
+	var newline_idxs = scr_wrap_text_idxs(string_, box_width - 2*text_padding);
+	var n_newline = array_length_1d(newline_idxs);
+	
+	if n_newline {
+		
+		var newline_idx = 0;
+		var str_idx = 0;
+		var count = string_length(string_pre_arr[str_idx]);
+		
+		for(var i = 0; i < n_newline; i++) {
+			
+			curr_newline = newline_idxs[newline_idx];
+			var curr_string = string_pre_arr[str_idx];
+			var n_curr_string = string_length(curr_string);
+			
+			while curr_newline > count {
+				str_idx += 1;
+				curr_string = string_pre_arr[str_idx];
+				n_curr_string = string_length(curr_string)
+				count += n_curr_string;
+			}
+
+			var temp = [];
+			array_copy(temp, 0, string_pre_arr, 0, str_idx);
+			
+			var midpoint = curr_newline - (count - n_curr_string + 1);
+			
+			// finding nearest previous space and using it as our midpoint
+			var dist = min(10, midpoint);
+			for(var j = 0; j > -dist; j--){
+				if string_char_at(curr_string, midpoint+j) == " " {
+					midpoint = midpoint+j+1;
+					break;
+				}
+			}
+
+			temp[str_idx] = string_copy(curr_string, 0, midpoint-1);
+			temp[str_idx+1] = string_copy(curr_string, midpoint, n_curr_string - midpoint + 1);
+			
+			array_copy(temp, str_idx+2, string_pre_arr, str_idx+1, array_length_1d(string_pre_arr) - str_idx);
+			
+			string_pre_arr = temp;
+			
+			str_idx += 1;
+			
+			newline_draw_idxs[i] = str_idx;
+			
+			newline_idx += 1;
+		}
+		string_len = string_length(string_pre_arr[0]);
+	}
 }
 
 // moving up and down through options using arrow keys

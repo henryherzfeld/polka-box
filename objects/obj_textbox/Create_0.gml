@@ -6,6 +6,7 @@ portrait=spr_portrait;
 portrait_padding=24;
 namebox=spr_namebox;
 
+text_col_default=c_white;
 text_col=c_white;
 highlight_col=c_ltgray;
 name_text_col=c_black;
@@ -55,7 +56,7 @@ with (polka) {
 	interactable = false;
 }
 
-page_change = true;
+page_change = false;
 
 counter = 0;
 pause = false;
@@ -64,10 +65,19 @@ xx=0;
 yy=0;
 row_offset = 0;
 
+newline_draw_idxs = [];
+newline_draw_offset = 0;
+newline_draw_change = false;
+
+color_text_drawn = false;
+
 color_draw = false;
+color_format = false;
 color_idx = 0;
 string_wrapped_arr = [];
 color_data = ds_list_create();
+col_xs = array_create(20);
+col_ys = array_create(20);
 
 sprite_draw = false;
 sprite_to_draw = noone;
