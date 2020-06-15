@@ -287,6 +287,12 @@ selected = clamp(selected, 0, n_options-2);
 // executing all exit scripts upon final dialogue sequence
 // maybe this behavior should change in light of string "modifications"
 if(exiting){
+	InventoryManager.disable = false;
+	with(polka){
+		in_dialogue = false;
+		interactable = false;	
+	}
+	
 	if (is_array(scripts)){
 	var n_scripts = array_length_1d(scripts);
 	
@@ -295,14 +301,6 @@ if(exiting){
 		scr_script_execute_array_1d(args);
 		}
 	}	
-	
-	InventoryManager.disable = false;
-	with(polka){
-		in_dialogue = false;
-		interactable = false;
-			
-	}
-
 	instance_destroy();
 }
 

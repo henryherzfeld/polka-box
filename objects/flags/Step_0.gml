@@ -45,5 +45,7 @@ if (game.pause){
 
 // out of hearts
 if hearts <= 0 {
+	obj_quiz_manager.no_match_response = false;
+	scr_destroy_meta();
 	scr_load_game_start();
 }

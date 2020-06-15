@@ -12,7 +12,7 @@ with (par_button){
 	}
 	
 	if sprite_draw != noone {
-		draw_sprite(sprite_draw, 0, x1, y1);
+		draw_sprite(sprite_draw, 0, x1 + (x2-x1)/2, y1 + (y2-y1)/2);
 	}
 }
 

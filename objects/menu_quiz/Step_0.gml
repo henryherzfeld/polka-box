@@ -27,7 +27,7 @@ if build_menu {
 	// handling button grid size for introduction of evidence select button
 	if add_evi_select {
 		button_grid = ds_grid_create(n+2, 6);
-		scr_grid_add_button(1080, 300, "evidence", enum_button_type.click, enum_button_event.quiz_evidence, scr_open_evi_prompt);
+		scr_grid_add_button(1080, 300, "Evidence", enum_button_type.click, enum_button_event.quiz_evidence, scr_open_evi_prompt);
 	} else {
 		button_grid = ds_grid_create(n+1, 6);
 	}

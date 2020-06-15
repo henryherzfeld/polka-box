@@ -1,5 +1,7 @@
 /// @description Insert description here
 
+event_inherited();
+
 scr_init_evidence();
 
 preview_spr = noone;

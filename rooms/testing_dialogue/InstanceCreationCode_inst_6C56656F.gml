@@ -1,0 +1,1 @@
+scr_event_register_script(event.test, id, scr_change_variable, id, "crying", false);
