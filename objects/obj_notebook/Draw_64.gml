@@ -66,38 +66,20 @@ for (var ii = 0; ii < MAX_EVI_ITEMS; ++ii) {
 		// setting selected slot var via mos position
 		selected_slot = m_slotx + (m_sloty * slot_col_max);
 	
-		///Check If mouse is on the slot, if we are on the slot make white outline to red
-		if (ii == selected_slot){
-			col = c_red;														//Change the color to red
+		if (ii == selected_slot){	
+			col = c_red;
 			preview_spr = evi_sprite;
 						
 			//If clicked when inside the slot
 			if (mouse_check_button_pressed(mb_left)) {
-
-//				show_debug_message(obj_quiz_manager.pending_choice)
-				if(obj_quiz_manager.pending_choice){
-					obj_quiz_manager.evi_choice = evi_type;
-					
-					with obj_quiz_manager {
-						var curr_question = questions[| question_idx]
-						if curr_question[0] == enum_question_type.evidence { 
-							submitted = true;
-						}
-					}
-					
-					draw_evidence = false;
-					
-					// testing if a window is open, if so re-enable or un-disable it
-					var inst = instance_find(ui_window, 0);
-					if inst != noone {
-						ui_window.disable = false;
-					}
-				}		
+				clicked_slot = ii;
+	
 			}
 		} else {
 			preview_spr = noone;
 		}
 	}
+	if ii == clicked_slot { col = c_blue; }
 	draw_rectangle_color(slot_x1,slot_y1,slot_x2,slot_y2,col,col,col,col,true); //Draw Slot Rectangle			
 }
 	

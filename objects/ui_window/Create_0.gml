@@ -34,7 +34,7 @@ sprite_draw = noone;
 
 enabled_radio = noone;
 enable_change = false;
-
+draw = true;
 
 enum enum_button_event{
 	new_window,

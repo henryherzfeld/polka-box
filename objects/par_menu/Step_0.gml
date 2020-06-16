@@ -25,13 +25,14 @@ if (curr_window != noone) {
 	// assigning ui_window with quiz draw instructions
 	if is_quiz { inst.is_quiz = true; }
 	
+	if not draw_windows inst.draw = false;
+	
 	if sprite_draw != noone {
 		inst.sprite_draw = sprite_draw;
 		inst.sprite_h = sprite_get_height(sprite_draw);
 		inst.sprite_w = sprite_get_width(sprite_draw);
 	}
 }
-
 
 if(destroy_menu){
 	// Destroying button grids

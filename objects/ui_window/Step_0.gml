@@ -198,7 +198,16 @@ if build_buttons {
 							temp[array_length_1d(attr)] = self.enabled;
 							scr_script_execute_array_1d(temp);
 						}
-						else if(is_array(attr)){ scr_script_execute_array_1d(attr) }
+						else if(is_array(attr)){ 
+							if is_array(attr[0]) { 
+								var i = 0; repeat(array_length_1d(attr)){
+									scr_script_execute_array_1d(attr[i])
+									i++;
+								}
+							} else {
+								scr_script_execute_array_1d(attr); 
+							}
+							}
 						else { script_execute(attr); }
 						break;
 					}

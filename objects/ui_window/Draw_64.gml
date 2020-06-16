@@ -2,17 +2,20 @@
 
 if disable { exit; }
 
-draw_sprite(window_sprite, 0, x1, y1);
+if draw draw_sprite(window_sprite, 0, x1, y1);
 
-with (par_button){
-	draw_sprite(spr, 0, x1, y1);
+for(var i = 0; i < n_but; i++) {
+	var but = button_context[i];
+	with but {
+		draw_sprite(spr, 0, x1, y1);
 	
-	if text != -1 {
-		draw_text(x1, y1, text)
-	}
+		if text != -1 {
+			draw_text(x1, y1, text)
+		}
 	
-	if sprite_draw != noone {
-		draw_sprite(sprite_draw, 0, x1 + (x2-x1)/2, y1 + (y2-y1)/2);
+		if sprite_draw != noone {
+			draw_sprite(sprite_draw, 0, x1 + (x2-x1)/2, y1 + (y2-y1)/2);
+		}
 	}
 }
 

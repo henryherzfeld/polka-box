@@ -10,7 +10,7 @@ if questions != noone and !response {
 		instance_deactivate_object(obj_textbox);
 	}
 	
-	var curr_question = questions[| question_idx]
+	var curr_question = questions[| question_idx];
 	prog = question_idx;
 	
 	if question_change {
@@ -38,6 +38,7 @@ if questions != noone and !response {
 				// enable evidence choice prompt
 				with(obj_notebook){
 					draw_evidence = true;
+					draw_change = true;
 				}
 				break;
 			}
@@ -59,6 +60,7 @@ if questions != noone and !response {
 				
 				inst.build_menu = true;
 				pending_choice = true;
+				quiz_menu_ptr = inst;
 				break;
 			}
 		}
@@ -167,6 +169,7 @@ if questions != noone and !response {
 		
 		if submitted {
 		
+			quiz_menu_ptr = noone;
 			submitted = false;
 			pending_choice = false;
 			choice = noone; 

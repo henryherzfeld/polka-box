@@ -6,6 +6,7 @@ menu_array = -1;
 curr_window = noone;
 child_window_ptr = noone;
 destroy_menu = false;
+draw_windows = true;
 
 keys_list = ds_list_create();
 

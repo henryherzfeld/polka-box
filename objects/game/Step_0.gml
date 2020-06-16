@@ -19,6 +19,7 @@ if(keyboard_check_pressed(vk_escape)){
 		buffer = 5;
 		if(inst == noone){
 			instance_create_layer(0, 0, "Menus", menu_pause);
+			scr_event_fire(event.pause);
 		}
 	}
 }

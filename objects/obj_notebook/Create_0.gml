@@ -10,6 +10,7 @@ notebook_key = ord("N");
 
 bg_col = c_olive;
 draw_evidence = false;
+draw_change = false;
 	
 //Slot Variables
 m_slotx = 0;
@@ -20,7 +21,11 @@ slot_height = 48;	//Slot Height
 slot_buffer = 8;
 slot_col_max = 8;
 
+send_selected = false;
 selected_slot = -1;
+clicked_slot = -1;
+
+draw_windows = false;
 
 slot_total_width = (slot_width + slot_buffer) * slot_col_max;
 slot_total_height = (slot_height + slot_buffer) * MAX_EVI_ITEMS div slot_col_max; 
@@ -37,3 +42,13 @@ scr_evi_add_data(enum_evi_type.evidence2,sprite138,"evidence 2", "a piece of evi
 
 scr_evi_add_notebook(enum_evi_type.evidence1);
 scr_evi_add_notebook(enum_evi_type.evidence2);
+
+window_map = ds_map_create();
+
+button_grid = ds_grid_create(1, 6);
+scr_grid_add_button(700, 500, "Submit", enum_button_type.click, enum_button_event.run_script, [
+								[scr_change_variable, obj_notebook.id, "draw_evidence", false],
+								[scr_change_variable, obj_notebook.id, "draw_change", true],
+								[scr_change_variable, obj_notebook.id, "send_selected", true],
+								]);
+scr_add_window("pause_main", 0, 0, "");

@@ -17,6 +17,8 @@ no_match_response = false;
 match_response = false;
 response = false;
 
+quiz_menu_ptr = noone;
+
 pending_choice = false;
 choice = noone;
 evi_choice = noone;
