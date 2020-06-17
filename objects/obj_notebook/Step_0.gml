@@ -5,7 +5,7 @@ event_inherited();
 
 if game.canvas_change {
 	slot_start_x = (game.gui_width - slot_total_width)/2;
-	slot_start_y = (game.gui_height - slot_total_height)/2;
+	slot_start_y = (game.gui_height - slot_total_height)/3;
 }
 
 if game.pause exit;
@@ -24,7 +24,9 @@ if draw_change and obj_quiz_manager.pending_choice {
 		child_window_ptr = noone;
 		curr_window = noone;
 	}
-}
+} 
+
+if draw_change { draw_change = false; preview_spr = noone; selected_slot = noone; clicked_slot = noone; }
 
 if send_selected {
 	send_selected = false;

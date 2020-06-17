@@ -69,21 +69,18 @@ for (var ii = 0; ii < MAX_EVI_ITEMS; ++ii) {
 		if (ii == selected_slot){	
 			col = c_red;
 			preview_spr = evi_sprite;
-						
+
 			//If clicked when inside the slot
 			if (mouse_check_button_pressed(mb_left)) {
 				clicked_slot = ii;
-	
 			}
-		} else {
-			preview_spr = noone;
 		}
 	}
 	if ii == clicked_slot { col = c_blue; }
 	draw_rectangle_color(slot_x1,slot_y1,slot_x2,slot_y2,col,col,col,col,true); //Draw Slot Rectangle			
 }
 	
-if(preview_spr != noone){draw_sprite(preview_spr, 0, slot_start_x, slot_start_y + game.gui_height / 2);}
+if preview_spr != noone draw_sprite_stretched(preview_spr, 0, slot_start_x + slot_total_width/2-150, slot_start_y + game.gui_height / 3, 300, 300);
 
 draw_set_valign(fa_top);
 draw_set_halign(fa_top);		
