@@ -14,9 +14,9 @@ if(buffer != 0){
 }
 if(keyboard_check_pressed(vk_escape)){
 	
-	var inst = instance_find(menu_pause, 0);
 	if(buffer == 0){
 		buffer = 5;
+		var inst = instance_find(menu_pause, 0);
 		if(inst == noone){
 			instance_create_layer(0, 0, "Menus", menu_pause);
 			scr_event_fire(event.pause);

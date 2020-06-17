@@ -4,8 +4,6 @@ event_inherited();
 
 game.pause_change = true;
 
-par_ptr = par_menu;
-
 window_map = ds_map_create();
 
 button_grid = ds_grid_create(3, 6);
@@ -20,5 +18,5 @@ scr_grid_add_button([300, 400], [300, 500], ["debug on", "debug off"], enum_butt
 scr_grid_add_button(0, 300, "Save Settings \nand Go Back", enum_button_type.click, enum_button_event.new_window, "pause_main");
 scr_add_window("settings", 200, 200, "Settings");
 
-par_ptr.curr_window = "pause_main";
+curr_window = "pause_main";
 

@@ -51,4 +51,4 @@ scr_grid_add_button(700, 500, "Submit", enum_button_type.click, enum_button_even
 								[scr_change_variable, obj_notebook.id, "draw_change", true],
 								[scr_change_variable, obj_notebook.id, "send_selected", true],
 								]);
-scr_add_window("pause_main", 0, 0, "");
+scr_add_window("evidence_select", 0, 0, "");

@@ -8,6 +8,8 @@ if game.canvas_change {
 	slot_start_y = (game.gui_height - slot_total_height)/2;
 }
 
+if game.pause exit;
+
 if(keyboard_check_pressed(notebook_key)){
 	draw_evidence = !draw_evidence
 	draw_change = true;	
@@ -16,7 +18,7 @@ if(keyboard_check_pressed(notebook_key)){
 if draw_change and obj_quiz_manager.pending_choice {
 	draw_change = false;
 	if draw_evidence { 
-		curr_window = "pause_main";
+		curr_window = "evidence_select";
 	} else {
 		child_window_ptr.destroy_window = true;
 		child_window_ptr = noone;

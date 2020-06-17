@@ -11,3 +11,5 @@ var quest_array = [
 
 quests_grid = scr_create_ds_grid_from_array(quest_array);
 quests_grid_n = ds_grid_height(quests_grid);
+
+register_events = true;

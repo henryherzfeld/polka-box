@@ -7,10 +7,10 @@ var i = 0; repeat(quests_grid_n) {
 		case quest.test1:
 			switch(grid[# 1, i]) {
 				case 0:
-					scr_event_register_script(event.pause, quests, scr_progress_quest, quest.test1);
+					if register_events register_events = false; scr_event_register_script(event.pause, quests, scr_progress_quest, quest.test1);
 				break;
 				case 1:
-					scr_event_register_script(event.test, quests, scr_progress_quest, quest.test1);
+					if register_events register_events = false; scr_event_register_script(event.test, quests, scr_progress_quest, quest.test1);
 				break;
 			}
 		break;

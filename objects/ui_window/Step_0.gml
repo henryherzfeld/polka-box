@@ -225,7 +225,7 @@ if build_buttons {
 			
 					case enum_button_event.exit_: {
 						other.destroy_window = true; 
-						par_menu.destroy_menu = true;
+						other.menu_ptr.destroy_menu = true;
 						break;
 					}
 				}
