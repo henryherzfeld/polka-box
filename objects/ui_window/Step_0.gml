@@ -129,7 +129,7 @@ if build_buttons {
 				
 				inst.x1 = but_x[k] + x1;
 				inst.y1 = but_y[k] + y1;
-				inst.text = but_text[k];
+				inst.text = scr_wrap_text(but_text[k], inst.spr_w);
 				inst.event = but_event;
 				inst.attr = but_attr[k];
 			}
@@ -149,7 +149,7 @@ if build_buttons {
 			button_context[i+j] = inst.id;
 			inst.x1 = but_x + x1;
 			inst.y1 = but_y + y1;
-			inst.text = but_text;
+			inst.text = scr_wrap_text(but_text, inst.spr_w);
 			inst.event = but_event;
 			inst.attr = but_attr;
 			if but_obj == but_checkbox and is_array(but_attr){

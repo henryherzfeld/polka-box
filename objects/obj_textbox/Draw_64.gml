@@ -179,7 +179,7 @@ if(speaker != noone){
 	
 	//If sprite_draw draw set sprite
 	if sprite_draw {
-		draw_sprite(sprite_to_draw, 0, textbox_x + (box_width - sprite_x) / 2, textbox_y-sprite_y-game.gui_height/2);
+		draw_sprite(sprite_to_draw, 0, textbox_x + (box_width - sprite_x) / 2, textbox_y-sprite_y);
 	}
 }
 

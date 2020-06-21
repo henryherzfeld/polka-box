@@ -10,7 +10,6 @@ if(objective_change or objective_update){
 			// using temp to test for a change in objective phase, if so fire off a notification
 			var temp = scr_get_objective_phase(i);
 			
-			
 			if(objective_phase != temp) {
 				objective_phase = temp;
 				

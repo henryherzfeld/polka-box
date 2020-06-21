@@ -23,8 +23,7 @@ if(scr_check_objective(enum_objective_type.find_weeraway)){
 	text[? "EXIT"] = ["Ok", [], []]
 	
 	scripts = [
-	[scr_activate_objective, enum_objective_type.find_poppy],                                
-	[scr_deactivate_objective, enum_objective_type.find_weeraway]
+	[scr_event_fire, event.find_poppy],                                
 ]
 
 } else{
