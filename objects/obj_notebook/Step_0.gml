@@ -15,18 +15,19 @@ if(keyboard_check_pressed(notebook_key)){
 	draw_change = true;	
 }
 
-if draw_change and obj_quiz_manager.pending_choice {
-	draw_change = false;
-	if draw_evidence { 
-		curr_window = "evidence_select";
+if draw_change {
+	if draw_evidence {
+		if obj_quiz_manager.pending_choice {
+			curr_window = "evidence_select";
+		} else {
+			curr_window = "default"
+		}
 	} else {
 		child_window_ptr.destroy_window = true;
 		child_window_ptr = noone;
 		curr_window = noone;
 	}
 } 
-
-if draw_change { draw_change = false; preview_spr = noone; selected_slot = noone; clicked_slot = noone; }
 
 if send_selected {
 	send_selected = false;
@@ -41,7 +42,6 @@ if send_selected {
 			obj_quiz_manager.submitted = true;
 		}
 	}	
-
 }
 
-/*
+if draw_change { draw_change = false; preview_spr = noone; selected_slot = 0; clicked_slot = 0; }

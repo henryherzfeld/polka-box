@@ -767,6 +767,14 @@
             }
         },
         {
+            "Key": "2715ae7a-3952-4506-918e-01beae1a720d",
+            "Value": {
+                "id": "7ff034c7-3944-4e69-854e-5b698a679baf",
+                "resourcePath": "scripts\\scr_flash_nb_button\\scr_flash_nb_button.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "271c03a8-ef02-4850-9b92-34ef2c2d9ac8",
             "Value": {
                 "id": "1c8443c7-e0fe-4313-aba1-c6e39faa018d",
@@ -995,6 +1003,14 @@
             "Value": {
                 "id": "9e3bef4b-1305-4d1b-ba8e-57cc2d90b31e",
                 "resourcePath": "sprites\/sprite89\/sprite89.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "33d9b38a-dc0e-4ef7-b293-425a1a061609",
+            "Value": {
+                "id": "f200f4bd-75b9-40d5-be8d-900055d0526e",
+                "resourcePath": "sprites\\spr_notebook_button_flash\\spr_notebook_button_flash.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2823,6 +2839,14 @@
             }
         },
         {
+            "Key": "90d1514a-4617-4131-a69a-17b7c9f4dd5c",
+            "Value": {
+                "id": "3190e571-1386-414b-8a5d-d898b35e0957",
+                "resourcePath": "sprites\\spr_notebook_button_hover\\spr_notebook_button_hover.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "90e5cdb7-712b-4568-bd91-f0c75cd69eca",
             "Value": {
                 "id": "23d43ea5-0714-457a-8282-e4b404aec287",
@@ -3252,14 +3276,6 @@
                 "id": "40aad38d-a41a-4fcb-b325-fa091f01ca66",
                 "resourcePath": "objects\\endgame\\endgame.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "a6e8fedf-bc0c-4eac-8f4e-0ed3213e8a6a",
-            "Value": {
-                "id": "5a6f8fd6-9ad7-43ea-b3eb-21450af6769c",
-                "resourcePath": "sprites\\test_test\\test_test.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -3727,14 +3743,6 @@
             }
         },
         {
-            "Key": "c0aaad98-8da1-446e-8e5e-c1c9399acf16",
-            "Value": {
-                "id": "6e93bfa4-5de2-41c1-95b5-ed8e57f1019e",
-                "resourcePath": "sprites\\test_test_test\\test_test_test.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "c0c8439d-92c4-47e8-a4be-0012f75f715d",
             "Value": {
                 "id": "0f67322c-9654-4230-809f-200261e43f93",
@@ -3987,6 +3995,14 @@
             "Value": {
                 "id": "c4a9ae3f-9dff-4a37-bede-fbf0f2f3c7a3",
                 "resourcePath": "sprites\\spr_portrait_poppy_sad\\spr_portrait_poppy_sad.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d063e0b6-3b95-4c12-8fe0-2777d360aa7a",
+            "Value": {
+                "id": "1b723c16-7050-40d8-83f9-c4d14598b64a",
+                "resourcePath": "sprites\\spr_notebook_button\\spr_notebook_button.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4780,7 +4796,8 @@
         "3896194a-e062-4b7f-972e-e27995079538",
         "5ae937d4-f5e9-4bad-86a8-5c96c14eba42",
         "de97cb43-0a2f-490a-be65-5842ca2b5873",
-        "6cccaadb-8f06-4a0d-bb7b-6bd267e842e2"
+        "6cccaadb-8f06-4a0d-bb7b-6bd267e842e2",
+        "2715ae7a-3952-4506-918e-01beae1a720d"
     ],
     "tutorial": ""
 }

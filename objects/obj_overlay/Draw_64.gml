@@ -76,3 +76,34 @@ if(noti_lg_count){
 	}
 }
 
+//notebook button
+if obj_notebook.draw_evidence or obj_quiz_manager.pending_choice { exit; }
+
+var nb_x1 = 100; var nb_y1 = 100;
+var nb_x2 = 200; var nb_y2 = 200;
+
+var mx = device_mouse_x_to_gui(0);
+var my = device_mouse_y_to_gui(0);
+
+if !nb_button_pause {
+	nb_button_frame_idx = 0;
+	nb_button_frame_counter = 0;
+	nb_spr = spr_notebook_button;
+	if point_in_rectangle(mx, my, nb_x1, nb_y1, nb_x2, nb_y2){
+		nb_spr = spr_notebook_button_hover;
+		if mouse_check_button_pressed(mb_left) {
+			with obj_notebook { 
+				draw_evidence = !draw_evidence;
+				draw_change = true;	
+			}
+		}
+	}
+} else {
+	nb_button_frame_counter += 1;
+	if not (nb_button_frame_counter % 17) {
+		nb_button_frame_idx = (nb_button_frame_idx+1) % 2
+	}
+}
+
+draw_sprite_stretched(nb_spr, nb_button_frame_idx, nb_x1, nb_y1, nb_x2-nb_x1, nb_y2-nb_y1);
+

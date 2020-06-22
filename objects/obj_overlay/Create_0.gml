@@ -56,3 +56,10 @@ noti_lg_text_col = c_white;
 
 noti_lg_bg_size = 150;
 noti_lg_bg_border_size = 20;
+
+nb_spr = spr_notebook_button;
+nb_button_pause = false;
+nb_button_frame_idx = 0;
+nb_button_frame_counter = 0;
+
+scr_event_register_script(event.new_evidence, id, scr_flash_nb_button)

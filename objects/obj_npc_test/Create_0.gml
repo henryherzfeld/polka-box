@@ -18,7 +18,7 @@ text[? "GREET"] =	[[" Hey and hello...... it is me an npc and let me tell you I'
 //					"Good job on the quiz!", 
 					"Thanks", "Anything Else?", ["A1", "EXIT", "EXIT"], [polka, id, id, polka, id]]
 
-text[? "A1"] = ["Can I do another quiz?", ["You", ["SPRITE", test_test]], ["Me", ["SPRITE"]], ["You", ["SPRITE", test_test_test]], ["GREET", "EXIT", "EXIT"], [polka, id, polka, id]]
+text[? "A1"] = ["Can I do another quiz?", "Me", "You", ["GREET", "EXIT", "EXIT"], [polka, id, polka, id]]
 text[? "EXIT"] = ["Bye Bye", [], [polka]]
 
 name = "Villy";

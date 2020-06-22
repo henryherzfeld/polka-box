@@ -46,9 +46,20 @@ scr_evi_add_notebook(enum_evi_type.evidence2);
 window_map = ds_map_create();
 
 button_grid = ds_grid_create(1, 6);
+scr_grid_add_button(700, 100, "Exit", enum_button_type.click, enum_button_event.run_script, [
+								[scr_change_variable, obj_notebook.id, "draw_evidence", false],
+								[scr_change_variable, obj_notebook.id, "draw_change", true],
+								]);
+scr_add_window("default", 0, 0, "");
+
+button_grid = ds_grid_create(1, 6);
 scr_grid_add_button(700, 500, "Submit", enum_button_type.click, enum_button_event.run_script, [
 								[scr_change_variable, obj_notebook.id, "draw_evidence", false],
 								[scr_change_variable, obj_notebook.id, "draw_change", true],
 								[scr_change_variable, obj_notebook.id, "send_selected", true],
 								]);
 scr_add_window("evidence_select", 0, 0, "");
+
+
+
+
