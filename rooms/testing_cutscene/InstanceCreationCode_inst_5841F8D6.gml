@@ -1,0 +1,1 @@
+idle_movement = false;

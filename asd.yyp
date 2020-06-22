@@ -1287,14 +1287,6 @@
             }
         },
         {
-            "Key": "402b361c-0066-41d5-bca4-52a10a9eb0da",
-            "Value": {
-                "id": "81bf1c9f-eb0b-4265-8bdb-dbc7592ed82f",
-                "resourcePath": "rooms\/room1\/room1.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "4076b6c4-d6da-43aa-8b0c-e884a7ba56ae",
             "Value": {
                 "id": "5888b160-9c9e-46b5-b83c-96c1facba51d",
@@ -1884,6 +1876,14 @@
                 "id": "161b37ea-d0e8-4729-8ce1-18257e394b2e",
                 "resourcePath": "sprites\\spr_pbar_empty\\spr_pbar_empty.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5df49bbb-db2e-4e0e-93bf-b043c7d6a670",
+            "Value": {
+                "id": "889dce44-1857-4b1f-9d7d-0f8a3555d312",
+                "resourcePath": "scripts\\scr_cutscene_move_character_char\\scr_cutscene_move_character_char.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -3663,6 +3663,14 @@
             }
         },
         {
+            "Key": "bcca9e50-75b5-4f20-8e9d-eadceec5d13d",
+            "Value": {
+                "id": "ea0a31e5-c7b9-441c-9cf0-eff597bad934",
+                "resourcePath": "rooms\\testing_cutscene\\testing_cutscene.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "bd063f9e-ca08-426e-aa6e-066f1bf70551",
             "Value": {
                 "id": "11dcb850-5a17-4d6b-8f43-bb90126f6113",
@@ -4567,14 +4575,6 @@
             }
         },
         {
-            "Key": "f602323c-ddcf-4682-a258-41c3cbc8179f",
-            "Value": {
-                "id": "3af7782c-77c2-40dd-9ebb-8237de862392",
-                "resourcePath": "rooms\/dont_touch_me\/dont_touch_me.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "f6a7add5-5623-4f8a-a29d-a225e9b13538",
             "Value": {
                 "id": "b1360598-835b-41f9-a0b1-c4ac3857c616",
@@ -4741,6 +4741,7 @@
         "a28b8b13-442d-4993-8a1f-e322e2136e83",
         "dfa8c145-47c8-4e46-a12a-32b5bb9a40ca",
         "7f9505e1-6eb5-473b-828e-fa89e6db6034",
+        "5df49bbb-db2e-4e0e-93bf-b043c7d6a670",
         "0896c95d-862a-466c-99bb-83f04d10d7f3",
         "4ce34cf3-3859-4360-808f-db2d8890479e",
         "21330375-9416-4732-951b-046972792927",

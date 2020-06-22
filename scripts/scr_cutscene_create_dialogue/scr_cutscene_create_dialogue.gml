@@ -2,11 +2,9 @@
 ///@arg text
 ///@arg scripts
 
-if(dialogue_inst = -1){
+if dialogue_inst == -1 {
 	dialogue_inst = scr_create_textbox(argument0, "Placeholder", spr_portrait, argument1)
-	
-} else if (!polka.in_dialogue){
+} else if not instance_exists(dialogue_inst) {
 	dialogue_inst = -1;
 	scr_cutscene_end_action();
 }
-
