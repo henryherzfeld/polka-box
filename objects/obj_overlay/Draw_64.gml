@@ -91,7 +91,15 @@ if !nb_button_pause {
 	nb_spr = spr_notebook_button;
 	if point_in_rectangle(mx, my, nb_x1, nb_y1, nb_x2, nb_y2){
 		nb_spr = spr_notebook_button_hover;
-		if mouse_check_button_pressed(mb_left) {
+		if mouse_check_button_pressed(mb_left) or nb_button_pressed {
+			nb_spr = spr_notebook_button_flash;
+			nb_button_pressed = true;
+		}
+	} else {
+		nb_button_pressed = false;
+	}
+	if nb_button_pressed {
+		if mouse_check_button_released(mb_left) {
 			with obj_notebook { 
 				draw_evidence = !draw_evidence;
 				draw_change = true;	

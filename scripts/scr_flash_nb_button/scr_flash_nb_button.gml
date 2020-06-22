@@ -5,3 +5,5 @@ with obj_overlay {
 	nb_spr = spr_notebook_button_flash;
 	alarm[0] = 2 * room_speed;
 }
+
+return false;
