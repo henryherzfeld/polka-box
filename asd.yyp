@@ -770,7 +770,7 @@
             "Key": "2715ae7a-3952-4506-918e-01beae1a720d",
             "Value": {
                 "id": "7ff034c7-3944-4e69-854e-5b698a679baf",
-                "resourcePath": "scripts\\scr_flash_nb_button\\scr_flash_nb_button.yy",
+                "resourcePath": "scripts\\scr_new_evi_noti\\scr_new_evi_noti.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4797,8 +4797,8 @@
         "3896194a-e062-4b7f-972e-e27995079538",
         "5ae937d4-f5e9-4bad-86a8-5c96c14eba42",
         "de97cb43-0a2f-490a-be65-5842ca2b5873",
-        "6cccaadb-8f06-4a0d-bb7b-6bd267e842e2",
-        "2715ae7a-3952-4506-918e-01beae1a720d"
+        "2715ae7a-3952-4506-918e-01beae1a720d",
+        "6cccaadb-8f06-4a0d-bb7b-6bd267e842e2"
     ],
     "tutorial": ""
 }

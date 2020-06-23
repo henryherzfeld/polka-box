@@ -115,3 +115,12 @@ if !nb_button_pause {
 
 draw_sprite_stretched(nb_spr, nb_button_frame_idx, nb_x1, nb_y1, nb_x2-nb_x1, nb_y2-nb_y1);
 
+if new_evidence != noone {
+	var h = sprite_get_height(new_evidence);
+	var w = sprite_get_width(new_evidence);
+	
+	var xx = (game.gui_width - w) / 2;
+	var yy = (game.gui_height - h) / 2;
+	draw_rectangle(xx, yy, xx+(w*3), yy+(h*3), false);
+	draw_sprite_stretched(new_evidence, 0, xx, yy, h*3, w*3)
+}

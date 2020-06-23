@@ -62,5 +62,6 @@ nb_button_pause = false;
 nb_button_frame_idx = 0;
 nb_button_frame_counter = 0;
 nb_button_pressed = false;
+new_evidence = noone;
 
-scr_event_register_script(event.new_evidence, id, scr_flash_nb_button)
+scr_event_register_script(event.new_evidence, id, scr_new_evi_noti);
