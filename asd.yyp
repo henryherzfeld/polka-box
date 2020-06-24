@@ -2263,6 +2263,14 @@
             }
         },
         {
+            "Key": "70f8e4f5-62ba-4fbc-88ca-225cf821e603",
+            "Value": {
+                "id": "3c73c445-1728-4e64-8f86-51a62034eb0e",
+                "resourcePath": "scripts\\scr_list_add_question_sprite\\scr_list_add_question_sprite.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7135e5ea-c36e-4ac6-b2cb-21ac5debf75c",
             "Value": {
                 "id": "22712f7d-21d6-434f-990f-e1f304b44779",
@@ -3284,6 +3292,14 @@
                 "id": "40aad38d-a41a-4fcb-b325-fa091f01ca66",
                 "resourcePath": "objects\\endgame\\endgame.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "a603ec9b-4b6f-462e-bee6-e0c89932f05f",
+            "Value": {
+                "id": "50294334-dbbf-4478-8683-1d89bc3fa427",
+                "resourcePath": "scripts\\scr_list_add_question_response\\scr_list_add_question_response.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -4809,6 +4825,8 @@
         "7c71b989-fd75-4fe2-bb8f-398fcb5151ca",
         "59d72ab5-598e-45a8-ba0e-2350a60b0635",
         "53b2aa8f-ab29-4601-9915-84775c43d0cf",
+        "70f8e4f5-62ba-4fbc-88ca-225cf821e603",
+        "a603ec9b-4b6f-462e-bee6-e0c89932f05f",
         "162be5c6-beff-40f5-b045-7d2fe86ef9f1",
         "3896194a-e062-4b7f-972e-e27995079538",
         "5ae937d4-f5e9-4bad-86a8-5c96c14eba42",

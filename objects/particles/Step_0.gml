@@ -1,4 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-part_emitter_stream(system_ptr, emitter_ptr, particle_idx, 2);
+if rain effect_create_below(ef_rain, 10, 10, 1, c_white);
+/*
+part_emitter_stream(system_ptr, emitter_ptr, particle1_idx, 2);
+if not (counter mod 50) {
+	part_emitter_burst(system_ptr, emitter_ptr, particle2_idx, 2);
+}
+
+counter++;

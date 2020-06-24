@@ -2,16 +2,34 @@
 
 event_inherited();
 
+
 questions = ds_list_create();
+scr_list_add_question(questions, enum_question_type.evidence, noone, noone, enum_evi_type.evidence2);
+scr_list_add_question_response(questions, ["right! you're so awesome and funny"], ["wrong idiot"]);
+
+scr_list_add_question(questions, enum_question_type.evidence_multi, "Prompt evi_multi", ["Righttttt ttttttt ttttttt", "Wronggggggggg gggggg gggggggggg", "Wronggggggggg gggggggg ggggggggggg"], [enum_evi_type.evidence2, 0]);
+scr_list_add_question_response(questions, ["right! you're so awesome and funny"], ["wrong idiot"]);
+scr_list_add_question_sprite(questions, spr_soil_moisture_table);
+
+scr_list_add_question(questions, enum_question_type.multi, "QUESTION PROMPT", ["Right", "Wrong", "Wrong",], 0);
+scr_list_add_question_response(questions, ["Correct!!!!!"], noone);
+
+scr_list_add_question(questions, enum_question_type.evidence_checkbox, "Prompt evi_checkbox", ["Right", "Wrong", "Right", "Right"], [enum_evi_type.evidence2, [0,2,3]]);
+
+scr_list_add_question(questions, enum_question_type.checkbox, "Prompt checkbox", ["Right", "Wrong", "Right", "Right"], [0, 2, 3]);
+scr_list_add_question_response(questions, ["right! you're so awesome and funny"], ["wrong idiot"]);
+
+/*
 questions[| 0] = [enum_question_type.evidence, enum_evi_type.evidence2, [["right! you're so awesome and funny"], ["wrong idiot"]]];
 
-
 questions[| 1] = [enum_question_type.evidence_multi, ["Prompt evi_multi", spr_soil_moisture_table], ["Righttttt ttttttt ttttttt", "Wronggggggggg gggggg gggggggggg", "Wronggggggggg gggggggg ggggggggggg"], [enum_evi_type.evidence2, 0], [["right! you're so awesome and funny"], ["wrong idiot"]]];
+
 questions[| 2] = [enum_question_type.multi, "QUESTION PROMPT", ["Right", "Wrong", "Wrong",], 0, [["Correct!!!!!"]]];
 
 questions[| 3] = [enum_question_type.evidence_checkbox, "Prompt evi_checkbox", ["Right", "Wrong", "Right", "Right"], [enum_evi_type.evidence2, [0,2,3]], []];
 
 questions[| 4] = [enum_question_type.checkbox, "Prompt checkbox", ["Right", "Wrong", "Right", "Right"], [0, 2, 3], [["right! you're so awesome and funny"], ["wrong idiot"]]];
+*/
 
 text = ds_map_create();
 text[? "GREET"] =	[[" Hey and hello...... it is me an npc and let me tell you I'm ready for the quiz!........ I'm ready for the quiz! I'm ready for the quiz! ", 
