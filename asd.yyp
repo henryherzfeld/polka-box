@@ -367,6 +367,14 @@
             }
         },
         {
+            "Key": "124b5dba-f791-4059-a34e-1033755f3588",
+            "Value": {
+                "id": "edc06a61-cc0f-4638-8a77-dbe792446cc2",
+                "resourcePath": "objects\\particles\\particles.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1392b2fd-3661-4fba-8d75-0625040f7e3d",
             "Value": {
                 "id": "89cb68b5-2f0c-4f1d-b488-fac598f76f0d",
@@ -3991,6 +3999,14 @@
             }
         },
         {
+            "Key": "cfee1d5c-98aa-429a-a3ad-b726db485c55",
+            "Value": {
+                "id": "b4005d64-ad1a-42c7-97d4-118fdd6714ea",
+                "resourcePath": "scripts\\SCRIPT_EROSION_ADI\\SCRIPT_EROSION_ADI.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cffdf234-bb1b-4a30-8cf6-6e63cc7159d9",
             "Value": {
                 "id": "1360179a-cb90-4044-8d4b-0c9724352518",
@@ -4798,7 +4814,8 @@
         "5ae937d4-f5e9-4bad-86a8-5c96c14eba42",
         "de97cb43-0a2f-490a-be65-5842ca2b5873",
         "2715ae7a-3952-4506-918e-01beae1a720d",
-        "6cccaadb-8f06-4a0d-bb7b-6bd267e842e2"
+        "6cccaadb-8f06-4a0d-bb7b-6bd267e842e2",
+        "cfee1d5c-98aa-429a-a3ad-b726db485c55"
     ],
     "tutorial": ""
 }

@@ -1,6 +1,17 @@
 text1 = ds_map_create();
 
-text1[? "GREET"] = ["Hello!", "Hello there " + game.name + "!", ["GREET", "EXIT", "EXIT"], [polka, obj_npc_villy.id, ]];
+// SCRIPT: script_name, variable1, variable2, ..., variableN
+//  COLOR: color_name, starting_index, ending_index
+// SPRITE: sprite_name
+
+text1[? "GREET"] = [["Why Hello Look at this Room!", ["SPRITE", sprite30]],
+					["Well look at my room" + game.name + "!", ["SPRITE"], ["SPRITE", spr_textbox2]], 
+					["THIS IS A THIRD LINE", ["SPRITE"]],
+					"WE ARE NOW TALKING ABOUT SOMETHING ELSE",
+					["GREET", "EXIT", "EXIT"], 
+					[polka, obj_npc_villy.id, polka, obj_npc_villy.id]];
+
+
 text1[? "EXIT"] = ["Bye Bye", "See you later!", [], [polka, obj_npc_villy.id]];
 
 text2 = ds_map_create();

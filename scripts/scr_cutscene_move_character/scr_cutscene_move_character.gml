@@ -25,6 +25,19 @@ if(x_dest = -1){
 var xx = x_dest;
 var yy = y_dest;
 
+var facing;
+if(xx > yy){
+	switch(sign(xx)){
+		case 1: facing = dir.right; break;
+		case -1: facing = dir.left; break;
+	}
+} else {
+	switch(sign(yy)){
+		case 1: facing = dir.down; break;
+		case -1: facing = dir.up; break;
+	}
+}
+
 with(obj){
 
 	if(point_distance(x, y, xx, yy) > spd){
@@ -35,7 +48,22 @@ with(obj){
 		x += ldirx;
 		y += ldiry;
 		
+				//Assign facing variable with movement's direction, default to xmovement
+		
+		switch(facing){ 
+			case 0: sprite_index = spr_villy_walk_back; break;
+			case 90: sprite_index = spr_villy_walk_right; break;
+			case 180: sprite_index = spr_villy_walk_front; break;
+			case 270: sprite_index = spr_villy_walk_left; break;
+		}
+		
 	} else {
+		switch(facing){
+			case 0: sprite_index = spr_villy_stand_right; break;
+			case 90: sprite_index = spr_villy_stand_right; break;
+			case 180: sprite_index = spr_villy_stand_right; break;
+			case 270: sprite_index = spr_villy_stand_right; break;
+		}
 		x = xx;
 		y = yy;
 		

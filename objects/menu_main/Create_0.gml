@@ -5,7 +5,7 @@
 
 event_inherited();
 
-par_ptr = par_menu;
+draw_windows = false;
 
 window_map = ds_map_create();
 
@@ -25,4 +25,29 @@ button_grid = ds_grid_create(1, 6);
 scr_grid_add_button(200, 500, "Save Settings \nand Go Back", enum_button_type.click, enum_button_event.new_window, "main_main");
 scr_add_window("settings", 200, 200, "Settings");
 
-par_ptr.curr_window = "main_main";
+curr_window = "main_main";
+
+/// @description Insert description here
+
+system_ptr = part_system_create();
+part_system_position(system_ptr, -200, -200)
+emitter_fg = part_emitter_create(system_ptr);
+emitter_bg = part_emitter_create(system_ptr);
+
+part_fg = part_type_create();
+part_type_shape(part_fg, pt_shape_star);
+part_type_size(part_fg, .1, .2, .001, 0);
+part_type_speed(part_fg, 4, 8, 0, 0);
+part_type_direction(part_fg, 270, 360, 0, 0);
+part_type_orientation(part_fg, 0, 360, 0, 0, true)
+part_type_life(part_fg, 20*room_speed, 30*room_speed);
+
+part_bg = part_type_create();
+part_type_shape(part_bg, pt_shape_star);
+part_type_size(part_bg, .05, .1, .001, 0);
+part_type_speed(part_bg, 2, 4, 0, 0);
+part_type_colour1(part_bg, c_gray);
+part_type_direction(part_bg, 270, 360, 0, 0);
+part_type_orientation(part_bg, 0, 360, 0, 0, true)
+part_type_life(part_bg, 20*room_speed, 30*room_speed);
+
