@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "02cedb9b-b489-46fe-92fb-925c16babae0",
+            "Value": {
+                "id": "f7e37d2c-b605-466d-9033-bfd2187dd1e4",
+                "resourcePath": "objects\/obj_npc_weeraway_kid_1\/obj_npc_weeraway_kid_1.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "036d9274-bb3a-4c6d-aeda-0fe796828d47",
             "Value": {
                 "id": "64b0af59-3e72-4a0b-8823-5a6aa4531718",
@@ -383,6 +391,14 @@
             }
         },
         {
+            "Key": "11b6b680-df42-415a-9a81-280fdf6d28c0",
+            "Value": {
+                "id": "39b53896-97f4-4839-93c4-bdb12544d526",
+                "resourcePath": "objects\/obj_npc_baron\/obj_npc_baron.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "11e9ba4e-4458-445f-862c-c6ac6c23d24d",
             "Value": {
                 "id": "68d9ab0c-6ded-4238-9ead-8b1bc5515337",
@@ -507,6 +523,14 @@
             "Value": {
                 "id": "4205d962-8d22-4c74-bb28-c6a137234892",
                 "resourcePath": "sprites\/spr_water_test_tube\/spr_water_test_tube.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "19460c87-6147-40fa-9e6a-2c395fe03a70",
+            "Value": {
+                "id": "a94f55ff-7d58-4fa6-8ff8-a8fa420ddc7d",
+                "resourcePath": "sprites\/weeraway_kid_female\/weeraway_kid_female.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1511,6 +1535,14 @@
             }
         },
         {
+            "Key": "468c6dc4-5ce7-4e1d-8377-cfd39500fd68",
+            "Value": {
+                "id": "2ac94204-28d4-4e8c-b75b-e85e6e1d26e9",
+                "resourcePath": "objects\/obj_npc_investor_female\/obj_npc_investor_female.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "469a2259-84f6-4b6e-8bbc-d8e19c5e9e4a",
             "Value": {
                 "id": "59a5d74c-e4f7-4ae5-a27e-4ed123963d2b",
@@ -1999,6 +2031,14 @@
             }
         },
         {
+            "Key": "5f5162ba-b492-4f24-8f17-70bb5a3a204b",
+            "Value": {
+                "id": "c1981da4-7973-412c-98d2-6e238e066776",
+                "resourcePath": "sprites\/weeraway_wife\/weeraway_wife.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "604a74b8-d006-4344-906e-55ab4085cc1a",
             "Value": {
                 "id": "4a97b68e-d861-4817-a7f5-7e692181e854",
@@ -2411,6 +2451,14 @@
             "Value": {
                 "id": "1330cc9a-52c2-4531-979a-95b4ff2ea969",
                 "resourcePath": "objects\/object96\/object96.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "735c4775-91c8-4b8a-a79a-cc242a152a5d",
+            "Value": {
+                "id": "709023ca-a7eb-49bb-a393-cbf6a7922a71",
+                "resourcePath": "objects\/obj_npc_chieftain\/obj_npc_chieftain.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3615,6 +3663,14 @@
             }
         },
         {
+            "Key": "b01cd836-6a29-42c1-95f3-1919d30b1ed3",
+            "Value": {
+                "id": "66627db0-e77c-4160-a48b-50aa45a24662",
+                "resourcePath": "sprites\/investor_male\/investor_male.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b0303ade-eaa2-4468-8143-360907ca2b76",
             "Value": {
                 "id": "a2b7c47b-eb2f-4c2d-a461-bc4a13a52f41",
@@ -3667,6 +3723,14 @@
             "Value": {
                 "id": "06611138-15e3-4fc5-9ec3-d983a217f57f",
                 "resourcePath": "sprites\/sprite42\/sprite42.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b39983a5-1894-4174-826d-ef2948b1f3f8",
+            "Value": {
+                "id": "2eedc9f7-6e55-404f-8194-b575d8092f86",
+                "resourcePath": "sprites\/investor_female\/investor_female.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3724,6 +3788,14 @@
                 "id": "b7326d71-91d8-4d56-9b4c-2dba16d48ea8",
                 "resourcePath": "sprites\/sprite109\/sprite109.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b83286e1-1182-45d2-8cbb-05f4d50fd98c",
+            "Value": {
+                "id": "e6b64a24-6904-498d-98e2-5a045e3b7fc2",
+                "resourcePath": "objects\/obj_npc_investor_male\/obj_npc_investor_male.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3884,6 +3956,14 @@
                 "id": "9484d04a-b620-4d24-8832-1dac7a047988",
                 "resourcePath": "rooms\/rm_bazaar_interior\/rm_bazaar_interior.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "bffa2638-dc79-4857-aec9-4cf75e465ba0",
+            "Value": {
+                "id": "72d13e3c-df4e-455e-b27b-546bd3521be2",
+                "resourcePath": "sprites\/chieftain\/chieftain.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4095,10 +4175,26 @@
             }
         },
         {
+            "Key": "cbac7672-9d2e-4ebb-8251-6e31b59ac8fe",
+            "Value": {
+                "id": "d5a3b9dc-6609-4785-aa66-041ef1143826",
+                "resourcePath": "sprites\/baron\/baron.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cc399260-5e45-4916-9de4-c5047f767ffc",
             "Value": {
                 "id": "8f2a639a-261c-48ce-b009-00bd9c437bfc",
                 "resourcePath": "objects\/object64\/object64.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "cc7d16a0-f0ed-45d2-893b-564d22ecd939",
+            "Value": {
+                "id": "bedbdf0f-ca4f-4a01-a436-2972771a246e",
+                "resourcePath": "objects\/obj_npc_weeraway_kid_2\/obj_npc_weeraway_kid_2.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -4244,6 +4340,14 @@
                 "id": "850e9c0c-6d9c-4024-ad4f-13b3c6173835",
                 "resourcePath": "sprites\/sprite162\/sprite162.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d5719410-70b8-41da-83ea-ead582a4fec6",
+            "Value": {
+                "id": "c8d20f90-b03e-4a8b-9805-421afbf252d1",
+                "resourcePath": "objects\/obj_npc_weeraway_wife\/obj_npc_weeraway_wife.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -4516,6 +4620,14 @@
                 "id": "99ae115d-bcc6-4a0b-a597-89ab45b8123a",
                 "resourcePath": "views\/e2b864f1-0ee6-4a9d-95fd-113d21581ad9.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e2cad345-8dda-4c90-836b-4c36fa352e42",
+            "Value": {
+                "id": "0bed1ec7-0da8-4027-bc32-988ff0b48912",
+                "resourcePath": "sprites\/weeraway_kid_male\/weeraway_kid_male.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

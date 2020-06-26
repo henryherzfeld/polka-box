@@ -28,37 +28,66 @@ Player wakes up
 The Quanta Baron is standing by Polka's bed. There's a cat snoozing on the side of the room.*/
 
 scr_dia_segment(text, "GREET");
-scr_dia_line("Good morning, young squire! Hope I didn't startle you.", polka); //baron 
-scr_dia_line("All the other Quanta Knights are busy fixing the ship. You've been chosen to get back the missing Crystal pieces so that we can recreate the cure.", polka); //baron 
-scr_dia_line("When you crash landed in your spaceship, the Crystal of Inventa broke. The art of discovery has disappeared thanks to Virus and his henchmen.", polka); //baron 
-scr_dia_line("The henchmen live inside other Villy hosts throughout the land.", polka); //baron 
-scr_dia_line("To recreate the Crystal of Inventa, you will have to help bring advancements that make the world a better place to live in.", polka); //baron 
-scr_dia_line("Each problem you find, no matter how small or big, takes you on a quest. Each time you do a quest, you knock out a henchman of Virus and the Crystal gets another piece back.", polka); //baron 
-scr_dia_line("The Villies cooperate more with each other. Problems get solved. Society benefits from its advancements.", polka); //baron 
-scr_dia_line("When all the quests have been completed, Virus and his henchmen get defeated and the Crystal becomes whole.", polka); //baron 
-scr_dia_line("Navilla becomes a thriving planet once again.", polka); //baron 
-scr_dia_line("The power from the Crystal can then be used to destroy the plague on our planet, Cosmo, and save its people.", polka); //baron 
+scr_dia_line("Good morning, young squire! Hope I didn't startle you.", obj_npc_baron); //baron 
+scr_dia_line("All the other Quanta Knights are busy fixing the ship. You've been chosen to get back the missing Crystal pieces so that we can recreate the cure.", obj_npc_baron); //baron 
+scr_dia_line("When you crash landed in your spaceship, the Crystal of Inventa broke. The art of discovery has disappeared thanks to Virus and his henchmen.", obj_npc_baron); //baron 
+scr_dia_line("The henchmen live inside other Villy hosts throughout the land.", obj_npc_baron); //baron 
+scr_dia_line("To recreate the Crystal of Inventa, you will have to help bring advancements that make the world a better place to live in.", obj_npc_baron); //baron 
+scr_dia_line("Each problem you find, no matter how small or big, takes you on a quest. Each time you do a quest, you knock out a henchman of Virus and the Crystal gets another piece back.", obj_npc_baron); //baron 
+scr_dia_line("The Villies cooperate more with each other. Problems get solved. Society benefits from its advancements.", obj_npc_baron); //baron 
+scr_dia_line("When all the quests have been completed, Virus and his henchmen get defeated and the Crystal becomes whole.", obj_npc_baron); //baron 
+scr_dia_line("Navilla becomes a thriving planet once again.", obj_npc_baron); //baron 
+scr_dia_line("The power from the Crystal can then be used to destroy the plague on our planet, Cosmo, and save its people.", obj_npc_baron); //baron 
 
-scr_dia_line("Now here's how you beat a quest!", polka); //baron 
-scr_dia_line("In each quest, you have to ask questions, investigate, analyze clues, and come up with conclusions that determine the direction you take next.", polka); //baron 
-scr_dia_line("You keep doing this until you've reached the end of your quest.", polka); //baron 
-scr_dia_line("Are you ready? I think you can do it!", polka); //baron 
+scr_dia_line("Now here's how you beat a quest!", obj_npc_baron); //baron 
+scr_dia_line("In each quest, you have to ask questions, investigate, analyze clues, and come up with conclusions that determine the direction you take next.", obj_npc_baron); //baron 
+scr_dia_line("You keep doing this until you've reached the end of your quest.", obj_npc_baron); //baron 
+scr_dia_line("Are you ready? I think you can do it!", obj_npc_baron); //baron 
 
-scr_dia_line("Here's your first item, given to all budding Quanta Knights: a camera!", polka); //baron 
-scr_dia_line("You can use it to make observations and take pictures of what you find.", polka); //baron 
-scr_dia_line("You may leave. If you have any questions, feel free to ask me. I'm right here.", polka); //baron 
+scr_dia_line("Here's your first item, given to all budding Quanta Knights: a camera!", obj_npc_baron); //baron 
+//THE CAMERA ITEM IS NOW VISIBLE IN THE ITEM INVENTORY
+
+scr_dia_line("You can use it to make observations and take pictures of what you find.", obj_npc_baron); //baron 
+scr_dia_line("You may leave. If you have any questions, feel free to ask me. I'm right here.", obj_npc_baron); //baron 
 
 /* The player heads to the door. The door is locked.
 The player goes and asks Villy Chieftain a question
 */
 
-scr_dia_line("Are you ready? I think you can do it!", polka); //baron 
-scr_dia_line("Are you ready? I think you can do it!", polka); //baron 
-scr_dia_line("Are you ready? I think you can do it!", polka); //baron 
-scr_dia_line("Are you ready? I think you can do it!", polka); //baron 
-scr_dia_line("Are you ready? I think you can do it!", polka); //baron 
-scr_dia_line("Are you ready? I think you can do it!", polka); //baron 
-scr_dia_line("Are you ready? I think you can do it!", polka); //baron 
+scr_dia_line("Oh! I forgot to tell you. So, er, the key to the door is missing.", obj_npc_baron); //baron
+scr_dia_line("The last time I had it was when I was sitting at your desk. I went to drink some water.", obj_npc_baron); //baron 
+scr_dia_line("When I came back, the key was gone.", obj_npc_baron); //baron 
+scr_dia_line("If you have what it takes to be a Quanta Knight, you'll be able to figure out where it is.", obj_npc_baron); //baron 
+scr_dia_line("When you find any clue, tell me about it.", obj_npc_baron); //baron 
+
+/* Show objective at top of the screen:
+*** QUEST: get the key back ***
+
+(SHOW TUTORIAL FOR CLICKING ON CAMERA ITEM IN INVENTORY USING MOUSE, 
+APPROACHING A NEARBY OBJECT, 
+AND PRESSING SPACE TO TAKE A PICTURE)
+
+(The player should approach the desk with the camera.) 
+
+An Indicator should pop up. "What do you observe about the desk?" 
+Show a picture of the desk surface with some animal hairs on top. **(1/1 clue found)**
+
+The picture should be stored in the Notebook.
+The Notebook icon should flash for 3 seconds as the picture is collected
+A message flashes on the screen: ("Any time you want to check what clues you've found, you can go into your Notebook.")
+
+(SHOW TUTORIAL FOR CLICKING ON NOTEBOOK ICON USING MOUSE TO ACCESS NOTEBOOK, 
+CLICKING ON AN ITEM IN THE NOTEBOOK TO VIEW THE OBSERVATION/PICTURE AS A BIGGER SIZE, 
+CLICKING ON RETURN BUTTON USING MOUSE TO EXIT THE NOTEBOOK)
+
+(TELL PLAYER TO GO BACK TO BARON AFTER 1/1 CLUE HAS BEEN FOUND)
+
+(The player goes back to the Baron.)
+
+*/
+
+scr_dia_line("Are you ready? I think you can do it!", obj_npc_baron); 
+scr_dia_line("Are you ready? I think you can do it!", obj_npc_baron); //baron 
 
 
 

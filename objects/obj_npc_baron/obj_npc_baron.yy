@@ -1,0 +1,29 @@
+{
+    "id": "11b6b680-df42-415a-9a81-280fdf6d28c0",
+    "modelName": "GMObject",
+    "mvc": "1.0",
+    "name": "obj_npc_baron",
+    "eventList": [
+        
+    ],
+    "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "overriddenProperties": null,
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "persistent": false,
+    "physicsAngularDamping": 0.1,
+    "physicsDensity": 0.5,
+    "physicsFriction": 0.2,
+    "physicsGroup": 0,
+    "physicsKinematic": false,
+    "physicsLinearDamping": 0.1,
+    "physicsObject": false,
+    "physicsRestitution": 0.1,
+    "physicsSensor": false,
+    "physicsShape": 1,
+    "physicsShapePoints": null,
+    "physicsStartAwake": true,
+    "properties": null,
+    "solid": false,
+    "spriteId": "cbac7672-9d2e-4ebb-8251-6e31b59ac8fe",
+    "visible": true
+}
