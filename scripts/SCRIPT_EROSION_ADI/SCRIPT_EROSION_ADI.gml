@@ -158,3 +158,162 @@ scr_dia_line("Thanks!", polka);
 /* --------------------------------------------------------------------------------------------------------- */ 
 
 /* EROSION QUEST */
+
+//They arrive at a farm near the village. The townsfolk (Villies) are upset and are protesting with pitchforks outside the farm
+//(Polka approaches the Green Villy. A "talk" bubble appears.
+
+//GREEN VILLY DIALOGUE
+
+//Dialogue Segment (A)
+scr_dia_segment(text, "GREET");
+scr_dia_line("What's going on?", polka);
+scr_dia_line("We're doomed, " + game.name + "! The people of this town are starving!", npc_green_villy); 
+scr_dia_options("A1", "A2", "A3", "FILLER"); 
+
+scr_dia_segment(text, "A1");
+scr_dia_line("Why are you starving?", polka);
+scr_dia_line("The farmers aren’t giving enough food. The Great Famine is upon us!", npc_green_villy); 
+scr_dia_options("B1", "B2", "B3", "FILLER"); 
+
+scr_dia_segment(text, "A2");
+scr_dia_line("What do you do?", polka);
+scr_dia_line("I'm a baker at the bazaar. I need my food if I have to work. I can't live off of just bread and cupcakes!", npc_green_villy); 
+scr_dia_options("A1", "A2", "A3", "FILLER"); 
+
+scr_dia_segment(text, "A3");
+scr_dia_line("How long have you been starving for?", polka);
+scr_dia_line("For the past few days!", npc_green_villy); 
+scr_dia_options("A1", "A2", "A3", "FILLER"); 
+
+//Dialogue Segment (B)
+scr_dia_segment(text, "B1");
+scr_dia_line("Why aren’t the farmers giving enough food?", polka);
+scr_dia_line("I don’t know, but you’d have to ask farmer Villy Nilly Weeraway.", npc_green_villy); 
+scr_dia_options("EXIT", "FILLER");
+
+scr_dia_segment(text, "B2");
+scr_dia_line("What food do the farmers give?", polka);
+scr_dia_line("Vegetables! Lots and lots of vegetables! Corn, carrots, potatoes, squash, peas...uh, what else...oh, yeah! — beans, turnips, and the like.", npc_green_villy); 
+scr_dia_options("B1", "B2", "B3", "FILLER");
+
+scr_dia_segment(text, "B3");
+scr_dia_line("There’s nothing else to eat?", polka);
+scr_dia_line("The food prices have shot up like a rocket these last few weeks. But now we don’t even have vegetables! All I have are fish, bread, and stale cupcakes.", npc_green_villy); 
+scr_dia_options("B1", "B2", "B3", "FILLER");
+
+scr_dia_segment(text, "EXIT");
+scr_dia_line("Ok, I'll see what I can do.", polka);
+
+//VILLY WEERAWAY DIALOGUE
+
+/*This last sentence finishing triggers the next event: 
+the player can now view a new batch of dialogue choices when approaching the farmer
+
+(They go visit the farmer by entering the house. 
+The farmer is sobbing at the dining table.)
+*/
+
+//Dialogue Segment (A) 
+scr_dia_segment(text, "A1");
+scr_dia_line("Why aren’t you giving the villagers enough food?", polka);
+scr_dia_line("What can I do, " + game.name + "? The crops are dying!", obj_npc_weeraway);
+scr_dia_options("B1", "B2", "B3", "FILLER"); 
+
+scr_dia_segment(text, "A2");
+scr_dia_line("What are you doing here?", polka);
+scr_dia_line("Hiding! I'm a miserable farmer whose… *sniff*... reputation is in ruins.", obj_npc_weeraway);
+scr_dia_options("A1", "A2", "A3", "FILLER"); 
+
+scr_dia_segment(text, "A3");
+scr_dia_line("Why are you crying?", polka);
+scr_dia_line("My kids might not have enough to eat. The villagers will go hungry. And it's all my fault!", obj_npc_weeraway);
+scr_dia_options("A1", "A2", "A3", "FILLER"); 
+
+//Dialogue Segment (B)
+scr_dia_segment(text, "B1");
+scr_dia_line("Why are the crops dying?", polka);
+scr_dia_line("The crops don’t have what they need to live. I don’t know why!", obj_npc_weeraway);
+scr_dia_options("C1", "C2", "C3", "FILLER");
+
+scr_dia_segment(text, "B2");
+scr_dia_line("How long have they been dying?", polka);
+scr_dia_line("I first noticed some of them dying a few weeks ago. The problem got worse. I tried to stop them from dying. Nothing I did worked.", obj_npc_weeraway);
+scr_dia_options("B1", "B2", "B3", "FILLER");
+
+scr_dia_segment(text, "B3");
+scr_dia_line("What kinds of crops do you grow?", polka);
+scr_dia_line("You may not know this, " + game.name + ", but I've worked on this farm for 30 years.", obj_npc_weeraway);
+scr_dia_line("Since I was little and I farmed with my father, I’ve always grown corn, potatoes, carrots, turnips, and other vegetables.", obj_npc_weeraway);
+scr_dia_options("B1", "B2", "B3", "FILLER");
+
+//Dialogue Segment (C)
+scr_dia_segment(text, "C1");
+scr_dia_line("What do crops need to live?", polka);
+scr_dia_line("I’d ask someone who knows all about plants. I don’t know what else to do. You need to help me, " + game.name + "!", obj_npc_weeraway);
+scr_dia_line("If you don't, my kids and the townspeople will starve!", obj_npc_weeraway);
+scr_dia_options("EXIT", "FILLER");
+
+scr_dia_segment(text, "C2");
+scr_dia_line("Where are your crops?", polka);
+scr_dia_line("In the fields besides the house.", obj_npc_weeraway);
+scr_dia_options("C1", "C2", "C3", "FILLER");
+
+scr_dia_segment(text, "C3");
+scr_dia_line("What are you giving your crops?", polka);
+scr_dia_line("Plenty of water and fresh soil. And a bucket of love and prayers. But those don’t seem to be working...", obj_npc_weeraway);
+scr_dia_options("C1", "C2", "C3", "FILLER");
+
+scr_dia_segment(text, "EXIT");
+scr_dia_line("I won't let you down!", polka);
+
+//VILLY POPPY DIALOGUE
+
+/* 
+This last sentence finishing triggers the next event: 
+the player can now view a new batch of dialogue choices when approaching the botanist
+
+(They visit Villy Poppy, the botanist)
+*/
+
+//Dialogue Segment (A) 
+scr_dia_segment(text, "A1");
+scr_dia_line("What do crops need to live?", polka);
+scr_dia_line("Plants need air, sunlight, water, and soil.", obj_npc_poppy);
+scr_dia_options("B1", "B2", "B3", "FILLER"); 
+
+scr_dia_segment(text, "A2");
+scr_dia_line("Can you help me?", polka);
+scr_dia_line("Hi there, " +game.name + "! Good to see you. Well, I study plants, how they work, and how we can use them to improve our lives.", obj_npc_poppy);
+scr_dia_line("So it really depends on what you need help with!", obj_npc_poppy);
+scr_dia_options("A1", "A2", "A3", "FILLER"); 
+
+scr_dia_segment(text, "A3");
+scr_dia_line("What are you working on?", polka);
+scr_dia_line("I’m looking at chamomile! It’s a really cool plant that looks like a daisy.", obj_npc_poppy);
+scr_dia_line("I’m checking out how chamomile makes people more relaxed and calm.", obj_npc_poppy);
+scr_dia_line("It can help parents that are stressed out by this whole farming problem.", obj_npc_poppy);
+scr_dia_options("A1", "A2", "A3", "FILLER"); 
+
+//Dialogue Segment (B)
+scr_dia_segment(text, "B1");
+scr_dia_line("How do you know that the plants are getting enough air, sunlight, water, and soil?", polka);
+scr_dia_line("This is what a healthy plant looks like. It’s green, has lots of leaves, has strong stems. It has plenty of nutrient-rich soil. Nutrients make a plant healthy. Just like people need nutrients to grow and stay healthy.", obj_npc_poppy);
+scr_dia_line("If the plant isn’t getting enough water — it will wilt. The edges of the leaves turn out dry and brown. The soil will be dry. There is low soil moisture found when measuring.", obj_npc_poppy);
+scr_dia_line("If the plant isn’t getting enough light — the stems are long and thin. They have small, yellow leaves.", obj_npc_poppy);
+scr_dia_line("The stems grow thin because the plant is desperately reaching its leaves up to get more light.", obj_npc_poppy);
+scr_dia_line("If there isn’t enough soil, then the plant will wilt. The edges of the leaves turn out dry and brown.", obj_npc_poppy);
+scr_dia_options("EXIT", "FILLER");
+
+scr_dia_segment(text, "B2");
+scr_dia_line("Why do plants need air?", polka);
+scr_dia_line("Plants use carbon dioxide in the air to make food for themselves", obj_npc_poppy);
+scr_dia_options("B1", "B2", "B3", "FILLER");
+
+scr_dia_segment(text, "B3");
+scr_dia_line("Why do plants need sunlight?", polka);
+scr_dia_line("Plants use sunlight to power their food-making process. This is called photosynthesis. Photosynthesis is Greek for 'putting together light'. It’s how plants get the energy they need to live.", obj_npc_poppy);
+scr_dia_options("B1", "B2", "B3", "FILLER");
+
+
+scr_dia_segment(text, "EXIT");
+scr_dia_line("Thanks!", polka);
