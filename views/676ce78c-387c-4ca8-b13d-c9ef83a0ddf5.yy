@@ -10,7 +10,9 @@
         "6ca0647b-94cb-4b8e-9dc4-a25af5dc33f5",
         "643b7bb4-c50a-42aa-9eaf-49cad195049e",
         "e723b087-df1a-4fbe-9203-e4292ab90a25",
-        "45d7acee-efd1-447f-b5ef-4f512d521f39"
+        "45d7acee-efd1-447f-b5ef-4f512d521f39",
+        "8818e578-713b-4b35-82cf-1b0c9c4042d6",
+        "1392b2fd-3661-4fba-8d75-0625040f7e3d"
     ],
     "filterType": "GMObject",
     "folderName": "farm_obj",

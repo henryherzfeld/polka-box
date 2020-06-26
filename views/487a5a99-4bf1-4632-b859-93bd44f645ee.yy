@@ -1,13 +1,13 @@
 {
-    "id": "ae080e98-5e06-4dc9-bbd7-b15ee5438c46",
+    "id": "487a5a99-4bf1-4632-b859-93bd44f645ee",
     "modelName": "GMFolder",
     "mvc": "1.1",
-    "name": "ae080e98-5e06-4dc9-bbd7-b15ee5438c46",
+    "name": "487a5a99-4bf1-4632-b859-93bd44f645ee",
     "children": [
         
     ],
     "filterType": "GMSprite",
-    "folderName": "group0",
+    "folderName": "Erosion",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
