@@ -26,7 +26,7 @@ text = ds_map_create();
 scr_dia_segment(text, "GREET");
 scr_dia_line("Hey and hello....... ", polka);
 
-scr_dia_line_quiz(questions, obj_npc_test);
+//scr_dia_line_quiz(questions, obj_npc_test);
 scr_dia_line("Me an NPC", obj_npc_test);
 scr_dia_options("EXIT", "A1", "EXIT");
 
@@ -37,7 +37,7 @@ scr_dia_options("EXIT", "EXIT");
 
 scr_dia_segment(text, "EXIT");
 scr_dia_line("Bye", polka);
-scr_dia_line("Bye", id);
+//scr_dia_line("Bye", id);
 
 
 //scr_dia_line_script(scr_change_variable, obj_npc_weeraway, "crying", false);

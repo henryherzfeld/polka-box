@@ -1,4 +1,45 @@
+event_inherited();
 
+/*QUIZ QUESTIONS*/
+
+//BEGINNING TUTORIAL QUIZ QUESTIONS
+beginning_tutorial_quiz_questions = ds_list_create();
+scr_quiz_list(beginning_tutorial_quiz_questions);
+scr_quiz_question(enum_question_type.multi, 
+"What did you find out?", 
+["They key fell down the toilet", "An animal might have taken the key", "You swallowed the key", "The key was dissolved by strong acid"], 
+1);
+scr_quiz_question_response("How did you find out?", 
+"Are you sure that's what happened?");
+
+scr_quiz_question(enum_question_type.multi, 
+"How did you find out?", 
+["There was some toilet paper on the desk", "There was a jar of acid on the desk", "There were some animal hairs on the desk", "There were some animal hairs on the dining table"], 
+2);
+scr_quiz_question_response(["But how do I know you're telling the truth?", 
+"I need to see evidence. Remember, showing evidence helps to support what you're saying.",
+"It makes it more likely for people to trust you."], 
+"Why don't you try a different answer?");
+
+
+scr_quiz_question(enum_question_type.evidence_multi, 
+"How did you find out?", 
+["There was some toilet paper on the desk", "There was a jar of acid on the desk", "There were some animal hairs on the desk", "There were some animal hairs on the dining table"], 
+[enum_evi_type.evidence2, 2]); //EVIDENCE2 RESERVED FOR "ANIMAL HAIRS ON DESK" PHOTO EVIDENCE
+/* 
+Show message to player: "You can also use an item in the Notebook as a piece of evidence.")
+(SHOW TUTORIAL FOR CLICKING ON EVIDENCE SLOT IN QUIZ QUESTION USING MOUSE TO ACCESS NOTEBOOK, 
+CLICKING ON THE ITEM THEY WISH TO PRESENT, 
+AND CLICKING ON SUBMIT TO EXIT THE NOTEBOOK WITH THE ITEM SELECTED)
+
+(The player should be referenced to click on the evidence slot to access their Notebook. 
+The Notebook opens. 
+They then select the picture they took of the desk. 
+It attaches to the evidence slot.)
+*/
+scr_quiz_question_response(["Is that so? I wonder if…?"], 
+"You almost got it! Try again");
+//END OF BEGINNING TUTORIAL QUIZ QUESTIONS
 
 
 /*
@@ -51,7 +92,7 @@ scr_dia_line("You can use it to make observations and take pictures of what you 
 scr_dia_line("You may leave. If you have any questions, feel free to ask me. I'm right here.", obj_npc_baron); //baron 
 
 /* The player heads to the door. The door is locked.
-The player goes and asks Villy Chieftain a question
+The player goes and asks Baron a question
 */
 
 scr_dia_line("Oh! I forgot to tell you. So, er, the key to the door is missing.", obj_npc_baron); //baron
@@ -74,7 +115,7 @@ Show a picture of the desk surface with some animal hairs on top. **(1/1 clue fo
 
 The picture should be stored in the Notebook.
 The Notebook icon should flash for 3 seconds as the picture is collected
-A message flashes on the screen: ("Any time you want to check what clues you've found, you can go into your Notebook.")
+A message flashes on the screen: "Any time you want to check what clues you've found, you can go into your Notebook."
 
 (SHOW TUTORIAL FOR CLICKING ON NOTEBOOK ICON USING MOUSE TO ACCESS NOTEBOOK, 
 CLICKING ON AN ITEM IN THE NOTEBOOK TO VIEW THE OBSERVATION/PICTURE AS A BIGGER SIZE, 
@@ -86,58 +127,29 @@ CLICKING ON RETURN BUTTON USING MOUSE TO EXIT THE NOTEBOOK)
 
 */
 
-scr_dia_line("Are you ready? I think you can do it!", obj_npc_baron); 
-scr_dia_line("Are you ready? I think you can do it!", obj_npc_baron); //baron 
+scr_dia_line_quiz(beginning_tutorial_quiz_questions, obj_npc_baron);
+scr_dia_line("Aha, excellent work! You just finished your first Quest investigation!", obj_npc_baron);
+scr_dia_line("I'm confident that you'll do great out there!", obj_npc_baron);
+scr_dia_line("This is also your chance to prove your worth and finally join the ranks of the Quanta Knights.", obj_npc_baron);
+scr_dia_line("Good luck!", obj_npc_baron);
 
-
-
-scr_dia_line_quiz(questions, obj_npc_test);
-scr_dia_line("Me an NPC", obj_npc_test);
-scr_dia_options("EXIT", "A1", "EXIT");
-
-scr_dia_segment(text, "A1");
-scr_dia_line("We are having a convo", polka);
-scr_dia_line("Yes we are having a convo", obj_npc_test);
-scr_dia_options("EXIT", "EXIT");
-
-scr_dia_segment(text, "EXIT");
-scr_dia_line("Bye", polka);
-scr_dia_line("Bye", id);
 
 /*
-
-The player goes and asks Villy Chieftain a question ("Why is the door locked?"). 
-"Oh! I forgot to tell you. So, er, the key to the door is missing. The last time I had it was when I was sitting at your desk. I went to drink some water. When I came back, the key was gone. If you have what it takes to be a Quanta Knight, you'll be able to figure out where it is. When you find any clue, tell me about it."
-
-QUEST: get the key back
-(SHOW TUTORIAL FOR CLICKING ON CAMERA ITEM IN INVENTORY USING MOUSE, APPROACHING A NEARBY OBJECT, AND PRESSING SPACE TO TAKE A PICTURE)
-(The player should approach the desk with the camera.) 
-An Indicator should pop up. "What do you observe about the desk?" Show a picture of the desk surface with some animal hairs on top. (1/1 clue found)
-The picture should be stored in the Notebook. ("Any time you want to check what clues you've found, you can go into your Notebook.")
-(SHOW TUTORIAL FOR CLICKING ON NOTEBOOK ICON USING MOUSE TO ACCESS NOTEBOOK, CLICKING ON AN ITEM IN THE NOTEBOOK TO VIEW THE OBSERVATION/PICTURE AS A BIGGER SIZE, CLICKING ON RETURN BUTTON USING MOUSE TO EXIT THE NOTEBOOK) 
-
-(TELL PLAYER TO GO BACK TO VILLY CHIEFTAIN AFTER 1/1 CLUE HAS BEEN FOUND)
-(The player goes back to the Villy Chieftain.)
-VC: "What did you find out?"
-P: "An animal might have taken the key."
-VC: "How did you find out?"
-P: "There were some animal hairs on the desk."
-VC: "But how do I know you're telling the truth? I need to see evidence. Remember, showing evidence helps to support what you're saying. It makes it more likely for people to trust you."
-
-VC: How did you find out?"
-(Show the same quiz question, but now with the evidence slot. "You can also use an item in the Notebook as a piece of evidence.")
-(SHOW TUTORIAL FOR CLICKING ON EVIDENCE SLOT IN QUIZ QUESTION USING MOUSE TO ACCESS NOTEBOOK, CLICKING ON THE ITEM THEY WISH TO PRESENT, AND CLICKING ON SUBMIT TO EXIT THE NOTEBOOK WITH THE ITEM SELECTED)
-(The player should be referenced to click on the evidence slot to access their Notebook. The Notebook opens. They then select the picture they took of the desk. It attaches to the evidence slot.)
-P: "There were some animal hairs on the desk.
-VC: "Is that so? I wonder if…?" 
-The Villy Chieftain approaches the snoozing cat on the side of the room, picks it up, and…lo and behold!…there is the key where the cat was sleeping. (cutscene)
-"Aha, excellent work! You just finished your first Quest investigation! I'm confident that you'll do great out there! This is also your chance to prove your worth and finally join the ranks of the Quanta Knights. Good luck!"
 (Show a pop-up of the crystal being filled with one piece, indicating that the player has finished their first quest.)
-The Badge screen pops up and shows the player which badges they won.
+
+**The Badge screen pops up and shows the player which badges they won.**
 One badge is automatically given for completing the quest
 One badge is given if they didn't run out of time for any quiz question
 One badge is given if they didn't lose all three hearts any time during the quest  
-The door unlocks and the player can leave the house 
 
+The door unlocks and the player can leave the house
+*/
 
+scr_dia_options("EXIT", "FILLER");
+
+scr_dia_segment(text, "EXIT");
+scr_dia_line("Thanks!", polka);
+
+/*
+** END OF TUTORIAL SECTION **
 */
