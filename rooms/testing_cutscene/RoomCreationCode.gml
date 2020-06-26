@@ -1,1 +1,0 @@
-scr_construct_meta();

@@ -4,10 +4,17 @@
 
 var correct_response = argument0;
 var incorrect_response = argument1;
-
 var list = ds_factory.list_ptr;
 
 if correct_response == noone { exit; }
+
+if not is_array(correct_response) {
+	correct_response = [correct_response];
+}
+
+if not is_array(incorrect_response) {
+	incorrect_response = [incorrect_response];
+}
 
 var n = ds_list_size(list)-1;
 
