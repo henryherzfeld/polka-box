@@ -41,6 +41,7 @@ scr_quiz_question_response(["Is that so? I wonder if…?"],
 "You almost got it! Try again");
 //END OF BEGINNING TUTORIAL QUIZ QUESTIONS
 
+/* --------------------------------------------------------------------------------------------------------- */ 
 
 /*
 **INTRO STORY**
@@ -153,3 +154,7 @@ scr_dia_line("Thanks!", polka);
 /*
 ** END OF TUTORIAL SECTION **
 */
+
+/* --------------------------------------------------------------------------------------------------------- */ 
+
+/* EROSION QUEST */

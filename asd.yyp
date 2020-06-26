@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "005a55a6-a165-4c93-bd97-6b2201e2a967",
+            "Value": {
+                "id": "c94a81de-31b8-48e3-aa64-8c2ea673cbe3",
+                "resourcePath": "sprites\/spr_portrait_female_investor_sad\/spr_portrait_female_investor_sad.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "008de152-eedc-4427-ba6a-6193f2d421e0",
             "Value": {
                 "id": "3468355e-0744-43a4-9f1a-1257c8b5005c",
@@ -159,6 +167,14 @@
             }
         },
         {
+            "Key": "048b3e0e-32fd-410e-ab45-d13b698c6929",
+            "Value": {
+                "id": "40158b5d-1ec0-48f8-bcd8-b40e9899f9ba",
+                "resourcePath": "sprites\/spr_portrait_male_investor_happy\/spr_portrait_male_investor_happy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "04bbcfe8-88dc-49f2-a9ad-01048e333d00",
             "Value": {
                 "id": "407dadff-eeea-41bc-b7dd-4adab452e9ad",
@@ -282,7 +298,7 @@
             "Key": "0a8bd4f9-d242-4493-b84b-07cc6f4b2bfe",
             "Value": {
                 "id": "d4303561-590d-4427-af15-74a0e4b7f74a",
-                "resourcePath": "sprites\/spr_portrait_polka\/spr_portrait_polka.yy",
+                "resourcePath": "sprites\/spr_portrait_polka_old\/spr_portrait_polka_old.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -343,6 +359,14 @@
             }
         },
         {
+            "Key": "0f7f28c1-c0bc-4937-8b9c-cae54cc8363c",
+            "Value": {
+                "id": "810d536c-1eb1-4795-b07e-a483fe323bb3",
+                "resourcePath": "sprites\/spr_portrait_wife_angry\/spr_portrait_wife_angry.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "103e1373-bcb5-4cbc-998e-38578c44dbbb",
             "Value": {
                 "id": "28a68bbd-f113-4bdd-aba7-602b136de2ce",
@@ -391,6 +415,14 @@
             }
         },
         {
+            "Key": "11b5fc2c-fa7f-408c-b6df-2c798820e258",
+            "Value": {
+                "id": "e7f8ed1d-08c8-4ac0-ae6e-4f55607f37ec",
+                "resourcePath": "sprites\/spr_portrait_girl_sad\/spr_portrait_girl_sad.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "11b6b680-df42-415a-9a81-280fdf6d28c0",
             "Value": {
                 "id": "39b53896-97f4-4839-93c4-bdb12544d526",
@@ -423,6 +455,14 @@
             }
         },
         {
+            "Key": "1366fa57-c240-43ab-b67b-8532b32ea926",
+            "Value": {
+                "id": "314c5ec7-7fa0-49d5-b19c-658d8d872886",
+                "resourcePath": "sprites\/spr_portrait_boy_angry\/spr_portrait_boy_angry.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1392b2fd-3661-4fba-8d75-0625040f7e3d",
             "Value": {
                 "id": "89cb68b5-2f0c-4f1d-b488-fac598f76f0d",
@@ -452,6 +492,14 @@
                 "id": "2d4335cf-7097-4763-8f5b-4ef0a43bdfa7",
                 "resourcePath": "objects\/object77\/object77.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "15dea831-7ce2-4eb9-a148-a9891d63a0dc",
+            "Value": {
+                "id": "6ba68e37-1dfa-4151-a308-fed6ae744e50",
+                "resourcePath": "sprites\/spr_portrait_wife_sad\/spr_portrait_wife_sad.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -751,6 +799,14 @@
             }
         },
         {
+            "Key": "214c4c08-96e8-422d-8b02-628b40fb5c9f",
+            "Value": {
+                "id": "acf1d39d-62ee-4c98-b3d7-d775c9f86eab",
+                "resourcePath": "sprites\/spr_portrait_polka\/spr_portrait_polka.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "21c9c6c4-9ef8-429b-8cc2-0bd8b16e2601",
             "Value": {
                 "id": "e5b7144b-c4fc-4b1a-bfac-765ef090d202",
@@ -764,6 +820,14 @@
                 "id": "dee7bb28-cf62-4816-a02a-f1d0b96146f2",
                 "resourcePath": "objects\/object83\/object83.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "21efddc9-ef33-4273-ac45-f82124ff0792",
+            "Value": {
+                "id": "31efd3e2-b467-4876-b79a-22c465c7deb6",
+                "resourcePath": "sprites\/spr_portrait_male_investor_angry\/spr_portrait_male_investor_angry.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -795,6 +859,14 @@
             "Value": {
                 "id": "956be3ec-cab9-4b23-92e0-c5578bc5b739",
                 "resourcePath": "sprites\/sprite227\/sprite227.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "24b9957c-d2df-4ef6-ac2c-4d4375bae49b",
+            "Value": {
+                "id": "e33c8b2a-7e0c-4a55-a04e-d298bea63950",
+                "resourcePath": "sprites\/spr_portrait_boy_sad\/spr_portrait_boy_sad.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1076,6 +1148,14 @@
                 "id": "9e3bef4b-1305-4d1b-ba8e-57cc2d90b31e",
                 "resourcePath": "sprites\/sprite89\/sprite89.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "32b523ac-5e11-4b30-98f3-a47a8041d0b9",
+            "Value": {
+                "id": "3e346bcf-b312-46b0-a544-1522fbfa27f4",
+                "resourcePath": "views\/32b523ac-5e11-4b30-98f3-a47a8041d0b9.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1751,6 +1831,14 @@
             }
         },
         {
+            "Key": "4ff59307-a2cd-4247-81db-88608a4e3233",
+            "Value": {
+                "id": "6187d6bc-d769-471f-9c8d-d8261f759bdf",
+                "resourcePath": "sprites\/spr_portrait_chieftain_angry\/spr_portrait_chieftain_angry.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5045fd47-0be6-4f6c-8e2b-5dd893a34316",
             "Value": {
                 "id": "1bb3e31c-2dd8-4fdd-a1c0-39e42f76391e",
@@ -1772,6 +1860,14 @@
                 "id": "220d1056-8361-4206-a42d-67c97bf6d02e",
                 "resourcePath": "sprites\/sprite16\/sprite16.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5265c384-b6a3-43e7-947e-3f0f94453335",
+            "Value": {
+                "id": "f855a0c7-7e37-4bda-8779-7c27c23a3f99",
+                "resourcePath": "views\/5265c384-b6a3-43e7-947e-3f0f94453335.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -2055,6 +2151,14 @@
             }
         },
         {
+            "Key": "617adb00-35e0-4471-8a1c-f531c3c214c2",
+            "Value": {
+                "id": "7627d7d0-7b67-49dc-be84-77e81844797e",
+                "resourcePath": "sprites\/spr_portrait_female_investor_happy\/spr_portrait_female_investor_happy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "61ffb7c3-1e0c-43a5-be6d-c9ea3c61ede6",
             "Value": {
                 "id": "8d089b30-cc45-4548-925d-b9d656035eb8",
@@ -2183,6 +2287,14 @@
             }
         },
         {
+            "Key": "67177262-44ef-4d39-a1af-d4e60e5256d9",
+            "Value": {
+                "id": "82484f56-ede9-474b-9217-3f269a9ef003",
+                "resourcePath": "sprites\/spr_portrait_girl_neutral\/spr_portrait_girl_neutral.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "672c6084-3a1f-4b0c-a91a-e82adacee50f",
             "Value": {
                 "id": "65fa2822-6115-4e18-b7cf-d014799c9331",
@@ -2212,6 +2324,22 @@
                 "id": "88be29b5-fe88-4a5f-9377-acdb2f2f8187",
                 "resourcePath": "views\/68045377-5c72-4aa4-b4cb-6b2e8eb8f527.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "68c04a2b-dcea-4ff2-9050-40500d0cc0a3",
+            "Value": {
+                "id": "fe29ffb2-69d0-49e3-8469-8e4b80f64fb7",
+                "resourcePath": "sprites\/spr_portrait_baron\/spr_portrait_baron.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6939456d-5476-4126-b7c4-58e6fa8eccdd",
+            "Value": {
+                "id": "a1be0560-5b88-46da-97e3-d2c472821952",
+                "resourcePath": "sprites\/spr_portrait_female_investor_neutral\/spr_portrait_female_investor_neutral.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2267,6 +2395,14 @@
             "Value": {
                 "id": "202f3905-98db-4fad-9b36-a2e736a859d8",
                 "resourcePath": "sprites\/sprite78\/sprite78.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6c1d574e-dcdc-40f9-b7f6-6661734d0cc0",
+            "Value": {
+                "id": "b1ea553e-fa22-4bbd-aa30-09e6250513ca",
+                "resourcePath": "sprites\/spr_portrait_male_investor_sad\/spr_portrait_male_investor_sad.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2419,6 +2555,14 @@
             "Value": {
                 "id": "10e69b31-5af8-4889-a736-438df75c16cd",
                 "resourcePath": "sprites\/sprite80\/sprite80.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "717a6816-be46-4450-b599-9226c97b9903",
+            "Value": {
+                "id": "eb674bbd-e8f9-41c3-b695-4f1a7dd36a8a",
+                "resourcePath": "sprites\/spr_portrait_chieftain_sad\/spr_portrait_chieftain_sad.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2831,6 +2975,14 @@
             }
         },
         {
+            "Key": "86cb1a87-d705-4e4d-8993-e95fe5426f4f",
+            "Value": {
+                "id": "3a2c8bb1-7e99-4c4a-9fd5-8ab4b76added",
+                "resourcePath": "sprites\/spr_portrait_wife_neutral\/spr_portrait_wife_neutral.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8721db3f-3097-4910-9c96-45785696d635",
             "Value": {
                 "id": "6f70e02b-059f-4880-b957-e1c6acdeff75",
@@ -3023,6 +3175,14 @@
             }
         },
         {
+            "Key": "914e7f4a-3f5e-4e4b-9da0-6ae97fc494f8",
+            "Value": {
+                "id": "93961b82-9cc5-43be-8567-9b62680ed314",
+                "resourcePath": "sprites\/spr_portrait_girl_angry\/spr_portrait_girl_angry.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "922de9b7-63c4-457c-ac4b-26fa18eb210a",
             "Value": {
                 "id": "1d5928a6-21ad-405a-a62b-d5e961dc040d",
@@ -3172,6 +3332,14 @@
                 "id": "4047a3e8-4b0c-418e-bf40-79b375432224",
                 "resourcePath": "sprites\/OFFICIAL_LANDSCAPE_TILES\/OFFICIAL_LANDSCAPE_TILES.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9ade9df6-64b7-4ea6-88ed-df088b824db8",
+            "Value": {
+                "id": "fb81e78d-8c9d-4ae5-9819-8573fee563a6",
+                "resourcePath": "views\/9ade9df6-64b7-4ea6-88ed-df088b824db8.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -3559,6 +3727,14 @@
             }
         },
         {
+            "Key": "ae030fbd-6afd-44fe-8c1d-e97017a9635d",
+            "Value": {
+                "id": "87e17fe8-e04c-43aa-897e-b48d1b81bdd8",
+                "resourcePath": "sprites\/spr_portrait_male_investor_neutral\/spr_portrait_male_investor_neutral.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ae080e98-5e06-4dc9-bbd7-b15ee5438c46",
             "Value": {
                 "id": "a9cf58e9-0132-4ffc-8ca5-9a5dacfcbab9",
@@ -3703,6 +3879,22 @@
             }
         },
         {
+            "Key": "b18b3812-b970-4d36-873e-a8d5e2c4c511",
+            "Value": {
+                "id": "d7a9b1ce-d927-4a80-90e8-4f3b53fd8289",
+                "resourcePath": "sprites\/spr_portrait_female_investor_angry\/spr_portrait_female_investor_angry.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b19d64f0-de7f-4553-a4db-9053f092cfa4",
+            "Value": {
+                "id": "d156e75c-89f3-4e3f-928f-e84cd857a929",
+                "resourcePath": "sprites\/spr_portrait_boy_happy\/spr_portrait_boy_happy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b1b7f6f9-a16a-4694-9944-44b29b40932f",
             "Value": {
                 "id": "35bdef7b-857a-4dc6-9ee3-9c7af824ae73",
@@ -3724,6 +3916,14 @@
                 "id": "06611138-15e3-4fc5-9ec3-d983a217f57f",
                 "resourcePath": "sprites\/sprite42\/sprite42.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b3135ebf-f739-414c-a661-05604fd7af33",
+            "Value": {
+                "id": "44d3f89e-f1d8-4569-a4eb-7703a50573a3",
+                "resourcePath": "views\/b3135ebf-f739-414c-a661-05604fd7af33.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -3780,6 +3980,14 @@
                 "id": "692f45c1-571b-4402-a949-32e6cb32ee57",
                 "resourcePath": "scripts\/scr_unpause\/scr_unpause.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b6cf3548-e88d-4cd0-806b-212dafa764e6",
+            "Value": {
+                "id": "82140c7a-def7-4cb5-9c4c-ee47ffa1ada9",
+                "resourcePath": "sprites\/spr_portrait_wife_happy\/spr_portrait_wife_happy.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4775,6 +4983,14 @@
             }
         },
         {
+            "Key": "eca34d2f-2270-498f-b40c-4f63337a27f7",
+            "Value": {
+                "id": "519b147d-c029-49b5-b210-43561fa9bef1",
+                "resourcePath": "sprites\/spr_portrait_boy_neutral\/spr_portrait_boy_neutral.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ee1210da-a39f-4524-a436-39dae76a8063",
             "Value": {
                 "id": "a2f082cb-9efa-4ec1-a1c8-53a450b505da",
@@ -4887,11 +5103,27 @@
             }
         },
         {
+            "Key": "f723f436-f67d-4e1f-8f2a-5dd1083f1d6d",
+            "Value": {
+                "id": "a3748a67-42e0-435e-849d-e45a494ba4f2",
+                "resourcePath": "sprites\/spr_portrait_girl_happy\/spr_portrait_girl_happy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f82510b7-56b8-4d90-b314-a83a47f6a1bc",
             "Value": {
                 "id": "d6bbec84-832e-43b3-b1a9-238c939012f3",
                 "resourcePath": "views\/f82510b7-56b8-4d90-b314-a83a47f6a1bc.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f8886f1b-7db6-48b6-8b42-d1a29040ac37",
+            "Value": {
+                "id": "b4fe1a63-705e-4b69-b5b5-89fa7f6b6c5b",
+                "resourcePath": "sprites\/spr_portrait_chieftain_neutral\/spr_portrait_chieftain_neutral.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -5028,6 +5260,14 @@
                 "id": "32589f1b-1f28-4620-b5c2-cdda627bcf8b",
                 "resourcePath": "scripts\/scr_use_item_callback_shovel\/scr_use_item_callback_shovel.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "ff5108bc-e46c-49f7-b060-4a4b7aec56c7",
+            "Value": {
+                "id": "e68b952d-ea36-4ca1-8096-24188ba80c01",
+                "resourcePath": "sprites\/spr_portrait_chieftain_happy\/spr_portrait_chieftain_happy.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

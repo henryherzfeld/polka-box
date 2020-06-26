@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_npc_investor_male",
     "eventList": [
-        
+        {
+            "id": "bd7fd385-e7c9-4b46-bc9c-aa8bdc1d6bb6",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "b83286e1-1182-45d2-8cbb-05f4d50fd98c"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_npc_investor_female",
     "eventList": [
-        
+        {
+            "id": "15623f9f-ee47-4883-b077-53363bc6f8fe",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "468c6dc4-5ce7-4e1d-8377-cfd39500fd68"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

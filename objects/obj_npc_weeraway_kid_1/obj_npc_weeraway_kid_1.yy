@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_npc_weeraway_kid_1",
     "eventList": [
-        
+        {
+            "id": "8012a8df-adff-4434-ba34-540e2053b8e4",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "02cedb9b-b489-46fe-92fb-925c16babae0"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

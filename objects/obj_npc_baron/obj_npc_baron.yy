@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_npc_baron",
     "eventList": [
-        
+        {
+            "id": "38d78cbe-ddda-4273-bc47-10997f809d57",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "11b6b680-df42-415a-9a81-280fdf6d28c0"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
