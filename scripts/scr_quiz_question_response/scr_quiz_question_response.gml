@@ -1,11 +1,11 @@
 ///@description scr_quiz_question_response
-///@arg0 ds_list
-///@arg1 correct_response
-///@arg2 incorrect_response
+///@arg0 correct_response
+///@arg1 incorrect_response
 
-var list = argument0;
-var correct_response = argument1;
-var incorrect_response = argument2;
+var correct_response = argument0;
+var incorrect_response = argument1;
+
+var list = ds_factory.list_ptr;
 
 if correct_response == noone { exit; }
 

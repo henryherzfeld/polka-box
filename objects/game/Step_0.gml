@@ -1,5 +1,18 @@
 /// @description Insert description here
 
+/*
+if weather_change {
+	switch(weather) {
+	 case "sunny":
+		
+	 break;
+	 case "raining":
+		
+	 break;
+	}
+}
+*/
+
 if(keyboard_check_pressed(vk_backspace) and keyboard_check(vk_lcontrol)){
 	if (debug){
 		debug = false;

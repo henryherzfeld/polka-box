@@ -20,7 +20,7 @@ for(var i = 0; i < n_but; i++) {
 }
 
 if sprite_draw != noone {
-	var scale = 4;
+	var scale = 1;
 	var xx = x1 + (window_w - sprite_w*scale)/2;
 	var yy = y1 + (window_h - sprite_h*scale)/2;
 	draw_sprite_stretched(sprite_draw, 0, xx, yy, sprite_w*scale, sprite_h*scale);
