@@ -46,7 +46,7 @@ scr_dia_line("In each quest, you have to ask questions, investigate, analyze clu
 scr_dia_line("You keep doing this until you've reached the end of your quest.", obj_npc_baron); 
 scr_dia_line("Are you ready? I think you can do it!", obj_npc_baron); 
 scr_dia_line("Here's your first item, given to all budding Quanta Knights: a camera!", obj_npc_baron);  
-//THE CAMERA ITEM IS NOW VISIBLE IN THE ITEM INVENTORY
+//THE CAMERA ITEM (obj_camera_item) IS NOW VISIBLE IN THE ITEM INVENTORY
 
 scr_dia_line("You can use it to make observations and take pictures of what you find.", obj_npc_baron); //baron 
 scr_dia_line("You may leave. If you have any questions, feel free to ask me. I'm right here.", obj_npc_baron); //baron 
@@ -282,6 +282,7 @@ the player can now view a new batch of dialogue choices when approaching the bot
 scr_dia_segment(text, "A1");
 scr_dia_line("What do crops need to live?", polka);
 scr_dia_line("Plants need air, sunlight, water, and soil.", obj_npc_poppy);
+scr_dia_line_sprite(spr_air_sunlight_water_soil);
 scr_dia_options("B1", "B2", "B3", "FILLER"); 
 
 scr_dia_segment(text, "A2");
@@ -301,20 +302,30 @@ scr_dia_options("A1", "A2", "A3", "FILLER");
 scr_dia_segment(text, "B1");
 scr_dia_line("How do you know that the plants are getting enough air, sunlight, water, and soil?", polka);
 scr_dia_line("This is what a healthy plant looks like. It’s green, has lots of leaves, has strong stems. It has plenty of nutrient-rich soil. Nutrients make a plant healthy. Just like people need nutrients to grow and stay healthy.", obj_npc_poppy);
+scr_dia_line_sprite(spr_healthy_plant); 
+
 scr_dia_line("If the plant isn’t getting enough water — it will wilt. The edges of the leaves turn out dry and brown. The soil will be dry. There is low soil moisture found when measuring.", obj_npc_poppy);
+scr_dia_line_sprite(spr_dying_plant);
+
 scr_dia_line("If the plant isn’t getting enough light — the stems are long and thin. They have small, yellow leaves.", obj_npc_poppy);
+scr_dia_line_sprite(spr_plant_less_sunlight);
+
 scr_dia_line("The stems grow thin because the plant is desperately reaching its leaves up to get more light.", obj_npc_poppy);
+scr_dia_line_sprite(spr_dying_plant);
+
 scr_dia_line("If there isn’t enough soil, then the plant will wilt. The edges of the leaves turn out dry and brown.", obj_npc_poppy);
 scr_dia_options("EXIT", "FILLER");
 
 scr_dia_segment(text, "B2");
-scr_dia_line("Why do plants need air?", polka);
-scr_dia_line("Plants use carbon dioxide in the air to make food for themselves", obj_npc_poppy);
+scr_dia_line("Why do plants need water?", polka);
+scr_dia_line("Plants use water to bring nutrients up from the roots into their leaves", obj_npc_poppy);
+scr_dia_line_sprite(spr_water_going_up_plant);
 scr_dia_options("B1", "B2", "B3", "FILLER");
 
 scr_dia_segment(text, "B3");
 scr_dia_line("Why do plants need sunlight?", polka);
 scr_dia_line("Plants use sunlight to power their food-making process. This is called photosynthesis. Photosynthesis is Greek for 'putting together light'. It’s how plants get the energy they need to live.", obj_npc_poppy);
+scr_dia_line_sprite(spr_air_sunlight_water_soil);
 scr_dia_options("B1", "B2", "B3", "FILLER");
 
 
@@ -365,6 +376,7 @@ scr_dia_line_quiz(crops_appearance_quiz, obj_npc_poppy);
 //QUIZ WHERE THEY HAVE TO ATTACH PHOTO EVIDENCE ABOUT HOW THE CROPS LOOKS
 
 scr_dia_line("The air is plenty. Perhaps they’re not getting enough water?", obj_npc_poppy);
+scr_dia_line_sprite(spr_water_lake);
 scr_dia_line("You can tell from the soil moisture if a plant is getting enough.", obj_npc_poppy);
 
 scr_dia_line("Plants grow best when our soil moisture is 50 to 60 kPa.", obj_npc_poppy);
@@ -431,7 +443,10 @@ scr_dia_line_quiz(soil_moisture_quiz, obj_npc_poppy);
 
 scr_dia_line("How much soil do plants need in order to grow?", polka);
 scr_dia_line("Topsoil is the top layer of soil for growing plants — like vegetables.", obj_npc_poppy);
+scr_dia_line_sprite(spr_topsoil);
+
 scr_dia_line("It holds all the nutrients that are super-important to plants.", obj_npc_poppy);
+scr_dia_line_sprite(spr_topsoil);
 
 scr_dia_line("About 8 - 10 inches of topsoil depth is good.", obj_npc_poppy);
 scr_dia_line("Less than that, and a plant is likely not getting enough nutrients.", obj_npc_poppy);
@@ -563,6 +578,7 @@ scr_dia_line_quiz(topsoil_rain_erosion_quiz, obj_npc_poppy);
 
 scr_dia_line("So THAT’S how the topsoil got removed!", obj_npc_poppy);
 scr_dia_line("When soil or dirt is moved from one place to another by wind or water, it's called EROSION.", obj_npc_poppy);
+scr_dia_line_sprite(spr_soil_erosion_water_photo_evidence);
 
 scr_dia_options("EXIT", "FILLER");
 
@@ -590,10 +606,14 @@ scr_dia_line("You look for clues that show the experiment was not well-performed
 
 scr_dia_line("Experimental Research is a skill that's helpful for anyone. Not just scientists and researchers.", obj_npc_baron);
 scr_dia_line("Even some entrepreneurs can do it. An entrepreneur is somebody who runs a business and sells things.", obj_npc_baron);
+scr_dia_line_sprite(spr_entrepreneur); 
+
 scr_dia_line("Experimental Research is all about testing something you want to find out if it's true.", obj_npc_baron);
 scr_dia_line("Say your friend runs a lemonade stand. He wants to add honey instead of sugar to lemonade because he thinks it'll make the lemonade taste better.", obj_npc_baron);
-scr_dia_line("He asks you for money so that he can buy enough honey to use in all his lemonades.", obj_npc_baron);
+scr_dia_line_sprite(spr_lemonade_stand);
 
+scr_dia_line("He asks you for money so that he can buy enough honey to use in all his lemonades.", obj_npc_baron);
+scr_dia_line_sprite(spr_money_bills); 
 
 //EROSION EXPERIMENT TUTORIAL 1 QUIZ QUESTIONS
 erosion_experiment_tutorial_1 = ds_list_create();
@@ -613,6 +633,8 @@ scr_dia_line("filler", obj_npc_baron);
 scr_dia_line_quiz(erosion_experiment_tutorial_1, obj_npc_baron); 
 
 scr_dia_line("You'd want to know where he got the idea from. He tells you an article he read said that adding honey instead of sugar to lemonade makes it taste better. This is his background research.", obj_npc_baron);
+scr_dia_line_sprite(spr_magazine_article_honey); 
+
 scr_dia_line("But what if people don't like honey? What if his customers think that lemonade tastes good with sugar and not with honey?", obj_npc_baron);
 scr_dia_line("Then it means your friend wasted a lot of money. And you'll trust your friend less with your money.", obj_npc_baron);
 
@@ -636,6 +658,7 @@ scr_quiz_question(enum_question_type.multi,
 "Have any of your customers tried your lemonade with honey instead of sugar?", 
 "What color is honey?"], 
 0);
+scr_quiz_question_sprite(spr_hypothesis_question_marks); 
 scr_quiz_question_response("You'd want to make sure your friend is actually testing the right thing. What is he looking for? He makes a hypothesis. His hypothesis is that adding honey instead of sugar to lemonade will make people like it more.", noone);
 
 scr_quiz_question(enum_question_type.multi, 
@@ -645,6 +668,7 @@ scr_quiz_question(enum_question_type.multi,
 "How will you test your hypothesis?", 
 "What color is honey?"], 
 2);
+scr_quiz_question_sprite(spr_tutorial_procedure); 
 scr_quiz_question_response("You'd want to know how your friend plans on carrying out the experiment. What steps will he take to find out? He sets up a procedure on what he'll be doing. ", noone);
 
 //END OF EROSION EXPERIMENT TUTORIAL 2 QUIZ QUESTIONS
@@ -653,8 +677,13 @@ scr_dia_line("filler", obj_npc_baron);
 scr_dia_line_quiz(erosion_experiment_tutorial_2, obj_npc_baron);
 
 scr_dia_line("He has two groups. He will give half of his customers lemonade with sugar, but without honey. This is his first group.", obj_npc_baron);
+scr_dia_line_sprite(spr_experiment_tutorial_setup);
+
 scr_dia_line("He will give the other half of his customers the lemonade with honey, but without sugar. This is his second group.", obj_npc_baron);
+scr_dia_line_sprite(spr_experiment_tutorial_setup);
+
 scr_dia_line("He asks each customer to give a rating, from 1-10, on how much they liked his lemonade. Then he adds up the ratings from each group.", obj_npc_baron);
+scr_dia_line_sprite(spr_experiment_tutorial_setup);
 
 //EROSION EXPERIMENT TUTORIAL 3 QUIZ QUESTIONS
 erosion_experiment_tutorial_3 = ds_list_create();
@@ -728,10 +757,20 @@ The farmer also explains to Polka how they figured this out.
 //VILLY WEERAWAY DIALOGUE
 
 scr_dia_line("After learning that the soil in the fields was being eroded by water, we looked for places where soil eroded less. We checked out the Gumdrop Forest, which has trees planted in soil.", obj_npc_weeraway);
-scr_dia_line("We used a tape measure to find the topsoil depth in the forest. We found about 8-10 inches of topsoil.", obj_npc_weeraway);
+scr_dia_line_sprite(spr_forest); 
+
+scr_dia_line("We used a measuring stick to find the topsoil depth in the forest. We found about 8-10 inches of topsoil.", obj_npc_weeraway);
+scr_dia_line_sprite(spr_measuring_stick); 
+
 scr_dia_line("We also used a soil penetrometer, which is used to find the soil compaction. The more compact soil is, the harder it is for it to erode. The more psi something has, the higher the compaction.", obj_npc_weeraway);
+scr_dia_line_sprite(spr_penetrometer); 
+
 scr_dia_line("The soil compaction in the forest was 180 psi, while the soil compaction in my fields was 80 psi!", obj_npc_weeraway);
+scr_dia_line_sprite(spr_topsoil_depth_forest_table); 
+
 scr_dia_line("We noticed that the forest has more vegetation, like trees, compared to our farm fields.", obj_npc_weeraway);
+scr_dia_line_sprite(spr_compact_vs_loose_soil);
+
 scr_dia_line("We should go and get money from the council to plant more trees and other vegetation around the farmland. What do you think?", obj_npc_weeraway);
 
 //EROSION EXPERIMENT 1 QUIZ QUESTIONS
@@ -805,8 +844,13 @@ scr_dia_line("filler", obj_npc_weeraway);
 scr_dia_line_quiz(erosion_experiment_1, obj_npc_weeraway);
 
 scr_dia_line("We will make two different square patches. Each patch will be filled with soil. We will plant crops in both patches.", obj_npc_weeraway);
+scr_dia_line_sprite(spr_erosion_experiment_setup_before); 
+
 scr_dia_line("The difference will be how much vegetation there is in each patch. The first patch will have no vegetation planted around it. It's just like what we have right now in the fields.", obj_npc_weeraway);
+scr_dia_line_sprite(spr_erosion_experiment_setup_before); 
+
 scr_dia_line("The second patch will have vegetation like big and small trees planted around it. Over 4 weeks, we'll measure the soil depth, soil compaction, and crop growth in each patch and compare the results at the end. ", obj_npc_weeraway);
+scr_dia_line_sprite(spr_erosion_experiment_setup_before); 
 
 //EROSION EXPERIMENT 2 QUIZ QUESTIONS
 erosion_experiment_2 = ds_list_create();
@@ -845,6 +889,7 @@ scr_quiz_question(enum_question_type.multi,
 "9.5; 4",
 "4; 9.5"], 
 0);
+scr_quiz_question_sprite(spr_erosion_experiment_table_evidence);
 scr_quiz_question_response("Which means that...", noone);
 
 scr_quiz_question(enum_question_type.multi, 
@@ -852,6 +897,7 @@ scr_quiz_question(enum_question_type.multi,
 ["more",
 "less"], 
 0);
+scr_quiz_question_sprite(spr_erosion_experiment_table_evidence);
 scr_quiz_question_response("Ok", noone);
 
 scr_quiz_question(enum_question_type.multi, 
@@ -861,6 +907,7 @@ scr_quiz_question(enum_question_type.multi,
 "9.5; 4",
 "4; 9.5"], 
 2);
+scr_quiz_question_sprite(spr_erosion_experiment_table_evidence);
 scr_quiz_question_response("Which means that...", noone);
 
 scr_quiz_question(enum_question_type.multi, 
@@ -868,6 +915,7 @@ scr_quiz_question(enum_question_type.multi,
 ["higher",
 "lower"], 
 1);
+scr_quiz_question_sprite(spr_erosion_experiment_table_evidence);
 scr_quiz_question_response("Ok", noone);
 
 scr_quiz_question(enum_question_type.multi, 
@@ -877,6 +925,7 @@ scr_quiz_question(enum_question_type.multi,
 "9.5; 0.8",
 "0.8; 0.2"], 
 3);
+scr_quiz_question_sprite(spr_erosion_experiment_table_evidence);
 scr_quiz_question_response("Which means that...", noone);
 
 scr_quiz_question(enum_question_type.multi, 
@@ -884,6 +933,7 @@ scr_quiz_question(enum_question_type.multi,
 ["higher",
 "lower"], 
 0);
+scr_quiz_question_sprite(spr_erosion_experiment_table_evidence);
 scr_quiz_question_response("This is great! That means we can conclude that planting vegetation around the crop fields can lower soil erosion.", noone);
 
 //END OF EROSION EXPERIMENT 2 QUIZ QUESTIONS
@@ -1110,6 +1160,7 @@ scr_dia_line_quiz(erosion_investigation_case, obj_npc_chieftain);
 scr_dia_line("That brings us to our conclusion: The farmer's crops are dying because the soil they need to grow is being eroded away by rainwater.", polka);
 
 scr_dia_line("We found out that planting more vegetation around the fields lowers soil erosion.", polka);
+scr_dia_line_sprite(spr_erosion_experiment_setup_after); 
 
 //EROSION EXPERIMENT CASE QUIZ QUESTIONS
 erosion_experiment_case = ds_list_create();
@@ -1183,7 +1234,8 @@ scr_quiz_question(enum_question_type.multi,
 "conclusion",
 "background research"
 "None of the above"], 
-[enum_evi_type.evidence2, 0]); 
+[enum_evi_type.evidence2, 0]);
+scr_quiz_question_sprite(spr_erosion_experiment_setup_after);
 //EVIDENCE 2 IS RESERVED FOR THE EROSION EXPERIMENT TABLE (spr_erosion_experiment_table_evidence)
 
 //END OF EROSION EXPERIMENT CASE QUIZ QUESTIONS
