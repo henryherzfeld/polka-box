@@ -383,6 +383,14 @@
             }
         },
         {
+            "Key": "1067a391-b5b1-454a-b653-163a91610036",
+            "Value": {
+                "id": "1dc64611-84fb-423b-b814-62b960bc3980",
+                "resourcePath": "sprites\/spr_hypothesis_question_marks\/spr_hypothesis_question_marks.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1074286e-7296-4bf5-b263-a7112e12d5d9",
             "Value": {
                 "id": "661f6db0-21d2-4354-b78f-e1a3f6a5f1a7",
@@ -463,11 +471,27 @@
             }
         },
         {
+            "Key": "138e9830-8b53-473b-9a75-d7bd90bec80d",
+            "Value": {
+                "id": "eb9168c9-1aea-434b-822f-61dddd49cbd6",
+                "resourcePath": "sprites\/spr_soil_moisture_table_evidence\/spr_soil_moisture_table_evidence.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1392b2fd-3661-4fba-8d75-0625040f7e3d",
             "Value": {
                 "id": "89cb68b5-2f0c-4f1d-b488-fac598f76f0d",
                 "resourcePath": "objects\/object50\/object50.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "13af76f8-0f0e-4f4f-9357-41f36c0d732d",
+            "Value": {
+                "id": "24adfe50-3d41-4b85-b751-c6826c23be70",
+                "resourcePath": "sprites\/spr_animal_hairs_on_desk_photo_evidence\/spr_animal_hairs_on_desk_photo_evidence.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1127,6 +1151,14 @@
             }
         },
         {
+            "Key": "2fcae9e9-b67a-4ec9-8807-f208b7db3d94",
+            "Value": {
+                "id": "51b0dba8-abce-4f38-9d9d-efd3bdfe99d0",
+                "resourcePath": "sprites\/spr_honey_jar\/spr_honey_jar.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3082f51b-039e-41a2-b113-0d5cfd116143",
             "Value": {
                 "id": "a4151e7a-899e-454a-a93c-3d917c3044ef",
@@ -1147,6 +1179,14 @@
             "Value": {
                 "id": "9e3bef4b-1305-4d1b-ba8e-57cc2d90b31e",
                 "resourcePath": "sprites\/sprite89\/sprite89.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "327da385-3659-4bb8-bae8-9276a8a8afeb",
+            "Value": {
+                "id": "cbf171f6-fe40-4a03-bcf4-09b46ea6ba82",
+                "resourcePath": "sprites\/spr_healthy_plant\/spr_healthy_plant.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1375,6 +1415,14 @@
             }
         },
         {
+            "Key": "3c5e3d39-0578-404d-ad06-3a1a85086069",
+            "Value": {
+                "id": "d837cb5b-bd7a-4432-a2df-4c28d7ac55d3",
+                "resourcePath": "sprites\/spr_magazine_article_honey\/spr_magazine_article_honey.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3d415dd0-ff61-4473-82da-c0875827ce55",
             "Value": {
                 "id": "8d2d40b2-f625-495b-8260-471b22408dd8",
@@ -1387,6 +1435,14 @@
             "Value": {
                 "id": "61df15bc-6bd4-4fc4-9041-a23f9e9bafd4",
                 "resourcePath": "sprites\/spr_villy_walk_back_v1\/spr_villy_walk_back_v1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3d6c0879-675c-40fd-9c33-7c98e2419ad5",
+            "Value": {
+                "id": "a295a429-5ee4-46a3-8853-d766d8394218",
+                "resourcePath": "sprites\/spr_lemonade_stand\/spr_lemonade_stand.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1543,6 +1599,14 @@
             }
         },
         {
+            "Key": "439b6349-2fd5-4a82-a10a-e8ba4dc8ac69",
+            "Value": {
+                "id": "53418b5b-4736-4221-8c68-69eb9869db87",
+                "resourcePath": "sprites\/spr_topsoil_depth_forest_table\/spr_topsoil_depth_forest_table.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "445bc68b-f59e-4f2f-9bf8-581a826155f7",
             "Value": {
                 "id": "7d502955-91a2-4340-b331-8506eb818762",
@@ -1571,6 +1635,14 @@
             "Value": {
                 "id": "33ca19d6-eba7-48d7-b472-811efb29970d",
                 "resourcePath": "sprites\/spr_polka_walk_right_v1\/spr_polka_walk_right_v1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "44d8222e-0812-4569-bd84-8dcab26ad895",
+            "Value": {
+                "id": "90492522-5044-47cd-87fb-001432692ba8",
+                "resourcePath": "sprites\/spr_soil_erosion_water_photo_evidence\/spr_soil_erosion_water_photo_evidence.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1620,6 +1692,14 @@
                 "id": "2ac94204-28d4-4e8c-b75b-e85e6e1d26e9",
                 "resourcePath": "objects\/obj_npc_investor_female\/obj_npc_investor_female.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "469842bc-2407-41c5-890c-c406508373f5",
+            "Value": {
+                "id": "c9afbd90-03e9-47f1-b6dc-09df17bf078a",
+                "resourcePath": "sprites\/spr_water_going_up_plant\/spr_water_going_up_plant.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1796,6 +1876,14 @@
                 "id": "5acbb8e9-0fc6-4ec5-9760-e82667169605",
                 "resourcePath": "objects\/object108\/object108.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "4d3ab6ff-8063-4e1b-894b-057569e828d6",
+            "Value": {
+                "id": "385b4de8-faeb-4014-a069-e3fb80b18aae",
+                "resourcePath": "sprites\/spr_topsoil_depth_evidence\/spr_topsoil_depth_evidence.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2063,6 +2151,14 @@
             }
         },
         {
+            "Key": "5b31a5c3-795f-41c9-b737-31b51da074f0",
+            "Value": {
+                "id": "149178cd-d4a4-4d00-a14e-ba1c60e5495b",
+                "resourcePath": "views\/5b31a5c3-795f-41c9-b737-31b51da074f0.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "5b851dbd-8994-4709-91b4-cafe9dc0297c",
             "Value": {
                 "id": "5e9fe31a-cd03-4fc6-a265-2eed10cd8e0a",
@@ -2084,6 +2180,14 @@
                 "id": "b9ed5ff1-5169-4024-a876-fdbfff8ed11b",
                 "resourcePath": "objects\/object73\/object73.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5cc870ea-7a95-4274-8188-c89ae9bbb124",
+            "Value": {
+                "id": "3915617d-4fbf-47d1-8091-5c9f4482f564",
+                "resourcePath": "sprites\/spr_plant_less_sunlight\/spr_plant_less_sunlight.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2287,6 +2391,14 @@
             }
         },
         {
+            "Key": "668950b1-367d-4994-8d7e-1d20d1348a72",
+            "Value": {
+                "id": "53eb6416-f594-4620-ae5e-fc778255bc02",
+                "resourcePath": "sprites\/spr_erosion_experiment_setup_before\/spr_erosion_experiment_setup_before.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "67177262-44ef-4d39-a1af-d4e60e5256d9",
             "Value": {
                 "id": "82484f56-ede9-474b-9217-3f269a9ef003",
@@ -2335,6 +2447,14 @@
             }
         },
         {
+            "Key": "68c27a52-9fbd-48ec-ae3a-c7762c512f86",
+            "Value": {
+                "id": "79b30928-1bd1-4bc7-9e02-6054dcb9b926",
+                "resourcePath": "sprites\/spr_measuring_stick\/spr_measuring_stick.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6939456d-5476-4126-b7c4-58e6fa8eccdd",
             "Value": {
                 "id": "a1be0560-5b88-46da-97e3-d2c472821952",
@@ -2364,6 +2484,14 @@
                 "id": "c603dba8-04da-467b-9293-a07d9f654431",
                 "resourcePath": "objects\/obj_npc_poppy\/obj_npc_poppy.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6a036419-d39e-4790-bce3-dc60b930ee02",
+            "Value": {
+                "id": "507003b6-6d4c-4c7e-9256-a15bc20e74c9",
+                "resourcePath": "sprites\/spr_chlorophyll_green_plant\/spr_chlorophyll_green_plant.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2583,6 +2711,14 @@
             }
         },
         {
+            "Key": "72b23903-7cc4-4704-908e-0ee9b18a900f",
+            "Value": {
+                "id": "acbc8369-9497-4ea0-9a71-b36032bf01cf",
+                "resourcePath": "views\/72b23903-7cc4-4704-908e-0ee9b18a900f.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "7311a8b5-93db-47d3-9bf0-3dc869fa0d4f",
             "Value": {
                 "id": "dbb562d7-d982-4498-b70f-8385570715d1",
@@ -2715,6 +2851,14 @@
             "Value": {
                 "id": "bfc47924-e66c-4e5a-888b-1f87f5236384",
                 "resourcePath": "sprites\/digged_subsoil_tile\/digged_subsoil_tile.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "787f7899-253c-4e12-8f8f-c2388df10b54",
+            "Value": {
+                "id": "3610bb41-7234-4fc9-9932-b7ff72d5cd0b",
+                "resourcePath": "sprites\/spr_erosion_experiment_setup_after\/spr_erosion_experiment_setup_after.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3087,6 +3231,14 @@
             }
         },
         {
+            "Key": "8b6fbf05-cac5-4561-9b26-9063ad3531f4",
+            "Value": {
+                "id": "89177a29-3dd5-44fa-91a1-cb8af4991af4",
+                "resourcePath": "sprites\/spr_forest\/spr_forest.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8c445a7e-e781-4e26-b1ca-2ce3a424821a",
             "Value": {
                 "id": "c0005848-8331-4b93-a739-cb97efab68ba",
@@ -3252,6 +3404,14 @@
                 "id": "3440c8cb-cbd6-4260-8188-45d0611670cd",
                 "resourcePath": "tilesets\/tileset5\/tileset5.yy",
                 "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "962ca673-8441-46af-bf73-f9f114f87b45",
+            "Value": {
+                "id": "29846682-2191-4272-87c4-323df1314da5",
+                "resourcePath": "sprites\/spr_crop_appearance_fields_photo_evidence\/spr_crop_appearance_fields_photo_evidence.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3463,6 +3623,14 @@
             }
         },
         {
+            "Key": "a14d5c65-6648-4b71-888a-69bcf5a0d768",
+            "Value": {
+                "id": "1bee6834-9bed-464d-8392-698986eb215b",
+                "resourcePath": "sprites\/spr_dying_plant\/spr_dying_plant.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a158bfc1-2205-4109-97e2-0dad81274585",
             "Value": {
                 "id": "628dc0ac-d93c-4d83-ac9c-a716f8c3f6b8",
@@ -3667,6 +3835,14 @@
             "Value": {
                 "id": "01222d04-2058-4905-8b1b-860b7628c49f",
                 "resourcePath": "sprites\/sprite71\/sprite71.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a9304598-ce0a-4e30-9ac2-06eb091886c0",
+            "Value": {
+                "id": "30b994af-3a8b-4e7f-8f33-683f5e8e49ab",
+                "resourcePath": "sprites\/spr_experiment_tutorial_setup\/spr_experiment_tutorial_setup.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3903,6 +4079,14 @@
             }
         },
         {
+            "Key": "b21a4a04-fb47-4b91-8f18-a4c3676192ab",
+            "Value": {
+                "id": "a8c381f5-2159-4dcd-a9c2-e4d91e3e5031",
+                "resourcePath": "sprites\/spr_compact_vs_loose_soil\/spr_compact_vs_loose_soil.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b24b5760-ad4e-4783-9cf5-4c12aa437880",
             "Value": {
                 "id": "b7f7e122-80a7-4dad-9b3d-1a718ef2c0e7",
@@ -3955,6 +4139,14 @@
             "Value": {
                 "id": "724e2202-6cb8-425b-b574-67c6e0ff0e47",
                 "resourcePath": "sprites\/spr_chest\/spr_chest.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b4e3683f-e3ae-44f6-8033-70ed92d13a4c",
+            "Value": {
+                "id": "41febc0d-8555-4dd7-af2c-63ab437fcb03",
+                "resourcePath": "sprites\/spr_erosion_experiment_table_evidence\/spr_erosion_experiment_table_evidence.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4124,6 +4316,14 @@
                 "id": "14d8928d-ad9f-41cc-8a60-624b2f5e2a34",
                 "resourcePath": "views\/bd334740-6a1a-4e19-83b4-2e08e0815041.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "bd7e74be-17ed-4856-a8af-edfc03fd488e",
+            "Value": {
+                "id": "c51192fe-c470-4136-ac2b-2feebadecf5e",
+                "resourcePath": "sprites\/spr_money_bills\/spr_money_bills.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4315,6 +4515,14 @@
             "Value": {
                 "id": "4a28c58a-8ee3-4832-8722-fdcf43cf92a3",
                 "resourcePath": "sprites\/spr_portrait_poppy_neutral\/spr_portrait_poppy_neutral.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c7c4f3a3-f894-4e81-870a-a93b86493477",
+            "Value": {
+                "id": "096a4504-9210-4843-b3e2-f52999165cd7",
+                "resourcePath": "sprites\/spr_penetrometer\/spr_penetrometer.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4639,6 +4847,14 @@
             }
         },
         {
+            "Key": "da1b20d1-5efa-4243-97d0-b07f8794c26b",
+            "Value": {
+                "id": "69df4061-fa37-40ae-8fff-36f5d55d20c1",
+                "resourcePath": "sprites\/spr_water_lake\/spr_water_lake.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "da45bcb5-4a36-412a-86d4-cbda7f9f0cbc",
             "Value": {
                 "id": "76c4df70-9a7c-4ac4-a223-0a1747c016c6",
@@ -4667,6 +4883,14 @@
             "Value": {
                 "id": "9639e610-ef4d-476c-ad63-dea5b0c66754",
                 "resourcePath": "sprites\/spr_arrow_up_down\/spr_arrow_up_down.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "db5161ce-e580-491a-8ce8-0a5b2d615a0b",
+            "Value": {
+                "id": "d001ddac-02d7-4c8f-bd26-e455f314e2d7",
+                "resourcePath": "sprites\/spr_tutorial_procedure\/spr_tutorial_procedure.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4863,6 +5087,14 @@
             }
         },
         {
+            "Key": "e5a40b2f-cfed-4861-bd0b-d2ce221364f7",
+            "Value": {
+                "id": "d29dbf94-d4a5-4740-9002-a82ac3bb8a41",
+                "resourcePath": "sprites\/spr_topsoil\/spr_topsoil.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e5d7f0cc-2282-457b-b1e1-88a8b330f045",
             "Value": {
                 "id": "f8a9f59b-7703-4e96-82de-dbc3776ec3ba",
@@ -4892,6 +5124,14 @@
                 "id": "fdc5b27b-8e14-40bb-b81b-21ea1af827dd",
                 "resourcePath": "objects\/object7\/object7.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "e738932e-6147-4c36-ad37-dc4d87ab6cbf",
+            "Value": {
+                "id": "95bcba97-39d2-4508-8f61-dac2f871db89",
+                "resourcePath": "sprites\/spr_soil_compaction_forest_table\/spr_soil_compaction_forest_table.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -5039,6 +5279,14 @@
             }
         },
         {
+            "Key": "f1eb8cb4-796f-4d63-adc6-9a53b08c286f",
+            "Value": {
+                "id": "589c8c18-e191-41a3-baa3-9be61425c20c",
+                "resourcePath": "sprites\/spr_air_sunlight_water_soil\/spr_air_sunlight_water_soil.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f2532860-bab4-4795-8a44-5bf294cdf5dd",
             "Value": {
                 "id": "79024f16-98be-4807-b084-8f72902f56f3",
@@ -5091,6 +5339,22 @@
             "Value": {
                 "id": "6f241f5b-68ea-4a57-8e52-6754d8889cc7",
                 "resourcePath": "sprites\/sprite14\/sprite14.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f5d91d8c-4686-443f-8949-f6ed83facfcd",
+            "Value": {
+                "id": "d4716b25-374d-4c4b-b567-ee210630b57d",
+                "resourcePath": "sprites\/spr_sugar_jar\/spr_sugar_jar.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f61671d5-5cd4-4aae-9bd7-68ad8e33304b",
+            "Value": {
+                "id": "14c5e843-dd0b-4feb-8daa-f6d2fd170cd4",
+                "resourcePath": "sprites\/spr_experiment_tutorial_table\/spr_experiment_tutorial_table.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5188,6 +5452,14 @@
                 "id": "d876b8d0-b89e-481a-8928-41319b15bb1e",
                 "resourcePath": "sprites\/spr_textbox_green\/spr_textbox_green.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fa10019e-5512-48d5-b2a4-08dc0646d245",
+            "Value": {
+                "id": "a75d55bc-1900-4665-a8c7-57493ffcb702",
+                "resourcePath": "views\/fa10019e-5512-48d5-b2a4-08dc0646d245.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
