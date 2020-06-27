@@ -996,6 +996,103 @@ scr_quiz_question(enum_question_type.checkbox,
 "Soil"],
 [0,3]);
 
+scr_quiz_question(enum_question_type.multi, 
+"We concluded that the plants ____ getting enough nutrients.", 
+["were",
+"were not"], 
+1);
+
+scr_quiz_question(enum_question_type.multi, 
+"We learned that measuring the ______ could help us conclude whether the crops were getting enough water.", 
+["soil depth",
+"soil moisture",
+"soil density",
+"All of the above"], 
+1);
+
+scr_quiz_question(enum_question_type.multi, 
+"If the soil moisture was between _____ kpa, then it meant there was enough water available for the plants.", 
+["10-20",
+"30-40",
+"50-60",
+"None of the above"], 
+2);
+
+scr_quiz_question(enum_question_type.multi, 
+"We used a ____ to measure the moisture", 
+["tensiometer",
+"thermometer",
+"measuring stick",
+"None of the above"], 
+0);
+
+scr_quiz_question(enum_question_type.evidence_multi, 
+"We discovered that the soil moisture was between ____ kpa", 
+["30-40",
+"50-60",
+"70-80",
+"None of the above"], 
+[enum_evi_type.evidence2, 1]); //EVIDENCE 2 IS RESERVED FOR THE SOIL MOISTURE TABLE
+
+scr_quiz_question(enum_question_type.multi, 
+"We concluded that the soil ____ enough water", 
+["didn't have",
+"had"], 
+1);
+
+scr_quiz_question(enum_question_type.multi, 
+"We decided to investigate if the crops were getting enough topsoil. We measured the ____ in the farmer's fields.", 
+["soil moisture",
+"soil compaction",
+"soil depth",
+"All of the above"], 
+2);
+
+scr_quiz_question(enum_question_type.multi, 
+"We learned that about _____ inches of topsoil depth was needed for plants to grow.", 
+["8-10",
+"11-13",
+"6-8",
+"None of the above"], 
+0);
+
+scr_quiz_question(enum_question_type.multi, 
+"We used a ____ to measure the topsoil depth", 
+["tensiometer",
+"thermometer",
+"measuring stick",
+"None of the above"], 
+2);
+
+scr_quiz_question(enum_question_type.evidence_multi, 
+"We discovered that the topsoil depth was between ____ inches", 
+["1-2",
+"4-6",
+"8-10",
+"None of the above"], 
+[enum_evi_type.evidence2, 1]); //EVIDENCE 2 IS RESERVED FOR THE TOPSOIL DEPTH TABLE
+
+scr_quiz_question(enum_question_type.multi, 
+"We concluded that the crops _____ getting enough topsoil", 
+["were not",
+"were"], 
+0);
+
+scr_quiz_question(enum_question_type.evidence_multi, 
+"We made an observation while returning to the farm. While it was _____, we saw water carrying the topsoil away from the fields over to the lake nearby.", 
+["snowing",
+"raining",
+"hailing",
+"None of the above"], 
+[enum_evi_type.evidence2, 1]); //EVIDENCE 2 IS RESERVED FOR THE SOIL-EROSION-WATER PHOTO
+
+scr_quiz_question(enum_question_type.multi, 
+"When soil or rock is moved from one place to another by wind or water, it's called", 
+["Weathering",
+"Sleet",
+"Erosion",
+"Earthquake"], 
+2);
 //END OF EROSION INVESTIGATION CASE QUIZ QUESTIONS
 
 scr_dia_line("The court has noted the account given!", obj_npc_chieftain); 
@@ -1008,6 +1105,76 @@ scr_dia_line("We found out that planting more vegetation around the fields lower
 //EROSION EXPERIMENT CASE QUIZ QUESTIONS
 erosion_experiment_case = ds_list_create();
 scr_quiz_list(erosion_experiment_case);
+
+scr_quiz_question(enum_question_type.multi, 
+"In our _____, we found out that the soil in forests had a higher topsoil depth and soil compaction.", 
+["hypothesis",
+"procedure",
+"background research",
+"None of the above"], 
+2);
+
+scr_quiz_question(enum_question_type.multi, 
+"We set up an experiment. Our ______ was that planting more vegetation around the fields would lower soil erosion.", 
+["hypothesis",
+"procedure",
+"background research",
+"None of the above"], 
+0);
+
+scr_quiz_question(enum_question_type.multi, 
+"We set up a step-by-step ______ for doing the experiment.", 
+["hypothesis",
+"procedure",
+"background research",
+"None of the above"], 
+1);
+
+scr_quiz_question(enum_question_type.multi, 
+"We made _____ different square patches. Each patch was filled with soil.", 
+["one",
+"two",
+"three",
+"None of the above"], 
+1);
+
+scr_quiz_question(enum_question_type.multi, 
+"We planted crops in both patches. The difference was how much _______ there was in each patch.", 
+["earthworms",
+"soil",
+"vegetation",
+"None of the above"], 
+2);
+
+scr_quiz_question(enum_question_type.multi, 
+"The ____ patch had no vegetation planted around it. The ____ patch had vegetation like big and small trees planted around it.", 
+["first; second",
+"second; first"], 
+0);
+
+scr_quiz_question(enum_question_type.multi, 
+"Over 4 weeks, we measured the ______ in each patch and compared the results at the end.", 
+["topsoil depth",
+"crop growth",
+"soil compaction"
+"All of the above"], 
+3);
+
+scr_quiz_question(enum_question_type.evidence_multi, 
+"From our data ____, we found that the patch with vegetation had higher plant growth and soil depth than the patch with no vegetation.", 
+["analysis",
+"procedure",
+"hypothesis"
+"None of the above"], 
+0);
+
+scr_quiz_question(enum_question_type.multi, 
+"We came to the _____ that planting more vegetation around the fields does lower soil erosion.", 
+["hypothesis",
+"conclusion",
+"background research"
+"None of the above"], 
+[enum_evi_type.evidence2, 0]); //EVIDENCE 2 IS RESERVED FOR THE EXPERIMENT DATA RESULTS
 
 //END OF EROSION EXPERIMENT CASE QUIZ QUESTIONS
 scr_dia_line("filler", obj_npc_chieftain); 
