@@ -19,7 +19,8 @@
         "3b11e7e8-eae1-4d68-ab30-d02ce84d6e12",
         "763d8916-937d-468d-b992-4381a1d945fa",
         "7cad8377-79ae-4919-8875-9d5e6df26c3b",
-        "5045fd47-0be6-4f6c-8e2b-5dd893a34316"
+        "5045fd47-0be6-4f6c-8e2b-5dd893a34316",
+        "ed1b8a3a-3143-4869-a309-b8c4a59d707a"
     ],
     "filterType": "GMObject",
     "folderName": "Tools",

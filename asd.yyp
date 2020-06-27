@@ -327,6 +327,14 @@
             }
         },
         {
+            "Key": "0da5fdb0-9064-45fc-b9b1-62c1e239616c",
+            "Value": {
+                "id": "babb57e5-15e0-4d29-9945-364fc29f29fc",
+                "resourcePath": "sprites\/spr_new_measuring_stick\/spr_new_measuring_stick.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0e0a68c5-5fbe-4ac2-800a-4f2144f69c77",
             "Value": {
                 "id": "a7565272-cab0-43e4-8897-bab50e9bf5a6",
@@ -1764,6 +1772,14 @@
                 "id": "00f2438d-b560-4f98-8eb0-7a4eb6c0deff",
                 "resourcePath": "objects\/obj_intro\/obj_intro.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "49f550d5-35af-4686-bd1b-627b4d79d06a",
+            "Value": {
+                "id": "f899d892-2c27-4724-818d-69f3c087fb7c",
+                "resourcePath": "sprites\/spr_sleeping_black_cat\/spr_sleeping_black_cat.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4055,6 +4071,14 @@
             }
         },
         {
+            "Key": "b1731e90-28f1-4fad-b7f4-80666a61429f",
+            "Value": {
+                "id": "d9cf21e6-5ab6-4409-a463-32e053348546",
+                "resourcePath": "objects\/obj_black_sleeping_cat\/obj_black_sleeping_cat.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b18b3812-b970-4d36-873e-a8d5e2c4c511",
             "Value": {
                 "id": "d7a9b1ce-d927-4a80-90e8-4f3b53fd8289",
@@ -5228,6 +5252,14 @@
                 "id": "519b147d-c029-49b5-b210-43561fa9bef1",
                 "resourcePath": "sprites\/spr_portrait_boy_neutral\/spr_portrait_boy_neutral.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ed1b8a3a-3143-4869-a309-b8c4a59d707a",
+            "Value": {
+                "id": "e8fbb8ee-a3ff-4cd5-8985-d7a94f121212",
+                "resourcePath": "objects\/obj_measuring_stick\/obj_measuring_stick.yy",
+                "resourceType": "GMObject"
             }
         },
         {
