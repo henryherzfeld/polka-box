@@ -2,131 +2,6 @@ event_inherited();
 
 /*QUIZ QUESTIONS*/
 
-//BEGINNING TUTORIAL QUIZ QUESTIONS
-beginning_tutorial_quiz_questions = ds_list_create();
-scr_quiz_list(beginning_tutorial_quiz_questions);
-
-scr_quiz_question(enum_question_type.multi, 
-"What did you find out?", 
-["They key fell down the toilet", "An animal might have taken the key", "You swallowed the key", "The key was dissolved by strong acid"], 
-1);
-scr_quiz_question_response("How did you find out?", 
-"Are you sure that's what happened?");
-
-scr_quiz_question(enum_question_type.multi, 
-"How did you find out?", 
-["There was some toilet paper on the desk", "There was a jar of acid on the desk", "There were some animal hairs on the desk", "There were some animal hairs on the dining table"], 
-2);
-scr_quiz_question_response(["But how do I know you're telling the truth?", 
-"I need to see evidence. Remember, showing evidence helps to support what you're saying.",
-"It makes it more likely for people to trust you."], 
-"Why don't you try a different answer?");
-
-
-scr_quiz_question(enum_question_type.evidence_multi, 
-"How did you find out?", 
-["There was some toilet paper on the desk", "There was a jar of acid on the desk", "There were some animal hairs on the desk", "There were some animal hairs on the dining table"], 
-[enum_evi_type.evidence2, 2]); 
-//EVIDENCE2 RESERVED FOR "ANIMAL HAIRS ON DESK" PHOTO EVIDENCE
-
-/* 
-Show message to player: "You can also use an item in the Notebook as a piece of evidence.")
-(SHOW TUTORIAL FOR CLICKING ON EVIDENCE SLOT IN QUIZ QUESTION USING MOUSE TO ACCESS NOTEBOOK, 
-CLICKING ON THE ITEM THEY WISH TO PRESENT, 
-AND CLICKING ON SUBMIT TO EXIT THE NOTEBOOK WITH THE ITEM SELECTED)
-
-(The player should be referenced to click on the evidence slot to access their Notebook. 
-The Notebook opens. 
-They then select the picture they took of the desk. 
-It attaches to the evidence slot.)
-*/
-scr_quiz_question_response(["Is that so? I wonder if…?"], 
-"You almost got it! Try again");
-//END OF BEGINNING TUTORIAL QUIZ QUESTIONS
-
-//CROPS APPEARANCE QUIZ QUESTIONS
-crops_appearance_quiz = ds_list_create();
-scr_quiz_list(crops_appearance_quiz);
-
-//END OF CROPS APPEARANCE QUIZ QUESTIONS
-
-//SOIL MOISTURE QUIZ QUESTIONS
-soil_moisture_quiz = ds_list_create();
-scr_quiz_list(soil_moisture_quiz);
-
-//END OF SOIL MOISTURE QUIZ QUESTIONS
-
-//TOPSOIL DEPTH QUIZ QUESTIONS
-topsoil_depth_quiz = ds_list_create();
-scr_quiz_list(topsoil_depth_quiz);
-
-//END OF TOPSOIL DEPTH QUIZ QUESTIONS
-
-//TOPSOIL RAIN EROSION QUIZ QUESTIONS
-topsoil_rain_erosion_quiz = ds_list_create();
-scr_quiz_list(topsoil_rain_erosion_quiz);
-
-//END OF TOPSOIL RAIN EROSION QUIZ QUESTIONS
-
-//EROSION EXPERIMENT TUTORIAL 1 QUIZ QUESTIONS
-erosion_experiment_tutorial_1 = ds_list_create();
-scr_quiz_list(erosion_experiment_tutorial_1);
-
-//END OF EROSION EXPERIMENT TUTORIAL 1 QUIZ QUESTIONS
-
-//EROSION EXPERIMENT TUTORIAL 2 QUIZ QUESTIONS
-erosion_experiment_tutorial_2 = ds_list_create();
-scr_quiz_list(erosion_experiment_tutorial_2);
-
-//END OF EROSION EXPERIMENT TUTORIAL 2 QUIZ QUESTIONS
-
-//EROSION EXPERIMENT TUTORIAL 3 QUIZ QUESTIONS
-erosion_experiment_tutorial_3 = ds_list_create();
-scr_quiz_list(erosion_experiment_tutorial_3);
-
-//END OF EROSION EXPERIMENT TUTORIAL 3 QUIZ QUESTIONS
-
-//EROSION EXPERIMENT TUTORIAL 4 QUIZ QUESTIONS
-erosion_experiment_tutorial_4 = ds_list_create();
-scr_quiz_list(erosion_experiment_tutorial_4);
-
-//END OF EROSION EXPERIMENT TUTORIAL 4 QUIZ QUESTIONS
-
-//EROSION EXPERIMENT TUTORIAL 5 QUIZ QUESTIONS
-erosion_experiment_tutorial_5 = ds_list_create();
-scr_quiz_list(erosion_experiment_tutorial_5);
-
-//END OF EROSION EXPERIMENT TUTORIAL 5 QUIZ QUESTIONS
-
-//EROSION EXPERIMENT TUTORIAL 6 QUIZ QUESTIONS
-erosion_experiment_tutorial_6 = ds_list_create();
-scr_quiz_list(erosion_experiment_tutorial_6);
-
-//END OF EROSION EXPERIMENT TUTORIAL 6 QUIZ QUESTIONS
-
-//EROSION EXPERIMENT 1 QUIZ QUESTIONS
-erosion_experiment_1 = ds_list_create();
-scr_quiz_list(erosion_experiment_1);
-
-//END OF EROSION EXPERIMENT 1 QUIZ QUESTIONS
-
-//EROSION EXPERIMENT 2 QUIZ QUESTIONS
-erosion_experiment_2 = ds_list_create();
-scr_quiz_list(erosion_experiment_2);
-
-//END OF EROSION EXPERIMENT 2 QUIZ QUESTIONS
-
-//EROSION INVESTIGATION CASE QUIZ QUESTIONS
-erosion_investigation_case = ds_list_create();
-scr_quiz_list(erosion_investigation_case);
-
-//END OF EROSION INVESTIGATION CASE QUIZ QUESTIONS
-
-//EROSION EXPERIMENT CASE QUIZ QUESTIONS
-erosion_experiment_case = ds_list_create();
-scr_quiz_list(erosion_experiment_case);
-
-//END OF EROSION EXPERIMENT CASE QUIZ QUESTIONS
 
 /* --------------------------------------------------------------------------------------------------------- */ 
 
@@ -215,6 +90,49 @@ CLICKING ON RETURN BUTTON USING MOUSE TO EXIT THE NOTEBOOK)
 (The player goes back to the Baron.)
 
 */
+
+
+//BEGINNING TUTORIAL QUIZ QUESTIONS
+beginning_tutorial_quiz_questions = ds_list_create();
+scr_quiz_list(beginning_tutorial_quiz_questions);
+
+scr_quiz_question(enum_question_type.multi, 
+"What did you find out?", 
+["They key fell down the toilet", "An animal might have taken the key", "You swallowed the key", "The key was dissolved by strong acid"], 
+1);
+scr_quiz_question_response("How did you find out?", 
+"Are you sure that's what happened?");
+
+scr_quiz_question(enum_question_type.multi, 
+"How did you find out?", 
+["There was some toilet paper on the desk", "There was a jar of acid on the desk", "There were some animal hairs on the desk", "There were some animal hairs on the dining table"], 
+2);
+scr_quiz_question_response(["But how do I know you're telling the truth?", 
+"I need to see evidence. Remember, showing evidence helps to support what you're saying.",
+"It makes it more likely for people to trust you."], 
+"Why don't you try a different answer?");
+
+
+scr_quiz_question(enum_question_type.evidence_multi, 
+"How did you find out?", 
+["There was some toilet paper on the desk", "There was a jar of acid on the desk", "There were some animal hairs on the desk", "There were some animal hairs on the dining table"], 
+[enum_evi_type.evidence2, 2]); 
+//EVIDENCE2 RESERVED FOR "ANIMAL HAIRS ON DESK" PHOTO EVIDENCE
+
+/* 
+Show message to player: "You can also use an item in the Notebook as a piece of evidence.")
+(SHOW TUTORIAL FOR CLICKING ON EVIDENCE SLOT IN QUIZ QUESTION USING MOUSE TO ACCESS NOTEBOOK, 
+CLICKING ON THE ITEM THEY WISH TO PRESENT, 
+AND CLICKING ON SUBMIT TO EXIT THE NOTEBOOK WITH THE ITEM SELECTED)
+
+(The player should be referenced to click on the evidence slot to access their Notebook. 
+The Notebook opens. 
+They then select the picture they took of the desk. 
+It attaches to the evidence slot.)
+*/
+scr_quiz_question_response(["Is that so? I wonder if…?"], 
+"You almost got it! Try again");
+//END OF BEGINNING TUTORIAL QUIZ QUESTIONS
 
 scr_dia_line_quiz(beginning_tutorial_quiz_questions, obj_npc_baron);
 scr_dia_line("Aha, excellent work! You just finished your first Quest investigation!", obj_npc_baron);
@@ -425,6 +343,14 @@ THE NOTEBOOK ICON FLASHES RED FOR 3 SECONDS
 
 //VILLY POPPY DIALOGUE
 scr_dia_segment(text, "GREET");
+scr_dia_line("So what did you find?", obj_npc_poppy); 
+
+//CROPS APPEARANCE QUIZ QUESTIONS
+crops_appearance_quiz = ds_list_create();
+scr_quiz_list(crops_appearance_quiz);
+
+//END OF CROPS APPEARANCE QUIZ QUESTIONS
+
 scr_dia_line_quiz(crops_appearance_quiz, obj_npc_poppy); 
 //QUIZ WHERE THEY HAVE TO ATTACH PHOTO EVIDENCE ABOUT HOW THE CROPS LOOKS
 
@@ -463,6 +389,14 @@ THE NOTEBOOK ICON FLASHES RED FOR 3 SECONDS
 
 //VILLY POPPY DIALOGUE
 scr_dia_segment(text, "GREET");
+scr_dia_line("So what did you find out?", obj_npc_poppy); 
+
+//SOIL MOISTURE QUIZ QUESTIONS
+soil_moisture_quiz = ds_list_create();
+scr_quiz_list(soil_moisture_quiz);
+
+//END OF SOIL MOISTURE QUIZ QUESTIONS
+
 //QUIZ WHERE THEY HAVE TO ATTACH TABLE EVIDENCE ABOUT HOW THE SOIL MOISTURE LEVELS IN THE CROPS ARE
 scr_dia_line_quiz(soil_moisture_quiz, obj_npc_poppy); 
 
@@ -499,6 +433,13 @@ THE NOTEBOOK ICON FLASHES RED FOR 3 SECONDS
 
 //VILLY POPPY DIALOGUE
 scr_dia_segment(text, "GREET");
+
+//TOPSOIL DEPTH QUIZ QUESTIONS
+topsoil_depth_quiz = ds_list_create();
+scr_quiz_list(topsoil_depth_quiz);
+
+//END OF TOPSOIL DEPTH QUIZ QUESTIONS
+
 //QUIZ WHERE THEY HAVE TO ATTACH TABLE EVIDENCE ABOUT HOW DEEP THE TOPSOIL LEVELS ARE
 scr_dia_line_quiz(topsoil_depth_quiz, obj_npc_poppy); 
 
@@ -553,6 +494,13 @@ THE NOTEBOOK ICON FLASHES RED FOR 3 SECONDS
 
 //VILLY POPPY DIALOGUE
 scr_dia_segment(text, "GREET");
+
+//TOPSOIL RAIN EROSION QUIZ QUESTIONS
+topsoil_rain_erosion_quiz = ds_list_create();
+scr_quiz_list(topsoil_rain_erosion_quiz);
+
+//END OF TOPSOIL RAIN EROSION QUIZ QUESTIONS
+
 //QUIZ WHERE THEY HAVE TO ATTACH PHOTO EVIDENCE ABOUT HOW THE TOPSOIL WAS GETTING ERODED BY WATER
 scr_dia_line_quiz(topsoil_rain_erosion_quiz, obj_npc_poppy); 
 
@@ -590,6 +538,14 @@ scr_dia_line("Experimental Research is all about testing something you want to f
 scr_dia_line("Say your friend runs a lemonade stand. He wants to add honey instead of sugar to lemonade because he thinks it'll make the lemonade taste better.", obj_npc_baron);
 scr_dia_line("He asks you for money so that he can buy enough honey to use in all his lemonades.", obj_npc_baron);
 
+
+//EROSION EXPERIMENT TUTORIAL 1 QUIZ QUESTIONS
+erosion_experiment_tutorial_1 = ds_list_create();
+scr_quiz_list(erosion_experiment_tutorial_1);
+
+//END OF EROSION EXPERIMENT TUTORIAL 1 QUIZ QUESTIONS
+
+scr_dia_line("filler", baron);
 //QUIZ QUESTION: (MC) The first question you'd have for him is: Why do you think honey will taste better than sugar in lemonade?
 scr_dia_line_quiz(erosion_experiment_tutorial_1, baron); 
 
@@ -597,17 +553,38 @@ scr_dia_line("You'd want to know where he got the idea from. He tells you an art
 scr_dia_line("But what if people don't like honey? What if his customers think that lemonade tastes good with sugar and not with honey?", obj_npc_baron);
 scr_dia_line("Then it means your friend wasted a lot of money. And you'll trust your friend less with your money.", obj_npc_baron);
 
+//EROSION EXPERIMENT TUTORIAL 2 QUIZ QUESTIONS
+erosion_experiment_tutorial_2 = ds_list_create();
+scr_quiz_list(erosion_experiment_tutorial_2);
+
+//END OF EROSION EXPERIMENT TUTORIAL 2 QUIZ QUESTIONS
+
+scr_dia_line("filler", baron);
 //QUIZ QUESTION: (MC) So then you'd ask him: Have any of your customers tried your lemonade with honey instead of sugar?
 scr_dia_line_quiz(erosion_experiment_tutorial_2, baron);
 
 scr_dia_line("You'd want your friend to try this out with a little honey before he goes out and buys a whole bunch of honey. So your friend sets up an experiment.", obj_npc_baron);
 
+//EROSION EXPERIMENT TUTORIAL 3 QUIZ QUESTIONS
+erosion_experiment_tutorial_3 = ds_list_create();
+scr_quiz_list(erosion_experiment_tutorial_3);
+
+//END OF EROSION EXPERIMENT TUTORIAL 3 QUIZ QUESTIONS
+
+scr_dia_line("filler", baron);
 //QUIZ QUESTION: (MC) Then you'd ask: What are you trying to test?  
 scr_dia_line_quiz(erosion_experiment_tutorial_3, baron);
 
 scr_dia_line("You'd want to make sure your friend is actually testing the right thing. What is he looking for? He makes a hypothesis.", obj_npc_baron);
 scr_dia_line("His hypothesis is that adding honey instead of sugar to lemonade will make people like it more.", obj_npc_baron);
 
+//EROSION EXPERIMENT TUTORIAL 4 QUIZ QUESTIONS
+erosion_experiment_tutorial_4 = ds_list_create();
+scr_quiz_list(erosion_experiment_tutorial_4);
+
+//END OF EROSION EXPERIMENT TUTORIAL 4 QUIZ QUESTIONS
+
+scr_dia_line("filler", baron);
 //QUIZ QUESTION: (MC) You'd then ask him: How will you test your hypothesis?
 scr_dia_line_quiz(erosion_experiment_tutorial_4, baron);
 
@@ -616,12 +593,26 @@ scr_dia_line("He has two groups. He will give half of his customers lemonade wit
 scr_dia_line("He will give the other half of his customers the lemonade with honey, but without sugar. This is his second group.", obj_npc_baron);
 scr_dia_line("He asks each customer to give a rating, from 1-10, on how much they liked his lemonade. Then he adds up the ratings from each group.", obj_npc_baron);
 
+//EROSION EXPERIMENT TUTORIAL 5 QUIZ QUESTIONS
+erosion_experiment_tutorial_5 = ds_list_create();
+scr_quiz_list(erosion_experiment_tutorial_5);
+
+//END OF EROSION EXPERIMENT TUTORIAL 5 QUIZ QUESTIONS
+
+scr_dia_line("filler", baron);
 //QUIZ QUESTION: (MC) You will then ask him: What did you find out?
 scr_dia_line_quiz(erosion_experiment_tutorial_5, baron);
 
 scr_dia_line("You will want to know what results your friend found. Was the honey a success? Or should he stick with plain sugar? He does an analysis of the ratings from each group.", obj_npc_baron);
 scr_dia_line("His analysis found that the total sum of ratings from the first group was 25. The total sum of ratings from the second group was 45.", obj_npc_baron);
 
+//EROSION EXPERIMENT TUTORIAL 6 QUIZ QUESTIONS
+erosion_experiment_tutorial_6 = ds_list_create();
+scr_quiz_list(erosion_experiment_tutorial_6);
+
+//END OF EROSION EXPERIMENT TUTORIAL 6 QUIZ QUESTIONS
+
+scr_dia_line("filler", baron);
 //QUIZ QUESTION: (MC) You'll then ask: What do you decide?
 scr_dia_line_quiz(erosion_experiment_tutorial_6, baron);
 
@@ -660,6 +651,13 @@ scr_dia_line("The soil compaction in the forest was 180 psi, while the soil comp
 scr_dia_line("We noticed that the forest has more vegetation, like trees, compared to our farm fields.", obj_npc_weeraway);
 scr_dia_line("We should go and get money from the council to plant more trees and other vegetation around the farmland. What do you think?", obj_npc_weeraway);
 
+//EROSION EXPERIMENT 1 QUIZ QUESTIONS
+erosion_experiment_1 = ds_list_create();
+scr_quiz_list(erosion_experiment_1);
+
+//END OF EROSION EXPERIMENT 1 QUIZ QUESTIONS
+
+scr_dia_line("filler", obj_npc_weeraway);
 //QUIZ QUESTIONS: EROSION EXPERIMENT PART 1
 scr_dia_line_quiz(erosion_experiment_1, obj_npc_weeraway);
 
@@ -668,6 +666,13 @@ scr_dia_line("We will make two different square patches. Each patch will be fill
 scr_dia_line("The difference will be how much vegetation there is in each patch. The first patch will have no vegetation planted around it. It's just like what we have right now in the fields.", obj_npc_weeraway);
 scr_dia_line("The second patch will have vegetation like big and small trees planted around it. Over 4 weeks, we'll measure the soil depth, soil compaction, and crop growth in each patch and compare the results at the end. ", obj_npc_weeraway);
 
+//EROSION EXPERIMENT 2 QUIZ QUESTIONS
+erosion_experiment_2 = ds_list_create();
+scr_quiz_list(erosion_experiment_2);
+
+//END OF EROSION EXPERIMENT 2 QUIZ QUESTIONS
+
+scr_dia_line("filler", obj_npc_weeraway);
 //QUIZ QUESTIONS: EROSION EXPERIMENT PART 2
 scr_dia_line_quiz(erosion_experiment_2, obj_npc_weeraway);
 
@@ -708,12 +713,25 @@ scr_dia_line("Present your case!", obj_npc_chieftain);
 scr_dia_line("We found out that the farmer's crops are dying because the soil they need in order to grow the crops is being washed away by rainwater.", polka);
 scr_dia_line("To understand why the crops were dying, we first had to understand what crops need to live.", polka);
 
+//EROSION INVESTIGATION CASE QUIZ QUESTIONS
+erosion_investigation_case = ds_list_create();
+scr_quiz_list(erosion_investigation_case);
+
+//END OF EROSION INVESTIGATION CASE QUIZ QUESTIONS
+
+scr_dia_line("filler", obj_npc_chieftain); 
 scr_dia_line_quiz(erosion_investigation_case, obj_npc_chieftain); 
 
 scr_dia_line("That brings us to our conclusion: The farmer's crops are dying because the soil they need to grow is being eroded away by rainwater.", polka);
 
 scr_dia_line("We found out that planting more vegetation around the fields lowers soil erosion.", polka);
 
+//EROSION EXPERIMENT CASE QUIZ QUESTIONS
+erosion_experiment_case = ds_list_create();
+scr_quiz_list(erosion_experiment_case);
+
+//END OF EROSION EXPERIMENT CASE QUIZ QUESTIONS
+scr_dia_line("filler", obj_npc_chieftain); 
 scr_dia_line_quiz(erosion_experiment_case, obj_npc_chieftain);
 
 scr_dia_line("The court has decided to grant the farmers the funding needed to solve the erosion problem. Session adjourned!", obj_npc_chieftain);

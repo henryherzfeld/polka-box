@@ -2,6 +2,10 @@
 
 event_inherited();
 
+text = ds_map_create();
+
+scr_dia_segment(text, "GREET");
+//
 questions = ds_list_create();
 scr_quiz_list(questions);
 //scr_quiz_question(enum_question_type.evidence, noone, noone, enum_evi_type.evidence2);
@@ -11,22 +15,19 @@ scr_quiz_question(enum_question_type.evidence_multi, "Prompt evi_multi", ["Right
 scr_quiz_question_response("right! you're so awesome and funny", "wrong idiot");
 scr_quiz_question_sprite(sprite249);
 
-scr_quiz_question(enum_question_type.multi, "QUESTION PROMPT", ["Right", "Wrong", "Wrong",], 0);
-scr_quiz_question_response(["Correct!!!!!", "You are very smart."], noone);
+//scr_quiz_question(enum_question_type.multi, "QUESTION PROMPT", ["Right", "Wrong", "Wrong",], 0);
+//scr_quiz_question_response(["Correct!!!!!", "You are very smart."], noone);
 
-scr_quiz_question(enum_question_type.evidence_checkbox, "Prompt evi_checkbox", ["Right", "Wrong", "Right", "Right"], [enum_evi_type.evidence2, [0, 2, 3]]);
+//scr_quiz_question(enum_question_type.evidence_checkbox, "Prompt evi_checkbox", ["Right", "Wrong", "Right", "Right"], [enum_evi_type.evidence2, [0, 2, 3]]);
 
 scr_quiz_question(enum_question_type.checkbox, "Prompt checkbox", ["Right", "Wrong", "Right", "Right"], [0, 2, 3]);
-scr_quiz_question_response("right! you're so awesome and funny", "wrong idiot");
+//scr_quiz_question_response("Right!", "wrong idiot");
 
 //
 
-text = ds_map_create();
-
-scr_dia_segment(text, "GREET");
 scr_dia_line("Hey and hello....... ", polka);
-
 scr_dia_line_quiz(questions, obj_npc_test);
+
 scr_dia_line("Me an NPC", obj_npc_test);
 scr_dia_options("EXIT", "A1", "EXIT");
 
