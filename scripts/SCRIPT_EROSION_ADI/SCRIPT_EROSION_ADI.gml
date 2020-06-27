@@ -1,8 +1,5 @@
 event_inherited();
 
-/*QUIZ QUESTIONS*/
-
-
 /* --------------------------------------------------------------------------------------------------------- */ 
 
 /*
@@ -134,6 +131,7 @@ scr_quiz_question_response(["Is that so? I wonder if…?"],
 "You almost got it! Try again");
 //END OF BEGINNING TUTORIAL QUIZ QUESTIONS
 
+scr_dia_line("filler", obj_npc_baron);
 scr_dia_line_quiz(beginning_tutorial_quiz_questions, obj_npc_baron);
 scr_dia_line("Aha, excellent work! You just finished your first Quest investigation!", obj_npc_baron);
 scr_dia_line("I'm confident that you'll do great out there!", obj_npc_baron);
@@ -345,16 +343,27 @@ THE NOTEBOOK ICON FLASHES RED FOR 3 SECONDS
 scr_dia_segment(text, "GREET");
 scr_dia_line("So what did you find?", obj_npc_poppy); 
 
+scr_dia_line("filler", obj_npc_poppy);
 //CROPS APPEARANCE QUIZ QUESTIONS
 crops_appearance_quiz = ds_list_create();
 scr_quiz_list(crops_appearance_quiz);
 
+scr_quiz_question(enum_question_type.multi, 
+"The farmer's crops ____ getting enough nutrients.", 
+["Are", "Are not"], 
+1);
+scr_quiz_question_response("Really? How did you find out?", noone);
+
+scr_quiz_question(enum_question_type.evidence_checkbox, 
+"Their leaves look",
+["Dry", "Brown", "Wilting", "Strong", "Green", "Healthy"],
+[enum_evi_type.evidence1,[0,1,2]]); //RESERVED EVIDENCE 1 FOR CROP APPEARANCE PHOTO EVIDENCE
+scr_quiz_question_response("The plants are getting enough air and sunlight. The sun has been bright.", noone);
 //END OF CROPS APPEARANCE QUIZ QUESTIONS
 
 scr_dia_line_quiz(crops_appearance_quiz, obj_npc_poppy); 
 //QUIZ WHERE THEY HAVE TO ATTACH PHOTO EVIDENCE ABOUT HOW THE CROPS LOOKS
 
-scr_dia_line("The plants are getting enough air and sunlight. The sun has been bright.", obj_npc_poppy);
 scr_dia_line("The air is plenty. Perhaps they’re not getting enough water?", obj_npc_poppy);
 scr_dia_line("You can tell from the soil moisture if a plant is getting enough.", obj_npc_poppy);
 
@@ -395,8 +404,27 @@ scr_dia_line("So what did you find out?", obj_npc_poppy);
 soil_moisture_quiz = ds_list_create();
 scr_quiz_list(soil_moisture_quiz);
 
+scr_quiz_question(enum_question_type.multi, 
+"The farmer's crops ____ getting enough water.", 
+["Are", "Are not"], 
+0);
+scr_quiz_question_response("How did you find out?", noone);
+
+scr_quiz_question(enum_question_type.evidence_multi, 
+"The soil moisture levels are between",
+["20-40 kpa", "50-60 kpa", "70-80 kpa"],
+[enum_evi_type.evidence1, 1]); //RESERVED EVIDENCE 1 FOR SOIL MOISTURE TABLE EVIDENCE
+scr_quiz_question_response("The plants are getting enough air and sunlight. The sun has been bright.", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"They are _____ getting enough soil to grow properly",
+["likely", "likely not"],
+1); 
+scr_quiz_question_response("That's what I was thinking. Plants don't get enough nutrients when they don't have enough soil.", noone);
+
 //END OF SOIL MOISTURE QUIZ QUESTIONS
 
+scr_dia_line("filler", obj_npc_poppy);
 //QUIZ WHERE THEY HAVE TO ATTACH TABLE EVIDENCE ABOUT HOW THE SOIL MOISTURE LEVELS IN THE CROPS ARE
 scr_dia_line_quiz(soil_moisture_quiz, obj_npc_poppy); 
 
@@ -438,8 +466,21 @@ scr_dia_segment(text, "GREET");
 topsoil_depth_quiz = ds_list_create();
 scr_quiz_list(topsoil_depth_quiz);
 
+scr_quiz_question(enum_question_type.multi, 
+"The crops _____ getting enough topsoil.", 
+["Are", "Are not"], 
+0);
+scr_quiz_question_response("How did you find out?", noone);
+
+scr_quiz_question(enum_question_type.evidence_multi, 
+"The soil depth levels are between",
+["4-6 inches", "6-8 inches", "8-10 inches"],
+[enum_evi_type.evidence1, 0]); //RESERVED EVIDENCE 1 FOR TOPSOIL DEPTH LEVELS EVIDENCE
+scr_quiz_question_response("Now we got something!", noone);
+
 //END OF TOPSOIL DEPTH QUIZ QUESTIONS
 
+scr_dia_line("filler", obj_npc_poppy);
 //QUIZ WHERE THEY HAVE TO ATTACH TABLE EVIDENCE ABOUT HOW DEEP THE TOPSOIL LEVELS ARE
 scr_dia_line_quiz(topsoil_depth_quiz, obj_npc_poppy); 
 
@@ -499,12 +540,24 @@ scr_dia_segment(text, "GREET");
 topsoil_rain_erosion_quiz = ds_list_create();
 scr_quiz_list(topsoil_rain_erosion_quiz);
 
+scr_quiz_question(enum_question_type.multi, 
+"What did you find out", 
+["The topsoil is being moved by people", "The topsoil is getting grabbed by animals", "The rain outside is flooding people's homes", "The topsoil is being removed away by water"], 
+3);
+scr_quiz_question_response("How did you find out?", noone);
+
+scr_quiz_question(enum_question_type.evidence_multi, 
+"We saw the topsoil getting moved by _____ into a lake when it was raining outside",
+["Wind", "Water", "Animals", "Ice"],
+[enum_evi_type.evidence1, 1]); //RESERVED EVIDENCE 1 FOR SOIL-EROSION-WATER PHOTO EVIDENCE
+scr_quiz_question_response("This is wonderful, you figured it out!", noone);
+
 //END OF TOPSOIL RAIN EROSION QUIZ QUESTIONS
 
+scr_dia_line("filler", obj_npc_poppy);
 //QUIZ WHERE THEY HAVE TO ATTACH PHOTO EVIDENCE ABOUT HOW THE TOPSOIL WAS GETTING ERODED BY WATER
 scr_dia_line_quiz(topsoil_rain_erosion_quiz, obj_npc_poppy); 
 
-scr_dia_line("This is wonderful, you figured it out!", polka);
 scr_dia_line("So THAT’S how the topsoil got removed!", obj_npc_poppy);
 scr_dia_line("When soil or dirt is moved from one place to another by wind or water, it's called EROSION.", obj_npc_poppy);
 
@@ -543,11 +596,19 @@ scr_dia_line("He asks you for money so that he can buy enough honey to use in al
 erosion_experiment_tutorial_1 = ds_list_create();
 scr_quiz_list(erosion_experiment_tutorial_1);
 
+scr_quiz_question(enum_question_type.multi, 
+"The first question you'd have for him is:", 
+["What are you trying to test?", 
+"How much does honey cost?", 
+"How will you test your hypothesis?", 
+"Why do you think honey will taste better than sugar in lemonade?"], 
+3);
+scr_quiz_question_response("Exactly", noone);
 //END OF EROSION EXPERIMENT TUTORIAL 1 QUIZ QUESTIONS
 
-scr_dia_line("filler", baron);
+scr_dia_line("filler", obj_npc_baron);
 //QUIZ QUESTION: (MC) The first question you'd have for him is: Why do you think honey will taste better than sugar in lemonade?
-scr_dia_line_quiz(erosion_experiment_tutorial_1, baron); 
+scr_dia_line_quiz(erosion_experiment_tutorial_1, obj_npc_baron); 
 
 scr_dia_line("You'd want to know where he got the idea from. He tells you an article he read said that adding honey instead of sugar to lemonade makes it taste better. This is his background research.", obj_npc_baron);
 scr_dia_line("But what if people don't like honey? What if his customers think that lemonade tastes good with sugar and not with honey?", obj_npc_baron);
@@ -557,66 +618,84 @@ scr_dia_line("Then it means your friend wasted a lot of money. And you'll trust 
 erosion_experiment_tutorial_2 = ds_list_create();
 scr_quiz_list(erosion_experiment_tutorial_2);
 
+scr_quiz_question(enum_question_type.multi, 
+"So then you'd ask him:", 
+["What are you trying to test?", 
+"How much does honey cost?", 
+"Have any of your customers tried your lemonade with honey instead of sugar?", 
+"What is honey made of?"], 
+2);
+scr_quiz_question_response("You'd want your friend to try this out with a little honey before he goes out and buys a whole bunch of honey. So your friend sets up an experiment.", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"Then you'd ask:", 
+["What are you trying to test?", 
+"How much does honey weigh?", 
+"Have any of your customers tried your lemonade with honey instead of sugar?", 
+"What color is honey?"], 
+0);
+scr_quiz_question_response("You'd want to make sure your friend is actually testing the right thing. What is he looking for? He makes a hypothesis. His hypothesis is that adding honey instead of sugar to lemonade will make people like it more.", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"Then you'd ask:", 
+["What are you trying to test?", 
+"What does your experiment data show?", 
+"How will you test your hypothesis?", 
+"What color is honey?"], 
+2);
+scr_quiz_question_response("You'd want to know how your friend plans on carrying out the experiment. What steps will he take to find out? He sets up a procedure on what he'll be doing. ", noone);
+
 //END OF EROSION EXPERIMENT TUTORIAL 2 QUIZ QUESTIONS
 
-scr_dia_line("filler", baron);
-//QUIZ QUESTION: (MC) So then you'd ask him: Have any of your customers tried your lemonade with honey instead of sugar?
-scr_dia_line_quiz(erosion_experiment_tutorial_2, baron);
+scr_dia_line("filler", obj_npc_baron);
+scr_dia_line_quiz(erosion_experiment_tutorial_2, obj_npc_baron);
 
-scr_dia_line("You'd want your friend to try this out with a little honey before he goes out and buys a whole bunch of honey. So your friend sets up an experiment.", obj_npc_baron);
+scr_dia_line("He has two groups. He will give half of his customers lemonade with sugar, but without honey. This is his first group.", obj_npc_baron);
+scr_dia_line("He will give the other half of his customers the lemonade with honey, but without sugar. This is his second group.", obj_npc_baron);
+scr_dia_line("He asks each customer to give a rating, from 1-10, on how much they liked his lemonade. Then he adds up the ratings from each group.", obj_npc_baron);
 
 //EROSION EXPERIMENT TUTORIAL 3 QUIZ QUESTIONS
 erosion_experiment_tutorial_3 = ds_list_create();
 scr_quiz_list(erosion_experiment_tutorial_3);
 
+scr_quiz_question(enum_question_type.multi, 
+"Then you'd ask:", 
+["What color is honey?", 
+"What did you find out?", 
+"How will you test your hypothesis?", 
+"Do bears like honey?"], 
+1);
+scr_quiz_question_response("You will want to know what results your friend found. Was the honey a success?", noone);
+
 //END OF EROSION EXPERIMENT TUTORIAL 3 QUIZ QUESTIONS
 
-scr_dia_line("filler", baron);
-//QUIZ QUESTION: (MC) Then you'd ask: What are you trying to test?  
-scr_dia_line_quiz(erosion_experiment_tutorial_3, baron);
+scr_dia_line("filler", obj_npc_baron);
+scr_dia_line_quiz(erosion_experiment_tutorial_3, obj_npc_baron);
 
-scr_dia_line("You'd want to make sure your friend is actually testing the right thing. What is he looking for? He makes a hypothesis.", obj_npc_baron);
-scr_dia_line("His hypothesis is that adding honey instead of sugar to lemonade will make people like it more.", obj_npc_baron);
+scr_dia_line("Or should he stick with plain sugar? He does an analysis of the ratings from each group.", obj_npc_baron);
+scr_dia_line("His analysis found that the total sum of ratings from the first group was 25. The total sum of ratings from the second group was 45.", obj_npc_baron);
+//SHOW EXPERIMENT TUTORIAL CHART
 
 //EROSION EXPERIMENT TUTORIAL 4 QUIZ QUESTIONS
 erosion_experiment_tutorial_4 = ds_list_create();
 scr_quiz_list(erosion_experiment_tutorial_4);
 
+scr_quiz_question(enum_question_type.multi, 
+"Then you'd ask:", 
+["What do you decide?", 
+"What did you find out?", 
+"How will you test your hypothesis?", 
+"Do bears like honey?"], 
+0); //SHOW EXPERIMENT TUTORIAL CHART
+scr_quiz_question_response("Your friend has to make a final decision. He comes up with a conclusion: adding honey instead of sugar to lemonade makes customers like it more.", noone);
+
 //END OF EROSION EXPERIMENT TUTORIAL 4 QUIZ QUESTIONS
 
-scr_dia_line("filler", baron);
+scr_dia_line("filler", obj_npc_baron);
 //QUIZ QUESTION: (MC) You'd then ask him: How will you test your hypothesis?
-scr_dia_line_quiz(erosion_experiment_tutorial_4, baron);
+scr_dia_line_quiz(erosion_experiment_tutorial_4, obj_npc_baron);
 
-scr_dia_line("You'd want to know how your friend plans on carrying out the experiment. What steps will he take to find out? He sets up a procedure on what he'll be doing.", obj_npc_baron);
-scr_dia_line("He has two groups. He will give half of his customers lemonade with sugar, but without honey. This is his first group.", obj_npc_baron);
-scr_dia_line("He will give the other half of his customers the lemonade with honey, but without sugar. This is his second group.", obj_npc_baron);
-scr_dia_line("He asks each customer to give a rating, from 1-10, on how much they liked his lemonade. Then he adds up the ratings from each group.", obj_npc_baron);
-
-//EROSION EXPERIMENT TUTORIAL 5 QUIZ QUESTIONS
-erosion_experiment_tutorial_5 = ds_list_create();
-scr_quiz_list(erosion_experiment_tutorial_5);
-
-//END OF EROSION EXPERIMENT TUTORIAL 5 QUIZ QUESTIONS
-
-scr_dia_line("filler", baron);
-//QUIZ QUESTION: (MC) You will then ask him: What did you find out?
-scr_dia_line_quiz(erosion_experiment_tutorial_5, baron);
-
-scr_dia_line("You will want to know what results your friend found. Was the honey a success? Or should he stick with plain sugar? He does an analysis of the ratings from each group.", obj_npc_baron);
-scr_dia_line("His analysis found that the total sum of ratings from the first group was 25. The total sum of ratings from the second group was 45.", obj_npc_baron);
-
-//EROSION EXPERIMENT TUTORIAL 6 QUIZ QUESTIONS
-erosion_experiment_tutorial_6 = ds_list_create();
-scr_quiz_list(erosion_experiment_tutorial_6);
-
-//END OF EROSION EXPERIMENT TUTORIAL 6 QUIZ QUESTIONS
-
-scr_dia_line("filler", baron);
-//QUIZ QUESTION: (MC) You'll then ask: What do you decide?
-scr_dia_line_quiz(erosion_experiment_tutorial_6, baron);
-
-scr_dia_line("Your friend has to make a final decision. He comes up with a conclusion: adding honey instead of sugar to lemonade makes customers like it more. So he decides to go and buy more honey.", obj_npc_baron);
+scr_dia_line("So he decides to go and buy more honey.", obj_npc_baron);
 scr_dia_line("Now that your friend has shown you the evidence, you can now trust him more. You give him the money needed to buy more honey.", obj_npc_baron);
 scr_dia_line("And that's all there is to an experiment! Now let's see you with the real deal!", obj_npc_baron);
 
@@ -655,13 +734,72 @@ scr_dia_line("We should go and get money from the council to plant more trees an
 erosion_experiment_1 = ds_list_create();
 scr_quiz_list(erosion_experiment_1);
 
+scr_quiz_question(enum_question_type.multi, 
+"What do you think?", 
+["Yeah, great idea", 
+"That's not the best idea"], 
+1);
+scr_quiz_question_response("What? Why not?", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"", 
+["People might not trust us later.",
+"We might be wasting money.",
+"We don't know for sure if it's the extra vegetation that helps the soil erode less in the forest.",
+"All of the above"], 
+3);
+scr_quiz_question_response("So what should we do?", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"What should we do?", 
+["Remove the vegetation in the forest and see if the soil erodes more",
+"Set up an experiment",
+"Put cameras around the forest and see if the vegetation stops erosion",
+"None of the above"], 
+1);
+scr_quiz_question_response("That's a good idea! Let's plant vegetation around crop fields and see if the soil erodes less. What next?", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"What's next", 
+["Make a hypothesis",
+"Start planting vegetation around the crop fields",
+"Collect data",
+"None of the above"], 
+0);
+scr_quiz_question_response("Why?", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"Why?", 
+["It explains what we're trying to find out.",
+"It gives direction to the experiment.",
+"A and B",
+"None of the above"], 
+2);
+scr_quiz_question_response("So our hypothesis is that we predict planting more vegetation around the crop fields will lower soil erosion. Now what?", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"Now what?", 
+["Analyze the data",
+"Start planting vegetation around the crop fields",
+"Set up a procedure to carry out the experiment.",
+"None of the above"], 
+2);
+scr_quiz_question_response("Why do we do that?", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"Why do we do that?", 
+["It lets others know what steps were taken to come up with the data.",
+"Without it, it will look like we came up with the data on our own without doing anything.",
+"It gives others a way to repeat our experiment",
+"All of the above"], 
+3);
+scr_quiz_question_response("I see, you're right. So here's what steps we'll take.", noone);
 //END OF EROSION EXPERIMENT 1 QUIZ QUESTIONS
 
 scr_dia_line("filler", obj_npc_weeraway);
 //QUIZ QUESTIONS: EROSION EXPERIMENT PART 1
 scr_dia_line_quiz(erosion_experiment_1, obj_npc_weeraway);
 
-scr_dia_line("I see, you're right. So here's what steps we'll take. ", obj_npc_weeraway);
 scr_dia_line("We will make two different square patches. Each patch will be filled with soil. We will plant crops in both patches.", obj_npc_weeraway);
 scr_dia_line("The difference will be how much vegetation there is in each patch. The first patch will have no vegetation planted around it. It's just like what we have right now in the fields.", obj_npc_weeraway);
 scr_dia_line("The second patch will have vegetation like big and small trees planted around it. Over 4 weeks, we'll measure the soil depth, soil compaction, and crop growth in each patch and compare the results at the end. ", obj_npc_weeraway);
@@ -670,13 +808,84 @@ scr_dia_line("The second patch will have vegetation like big and small trees pla
 erosion_experiment_2 = ds_list_create();
 scr_quiz_list(erosion_experiment_2);
 
+scr_quiz_question(enum_question_type.multi, 
+"What do you say we do now?", 
+["Repeat the experiment",
+"Make our case",
+"Show the data found from doing the experiment.",
+"None of the above"], 
+2);
+scr_quiz_question_response("What? We also have to show the data? Why does that matter?", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"Why does that matter?", 
+["It shows how we did the experiment",
+"It shows what results were found from the procedure",
+"It explains what we're trying to find out.",
+"None of the above"], 
+1);
+scr_quiz_question_response("Ok, good point. Here's the data we found after doing the experiment", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"From the analysis, I've found that planting more vegetation around crop fields does not lower the soil erosion.", 
+["No, there's a mistake.",
+"Yeah, that looks right.",], 
+0); //SHOW THE EROSION EXPERIMENT DATA TABLE
+scr_quiz_question_response("What do you mean? How?", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"The soil compaction in the patch surrounded by vegetation is ___ psi, while the soil compaction in the patch surrounded with no vegetation is ___ psi.", 
+["170; 80",
+"80; 170",
+"9.5; 4",
+"4; 9.5"], 
+0);
+scr_quiz_question_response("Which means that...", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"The soil is ___ compact in the soil patch surrounded by vegetation than in the one not surrounded by vegetation.", 
+["more",
+"less"], 
+0);
+scr_quiz_question_response("Ok", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"The soil depth in the patch surrounded by vegetation is __ inches, while the soil depth in the patch surrounded with no vegetation is __ inches.", 
+["170; 80",
+"80; 170",
+"9.5; 4",
+"4; 9.5"], 
+2);
+scr_quiz_question_response("Which means that...", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"There's a ____ topsoil depth in the soil patch not surrounded by vegetation than in the one surrounded by vegetation.", 
+["higher",
+"lower"], 
+1);
+scr_quiz_question_response("Ok", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"The plant growth in the patch surrounded by vegetation is ___ inches, while the plant growth in the patch surrounded with no vegetation is ___ inches.", 
+["0.2; 0.8",
+"0.2; 170",
+"9.5; 0.8",
+"0.8; 0.2"], 
+3);
+scr_quiz_question_response("Which means that...", noone);
+
+scr_quiz_question(enum_question_type.multi, 
+"There's _____ plant growth in the soil patch surrounded by vegetation than in the one not surrounded by vegetation.", 
+["higher",
+"lower"], 
+0);
+scr_quiz_question_response("This is great! That means we can conclude that planting vegetation around the crop fields can lower soil erosion.", noone);
+
 //END OF EROSION EXPERIMENT 2 QUIZ QUESTIONS
 
 scr_dia_line("filler", obj_npc_weeraway);
 //QUIZ QUESTIONS: EROSION EXPERIMENT PART 2
 scr_dia_line_quiz(erosion_experiment_2, obj_npc_weeraway);
-
-scr_dia_line("This is great! That means we can conclude that planting vegetation around the crop fields can lower soil erosion.", obj_npc_weeraway);
 
 scr_dia_options("EXIT", "FILLER");
 
@@ -717,9 +926,79 @@ scr_dia_line("To understand why the crops were dying, we first had to understand
 erosion_investigation_case = ds_list_create();
 scr_quiz_list(erosion_investigation_case);
 
+scr_quiz_question(enum_question_type.multi, 
+"To learn about this, we spoke with a ______ named Villy Poppy.", 
+["farmer",
+"gardener",
+"botanist",
+"chemist"], 
+2);
+
+scr_quiz_question(enum_question_type.checkbox,
+"We learned that plants need:", 
+["Air",
+"Sunlight",
+"Water",
+"Soil"],
+[0,1,2,3]);
+
+scr_quiz_question(enum_question_type.checkbox,
+"If a plant wasn't getting enough sunlight, it looked:", 
+["Yellow",
+"Strong",
+"Long",
+"Thin"],
+[0,2,3]);
+
+scr_quiz_question(enum_question_type.checkbox,
+"If a plant wasn't getting enough water, it looked:", 
+["Dry",
+"Brown",
+"Green",
+"Wilting"],
+[0,1,3]);
+
+scr_quiz_question(enum_question_type.checkbox,
+"If a plant wasn't getting enough soil, it looked:", 
+["Strong",
+"Brown",
+"Dry",
+"Wilting"],
+[1,2,3]);
+
+scr_quiz_question(enum_question_type.multi, 
+"We observed that the plants that weren't getting enough water or enough soil looked", 
+["Similar",
+"Different"], 
+0);
+
+scr_quiz_question(enum_question_type.multi, 
+"That's because these plants lacked ______.", 
+["Soda",
+"Nutrients",
+"Insects",
+"All of the above"], 
+0);
+
+scr_quiz_question(enum_question_type.evidence_checkbox,
+"After investigating the farmer's crops, we realized they looked", 
+["Wilting",
+"Brown",
+"Dry",
+"Green"],
+[enum_evi_type.evidence2, [0,1,2]]); //EVIDENCE 2 IS RESERVED FOR CROP APPEARANCE PHOTO EVIDENCE
+
+scr_quiz_question(enum_question_type.checkbox,
+"They either weren't getting enough", 
+["Water",
+"Air",
+"Sunlight",
+"Soil"],
+[0,3]);
+
 //END OF EROSION INVESTIGATION CASE QUIZ QUESTIONS
 
-scr_dia_line("filler", obj_npc_chieftain); 
+scr_dia_line("The court has noted the account given!", obj_npc_chieftain); 
 scr_dia_line_quiz(erosion_investigation_case, obj_npc_chieftain); 
 
 scr_dia_line("That brings us to our conclusion: The farmer's crops are dying because the soil they need to grow is being eroded away by rainwater.", polka);
