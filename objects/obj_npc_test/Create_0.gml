@@ -4,8 +4,8 @@ event_inherited();
 
 questions = ds_list_create();
 scr_quiz_list(questions);
-scr_quiz_question(enum_question_type.evidence, noone, noone, enum_evi_type.evidence2);
-scr_quiz_question_response("right! you're so awesome and funny", "wrong idiot");
+//scr_quiz_question(enum_question_type.evidence, noone, noone, enum_evi_type.evidence2);
+//scr_quiz_question_response("right! you're so awesome and funny", "wrong idiot");
 
 scr_quiz_question(enum_question_type.evidence_multi, "Prompt evi_multi", ["Righttttt ttttttt ttttttt", "Wronggggggggg gggggg gggggggggg", "Wronggggggggg gggggggg ggggggggggg"], [enum_evi_type.evidence2, 0]);
 scr_quiz_question_response("right! you're so awesome and funny", "wrong idiot");
@@ -26,7 +26,7 @@ text = ds_map_create();
 scr_dia_segment(text, "GREET");
 scr_dia_line("Hey and hello....... ", polka);
 
-//scr_dia_line_quiz(questions, obj_npc_test);
+scr_dia_line_quiz(questions, obj_npc_test);
 scr_dia_line("Me an NPC", obj_npc_test);
 scr_dia_options("EXIT", "A1", "EXIT");
 

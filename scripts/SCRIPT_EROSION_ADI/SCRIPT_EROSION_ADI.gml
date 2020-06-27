@@ -482,10 +482,130 @@ scr_dia_line("Thanks for all your help!", polka);
 
 /* --------------------------------------------------------------------------------------------------------- */ 
 
-/* EROSION QUEST EXPERIMENT SECTION */
+/* EROSION QUEST EXPERIMENT TUTORIAL */
 
 //They are now back in Polka's room with the Baron. 
 //The Baron will explain the purpose of doing an experiment and how to do one
 
 //BARON DIALOGUE
+scr_dia_segment(text, "GREET");
 
+scr_dia_line("Well done! You've gotten so far already!", obj_npc_baron);
+
+scr_dia_line("Now that we know what the root problem is, different people will come up with a solution.", obj_npc_baron);
+scr_dia_line("They want to get support so that they can carry out the solution for all the farm fields.", obj_npc_baron);
+scr_dia_line("To solve the problem, you will help the scientists plan and analyze an experiment.", obj_npc_baron);
+scr_dia_line("You look for clues that show the experiment was not well-performed. Or maybe something was said that should not have been said. Or maybe something was missing. ", obj_npc_baron);
+
+scr_dia_line("Experimental Research is a skill that's helpful for anyone. Not just scientists and researchers.", obj_npc_baron);
+scr_dia_line("Even some entrepreneurs can do it. An entrepreneur is somebody who runs a business and sells things.", obj_npc_baron);
+scr_dia_line("Experimental Research is all about testing something you want to find out if it's true.", obj_npc_baron);
+scr_dia_line("Say your friend runs a lemonade stand. He wants to add honey instead of sugar to lemonade because he thinks it'll make the lemonade taste better.", obj_npc_baron);
+scr_dia_line("He asks you for money so that he can buy enough honey to use in all his lemonades.", obj_npc_baron);
+
+//QUIZ QUESTION: (MC) The first question you'd have for him is: Why do you think honey will taste better than sugar in lemonade?
+
+scr_dia_line("You'd want to know where he got the idea from. He tells you an article he read said that adding honey instead of sugar to lemonade makes it taste better. This is his background research.", obj_npc_baron);
+scr_dia_line("But what if people don't like honey? What if his customers think that lemonade tastes good with sugar and not with honey?", obj_npc_baron);
+scr_dia_line("Then it means your friend wasted a lot of money. And you'll trust your friend less with your money.", obj_npc_baron);
+
+//QUIZ QUESTION: (MC) So then you'd ask him: Have any of your customers tried your lemonade with honey instead of sugar?
+
+scr_dia_line("You'd want your friend to try this out with a little honey before he goes out and buys a whole bunch of honey. So your friend sets up an experiment.", obj_npc_baron);
+
+//QUIZ QUESTION: (MC) Then you'd ask: What are you trying to test?  
+
+scr_dia_line("You'd want to make sure your friend is actually testing the right thing. What is he looking for? He makes a hypothesis.", obj_npc_baron);
+scr_dia_line("His hypothesis is that adding honey instead of sugar to lemonade will make people like it more.", obj_npc_baron);
+
+//QUIZ QUESTION: (MC) You'd then ask him: How will you test your hypothesis?
+
+scr_dia_line("You'd want to know how your friend plans on carrying out the experiment. What steps will he take to find out? He sets up a procedure on what he'll be doing.", obj_npc_baron);
+scr_dia_line("He has two groups. He will give half of his customers lemonade with sugar, but without honey. This is his first group.", obj_npc_baron);
+scr_dia_line("He will give the other half of his customers the lemonade with honey, but without sugar. This is his second group.", obj_npc_baron);
+scr_dia_line("He asks each customer to give a rating, from 1-10, on how much they liked his lemonade. Then he adds up the ratings from each group.", obj_npc_baron);
+
+//QUIZ QUESTION: (MC) You will then ask him: What did you find out?
+
+scr_dia_line("You will want to know what results your friend found. Was the honey a success? Or should he stick with plain sugar? He does an analysis of the ratings from each group.", obj_npc_baron);
+scr_dia_line("His analysis found that the total sum of ratings from the first group was 25. The total sum of ratings from the second group was 45.", obj_npc_baron);
+
+//QUIZ QUESTION: (MC) You'll then ask: What do you decide?
+
+scr_dia_line("Your friend has to make a final decision. He comes up with a conclusion: adding honey instead of sugar to lemonade makes customers like it more. So he decides to go and buy more honey.", obj_npc_baron);
+scr_dia_line("Now that your friend has shown you the evidence, you can now trust him more. You give him the money needed to buy more honey.", obj_npc_baron);
+scr_dia_line("And that's all there is to an experiment! Now let's see you with the real deal!", obj_npc_baron);
+
+scr_dia_options("EXIT", "FILLER");
+
+scr_dia_segment(text, "EXIT");
+scr_dia_line("Thanks!", polka);
+
+//END OF EXPERIMENT TUTORIAL
+
+/* --------------------------------------------------------------------------------------------------------- */ 
+
+/* EROSION QUEST EXPERIMENT SECTION */
+
+//They are now back in Villy Weeraway's room with the Weeraway. 
+
+/*
+The player reads a narrative on how the experiment was performed. 
+They look for clues that show the experiment was not well-performed, that something was stated that should not have been stated, or that something was missing.
+
+The farmer tells Polka what they found about erosion and its relation to vegetation planted around soil. 
+The farmer also explains to Polka how they figured this out. 
+(background research)
+*/
+
+//VILLY WEERAWAY DIALOGUE
+
+scr_dia_line("After learning that the soil in the fields was being eroded by water, we looked for places where soil eroded less. We checked out the Gumdrop Forest, which has trees planted in soil.", obj_npc_weeraway);
+scr_dia_line("We used a tape measure to find the topsoil depth in the forest. We found about 8-10 inches of topsoil.", obj_npc_weeraway);
+scr_dia_line("We also used a soil penetrometer, which is used to find the soil compaction. The more compact soil is, the harder it is for it to erode. The more psi something has, the higher the compaction.", obj_npc_weeraway);
+scr_dia_line("The soil compaction in the forest was 180 psi, while the soil compaction in my fields was 80 psi!", obj_npc_weeraway);
+scr_dia_line("We noticed that the forest has more vegetation, like trees, compared to our farm fields.", obj_npc_weeraway);
+scr_dia_line("We should go and get money from the council to plant more trees and other vegetation around the farmland. What do you think?", obj_npc_weeraway);
+
+//QUIZ QUESTIONS: EROSION EXPERIMENT PART 1
+
+scr_dia_line("I see, you're right. So here's what steps we'll take. ", obj_npc_weeraway);
+scr_dia_line("We will make two different square patches. Each patch will be filled with soil. We will plant crops in both patches.", obj_npc_weeraway);
+scr_dia_line("The difference will be how much vegetation there is in each patch. The first patch will have no vegetation planted around it. It's just like what we have right now in the fields.", obj_npc_weeraway);
+scr_dia_line("The second patch will have vegetation like big and small trees planted around it. Over 4 weeks, we'll measure the soil depth, soil compaction, and crop growth in each patch and compare the results at the end. ", obj_npc_weeraway);
+
+//QUIZ QUESTIONS: EROSION EXPERIMENT PART 2
+
+scr_dia_line("This is great! That means we can conclude that planting vegetation around the crop fields can lower soil erosion.", obj_npc_weeraway);
+
+scr_dia_options("EXIT", "FILLER");
+
+scr_dia_segment(text, "EXIT");
+scr_dia_line("Now let's go present this as a case at the Courthouse!", polka);
+
+//END OF EXPERIMENT SECTION
+
+/* --------------------------------------------------------------------------------------------------------- */ 
+
+/* EROSION QUEST CASE SECTION */
+
+//They are in Villy Weeraway's room with Weeraway.
+//They head over to the courthouse
+
+/*
+A group of 6 investors are sitting in the courthouse
+
+The Baron is there as well, standing near the front.
+
+CUTSCENE:
+When Polka walks in, the Baron says:
+Now it's time for the case! 
+Take what you've learned and present the evidence! 
+You need to convince the investors to give enough money so that the erosion problem can be solved.
+
+The Chieftain is at the front. 
+The player walks over to them and initiates dialogue.
+*/
+
+//VILLY CHIEFTAIN DIALOGUE
+scr_dia_line("Present your case!", obj_npc_chieftain);
