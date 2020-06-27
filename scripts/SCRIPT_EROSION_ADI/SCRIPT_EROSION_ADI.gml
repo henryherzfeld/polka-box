@@ -113,7 +113,7 @@ scr_quiz_question(enum_question_type.evidence_multi,
 "How did you find out?", 
 ["There was some toilet paper on the desk", "There was a jar of acid on the desk", "There were some animal hairs on the desk", "There were some animal hairs on the dining table"], 
 [enum_evi_type.evidence2, 2]); 
-//EVIDENCE2 RESERVED FOR "ANIMAL HAIRS ON DESK" PHOTO EVIDENCE
+//EVIDENCE2 RESERVED FOR "ANIMAL HAIRS ON DESK" PHOTO EVIDENCE (spr_animal_hairs_on_desk_photo_evidence)
 
 /* 
 Show message to player: "You can also use an item in the Notebook as a piece of evidence.")
@@ -356,7 +356,8 @@ scr_quiz_question_response("Really? How did you find out?", noone);
 scr_quiz_question(enum_question_type.evidence_checkbox, 
 "Their leaves look",
 ["Dry", "Brown", "Wilting", "Strong", "Green", "Healthy"],
-[enum_evi_type.evidence2,[0,1,2]]); //RESERVED EVIDENCE 2 FOR CROP APPEARANCE PHOTO EVIDENCE
+[enum_evi_type.evidence2,[0,1,2]]); 
+//RESERVED EVIDENCE 2 FOR CROP APPEARANCE PHOTO EVIDENCE (spr_crop_appearance_fields_photo_evidence)
 scr_quiz_question_response("The plants are getting enough air and sunlight. The sun has been bright.", noone);
 //END OF CROPS APPEARANCE QUIZ QUESTIONS
 
@@ -412,7 +413,8 @@ scr_quiz_question_response("How did you find out?", noone);
 scr_quiz_question(enum_question_type.evidence_multi, 
 "The soil moisture levels are between",
 ["20-40 kpa", "50-60 kpa", "70-80 kpa"],
-[enum_evi_type.evidence1, 1]); //RESERVED EVIDENCE 1 FOR SOIL MOISTURE TABLE EVIDENCE
+[enum_evi_type.evidence1, 1]); 
+//RESERVED EVIDENCE 1 FOR SOIL MOISTURE TABLE EVIDENCE (spr_soil_moisture_table_evidence)
 scr_quiz_question_response("The plants are getting enough air and sunlight. The sun has been bright.", noone);
 
 scr_quiz_question(enum_question_type.multi, 
@@ -474,7 +476,8 @@ scr_quiz_question_response("How did you find out?", noone);
 scr_quiz_question(enum_question_type.evidence_multi, 
 "The soil depth levels are between",
 ["4-6 inches", "6-8 inches", "8-10 inches"],
-[enum_evi_type.evidence1, 0]); //RESERVED EVIDENCE 1 FOR TOPSOIL DEPTH LEVELS EVIDENCE
+[enum_evi_type.evidence1, 0]); 
+//RESERVED EVIDENCE 1 FOR TOPSOIL DEPTH LEVELS EVIDENCE (spr_topsoil_depth_evidence)
 scr_quiz_question_response("Now we got something!", noone);
 
 //END OF TOPSOIL DEPTH QUIZ QUESTIONS
@@ -548,7 +551,8 @@ scr_quiz_question_response("How did you find out?", noone);
 scr_quiz_question(enum_question_type.evidence_multi, 
 "We saw the topsoil getting moved by _____ into a lake when it was raining outside",
 ["Wind", "Water", "Animals", "Ice"],
-[enum_evi_type.evidence2, 1]); //RESERVED EVIDENCE 2 FOR SOIL-EROSION-WATER PHOTO EVIDENCE
+[enum_evi_type.evidence2, 1]); 
+//RESERVED EVIDENCE 2 FOR SOIL-EROSION-WATER PHOTO EVIDENCE (spr_soil_erosion_water_photo_evidence)
 scr_quiz_question_response("This is wonderful, you figured it out!", noone);
 
 //END OF TOPSOIL RAIN EROSION QUIZ QUESTIONS
@@ -672,7 +676,7 @@ scr_dia_line_quiz(erosion_experiment_tutorial_3, obj_npc_baron);
 
 scr_dia_line("Or should he stick with plain sugar? He does an analysis of the ratings from each group.", obj_npc_baron);
 scr_dia_line("His analysis found that the total sum of ratings from the first group was 25. The total sum of ratings from the second group was 45.", obj_npc_baron);
-//SHOW EXPERIMENT TUTORIAL TABLE
+scr_dia_line_sprite(spr_experiment_tutorial_table);
 
 //EROSION EXPERIMENT TUTORIAL 4 QUIZ QUESTIONS
 erosion_experiment_tutorial_4 = ds_list_create();
@@ -684,7 +688,9 @@ scr_quiz_question(enum_question_type.multi,
 "What did you find out?", 
 "How will you test your hypothesis?", 
 "Do bears like honey?"], 
-0); //SHOW EXPERIMENT TUTORIAL TABLE
+0); 
+scr_quiz_question_sprite(spr_experiment_tutorial_table); 
+//SHOW EXPERIMENT TUTORIAL TABLE
 scr_quiz_question_response("Your friend has to make a final decision. He comes up with a conclusion: adding honey instead of sugar to lemonade makes customers like it more.", noone);
 
 //END OF EROSION EXPERIMENT TUTORIAL 4 QUIZ QUESTIONS
@@ -828,7 +834,8 @@ scr_quiz_question(enum_question_type.multi,
 "From the analysis, I've found that planting more vegetation around crop fields does not lower the soil erosion.", 
 ["No, there's a mistake.",
 "Yeah, that looks right.",], 
-0); //SHOW THE EROSION EXPERIMENT DATA TABLE
+0); 
+scr_quiz_question_sprite(spr_erosion_experiment_table_evidence); //SHOW THE EROSION EXPERIMENT DATA TABLE
 scr_quiz_question_response("What do you mean? How?", noone);
 
 scr_quiz_question(enum_question_type.multi, 
@@ -984,7 +991,8 @@ scr_quiz_question(enum_question_type.evidence_checkbox,
 "Brown",
 "Dry",
 "Green"],
-[enum_evi_type.evidence2, [0,1,2]]); //EVIDENCE 2 IS RESERVED FOR CROP APPEARANCE PHOTO EVIDENCE
+[enum_evi_type.evidence2, [0,1,2]]); 
+//EVIDENCE 2 IS RESERVED FOR CROP APPEARANCE PHOTO EVIDENCE (spr_crop_appearance_fields_photo_evidence)
 
 scr_quiz_question(enum_question_type.checkbox,
 "They either weren't getting enough", 
@@ -1030,7 +1038,8 @@ scr_quiz_question(enum_question_type.evidence_multi,
 "50-60",
 "70-80",
 "None of the above"], 
-[enum_evi_type.evidence2, 1]); //EVIDENCE 2 IS RESERVED FOR THE SOIL MOISTURE TABLE
+[enum_evi_type.evidence2, 1]); 
+//EVIDENCE 2 IS RESERVED FOR THE SOIL MOISTURE TABLE (spr_soil_moisture_table_evidence)
 
 scr_quiz_question(enum_question_type.multi, 
 "We concluded that the soil ____ enough water", 
@@ -1068,7 +1077,8 @@ scr_quiz_question(enum_question_type.evidence_multi,
 "4-6",
 "8-10",
 "None of the above"], 
-[enum_evi_type.evidence2, 1]); //EVIDENCE 2 IS RESERVED FOR THE TOPSOIL DEPTH TABLE
+[enum_evi_type.evidence2, 1]); 
+//EVIDENCE 2 IS RESERVED FOR THE TOPSOIL DEPTH TABLE (spr_topsoil_depth_evidence)
 
 scr_quiz_question(enum_question_type.multi, 
 "We concluded that the crops _____ getting enough topsoil", 
@@ -1082,8 +1092,9 @@ scr_quiz_question(enum_question_type.evidence_multi,
 "raining",
 "hailing",
 "None of the above"], 
-[enum_evi_type.evidence2, 1]); //EVIDENCE 2 IS RESERVED FOR THE SOIL-EROSION-WATER PHOTO
-
+[enum_evi_type.evidence2, 1]); 
+//EVIDENCE 2 IS RESERVED FOR THE SOIL-EROSION-WATER PHOTO (spr_soil_erosion_water_photo_evidence)
+ 
 scr_quiz_question(enum_question_type.multi, 
 "When soil or rock is moved from one place to another by wind or water, it's called", 
 ["Weathering",
@@ -1172,7 +1183,8 @@ scr_quiz_question(enum_question_type.multi,
 "conclusion",
 "background research"
 "None of the above"], 
-[enum_evi_type.evidence2, 0]); //EVIDENCE 2 IS RESERVED FOR THE EROSION EXPERIMENT TABLE
+[enum_evi_type.evidence2, 0]); 
+//EVIDENCE 2 IS RESERVED FOR THE EROSION EXPERIMENT TABLE (spr_erosion_experiment_table_evidence)
 
 //END OF EROSION EXPERIMENT CASE QUIZ QUESTIONS
 scr_dia_line("The court has decided to grant the farmers the funding needed to solve the erosion problem. Session adjourned!", obj_npc_chieftain); 
