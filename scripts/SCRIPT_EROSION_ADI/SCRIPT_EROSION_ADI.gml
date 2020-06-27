@@ -30,23 +30,22 @@ The Quanta Baron is standing by Polka's bed. There's a cat snoozing on the side 
 
 //BARON DIALOGUE
 scr_dia_segment(text, "GREET");
-scr_dia_line("Good morning, young squire! Hope I didn't startle you.", obj_npc_baron); //baron 
+scr_dia_line("Good morning, young squire! Hope I didn't startle you.", obj_npc_baron); 
 scr_dia_line("All the other Quanta Knights are busy fixing the ship. You've been chosen to get back the missing Crystal pieces so that we can recreate the cure.", obj_npc_baron); //baron 
 scr_dia_line("When you crash landed in your spaceship, the Crystal of Inventa broke. The art of discovery has disappeared thanks to Virus and his henchmen.", obj_npc_baron); //baron 
-scr_dia_line("The henchmen live inside other Villy hosts throughout the land.", obj_npc_baron); //baron 
+scr_dia_line("The henchmen live inside other Villy hosts throughout the land.", obj_npc_baron);  
 scr_dia_line("To recreate the Crystal of Inventa, you will have to help bring advancements that make the world a better place to live in.", obj_npc_baron); //baron 
 scr_dia_line("Each problem you find, no matter how small or big, takes you on a quest. Each time you do a quest, you knock out a henchman of Virus and the Crystal gets another piece back.", obj_npc_baron); //baron 
 scr_dia_line("The Villies cooperate more with each other. Problems get solved. Society benefits from its advancements.", obj_npc_baron); //baron 
 scr_dia_line("When all the quests have been completed, Virus and his henchmen get defeated and the Crystal becomes whole.", obj_npc_baron); //baron 
-scr_dia_line("Navilla becomes a thriving planet once again.", obj_npc_baron); //baron 
+scr_dia_line("Navilla becomes a thriving planet once again.", obj_npc_baron); 
 scr_dia_line("The power from the Crystal can then be used to destroy the plague on our planet, Cosmo, and save its people.", obj_npc_baron); //baron 
 
-scr_dia_line("Now here's how you beat a quest!", obj_npc_baron); //baron 
+scr_dia_line("Now here's how you beat a quest!", obj_npc_baron); 
 scr_dia_line("In each quest, you have to ask questions, investigate, analyze clues, and come up with conclusions that determine the direction you take next.", obj_npc_baron); //baron 
-scr_dia_line("You keep doing this until you've reached the end of your quest.", obj_npc_baron); //baron 
-scr_dia_line("Are you ready? I think you can do it!", obj_npc_baron); //baron 
-
-scr_dia_line("Here's your first item, given to all budding Quanta Knights: a camera!", obj_npc_baron); //baron 
+scr_dia_line("You keep doing this until you've reached the end of your quest.", obj_npc_baron); 
+scr_dia_line("Are you ready? I think you can do it!", obj_npc_baron); 
+scr_dia_line("Here's your first item, given to all budding Quanta Knights: a camera!", obj_npc_baron);  
 //THE CAMERA ITEM IS NOW VISIBLE IN THE ITEM INVENTORY
 
 scr_dia_line("You can use it to make observations and take pictures of what you find.", obj_npc_baron); //baron 
@@ -58,9 +57,9 @@ The player goes and asks Baron a question
 
 scr_dia_line("Oh! I forgot to tell you. So, er, the key to the door is missing.", obj_npc_baron); //baron
 scr_dia_line("The last time I had it was when I was sitting at your desk. I went to drink some water.", obj_npc_baron); //baron 
-scr_dia_line("When I came back, the key was gone.", obj_npc_baron); //baron 
+scr_dia_line("When I came back, the key was gone.", obj_npc_baron); 
 scr_dia_line("If you have what it takes to be a Quanta Knight, you'll be able to figure out where it is.", obj_npc_baron); //baron 
-scr_dia_line("When you find any clue, tell me about it.", obj_npc_baron); //baron 
+scr_dia_line("When you find any clue, tell me about it.", obj_npc_baron); 
 
 /* Show objective at top of the screen:
 *** QUEST: get the key back ***
@@ -357,7 +356,7 @@ scr_quiz_question_response("Really? How did you find out?", noone);
 scr_quiz_question(enum_question_type.evidence_checkbox, 
 "Their leaves look",
 ["Dry", "Brown", "Wilting", "Strong", "Green", "Healthy"],
-[enum_evi_type.evidence1,[0,1,2]]); //RESERVED EVIDENCE 1 FOR CROP APPEARANCE PHOTO EVIDENCE
+[enum_evi_type.evidence2,[0,1,2]]); //RESERVED EVIDENCE 2 FOR CROP APPEARANCE PHOTO EVIDENCE
 scr_quiz_question_response("The plants are getting enough air and sunlight. The sun has been bright.", noone);
 //END OF CROPS APPEARANCE QUIZ QUESTIONS
 
@@ -549,7 +548,7 @@ scr_quiz_question_response("How did you find out?", noone);
 scr_quiz_question(enum_question_type.evidence_multi, 
 "We saw the topsoil getting moved by _____ into a lake when it was raining outside",
 ["Wind", "Water", "Animals", "Ice"],
-[enum_evi_type.evidence1, 1]); //RESERVED EVIDENCE 1 FOR SOIL-EROSION-WATER PHOTO EVIDENCE
+[enum_evi_type.evidence2, 1]); //RESERVED EVIDENCE 2 FOR SOIL-EROSION-WATER PHOTO EVIDENCE
 scr_quiz_question_response("This is wonderful, you figured it out!", noone);
 
 //END OF TOPSOIL RAIN EROSION QUIZ QUESTIONS
@@ -607,7 +606,6 @@ scr_quiz_question_response("Exactly", noone);
 //END OF EROSION EXPERIMENT TUTORIAL 1 QUIZ QUESTIONS
 
 scr_dia_line("filler", obj_npc_baron);
-//QUIZ QUESTION: (MC) The first question you'd have for him is: Why do you think honey will taste better than sugar in lemonade?
 scr_dia_line_quiz(erosion_experiment_tutorial_1, obj_npc_baron); 
 
 scr_dia_line("You'd want to know where he got the idea from. He tells you an article he read said that adding honey instead of sugar to lemonade makes it taste better. This is his background research.", obj_npc_baron);
@@ -674,7 +672,7 @@ scr_dia_line_quiz(erosion_experiment_tutorial_3, obj_npc_baron);
 
 scr_dia_line("Or should he stick with plain sugar? He does an analysis of the ratings from each group.", obj_npc_baron);
 scr_dia_line("His analysis found that the total sum of ratings from the first group was 25. The total sum of ratings from the second group was 45.", obj_npc_baron);
-//SHOW EXPERIMENT TUTORIAL CHART
+//SHOW EXPERIMENT TUTORIAL TABLE
 
 //EROSION EXPERIMENT TUTORIAL 4 QUIZ QUESTIONS
 erosion_experiment_tutorial_4 = ds_list_create();
@@ -686,7 +684,7 @@ scr_quiz_question(enum_question_type.multi,
 "What did you find out?", 
 "How will you test your hypothesis?", 
 "Do bears like honey?"], 
-0); //SHOW EXPERIMENT TUTORIAL CHART
+0); //SHOW EXPERIMENT TUTORIAL TABLE
 scr_quiz_question_response("Your friend has to make a final decision. He comes up with a conclusion: adding honey instead of sugar to lemonade makes customers like it more.", noone);
 
 //END OF EROSION EXPERIMENT TUTORIAL 4 QUIZ QUESTIONS
@@ -1174,10 +1172,12 @@ scr_quiz_question(enum_question_type.multi,
 "conclusion",
 "background research"
 "None of the above"], 
-[enum_evi_type.evidence2, 0]); //EVIDENCE 2 IS RESERVED FOR THE EXPERIMENT DATA RESULTS
+[enum_evi_type.evidence2, 0]); //EVIDENCE 2 IS RESERVED FOR THE EROSION EXPERIMENT TABLE
 
 //END OF EROSION EXPERIMENT CASE QUIZ QUESTIONS
-scr_dia_line("filler", obj_npc_chieftain); 
+scr_dia_line("The court has decided to grant the farmers the funding needed to solve the erosion problem. Session adjourned!", obj_npc_chieftain); 
 scr_dia_line_quiz(erosion_experiment_case, obj_npc_chieftain);
 
-scr_dia_line("The court has decided to grant the farmers the funding needed to solve the erosion problem. Session adjourned!", obj_npc_chieftain);
+/* END OF EROSION QUEST CASE SECTION*/
+
+/* --------------------------------------------------------------------------------------------------------- */ 
