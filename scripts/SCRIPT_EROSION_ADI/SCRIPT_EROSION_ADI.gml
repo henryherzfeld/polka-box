@@ -69,6 +69,7 @@ text = ds_map_create();
 Player wakes up
 The Quanta Baron is standing by Polka's bed. There's a cat snoozing on the side of the room.*/
 
+//BARON DIALOGUE
 scr_dia_segment(text, "GREET");
 scr_dia_line("Good morning, young squire! Hope I didn't startle you.", obj_npc_baron); //baron 
 scr_dia_line("All the other Quanta Knights are busy fixing the ship. You've been chosen to get back the missing Crystal pieces so that we can recreate the cure.", obj_npc_baron); //baron 
@@ -157,7 +158,7 @@ scr_dia_line("Thanks!", polka);
 
 /* --------------------------------------------------------------------------------------------------------- */ 
 
-/* EROSION QUEST */
+/* EROSION QUEST INVESTIGATION SECTION */
 
 //They arrive at a farm near the village. The townsfolk (Villies) are upset and are protesting with pitchforks outside the farm
 //(Polka approaches the Green Villy. A "talk" bubble appears.
@@ -266,14 +267,14 @@ scr_dia_options("C1", "C2", "C3", "FILLER");
 scr_dia_segment(text, "EXIT");
 scr_dia_line("I won't let you down!", polka);
 
-//VILLY POPPY DIALOGUE
-
 /* 
 This last sentence finishing triggers the next event: 
 the player can now view a new batch of dialogue choices when approaching the botanist
 
 (They visit Villy Poppy, the botanist)
 */
+
+//VILLY POPPY DIALOGUE
 
 //Dialogue Segment (A) 
 scr_dia_segment(text, "A1");
@@ -317,3 +318,174 @@ scr_dia_options("B1", "B2", "B3", "FILLER");
 
 scr_dia_segment(text, "EXIT");
 scr_dia_line("Thanks!", polka);
+
+/*
+They visit the farm fields
+
+They observe that the plants look dried. 
+They have wilted. They have brown leaves.
+
+THEY PULL OUT THE CAMERA
+THEY GO TO A SPOT IN THE FIELDS WHERE THEY SEE AN INDICATOR THAT THE CAMERA CAN BE USED
+THEY PRESS SPACE ON THE INDICATOR AREA WITH THE CAMERA
+
+THEY CAN SEE THE PHOTO OF THE DYING CROPS
+THE PHOTO GETS STORED IN THE NOTEBOOK. 
+THE NOTEBOOK ICON FLASHES RED FOR 3 SECONDS
+
+**1/1 CLUE FOUND**
+*/
+
+//VILLY POPPY DIALOGUE
+scr_dia_segment(text, "GREET");
+scr_dia_line_quiz(crops_appearance_quiz, obj_npc_poppy); 
+//QUIZ WHERE THEY HAVE TO ATTACH PHOTO EVIDENCE ABOUT HOW THE CROPS LOOKS
+
+scr_dia_line("The plants are getting enough air and sunlight. The sun has been bright.", obj_npc_poppy);
+scr_dia_line("The air is plenty. Perhaps they’re not getting enough water?", obj_npc_poppy);
+scr_dia_line("You can tell from the soil moisture if a plant is getting enough.", obj_npc_poppy);
+
+scr_dia_line("Plants grow best when our soil moisture is 50 to 60 kPa.", obj_npc_poppy);
+scr_dia_line("For measuring soil moisture, you would have to use a tool.", obj_npc_poppy);
+scr_dia_line("I might have one lying around that could help", obj_npc_poppy);
+
+scr_dia_options("EXIT", "FILLER");
+
+scr_dia_segment(text, "EXIT");
+scr_dia_line("Sounds good", polka);
+
+/*
+
+(They get the tensiometer from the tool chest.) 
+(They visit the farm fields. 
+The tensiometer should only work in a crop tile or a soil tile)
+(They measure the soil moisture levels in the farmer’s crop field)
+(They find soil moisture levels of 50 - 60 kpa.)
+
+THEY PULL OUT THE TENSIOMETER
+THEY GO TO A SPOT IN THE FIELDS WHERE THEY SEE AN INDICATOR THAT THE CAMERA CAN BE USED
+THEY PRESS SPACE ON THE INDICATOR AREA WITH THE TENSIOMETER
+
+THEY CAN SEE THE TABLE OF SOIL MOISTURE VALUES
+THE TABLE GETS STORED IN THE NOTEBOOK. 
+THE NOTEBOOK ICON FLASHES RED FOR 3 SECONDS
+
+**1/1 CLUE FOUND**
+
+*/
+
+//VILLY POPPY DIALOGUE
+scr_dia_segment(text, "GREET");
+//QUIZ WHERE THEY HAVE TO ATTACH TABLE EVIDENCE ABOUT HOW THE SOIL MOISTURE LEVELS IN THE CROPS ARE
+scr_dia_line_quiz(soil_moisture_quiz, obj_npc_poppy); 
+
+scr_dia_line("How much soil do plants need in order to grow?", polka);
+scr_dia_line("Topsoil is the top layer of soil for growing plants — like vegetables.", obj_npc_poppy);
+scr_dia_line("It holds all the nutrients that are super-important to plants.", obj_npc_poppy);
+
+scr_dia_line("About 8 - 10 inches of topsoil depth is good.", obj_npc_poppy);
+scr_dia_line("Less than that, and a plant is likely not getting enough nutrients.", obj_npc_poppy);
+ 
+scr_dia_line("You’ll also have to find some tool that helps you measure how deep the topsoil is.", obj_npc_poppy);
+
+scr_dia_options("EXIT", "FILLER");
+
+scr_dia_segment(text, "EXIT");
+scr_dia_line("Thanks!", polka);
+
+/* 
+(They collect the measuring tape from the tool chest.)
+(They return to the farm and they measure the level of topsoil. They shovel through the ground (since they must find topsoil depth). They use a measuring tape to measure the topsoil depth)
+(It is around 4-6 inches (which is below the normal)) 
+
+THEY PULL OUT THE MEASURING STICK
+THEY GO TO A SPOT IN THE FIELDS WHERE THEY SEE AN INDICATOR THAT THE STICK CAN BE USED
+THEY PRESS SPACE ON THE INDICATOR AREA WITH THE MEASURING STICK
+
+THEY CAN SEE THE TABLE OF TOPSOIL DEPTH VALUES
+THE TABLE GETS STORED IN THE NOTEBOOK. 
+THE NOTEBOOK ICON FLASHES RED FOR 3 SECONDS
+
+**1/1 CLUE FOUND**
+
+*/
+
+//VILLY POPPY DIALOGUE
+scr_dia_segment(text, "GREET");
+//QUIZ WHERE THEY HAVE TO ATTACH TABLE EVIDENCE ABOUT HOW DEEP THE TOPSOIL LEVELS ARE
+scr_dia_line_quiz(topsoil_depth_quiz, obj_npc_poppy); 
+
+scr_dia_line("Why is there not enough topsoil?", polka);
+scr_dia_line("I really don’t know! I wonder what Villy Weeraway has been up to.", obj_npc_poppy);
+scr_dia_line("But if you find anything, then be sure to let me know!", obj_npc_poppy);
+
+scr_dia_options("EXIT", "FILLER");
+
+scr_dia_segment(text, "EXIT");
+scr_dia_line("Will do!", polka);
+
+/* 
+Telling the botanist about the topsoil triggers the next event: 
+the player can now view a new batch of dialogue choices when approaching the farmer the next time
+
+(They talk to Villy Weeraway)
+
+*/
+
+//VILLY WEERAWAY DIALOGUE
+scr_dia_segment(text, "GREET");
+scr_dia_line("Why haven't you put enough topsoil in your crop fields?", polka);
+scr_dia_line("What? What do you mean, " + game.name + "? I DID put enough topsoil!", obj_npc_poppy);
+scr_dia_line("It looks like some of it disappeared.", polka);
+scr_dia_line("WHAT? How does soil just disappear?? ...We have a ghost problem!", obj_npc_poppy);
+
+scr_dia_options("EXIT", "FILLER");
+
+scr_dia_segment(text, "EXIT");
+scr_dia_line("We'll figure this out", polka);
+
+/* 
+CUTSCENE;
+When they step outside of Weeraway's house, it's raining
+Weeraway's fields fill with water. 
+They notice a stream of water filled with soil moving down the slopes of the field) 
+
+The topsoil is being carried away by rain. 
+
+THEY PULL OUT THE CAMERA
+THEY GO TO A SPOT IN THE STREAM OF WATER WHERE THEY SEE AN INDICATOR THAT THE CAMERA CAN BE USED
+THEY PRESS SPACE ON THE INDICATOR AREA WITH THE CAMERA
+
+THEY CAN SEE THE PHOTO OF THE WATER ERODING THE TOPSOIL
+THE PHOTO GETS STORED IN THE NOTEBOOK. 
+THE NOTEBOOK ICON FLASHES RED FOR 3 SECONDS
+
+**1/1 CLUE FOUND**
+
+*/
+
+//VILLY POPPY DIALOGUE
+scr_dia_segment(text, "GREET");
+//QUIZ WHERE THEY HAVE TO ATTACH PHOTO EVIDENCE ABOUT HOW THE TOPSOIL WAS GETTING ERODED BY WATER
+scr_dia_line_quiz(topsoil_rain_erosion_quiz, obj_npc_poppy); 
+
+scr_dia_line("This is wonderful, you figured it out!", polka);
+scr_dia_line("So THAT’S how the topsoil got removed!", obj_npc_poppy);
+scr_dia_line("When soil or dirt is moved from one place to another by wind or water, it's called EROSION.", obj_npc_poppy);
+
+scr_dia_options("EXIT", "FILLER");
+
+scr_dia_segment(text, "EXIT");
+scr_dia_line("Thanks for all your help!", polka);
+
+//END OF EROSION QUEST INVESTIGATION SECTION
+
+/* --------------------------------------------------------------------------------------------------------- */ 
+
+/* EROSION QUEST EXPERIMENT SECTION */
+
+//They are now back in Polka's room with the Baron. 
+//The Baron will explain the purpose of doing an experiment and how to do one
+
+//BARON DIALOGUE
+
