@@ -1245,3 +1245,48 @@ scr_dia_line_quiz(erosion_experiment_case, obj_npc_chieftain);
 /* END OF EROSION QUEST CASE SECTION*/
 
 /* --------------------------------------------------------------------------------------------------------- */ 
+
+//ENDING CUTSCENES
+
+/*
+CHARACTER OBJECTS:
+obj_npc_weeraway
+obj_npc_weeraway_wife
+obj_npc_weeraway_kid_1
+obj_npc_weeraway_kid_2
+
+(SCENE 1) The farmer and his wife are looking at the table. There's a bowl of each food on the table.)
+Potatoes (mashed potatoes)
+Carrots (steamed carrots)
+Green beans (green bean casserole)
+Corn (creamed corn)
+Turnips (mashed turnips)
+Pumpkin (pumpkin pie)
+
+Wife: "I can't believe we were able to grow the crops in time."
+
+Weeraway: "Neither can I. We have mashed potatoes, steamed carrots, green bean casserole, creamed corn, mashed turnips, and pumpkin pie."
+
+Weeraway: "... If the soil erosion problem hadn't been fixed, we wouldn't be enjoying any of these this year."
+
+
+(SCENE 2) At the end, you have a scene in which the farmer and his family are eating a wholesome dinner at Weeraway's house.
+They're sitting at the dining table in Weeraway's house
+
+Kid 1, Gooey: "These mashed potatoes are delicious, mom!"
+
+Wife (smiling): "Thank you, dear!"
+
+Weeraway: "Pass the pumpkin pie, Gooey."
+
+Kid 2, Chewy: "I didn't think I'd ever miss carrots.."
+
+Weeraway: "That's what happens when you have nothing to eat. You'll eat just about anything you can get. And pass me the creamed corn, will you?"
+
+(SCENE 3) Weeraway thanks Polka in Polka's house 
+
+Weeraway: "Because of you, my family could live. The villagers could finally get food to eat. Please take this as a token of my thanks."
+
+Weeraway gives Polka 300 coins.
+
+*/
