@@ -8,7 +8,8 @@ portraits = array_create(enum_portrait.length, spr_portrait);
 
 textbox = spr_textbox_grey;
 
-text = ds_map_create();
- 
-text[? "GREET"] = ["Hi", "Hello " + game.name + "!", ["EXIT", "GREET"], [polka, id]];
-text[? "EXIT"] = ["Bye.", [], [polka]];
+var temp = dialogue.dialogues[? object_index];
+var idx = dialogue.idxs[? object_index];
+text = temp[idx];
+
+scr_event_register_script(event.talk, id, scr_char_update_dialogue, object_index);

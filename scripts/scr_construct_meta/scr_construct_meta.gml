@@ -1,6 +1,7 @@
 ///@description scr_construct_meta
 
 instance_create_layer(0, 0, "Meta", events);
+instance_create_layer(0, 0, "Meta", dialogue);
 instance_create_layer(0, 0, "Meta", obj_camera);
 instance_create_layer(0, 0, "Meta", obj_tile_manager);
 instance_create_layer(0, 0, "Meta", flags);

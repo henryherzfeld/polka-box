@@ -1,2 +1,6 @@
 /// @description Insert description here
-// You can write your code in this editor
+
+
+var temp = dialogue.dialogues[? object_index];
+var idx = dialogue.idxs[? object_index];
+text = temp[idx];

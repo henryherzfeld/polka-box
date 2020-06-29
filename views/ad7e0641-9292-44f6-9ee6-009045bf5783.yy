@@ -6,7 +6,8 @@
     "children": [
         "162be5c6-beff-40f5-b045-7d2fe86ef9f1",
         "3896194a-e062-4b7f-972e-e27995079538",
-        "5ae937d4-f5e9-4bad-86a8-5c96c14eba42"
+        "5ae937d4-f5e9-4bad-86a8-5c96c14eba42",
+        "ae6533a0-22b3-47fc-8495-eb1e4efb6ff0"
     ],
     "filterType": "GMScript",
     "folderName": "Events",

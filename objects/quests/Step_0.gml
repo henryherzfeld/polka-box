@@ -14,12 +14,16 @@ var i = 0; repeat(quests_grid_n) {
 		#region test1
 		case quest.test1:
 			switch(step) {
-				case 0: ev = event.find_poppy;
+				case 0: ev = event.talk_weeraway;
 				break;
-				case 1: ev = event.pause;
-				break;
-				case 2: ev = event.pause;
-				break;
+				case 1: {
+					ev = event.pause;
+					if register_events {
+						scr_char_change_dialogue(obj_npc_weeraway, 1);
+						scr_char_update_dialogue(obj_npc_weeraway);
+					}
+					break;
+				}
 			}
 
 		if register_events and step < objectives_n {

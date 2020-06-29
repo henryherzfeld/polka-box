@@ -92,3 +92,5 @@ string_n_mods = 0;
 string_mods = [];
 
 dialogue_pause = false;
+
+char = noone;

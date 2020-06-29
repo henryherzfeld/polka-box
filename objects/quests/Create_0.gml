@@ -6,7 +6,7 @@ enum quest {
 	length,
 }
 var quest_array = [
-	["Test1", 0, [enum_objective_type.start, enum_objective_type.find_weeraway, enum_objective_type.find_poppy]],
+	["Test1", 0, [enum_objective_type.find_weeraway, enum_objective_type.find_poppy]],
 	["Test2", 0, ["Testing AA", "Testing BB"]],
 ]
 
