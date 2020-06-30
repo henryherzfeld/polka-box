@@ -1,4 +1,11 @@
 ////@description scr_dialogue_weeraway
+
+text0 = ds_map_create();    
+
+text0[? "GREET"] = ["Hi", "Hey " + game.name + ", I'm a little busy right now.", ["EXIT", "GREET"], [polka, obj_npc_weeraway]]
+text0[? "EXIT"] = ["Oh, okay.", [], [polka]]	
+
+
 text1 = ds_map_create();
 
 //Dialogue Segment (A) 
@@ -269,4 +276,4 @@ scr_dia_options("EXIT", "FILLER");
 scr_dia_segment(text3, "EXIT");
 scr_dia_line("Now let's go present this as a case at the Courthouse!", polka);
 
-return [text1, text2, text3];
+return [text0, text1, text2, text3];

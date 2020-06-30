@@ -108,7 +108,7 @@ if(chest != noone){
 	with (chest) {
 	    // Check if we can open the chest
 		if(polka.input_space){
-			if (canOpen and !scr_check_objective(enum_objective_type.find_poppy) and !scr_check_objective(enum_objective_type.find_weeraway) and !scr_check_objective(enum_objective_type.start) or game.debug) {
+			if (canOpen or game.debug) {
 				if (show_chest = false) {
 					show_chest = true;
 				}
@@ -184,7 +184,6 @@ if(input_space){
 					inst.draw_temp = true;
 					inst.units = "kpa";
 					inst.alarm[0] = room_speed * 2;
-					if(scr_check_objective(enum_objective_type.measure_soil_moisture)){alarm[0] = room_speed * 2;}
 				}
 				break;
 				
@@ -201,7 +200,7 @@ if(input_space){
 					itemRemoveInventory(enum_item_type.water_tube)
 				}
 				
-			case enum_item_type.mag_glass:
+			case enum_item_type.camera:
 				var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, par_examinable, false, true)
 				if(inst){
 					if(!inst.draw_examine_box){

@@ -1,6 +1,6 @@
 /// @description Insert description here
-
-if(room = erosion_village and !game.do_load){
+exit;
+if(room == erosion_village and !game.do_load){
 	if(!ds_list_empty(villies)){
 		ds_list_destroy(x_coords);
 		ds_list_destroy(y_coords);

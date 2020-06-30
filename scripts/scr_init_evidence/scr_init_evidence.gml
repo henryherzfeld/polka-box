@@ -4,11 +4,10 @@
 //If you want to add one add one above "length"
 enum enum_evi_type {
 	none,
-	evidence1 = 1,
-	evidence2 = 2,
-	soil_moisture_tbl = 3,
-	//ADD new item here
-	//new_item = 7;
+	evidence1,
+	evidence2,
+	photo_crop,
+	soil_moisture_tbl,
 	length,
 	}
 	
@@ -17,8 +16,6 @@ enum enum_evi_state {
 	sprite,
 	name,
 	description,
-	//ADD new item property
-	//new_property
 	length,
 	}
 	

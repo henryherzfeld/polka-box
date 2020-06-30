@@ -3,6 +3,6 @@
 
 var char = argument0;
 
-var temp = dialogue.dialogues[? char.object_index];
-var idx = dialogue.idxs[? char.object_index];
+var temp = dialogue.dialogues[? char];
+var idx = dialogue.idxs[? string(char)];
 char.text = temp[idx];

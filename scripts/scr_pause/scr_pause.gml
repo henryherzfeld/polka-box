@@ -18,3 +18,5 @@ instance_activate_object(obj_state_manager);
 instance_activate_object(obj_tile_manager);
 instance_activate_object(InventoryManager);
 instance_activate_object(obj_notebook);
+instance_activate_object(quests);
+instance_activate_object(dialogue);

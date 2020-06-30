@@ -13,9 +13,11 @@ if(file_exists("savedgame.sav")){
 	// retrieve maps
 	var game_data = ds_list_find_value(root_list, 0); // game_data (coins, hearts, name)
 	var loc_data = ds_list_find_value(root_list, 1);  // loc_data  (x, y, room)
-	var grid_map = ds_list_find_value(root_list, 2);  // grid_map  (objectives_str)
+	var grid_map = ds_list_find_value(root_list, 2);  // grid_map  (objectives_str, quests_str)
 	var list_map = ds_list_find_value(root_list, 3);  // list_map  (inventory, evidence)
-	var villy_loc = ds_list_find_value(root_list, 4); // villy_loc (villies, x, y)
+	var dialogue_idx_map = ds_list_find_value(root_list, 4) // dia_idx_map (map)
+	var villy_loc = ds_list_find_value(root_list, 5); // villy_loc (villies, x, y)
+
 	
 	//// access and assign values from maps
 	// game_data
@@ -31,6 +33,7 @@ if(file_exists("savedgame.sav")){
 	
 	// grid_map
 	var objectives_str = grid_map[? "objectives"];
+	var quests_str = grid_map[? "quests"];
 	
 	// list_map
 	var inventorySlot_ = list_map[? "inventory"];
@@ -40,7 +43,7 @@ if(file_exists("savedgame.sav")){
 	var villies_ = villy_loc[? "villies"];
 	var x_coords_ = villy_loc[? "x_villies"];
 	var y_coords_ = villy_loc[? "y_villies"];
-	
+
 	
 	//// ASSIGN IT ALLLLLLLL
 	// game_data
@@ -50,11 +53,21 @@ if(file_exists("savedgame.sav")){
 	flags.time = time_;
 	
 	// grid_map
+	//
+	// objectives
 	var objectives_ = ds_grid_create(enum_objective_type.length, enum_objective_state.length);
 	ds_grid_read(objectives_, objectives_str);
 	ds_grid_destroy(flags.objectives);
 	flags.objectives = objectives_;
 	flags.objective_update = true;
+	
+	// quests
+	var quests_ = ds_grid_create(3, 2);
+	ds_grid_read(quests_, quests_str);
+	ds_grid_destroy(quests.quests_grid);
+	quests.quests_grid = quests_;
+	quests.register_events = true;
+	
 	
 	// loc_data
 	room_goto(room_);
@@ -67,11 +80,14 @@ if(file_exists("savedgame.sav")){
 	obj_notebook.evidence_slot = scr_convert_list_to_array(evidence_slot_);
 	
 	// villy_loc
-	if(!ds_list_empty(obj_state_manager.villies)){
-		obj_state_manager.villies = villies_;
-		obj_state_manager.x_coords = x_coords_;
-		obj_state_manager.y_coords = y_coords_;
-	}
+	obj_state_manager.villies = villies_;
+	obj_state_manager.x_coords = x_coords_;
+	obj_state_manager.y_coords = y_coords_;
+	
+	// dialogue indexes
+	var dialogue_idxs_ = ds_map_create();
+	ds_map_copy(dialogue_idxs_, dialogue_idx_map);
+	dialogue.idxs = dialogue_idxs_;
 	
 	// Destroy maps, list
 	ds_list_destroy(root_list);

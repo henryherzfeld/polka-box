@@ -2666,7 +2666,7 @@
             "Key": "6eed53bb-5482-4a27-9dba-73870f7cd8be",
             "Value": {
                 "id": "595f0334-dc27-431b-af6d-c84bd1882cf7",
-                "resourcePath": "scripts\/scr_use_item_callback_mag_glass\/scr_use_item_callback_mag_glass.yy",
+                "resourcePath": "scripts\\scr_use_item_callback_camera\\scr_use_item_callback_camera.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4290,7 +4290,7 @@
             "Key": "b90d9b90-f874-4f0b-bc7e-6196b54e154c",
             "Value": {
                 "id": "433c4d21-c82e-429c-813f-7abddc4df292",
-                "resourcePath": "objects\/obj_shopkeeper\/obj_shopkeeper.yy",
+                "resourcePath": "objects\\obj_npc_shopkeeper\\obj_npc_shopkeeper.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -5766,6 +5766,9 @@
         "cfee1d5c-98aa-429a-a3ad-b726db485c55",
         "26cd19ae-67d1-4a0d-8c68-3fc7c64b2ede",
         "d0678986-3ca6-4f09-b26f-1f7232b21a46",
+        "ae793a63-f665-4714-8053-f48b57ac9c31",
+        "ed66d720-4150-401f-81a2-8a5bdde666d6",
+        "12fad6d9-3eae-4d48-8443-bf10740f5a1f",
         "2a3a212a-036d-410c-a0ea-0e644bb2d423",
         "593d976c-64ac-4ebc-9937-93c9013fcc48",
         "a3cbe66d-9f3f-41d4-a912-405b2f661445",
@@ -5774,9 +5777,6 @@
         "8f905bea-73d9-4641-9de2-74e229f93c5e",
         "3b4952e1-b82d-432e-95f5-ac9f448e1e62",
         "99f7ae83-8524-4ada-a97d-66e926c870af",
-        "ae793a63-f665-4714-8053-f48b57ac9c31",
-        "ed66d720-4150-401f-81a2-8a5bdde666d6",
-        "12fad6d9-3eae-4d48-8443-bf10740f5a1f",
         "24d9ab1f-bd8b-45c7-b24e-428a7b5ad944",
         "93ed4150-9715-4f7f-8969-584a49342e53"
     ],

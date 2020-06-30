@@ -9,5 +9,7 @@ with(obj_badge_manager) {instance_destroy();}
 with(obj_notebook) {instance_destroy();}
 with(obj_tutorial) {instance_destroy();}
 with(obj_tile_manager) {instance_destroy();}
+with(dialogue) {instance_destroy();}
+with(quests) {instance_destroy();}
 
 room_goto(main_menu);

@@ -88,7 +88,7 @@ if questions != noone and !response {
 		switch curr_question[0] {
 			case enum_question_type.evidence_checkbox: var evidence = true;
 			case enum_question_type.checkbox: {
-				show_debug_message(target);
+
 				// if there is an evidence prompt unpack target array to target_temp
 				// otherwise just assign target_temp the target array
 				if evidence { var button_target = target[1]; } 
@@ -99,8 +99,7 @@ if questions != noone and !response {
 				
 				// assume choice match is true
 				var choice_match = true;
-				
-				show_debug_message([n_choice, n_target]);
+
 				if n_choice != n_target {
 					choice_match = false;
 				} else {

@@ -17,10 +17,16 @@ ds_map_add(loc_data, "x", polka.x);
 ds_map_add(loc_data, "y", polka.y);
 ds_map_add(loc_data, "room", room);
 
+// dialogue_indexes
+var dialogue_idx_map = ds_map_create();
+ds_map_copy(dialogue_idx_map, dialogue.idxs);
+
 // grids
 var grid_map = ds_map_create();
 var objectives_str = ds_grid_write(flags.objectives);
+var quests_str = ds_grid_write(quests.quests_grid);
 ds_map_add(grid_map, "objectives", objectives_str);
+ds_map_add(grid_map, "quests", quests_str);
 
 // lists
 var list_map = ds_map_create();
@@ -45,6 +51,7 @@ ds_list_add(root_list, game_data);
 ds_list_add(root_list, loc_data);
 ds_list_add(root_list, grid_map);
 ds_list_add(root_list, list_map);
+ds_list_add(root_list, dialogue_idx_map);
 ds_list_add(root_list, villy_loc);
 
 // confirm maps in list

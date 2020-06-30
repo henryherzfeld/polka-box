@@ -37,10 +37,10 @@ evidence_slot = array_create(MAX_EVI_ITEMS, enum_evi_type.none);
 evi_def = ds_grid_create(enum_evi_type.length, enum_evi_state.length);
 
 scr_evi_add_data(enum_evi_type.none,spr_inventory_slot,"", "");
-scr_evi_add_data(enum_evi_type.evidence1,sprite140,"evidence 1", "a piece of evidence");
-scr_evi_add_data(enum_evi_type.evidence2,sprite138,"evidence 2", "a piece of evidence");
-
-scr_evi_add_notebook(enum_evi_type.evidence2);
+scr_evi_add_data(enum_evi_type.soil_moisture_tbl,spr_soil_moisture_table_evidence,
+				"Soil Moisture Table", "Contains soil temperature readings");
+scr_evi_add_data(enum_evi_type.photo_crop, spr_crop_appearance_fields_photo_evidence, 
+				"Weeraway's Crop Photo", "A photo taken at Weeraway's farm");
 
 window_map = ds_map_create();
 

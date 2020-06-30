@@ -8,6 +8,10 @@ text0[? "EXIT"] = ["Oh, okay.", [], [polka]]
 text1 = ds_map_create();
 
 //Dialogue Segment (A) 
+scr_dia_segment(text1, "GREET");
+scr_dia_line("Hello!", polka);
+scr_dia_options("A1", "A2", "A3", "FILLER"); 
+
 scr_dia_segment(text1, "A1");
 scr_dia_line("What do crops need to live?", polka);
 scr_dia_line("Plants need air, sunlight, water, and soil.", obj_npc_poppy);

@@ -5,7 +5,7 @@ if(objective_change or objective_update){
 			
 			objective = i;
 			if(objective_update) { progress = i }
-			objective_text = ds_grid_get(objectives, i, enum_objective_state.text);
+			objective_text = ds_grid_get(objectives, objective, enum_objective_state.text);
 			
 			// using temp to test for a change in objective phase, if so fire off a notification
 			var temp = scr_get_objective_phase(i);

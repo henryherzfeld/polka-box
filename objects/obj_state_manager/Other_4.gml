@@ -1,5 +1,5 @@
 /// @description Insert description here
-
+exit;
 if(!ds_list_empty(villies)){
 	if(instance_find(villies[| 0], 0) != noone){
 		var i;

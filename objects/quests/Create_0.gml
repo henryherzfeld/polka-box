@@ -1,12 +1,15 @@
 /// @description Insert description here
 
 enum quest {
-	test1,
+	erosion_investigation,
 	test2,
 	length,
 }
 var quest_array = [
-	["Test1", 0, [enum_objective_type.find_weeraway, enum_objective_type.find_poppy]],
+	["erosion_investigation", 0, 
+	[enum_objective_type.ero_start, enum_objective_type.ero_weeraway0, enum_objective_type.ero_poppy0,
+	enum_objective_type.ero_examine_crops0, enum_objective_type.ero_poppy1, enum_objective_type.ero_measure_soil0, 
+	enum_objective_type.ero_poppy2]],
 	["Test2", 0, ["Testing AA", "Testing BB"]],
 ]
 

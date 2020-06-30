@@ -1,4 +1,6 @@
-active = false;
+if scr_check_objective(enum_objective_type.ero_start) and not scr_check_objective(enum_objective_type.ero_weeraway0) {
+	active = true;
+}
 
 scene_info = [
 	[scr_cutscene_change_variable, polka, "move_override", true],

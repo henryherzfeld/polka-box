@@ -3,19 +3,24 @@
 idxs = ds_map_create();
 dialogues = ds_map_create();
 
-var characters = [obj_npc_weeraway, obj_npc_test, obj_npc_villy, npc_green_villy, obj_npc_poppy, obj_npc_baron];
+var characters = [obj_npc_weeraway, obj_npc_test, obj_npc_villy, npc_green_villy, obj_npc_poppy, obj_npc_baron, obj_npc_shopkeeper];
 
 var i = 0; repeat(array_length_1d(characters)) {
-	idxs[? characters[i]] = 0;
+	idxs[? string(characters[i])] = 0;
 	i++;
 }
 
-var temp = scr_dialogue_weeraway();
-
-dialogues[? obj_npc_weeraway] = temp;
-dialogues[? obj_npc_test] = temp;
-dialogues[? obj_npc_villy] = temp;
+dialogues[? obj_npc_weeraway] = scr_dialogue_weeraway();
 dialogues[? npc_green_villy] = scr_dialogue_green_villy();
 dialogues[? obj_npc_poppy] = scr_dialogue_poppy();
 dialogues[? obj_npc_baron] = scr_dialogue_baron();
 dialogues[? obj_npc_chieftain] = scr_dialogue_chieftain();
+
+/*one-liner for shopkeeper text */ shopkeep_text = ds_map_create();shopkeep_text[? "GREET"] = ["Howdy There!", ["A1", "EXIT"], [obj_npc_shopkeeper]];shopkeep_text[? "A1"] = ["Oh, Hello!", "How can I help you?", ["B1", "B2"], [polka, obj_npc_shopkeeper]];shopkeep_text[? "B1"] = ["What is this place?", "Oh yes this is the Bazaar, we sell things here.", ["B1", "B2", "C1", "EXIT"], [polka, obj_npc_shopkeeper]];shopkeep_text[? "B2"] = ["Who are you?", "I'm Villy Jeff from Sales.", ["B1", "B2", "C1", "EXIT"], [polka, obj_npc_shopkeeper]];shopkeep_text[? "C1"] = ["Can I buy something?", "Unfortunately no, you may not. We are closed at the moment." ,["B1", "B2", "C1", "EXIT", "EXIT"], [polka, obj_npc_shopkeeper]]shopkeep_text[? "EXIT"] = ["Oh, alright then. Goodbye.", "Take care!", [], [polka, obj_npc_shopkeeper]];
+dialogues[? obj_npc_shopkeeper] = [shopkeep_text];
+
+/*one-liner for default villy text */ villy_text = ds_map_create();villy_text[? "GREET"] = ["Hi", "Hello " + game.name + "!", ["EXIT", "GREET"], [polka, obj_npc_villy]];villy_text[? "EXIT"] = ["Bye.", [], [polka]];
+dialogues[? obj_npc_villy] = [villy_text];
+
+// TEST NPC DIALOGUE HERE
+dialogues[? obj_npc_test] = [villy_text];
