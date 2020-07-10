@@ -18,6 +18,7 @@ scr_dia_line("In each quest, you have to ask questions, investigate, analyze clu
 scr_dia_line("You keep doing this until you've reached the end of your quest.", obj_npc_baron); 
 scr_dia_line("Are you ready? I think you can do it!", obj_npc_baron); 
 scr_dia_line("Here's your first item, given to all budding Quanta Knights: a camera!", obj_npc_baron);  
+scr_dia_line_script(itemAddInventory, enum_item_type.camera);
 //THE CAMERA ITEM (obj_camera_item) IS NOW VISIBLE IN THE ITEM INVENTORY
 
 scr_dia_line("You can use it to make observations and take pictures of what you find.", obj_npc_baron); //baron 
@@ -68,7 +69,7 @@ scr_quiz_question_response(["But how do I know you're telling the truth?",
 scr_quiz_question(enum_question_type.evidence_multi, 
 "How did you find out?", 
 ["There was some toilet paper on the desk", "There was a jar of acid on the desk", "There were some animal hairs on the desk", "There were some animal hairs on the dining table"], 
-[enum_evi_type.evidence2, 2]); 
+[enum_evi_type.photo_desk, 2]); 
 //EVIDENCE2 RESERVED FOR "ANIMAL HAIRS ON DESK" PHOTO EVIDENCE (spr_animal_hairs_on_desk_photo_evidence)
 
 /* 
@@ -82,17 +83,24 @@ The Notebook opens.
 They then select the picture they took of the desk. 
 It attaches to the evidence slot.)
 */
-scr_quiz_question_response(["Is that so? I wonder if…?"], 
+scr_quiz_question_response(["Is that so? I wonder if...?"], 
 "You almost got it! Try again");
 //END OF BEGINNING TUTORIAL QUIZ QUESTIONS
 
 scr_dia_segment(text3, "GREET");
 scr_dia_line("filler", obj_npc_baron);
 scr_dia_line_quiz(beginning_tutorial_quiz_questions, obj_npc_baron);
+
+text4 = ds_map_create();
+scr_dia_segment(text4, "GREET");
 scr_dia_line("Aha, excellent work! You just finished your first Quest investigation!", obj_npc_baron);
 scr_dia_line("I'm confident that you'll do great out there!", obj_npc_baron);
 scr_dia_line("This is also your chance to prove your worth and finally join the ranks of the Quanta Knights.", obj_npc_baron);
 scr_dia_line("Good luck!", obj_npc_baron);
+scr_dia_options("EXIT", "FILLER");
+
+scr_dia_segment(text4, "EXIT");
+scr_dia_line("Thanks!", polka);
 
 
 /*
@@ -106,16 +114,13 @@ One badge is given if they didn't lose all three hearts any time during the ques
 The door unlocks and the player can leave the house
 */
 
-scr_dia_options("EXIT", "FILLER");
-
-scr_dia_segment(text3, "EXIT");
-scr_dia_line("Thanks!", polka);
 
 
 
-text4 = ds_map_create();
 
-scr_dia_segment(text4, "GREET");
+text5 = ds_map_create();
+
+scr_dia_segment(text5, "GREET");
 
 scr_dia_line("Well done! You've gotten so far already!", obj_npc_baron);
 
@@ -254,10 +259,10 @@ scr_dia_line("And that's all there is to an experiment! Now let's see you with t
 
 scr_dia_options("EXIT", "FILLER");
 
-scr_dia_segment(text4, "EXIT");
+scr_dia_segment(text5, "EXIT");
 scr_dia_line("Thanks!", polka);
 
 //END OF EXPERIMENT TUTORIAL
 
 
-return [text1, text2, text3, text4];
+return [text1, text2, text3, text4, text5];

@@ -39,6 +39,10 @@ if(xx > yy){
 }
 
 with(obj){
+	
+	// testing if this object is an npc
+	var is_npc = false;
+	if object_get_parent(obj) == par_NPC is_npc = true;
 
 	if(point_distance(x, y, xx, yy) > spd){
 		var dir = point_direction(x, y, xx, yy);
@@ -47,22 +51,20 @@ with(obj){
 		
 		x += ldirx;
 		y += ldiry;
-		
-				//Assign facing variable with movement's direction, default to xmovement
-		
-		switch(facing){ 
-			case 0: sprite_index = spr_villy_walk_back; break;
-			case 90: sprite_index = spr_villy_walk_right; break;
-			case 180: sprite_index = spr_villy_walk_front; break;
-			case 270: sprite_index = spr_villy_walk_left; break;
+
+		if is_npc switch(facing){ 
+			case 0: sprite_index = walk_back; break;
+			case 90: sprite_index = walk_right; break;
+			case 180: sprite_index = walk_front; break;
+			case 270: sprite_index = walk_left; break;
 		}
 		
 	} else {
-		switch(facing){
-			case 0: sprite_index = spr_villy_stand_right; break;
-			case 90: sprite_index = spr_villy_stand_right; break;
-			case 180: sprite_index = spr_villy_stand_right; break;
-			case 270: sprite_index = spr_villy_stand_right; break;
+		if is_npc switch(facing){
+			case 0: sprite_index = stand_back; break;
+			case 90: sprite_index = stand_right; break;
+			case 180: sprite_index = stand_front; break;
+			case 270: sprite_index = stand_left; break;
 		}
 		x = xx;
 		y = yy;

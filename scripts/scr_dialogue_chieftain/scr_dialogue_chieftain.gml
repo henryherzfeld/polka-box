@@ -64,7 +64,7 @@ scr_quiz_question(enum_question_type.multi,
 "Nutrients",
 "Insects",
 "All of the above"], 
-0);
+1);
 
 scr_quiz_question(enum_question_type.evidence_checkbox,
 "After investigating the farmer's crops, we realized they looked", 
@@ -72,7 +72,7 @@ scr_quiz_question(enum_question_type.evidence_checkbox,
 "Brown",
 "Dry",
 "Green"],
-[enum_evi_type.evidence2, [0,1,2]]); 
+[enum_evi_type.photo_crop, [0,1,2]]); 
 //EVIDENCE 2 IS RESERVED FOR CROP APPEARANCE PHOTO EVIDENCE (spr_crop_appearance_fields_photo_evidence)
 
 scr_quiz_question(enum_question_type.checkbox,
@@ -119,7 +119,7 @@ scr_quiz_question(enum_question_type.evidence_multi,
 "50-60",
 "70-80",
 "None of the above"], 
-[enum_evi_type.evidence2, 1]); 
+[enum_evi_type.soil_moisture_tbl , 1]); 
 //EVIDENCE 2 IS RESERVED FOR THE SOIL MOISTURE TABLE (spr_soil_moisture_table_evidence)
 
 scr_quiz_question(enum_question_type.multi, 
@@ -158,7 +158,7 @@ scr_quiz_question(enum_question_type.evidence_multi,
 "4-6",
 "8-10",
 "None of the above"], 
-[enum_evi_type.evidence2, 1]); 
+[enum_evi_type.soil_depth_tbl, 1]); 
 //EVIDENCE 2 IS RESERVED FOR THE TOPSOIL DEPTH TABLE (spr_topsoil_depth_evidence)
 
 scr_quiz_question(enum_question_type.multi, 
@@ -173,7 +173,7 @@ scr_quiz_question(enum_question_type.evidence_multi,
 "raining",
 "hailing",
 "None of the above"], 
-[enum_evi_type.evidence2, 1]); 
+[enum_evi_type.photo_erosion_water, 1]); 
 //EVIDENCE 2 IS RESERVED FOR THE SOIL-EROSION-WATER PHOTO (spr_soil_erosion_water_photo_evidence)
  
 scr_quiz_question(enum_question_type.multi, 
@@ -184,10 +184,13 @@ scr_quiz_question(enum_question_type.multi,
 "Earthquake"], 
 2);
 //END OF EROSION INVESTIGATION CASE QUIZ QUESTIONS
-
 scr_dia_line("The court has noted the account given!", obj_npc_chieftain); 
 scr_dia_line_quiz(erosion_investigation_case, obj_npc_chieftain); 
 
+scr_dia_options("EXIT", "EXIT");
+
+
+scr_dia_segment(text1, "EXIT");
 scr_dia_line("That brings us to our conclusion: The farmer's crops are dying because the soil they need to grow is being eroded away by rainwater.", polka);
 
 scr_dia_line("We found out that planting more vegetation around the fields lowers soil erosion.", polka);
@@ -265,7 +268,7 @@ scr_quiz_question(enum_question_type.multi,
 "conclusion",
 "background research",
 "None of the above"], 
-[enum_evi_type.evidence2, 0]);
+[enum_evi_type.soil_experiment_tbl, 0]);
 scr_quiz_question_sprite(spr_erosion_experiment_setup_after);
 //EVIDENCE 2 IS RESERVED FOR THE EROSION EXPERIMENT TABLE (spr_erosion_experiment_table_evidence)
 

@@ -53,6 +53,11 @@ if (keyboard_check_pressed(interact_key) and !dialogue_pause){
 			page_change = true;
 			visited[? options[selected]] = true;
 		
+			if sprite_draw {
+				sprite_to_draw = noone;
+				sprite_draw = false;
+			}
+		
 			/*
 			// skip first piece of dialogue in sequence
 			if(options[selected] = "GREET"){
@@ -127,6 +132,7 @@ if(page_change){
 	}
 	
 	n_options = array_length_1d(options);
+	if n_options == 0 exiting = true; // if there are no options just exit dialogue
 
 	string_wrapped = scr_wrap_text(string_, box_width - 2*text_padding);
 	string_len = string_length(string_wrapped);

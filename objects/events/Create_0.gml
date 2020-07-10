@@ -8,6 +8,8 @@ enum event {
 	new_evidence,
 	test,
 	
+	rain,
+	
 	examine_crops,
 	
 	talk_green_villy,
@@ -16,10 +18,16 @@ enum event {
 	talk_baron,
 	talk_cheiftain,
 	talk_shopkeeper,
+	
+	use_camera,
+	use_tensiometer,
+	use_shovel,
+	use_tape,
 	length
 }
 
 enum action {
 	talk,
+	use,
 	length,
 }

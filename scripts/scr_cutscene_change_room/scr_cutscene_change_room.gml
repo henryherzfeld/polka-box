@@ -3,6 +3,7 @@
 ///@arg polka_x
 ///@arg polka_y
 
+persistent = true;
 
 with(game){
 	spawn_x = argument1;

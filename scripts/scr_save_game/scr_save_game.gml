@@ -35,6 +35,7 @@ var evidence_list = scr_convert_array_to_list(obj_notebook.evidence_slot);
 ds_map_add_list(list_map, "inventory", inventory_list)
 ds_map_add_list(list_map, "evidence", evidence_list)
 
+/*
 // villy locations
 var villy_loc = ds_map_create();
 var villies_ = ds_list_create(); var x_coords_ = ds_list_create(); var y_coords_ = ds_list_create();
@@ -45,6 +46,7 @@ ds_list_copy(y_coords_, obj_state_manager.y_coords);
 ds_map_add_list(villy_loc, "villies", villies_);
 ds_map_add_list(villy_loc, "x_villies", x_coords_);
 ds_map_add_list(villy_loc, "y_villies", y_coords_);
+*/
 
 // add maps to root list
 ds_list_add(root_list, game_data);
@@ -52,7 +54,7 @@ ds_list_add(root_list, loc_data);
 ds_list_add(root_list, grid_map);
 ds_list_add(root_list, list_map);
 ds_list_add(root_list, dialogue_idx_map);
-ds_list_add(root_list, villy_loc);
+//ds_list_add(root_list, villy_loc);
 
 // confirm maps in list
 for(var i = 0; i < ds_list_size(root_list); i++){

@@ -9,7 +9,8 @@
         "4e0b2b5d-d61d-40fd-8b22-3b9aa5586bad",
         "8a359d37-6f6d-446f-9298-1266280af104",
         "75e12ec3-726c-4474-939a-486179e86c20",
-        "bfccfea3-0555-4514-bc75-1b6a21a2479f"
+        "bfccfea3-0555-4514-bc75-1b6a21a2479f",
+        "bd3cba11-36fd-4e44-9c14-54d11fd16efb"
     ],
     "filterType": "GMRoom",
     "folderName": "Interiors",

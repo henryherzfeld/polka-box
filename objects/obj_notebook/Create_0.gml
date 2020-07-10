@@ -41,7 +41,15 @@ scr_evi_add_data(enum_evi_type.soil_moisture_tbl,spr_soil_moisture_table_evidenc
 				"Soil Moisture Table", "Contains soil temperature readings");
 scr_evi_add_data(enum_evi_type.photo_crop, spr_crop_appearance_fields_photo_evidence, 
 				"Weeraway's Crop Photo", "A photo taken at Weeraway's farm");
-
+scr_evi_add_data(enum_evi_type.photo_desk, spr_animal_hairs_on_desk_photo_evidence, 
+				"Desk Photo", "A photo of the desk in your room depicting animal hairs");
+scr_evi_add_data(enum_evi_type.soil_depth_tbl, spr_topsoil_depth_forest_table,
+				"Soil Depth Table", "Contains soil depth readings");
+scr_evi_add_data(enum_evi_type.photo_erosion_water, spr_soil_erosion_water_photo_evidence,
+				"Soil Erosion Photo", "A photo depicting Weeraway's farm soil washing away");
+scr_evi_add_data(enum_evi_type.soil_experiment_tbl, spr_erosion_experiment_table_evidence,
+				"Soil Experiment Table", "Contains soil temperature and depth readings");
+				
 window_map = ds_map_create();
 
 button_grid = ds_grid_create(1, 6);

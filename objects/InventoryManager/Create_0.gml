@@ -46,5 +46,3 @@ itemAddData(enum_item_type.tensiometer,spr_inventory_item_tensiometer,"tensiomet
 itemAddData(enum_item_type.empty_tube,spr_empty_test_tube,"empty test tube",0,scr_use_item_callback_empty_test_tube, "Used to hold small amounts of a material");
 itemAddData(enum_item_type.water_tube,spr_water_test_tube,"water filled test tube",0,scr_use_item_callback_water_test_tube, "A test tube filled with water");
 itemAddData(enum_item_type.camera,spr_camera_item,"camera",0,scr_use_item_callback_camera, "Use to take a photo and learn more about something");
-
-itemAddInventory(enum_item_type.camera);

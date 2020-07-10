@@ -33,6 +33,9 @@ canvas_change = false;
 
 buffer = 10;
 
+// WEATHER FOR NOW
+rain = false;
+
 draw_set_font(font);
 
 // Creating direction enumerator for player transitions

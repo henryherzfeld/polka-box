@@ -64,8 +64,6 @@ scr_dia_options("C1", "C2", "C3", "FILLER");
 
 scr_dia_segment(text1, "EXIT");
 scr_dia_line("I won't let you down!", polka);
-scr_dia_line_script(scr_event_fire_char, action.talk, obj_npc_weeraway);
-
 
 text2 = ds_map_create();
 

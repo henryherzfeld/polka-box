@@ -9,4 +9,5 @@ portraits[enum_portrait.sad] = spr_portrait_weeraway_sad;
 
 name = "Villy Weeraway";
 
-crying = true;
+if not scr_check_objective(enum_objective_type.ero_poppy0) crying = true;
+else crying = false;

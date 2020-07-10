@@ -23,7 +23,7 @@ var question = list[| n];
 var k = 4;
 if question[0] == enum_question_type.evidence { k = 2; }
 
-if incorrect_response == noone {
+if incorrect_response[0] == noone {
 	question[k] = [correct_response];
 } else {
 	question[k] = [correct_response, incorrect_response];

@@ -120,7 +120,7 @@ if new_evidence != noone {
 	var w = sprite_get_width(new_evidence);
 	
 	var xx = (game.gui_width - w) / 2;
-	var yy = (game.gui_height - h) / 2;
-	draw_rectangle(xx, yy, xx+(w*3), yy+(h*3), false);
-	draw_sprite_stretched(new_evidence, 0, xx, yy, h*3, w*3)
+	var yy = (game.gui_height - h - InventoryManager.slot_total_height);
+	draw_rectangle_color(xx-10, yy-10, xx+(w)+10, yy+(h)+10, c_gray, c_gray, c_gray, c_gray, false);
+	draw_sprite_stretched(new_evidence, 0, xx, yy, w, h)
 }

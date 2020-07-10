@@ -5,7 +5,7 @@ pbar = spr_pbar_big;
 bar_col = c_green;
 w_pbar = sprite_get_width(pbar) - 2;
 h_pbar = sprite_get_height(pbar) - 2;
-max_prog = flags.max_progress;
+max_prog = flags.max_progress-1;
 curr_prog = 0;
 
 x1 = (game.gui_width - w_pbar)/2;
@@ -39,7 +39,7 @@ draw_sm_noti = false;
 noti_sm_count = 0;
 
 noti_sm_timeout = 500;
-noti_lg_timeout = 300;
+noti_lg_timeout = 125;
 
 noti_sm_text = "";
 noti_sm_bg_col = c_gray;

@@ -1,10 +1,14 @@
 /// @function scr_add_data(type);
 /// @description Add item to evidence, return true on success and false in faliure
 /// Checks if a slot is empty, if empty then assign it the item, else failure
-/// @param {enum} type Type of the item
+/// @arg0 {enum} type Type of the item
+/// @arg1 {bool} type Draw
 
-var itemType = argument[0];
+var itemType = argument0;
 var indexAddedAt = 0;
+var draw = argument1;
+
+
 
 //Process the input manager
 with (obj_notebook) {
@@ -12,6 +16,7 @@ with (obj_notebook) {
 	if (array_find_index(evidence_slot,itemType) == -1) {
 	    //Add Item into the notebook
 		indexAddedAt = array_replace_value(evidence_slot,enum_evi_type.none,itemType);
+		if draw { scr_new_evi_noti(); obj_overlay.new_evidence = obj_notebook.evi_def[itemType, enum_evi_state.sprite]; }
 	}
 
 	//If the item is added to the notebook, than increase the amount of the item in notebook

@@ -18,3 +18,15 @@ facing = -1;
 
 curr_x = 0;
 curr_y = 0;
+
+walk_front = spr_polka_walk_front;
+walk_back = spr_polka_walk_back;
+walk_left = spr_polka_walk_left;
+walk_right = spr_polka_walk_right;
+
+stand_front = spr_polka_stand_right;
+stand_back = spr_polka_stand_right;
+stand_left = spr_polka_stand_right;
+stand_right = spr_polka_stand_right;
+
+input_space = false;

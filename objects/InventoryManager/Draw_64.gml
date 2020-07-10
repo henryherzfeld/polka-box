@@ -79,7 +79,9 @@ for (var ii = 0; ii < MAX_INV_ITEMS; ii++) {
 			}
 			// setting selected slot var via mos position
 			selected_slot = m_slotx + (m_sloty * slot_col_max);
-		} else { selected_slot = noone; };
+		} else { 
+			selected_slot = noone;
+			};
 		
 		///Check If mouse is on the slot, if we are on the slot make white outline to red
 		if (ii = selected_slot){

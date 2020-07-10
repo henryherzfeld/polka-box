@@ -1,17 +1,6 @@
 /// @description Insert description here
 
-/*
-if weather_change {
-	switch(weather) {
-	 case "sunny":
-		
-	 break;
-	 case "raining":
-		
-	 break;
-	}
-}
-*/
+if rain and (room == erosion_forest or room == erosion_village) effect_create_below(ef_rain, 10, 10, 1, c_white);
 
 if(keyboard_check_pressed(vk_backspace) and keyboard_check(vk_lcontrol)){
 	if (debug){

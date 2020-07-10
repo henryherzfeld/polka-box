@@ -4,7 +4,7 @@ input_right = keyboard_check(vk_right);
 input_down = keyboard_check(vk_down);
 input_up = keyboard_check(vk_up);
 input_interact = keyboard_check_pressed(ord("E"));
-input_space = keyboard_check_pressed(vk_space)
+input_space = keyboard_check_pressed(vk_space) and not input_space;
 
 //Calculate intended movement
 y_move = (input_down - input_up) * spd;
@@ -27,25 +27,25 @@ if(x_move != 0){
 if(!in_dialogue and !move_override){
 	if(x_move != 0 or y_move != 0 and !move_override){
 		switch(facing){
-			case 0: sprite_index = spr_polka_walk_back; break;
-			case 90: sprite_index = spr_polka_walk_right; break;
-			case 180: sprite_index = spr_polka_walk_front; break;
-			case 270: sprite_index = spr_polka_walk_left; break;
+			case 0: sprite_index = walk_back; break;
+			case 90: sprite_index = walk_right; break;
+			case 180: sprite_index = walk_front; break;
+			case 270: sprite_index = walk_left; break;
 		}
 	} else { // assign standing  sprite if polka is not moving
 		switch(facing){
-			case 0: sprite_index = spr_polka_stand_right; break;
-			case 90: sprite_index = spr_polka_stand_right; break;
-			case 180: sprite_index = spr_polka_stand_right; break;
-			case 270: sprite_index = spr_polka_stand_right; break;
+			case 0: sprite_index = stand_back; break;
+			case 90: sprite_index = stand_right; break;
+			case 180: sprite_index = stand_front; break;
+			case 270: sprite_index = stand_left; break;
 		}
 	}
 } else {
 	switch(facing){
-		case 0: sprite_index = spr_polka_stand_right; break;
-		case 90: sprite_index = spr_polka_stand_right; break;
-		case 180: sprite_index = spr_polka_stand_right; break;
-		case 270: sprite_index = spr_polka_stand_right; break;
+		case 0: sprite_index = stand_back; break;
+		case 90: sprite_index = stand_right; break;
+		case 180: sprite_index = stand_front; break;
+		case 270: sprite_index = stand_left; break;
 	}
 }
 
@@ -81,7 +81,7 @@ if(!in_dialogue and !move_override){
 //Check for collision with transition object
 var inst = instance_place(x, y, obj_transition);
 
-if (inst != noone) {
+if (inst != noone and not inst.disable) {
 	with (game) {
 		if (!do_transition){
 			spawn_room = inst.target_room;
@@ -149,11 +149,14 @@ if(inst != noone){
 }
 
 //Check for used item
-if(input_space){
+if(input_space and !in_dialogue){
 	if (itemEquiped != noone) {
 	
 		switch (itemEquiped) {
 		    case enum_item_type.shovel:
+			
+				scr_event_fire(event.use_shovel);
+				
 				//Finding a snapped-to tile coordinate
 				var cs = obj_tile_manager.cell_size;
 				var xx = obj_tile_manager.x_proj div cs;
@@ -179,6 +182,9 @@ if(input_space){
 		        break;
 				
 			case enum_item_type.tensiometer:
+			
+				scr_event_fire(event.use_tensiometer);
+			
 				var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_tensiometer_tile, false, true);
 				if(inst != noone){
 					inst.draw_temp = true;
@@ -201,6 +207,7 @@ if(input_space){
 				}
 				
 			case enum_item_type.camera:
+				scr_event_fire(event.use_camera);
 				var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, par_examinable, false, true)
 				if(inst){
 					if(!inst.draw_examine_box){

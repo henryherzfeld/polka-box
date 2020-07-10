@@ -6,9 +6,6 @@ object = noone;
 interact_key = vk_space;
 draw = true;
 
-draw_x = 100;
-draw_y = 100;
-
 bg_spr = spr_portrait_frame
 
 spr_height = sprite_get_height(bg_spr);
@@ -16,6 +13,9 @@ spr_width = sprite_get_width(bg_spr);
 
 box = spr_textbox1;
 box_width = sprite_get_width(box);
+
+draw_x = (game.gui_width - box_width - spr_width)/2;
+draw_y = game.gui_height/2 + spr_height;
 
 counter = 0;
 

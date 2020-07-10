@@ -16,7 +16,7 @@ if(file_exists("savedgame.sav")){
 	var grid_map = ds_list_find_value(root_list, 2);  // grid_map  (objectives_str, quests_str)
 	var list_map = ds_list_find_value(root_list, 3);  // list_map  (inventory, evidence)
 	var dialogue_idx_map = ds_list_find_value(root_list, 4) // dia_idx_map (map)
-	var villy_loc = ds_list_find_value(root_list, 5); // villy_loc (villies, x, y)
+	//var villy_loc = ds_list_find_value(root_list, 5); // villy_loc (villies, x, y)
 
 	
 	//// access and assign values from maps
@@ -40,9 +40,11 @@ if(file_exists("savedgame.sav")){
 	var evidence_slot_ = list_map[? "evidence"];
 	
 	// villy_loc
+	/*
 	var villies_ = villy_loc[? "villies"];
 	var x_coords_ = villy_loc[? "x_villies"];
 	var y_coords_ = villy_loc[? "y_villies"];
+	*/
 
 	
 	//// ASSIGN IT ALLLLLLLL
@@ -59,8 +61,7 @@ if(file_exists("savedgame.sav")){
 	ds_grid_read(objectives_, objectives_str);
 	ds_grid_destroy(flags.objectives);
 	flags.objectives = objectives_;
-	flags.objective_update = true;
-	
+
 	// quests
 	var quests_ = ds_grid_create(3, 2);
 	ds_grid_read(quests_, quests_str);
@@ -80,9 +81,11 @@ if(file_exists("savedgame.sav")){
 	obj_notebook.evidence_slot = scr_convert_list_to_array(evidence_slot_);
 	
 	// villy_loc
+	/*
 	obj_state_manager.villies = villies_;
 	obj_state_manager.x_coords = x_coords_;
 	obj_state_manager.y_coords = y_coords_;
+	*/
 	
 	// dialogue indexes
 	var dialogue_idxs_ = ds_map_create();
@@ -98,7 +101,7 @@ if(file_exists("savedgame.sav")){
 	ds_map_destroy(loc_data);
 	ds_map_destroy(grid_map);
 	ds_map_destroy(list_map);
-	ds_map_destroy(villy_loc);
+	//ds_map_destroy(villy_loc);
 	
 	show_debug_message("Game Loaded");
 }
