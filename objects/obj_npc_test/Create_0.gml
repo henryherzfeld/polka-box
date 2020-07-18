@@ -26,7 +26,7 @@ scr_quiz_question(enum_question_type.checkbox, "The soil compaction in the patch
 //
 
 scr_dia_line("You'd want to make sure your friend is actually testing the right thing. What is he looking for? He makes a hypothesis. His hypothesis is that adding honey instead of sugar to lemonade will make people like it more.", polka);
-scr_dia_line_quiz(questions, obj_npc_test);
+//scr_dia_line_quiz(questions, obj_npc_test);
 
 scr_dia_line("Me an NPC", obj_npc_test);
 scr_dia_options("EXIT", "A1", "EXIT");
@@ -34,10 +34,7 @@ scr_dia_options("EXIT", "A1", "EXIT");
 scr_dia_segment(text, "A1");
 scr_dia_line("We are having a convo", polka);
 scr_dia_line("Yes we are having a convo", obj_npc_test);
-scr_dia_options("EXIT", "EXIT");
 
-scr_dia_segment(text, "EXIT");
-scr_dia_line("Bye", polka);
 //scr_dia_line("Bye", id);
 
 

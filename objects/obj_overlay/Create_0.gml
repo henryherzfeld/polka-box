@@ -63,5 +63,9 @@ nb_button_frame_idx = 0;
 nb_button_frame_counter = 0;
 nb_button_pressed = false;
 new_evidence = noone;
+nb_x1 = game.gui_width*.9; 
+nb_y1 = game.gui_height*.8;
+nb_x2 = game.gui_width*.9+100;
+nb_y2 = game.gui_height*.8+100;
 
 scr_event_register_script(event.new_evidence, id, scr_new_evi_noti);

@@ -79,8 +79,10 @@ if(noti_lg_count){
 //notebook button
 if obj_notebook.draw_evidence or obj_quiz_manager.pending_choice { exit; }
 
-var nb_x1 = 100; var nb_y1 = 100;
-var nb_x2 = 200; var nb_y2 = 200;
+if game.canvas_change {
+	nb_x1 = game.gui_width*.9; nb_y1 = game.gui_height*.8;
+	nb_x2 = game.gui_width*.9+100; nb_y2 = game.gui_height*.8+100;
+}
 
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
@@ -115,6 +117,7 @@ if !nb_button_pause {
 
 draw_sprite_stretched(nb_spr, nb_button_frame_idx, nb_x1, nb_y1, nb_x2-nb_x1, nb_y2-nb_y1);
 
+exit; // old evidence draw code for evi on center of screen
 if new_evidence != noone {
 	var h = sprite_get_height(new_evidence);
 	var w = sprite_get_width(new_evidence);

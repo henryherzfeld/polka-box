@@ -56,3 +56,13 @@ enum enum_portrait {
 }
 
 //alarm[0] = room_speed;
+
+draw_help = false;
+spr_help_w = sprite_get_width(spr_help);
+spr_help_h = sprite_get_height(spr_help);
+
+draw_map = false;
+spr_map_w = sprite_get_width(spr_help);
+spr_map_h = sprite_get_height(spr_map);
+
+outline = 5;

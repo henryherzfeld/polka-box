@@ -5,6 +5,7 @@ input_down = keyboard_check(vk_down);
 input_up = keyboard_check(vk_up);
 input_interact = keyboard_check_pressed(ord("E"));
 input_space = keyboard_check_pressed(vk_space) and not input_space;
+input_use_item = keyboard_check_pressed(ord("F"));
 
 //Calculate intended movement
 y_move = (input_down - input_up) * spd;
@@ -149,7 +150,7 @@ if(inst != noone){
 }
 
 //Check for used item
-if(input_space and !in_dialogue){
+if(input_use_item and !in_dialogue){
 	if (itemEquiped != noone) {
 	
 		switch (itemEquiped) {
@@ -168,7 +169,7 @@ if(input_space and !in_dialogue){
 				if(inst){
 					if(!inst.dug){
 						inst.dug = true;
-						var dug_coins = irandom_range(3, 10)
+						var dug_coins = irandom_range(3, 10);
 						flags.coins += dug_coins;
 						scr_fire_sm_noti(string(dug_coins) + " Coins Added")
 					}

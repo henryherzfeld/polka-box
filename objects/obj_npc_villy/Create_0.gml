@@ -28,3 +28,7 @@ portraits[enum_portrait.angry] = spr_portrait_villy_angry;
 portraits[enum_portrait.happy] = spr_portrait_villy_happy;
 portraits[enum_portrait.neutral] = spr_portrait_villy_neutral;
 portraits[enum_portrait.sad] = spr_portrait_villy_sad;
+
+var temp = dialogue.dialogues[? obj_npc_villy];
+text = temp[irandom_range(0, 2)];
+show_debug_message(text);

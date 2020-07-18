@@ -20,3 +20,7 @@ text = [
 		"Most of all, you want to have a name and have an important role to play. You are hard working and are very good at solving challenges. Maybe... just maybe, someday you'll also want to become a hero.",
 		"It's time to make your move! Step into the world of Euboxia and start your story."
 ]
+
+spr_help_w = sprite_get_width(spr_help);
+spr_help_h = sprite_get_height(spr_help);
+outline = 5;

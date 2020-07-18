@@ -1,5 +1,11 @@
 /// @description Insert description here
 
+var inst = instance_find(obj_cutscene, 0);
+
+if inst != noone {
+	if inst.active { exit; }
+}
+
 // create our root list
 var root_list = ds_list_create();
 

@@ -9,7 +9,7 @@ var i = 0; repeat(quests_grid_n) {
 	var objectives = grid[# 2, i];
 	var objectives_n = array_length_1d(objectives);
 	var ev = noone;
-	if i == quest.erosion_experiment show_debug_message(step);
+	//if i == quest.hints show_debug_message(step);
 
 	switch(i) {
 
@@ -20,7 +20,7 @@ var i = 0; repeat(quests_grid_n) {
 					if room == rm_polka_interior {
 						scr_progress_quest(i);
 						instance_create_layer(250, 200, "Characters", obj_npc_baron);
-						var inst = instance_find(obj_cutscene, 0);
+			 			var inst = instance_find(obj_cutscene, 0);
 						inst.active = true;
 					}
 				
@@ -37,21 +37,17 @@ var i = 0; repeat(quests_grid_n) {
 				case 2: {
 					
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, object67, false, true);
-					if polka.itemEquiped == enum_item_type.camera and inst != noone and polka.input_space {
+					if polka.itemEquiped == enum_item_type.camera and inst != noone and polka.input_use_item {
 						inst.draw_examine_box = false;
 						instance_destroy(ui_examine_box);
+						polka.move_override = false;
 						scr_progress_quest(i);
 					}
 				break;}
 				
 				case 3: {
 					if not instance_find(ui_examine_box, 0) {
-						desk_clues_text = ds_map_create();
-						desk_clues_text[? "GREET"] = [["What do you observe about the desk?", ["SPRITE", spr_animal_hairs_on_desk_photo_evidence]],
-														["Any time you want to check what clues you've found, you can go into your Notebook", ["SPRITE", spr_animal_hairs_on_desk_photo_evidence]],
-														["EXIT", "EXIT"], [noone, noone]];
-						desk_clues_text[? "EXIT"] = ["Ok.", [], [polka]];
-						scr_create_textbox(desk_clues_text, "", polka, []);
+						scr_draw_notification("What do you observe about the desk?\n Any time you want to check what clues you've found, you can go into your Notebook")
 						scr_evi_add_notebook(enum_evi_type.photo_desk, true);	
 						scr_progress_quest(i);
 					}
@@ -126,10 +122,7 @@ var i = 0; repeat(quests_grid_n) {
 				case 2: { 
 					if !polka.in_dialogue {
 						scr_progress_quest(i);
-						poppy0_text = ds_map_create();
-						poppy0_text[? "GREET"] = ["Sometimes you will want to review or you may want to ask something different. You can always repeat the most recent conversation with a Villy Nilly", ["EXIT", "EXIT"], [noone]];
-						poppy0_text[? "EXIT"] = ["Ok.", [], [polka]];
-						scr_create_textbox(poppy0_text, "", polka, []);
+						scr_draw_notification("Sometimes you will want to review or you may want to ask something different. You can always repeat the most recent conversation with a Villy Nilly")
 					}
 				break;}
 				
@@ -139,10 +132,7 @@ var i = 0; repeat(quests_grid_n) {
 					
 					if !polka.in_dialogue {
 						scr_progress_quest(i);
-						examine_crops0_text = ds_map_create();
-						examine_crops0_text[? "GREET"] = ["Now let's take whatever the Villy Nilly has told us and do some investigating ourselves. What clues should we be looking for? What do we have to examine?", ["EXIT", "EXIT"], [noone]];
-						examine_crops0_text[? "EXIT"] = ["Ok.", [], [polka]];
-						scr_create_textbox(examine_crops0_text, "", polka, []);
+						scr_draw_notification("Now let's take whatever the Villy Nilly has told us and do some investigating ourselves. What clues should we be looking for? What do we have to examine?");
 					}
 				break;}
 				
@@ -150,9 +140,10 @@ var i = 0; repeat(quests_grid_n) {
 				
 				case 6: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_tensiometer_tile, false, true);
-					if polka.itemEquiped == enum_item_type.camera and inst != noone and polka.input_space {
+					if polka.itemEquiped == enum_item_type.camera and inst != noone and polka.input_use_item {
 						inst.draw_examine_box = false;
 						instance_destroy(ui_examine_box);
+						polka.move_override = false;
 						scr_progress_quest(i);
 						scr_evi_add_notebook(enum_evi_type.photo_crop, true); 
 					}
@@ -161,10 +152,7 @@ var i = 0; repeat(quests_grid_n) {
 				case 7: {
 					if !polka.in_dialogue {
 						scr_progress_quest(i);
-						poppy1_text = ds_map_create();
-						poppy1_text[? "GREET"] = ["Finding a clue will lead to more unanswered questions. Let's go back and tell the Villy what we found out. We might get some answers.", ["EXIT", "EXIT"], [noone]];
-						poppy1_text[? "EXIT"] = ["Ok.", [], [polka]];
-						scr_create_textbox(poppy1_text, "", polka, []);
+						scr_draw_notification("Finding a clue will lead to more unanswered questions. Let's go back and tell the Villy what we found out. We might get some answers.");
 					}
 				break;}
 				
@@ -172,7 +160,7 @@ var i = 0; repeat(quests_grid_n) {
 				
 				case 9: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_tensiometer_tile, false, true);
-					if polka.itemEquiped == enum_item_type.tensiometer and inst != noone and polka.input_space {
+					if polka.itemEquiped == enum_item_type.tensiometer and inst != noone and polka.input_use_item {
 						scr_progress_quest(i);
 						scr_evi_add_notebook(enum_evi_type.soil_moisture_tbl, true); 
 					}
@@ -182,7 +170,7 @@ var i = 0; repeat(quests_grid_n) {
 				
 				case 11: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_tensiometer_tile, false, true);
-					if polka.itemEquiped == enum_item_type.tape and inst != noone and polka.input_space {
+					if polka.itemEquiped == enum_item_type.tape and inst != noone and polka.input_use_item {
 						scr_progress_quest(i);
 						scr_evi_add_notebook(enum_evi_type.soil_depth_tbl, true); 
 					}
@@ -197,9 +185,10 @@ var i = 0; repeat(quests_grid_n) {
 					
 				case 13: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_tensiometer_tile, false, true);
-					if polka.itemEquiped == enum_item_type.camera and inst != noone and polka.input_space {
+					if polka.itemEquiped == enum_item_type.camera and inst != noone and polka.input_use_item {
 						inst.draw_examine_box = false;
 						instance_destroy(ui_examine_box);
+						polka.move_override = false;
 						scr_progress_quest(i);
 						scr_evi_add_notebook(enum_evi_type.photo_erosion_water, true); 
 					}
@@ -246,7 +235,6 @@ var i = 0; repeat(quests_grid_n) {
 						instance_create_layer(389, 142, "Characters", obj_npc_investor_female);
 						instance_create_layer(640, 145, "Characters", obj_npc_investor_male);
 						
-						
 						var inst = instance_find(obj_cutscene, 0);
 						inst.active = true;
 						scr_progress_quest(i);
@@ -261,13 +249,11 @@ var i = 0; repeat(quests_grid_n) {
 		case quest.hints:
 			switch(step) {
 				case 0: {
-					if room == rm_polka_interior and scr_check_objective(enum_objective_type.ero_start){
-						scr_progress_quest(i);
-					}
+					ev = event.talk_baron;
 				break;}
 				case 1: {
 					var inst =  collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, par_NPC, false, true);
-					if inst != noone {
+					if inst != noone and not polka.move_override {
 						scr_progress_quest(i);
 					}
 				break;}
@@ -279,12 +265,12 @@ var i = 0; repeat(quests_grid_n) {
 					break;}
 				case 3: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_chest, false, true);
-					if(inst != noone){
+					if(inst != noone and scr_check_objective(enum_objective_type.ero_poppy1)){
 						scr_progress_quest(i);
 					}
 				break;}
 				case 4: {
-					var inst =collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_chest, false, true);
+					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_chest, false, true);
 					if(inst != noone and inst.show_chest){
 						scr_progress_quest(i);
 					}

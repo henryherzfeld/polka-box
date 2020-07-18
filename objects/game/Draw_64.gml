@@ -29,3 +29,13 @@ if (do_transition) {
 if(pause){
 	draw_sprite_ext(screenshot, 0, 0, 0, 1, 1, 0, c_gray, 1);
 }
+
+
+// draw for map and help
+if draw_help {
+	draw_rectangle((game.gui_width - spr_help_w)/2-outline, (game.gui_height - spr_help_h)/2-outline, (game.gui_width - spr_help_w)/2 + spr_help_w+outline, (game.gui_height - spr_help_h)/2+spr_help_h+outline, false);
+	draw_sprite(spr_help, 0, (game.gui_width - spr_help_w)/2, (game.gui_height - spr_help_h)/2);
+} else if draw_map {
+	draw_rectangle((game.gui_width - spr_map_w)/2-outline, (game.gui_height - spr_map_h)/2-outline, (game.gui_width - spr_map_w)/2 + spr_map_w+outline, (game.gui_height - spr_map_h)/2+spr_map_h+outline, false);
+	draw_sprite(spr_map, 0, (game.gui_width - spr_map_w)/2, (game.gui_height - spr_map_h)/2);
+}

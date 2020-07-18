@@ -3,7 +3,7 @@ sprite = spr_portrait;
 description = "";
 object = noone;
 
-interact_key = vk_space;
+interact_key = ord("F");
 draw = true;
 
 bg_spr = spr_portrait_frame

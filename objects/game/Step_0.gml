@@ -14,6 +14,8 @@ if(keyboard_check_pressed(vk_backspace) and keyboard_check(vk_lcontrol)){
 if(buffer != 0){
 	buffer -= 1;
 }
+
+/*
 if(keyboard_check_pressed(vk_escape)){
 	
 	if(buffer == 0){
@@ -25,7 +27,7 @@ if(keyboard_check_pressed(vk_escape)){
 		}
 	}
 }
-
+*/
 
 canvas_change = false;
 
@@ -53,4 +55,17 @@ if(pause_change){
 		scr_unpause();
 	}
 
+}
+
+if room == main_menu { exit;}
+
+// swap behavior for help and map menus
+if keyboard_check_pressed(ord("H")) {
+	draw_help = !draw_help;
+	if draw_map and draw_help { draw_map = false;}
+}
+
+if keyboard_check_pressed(ord("M")) {
+	draw_map = !draw_map;
+	if draw_map and draw_help { draw_help = false;}
 }

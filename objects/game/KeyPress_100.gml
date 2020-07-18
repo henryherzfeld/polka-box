@@ -1,0 +1,3 @@
+/// @description Insert description here
+
+scr_draw_notification("AAAASDASDDADASDAADASSADA ADSADSADSADASDS AD SAD SAD ASDSA ASDASDSADASSADASD SAD ASDAS SAD ASD AS ASD AS DSASA sa");

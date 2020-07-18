@@ -27,5 +27,6 @@ if sprite_draw != noone {
 }
 
 if(text != -1){
-	draw_text(x1 + ((window_w - string_width(text))/2), y1 + 20, text);
+	var in_text = scr_wrap_text(text, window_w-48);
+	draw_text(x1 + ((window_w - string_width(in_text))/2), y1 + 20, in_text);
 }

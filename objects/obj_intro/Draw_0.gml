@@ -13,6 +13,4 @@ if(intro){
 	draw_sprite(box, 0, 79, 104)
 	draw_text_ext(90, 115, text[page], string_height(text[page]), box_width-30);
 	draw_text(260, 310, "Press any key to continue..")
-} else if (initial) {
-	draw_text(260, 310, "Press space to start...")
 }

@@ -15,3 +15,5 @@ coll_range = 15;
 
 text = "default text goes here lorem ipsum dolor blah blah blah";
 text_padding = 100;
+
+directions = false;
