@@ -2,7 +2,7 @@
     "id": "aaadd52e-e290-41b6-9b6a-d8af40d5e297",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "key",
+    "name": "key_beginning_tutorial",
     "For3D": false,
     "HTile": false,
     "VTile": false,

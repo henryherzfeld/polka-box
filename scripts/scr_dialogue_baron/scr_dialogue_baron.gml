@@ -2,26 +2,51 @@ text1 = ds_map_create();
 
 //BARON DIALOGUE
 scr_dia_segment(text1, "GREET");
-scr_dia_line("Good morning, young squire! Hope I didn't startle you.", obj_npc_baron); 
+scr_dia_line("Good morning, young squire! Hope I didn't startle you.", obj_npc_baron);
 scr_dia_line("All the other Quanta Knights are busy fixing the ship. You've been chosen to get back the missing Crystal pieces so that we can recreate the cure.", obj_npc_baron); //baron 
+scr_dia_line_sprite(spr_ship);
+
 scr_dia_line("When you crash landed in your spaceship, the Crystal of Inventa broke. The art of discovery has disappeared thanks to Virus and his henchmen.", obj_npc_baron); //baron 
+scr_dia_line_sprite(spr_ship);
+scr_dia_line_sprite(spr_crystal_inventa_broken); 
+
 scr_dia_line("The henchmen live inside other Villy hosts throughout the land.", obj_npc_baron);  
+scr_dia_line_sprite(spr_crystal_inventa_broken);
+scr_dia_line_sprite(spr_virus_henchmen);
+
 scr_dia_line("To recreate the Crystal of Inventa, you will have to help bring advancements that make the world a better place to live in.", obj_npc_baron); //baron 
+scr_dia_line_sprite(spr_virus_henchmen);
+scr_dia_line_sprite(spr_advancement_invention);
+
 scr_dia_line("Each problem you find, no matter how small or big, takes you on a quest. Each time you do a quest, you knock out a henchman of Virus and the Crystal gets another piece back.", obj_npc_baron); //baron 
+scr_dia_line_sprite(spr_advancement_invention);
+scr_dia_line_sprite(spr_start_quest);
+
 scr_dia_line("The Villies cooperate more with each other. Problems get solved. Society benefits from its advancements.", obj_npc_baron); //baron 
+
 scr_dia_line("When all the quests have been completed, Virus and his henchmen get defeated and the Crystal becomes whole.", obj_npc_baron); //baron 
+scr_dia_line_sprite(spr_start_quest);
+scr_dia_line_sprite(spr_crystal_inventa);
+
 scr_dia_line("Navilla becomes a thriving planet once again.", obj_npc_baron); 
+
 scr_dia_line("The power from the Crystal can then be used to destroy the plague on our planet, Cosmo, and save its people.", obj_npc_baron); //baron 
+scr_dia_line_sprite(spr_crystal_inventa);
+scr_dia_line_sprite(spr_cosmo_space);
 
 scr_dia_line("Now here's how you beat a quest!", obj_npc_baron); 
-scr_dia_line("In each quest, you have to ask questions, investigate, analyze clues, and come up with conclusions that determine the direction you take next.", obj_npc_baron); //baron 
-scr_dia_line("You keep doing this until you've reached the end of your quest.", obj_npc_baron); 
-scr_dia_line("Are you ready? I think you can do it!", obj_npc_baron); 
-scr_dia_line("Here's your first item, given to all budding Quanta Knights: a camera!", obj_npc_baron);  
-scr_dia_line_script(itemAddInventory, enum_item_type.camera);
-//THE CAMERA ITEM (obj_camera_item) IS NOW VISIBLE IN THE ITEM INVENTORY
 
-scr_dia_line("You can use it to make observations and take pictures of what you find.", obj_npc_baron); //baron 
+scr_dia_line("In each quest, you have to ask questions, investigate, analyze clues, and come up with conclusions that determine the direction you take next.", obj_npc_baron); //baron 
+scr_dia_line_sprite(spr_cosmo_space);
+scr_dia_line_sprite(spr_quest_magnifying_glass);
+
+scr_dia_line("You keep doing this until you've reached the end of your quest.", obj_npc_baron); 
+scr_dia_line_sprite(spr_quest_magnifying_glass);
+scr_dia_line_sprite(spr_finish_quest);
+
+scr_dia_line("Are you ready? I think you can do it!", obj_npc_baron); 
+scr_dia_line("Feel free to press 'H' on your keyboard for HELP on how to play", obj_npc_baron); 
+
 scr_dia_line("You may leave. If you have any questions, feel free to ask me. I'm right here.", obj_npc_baron); //baron 
 scr_dia_options("EXIT", "EXIT");
 
@@ -34,8 +59,19 @@ text2 = ds_map_create();
 scr_dia_segment(text2, "GREET");
 scr_dia_line("Oh! I forgot to tell you. So, er, the key to the door is missing.", obj_npc_baron); //baron
 scr_dia_line("The last time I had it was when I was sitting at your desk. I went to drink some water.", obj_npc_baron); //baron 
-scr_dia_line("When I came back, the key was gone.", obj_npc_baron); 
-scr_dia_line("If you have what it takes to be a Quanta Knight, you'll be able to figure out where it is.", obj_npc_baron); //baron 
+scr_dia_line("When I came back, the key was gone.", obj_npc_baron);
+
+scr_dia_line("Here's your first item, given to all budding Quanta Knights: a camera!", obj_npc_baron);  
+scr_dia_line_sprite(spr_new_camera);
+scr_dia_line_script(itemAddInventory, enum_item_type.camera);
+//THE CAMERA ITEM (obj_camera_item) IS NOW VISIBLE IN THE ITEM INVENTORY
+
+scr_dia_line("You can use it to make observations and take pictures of what you find.", obj_npc_baron); //baron 
+
+scr_dia_line("If you have what it takes to be a Quanta Knight, you'll be able to figure out where the key is.", obj_npc_baron); //baron 
+scr_dia_line_sprite(spr_new_camera);
+scr_dia_line_sprite(spr_quanta_knights);
+
 scr_dia_line("When you find any clue, tell me about it.", obj_npc_baron); 
 scr_dia_options("EXIT", "EXIT");
 
@@ -95,7 +131,16 @@ text4 = ds_map_create();
 scr_dia_segment(text4, "GREET");
 scr_dia_line("Aha, excellent work! You just finished your first Quest investigation!", obj_npc_baron);
 scr_dia_line("I'm confident that you'll do great out there!", obj_npc_baron);
-scr_dia_line("This is also your chance to prove your worth and finally join the ranks of the Quanta Knights.", obj_npc_baron);
+
+scr_dia_line("You'll find these tiles throughout the world. Go to them to win some coins! You can use these coins to buy skins and items from the shop", obj_npc_baron); 
+scr_dia_line_sprite(spr_coin_tiles); 
+
+scr_dia_line("And remember to press 'M' on your keyboard to see a map where everything is!", obj_npc_baron);
+scr_dia_line_sprite(spr_coin_tiles);
+
+scr_dia_line("This is your chance to prove your worth and finally join the ranks of the Quanta Knights.", obj_npc_baron);
+scr_dia_line_sprite(spr_quanta_knights);
+
 scr_dia_line("Good luck!", obj_npc_baron);
 scr_dia_options("EXIT", "FILLER");
 
