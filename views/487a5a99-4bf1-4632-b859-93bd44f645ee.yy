@@ -6,7 +6,8 @@
     "children": [
         "fa10019e-5512-48d5-b2a4-08dc0646d245",
         "5b31a5c3-795f-41c9-b737-31b51da074f0",
-        "72b23903-7cc4-4704-908e-0ee9b18a900f"
+        "72b23903-7cc4-4704-908e-0ee9b18a900f",
+        "453fb66f-3dfc-46b9-a12e-24c1f0240aac"
     ],
     "filterType": "GMSprite",
     "folderName": "Erosion",
