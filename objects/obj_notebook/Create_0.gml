@@ -66,3 +66,6 @@ scr_grid_add_button(700, 500, "Submit", enum_button_type.click, enum_button_even
 								[scr_change_variable, obj_notebook.id, "send_selected", true],
 								]);
 scr_add_window("evidence_select", 0, 0, "");
+
+preview_h = sprite_get_height(spr_erosion_experiment_table_evidence);
+preview_w = sprite_get_width(spr_erosion_experiment_table_evidence);

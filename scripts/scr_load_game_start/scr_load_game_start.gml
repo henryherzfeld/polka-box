@@ -45,7 +45,6 @@ if(file_exists("savedgame.sav")){
 	var x_coords_ = villy_loc[? "x_villies"];
 	var y_coords_ = villy_loc[? "y_villies"];
 	*/
-
 	
 	//// ASSIGN IT ALLLLLLLL
 	// game_data
@@ -67,7 +66,7 @@ if(file_exists("savedgame.sav")){
 	ds_grid_read(quests_, quests_str);
 	ds_grid_destroy(quests.quests_grid);
 	quests.quests_grid = quests_;
-	quests.register_events = true;
+	quests.update = true;
 	
 	
 	// loc_data
@@ -77,8 +76,19 @@ if(file_exists("savedgame.sav")){
 	game.spawn_y = y_;
 	
 	// list_map
-	InventoryManager.inventorySlot = scr_convert_list_to_array(inventorySlot_);
-	obj_notebook.evidence_slot = scr_convert_list_to_array(evidence_slot_);
+	if !is_undefined(inventorySlot_) {
+		InventoryManager.inventorySlot = scr_convert_list_to_array(inventorySlot_);
+		ds_list_destroy(inventorySlot_);
+	} else {
+		InventoryManager.inventorySlot = [];
+	}
+	
+	if !is_undefined(evidence_slot_) {
+		obj_notebook.evidence_slot = scr_convert_list_to_array(evidence_slot_);
+		ds_list_destroy(evidence_slot_);
+	} else {
+		obj_notebook.evidence_slot = [];
+	}
 	
 	// villy_loc
 	/*
@@ -94,8 +104,6 @@ if(file_exists("savedgame.sav")){
 	
 	// Destroy maps, list
 	ds_list_destroy(root_list);
-	ds_list_destroy(inventorySlot_);
-	ds_list_destroy(evidence_slot_);
 	ds_map_destroy(wrapper);
 	ds_map_destroy(game_data);
 	ds_map_destroy(loc_data);

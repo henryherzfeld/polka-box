@@ -43,10 +43,12 @@ if(draw_sm_noti){
 	noti_sm_height = string_height(sm_noti_text);
 }
 
+
 if(draw_lg_noti){
 	draw_lg_noti = false;
 	noti_lg_count = 1;
 }
+
 
 if(noti_sm_count){
 	if(noti_sm_count <= noti_sm_timeout){

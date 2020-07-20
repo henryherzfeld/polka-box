@@ -2,6 +2,11 @@
 // You can write your code in this editor
 draw_set_font(font_comic);
 
+if game_over_bg != noone{
+	draw_sprite(game_over_bg, 0, 0, 0);
+	draw_text_transformed((gui_width-game_over_text_w*4)/2, (gui_height-game_over_text_h*4)/2, game_over_text, 4, 4, 0);
+}
+
 
 if (do_transition) {
 	if (room != spawn_room) {

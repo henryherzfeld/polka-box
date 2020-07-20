@@ -3,8 +3,10 @@ active = false;
 
 var temp = dialogue.dialogues[? obj_npc_baron];
 text = temp[0];
+instance_destroy();
+scene_info = [];
 
-scene_info = [
+/*
 	[scr_cutscene_change_variable, polka, "move_override", true],
 	[scr_cutscene_wait, 2],
 	[scr_cutscene_move_character, obj_npc_baron, 50, -100, true, 3],
@@ -12,7 +14,8 @@ scene_info = [
 	[scr_cutscene_create_dialogue, text, [[scr_event_fire, event.talk_baron]]],
 	[scr_cutscene_move_character, obj_npc_baron, -50, 100, true, 3],
 	[scr_cutscene_change_variable, polka, "move_override", false],
-]
+	*/
+
 
 /*
 

@@ -9,7 +9,7 @@ var i = 0; repeat(quests_grid_n) {
 	var objectives = grid[# 2, i];
 	var objectives_n = array_length_1d(objectives);
 	var ev = noone;
-	//if i == quest.hints show_debug_message(step);
+	//if i == quest.hints show_dbug_message(step);
 
 	switch(i) {
 
@@ -20,8 +20,10 @@ var i = 0; repeat(quests_grid_n) {
 					if room == rm_polka_interior {
 						scr_progress_quest(i);
 						instance_create_layer(250, 200, "Characters", obj_npc_baron);
+						/* starting cutscene for baron to walk up to polka
 			 			var inst = instance_find(obj_cutscene, 0);
 						inst.active = true;
+						*/
 					}
 				
 				break;}
@@ -165,10 +167,18 @@ var i = 0; repeat(quests_grid_n) {
 						scr_evi_add_notebook(enum_evi_type.soil_moisture_tbl, true); 
 					}
 				break;}
-
-				case 10: ev = event.talk_poppy;  if update scr_char_change_dialogue(obj_npc_poppy, 3); break;
 				
-				case 11: {
+				case 10: {
+					if !polka.in_dialogue {
+						scr_progress_quest(i);
+						scr_draw_notification("Finding a clue will lead to more unanswered questions. Let's go back and tell the Villy what we found out. We might get some answers.");
+					}
+				break;}
+				
+
+				case 11: ev = event.talk_poppy;  if update scr_char_change_dialogue(obj_npc_poppy, 3); break;
+				
+				case 12: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_tensiometer_tile, false, true);
 					if polka.itemEquiped == enum_item_type.tape and inst != noone and polka.input_use_item {
 						scr_progress_quest(i);
@@ -176,14 +186,14 @@ var i = 0; repeat(quests_grid_n) {
 					}
 				break;}
 				
-				case 12: ev = event.talk_poppy; 
+				case 13: ev = event.talk_poppy; 
 					if update {	
 						scr_char_change_dialogue(obj_npc_poppy, 4);
 						scr_char_change_dialogue(obj_npc_weeraway, 2);
 					}
 					break;
 					
-				case 13: {
+				case 14: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_tensiometer_tile, false, true);
 					if polka.itemEquiped == enum_item_type.camera and inst != noone and polka.input_use_item {
 						inst.draw_examine_box = false;
@@ -193,9 +203,17 @@ var i = 0; repeat(quests_grid_n) {
 						scr_evi_add_notebook(enum_evi_type.photo_erosion_water, true); 
 					}
 				break;}
-				case 14: ev = event.talk_poppy; if update scr_char_change_dialogue(obj_npc_poppy, 5); break;
 				
-				case 15: if update {
+				case 15: {
+					if !polka.in_dialogue {
+						scr_progress_quest(i);
+						scr_draw_notification("Finding a clue will lead to more unanswered questions. Let's go back and tell the Villy what we found out. We might get some answers.");
+					}
+				break;}
+				
+				case 16: ev = event.talk_poppy; if update scr_char_change_dialogue(obj_npc_poppy, 5); break;
+				
+				case 17: if update {
 					scr_char_change_dialogue(obj_npc_poppy, 0);
 					scr_activate_objective(enum_objective_type.ero_poppy4); 
 					var inst = instance_find(obj_cutscene, 0); // CUTSCENE TRANSITIONS TO WEERAWAYS

@@ -16,7 +16,7 @@ if(objective_change){
 		var noti_bg_col = scr_get_phase_state(objective_phase, enum_phase_state.bg_color);
 		var noti_text_col = scr_get_phase_state(objective_phase, enum_phase_state.text_color);
 
-		scr_fire_lg_noti("New Phase: " + objective_phase_text, noti_bg_col, noti_text_col);
+		//scr_fire_lg_noti("New Phase: " + objective_phase_text, noti_bg_col, noti_text_col);
 
 	}
 	

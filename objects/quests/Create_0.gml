@@ -19,8 +19,9 @@ var quest_array = [
 	[noone,                                  enum_objective_type.ero_weeraway0,             noone, 
 	enum_objective_type.ero_poppy0,          noone,                                         enum_objective_type.ero_examine_crops0,
 	enum_objective_type.ero_examine_crops1,  noone,                                         enum_objective_type.ero_poppy1, 
-	enum_objective_type.ero_measure_soil0,   enum_objective_type.ero_poppy2,                enum_objective_type.ero_measure_soil1,   
-	enum_objective_type.ero_poppy3,          enum_objective_type.ero_weeraway_fields_erode, enum_objective_type.ero_poppy4, noone]],
+	enum_objective_type.ero_measure_soil0,   noone,                                         enum_objective_type.ero_poppy2,                
+	enum_objective_type.ero_measure_soil1,   
+	enum_objective_type.ero_poppy3,          enum_objective_type.ero_weeraway_fields_erode, noone, enum_objective_type.ero_poppy4, noone]],
 	
 	["erosion_experiment", -1, 
 	[enum_objective_type.ero_ex_start, enum_objective_type.ero_ex_weeraway0]],
@@ -28,7 +29,7 @@ var quest_array = [
 	["erosion_case", -1, 
 	[enum_objective_type.ero_ca_start, enum_objective_type.ero_ca_cheiftain0]],
 	
-	["hints", 0, 
+	["hints", 1, 
 	[noone, noone, noone, noone, noone, noone, noone, noone, noone, noone, noone, noone, noone, noone, noone, noone]]
 ]
 

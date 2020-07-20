@@ -2,9 +2,12 @@
 
 var inst = instance_find(obj_cutscene, 0);
 
+
 if inst != noone {
-	if inst.active { exit; }
+	show_debug_message(inst.active);
+	if inst.active == true { exit; }
 }
+
 
 // create our root list
 var root_list = ds_list_create();
@@ -36,10 +39,17 @@ ds_map_add(grid_map, "quests", quests_str);
 
 // lists
 var list_map = ds_map_create();
-var inventory_list = scr_convert_array_to_list(InventoryManager.inventorySlot);
-var evidence_list = scr_convert_array_to_list(obj_notebook.evidence_slot);
-ds_map_add_list(list_map, "inventory", inventory_list)
-ds_map_add_list(list_map, "evidence", evidence_list)
+
+if array_length_1d(InventoryManager.inventorySlot) {
+	var inventory_list = scr_convert_array_to_list(InventoryManager.inventorySlot);
+	ds_map_add_list(list_map, "inventory", inventory_list);
+}
+
+if array_length_1d(obj_notebook.evidence_slot) { 
+	var evidence_list = scr_convert_array_to_list(obj_notebook.evidence_slot);
+	ds_map_add_list(list_map, "evidence", evidence_list);
+}
+
 
 /*
 // villy locations

@@ -66,3 +66,8 @@ spr_map_w = sprite_get_width(spr_help);
 spr_map_h = sprite_get_height(spr_map);
 
 outline = 5;
+
+game_over_bg = noone;
+game_over_text = "Game Over";
+game_over_text_w = string_width(game_over_text);
+game_over_text_h = string_width(game_over_text);
