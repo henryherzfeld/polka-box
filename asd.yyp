@@ -5511,6 +5511,14 @@
             }
         },
         {
+            "Key": "e376106d-64ac-4ee7-9d3d-734fa74c5095",
+            "Value": {
+                "id": "a2529b7e-ab38-4dc8-9118-863981e863b3",
+                "resourcePath": "sprites\/spr_water_drop\/spr_water_drop.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e3faba23-24d0-45d9-b718-fe756169f669",
             "Value": {
                 "id": "eecc4b26-ad3e-4415-9986-e04cfd619397",

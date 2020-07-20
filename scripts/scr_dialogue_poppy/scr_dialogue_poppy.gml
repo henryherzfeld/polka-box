@@ -38,12 +38,15 @@ scr_dia_line("This is what a healthy plant looks like. It's green, has lots of l
 scr_dia_line_sprite(spr_healthy_plant); 
 
 scr_dia_line("If the plant isn't getting enough water - it will wilt. The edges of the leaves turn out dry and brown. The soil will be dry. There is low soil moisture found when measuring.", obj_npc_poppy);
+scr_dia_line_sprite(spr_healthy_plant); 
 scr_dia_line_sprite(spr_dying_plant);
 
 scr_dia_line("If the plant isn't getting enough light - the stems are long and thin. They have small, yellow leaves.", obj_npc_poppy);
+scr_dia_line_sprite(spr_dying_plant);
 scr_dia_line_sprite(spr_plant_less_sunlight);
 
 scr_dia_line("The stems grow thin because the plant is desperately reaching its leaves up to get more light.", obj_npc_poppy);
+scr_dia_line_sprite(spr_plant_less_sunlight);
 scr_dia_line_sprite(spr_dying_plant);
 
 scr_dia_line("If there isn't enough soil, then the plant will wilt. The edges of the leaves turn out dry and brown.", obj_npc_poppy);
@@ -79,7 +82,7 @@ scr_quiz_question(enum_question_type.multi,
 "The farmer's crops ____ getting enough nutrients.", 
 ["Are", "Are not"], 
 1);
-scr_quiz_question_response("Really? How did you find out?", noone);
+scr_quiz_question_response("Really? How did you find out?", "You almost got it! Try again");
 
 scr_quiz_question(enum_question_type.evidence_checkbox, 
 "Their leaves look",
@@ -93,12 +96,15 @@ scr_dia_line_quiz(crops_appearance_quiz, obj_npc_poppy);
 //QUIZ WHERE THEY HAVE TO ATTACH PHOTO EVIDENCE ABOUT HOW THE CROPS LOOKS
 
 scr_dia_line("The air is plenty. Perhaps they're not getting enough water?", obj_npc_poppy);
-scr_dia_line_sprite(spr_water_lake);
+scr_dia_line_sprite(spr_water_drop);
+
 scr_dia_line("You can tell from the soil moisture if a plant is getting enough.", obj_npc_poppy);
+scr_dia_line_sprite(spr_water_drop);
 
 scr_dia_line("Plants grow best when our soil moisture is 50 to 60 kPa.", obj_npc_poppy);
 scr_dia_line("For measuring soil moisture, you would have to use a tool.", obj_npc_poppy);
-scr_dia_line("I might have one lying around that could help", obj_npc_poppy);
+scr_dia_line("I might have one lying around that could help. Let's check the tool chest!", obj_npc_poppy);
+//ADD "PRESS THE SPACEBAR" ANIMATION FOR OPENING THE CHEST WHEN PLAYER APPROACHES CHEST
 
 scr_dia_options("EXIT", "FILLER");
 
@@ -119,20 +125,20 @@ scr_quiz_question(enum_question_type.multi,
 "The farmer's crops ____ getting enough water.", 
 ["Are", "Are not"], 
 0);
-scr_quiz_question_response("How did you find out?", noone);
+scr_quiz_question_response("How did you find out?", "You almost got it! Try again");
 
 scr_quiz_question(enum_question_type.evidence_multi, 
 "The soil moisture levels are between",
 ["20-40 kpa", "50-60 kpa", "70-80 kpa"],
 [enum_evi_type.soil_moisture_tbl, 1]); 
 //RESERVED EVIDENCE 1 FOR SOIL MOISTURE TABLE EVIDENCE (spr_soil_moisture_table_evidence)
-scr_quiz_question_response("The plants are getting enough air and sunlight. The sun has been bright.", noone);
+scr_quiz_question_response("The plants are getting enough air and sunlight. The sun has been bright.", "You almost got it! Try again");
 
 scr_quiz_question(enum_question_type.multi, 
 "They are _____ getting enough soil to grow properly",
 ["likely", "likely not"],
 1); 
-scr_quiz_question_response("That's what I was thinking. Plants don't get enough nutrients when they don't have enough soil.", noone);
+scr_quiz_question_response("That's what I was thinking. Plants don't get enough nutrients when they don't have enough soil.", "You almost got it! Try again");
 
 //END OF SOIL MOISTURE QUIZ QUESTIONS
 
@@ -170,14 +176,14 @@ scr_quiz_question(enum_question_type.multi,
 "The crops _____ getting enough topsoil.", 
 ["Are", "Are not"], 
 1);
-scr_quiz_question_response("How did you find out?", noone);
+scr_quiz_question_response("How did you find out?", "You almost got it! Try again");
 
 scr_quiz_question(enum_question_type.evidence_multi, 
 "The soil depth levels are between",
 ["4-6 inches", "6-8 inches", "8-10 inches"],
 [enum_evi_type.soil_depth_tbl, 0]); 
 //RESERVED EVIDENCE 1 FOR TOPSOIL DEPTH LEVELS EVIDENCE (spr_topsoil_depth_evidence)
-scr_quiz_question_response("Now we got something!", noone);
+scr_quiz_question_response("Now we got something!", "You almost got it! Try again");
 
 //END OF TOPSOIL DEPTH QUIZ QUESTIONS
 
@@ -207,14 +213,14 @@ scr_quiz_question(enum_question_type.multi,
 "What did you find out", 
 ["The topsoil is being moved by people", "The topsoil is getting grabbed by animals", "The rain outside is flooding people's homes", "The topsoil is being removed away by water"], 
 3);
-scr_quiz_question_response("How did you find out?", noone);
+scr_quiz_question_response("How did you find out?", "You almost got it! Try again");
 
 scr_quiz_question(enum_question_type.evidence_multi, 
 "We saw the topsoil getting moved by _____ into a lake when it was raining outside",
 ["Wind", "Water", "Animals", "Ice"],
 [enum_evi_type.photo_erosion_water, 1]); 
 //RESERVED EVIDENCE 2 FOR SOIL-EROSION-WATER PHOTO EVIDENCE (spr_soil_erosion_water_photo_evidence)
-scr_quiz_question_response("This is wonderful, you figured it out!", noone);
+scr_quiz_question_response("This is wonderful, you figured it out!", "You almost got it! Try again");
 
 //END OF TOPSOIL RAIN EROSION QUIZ QUESTIONS
 

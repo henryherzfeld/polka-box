@@ -99,7 +99,7 @@ scr_quiz_question(enum_question_type.multi,
 scr_quiz_question_response(["But how do I know you're telling the truth?", 
 "I need to see evidence. Remember, showing evidence helps to support what you're saying.",
 "It makes it more likely for people to trust you."], 
-"Why don't you try a different answer?");
+"You almost got it! Try again");
 
 
 scr_quiz_question(enum_question_type.evidence_multi, 
@@ -183,6 +183,7 @@ scr_dia_line("Say your friend runs a lemonade stand. He wants to add honey inste
 scr_dia_line_sprite(spr_lemonade_stand);
 
 scr_dia_line("He asks you for money so that he can buy enough honey to use in all his lemonades.", obj_npc_baron);
+scr_dia_line_sprite(spr_lemonade_stand);
 scr_dia_line_sprite(spr_money_bills); 
 
 //EROSION EXPERIMENT TUTORIAL 1 QUIZ QUESTIONS
@@ -196,7 +197,7 @@ scr_quiz_question(enum_question_type.multi,
 "How will you test your hypothesis?", 
 "Why do you think honey will taste better than sugar in lemonade?"], 
 3);
-scr_quiz_question_response("Exactly", noone);
+scr_quiz_question_response("Exactly", "You almost got it! Try again");
 //END OF EROSION EXPERIMENT TUTORIAL 1 QUIZ QUESTIONS
 
 scr_dia_line("filler", obj_npc_baron);
@@ -206,6 +207,8 @@ scr_dia_line("You'd want to know where he got the idea from. He tells you an art
 scr_dia_line_sprite(spr_magazine_article_honey); 
 
 scr_dia_line("But what if people don't like honey? What if his customers think that lemonade tastes good with sugar and not with honey?", obj_npc_baron);
+scr_dia_line_sprite(spr_magazine_article_honey); 
+
 scr_dia_line("Then it means your friend wasted a lot of money. And you'll trust your friend less with your money.", obj_npc_baron);
 
 //EROSION EXPERIMENT TUTORIAL 2 QUIZ QUESTIONS
@@ -219,7 +222,7 @@ scr_quiz_question(enum_question_type.multi,
 "Have any of your customers tried your lemonade with honey instead of sugar?", 
 "What is honey made of?"], 
 2);
-scr_quiz_question_response("You'd want your friend to try this out with a little honey before he goes out and buys a whole bunch of honey. So your friend sets up an experiment.", noone);
+scr_quiz_question_response("You'd want your friend to try this out with a little honey before he goes out and buys a whole bunch of honey. So your friend sets up an experiment.", "You almost got it! Try again");
 
 scr_quiz_question(enum_question_type.multi, 
 "Then you'd ask:", 
@@ -229,7 +232,7 @@ scr_quiz_question(enum_question_type.multi,
 "What color is honey?"], 
 0);
 scr_quiz_question_sprite(spr_hypothesis_question_marks); 
-scr_quiz_question_response("You'd want to make sure your friend is actually testing the right thing. What is he looking for? He makes a hypothesis. His hypothesis is that adding honey instead of sugar to lemonade will make people like it more.", noone);
+scr_quiz_question_response("You'd want to make sure your friend is actually testing the right thing. What is he looking for? He makes a hypothesis. His hypothesis is that adding honey instead of sugar to lemonade will make people like it more.", "You almost got it! Try again");
 
 scr_quiz_question(enum_question_type.multi, 
 "Then you'd ask:", 
@@ -239,7 +242,7 @@ scr_quiz_question(enum_question_type.multi,
 "What color is honey?"], 
 2);
 scr_quiz_question_sprite(spr_tutorial_procedure); 
-scr_quiz_question_response("You'd want to know how your friend plans on carrying out the experiment. What steps will he take to find out? He sets up a procedure on what he'll be doing. ", noone);
+scr_quiz_question_response("You'd want to know how your friend plans on carrying out the experiment. What steps will he take to find out? He sets up a procedure on what he'll be doing. ", "You almost got it! Try again");
 
 //END OF EROSION EXPERIMENT TUTORIAL 2 QUIZ QUESTIONS
 
@@ -250,10 +253,8 @@ scr_dia_line("He has two groups. He will give half of his customers lemonade wit
 scr_dia_line_sprite(spr_experiment_tutorial_setup);
 
 scr_dia_line("He will give the other half of his customers the lemonade with honey, but without sugar. This is his second group.", obj_npc_baron);
-scr_dia_line_sprite(spr_experiment_tutorial_setup);
 
 scr_dia_line("He asks each customer to give a rating, from 1-10, on how much they liked his lemonade. Then he adds up the ratings from each group.", obj_npc_baron);
-scr_dia_line_sprite(spr_experiment_tutorial_setup);
 
 //EROSION EXPERIMENT TUTORIAL 3 QUIZ QUESTIONS
 erosion_experiment_tutorial_3 = ds_list_create();
@@ -266,7 +267,7 @@ scr_quiz_question(enum_question_type.multi,
 "How will you test your hypothesis?", 
 "Do bears like honey?"], 
 1);
-scr_quiz_question_response("You will want to know what results your friend found. Was the honey a success?", noone);
+scr_quiz_question_response("You will want to know what results your friend found. Was the honey a success?", "You almost got it! Try again");
 
 //END OF EROSION EXPERIMENT TUTORIAL 3 QUIZ QUESTIONS
 
@@ -290,7 +291,7 @@ scr_quiz_question(enum_question_type.multi,
 0); 
 scr_quiz_question_sprite(spr_experiment_tutorial_table); 
 //SHOW EXPERIMENT TUTORIAL TABLE
-scr_quiz_question_response("Your friend has to make a final decision. He comes up with a conclusion: adding honey instead of sugar to lemonade makes customers like it more.", noone);
+scr_quiz_question_response("Your friend has to make a final decision. He comes up with a conclusion: adding honey instead of sugar to lemonade makes customers like it more.", "You almost got it! Try again");
 
 //END OF EROSION EXPERIMENT TUTORIAL 4 QUIZ QUESTIONS
 
