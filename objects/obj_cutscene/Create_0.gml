@@ -15,4 +15,6 @@ base_view_w = 0;
 in_dialogue = false;
 dialogue_inst = -1;
 
+notification_inst = -1;
+
 active = false;

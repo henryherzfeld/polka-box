@@ -279,6 +279,14 @@
             }
         },
         {
+            "Key": "08b67c76-4b28-40aa-8fa6-dd3192992dff",
+            "Value": {
+                "id": "fda47e19-ffcd-4c80-8e3e-9a9ef6484b8d",
+                "resourcePath": "sprites\\spr_question_mark\\spr_question_mark.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "08e1e5d6-b048-4b5e-a1bc-76d9420d400e",
             "Value": {
                 "id": "f3a3f621-b78a-42bb-8384-f8510c4c3641",
@@ -2724,6 +2732,14 @@
                 "id": "202f3905-98db-4fad-9b36-a2e736a859d8",
                 "resourcePath": "sprites\/sprite78\/sprite78.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "6b865712-dd5d-4e7e-8771-40acfac4e224",
+            "Value": {
+                "id": "a5bf3b18-8eb1-4803-8afb-0798733821b3",
+                "resourcePath": "objects\\emote\\emote.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -5663,6 +5679,14 @@
             }
         },
         {
+            "Key": "eaa8c35c-683e-4598-848a-eee27761bb71",
+            "Value": {
+                "id": "c7c3ef02-14bf-4c3d-b68f-79403420bb1f",
+                "resourcePath": "scripts\\scr_cutscene_notification\\scr_cutscene_notification.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ebc5003a-2c50-4d37-8744-4cdc32549d4e",
             "Value": {
                 "id": "a27d5669-75cc-4323-a5f7-e674a53e0403",
@@ -6111,6 +6135,7 @@
         "7c7731bd-69c3-4fb9-931c-94ee2c2c337f",
         "3d9a6474-a6b2-41e9-ac26-2d1d21d5a564",
         "8c795b7b-85d5-4ad0-a9dd-3a5a4e92048d",
+        "eaa8c35c-683e-4598-848a-eee27761bb71",
         "35e47bd1-5914-451b-afd3-9bebdb5bcb65",
         "0e0a68c5-5fbe-4ac2-800a-4f2144f69c77",
         "02cdf6fe-72ac-4a41-bccc-f08c9ca1c58d",

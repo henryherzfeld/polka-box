@@ -13,3 +13,5 @@ with inst {
 
 	curr_window = "noti_main";
 }
+
+return inst;

@@ -9,7 +9,7 @@ var i = 0; repeat(quests_grid_n) {
 	var objectives = grid[# 2, i];
 	var objectives_n = array_length_1d(objectives);
 	var ev = noone;
-	//if i == quest.hints show_dbug_message(step);
+	if i == quest.tutorial show_debug_message(step);
 
 	switch(i) {
 
@@ -28,7 +28,9 @@ var i = 0; repeat(quests_grid_n) {
 				
 				break;}
 				
-				case 1: {
+				case 1: ev = event.talk_baron; break;
+				
+				case 2: {
 					if scr_check_objective(enum_objective_type.tut_try_to_leave){
 						scr_char_change_dialogue(obj_npc_baron, 1);
 						scr_char_update_dialogue(obj_npc_baron);
@@ -36,8 +38,7 @@ var i = 0; repeat(quests_grid_n) {
 					}
 				break;}
 				
-				case 2: {
-					
+				case 3: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, object67, false, true);
 					if polka.itemEquiped == enum_item_type.camera and inst != noone and polka.input_use_item {
 						inst.draw_examine_box = false;
@@ -47,7 +48,7 @@ var i = 0; repeat(quests_grid_n) {
 					}
 				break;}
 				
-				case 3: {
+				case 4: {
 					if not instance_find(ui_examine_box, 0) {
 						scr_draw_notification("What do you observe about the desk?\n Any time you want to check what clues you've found, you can go into your Notebook")
 						scr_evi_add_notebook(enum_evi_type.photo_desk, true);	
@@ -55,14 +56,14 @@ var i = 0; repeat(quests_grid_n) {
 					}
 				break;}
 				
-				case 4: {
+				case 5: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_npc_baron, false, true);
 					if inst != noone {
 						scr_progress_quest(i);
 					}
 				break;}
 				
-				case 5: {
+				case 6: {
 					ev = event.talk_baron; 
 					if update {
 						var temp = dialogue.dialogues[? obj_npc_baron];
@@ -98,7 +99,7 @@ var i = 0; repeat(quests_grid_n) {
 				
 //			case 5: ev = event.talk_baron; if update scr_char_change_dialogue(obj_npc_baron, 4); scr_char_update_dialogue(obj_npc_baron); break;
 			
-			case 6: if update {
+			case 7: if update {
 					var inst = instance_find(obj_transition, 0);
 					inst.disable = false;
 					/*
