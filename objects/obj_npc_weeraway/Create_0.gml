@@ -11,3 +11,13 @@ name = "Villy Weeraway";
 
 if not scr_check_objective(enum_objective_type.ero_poppy0) crying = true;
 else crying = false;
+
+walk_front = spr_polka_walk_front;
+walk_back = spr_polka_walk_back;
+walk_left = spr_polka_walk_left;
+walk_right = spr_polka_walk_right;
+
+stand_front = spr_polka_stand_right;
+stand_back = spr_polka_stand_right;
+stand_left = spr_polka_stand_right;
+stand_right = spr_polka_stand_right;

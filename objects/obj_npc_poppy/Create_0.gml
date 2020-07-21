@@ -9,3 +9,4 @@ portraits[enum_portrait.sad] = spr_portrait_poppy_sad;
 
 name = "Villy Poppy";
 portrait = spr_portrait_poppy;
+

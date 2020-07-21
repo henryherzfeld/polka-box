@@ -119,7 +119,19 @@ var i = 0; repeat(quests_grid_n) {
 			switch(step) {
 				case 0: ev = event.talk_green_villy; break;
 				
-				case 1: ev = event.talk_weeraway; if update scr_char_change_dialogue(obj_npc_weeraway, 1); break;
+				case 1: {
+					ev = event.talk_weeraway;
+					
+					if room == erosion_forest {
+						var inst = instance_find(obj_cutscene, 0);
+						if inst != noone {
+							inst.active = true;
+						}
+					}
+					
+					if update scr_char_change_dialogue(obj_npc_weeraway, 1); 
+				break;}
+					
 				
 				case 2: { 
 					if !polka.in_dialogue {
@@ -183,6 +195,7 @@ var i = 0; repeat(quests_grid_n) {
 					if polka.itemEquiped == enum_item_type.tape and inst != noone and polka.input_use_item {
 						scr_progress_quest(i);
 						scr_evi_add_notebook(enum_evi_type.soil_depth_tbl, true); 
+						scr_draw_notification("Finding a clue will lead to more unanswered questions. Let's go back and tell the Villy what we found out. We might get some answers.");
 					}
 				break;}
 				

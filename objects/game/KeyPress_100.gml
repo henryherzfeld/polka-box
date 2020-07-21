@@ -1,3 +1,6 @@
 /// @description Insert description here
 
-scr_draw_notification("AAAASDASDDADASDAADASSADA ADSADSADSADASDS AD SAD SAD ASDSA ASDASDSADASSADASD SAD ASDAS SAD ASD AS ASD AS DSASA sa");
+spawn_room = erosion_forest;
+do_transition = true;
+spawn_x = 37;
+spawn_y = 860;

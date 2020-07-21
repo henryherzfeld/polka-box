@@ -17,8 +17,10 @@ if(draw){
 				break;
 				
 		case 4: draw_sprite_stretched(space_key, image_index*draw_time, xx, yy, space_key_w, space_key_h); break;
+		        draw_text(xx, yy+space_key_h, "Press Space to Open a Chest");
 		
-		case 5: draw_sprite_stretched(m_pressed, image_index*draw_time, xx, yy, m_pressed_w, m_pressed_h); break;
+		case 5: //draw_sprite_stretched(m_pressed, image_index*draw_time, xx, yy, m_pressed_w, m_pressed_h); 
+				break;
 		
 		case 6: draw_sprite_stretched(m_pressed, image_index*draw_time, xx, yy, m_pressed_w, m_pressed_h); break;
 		

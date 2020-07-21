@@ -119,7 +119,7 @@ The Notebook opens.
 They then select the picture they took of the desk. 
 It attaches to the evidence slot.)
 */
-scr_quiz_question_response(["Is that so? I wonder if...?"], 
+scr_quiz_question_response("Is that so? I wonder if...?", 
 "You almost got it! Try again");
 //END OF BEGINNING TUTORIAL QUIZ QUESTIONS
 
