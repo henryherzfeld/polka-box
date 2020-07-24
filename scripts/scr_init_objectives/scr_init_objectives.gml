@@ -11,15 +11,6 @@ enum enum_objective_state {
 enum enum_objective_type {
 	tut_start,
 	tut_try_to_leave,
-	tut_click_camera,
-	tut_use_camera,
-	tut_open_notebook,
-	tut_click_evidence,
-	tut_click_exit_notebook,
-	tut_click_answer,
-	tut_click_evidence_button,
-	tut_click_evidence_select,
-	tut_click_evidence_submit,
 	tut_find_key,
 	
 	ero_start,

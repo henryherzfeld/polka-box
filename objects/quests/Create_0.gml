@@ -11,9 +11,10 @@ enum quest {
 
 var quest_array = [
 	["tutorial", 0, 
-	[enum_objective_type.tut_start, noone, noone, noone,
-	enum_objective_type.tut_find_key, noone, noone,
-	enum_objective_type.ero_start, noone]],
+	[enum_objective_type.tut_start, noone, noone, 
+	noone, enum_objective_type.tut_find_key, noone, noone,
+	noone, noone, noone, noone, 
+	noone, enum_objective_type.ero_start, noone]],
 	
 	["erosion_investigation", 0,
 	[noone,                                  enum_objective_type.ero_weeraway0,             noone, 

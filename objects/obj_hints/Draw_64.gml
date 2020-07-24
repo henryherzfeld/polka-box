@@ -16,15 +16,21 @@ if(draw){
 				draw_text(xx, yy+up_down_keys_h+space_key_h, "Use the Up and Down Keys to Navigate. \nPress Spacebar to Make a Selection.");
 				break;
 				
-		case 4: draw_sprite_stretched(space_key, image_index*draw_time, xx, yy, space_key_w, space_key_h); break;
-		        draw_text(xx, yy+space_key_h, "Press Space to Open a Chest");
-		
-		case 5: //draw_sprite_stretched(m_pressed, image_index*draw_time, xx, yy, m_pressed_w, m_pressed_h); 
+		case 4: draw_text(InventoryManager.slot_start_x, InventoryManager.slot_start_y-24, "Click on an item to equip it."); 
 				break;
 		
-		case 6: draw_sprite_stretched(m_pressed, image_index*draw_time, xx, yy, m_pressed_w, m_pressed_h); break;
+		case 5: draw_sprite_stretched(e_key, image_index*draw_time, xx, yy, e_key_w, e_key_h); 
+				draw_text(xx, yy+e_key_h, "Use F to Use an Equipped Item."); 
+				break;
 		
-		case 7: draw_sprite_stretched(space_key, image_index*draw_time, xx, yy, space_key_w, space_key_h); break;
+		case 6: draw_text(obj_overlay.nb_x1-72, obj_overlay.nb_y1-48, "Click on the Notebook Button \n    to View your Evidence."); break;
+		
+		case 7: draw_text(obj_notebook.slot_start_x, obj_notebook.slot_start_y-24, "Hover the Mouse Cursor over Evidence to Learn More About It.");
+				draw_text(700+obj_notebook.child_window_ptr.x1, 100+obj_notebook.child_window_ptr.y1-48, "Click the Exit Button to\n  Return to the Game."); 
+				break;
+		
+		case 8: draw_sprite_stretched(space_key, image_index*draw_time, xx, yy, space_key_w, space_key_h); break;
+		        draw_text(xx, yy+space_key_h, "Press Space to Open a Chest");
 	}
 }
 

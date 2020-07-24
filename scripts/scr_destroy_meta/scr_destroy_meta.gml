@@ -3,7 +3,6 @@
 instance_destroy(events);
 instance_destroy(dialogue);
 instance_destroy(obj_camera);
-instance_destroy(obj_tile_manager);
 instance_destroy(flags);
 instance_destroy(obj_hints);
 instance_destroy(obj_state_manager);

@@ -28,47 +28,140 @@ var i = 0; repeat(quests_grid_n) {
 				
 				break;}
 				
-				case 1: ev = event.talk_baron; break;
+				case 1: ev = event.talk_baron; 
+						// switching to baron's alternate text in case where player attempts door early
+						if scr_check_objective(enum_objective_type.tut_try_to_leave) {
+							scr_char_change_dialogue(obj_npc_baron, 1); 
+							scr_char_update_dialogue(obj_npc_baron);
+							scr_progress_quest(i);
+							scr_progress_quest(i);
+							scr_event_unregister_script(event.talk_baron, quests);
+						}
+				break;
 				
 				case 2: {
 					if scr_check_objective(enum_objective_type.tut_try_to_leave){
-						scr_char_change_dialogue(obj_npc_baron, 1);
+						scr_char_change_dialogue(obj_npc_baron, 2);
 						scr_char_update_dialogue(obj_npc_baron);
 						scr_progress_quest(i);
 					}
 				break;}
 				
-				case 3: {
-					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, object67, false, true);
-					if polka.itemEquiped == enum_item_type.camera and inst != noone and polka.input_use_item {
-						inst.draw_examine_box = false;
-						instance_destroy(ui_examine_box);
-						polka.move_override = false;
+				case 3: ev = event.talk_baron; break;
+				
+				case 4: 
+					if update {
+						scr_progress_quest(quest.hints) // CLICKING ITEM TO USE IT
+						instance_create_layer(300, 400, "Menus", cursor);
+						var inst = instance_create_layer(100, 100, "Meta", obj_cutscene);
+						
+						inst.scene_info = [	
+							[scr_cutscene_change_variable, polka, "move_override", true],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_move_character, cursor, game.gui_width/2-290, game.gui_height-50, false, 10],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_change_variable, cursor, "click_change", true],
+							[scr_cutscene_wait, 4],
+							[scr_cutscene_instance_destroy_nearest, 0, 0, cursor],
+							];
+						inst.active = true;
+					}
+					
+					if polka.itemEquiped = enum_item_type.camera {
 						scr_progress_quest(i);
 					}
-				break;}
+					break;
 				
-				case 4: {
+				case 5: 
+					if update {
+						scr_progress_quest(quest.hints);  // PRESSING F TO USE ITEM
+						var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
+						inst.scene_info = [	
+							[scr_cutscene_wait, 1],
+							[scr_cutscene_move_character, polka, 383, 87, false, 3],
+							[scr_cutscene_wait, 1],
+							];
+						inst.active = true;
+					}
+					
+					if polka.input_use_item {
+						scr_progress_quest(i);
+					}
+					break;
+				
+				case 6: {
 					if not instance_find(ui_examine_box, 0) {
-						scr_draw_notification("What do you observe about the desk?\n Any time you want to check what clues you've found, you can go into your Notebook")
 						scr_evi_add_notebook(enum_evi_type.photo_desk, true);	
 						scr_progress_quest(i);
 					}
 				break;}
 				
-				case 5: {
+				case 7: 
+					if update {
+						scr_progress_quest(quest.hints);  // CLICKING NOTEBOOK ICON TO VIEW EVIDENCE
+						var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
+						instance_create_layer(900, 100, "Menus", cursor);
+						inst.scene_info = [	
+							[scr_cutscene_wait, 1],
+							[scr_cutscene_move_character, cursor, obj_overlay.nb_x1, obj_overlay.nb_y1, false, 10],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_change_variable, cursor, "click_change", true],
+							];
+						inst.active = true;
+					}
+					
+					if obj_notebook.draw_evidence {
+						scr_progress_quest(i);
+					}
+					break;
+					
+				case 8: 
+					if update {
+						scr_progress_quest(quest.hints);  // HOVER ITEM TO SEE, CLICK EXIT TO LEAVE
+						var inst = instance_create_layer(100, 100, "Meta", obj_cutscene);
+						inst.scene_info = [	
+							[scr_cutscene_move_character, cursor, 520, 220, false, 10],
+							[scr_cutscene_change_variable, obj_notebook, "preview_spr", spr_animal_hairs_on_desk_photo_evidence],
+							[scr_cutscene_wait, 4],
+							
+							// close notebook
+							[scr_cutscene_change_variable, obj_notebook, "preview_spr", noone],
+							[scr_cutscene_move_character, cursor, 1300, 320, false, 10],
+							[scr_cutscene_wait, 2],
+							[scr_cutscene_change_variable, cursor, "click_change", true],
+							[scr_cutscene_wait, 0.4],
+							[scr_cutscene_change_variable, obj_notebook, "draw_evidence", false],
+							[scr_cutscene_change_variable, obj_notebook, "draw_change", true],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_instance_destroy_nearest, 0, 0, cursor],
+							[scr_cutscene_change_variable, polka, "move_override", false],
+						];
+						inst.active = true;
+					}
+					
+					if mouse_check_button_pressed(mb_left) mouse_clear(mb_left); // clearing all user inputs to avoid crashing upon early notebook close
+					
+					if not instance_find(obj_cutscene, 0) scr_progress_quest(i);
+					break;
+				
+				case 9: if update {
+					scr_draw_notification("Now that you have a piece of evidence, tell the Baron what you've found.");
+					scr_progress_quest(i);
+				}
+				
+				case 10: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_npc_baron, false, true);
 					if inst != noone {
 						scr_progress_quest(i);
 					}
 				break;}
 				
-				case 6: {
+				case 11: {
 					ev = event.talk_baron; 
 					if update {
 						var temp = dialogue.dialogues[? obj_npc_baron];
-						var text1 = temp[2];
-						var text2 = temp[3];
+						var text1 = temp[3];
+						var text2 = temp[4];
 
 						var scene_info = [
 							[scr_cutscene_change_variable, polka, "move_override", true],
@@ -99,7 +192,7 @@ var i = 0; repeat(quests_grid_n) {
 				
 //			case 5: ev = event.talk_baron; if update scr_char_change_dialogue(obj_npc_baron, 4); scr_char_update_dialogue(obj_npc_baron); break;
 			
-			case 7: if update {
+			case 12: if update {
 					var inst = instance_find(obj_transition, 0);
 					inst.disable = false;
 					/*
@@ -279,6 +372,7 @@ var i = 0; repeat(quests_grid_n) {
 	
 		#region hints
 		case quest.hints:
+			var draw_time = 4;
 			switch(step) {
 				case 0: {
 					ev = event.talk_baron;
@@ -295,25 +389,25 @@ var i = 0; repeat(quests_grid_n) {
 						scr_progress_quest(i);
 					}
 					break;}
-				case 3: {
+					
+				case 3: // click on camera in inventory
+					break;
+					
+					
+				case 4: draw_time = 10; // press f to use
+					break;
+					
+				case 5: draw_time = 10;// click on notebook
+					break;
+					
+					
+				case 6: draw_time = 10; // hover an item to see it and use exit to leave
+					break;
+					
+				case 7: {
+					draw_time = 8;
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_chest, false, true);
 					if(inst != noone and scr_check_objective(enum_objective_type.ero_poppy1)){
-						scr_progress_quest(i);
-					}
-				break;}
-				case 4: {
-					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_chest, false, true);
-					if(inst != noone and inst.show_chest){
-						scr_progress_quest(i);
-					}
-				break;}
-				case 5: {
-					if(InventoryManager.inventorySlot[0] != enum_item_type.none){
-						scr_progress_quest(i);
-					}
-				break;}
-				case 6: {
-					if polka.itemEquiped {
 						scr_progress_quest(i);
 					}
 				break;}
@@ -322,7 +416,7 @@ var i = 0; repeat(quests_grid_n) {
 		if update {
 			obj_hints.step = step;
 			obj_hints.draw = true;
-			obj_hints.alarm[0] = 4 * room_speed;
+			obj_hints.alarm[0] = draw_time * room_speed;
 		}
 		break;
 		#endregion

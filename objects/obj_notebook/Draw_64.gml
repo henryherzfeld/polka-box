@@ -62,9 +62,6 @@ for (var ii = 0; ii < MAX_EVI_ITEMS; ++ii) {
 			// setting selected slot var via mos position
 			selected_slot = m_slotx + (m_sloty * slot_col_max);
 		} else { selected_slot = noone; };
-		
-		// setting selected slot var via mos position
-		selected_slot = m_slotx + (m_sloty * slot_col_max);
 	
 		if (ii == selected_slot){	
 			col = c_red;

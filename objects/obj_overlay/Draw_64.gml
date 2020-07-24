@@ -14,7 +14,7 @@ timer_text = minutes + ":" + seconds;
 draw_text(20, y_offset, timer_text);
 
 // Hearts
-for(i = 1; i <= 3; ++i){
+for(i = 1; i <= flags.hearts; ++i){
 	var spr = spr_heart_empty;
 	if(flags.hearts - i >= 0){ spr = spr_heart_full; }
 	draw_sprite(spr, 0, x_heart + i * (w_heart + margin_heart), y_offset);

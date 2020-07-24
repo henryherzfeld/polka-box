@@ -2,7 +2,7 @@
 
 if game.canvas_change {
 	xx = (game.gui_width - w_bar) / 2;
-	yy = game.gui_height / 3;
+	yy = game.gui_height / 6;
 }
 
 // formatting minutes and seconds

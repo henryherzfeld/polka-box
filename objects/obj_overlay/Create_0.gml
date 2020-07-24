@@ -17,7 +17,7 @@ minutes = "";
 seconds = "";
 
 // Hearts
-x_heart = game.gui_width - 150;
+x_heart = game.gui_width - (50*flags.hearts+1);
 margin_heart = 10;
 w_heart = sprite_get_width(spr_heart_full);
 

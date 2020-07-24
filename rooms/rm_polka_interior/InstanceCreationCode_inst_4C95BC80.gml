@@ -3,11 +3,11 @@ active = false;
 
 scene_info = [
 	[scr_cutscene_change_variable, polka, "move_override", true],
-	[scr_cutscene_wait, 1.5],
-	[scr_cutscene_instance_create, 0, 0, "Characters", emote],
-	[scr_cutscene_wait, 2],
-	[scr_cutscene_instance_destroy_nearest, 0, 0, emote],
 	[scr_cutscene_wait, 1],
+	[scr_cutscene_instance_create, 0, 0, "Characters", emote],
+	[scr_cutscene_wait, 1.5],
+	[scr_cutscene_instance_destroy_nearest, 0, 0, emote],
+	[scr_cutscene_wait, .5],
 	[scr_cutscene_notification, "The door is locked.. \nMaybe the Baron knows why?"],
 	[scr_cutscene_change_variable, polka, "move_override", false],
 ];

@@ -19,6 +19,6 @@ w_bar = sprite_get_width(bar) - 2;
 h_bar = sprite_get_height(bar) - 2;
 
 xx = (game.gui_width - w_bar) / 2;
-yy = game.gui_height / 4;
+yy = game.gui_height / 6;
 
 on_finish = -1;

@@ -38,5 +38,7 @@ if (game.pause){
 if hearts <= 0 {
 	obj_quiz_manager.no_match_response = false;
 	scr_destroy_meta();
-	scr_load_game_start();
+	game.game_over_bg = sprite_create_from_surface(application_surface,0,0,view_wport,view_hport,0,0,0,0);
+	game.alarm[1] = room_speed*3;
+
 }
