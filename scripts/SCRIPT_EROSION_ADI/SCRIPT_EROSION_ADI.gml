@@ -1259,38 +1259,77 @@ obj_npc_weeraway_wife
 obj_npc_weeraway_kid_1
 obj_npc_weeraway_kid_2
 
-(SCENE 1) The farmer and his wife are looking at the table. There's a bowl of each food on the table.)
-Potatoes (mashed potatoes)
-Carrots (steamed carrots)
-Green beans (green bean casserole)
-Corn (creamed corn)
-Turnips (mashed turnips)
-Pumpkin (pumpkin pie)
+FOOD OBJECTS:
+tf_food_1
+tf_food_2
+tf_food_3
+tf_food_4
+tf_food_5
+tf_food_6
+tf_food_7
 
-Wife: "I can't believe we were able to grow the crops in time."
+NOTE: Organize the food on the table any way you want.
+If there's not enough room on the table for all the food, feel free to take some out. 
+YOU DON'T HAVE TO USE ALL DISHES.
 
-Weeraway: "Neither can I. We have mashed potatoes, steamed carrots, green bean casserole, creamed corn, mashed turnips, and pumpkin pie."
+(SCENE 1) Weeraway and his wife are looking at the table in Weeraway's house. There's a bowl of each food on the table.)
+*/
 
-Weeraway: "... If the soil erosion problem hadn't been fixed, we wouldn't be enjoying any of these this year."
+/*Wife:*/
+scr_dia_line("I can't believe we were able to grow the crops in time.", obj_npc_weeraway_wife);
 
+/*Weeraway:*/ 
+scr_dia_line("Neither can I. We have mashed potatoes, steamed carrots, green bean casserole, creamed corn, mashed turnips, and pumpkin pie.", obj_npc_weeraway); 
 
+/*Weeraway:*/
+scr_dia_line("... If the soil erosion problem hadn't been fixed, we wouldn't be enjoying any of these this year.", obj_npc_weeraway);
+
+/*
 (SCENE 2) At the end, you have a scene in which the farmer and his family are eating a wholesome dinner at Weeraway's house.
 They're sitting at the dining table in Weeraway's house
-
-Kid 1, Gooey: "These mashed potatoes are delicious, mom!"
-
-Wife (smiling): "Thank you, dear!"
-
-Weeraway: "Pass the pumpkin pie, Gooey."
-
-Kid 2, Chewy: "I didn't think I'd ever miss carrots.."
-
-Weeraway: "That's what happens when you have nothing to eat. You'll eat just about anything you can get. And pass me the creamed corn, will you?"
-
-(SCENE 3) Weeraway thanks Polka in Polka's house 
-
-Weeraway: "Because of you, my family could live. The villagers could finally get food to eat. Please take this as a token of my thanks."
-
-Weeraway gives Polka 300 coins.
-
 */
+
+/*Weeraway Kid 1:*/
+scr_dia_line("These mashed potatoes are delicious, mom!", obj_npc_weeraway_kid_1);
+scr_dia_line_sprite(spr_portrait_boy_happy);
+
+/*Wife: (SMILING)*/
+scr_dia_line("Thank you, dear!", obj_npc_weeraway_wife);
+scr_dia_line_sprite(spr_portrait_wife_happy);
+
+/*Weeraway:*/
+scr_dia_line("Pass the pumpkin pie, Gooey.", obj_npc_weeraway);
+
+/*Weeraway Kid 2:*/
+scr_dia_line("I didn't think I'd ever miss carrots...", obj_npc_weeraway_kid_2); 
+
+/*Weeraway:*/
+scr_dia_line("That's what happens when you have nothing to eat. You'll eat just about anything you can get. And pass me the creamed corn, will you?", obj_npc_weeraway);
+
+/*
+(SCENE 3) Weeraway thanks Polka in Weeraway's house 
+*/
+
+/*Weeraway:*/
+scr_dia_line("Because of you, my family could live. The villagers could finally get food to eat. Please take this as a token of my thanks.", obj_npc_weeraway);
+
+//Weeraway gives Polka 300 coins.
+
+/*
+(SCENE 4) The Baron is with Polka at Polka's house 
+*/
+
+scr_dia_line("You've got your first crystal piece! Good work, young knight.", obj_npc_baron); 
+scr_dia_line_sprite(spr_crystal_inventa_status_1);
+
+scr_dia_line("Knock out the next quests to get more crystal pieces", obj_npc_baron); 
+scr_dia_line_sprite(spr_crystal_inventa_status_1);
+scr_dia_line_sprite(spr_virus_henchmen);
+
+scr_dia_line("You have to take Virus down! He's still out there. Who knows what he's plotting next...", obj_npc_baron); 
+
+scr_dia_line("Get ready for your next quest! You'll be exploring space!", obj_npc_baron);
+scr_dia_line_sprite(spr_virus_henchmen);
+scr_dia_line_sprite(spr_ship); 
+
+//END OF QUEST!
