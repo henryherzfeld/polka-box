@@ -11,7 +11,9 @@
         "617adb00-35e0-4471-8a1c-f531c3c214c2",
         "005a55a6-a165-4c93-bd97-6b2201e2a967",
         "6939456d-5476-4126-b7c4-58e6fa8eccdd",
-        "b18b3812-b970-4d36-873e-a8d5e2c4c511"
+        "b18b3812-b970-4d36-873e-a8d5e2c4c511",
+        "b01cd836-6a29-42c1-95f3-1919d30b1ed3",
+        "b39983a5-1894-4174-826d-ef2948b1f3f8"
     ],
     "filterType": "GMSprite",
     "folderName": "Investors",

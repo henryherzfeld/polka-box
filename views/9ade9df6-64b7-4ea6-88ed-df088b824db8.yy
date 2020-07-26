@@ -15,7 +15,11 @@
         "f723f436-f67d-4e1f-8f2a-5dd1083f1d6d",
         "11b5fc2c-fa7f-408c-b6df-2c798820e258",
         "67177262-44ef-4d39-a1af-d4e60e5256d9",
-        "914e7f4a-3f5e-4e4b-9da0-6ae97fc494f8"
+        "914e7f4a-3f5e-4e4b-9da0-6ae97fc494f8",
+        "5f5162ba-b492-4f24-8f17-70bb5a3a204b",
+        "e2cad345-8dda-4c90-836b-4c36fa352e42",
+        "19460c87-6147-40fa-9e6a-2c395fe03a70",
+        "49f550d5-35af-4686-bd1b-627b4d79d06a"
     ],
     "filterType": "GMSprite",
     "folderName": "Family",

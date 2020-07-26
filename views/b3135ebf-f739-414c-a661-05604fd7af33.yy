@@ -9,7 +9,8 @@
         "308627bb-2b53-43b0-a300-4886b1c12892",
         "f238c4a4-14df-4405-ba56-1891e4092118",
         "3a36a815-a736-4507-a290-1af15d1d0515",
-        "d1e58926-24e5-4bcc-ac77-5ce9b9e162b7"
+        "d1e58926-24e5-4bcc-ac77-5ce9b9e162b7",
+        "cbac7672-9d2e-4ebb-8251-6e31b59ac8fe"
     ],
     "filterType": "GMSprite",
     "folderName": "Baron",

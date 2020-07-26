@@ -18,7 +18,9 @@
         "a14d5c65-6648-4b71-888a-69bcf5a0d768",
         "327da385-3659-4bb8-bae8-9276a8a8afeb",
         "f1eb8cb4-796f-4d63-adc6-9a53b08c286f",
-        "e376106d-64ac-4ee7-9d3d-734fa74c5095"
+        "e376106d-64ac-4ee7-9d3d-734fa74c5095",
+        "4ff014dc-8e0c-4c95-99c4-b817413cf1b8",
+        "5b851dbd-8994-4709-91b4-cafe9dc0297c"
     ],
     "filterType": "GMSprite",
     "folderName": "Dialogue Illustrations",

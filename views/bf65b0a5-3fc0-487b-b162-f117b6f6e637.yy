@@ -9,7 +9,9 @@
         "084e61c3-d866-4f59-9078-acb2eb99c40b",
         "605d4304-cc63-4a37-ac38-ee958d09842e",
         "6ddc1c93-24e8-4dab-a427-5d3e4a1709d7",
-        "214c4c08-96e8-422d-8b02-628b40fb5c9f"
+        "214c4c08-96e8-422d-8b02-628b40fb5c9f",
+        "f93cae99-0a61-4d98-a66d-b8ca49f6432e",
+        "71f3e0a2-f6ab-4ad4-a288-4d9930bf7097"
     ],
     "filterType": "GMSprite",
     "folderName": "Polka",
