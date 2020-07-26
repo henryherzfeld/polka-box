@@ -73,7 +73,7 @@ text2 = ds_map_create();
 scr_dia_segment(text2, "GREET");
 scr_dia_line("So what did you find?", obj_npc_poppy); 
 
-scr_dia_line("filler", obj_npc_poppy);
+scr_dia_line("The plants are getting enough air and sunlight. The sun has been bright.", obj_npc_poppy);
 //CROPS APPEARANCE QUIZ QUESTIONS
 crops_appearance_quiz = ds_list_create();
 scr_quiz_list(crops_appearance_quiz);
@@ -142,7 +142,7 @@ scr_quiz_question_response("That's what I was thinking. Plants don't get enough 
 
 //END OF SOIL MOISTURE QUIZ QUESTIONS
 
-scr_dia_line("filler", obj_npc_poppy);
+scr_dia_line("That's what I was thinking. Plants don't get enough nutrients when they don't have enough soil.", obj_npc_poppy);
 //QUIZ WHERE THEY HAVE TO ATTACH TABLE EVIDENCE ABOUT HOW THE SOIL MOISTURE LEVELS IN THE CROPS ARE
 scr_dia_line_quiz(soil_moisture_quiz, obj_npc_poppy); 
 
@@ -173,7 +173,7 @@ topsoil_depth_quiz = ds_list_create();
 scr_quiz_list(topsoil_depth_quiz);
 
 scr_quiz_question(enum_question_type.multi, 
-"The crops _____ getting enough topsoil.", 
+"The farmer's crops _____ getting enough topsoil.", 
 ["Are", "Are not"], 
 1);
 scr_quiz_question_response("How did you find out?", "You almost got it! Try again");
@@ -187,7 +187,7 @@ scr_quiz_question_response("Now we got something!", "You almost got it! Try agai
 
 //END OF TOPSOIL DEPTH QUIZ QUESTIONS
 
-scr_dia_line("filler", obj_npc_poppy);
+scr_dia_line("Now we got something!", obj_npc_poppy);
 //QUIZ WHERE THEY HAVE TO ATTACH TABLE EVIDENCE ABOUT HOW DEEP THE TOPSOIL LEVELS ARE
 scr_dia_line_quiz(topsoil_depth_quiz, obj_npc_poppy); 
 
@@ -224,7 +224,7 @@ scr_quiz_question_response("This is wonderful, you figured it out!", "You almost
 
 //END OF TOPSOIL RAIN EROSION QUIZ QUESTIONS
 
-scr_dia_line("filler", obj_npc_poppy);
+scr_dia_line("This is wonderful, you figured it out!", obj_npc_poppy);
 //QUIZ WHERE THEY HAVE TO ATTACH PHOTO EVIDENCE ABOUT HOW THE TOPSOIL WAS GETTING ERODED BY WATER
 scr_dia_line_quiz(topsoil_rain_erosion_quiz, obj_npc_poppy); 
 

@@ -198,7 +198,7 @@ scr_quiz_question_response("Is that so? I wonder if...?",
 //END OF BEGINNING TUTORIAL QUIZ QUESTIONS
 
 scr_dia_segment(text4, "GREET");
-scr_dia_line("filler", obj_npc_baron);
+scr_dia_line("Is that so? I wonder if...?", obj_npc_baron);
 scr_dia_line_quiz(beginning_tutorial_quiz_questions, obj_npc_baron);
 
 text5 = ds_map_create();
@@ -274,7 +274,7 @@ scr_quiz_question(enum_question_type.multi,
 scr_quiz_question_response("Exactly", "You almost got it! Try again");
 //END OF EROSION EXPERIMENT TUTORIAL 1 QUIZ QUESTIONS
 
-scr_dia_line("filler", obj_npc_baron);
+scr_dia_line("Exactly", obj_npc_baron);
 scr_dia_line_quiz(erosion_experiment_tutorial_1, obj_npc_baron); 
 
 scr_dia_line("You'd want to know where he got the idea from. He tells you an article he read said that adding honey instead of sugar to lemonade makes it taste better. This is his background research.", obj_npc_baron);
@@ -317,11 +317,11 @@ scr_quiz_question(enum_question_type.multi,
 "What color is honey?"], 
 2);
 scr_quiz_question_sprite(spr_tutorial_procedure); 
-scr_quiz_question_response("You'd want to know how your friend plans on carrying out the experiment. What steps will he take to find out? He sets up a procedure on what he'll be doing. ", "You almost got it! Try again");
+scr_quiz_question_response("You'd want to know how your friend plans on carrying out the experiment. What steps will he take to find out? He sets up a procedure on what he'll be doing.", "You almost got it! Try again");
 
 //END OF EROSION EXPERIMENT TUTORIAL 2 QUIZ QUESTIONS
 
-scr_dia_line("filler", obj_npc_baron);
+scr_dia_line("You'd want to know how your friend plans on carrying out the experiment. What steps will he take to find out? He sets up a procedure on what he'll be doing.", obj_npc_baron);
 scr_dia_line_quiz(erosion_experiment_tutorial_2, obj_npc_baron);
 
 scr_dia_line("He has two groups. He will give half of his customers lemonade with sugar, but without honey. This is his first group.", obj_npc_baron);
@@ -346,7 +346,7 @@ scr_quiz_question_response("You will want to know what results your friend found
 
 //END OF EROSION EXPERIMENT TUTORIAL 3 QUIZ QUESTIONS
 
-scr_dia_line("filler", obj_npc_baron);
+scr_dia_line("You will want to know what results your friend found. Was the honey a success?", obj_npc_baron);
 scr_dia_line_quiz(erosion_experiment_tutorial_3, obj_npc_baron);
 
 scr_dia_line("Or should he stick with plain sugar? He does an analysis of the ratings from each group.", obj_npc_baron);
@@ -370,7 +370,7 @@ scr_quiz_question_response("Your friend has to make a final decision. He comes u
 
 //END OF EROSION EXPERIMENT TUTORIAL 4 QUIZ QUESTIONS
 
-scr_dia_line("filler", obj_npc_baron);
+scr_dia_line("Your friend has to make a final decision. He comes up with a conclusion: adding honey instead of sugar to lemonade makes customers like it more.", obj_npc_baron);
 //QUIZ QUESTION: (MC) You'd then ask him: How will you test your hypothesis?
 scr_dia_line_quiz(erosion_experiment_tutorial_4, obj_npc_baron);
 

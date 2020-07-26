@@ -87,15 +87,19 @@ scr_dia_line("After learning that the soil in the fields was being eroded by wat
 scr_dia_line_sprite(spr_forest); 
 
 scr_dia_line("We used a measuring stick to find the topsoil depth in the forest. We found about 8-10 inches of topsoil.", obj_npc_weeraway);
+scr_dia_line_sprite(spr_forest); 
 scr_dia_line_sprite(spr_measuring_stick); 
 
 scr_dia_line("We also used a soil penetrometer, which is used to find the soil compaction. The more compact soil is, the harder it is for it to erode. The more psi something has, the higher the compaction.", obj_npc_weeraway);
+scr_dia_line_sprite(spr_measuring_stick); 
 scr_dia_line_sprite(spr_penetrometer); 
 
 scr_dia_line("The soil compaction in the forest was 180 psi, while the soil compaction in my fields was 80 psi!", obj_npc_weeraway);
+scr_dia_line_sprite(spr_penetrometer);
 scr_dia_line_sprite(spr_topsoil_depth_forest_table); 
 
 scr_dia_line("We noticed that the forest has more vegetation, like trees, compared to our farm fields.", obj_npc_weeraway);
+scr_dia_line_sprite(spr_topsoil_depth_forest_table);
 scr_dia_line_sprite(spr_compact_vs_loose_soil);
 
 scr_dia_line("We should go and get money from the council to plant more trees and other vegetation around the farmland. What do you think?", obj_npc_weeraway);
@@ -166,7 +170,7 @@ scr_quiz_question(enum_question_type.multi,
 scr_quiz_question_response("I see, you're right. So here's what steps we'll take.", noone);
 //END OF EROSION EXPERIMENT 1 QUIZ QUESTIONS
 
-scr_dia_line("filler", obj_npc_weeraway);
+scr_dia_line("I see, you're right. So here's what steps we'll take.", obj_npc_weeraway);
 //QUIZ QUESTIONS: EROSION EXPERIMENT PART 1
 scr_dia_line_quiz(erosion_experiment_1, obj_npc_weeraway);
 
@@ -174,10 +178,8 @@ scr_dia_line("We will make two different square patches. Each patch will be fill
 scr_dia_line_sprite(spr_erosion_experiment_setup_before); 
 
 scr_dia_line("The difference will be how much vegetation there is in each patch. The first patch will have no vegetation planted around it. It's just like what we have right now in the fields.", obj_npc_weeraway);
-scr_dia_line_sprite(spr_erosion_experiment_setup_before); 
 
 scr_dia_line("The second patch will have vegetation like big and small trees planted around it. Over 4 weeks, we'll measure the soil depth, soil compaction, and crop growth in each patch and compare the results at the end. ", obj_npc_weeraway);
-scr_dia_line_sprite(spr_erosion_experiment_setup_before); 
 
 //EROSION EXPERIMENT 2 QUIZ QUESTIONS
 erosion_experiment_2 = ds_list_create();
@@ -220,7 +222,7 @@ scr_quiz_question_sprite(spr_erosion_experiment_table_evidence);
 scr_quiz_question_response("Which means that...", noone);
 
 scr_quiz_question(enum_question_type.multi, 
-"The soil is ___ compact in the soil patch surrounded by vegetation than in the one not surrounded by vegetation.", 
+"The soil is ___ compact in the soil patch with vegetation planted than in the one with no vegetation planted.", 
 ["more",
 "less"], 
 0);
@@ -228,7 +230,7 @@ scr_quiz_question_sprite(spr_erosion_experiment_table_evidence);
 scr_quiz_question_response("Ok", noone);
 
 scr_quiz_question(enum_question_type.multi, 
-"The soil depth in the patch surrounded by vegetation is __ inches, while the soil depth in the patch surrounded with no vegetation is __ inches.", 
+"The soil depth in the patch with vegetation planted is __ inches, while the soil depth in the patch with no vegetation planted is __ inches.", 
 ["170; 80",
 "80; 170",
 "9.5; 4",
@@ -238,7 +240,7 @@ scr_quiz_question_sprite(spr_erosion_experiment_table_evidence);
 scr_quiz_question_response("Which means that...", noone);
 
 scr_quiz_question(enum_question_type.multi, 
-"There's a ____ topsoil depth in the soil patch not surrounded by vegetation than in the one surrounded by vegetation.", 
+"There's a ____ topsoil depth in the soil patch with no vegetation planted than in the one with vegetation.", 
 ["higher",
 "lower"], 
 1);
@@ -265,7 +267,7 @@ scr_quiz_question_response("This is great! That means we can conclude that plant
 
 //END OF EROSION EXPERIMENT 2 QUIZ QUESTIONS
 
-scr_dia_line("filler", obj_npc_weeraway);
+scr_dia_line("This is great! That means we can conclude that planting vegetation around the crop fields can lower soil erosion.", obj_npc_weeraway);
 //QUIZ QUESTIONS: EROSION EXPERIMENT PART 2
 scr_dia_line_quiz(erosion_experiment_2, obj_npc_weeraway);
 
