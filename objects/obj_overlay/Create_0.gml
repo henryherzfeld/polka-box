@@ -42,7 +42,7 @@ noti_sm_timeout = 500;
 noti_lg_timeout = 125;
 
 noti_sm_text = "";
-noti_sm_bg_col = c_gray;
+noti_sm_bg_col = c_navy;
 
 noti_sm_width = 0;
 noti_sm_height = 0;

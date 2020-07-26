@@ -19,7 +19,7 @@ if(draw){
 		case 4: draw_text(InventoryManager.slot_start_x, InventoryManager.slot_start_y-24, "Click on an item to equip it."); 
 				break;
 		
-		case 5: draw_sprite_stretched(e_key, image_index*draw_time, xx, yy, e_key_w, e_key_h); 
+		case 5: draw_sprite_stretched(f_key, image_index*draw_time, xx, yy, f_key_w, f_key_h); 
 				draw_text(xx, yy+e_key_h, "Use F to Use an Equipped Item."); 
 				break;
 		

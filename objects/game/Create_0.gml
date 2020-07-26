@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+audio_play_sound(snd_orbit, 1, true);
+
 font = font_comic
 debug = false;
 randomize();

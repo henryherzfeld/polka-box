@@ -169,10 +169,10 @@ var i = 0; repeat(quests_grid_n) {
 							[scr_cutscene_wait, 2],
 							[scr_cutscene_move_character, obj_npc_baron, 115, 0, true, 2],
 							[scr_cutscene_wait, 2],
-							[scr_cutscene_instance_create, 425, 205, "Instances", obj_fish],
+							[scr_cutscene_instance_create, 420, 210, "Instances", obj_key],
 							[scr_cutscene_move_character, obj_black_sleeping_cat , 0, -20, true, .5],
 							[scr_cutscene_wait, 1],
-							[scr_cutscene_instance_destroy_nearest, 425, 205, obj_fish],
+							[scr_cutscene_instance_destroy_nearest, 425, 205, obj_key],
 							[scr_cutscene_wait, 1],
 							[scr_cutscene_move_character, obj_black_sleeping_cat, 0, 30, true, .5],
 							[scr_cutscene_wait, 1],
@@ -323,8 +323,24 @@ var i = 0; repeat(quests_grid_n) {
 				case 17: if update {
 					scr_char_change_dialogue(obj_npc_poppy, 0);
 					scr_activate_objective(enum_objective_type.ero_poppy4); 
-					var inst = instance_find(obj_cutscene, 0); // CUTSCENE TRANSITIONS TO WEERAWAYS
+
+					var temp = dialogue.dialogues[? obj_npc_baron];
+					var investigation_text = temp[5];
+
+					var scene_info = [
+						[scr_cutscene_change_room, rm_polka_interior, 500, 266],
+						[scr_cutscene_instance_create, 250, 200, "Characters", obj_npc_baron],
+						[scr_cutscene_change_variable, polka, "move_override", true],
+						[scr_cutscene_wait, 1],
+						[scr_cutscene_create_dialogue, investigation_text, [[scr_event_fire, event.talk_baron]]],
+						[scr_cutscene_change_variable, polka, "move_override", false],
+					];
+						
+					var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
 					inst.active = true;
+					inst.scene_info = scene_info;
+
+				
 					scr_progress_quest(quest.erosion_experiment);
 					}
 					break;
@@ -335,16 +351,41 @@ var i = 0; repeat(quests_grid_n) {
 		#region erosion experiment
 		case quest.erosion_experiment:
 			switch(step) {
-				case 0: 
-					ev = event.talk_weeraway; 
-					break;
+				
+				case 0: ev = event.talk_baron; break;
+				
+				case 1: if room == rm_weeraway_interior {
+							scr_progress_quest(i);
 					
-				case 1: 
+							var temp = dialogue.dialogues[? obj_npc_weeraway];
+							var investigation_text = temp[3];
+
+							var scene_info = [
+								[scr_cutscene_change_variable, polka, "move_override", true],
+								[scr_cutscene_wait, 1],
+								[scr_cutscene_move_character, polka, 424, 225, false, 2],
+								[scr_cutscene_move_character, polka, 434, 108, false, 2],
+								[scr_cutscene_move_character, polka, 464, 108, false, 2],
+								[scr_cutscene_create_dialogue, investigation_text, [[scr_event_fire, event.talk_weeraway]]],
+								[scr_cutscene_change_variable, polka, "move_override", false],
+							];
+						
+							var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
+							inst.active = true;
+							inst.scene_info = scene_info;
+							
+						}
+						break;
+						
+				case 2: ev = event.talk_weeraway; break;
+						
+				case 3: 
 					if update {
 						scr_progress_quest(quest.erosion_case);
 						scr_evi_add_notebook(enum_evi_type.soil_experiment_tbl, true);
 					}
 					break;
+				
 			}
 		break;
 		#endregion

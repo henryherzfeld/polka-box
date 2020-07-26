@@ -3,7 +3,7 @@
 
 if game.canvas_change {
 	x1 = (game.gui_width - w_pbar)/2;
-	x_heart = game.gui_width - 150;
+	x_heart = game.gui_width - (50*flags.hearts+1);
 	x_coin = ((game.gui_width - 100)/2) * 1.5;
 }
 

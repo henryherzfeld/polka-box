@@ -52,8 +52,10 @@ if(draw_lg_noti){
 
 if(noti_sm_count){
 	if(noti_sm_count <= noti_sm_timeout){
-		draw_rectangle_color(game.gui_width - noti_sm_width - noti_sm_padding, game.gui_height - noti_sm_height - noti_sm_padding, game.gui_width, game.gui_height, noti_sm_bg_col, noti_sm_bg_col, noti_sm_bg_col, noti_sm_bg_col, false);
-		draw_text(game.gui_width - noti_sm_width - noti_sm_padding, game.gui_height - noti_sm_height - noti_sm_padding, sm_noti_text);
+		var pad = 3;
+		draw_rectangle_color(0, game.gui_height-noti_sm_height-noti_sm_padding-pad, noti_sm_width+noti_sm_padding+pad, game.gui_height, c_white, c_white, c_white, c_white, false);
+		draw_rectangle_color(pad, game.gui_height-noti_sm_height-noti_sm_padding, noti_sm_width+noti_sm_padding, game.gui_height-pad, noti_sm_bg_col, noti_sm_bg_col, noti_sm_bg_col, noti_sm_bg_col, false);
+		draw_text(pad, game.gui_height-noti_sm_height-noti_sm_padding, sm_noti_text);
 		
 		noti_sm_count += 1;
 	} else {

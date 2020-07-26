@@ -237,9 +237,9 @@ The door unlocks and the player can leave the house
 
 
 
-text5 = ds_map_create();
+text6 = ds_map_create();
 
-scr_dia_segment(text5, "GREET");
+scr_dia_segment(text6, "GREET");
 
 scr_dia_line("Well done! You've gotten so far already!", obj_npc_baron);
 
@@ -380,10 +380,10 @@ scr_dia_line("And that's all there is to an experiment! Now let's see you with t
 
 scr_dia_options("EXIT", "FILLER");
 
-scr_dia_segment(text5, "EXIT");
+scr_dia_segment(text6, "EXIT");
 scr_dia_line("Thanks!", polka);
 
 //END OF EXPERIMENT TUTORIAL
 
 
-return [text1, text2, text3, text4, text5];
+return [text1, text2, text3, text4, text5, text6];

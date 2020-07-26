@@ -228,7 +228,7 @@ if questions != noone and !response {
 					question_change = false;
 					fun_fact = false;
 				}   // test phase to determine if heart removed
-				else if flags.objective_phase == enum_phase_type.miscellaneous {
+				else if room != rm_polka_interior {
 					flags.hearts -= 1;
 				}
 			}

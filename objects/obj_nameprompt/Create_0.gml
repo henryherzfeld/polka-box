@@ -4,3 +4,5 @@
 box = spr_textbox2;
 curr_name = "";
 max_char = 10;
+
+spawn_room = rm_polka_interior;

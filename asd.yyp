@@ -2127,10 +2127,26 @@
             }
         },
         {
+            "Key": "505157c1-1b88-4810-9903-3827a78cbdab",
+            "Value": {
+                "id": "9e0ffe7c-7ac2-454b-99b8-ce552176b0dd",
+                "resourcePath": "sprites\\spr_f\\spr_f.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "511d282a-3984-4dc6-83cb-c44bba6133a7",
             "Value": {
                 "id": "3e28d9a4-c688-4a95-a9be-d221e320d471",
                 "resourcePath": "objects\/ui_nb_evi_add\/ui_nb_evi_add.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "51517849-e4fd-48ba-8ecc-a25bc7e60e76",
+            "Value": {
+                "id": "bba0ae1d-42d7-4cdd-9f45-d996ddf9f00a",
+                "resourcePath": "objects\\obj_key\\obj_key.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2876,6 +2892,14 @@
                 "id": "07724f2f-8b1e-4ff3-b01e-c52a22cc6853",
                 "resourcePath": "objects\/game\/game.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "70c45300-db3d-4335-a6cd-bb42c3b2212e",
+            "Value": {
+                "id": "3378cfb6-9baa-4e89-a0d7-73fe8a6b0356",
+                "resourcePath": "sounds\\snd_orbit\\snd_orbit.yy",
+                "resourceType": "GMSound"
             }
         },
         {

@@ -32,3 +32,7 @@ space_key_w = sprite_get_width(space_key) * scale;
 m_pressed = spr_mouse_pressed;
 m_pressed_h = sprite_get_height(m_pressed) * scale;
 m_pressed_w = sprite_get_width(m_pressed) * scale;
+
+f_key = spr_f;
+f_key_h = sprite_get_height(f_key) * scale;
+f_key_w = sprite_get_width(f_key) * scale;
