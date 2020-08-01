@@ -1,39 +1,25 @@
 active = true;
 
-instance_create_layer(100, 100, "Menus", cursor);
-
 scene_info = [
 
-	// equip camera
-	[scr_cutscene_change_variable, polka, "move_override", true],
-	[scr_cutscene_wait, 2],
-	[scr_cutscene_move_character, cursor, game.gui_width/2-290, game.gui_height-50, false, 10],
-	[scr_cutscene_wait, 0.5],
-	[scr_cutscene_change_variable, cursor, "click_change", true],
-	[scr_cutscene_change_variable, polka, "itemEquiped", enum_item_type.camera],
-	[scr_cutscene_change_variable, polka, "move_override", false],
+	[scr_cutscene_change_variable, obj_camera, "following", noone],
+	[scr_cutscene_change_room, rm_weeraway_interior, -200, -200],
+	[scr_cutscene_change_variable, obj_camera, "x", 512],
+	[scr_cutscene_change_variable, obj_camera, "y", 800],
+	[scr_cutscene_wait, 0.2],
+	[scr_cutscene_instance_create, 400, 140, "Characters", obj_npc_weeraway_wife],
+	[scr_cutscene_instance_create, 483, 150, "Characters", tf_food_1],
+	[scr_cutscene_instance_create, 483, 174, "Characters", tf_food_2],
+	[scr_cutscene_instance_create, 507, 150, "Characters", tf_food_3],
+	[scr_cutscene_instance_create, 507, 174, "Characters", tf_food_4],
+	[scr_cutscene_instance_create, 531, 150, "Characters", tf_food_5],
+	[scr_cutscene_instance_create, 483, 174, "Characters", tf_food_6],
+
 	
-	// open nb
-	[scr_cutscene_change_variable, polka, "move_override", true],
-	[scr_cutscene_wait, 2],
-	[scr_cutscene_move_character, cursor, obj_overlay.nb_x1, obj_overlay.nb_y1, false, 10],
-	[scr_cutscene_wait, 0.5],
-	[scr_cutscene_change_variable, cursor, "click_change", true],
-	[scr_cutscene_change_variable, obj_notebook, "draw_evidence", true],
-	[scr_cutscene_change_variable, obj_notebook, "draw_change", true],
 	
-	// evidence select
-	[scr_cutscene_wait, 2],
-	[scr_cutscene_move_character, cursor, 520, 220, false, 10],
-	[scr_cutscene_wait, 0.5],
-	[scr_cutscene_change_variable, cursor, "click_change", true],
-	[scr_cutscene_change_variable, obj_notebook, "selected", 0],
 	
-	// close notebook
-	[scr_cutscene_wait, 2],
-	[scr_cutscene_move_character, cursor, 1300, 320, false, 10],
-	[scr_cutscene_change_variable, cursor, "click_change", true],
-	[scr_cutscene_change_variable, obj_notebook, "draw_evidence", false],
-	[scr_cutscene_change_variable, obj_notebook, "draw_change", true],
+	
+	[scr_cutscene_pan_camera, 512, 100, false, 4],
+
 	
 ];

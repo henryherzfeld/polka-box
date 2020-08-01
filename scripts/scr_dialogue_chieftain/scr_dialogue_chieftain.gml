@@ -208,10 +208,7 @@ scr_quiz_question(enum_question_type.multi,
 scr_dia_line("The court has noted the account given!", obj_npc_chieftain); 
 scr_dia_line_quiz(erosion_investigation_case, obj_npc_chieftain); 
 
-scr_dia_options("EXIT", "EXIT");
 
-
-scr_dia_segment(text1, "EXIT");
 scr_dia_line("That brings us to our conclusion: The farmer's crops are dying because the soil they need to grow is being eroded away by rainwater.", polka);
 
 scr_dia_line("We found out that planting more vegetation around the fields lowers soil erosion.", polka);
@@ -303,8 +300,13 @@ scr_quiz_question_sprite(spr_erosion_experiment_setup_after);
 
 //END OF EROSION EXPERIMENT CASE QUIZ QUESTIONS
 scr_dia_line("The court has decided to grant the farmers the funding needed to solve the erosion problem.", obj_npc_chieftain); 
+scr_dia_line_sprite(spr_erosion_experiment_setup_after);
 scr_dia_line_quiz(erosion_experiment_case, obj_npc_chieftain);
 scr_dia_line("Session adjourned!", obj_npc_chieftain);
+scr_dia_options("EXIT", "EXIT");
 
+
+scr_dia_segment(text1, "EXIT");
+scr_dia_line("Ok", polka);
 
 return [text1];

@@ -1,3 +1,7 @@
 /// @description Insert description here
 
-scr_nb_add_evi_animation(irandom_range(3, enum_evi_type.length-1));
+scr_evi_add_notebook(enum_evi_type.photo_crop, false);
+scr_evi_add_notebook(enum_evi_type.photo_erosion_water, false);
+scr_evi_add_notebook(enum_evi_type.soil_depth_tbl, false);
+scr_evi_add_notebook(enum_evi_type.soil_experiment_tbl, false);
+scr_evi_add_notebook(enum_evi_type.soil_moisture_tbl, false);

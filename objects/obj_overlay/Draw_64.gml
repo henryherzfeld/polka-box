@@ -21,8 +21,8 @@ for(i = 1; i <= flags.hearts; ++i){
 }
 
 // Coin Counter
-draw_sprite(coin_spr, 0, x_coin, y_offset);
-draw_text(x_coin + w_coin, y_offset, "x" + string(flags.coins));
+draw_sprite_stretched(coin_spr, 0, x_coin, y_offset-2, 24, 24);
+draw_text(x_coin + 24, y_offset, "x" + string(flags.coins));
 
 //Objectives
 draw_set_font(font_comic);
@@ -53,9 +53,9 @@ if(draw_lg_noti){
 if(noti_sm_count){
 	if(noti_sm_count <= noti_sm_timeout){
 		var pad = 3;
-		draw_rectangle_color(0, game.gui_height-noti_sm_height-noti_sm_padding-pad, noti_sm_width+noti_sm_padding+pad, game.gui_height, c_white, c_white, c_white, c_white, false);
+		draw_rectangle_color(0, game.gui_height-noti_sm_height-noti_sm_padding-pad, noti_sm_width+noti_sm_padding+pad, game.gui_height, noti_sm_text_col, noti_sm_text_col, noti_sm_text_col, noti_sm_text_col, false);
 		draw_rectangle_color(pad, game.gui_height-noti_sm_height-noti_sm_padding, noti_sm_width+noti_sm_padding, game.gui_height-pad, noti_sm_bg_col, noti_sm_bg_col, noti_sm_bg_col, noti_sm_bg_col, false);
-		draw_text(pad, game.gui_height-noti_sm_height-noti_sm_padding, sm_noti_text);
+		draw_text_color(pad, game.gui_height-noti_sm_height-noti_sm_padding, sm_noti_text, noti_sm_text_col, noti_sm_text_col, noti_sm_text_col, noti_sm_text_col, true);
 		
 		noti_sm_count += 1;
 	} else {

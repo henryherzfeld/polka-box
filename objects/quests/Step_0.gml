@@ -1,4 +1,6 @@
 /// @description Insert description here
+if room == testing_dialogue or room == testing_cutscene exit;
+
 var grid = quests_grid;
 
 var i = 0; repeat(quests_grid_n) {
@@ -9,7 +11,7 @@ var i = 0; repeat(quests_grid_n) {
 	var objectives = grid[# 2, i];
 	var objectives_n = array_length_1d(objectives);
 	var ev = noone;
-	if i == quest.tutorial show_debug_message(step);
+	if i == quest.erosion_case show_debug_message(step);
 
 	switch(i) {
 
@@ -58,7 +60,7 @@ var i = 0; repeat(quests_grid_n) {
 						inst.scene_info = [	
 							[scr_cutscene_change_variable, polka, "move_override", true],
 							[scr_cutscene_wait, 0.5],
-							[scr_cutscene_move_character, cursor, game.gui_width/2-290, game.gui_height-50, false, 10],
+							[scr_cutscene_move_character, cursor, game.gui_width/2-290, game.gui_height-50, false, 15],
 							[scr_cutscene_wait, 0.5],
 							[scr_cutscene_change_variable, cursor, "click_change", true],
 							[scr_cutscene_wait, 4],
@@ -74,6 +76,10 @@ var i = 0; repeat(quests_grid_n) {
 				
 				case 5: 
 					if update {
+						
+						var inst = instance_find(cursor, 0);
+						if inst instance_destroy(inst);
+						
 						scr_progress_quest(quest.hints);  // PRESSING F TO USE ITEM
 						var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
 						inst.scene_info = [	
@@ -90,20 +96,25 @@ var i = 0; repeat(quests_grid_n) {
 					break;
 				
 				case 6: {
+					if update {
+						var inst = instance_find(obj_cutscene, 0);
+						if inst instance_destroy(inst);
+					}
+					
 					if not instance_find(ui_examine_box, 0) {
 						scr_evi_add_notebook(enum_evi_type.photo_desk, true);	
 						scr_progress_quest(i);
 					}
 				break;}
 				
-				case 7: 
+				case 7:
 					if update {
 						scr_progress_quest(quest.hints);  // CLICKING NOTEBOOK ICON TO VIEW EVIDENCE
 						var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
 						instance_create_layer(900, 100, "Menus", cursor);
 						inst.scene_info = [	
 							[scr_cutscene_wait, 1],
-							[scr_cutscene_move_character, cursor, obj_overlay.nb_x1, obj_overlay.nb_y1, false, 10],
+							[scr_cutscene_move_character, cursor, obj_overlay.nb_x1, obj_overlay.nb_y1, false, 15],
 							[scr_cutscene_wait, 0.5],
 							[scr_cutscene_change_variable, cursor, "click_change", true],
 							];
@@ -115,18 +126,25 @@ var i = 0; repeat(quests_grid_n) {
 					}
 					break;
 					
-				case 8: 
+				case 8: 				
 					if update {
+						
+						// destroy residual cutscene object
+						var inst = instance_find(obj_cutscene, 0);
+						if inst instance_destroy(inst);
+						
 						scr_progress_quest(quest.hints);  // HOVER ITEM TO SEE, CLICK EXIT TO LEAVE
 						var inst = instance_create_layer(100, 100, "Meta", obj_cutscene);
 						inst.scene_info = [	
-							[scr_cutscene_move_character, cursor, 520, 220, false, 10],
-							[scr_cutscene_change_variable, obj_notebook, "preview_spr", spr_animal_hairs_on_desk_photo_evidence],
-							[scr_cutscene_wait, 4],
+							[scr_cutscene_move_character, cursor, obj_notebook.slot_start_x+12, obj_notebook.slot_start_y+12, false, 15],
+							[scr_cutscene_change_variable, obj_notebook, "preview_spr", obj_notebook.evi_def[enum_evi_type.photo_desk,enum_evi_state.sprite]],
+							[scr_cutscene_change_variable, obj_notebook, "preview_desc", obj_notebook.evi_def[enum_evi_type.photo_desk,enum_evi_state.description]],
+							[scr_cutscene_wait, 2.5],
 							
 							// close notebook
 							[scr_cutscene_change_variable, obj_notebook, "preview_spr", noone],
-							[scr_cutscene_move_character, cursor, 1300, 320, false, 10],
+							[scr_cutscene_change_variable, obj_notebook, "preview_desc", noone],
+							[scr_cutscene_move_character, cursor, 1300, 320, false, 15],
 							[scr_cutscene_wait, 2],
 							[scr_cutscene_change_variable, cursor, "click_change", true],
 							[scr_cutscene_wait, 0.4],
@@ -139,12 +157,22 @@ var i = 0; repeat(quests_grid_n) {
 						inst.active = true;
 					}
 					
-					if mouse_check_button_pressed(mb_left) mouse_clear(mb_left); // clearing all user inputs to avoid crashing upon early notebook close
+					//if mouse_check_button_pressed(mb_left) mouse_clear(mb_left); // clearing all user inputs to avoid crashing upon early notebook close
 					
-					if not instance_find(obj_cutscene, 0) scr_progress_quest(i);
+					if not obj_notebook.draw_evidence scr_progress_quest(i);
 					break;
 				
 				case 9: if update {
+					var inst = instance_find(obj_cutscene, 0);
+					if inst {
+						instance_destroy(inst);
+						obj_hints.draw = false;
+					}
+					polka.move_override = false;
+					
+					var inst = instance_find(cursor, 0);
+					if inst instance_destroy(inst);
+					
 					scr_draw_notification("Now that you have a piece of evidence, tell the Baron what you've found.");
 					scr_progress_quest(i);
 				}
@@ -214,6 +242,9 @@ var i = 0; repeat(quests_grid_n) {
 				case 0: ev = event.talk_green_villy; break;
 				
 				case 1: {
+					if update {
+						scr_draw_notification("Remember to press the M key to open the map.")
+					}
 					ev = event.talk_weeraway;
 					
 					if room == erosion_forest {
@@ -320,7 +351,24 @@ var i = 0; repeat(quests_grid_n) {
 				
 				case 16: ev = event.talk_poppy; if update scr_char_change_dialogue(obj_npc_poppy, 5); break;
 				
-				case 17: if update {
+				case 17: if room != rm_poppy_interior {
+							scr_progress_quest(i);
+						} break;
+						
+				case 18:
+						if update {
+							survey_investigation = ds_list_create();
+							scr_quiz_list(survey_investigation);
+							scr_quiz_question(enum_question_type.multi, "How are you enjoying the game so far?", [1,2,3,4,5], noone);
+
+							obj_quiz_manager.questions = survey_investigation;
+							obj_quiz_manager.survey = true;
+						}
+						
+						if not obj_quiz_manager.survey scr_progress_quest(i);
+						break;
+				
+				case 19: if update {
 					scr_char_change_dialogue(obj_npc_poppy, 0);
 					scr_activate_objective(enum_objective_type.ero_poppy4); 
 
@@ -328,7 +376,9 @@ var i = 0; repeat(quests_grid_n) {
 					var investigation_text = temp[5];
 
 					var scene_info = [
-						[scr_cutscene_change_room, rm_polka_interior, 500, 266],
+						[scr_cutscene_wait, 2],
+						[scr_cutscene_change_room, rm_polka_interior, 300, 220],
+						[scr_cutscene_wait, 0.2],
 						[scr_cutscene_instance_create, 250, 200, "Characters", obj_npc_baron],
 						[scr_cutscene_change_variable, polka, "move_override", true],
 						[scr_cutscene_wait, 1],
@@ -355,8 +405,12 @@ var i = 0; repeat(quests_grid_n) {
 				case 0: ev = event.talk_baron; break;
 				
 				case 1: if room == rm_weeraway_interior {
+					
 							scr_progress_quest(i);
 					
+							scr_char_change_dialogue(obj_npc_weeraway, 0); 
+							scr_char_update_dialogue(obj_npc_weeraway);
+
 							var temp = dialogue.dialogues[? obj_npc_weeraway];
 							var investigation_text = temp[3];
 
@@ -365,9 +419,10 @@ var i = 0; repeat(quests_grid_n) {
 								[scr_cutscene_wait, 1],
 								[scr_cutscene_move_character, polka, 424, 225, false, 2],
 								[scr_cutscene_move_character, polka, 434, 108, false, 2],
-								[scr_cutscene_move_character, polka, 464, 108, false, 2],
-								[scr_cutscene_create_dialogue, investigation_text, [[scr_event_fire, event.talk_weeraway]]],
+								[scr_cutscene_move_character, polka, 440, 108, false, 2],
+								[scr_cutscene_create_dialogue, investigation_text, []],
 								[scr_cutscene_change_variable, polka, "move_override", false],
+								[scr_cutscene_progress_quest, quest.erosion_experiment],
 							];
 						
 							var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
@@ -377,14 +432,26 @@ var i = 0; repeat(quests_grid_n) {
 						}
 						break;
 						
-				case 2: ev = event.talk_weeraway; break;
-						
+				case 2: break;
+				
 				case 3: 
 					if update {
 						scr_progress_quest(quest.erosion_case);
 						scr_evi_add_notebook(enum_evi_type.soil_experiment_tbl, true);
 					}
+					if room != rm_weeraway_interior scr_progress_quest(i); break;
+				
+				case 4: 
+					if update {
+						survey_investigation = ds_list_create();
+						scr_quiz_list(survey_investigation);
+						scr_quiz_question(enum_question_type.multi, "How did you enjoy the experiment with Weeraway?", [1,2,3,4,5], noone);
+
+						obj_quiz_manager.questions = survey_investigation;
+						obj_quiz_manager.survey = true;
+					}
 					break;
+
 				
 			}
 		break;
@@ -401,12 +468,63 @@ var i = 0; repeat(quests_grid_n) {
 						instance_create_layer(389, 142, "Characters", obj_npc_investor_female);
 						instance_create_layer(640, 145, "Characters", obj_npc_investor_male);
 						
-						var inst = instance_find(obj_cutscene, 0);
+						var temp = dialogue.dialogues[? obj_npc_chieftain];
+						var case_text = temp[0];
+
+						var scene_info = [
+							[scr_cutscene_change_variable, polka, "move_override", true],
+							[scr_cutscene_move_character, obj_npc_chieftain, 100, 10, true, 1],
+							[scr_cutscene_wait, 1],
+							[scr_cutscene_move_character, obj_npc_chieftain, 498, 44, false, 2],
+							[scr_cutscene_wait, 1],
+							[scr_cutscene_create_dialogue, case_text, []],
+							[scr_cutscene_wait, 1],
+							[scr_cutscene_change_variable, polka, "move_override", false],
+						]
+						
+						var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
+						inst.scene_info = scene_info;
 						inst.active = true;
+						
 						scr_progress_quest(i);
 					}
-				break;
-				case 1: break;
+					break;
+					
+				case 1: 
+					if room != rm_courthouse_interior {
+						scr_progress_quest(i);
+					} 
+					break;
+					
+				case 2:
+					if update {
+						survey_investigation = ds_list_create();
+						scr_quiz_list(survey_investigation);
+						scr_quiz_question(enum_question_type.multi, "How did you enjoy the courthouse?", [1,2,3,4,5], noone);
+
+						obj_quiz_manager.questions = survey_investigation;
+						obj_quiz_manager.survey = true;
+						scr_progress_quest(i);
+					}
+					break;
+					
+				case 3: 
+					if not obj_quiz_manager.survey {
+						var scene_info = [
+							[scr_cutscene_change_room, rm_weeraway_interior, 100, 100],
+						]
+						
+						var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
+						inst.scene_info = scene_info;
+						inst.active = true;
+						scr_progress_quest(i);
+					} 
+					break;
+					
+				case 4:
+					var inst = instance_find(obj_cutscene, 0);
+					if inst == noone url_open_ext("https://www.surveymonkey.com/r/7JPQ57R", "_blank"); 
+					break;
 			}
 		break;
 		#endregion
@@ -416,36 +534,31 @@ var i = 0; repeat(quests_grid_n) {
 			var draw_time = 4;
 			switch(step) {
 				case 0: {
-					ev = event.talk_baron;
-				break;}
-				case 1: {
 					var inst =  collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, par_NPC, false, true);
 					if inst != noone and not polka.move_override {
 						scr_progress_quest(i);
 					}
 				break;}
-				case 2: {
+				case 1: {
 					var inst = instance_find(obj_textbox, 0);
 					if inst != noone and inst.draw_options {
 						scr_progress_quest(i);
 					}
 					break;}
 					
-				case 3: // click on camera in inventory
+				case 2: // click on camera in inventory
 					break;
 					
-					
-				case 4: draw_time = 10; // press f to use
+				case 3: draw_time = 10; // press f to use
 					break;
 					
-				case 5: draw_time = 10;// click on notebook
+				case 4: draw_time = 10;// click on notebook
 					break;
 					
-					
-				case 6: draw_time = 10; // hover an item to see it and use exit to leave
+				case 5: draw_time = 10; // hover an item to see it and use exit to leave
 					break;
 					
-				case 7: {
+				case 6: {
 					draw_time = 8;
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_chest, false, true);
 					if(inst != noone and scr_check_objective(enum_objective_type.ero_poppy1)){
@@ -467,7 +580,23 @@ var i = 0; repeat(quests_grid_n) {
 		show_debug_message("registering new quest event");
 		if ev != noone scr_event_register_script(ev, quests, scr_progress_quest, i);
 		else show_debug_message("no event to register");
-		if objectives[step] != noone scr_activate_objective(objectives[step]);
+		if objectives[step] != noone { 
+			scr_activate_objective(objectives[step]); 
+			
+			// sending an event for quest objective changes
+			if i != 4 {
+				var obj_text = ds_grid_get(flags.objectives, objectives[step], enum_objective_state.text);
+			
+				var quest_text;
+				switch i {
+					case 0: quest_text = "Tutorial"; break;
+					case 1: quest_text = "Investigation"; break;
+					case 2: quest_text = "Experiment"; break;
+					case 3: quest_text = "Case"; break;
+				}
+				send_event("Objective", quest_text, obj_text);
+			}
+		}
 	} 
 	i++;
 	update = false;

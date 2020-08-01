@@ -263,13 +263,15 @@ scr_quiz_question(enum_question_type.multi,
 "lower"], 
 0);
 scr_quiz_question_sprite(spr_erosion_experiment_table_evidence);
-scr_quiz_question_response("This is great! That means we can conclude that planting vegetation around the crop fields can lower soil erosion.", noone);
 
 //END OF EROSION EXPERIMENT 2 QUIZ QUESTIONS
 
-scr_dia_line("This is great! That means we can conclude that planting vegetation around the crop fields can lower soil erosion.", obj_npc_weeraway);
-//QUIZ QUESTIONS: EROSION EXPERIMENT PART 2
+scr_dia_line("This is great!", obj_npc_weeraway);
 scr_dia_line_quiz(erosion_experiment_2, obj_npc_weeraway);
+
+scr_dia_line("That means we can conclude that planting vegetation around the crop fields can lower soil erosion.", obj_npc_weeraway);
+//QUIZ QUESTIONS: EROSION EXPERIMENT PART 2
+
 
 scr_dia_options("EXIT", "FILLER");
 

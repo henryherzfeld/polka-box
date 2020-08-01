@@ -1,1 +1,0 @@
-holding = spr_torch;

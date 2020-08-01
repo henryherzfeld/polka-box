@@ -93,6 +93,7 @@ if (!draw_options){
 	
 }
 else {
+	draw_set_font(font_small);
 	_y = 0;
 	speaker = noone;
 	
@@ -137,11 +138,13 @@ else {
 		//}
 
 		draw_text_color(textbox_padded_x, textbox_padded_y + _y, preview, col2, col2, col2, col2, true);
-		draw_rectangle_color(textbox_padded_x, textbox_padded_y + _y, textbox_padded_x + selection_x, textbox_padded_y + _y + selection_y,col1,col1,col1,col1,true);	
+		draw_rectangle_color(textbox_padded_x, textbox_padded_y + _y +selection_y, textbox_padded_x + selection_x, textbox_padded_y+_y+selection_y,col1,col1,col1,col1,false);	
 		
-		_y += selection_y + 2;
+		_y += selection_y + 24;
 		
+	
 	}
+	draw_set_font(font_large);
 /*
 	//Back button
 	back = options[i];

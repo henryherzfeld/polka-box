@@ -29,6 +29,8 @@ for (var ii = 0; ii < MAX_EVI_ITEMS; ++ii) {
 	if (evi_type != enum_evi_type.none) {
 
 		var evi_sprite	= evi_def[evi_type,enum_evi_state.sprite];		//Sprite for the respective type of the item from the itemDef array
+		var evi_desc = evi_def[evi_type,enum_evi_state.description];
+		var evi_name = evi_def[evi_type,enum_evi_state.name]
 		
 		draw_sprite_stretched(evi_sprite, 0, slot_x1, slot_y1, slot_width, slot_height);			//Draw the item Sprite
 
@@ -66,6 +68,9 @@ for (var ii = 0; ii < MAX_EVI_ITEMS; ++ii) {
 		if (ii == selected_slot){	
 			col = c_red;
 			preview_spr = evi_sprite;
+			preview_desc = evi_desc;
+			preview_name = evi_name;
+			draw_text(mx-10, my, preview_name);
 
 			//If clicked when inside the slot
 			if (mouse_check_button_pressed(mb_left)) {
@@ -77,7 +82,11 @@ for (var ii = 0; ii < MAX_EVI_ITEMS; ++ii) {
 	draw_rectangle_color(slot_x1,slot_y1,slot_x2,slot_y2,col,col,col,col,true); //Draw Slot Rectangle			
 }
 	
-if preview_spr != noone draw_sprite_stretched(preview_spr, 0, slot_start_x + (preview_w - slot_total_width)/2, slot_start_y + game.gui_height / 3, preview_w/2, preview_h/2);
+if preview_spr != noone {
+	draw_text((game.gui_width-string_width(preview_desc))/2, slot_start_y + game.gui_height/3.5 + preview_h+12, preview_desc);
+
+	draw_sprite_stretched(preview_spr, 0, (game.gui_width-preview_w)/2, slot_start_y + game.gui_height/3.5, preview_w, preview_h);
+}
 
 draw_set_valign(fa_top);
 draw_set_halign(fa_top);		

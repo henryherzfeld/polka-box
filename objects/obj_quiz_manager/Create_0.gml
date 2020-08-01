@@ -26,6 +26,10 @@ target = noone;
 match = false;
 
 fun_fact = false;
+fun_fact_coins_max = 10;
+fun_fact_coins_min = 5;
+
+survey = false;
 
 submitted = false;
 

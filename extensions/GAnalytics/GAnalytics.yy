@@ -24,7 +24,7 @@
     "extensionName": "",
     "files": [
         {
-            "id": "4032eb6d-42a1-416d-ab4c-1b3d2173b7b1",
+            "id": "af72a127-fc8a-4f8c-874e-787d890df848",
             "modelName": "GMExtensionFile",
             "mvc": "1.0",
             "ProxyFiles": [
@@ -38,7 +38,7 @@
             "final": "",
             "functions": [
                 {
-                    "id": "934e59cf-a7ad-4f8c-a29f-200d0e151042",
+                    "id": "f113aaf6-7e92-4b3e-a1eb-e79b45d27fbc",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
@@ -58,7 +58,7 @@
             "init": "",
             "kind": 5,
             "order": [
-                "934e59cf-a7ad-4f8c-a29f-200d0e151042"
+                "f113aaf6-7e92-4b3e-a1eb-e79b45d27fbc"
             ],
             "origname": "",
             "uncompress": false

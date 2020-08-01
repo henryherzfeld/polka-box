@@ -168,6 +168,35 @@ if questions != noone and !response {
 		
 		if submitted {
 		
+			// single question survey evaluation 1-5 and firing event or send guess
+			if survey {
+				survey = false;
+				match = true;
+				
+				//unpacking which quest we're on
+				var quest_text;
+				var exp_step = quests.quests_grid[# 1, 2];
+				var case_step = quests.quests_grid[# 1, 3];
+				
+				if case_step > 1 {
+					quest_text = "Case";
+				} else if exp_step > 2 {
+					quest_text = "Experiment";
+				} else {
+					quest_text = "Investigation";
+				}
+
+				send_event("Survey", quest_text, choice+1);
+				scr_fire_sm_noti("Anonymous response submitted.\nThank you for your feedback!");
+			} else {
+				var text_;
+				if fun_fact text_ = "Fun Fact: " + curr_question[1];
+				else text_ = string(quizzer_id.name) + ": " + string(curr_question[1]);
+				send_event("Question", text_, match);
+				
+			}
+			
+		
 			quiz_menu_ptr = noone;
 			submitted = false;
 			pending_choice = false;
@@ -204,9 +233,11 @@ if questions != noone and !response {
 					
 					if fun_fact { 
 						fun_fact = false;
-						scr_fire_sm_noti("Correct Answer");
+						var coins = irandom_range(fun_fact_coins_min, fun_fact_coins_max);
+						scr_fire_sm_noti("Correct Answer" + "\n" + string(coins) + " Coins found!");
+						flags.coins += coins;
 						polka.move_override = false;
-					} 
+					}
 					else if textbox_ptr != noone {
 						instance_activate_object(textbox_ptr);
 						polka.in_dialogue = true;
@@ -219,14 +250,14 @@ if questions != noone and !response {
 			} else {
 				// incorrect answer
 				if fun_fact { 
-					scr_fire_sm_noti("Incorrect Answer");
+					fun_fact = false;
+					scr_fire_sm_noti("Incorrect Answer \nYou didn't find anything...");
 					questions = noone;
 					initial = true;
 					polka.move_override = false;
 					question_idx = 0;
 					questions = noone;
 					question_change = false;
-					fun_fact = false;
 				}   // test phase to determine if heart removed
 				else if room != rm_polka_interior {
 					flags.hearts -= 1;

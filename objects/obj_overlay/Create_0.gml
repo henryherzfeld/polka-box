@@ -22,7 +22,7 @@ margin_heart = 10;
 w_heart = sprite_get_width(spr_heart_full);
 
 // Coin Counter
-coin_spr = spr_up_arrow;
+coin_spr = spr_coin;
 x_coin = ((game.gui_width - 100)/2) * .75;
 w_coin = sprite_get_width(coin_spr);
 
@@ -42,7 +42,8 @@ noti_sm_timeout = 500;
 noti_lg_timeout = 125;
 
 noti_sm_text = "";
-noti_sm_bg_col = c_navy;
+noti_sm_bg_col = make_color_rgb(218, 165, 32); //goldenrod
+noti_sm_text_col = c_black;
 
 noti_sm_width = 0;
 noti_sm_height = 0;

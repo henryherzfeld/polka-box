@@ -40,7 +40,7 @@ first = true;
 page = 0;
 n = 0;
 draw_options = false;
-max_preview_len = 45;
+max_preview_len = 90;
 n_options = 0;
 curr_seq = [];
 

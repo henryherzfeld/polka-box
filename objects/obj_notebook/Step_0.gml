@@ -5,7 +5,7 @@ event_inherited();
 
 if game.canvas_change {
 	slot_start_x = (game.gui_width - slot_total_width)/2;
-	slot_start_y = (game.gui_height - slot_total_height)/3;
+	slot_start_y = (game.gui_height - slot_total_height)/5;
 }
 
 if game.pause exit;
@@ -44,4 +44,11 @@ if send_selected {
 	}	
 }
 
-if draw_change { draw_change = false; preview_spr = noone; selected_slot = 0; clicked_slot = 0; }
+if draw_change { 
+	draw_change = false;
+	preview_spr = noone; 
+	preview_desc = noone;
+	preview_name = noone;
+	selected_slot = 0;
+	clicked_slot = 0; 
+}

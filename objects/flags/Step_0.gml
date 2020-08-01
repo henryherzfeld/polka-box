@@ -34,11 +34,19 @@ if (game.pause){
 	paused_time = -1;
 }
 
-// out of hearts
-if hearts <= 0 {
-	obj_quiz_manager.no_match_response = false;
-	scr_destroy_meta();
-	game.game_over_bg = sprite_create_from_surface(application_surface,0,0,view_wport,view_hport,0,0,0,0);
-	game.alarm[1] = room_speed*3;
 
+if hearts_diff != hearts {
+	hearts_diff = hearts;
+	
+	// out of hearts
+	if hearts <= 0 {
+		obj_quiz_manager.no_match_response = false;
+		scr_destroy_meta();
+		game.game_over_bg = sprite_create_from_surface(application_surface,0,0,view_wport,view_hport,0,0,0,0);
+		game.alarm[1] = room_speed*3;
+
+	} else if hearts == 3 {
+		scr_fire_sm_noti("Only Three Hearts Remaining!");
+	}
 }
+
