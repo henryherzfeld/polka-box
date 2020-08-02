@@ -1,5 +1,13 @@
 /// @description Insert description here
 
+
+// grabbing audio context for html5
+if not play_music and audio_system_is_available() {
+	play_music = true;
+	audio_play_sound(snd_orbit, 1, true);
+	
+}
+
 if rain and (room == erosion_forest or room == erosion_village) effect_create_below(ef_rain, 10, 10, 1, c_white);
 
 if(keyboard_check_pressed(vk_backspace) and keyboard_check(vk_lcontrol)){

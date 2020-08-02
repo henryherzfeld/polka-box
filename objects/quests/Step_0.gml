@@ -359,7 +359,7 @@ var i = 0; repeat(quests_grid_n) {
 						if update {
 							survey_investigation = ds_list_create();
 							scr_quiz_list(survey_investigation);
-							scr_quiz_question(enum_question_type.multi, "How are you enjoying the game so far?", [1,2,3,4,5], noone);
+							scr_quiz_question(enum_question_type.multi, "How are you enjoying the game so far? (Lowest: 1, Highest: 5)", [1,2,3,4,5], noone);
 
 							obj_quiz_manager.questions = survey_investigation;
 							obj_quiz_manager.survey = true;
@@ -445,7 +445,7 @@ var i = 0; repeat(quests_grid_n) {
 					if update {
 						survey_investigation = ds_list_create();
 						scr_quiz_list(survey_investigation);
-						scr_quiz_question(enum_question_type.multi, "How did you enjoy the experiment with Weeraway?", [1,2,3,4,5], noone);
+						scr_quiz_question(enum_question_type.multi, "How did you enjoy the experiment with Weeraway? (Lowest: 1, Highest: 5)", [1,2,3,4,5], noone);
 
 						obj_quiz_manager.questions = survey_investigation;
 						obj_quiz_manager.survey = true;
@@ -500,7 +500,7 @@ var i = 0; repeat(quests_grid_n) {
 					if update {
 						survey_investigation = ds_list_create();
 						scr_quiz_list(survey_investigation);
-						scr_quiz_question(enum_question_type.multi, "How did you enjoy the courthouse?", [1,2,3,4,5], noone);
+						scr_quiz_question(enum_question_type.multi, "How did you enjoy the Courthouse case? (Lowest: 1, Highest: 5)", [1,2,3,4,5], noone);
 
 						obj_quiz_manager.questions = survey_investigation;
 						obj_quiz_manager.survey = true;
@@ -510,8 +510,93 @@ var i = 0; repeat(quests_grid_n) {
 					
 				case 3: 
 					if not obj_quiz_manager.survey {
+						// Camera is not following polka post cutscene
+						ero_fin_text1a = ds_map_create();
+						scr_dia_segment(ero_fin_text1a, "GREET");
+						scr_dia_line("I can't believe we were able to grow the crops in time.", obj_npc_weeraway_wife);
+
+						ero_fin_text1b = ds_map_create();
+						scr_dia_segment(ero_fin_text1b, "GREET");
+						scr_dia_line("Neither can I. We have mashed potatoes, steamed carrots, green bean casserole, creamed corn, mashed turnips, and pumpkin pie.", [obj_npc_weeraway, enum_portrait.happy]); 
+
+						ero_fin_text1c = ds_map_create();
+						scr_dia_segment(ero_fin_text1c, "GREET");
+						scr_dia_line("... If the soil erosion problem hadn't been fixed, we wouldn't be enjoying any of these this year.", obj_npc_weeraway);
+
+
+						ero_fin_text2a = ds_map_create();
+						scr_dia_segment(ero_fin_text2a, "GREET");
+						scr_dia_line("These mashed potatoes are delicious, mom!", [obj_npc_weeraway_kid_1, enum_portrait.happy]);
+
+						ero_fin_text2b = ds_map_create();
+						scr_dia_segment(ero_fin_text2b, "GREET");
+						scr_dia_line("Thank you, dear!", [obj_npc_weeraway_wife, enum_portrait.happy]);
+
+						ero_fin_text2c = ds_map_create();
+						scr_dia_segment(ero_fin_text2c, "GREET");
+						scr_dia_line("Pass the pumpkin pie, Gooey.", obj_npc_weeraway);
+
+						ero_fin_text2d = ds_map_create();
+						scr_dia_segment(ero_fin_text2d, "GREET");
+						scr_dia_line("I didn't think I'd ever miss carrots...", obj_npc_weeraway_kid_2); 
+
+						ero_fin_text2e = ds_map_create();
+						scr_dia_segment(ero_fin_text2e, "GREET");
+						scr_dia_line("That's what happens when you have nothing to eat. You'll eat just about anything you can get. And pass me the creamed corn, will you?", obj_npc_weeraway);
+
+
+						ero_fin_text3a = ds_map_create();
+						scr_dia_segment(ero_fin_text3a, "GREET");
+						scr_dia_line("Because of you, my family could live. The villagers could finally get food to eat. Please take this as a token of my thanks.", obj_npc_weeraway);
+						
 						var scene_info = [
-							[scr_cutscene_change_room, rm_weeraway_interior, 100, 100],
+							[scr_cutscene_change_variable, obj_camera, "following", noone],
+							[scr_cutscene_change_room, rm_weeraway_interior_dinner_1, -200, -200],
+							[scr_cutscene_change_variable, obj_camera, "x", 512],
+							[scr_cutscene_change_variable, obj_camera, "y", 800],
+							[scr_cutscene_wait, 0.2],
+							[scr_cutscene_move_character, obj_npc_weeraway, 400, 70, false, 200],
+							[scr_cutscene_instance_create, 400, 140, "Characters", obj_npc_weeraway_wife],
+	
+							[scr_cutscene_pan_camera, 512, 100, false, 4],
+							[scr_cutscene_wait, 1],
+							[scr_cutscene_move_character, obj_npc_weeraway_wife, 10, -30, true, 3],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_create_dialogue, ero_fin_text1a, []],
+							[scr_cutscene_wait, 1],
+							[scr_cutscene_move_character, obj_npc_weeraway, 120, 30, true, 3],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_create_dialogue, ero_fin_text1b, []],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_move_character, obj_npc_weeraway, -110, 0, true, 3],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_create_dialogue, ero_fin_text1c, []],
+	
+							[scr_cutscene_wait, 2],
+							[scr_cutscene_change_room, rm_empty, -300, -300],
+							[scr_cutscene_wait, 0.2],
+							[scr_cutscene_change_room, rm_weeraway_interior_dinner_2, -200, -200],
+							[scr_cutscene_wait, 1],
+	
+							[scr_cutscene_create_dialogue, ero_fin_text2a, []],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_create_dialogue, ero_fin_text2b, []],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_create_dialogue, ero_fin_text2c, []],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_create_dialogue, ero_fin_text2d, []],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_create_dialogue, ero_fin_text2e, []],
+							[scr_cutscene_wait, 2],
+
+							[scr_cutscene_change_room, rm_weeraway_interior, 370, 200],
+							[scr_cutscene_wait, 1],
+							[scr_cutscene_move_character, obj_npc_weeraway, 0, 75, true, 2],
+							[scr_cutscene_create_dialogue, ero_fin_text3a, []],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_notification, "Weeraway has given you 300 coins!"],
+							[scr_cutscene_change_variable, flags, "coins", flags.coins+300],
+							[scr_cutscene_change_variable, polka, "move_override", false],
 						]
 						
 						var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
@@ -522,8 +607,63 @@ var i = 0; repeat(quests_grid_n) {
 					break;
 					
 				case 4:
-					var inst = instance_find(obj_cutscene, 0);
-					if inst == noone url_open_ext("https://www.surveymonkey.com/r/7JPQ57R", "_blank"); 
+					if room != rm_weeraway_interior and room != rm_weeraway_interior_dinner_1 and
+					   room != rm_weeraway_interior_dinner_2 and room != erosion_village and room != rm_empty {
+						
+						ero_fin_text4a = ds_map_create();
+						scr_dia_segment(ero_fin_text4a, "GREET");
+
+						scr_dia_line("You've got your first crystal piece! Good work, young knight.", obj_npc_baron); 
+						scr_dia_line_sprite(spr_crystal_inventa_status_1);
+
+						scr_dia_line("Knock out the next quests to get more crystal pieces", obj_npc_baron); 
+						scr_dia_line_sprite(spr_crystal_inventa_status_1);
+						scr_dia_line_sprite(spr_virus_henchmen);
+
+						scr_dia_line("You have to take Virus down! He's still out there. Who knows what he's plotting next...", obj_npc_baron); 
+
+						scr_dia_line("Get ready for your next quest! You'll be exploring space!", obj_npc_baron);
+						scr_dia_line_sprite(spr_virus_henchmen);
+						scr_dia_line_sprite(spr_ship); 
+
+						scr_dia_options("EXIT", "EXIT");
+						scr_dia_segment(ero_fin_text4a, "EXIT");
+						scr_dia_line("Ok", polka);
+						
+						
+						var scene_info = [
+							[scr_cutscene_change_room, rm_polka_interior, 340, 170],
+							[scr_cutscene_change_variable, obj_camera, "x", 512],
+							[scr_cutscene_change_variable, obj_camera, "y", 800],
+							[scr_cutscene_change_variable, polka, "move_override", true],
+							[scr_cutscene_pan_camera, 512, 0, false, 4],
+							[scr_cutscene_wait, 2],
+							[scr_cutscene_instance_create, 370, 270, "Characters", obj_npc_baron],
+	
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_move_character, obj_npc_baron, 0, -100, true, 2],
+							[scr_cutscene_wait, 1],
+							[scr_cutscene_create_dialogue, ero_fin_text4a, []],
+							[scr_cutscene_wait, 0.5],
+							[scr_cutscene_move_character, obj_npc_baron, 0, 120, true, 2],
+							[scr_cutscene_instance_destroy_nearest, 0, 0, obj_npc_baron],
+							[scr_cutscene_pan_camera_char, polka, false, 1],
+							[scr_cutscene_change_variable, obj_camera, "following", polka],
+							[scr_cutscene_change_variable, polka, "move_override", false],
+						]
+						
+						var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
+						inst.scene_info = scene_info;
+						inst.active = true;
+						scr_progress_quest(i);
+					}
+					break;
+				
+				case 5:
+					if obj_camera.following != noone {
+						url_open_ext("https://www.surveymonkey.com/r/7JPQ57R", "_blank"); 
+						scr_progress_quest(i);
+					}
 					break;
 			}
 		break;

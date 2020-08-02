@@ -1,8 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-audio_play_sound(snd_orbit, 1, true);
-
 font = font_comic
 debug = false;
 randomize();
@@ -15,6 +13,8 @@ base_width = 1500;
 base_height = 840;
 width = base_width;
 height = base_height;
+
+play_music = false;
 
 spawn_room = -1;
 black_alpha = 0;

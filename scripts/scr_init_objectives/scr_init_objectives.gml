@@ -61,7 +61,7 @@ scr_add_objective(enum_objective_type.ero_ex_start, "", enum_phase_type.miscella
 scr_add_objective(enum_objective_type.ero_ex_weeraway0, "Talk to Weeraway", enum_phase_type.analyze_clues);
 
 scr_add_objective(enum_objective_type.ero_ca_start, "Go to the courthouse", enum_phase_type.analyze_clues);
-scr_add_objective(enum_objective_type.ero_ca_cheiftain0, "Make your case to the Chieftan", enum_phase_type.analyze_clues);
+scr_add_objective(enum_objective_type.ero_ca_cheiftain0, "Make your case to the Chieftain", enum_phase_type.analyze_clues);
 
 scr_add_objective(enum_objective_type.ero_end, "", enum_phase_type.miscellaneous);
 

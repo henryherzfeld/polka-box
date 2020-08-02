@@ -175,6 +175,14 @@
             }
         },
         {
+            "Key": "0467b427-3144-4486-ad4a-20445cf50288",
+            "Value": {
+                "id": "1bed4ac7-91f9-408c-ad8b-9c410bc8367a",
+                "resourcePath": "objects\\obj_food_6\\obj_food_6.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "048b3e0e-32fd-410e-ab45-d13b698c6929",
             "Value": {
                 "id": "40158b5d-1ec0-48f8-bcd8-b40e9899f9ba",
@@ -732,6 +740,14 @@
                 "id": "aec82cc2-5d65-426e-b957-daf89aaa397a",
                 "resourcePath": "sprites\/spr_portrait_villy_sad\/spr_portrait_villy_sad.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1aed95e7-0fe6-40c2-9404-c685b1dfae24",
+            "Value": {
+                "id": "f2da68f5-7800-4ae9-adfa-05239a047ee9",
+                "resourcePath": "views\\dddb7cec-8f5e-44bd-b688-2f5c9fd16fbb-room.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -2431,6 +2447,14 @@
             }
         },
         {
+            "Key": "5ba9e1ae-b5dd-4c43-a60a-54dca7163a54",
+            "Value": {
+                "id": "6bb78fff-0717-49cf-8bc9-cb04906724d5",
+                "resourcePath": "objects\\obj_food_4\\obj_food_4.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "5bc4ff7d-921a-4c6d-a248-33f345da7080",
             "Value": {
                 "id": "4becfbc0-44f1-43d2-8e59-ff3248cd0ee5",
@@ -3471,6 +3495,14 @@
             }
         },
         {
+            "Key": "85652e4d-607f-4edc-b92a-bfc3dad5669a",
+            "Value": {
+                "id": "dd9e3577-3106-4be0-84be-6d1ffe1076b3",
+                "resourcePath": "objects\\obj_food_3\\obj_food_3.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "85f53e91-d72a-48fa-be20-da66653a38c9",
             "Value": {
                 "id": "7ab82776-8c6e-4713-98f0-33dab713a21f",
@@ -3991,6 +4023,14 @@
             }
         },
         {
+            "Key": "9c43d0c0-9944-44a3-bf8a-33fc8cd617e5",
+            "Value": {
+                "id": "f40fe653-77ae-4ce5-8e65-95c19c712b73",
+                "resourcePath": "views\\bd3cba11-36fd-4e44-9c14-54d11fd16efb-room.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "9cc50ede-4570-45a2-a2db-7146ba82185e",
             "Value": {
                 "id": "71c8d466-5e5c-467a-afbb-9f7f557ca779",
@@ -4228,6 +4268,14 @@
                 "id": "14cb8283-988f-41b9-a783-f6240c4c0126",
                 "resourcePath": "views\/a50dfada-011d-4e95-a944-23e016764283.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "a549a5a0-497c-46f9-b385-f70bfc23acfa",
+            "Value": {
+                "id": "a0310835-d923-4d93-bd43-a132fd4c21f1",
+                "resourcePath": "rooms\\rm_weeraway_interior_dinner_2\\rm_weeraway_interior_dinner_2.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -5191,6 +5239,14 @@
             }
         },
         {
+            "Key": "cad5df84-d50b-4f2f-aabf-922456d7483c",
+            "Value": {
+                "id": "87a7b351-cd8d-416d-b1aa-d95a2e3f8004",
+                "resourcePath": "views\\8a359d37-6f6d-446f-9298-1266280af104-room.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "cb43a038-b38a-414e-9bef-b33211ee685e",
             "Value": {
                 "id": "27d4b51a-5af4-468c-b0c1-0dbdf2c6190b",
@@ -5228,6 +5284,14 @@
                 "id": "218f4bca-bcb9-4d9e-a5ad-e1ddcf7c256f",
                 "resourcePath": "options\/windows\/options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "cd07360f-a208-4ecb-a47e-1f009d45fa69",
+            "Value": {
+                "id": "0c0bf96b-17c5-4c22-b426-9ec4532ab59d",
+                "resourcePath": "objects\\obj_food_5\\obj_food_5.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -5335,6 +5399,14 @@
             }
         },
         {
+            "Key": "d2bfe903-00f2-427c-921d-3bcadd3a1d77",
+            "Value": {
+                "id": "6d79bfaf-7471-4735-a533-321d9f1f5e4e",
+                "resourcePath": "rooms\\rm_empty\\rm_empty.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "d2fca3fc-b2d2-4e70-86cf-5b88b7eb6791",
             "Value": {
                 "id": "d52ad947-e5cb-47c3-adce-243b2a397511",
@@ -5396,6 +5468,14 @@
                 "id": "62d4ff8b-3170-46da-9dec-411a82156a40",
                 "resourcePath": "sprites\/sprite112\/sprite112.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d5ddfd17-a1d9-43c9-aa95-78bc215a4d67",
+            "Value": {
+                "id": "1144ce54-b4de-4491-9336-302c955ff0f3",
+                "resourcePath": "objects\\obj_food_7\\obj_food_7.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -5564,6 +5644,14 @@
                 "id": "a6343484-54eb-4441-b57e-01ac9d8c5bee",
                 "resourcePath": "sprites\/sprite38\/sprite38.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "dddb7cec-8f5e-44bd-b688-2f5c9fd16fbb",
+            "Value": {
+                "id": "13a7c96a-0733-4654-8faf-1183a3cf5ca6",
+                "resourcePath": "rooms\\rm_weeraway_interior_dinner\\rm_weeraway_interior_dinner.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -6052,6 +6140,14 @@
                 "id": "761bcfce-1c7f-4b69-9881-21205d1864bf",
                 "resourcePath": "objects\/dialogue\/dialogue.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f4fa009b-1cac-4aaf-bbf9-b03ef7cc473c",
+            "Value": {
+                "id": "97740622-13d5-4de9-be3b-feaa74096392",
+                "resourcePath": "rooms\\rm_weeraway_interior_dinner_1\\rm_weeraway_interior_dinner_1.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
