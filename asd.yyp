@@ -4319,6 +4319,14 @@
             }
         },
         {
+            "Key": "a7c087f9-0204-4804-9910-c462d2f4c58f",
+            "Value": {
+                "id": "0c911159-f4f5-4550-9e58-834387426447",
+                "resourcePath": "sprites\\spr_help\\spr_help.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a89ec5ed-af9c-4d03-909f-bb91c21827ce",
             "Value": {
                 "id": "c59889e1-68fb-4d25-90d5-e23ae49dbc5d",
@@ -4450,7 +4458,7 @@
             "Key": "ae2b4f65-00c1-4869-a3d0-b89074dd4c46",
             "Value": {
                 "id": "96ec392e-021c-47ed-8f7f-5a024ca135b6",
-                "resourcePath": "sprites\/spr_help\/spr_help.yy",
+                "resourcePath": "sprites\\spr_help_old\\spr_help_old.yy",
                 "resourceType": "GMSprite"
             }
         },
