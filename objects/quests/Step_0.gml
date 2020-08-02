@@ -661,7 +661,7 @@ var i = 0; repeat(quests_grid_n) {
 				
 				case 5:
 					if obj_camera.following != noone {
-						url_open_ext("https://www.surveymonkey.com/r/7JPQ57R", "_blank"); 
+						url_open("https://www.surveymonkey.com/r/7JPQ57R"); 
 						scr_progress_quest(i);
 					}
 					break;
