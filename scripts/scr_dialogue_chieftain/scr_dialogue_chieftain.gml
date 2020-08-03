@@ -46,7 +46,7 @@ scr_quiz_question(enum_question_type.checkbox,
 "Green",
 "Wilting"],
 [0,1,3]);
-scr_quiz_question_response("I see. Keep going", "What?! That's outrageous");
+scr_quiz_question_response("Hmm, very interesting...", "What?! That's outrageous");
 
 scr_quiz_question(enum_question_type.checkbox,
 "If a plant wasn't getting enough soil, it looked:", 
@@ -121,13 +121,13 @@ scr_quiz_question(enum_question_type.multi,
 "We used a ____ to measure the moisture", 
 ["tensiometer",
 "thermometer",
-"measuring stick",
+"tape measure",
 "None of the above"], 
 0);
 scr_quiz_question_response(noone, "What?! That's ridiculous");
 
 scr_quiz_question(enum_question_type.evidence_multi, 
-"We discovered that the soil moisture was between ____ kpa", 
+"We discovered that the soil moisture in the farmer's fields was between ____ kpa", 
 ["30-40",
 "50-60",
 "70-80",
@@ -141,7 +141,7 @@ scr_quiz_question(enum_question_type.multi,
 ["didn't have",
 "had"], 
 1);
-scr_quiz_question_response("I see. Keep going", "What?! That's ridiculous");
+scr_quiz_question_response("I see. Keep going.", "What?! That's ridiculous");
 
 scr_quiz_question(enum_question_type.multi, 
 "We decided to investigate if the crops were getting enough topsoil. We measured the ____ in the farmer's fields.", 
@@ -165,13 +165,13 @@ scr_quiz_question(enum_question_type.multi,
 "We used a ____ to measure the topsoil depth", 
 ["tensiometer",
 "thermometer",
-"measuring stick",
+"tape measure",
 "None of the above"], 
 2);
 scr_quiz_question_response(noone, "What?! That's ridiculous");
 
 scr_quiz_question(enum_question_type.evidence_multi, 
-"We discovered that the topsoil depth was between ____ inches", 
+"We discovered that the topsoil depth in the farmer's fields was between ____ inches", 
 ["1-2",
 "4-6",
 "8-10",
@@ -195,7 +195,7 @@ scr_quiz_question(enum_question_type.evidence_multi,
 "None of the above"], 
 [enum_evi_type.photo_erosion_water, 1]); 
 //EVIDENCE 2 IS RESERVED FOR THE SOIL-EROSION-WATER PHOTO (spr_soil_erosion_water_photo_evidence)
-scr_quiz_question_response("I see. Keep going", "What?! That's ridiculous");
+scr_quiz_question_response("Hmm, very interesting...", "What?! That's ridiculous");
 
 scr_quiz_question(enum_question_type.multi, 
 "When soil or rock is moved from one place to another by wind or water, it's called", 
@@ -243,7 +243,7 @@ scr_quiz_question(enum_question_type.multi,
 "background research",
 "None of the above"], 
 1);
-scr_quiz_question_response("I see. Keep going", "What?! That's outrageous");
+scr_quiz_question_response("I see. Keep going.", "What?! That's outrageous");
 
 scr_quiz_question(enum_question_type.multi, 
 "We made _____ different square patches. Each patch was filled with soil.", 
@@ -286,7 +286,7 @@ scr_quiz_question(enum_question_type.evidence_multi,
 "hypothesis",
 "None of the above"], 
 [enum_evi_type.soil_experiment_tbl, 0]);
-scr_quiz_question_response("I see. Keep going", "What?! That's ridiculous");
+scr_quiz_question_response("Hmm, very interesting...", "What?! That's ridiculous");
 
 scr_quiz_question(enum_question_type.multi, 
 "We came to the _____ that planting more vegetation around the fields does lower soil erosion.", 
