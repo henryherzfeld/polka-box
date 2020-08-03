@@ -294,7 +294,7 @@ scr_quiz_question(enum_question_type.multi,
 "conclusion",
 "background research",
 "None of the above"], 
-[enum_evi_type.soil_experiment_tbl, 0]);
+0);
 scr_quiz_question_sprite(spr_erosion_experiment_setup_after);
 //EVIDENCE 2 IS RESERVED FOR THE EROSION EXPERIMENT TABLE (spr_erosion_experiment_table_evidence)
 
