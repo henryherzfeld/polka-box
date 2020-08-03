@@ -70,7 +70,7 @@ for (var ii = 0; ii < MAX_EVI_ITEMS; ++ii) {
 			preview_spr = evi_sprite;
 			preview_desc = evi_desc;
 			preview_name = evi_name;
-			draw_text(mx-10, my, preview_name);
+			draw_text(mx-10, my-15, preview_name);
 
 			//If clicked when inside the slot
 			if (mouse_check_button_pressed(mb_left)) {

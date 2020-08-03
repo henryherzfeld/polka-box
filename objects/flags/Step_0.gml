@@ -40,10 +40,15 @@ if hearts_diff != hearts {
 	
 	// out of hearts
 	if hearts <= 0 {
-		obj_quiz_manager.no_match_response = false;
+		//obj_quiz_manager.no_match_response = false;
+		instance_destroy(obj_progress_bar);
 		scr_destroy_meta();
-		game.game_over_bg = sprite_create_from_surface(application_surface,0,0,view_wport,view_hport,0,0,0,0);
-		game.alarm[1] = room_speed*3;
+		
+		with game {
+			instance_deactivate_all(true);
+			game_over_bg = sprite_create_from_surface(application_surface,0,0,view_wport,view_hport,0,0,0,0);
+			alarm[1] = room_speed*3;
+		}
 
 	} else if hearts == 3 {
 		scr_fire_sm_noti("Only Three Hearts Remaining!");

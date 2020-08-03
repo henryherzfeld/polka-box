@@ -12,11 +12,13 @@ var i = 0; repeat(quests_grid_n) {
 	var objectives_n = array_length_1d(objectives);
 	var ev = noone;
 	if i == quest.erosion_case show_debug_message(step);
+	var save = true;
 
 	switch(i) {
 
 		#region tutorial
 		case quest.tutorial:
+			save = false; // every tutorial objective should not save
 			switch(step) {
 				case 0: {
 					if room == rm_polka_interior {
@@ -457,7 +459,7 @@ var i = 0; repeat(quests_grid_n) {
 		break;
 		#endregion
 		
-		#region erosion case
+		#region erosion case					
 		case quest.erosion_case:
 			switch(step) {
 				case 0: 
@@ -491,6 +493,7 @@ var i = 0; repeat(quests_grid_n) {
 					break;
 					
 				case 1: 
+					save = false;
 					if room != rm_courthouse_interior {
 						scr_progress_quest(i);
 					} 
@@ -607,6 +610,7 @@ var i = 0; repeat(quests_grid_n) {
 					break;
 					
 				case 4:
+					save = false;
 					if room != rm_weeraway_interior and room != rm_weeraway_interior_dinner_1 and
 					   room != rm_weeraway_interior_dinner_2 and room != erosion_village and room != rm_empty {
 						
@@ -660,6 +664,7 @@ var i = 0; repeat(quests_grid_n) {
 					break;
 				
 				case 5:
+					save = false;
 					if obj_camera.following != noone {
 						url_open("https://www.surveymonkey.com/r/7JPQ57R"); 
 						scr_progress_quest(i);
@@ -672,6 +677,7 @@ var i = 0; repeat(quests_grid_n) {
 		#region hints
 		case quest.hints:
 			var draw_time = 4;
+			save = false;
 			switch(step) {
 				case 0: {
 					var inst =  collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, par_NPC, false, true);
@@ -737,7 +743,10 @@ var i = 0; repeat(quests_grid_n) {
 				send_event("Objective", quest_text, obj_text);
 			}
 		}
-	} 
+	}
+	
+	if update and save { scr_save_game(); }
+	
 	i++;
 	update = false;
 }

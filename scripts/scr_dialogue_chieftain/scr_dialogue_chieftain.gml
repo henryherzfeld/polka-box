@@ -285,7 +285,7 @@ scr_quiz_question(enum_question_type.evidence_multi,
 "procedure",
 "hypothesis",
 "None of the above"], 
-0);
+[enum_evi_type.soil_experiment_tbl, 0]);
 scr_quiz_question_response("I see. Keep going", "What?! That's ridiculous");
 
 scr_quiz_question(enum_question_type.multi, 
