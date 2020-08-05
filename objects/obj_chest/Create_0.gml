@@ -10,6 +10,11 @@ image_index = 0;			//Always on 1st image
 //Item[1] = enum_item_type.pitchfork
 //Item[2] = enum_item_type.tape 
 
+inv_width = 640;						//width value of inventory
+inv_height = 320;						//height value of inventory
+inv_x = (game.gui_width-inv_width)/2;								//x value of inventory
+inv_y = (game.gui_height-inv_height)/2;							//y value of inventory
+
 item = [enum_item_type.shovel,enum_item_type.tensiometer,enum_item_type.tape];
 
 ///Get the data of the items from the inventory manager, so we can use respective sprite,name etc

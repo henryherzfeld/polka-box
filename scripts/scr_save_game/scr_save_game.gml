@@ -1,5 +1,6 @@
 /// @description Insert description here
 
+/*
 var inst = instance_find(obj_cutscene, 0);
 
 
@@ -7,7 +8,7 @@ if inst != noone {
 	show_debug_message(inst.active);
 	if inst.active == true { exit; }
 }
-
+*/
 
 // create our root list
 var root_list = ds_list_create();
@@ -18,6 +19,8 @@ ds_map_add(game_data, "coins", flags.coins);
 ds_map_add(game_data, "hearts", flags.hearts);
 ds_map_add(game_data, "name", game.name);
 ds_map_add(game_data, "time", flags.time);
+ds_map_add(game_data, "objective", flags.objective);
+ds_map_add(game_data, "progress", flags.progress);
 
 // location map
 var loc_data = ds_map_create();

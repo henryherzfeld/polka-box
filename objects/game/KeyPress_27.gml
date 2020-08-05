@@ -3,5 +3,6 @@
 
 if not hacks exit;
 
-obj_quiz_manager.match = true;
-obj_quiz_manager.submitted = true;
+with obj_quiz_manager {
+	if pending_choice match = true; submitted = true;
+}

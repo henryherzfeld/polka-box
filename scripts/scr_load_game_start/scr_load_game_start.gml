@@ -25,6 +25,8 @@ if(file_exists("savedgame.sav")){
 	var hearts_ = game_data[? "hearts"];
 	var name_ = game_data[? "name"];
 	var time_ = game_data[? "time"];
+	var obj_ = game_data[? "objective"];
+	var progress_ = game_data[? "progress"];
 	
 	// loc_data
 	var x_ = loc_data[? "x"];
@@ -49,9 +51,12 @@ if(file_exists("savedgame.sav")){
 	//// ASSIGN IT ALLLLLLLL
 	// game_data
 	flags.coins = coins_;
-	flags.hearts = hearts_;
+	//flags.hearts = hearts_;
 	game.name = name_;
 	flags.time = time_;
+	flags.objective = obj_;
+	flags.progress = progress_;
+	flags.objective_change = true;
 	
 	// grid_map
 	//

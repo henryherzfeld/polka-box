@@ -3,13 +3,7 @@
 //If chest is closed, no need to calculate any further so exit from here
 if (show_chest == false){exit}
 
-//If Chest is open, Draw the elemnts
-
-///Draw the Rectangle with outline
-var inv_x = 80;								//x value of inventory
-var inv_y = 128;							//y value of inventory
-var inv_width = 640;						//width value of inventory
-var inv_height = 320;						//height value of inventory
+//If Chest is open, Draw the elements
 
 draw_rectangle_color(inv_x,inv_y,inv_x + inv_width,inv_y + inv_height,c_white,c_white,c_white,c_white,true);		//Outline rectangle
 draw_rectangle_color(inv_x,inv_y,inv_x + inv_width,inv_y + inv_height,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false);	//Fill rectangle

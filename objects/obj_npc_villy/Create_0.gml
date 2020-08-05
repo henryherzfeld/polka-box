@@ -31,4 +31,3 @@ portraits[enum_portrait.sad] = spr_portrait_villy_sad;
 
 var temp = dialogue.dialogues[? obj_npc_villy];
 text = temp[irandom_range(0, 2)];
-show_debug_message(text);

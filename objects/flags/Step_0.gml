@@ -40,7 +40,9 @@ if hearts_diff != hearts {
 	
 	// out of hearts
 	if hearts <= 0 {
+		send_event("Game Over", string(room), "");
 		//obj_quiz_manager.no_match_response = false;
+		game.do_load = true;
 		instance_destroy(obj_progress_bar);
 		scr_destroy_meta();
 		

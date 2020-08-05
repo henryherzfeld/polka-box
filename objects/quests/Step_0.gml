@@ -7,29 +7,46 @@ var i = 0; repeat(quests_grid_n) {
 	
 	if update_map[? i] { update = true; update_map[? i] = false;}
 	
-	var step = grid[# 1, i]
+	var step = grid[# 1, i];
 	var objectives = grid[# 2, i];
 	var objectives_n = array_length_1d(objectives);
 	var ev = noone;
-	if i == quest.erosion_case show_debug_message(step);
+	if i == quest.erosion_investigation show_debug_message(step);
 	var save = true;
 
 	switch(i) {
 
 		#region tutorial
-		case quest.tutorial:
+		case quest.tutorial: {
 			save = false; // every tutorial objective should not save
 			switch(step) {
 				case 0: {
 					if room == rm_polka_interior {
 						scr_progress_quest(i);
+						
 						instance_create_layer(250, 200, "Characters", obj_npc_baron);
-						/* starting cutscene for baron to walk up to polka
-			 			var inst = instance_find(obj_cutscene, 0);
-						inst.active = true;
-						*/
+					
+						var inst = instance_create_layer(100, 100, "Meta", obj_cutscene);
+						inst.scene_info = [	
+							[scr_cutscene_change_variable, polka, "move_override", true],
+							[scr_cutscene_wait, 1],
+							[scr_cutscene_instance_create, 0, 0, "Characters", emote],
+							[scr_cutscene_wait, 1.5],
+							[scr_cutscene_instance_destroy_nearest, 0, 0, emote],
+							[scr_cutscene_wait, .5],
+							[scr_cutscene_notification, "The door is locked.. \nMaybe the Baron knows why?"],
+							[scr_cutscene_change_variable, polka, "move_override", false],
+						];
 					}
-				
+					
+						// set trigger scripts with cutscene pointer
+						var trig = instance_find(obj_trigger, 0);
+						if trig != noone {
+							obj_trigger.scripts = [
+								[scr_change_variable, inst, "active", true],
+								[scr_activate_objective, enum_objective_type.tut_try_to_leave],
+							]
+						}
 				break;}
 				
 				case 1: ev = event.talk_baron; 
@@ -235,6 +252,7 @@ var i = 0; repeat(quests_grid_n) {
 				}
 				break;
 			}
+		}
 		break;
 		#endregion
 
@@ -359,44 +377,55 @@ var i = 0; repeat(quests_grid_n) {
 						
 				case 18:
 						if update {
+
 							survey_investigation = ds_list_create();
 							scr_quiz_list(survey_investigation);
 							scr_quiz_question(enum_question_type.multi, "How are you enjoying the game so far? (Lowest: 1, Highest: 5)", [1,2,3,4,5], noone);
 
 							obj_quiz_manager.questions = survey_investigation;
 							obj_quiz_manager.survey = true;
+							scr_progress_quest(i);
 						}
 						
-						if not obj_quiz_manager.survey scr_progress_quest(i);
-						break;
-				
-				case 19: if update {
-					scr_char_change_dialogue(obj_npc_poppy, 0);
-					scr_activate_objective(enum_objective_type.ero_poppy4); 
-
-					var temp = dialogue.dialogues[? obj_npc_baron];
-					var investigation_text = temp[5];
-
-					var scene_info = [
-						[scr_cutscene_wait, 2],
-						[scr_cutscene_change_room, rm_polka_interior, 300, 220],
-						[scr_cutscene_wait, 0.2],
-						[scr_cutscene_instance_create, 250, 200, "Characters", obj_npc_baron],
-						[scr_cutscene_change_variable, polka, "move_override", true],
-						[scr_cutscene_wait, 1],
-						[scr_cutscene_create_dialogue, investigation_text, [[scr_event_fire, event.talk_baron]]],
-						[scr_cutscene_change_variable, polka, "move_override", false],
-					];
 						
-					var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
-					inst.active = true;
-					inst.scene_info = scene_info;
+						break;
+						
+				case 19: if not obj_quiz_manager.survey scr_progress_quest(i); break;
+				
+				case 20: 
+					save = false;
+					if update {
+						scr_char_change_dialogue(obj_npc_poppy, 0);
+						scr_activate_objective(enum_objective_type.ero_poppy4); 
+
+						var temp = dialogue.dialogues[? obj_npc_baron];
+						var investigation_text = temp[5];
+
+						var scene_info = [
+							[scr_cutscene_wait, 2],
+							[scr_cutscene_change_room, rm_polka_interior, 300, 220],
+							[scr_cutscene_wait, 0.2],
+							[scr_cutscene_instance_create, 250, 200, "Characters", obj_npc_baron],
+							[scr_cutscene_change_variable, polka, "move_override", true],
+							[scr_cutscene_wait, 1],
+							[scr_cutscene_create_dialogue, investigation_text, [[scr_event_fire, event.talk_baron]]],
+							[scr_cutscene_change_variable, polka, "move_override", false],
+						];
+						
+						var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
+						inst.active = true;
+						inst.scene_info = scene_info;
 
 				
-					scr_progress_quest(quest.erosion_experiment);
+						scr_progress_quest(quest.erosion_experiment);
+						scr_progress_quest(i);
 					}
 					break;
+					
+				case 21: save = false; break;
 			}
+			
+			
 		break;
 		#endregion
 		
@@ -404,7 +433,7 @@ var i = 0; repeat(quests_grid_n) {
 		case quest.erosion_experiment:
 			switch(step) {
 				
-				case 0: ev = event.talk_baron; break;
+				case 0: save = false; ev = event.talk_baron; break;
 				
 				case 1: if room == rm_weeraway_interior {
 					
@@ -424,7 +453,6 @@ var i = 0; repeat(quests_grid_n) {
 								[scr_cutscene_move_character, polka, 440, 108, false, 2],
 								[scr_cutscene_create_dialogue, investigation_text, []],
 								[scr_cutscene_change_variable, polka, "move_override", false],
-								[scr_cutscene_progress_quest, quest.erosion_experiment],
 							];
 						
 							var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
@@ -434,10 +462,18 @@ var i = 0; repeat(quests_grid_n) {
 						}
 						break;
 						
-				case 2: break;
+				case 2: 
+					save = false;
+					var inst = instance_find(obj_cutscene, 0);
+					if inst == noone {
+						scr_progress_quest(i);
+					}
+					break;
 				
 				case 3: 
+					save = false;
 					if update {
+						scr_save_game();
 						scr_progress_quest(quest.erosion_case);
 						scr_evi_add_notebook(enum_evi_type.soil_experiment_tbl, true);
 					}
@@ -451,6 +487,8 @@ var i = 0; repeat(quests_grid_n) {
 
 						obj_quiz_manager.questions = survey_investigation;
 						obj_quiz_manager.survey = true;
+						
+						scr_progress_quest(i);
 					}
 					break;
 
@@ -461,6 +499,7 @@ var i = 0; repeat(quests_grid_n) {
 		
 		#region erosion case					
 		case quest.erosion_case:
+		    save = false;
 			switch(step) {
 				case 0: 
 					if room == rm_courthouse_interior {
@@ -493,7 +532,6 @@ var i = 0; repeat(quests_grid_n) {
 					break;
 					
 				case 1: 
-					save = false;
 					if room != rm_courthouse_interior {
 						scr_progress_quest(i);
 					} 
@@ -666,7 +704,7 @@ var i = 0; repeat(quests_grid_n) {
 				case 5:
 					save = false;
 					if obj_camera.following != noone {
-						url_open("https://www.surveymonkey.com/r/7JPQ57R"); 
+						url_open("https://www.surveymonkey.com/r/C3XNRLS"); 
 						scr_progress_quest(i);
 					}
 					break;
@@ -675,7 +713,7 @@ var i = 0; repeat(quests_grid_n) {
 		#endregion
 	
 		#region hints
-		case quest.hints:
+		case quest.hints: {
 			var draw_time = 4;
 			save = false;
 			switch(step) {
@@ -718,7 +756,7 @@ var i = 0; repeat(quests_grid_n) {
 			obj_hints.draw = true;
 			obj_hints.alarm[0] = draw_time * room_speed;
 		}
-		break;
+		}break;
 		#endregion
 	}
 	

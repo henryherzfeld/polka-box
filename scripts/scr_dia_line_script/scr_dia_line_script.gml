@@ -11,5 +11,5 @@ if argument_count > 1 {
 		i++;
 	}
 }
-show_debug_message(temp)
+
 scr_dia_string_mods(temp);

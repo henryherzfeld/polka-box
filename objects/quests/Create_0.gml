@@ -22,7 +22,7 @@ var quest_array = [
 	enum_objective_type.ero_examine_crops1,  noone,                                         enum_objective_type.ero_poppy1, 
 	enum_objective_type.ero_measure_soil0,   noone,                                         enum_objective_type.ero_poppy2,                
 	enum_objective_type.ero_measure_soil1,   
-	enum_objective_type.ero_poppy3,          enum_objective_type.ero_weeraway_fields_erode, noone, enum_objective_type.ero_poppy4, noone, noone, noone]],
+	enum_objective_type.ero_poppy3,          enum_objective_type.ero_weeraway_fields_erode, noone, enum_objective_type.ero_poppy4, noone, noone, noone, noone]],
 	
 	["erosion_experiment", -1, 
 	[enum_objective_type.ero_ex_start, enum_objective_type.ero_ex_weeraway0, noone, noone, noone]],

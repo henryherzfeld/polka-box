@@ -100,7 +100,6 @@ else {
 	for (var i = 0; i < n_options - 1; i++){
 
 		var seq = text[? options[i]];
-		show_debug_message(seq)
 		if is_array(seq[0]) { seq = seq[0]; }
 		var preview_len = string_length(seq[0]);
 		var preview = string_copy(seq[0], 0, max_preview_len);
