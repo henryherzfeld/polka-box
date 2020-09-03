@@ -3,7 +3,6 @@
 
 event_inherited();
 
-
 var add_evi_select = false;
 
 if build_menu {
@@ -66,7 +65,7 @@ if build_menu {
 		}
 	}
 	
-	scr_grid_add_button(1080, 600, "Submit", enum_button_type.click, enum_button_event.run_script,
+	scr_grid_add_button(1000, 600, "Submit", enum_button_type.click, enum_button_event.run_script,
 						[scr_change_variable, obj_quiz_manager.id, "submitted", true]);
 	window_map = ds_map_create();
 	scr_add_window("Question", 0, 0, prompt);

@@ -11,7 +11,7 @@ var i = 0; repeat(quests_grid_n) {
 	var objectives = grid[# 2, i];
 	var objectives_n = array_length_1d(objectives);
 	var ev = noone;
-	if i == quest.erosion_investigation show_debug_message(step);
+	if i == quest.tutorial show_debug_message(step);
 	var save = true;
 
 	switch(i) {
@@ -37,6 +37,7 @@ var i = 0; repeat(quests_grid_n) {
 							[scr_cutscene_notification, "The door is locked.. \nMaybe the Baron knows why?"],
 							[scr_cutscene_change_variable, polka, "move_override", false],
 						];
+						inst.persistent = false;
 					}
 					
 						// set trigger scripts with cutscene pointer
@@ -197,22 +198,22 @@ var i = 0; repeat(quests_grid_n) {
 				}
 				
 				case 10: {
-					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_npc_baron, false, true);
-					if inst != noone {
+					if update {
+						scr_char_change_dialogue(obj_npc_baron, 3);
+						scr_char_update_dialogue(obj_npc_baron);
 						scr_progress_quest(i);
 					}
 				break;}
 				
-				case 11: {
-					ev = event.talk_baron; 
+				case 11: ev = event.talk_baron; break;
+				
+				case 12: {
 					if update {
 						var temp = dialogue.dialogues[? obj_npc_baron];
-						var text1 = temp[3];
 						var text2 = temp[4];
 
 						var scene_info = [
 							[scr_cutscene_change_variable, polka, "move_override", true],
-							[scr_cutscene_create_dialogue, text1],
 							[scr_cutscene_wait, 2],
 							[scr_cutscene_move_character, obj_npc_baron, 115, 0, true, 2],
 							[scr_cutscene_wait, 2],
@@ -235,11 +236,16 @@ var i = 0; repeat(quests_grid_n) {
 						inst.active = true;
 						inst.scene_info = scene_info;
 					}
-				}break;
+					
+					var inst = instance_find(obj_cutscene, 0);
+					if inst == noone {
+						scr_progress_quest(i);
+					}
 				
-//			case 5: ev = event.talk_baron; if update scr_char_change_dialogue(obj_npc_baron, 4); scr_char_update_dialogue(obj_npc_baron); break;
+				break;}
+
 			
-			case 12: if update {
+			case 13: if update {
 					var inst = instance_find(obj_transition, 0);
 					inst.disable = false;
 					/*
@@ -266,13 +272,6 @@ var i = 0; repeat(quests_grid_n) {
 						scr_draw_notification("Remember to press the M key to open the map.")
 					}
 					ev = event.talk_weeraway;
-					
-					if room == erosion_forest {
-						var inst = instance_find(obj_cutscene, 0);
-						if inst != noone {
-							inst.active = true;
-						}
-					}
 					
 					if update scr_char_change_dialogue(obj_npc_weeraway, 1); 
 				break;}
@@ -532,12 +531,14 @@ var i = 0; repeat(quests_grid_n) {
 					break;
 					
 				case 1: 
+					save = false;
 					if room != rm_courthouse_interior {
 						scr_progress_quest(i);
 					} 
 					break;
 					
 				case 2:
+					save = false;
 					if update {
 						survey_investigation = ds_list_create();
 						scr_quiz_list(survey_investigation);

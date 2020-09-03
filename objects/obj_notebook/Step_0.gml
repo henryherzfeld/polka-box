@@ -10,11 +10,12 @@ if game.canvas_change {
 
 if game.pause exit;
 
+/* notebook button to open notebook
 if(keyboard_check_pressed(notebook_key)){
 	draw_evidence = !draw_evidence
 	draw_change = true;	
 }
-
+*/
 if draw_change {
 	if draw_evidence {
 		if obj_quiz_manager.pending_choice {

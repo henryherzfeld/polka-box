@@ -60,7 +60,10 @@ else if scr_check_objective(enum_objective_type.ero_weeraway_fields_erode) and n
 	[scr_cutscene_change_variable, obj_camera, "following", polka],
 	[scr_cutscene_wait, 2],
 	[scr_cutscene_create_dialogue, poppy_crops, []],
+	[scr_cutscene_change_variable, id, "persistent", false],
 	[scr_cutscene_move_character, obj_npc_poppy, -50, 900, false, 3],
 	[scr_cutscene_instance_destroy_nearest, 0, 0, obj_npc_poppy],
 ];
+} else {
+	instance_destroy();
 }

@@ -7,6 +7,11 @@ window_sprite = spr_stars_bg;
 window_h = sprite_get_height(window_sprite);
 window_w = sprite_get_width(window_sprite);
 
+// testing for window larger than gui width
+if game.gui_width < window_w {
+	window_w = game.gui_width;
+}
+
 x1 = (game.gui_width - window_w)/2;
 y1 = (game.gui_height - window_h)/2;
 

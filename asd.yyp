@@ -959,6 +959,14 @@
             }
         },
         {
+            "Key": "21f60a0a-cf0c-42d7-bdf4-b8c3bd4d8787",
+            "Value": {
+                "id": "cf1bce08-be96-40ca-8f41-52e05bb1572d",
+                "resourcePath": "sprites\\spr_multi_unselect\\spr_multi_unselect.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2248efbf-5ee3-44db-a735-9597779e7b5d",
             "Value": {
                 "id": "51825c46-be53-4174-9710-0082d0a744b9",
@@ -1460,6 +1468,14 @@
                 "id": "641f5c38-f502-4529-b47f-59c2495cd510",
                 "resourcePath": "views\/380cb43d-c36b-4c57-b30d-edd2ddef2c4a.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "381aa726-e2a0-43a5-a5b5-80cb8b9621d6",
+            "Value": {
+                "id": "f8525146-059d-4d6e-a077-327c94e4366c",
+                "resourcePath": "sprites\\spr_checkbox_unselect\\spr_checkbox_unselect.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2268,6 +2284,14 @@
                 "id": "b402322e-17da-4044-a3fc-eb716cd22a6e",
                 "resourcePath": "scripts\/scr_quiz_question\/scr_quiz_question.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "53e7f6cf-c5da-4a40-adf6-763f0d07716e",
+            "Value": {
+                "id": "ad279636-9128-4a82-8f77-bdfa2bd46248",
+                "resourcePath": "sprites\\spr_checkbox_select\\spr_checkbox_select.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -5812,6 +5836,14 @@
                 "id": "eecc4b26-ad3e-4415-9986-e04cfd619397",
                 "resourcePath": "rooms\/main_menu\/main_menu.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "e44e6e01-d369-4e2e-9d54-de98a84f5baf",
+            "Value": {
+                "id": "8fffbc0c-2ae9-42c8-970e-d96334ffaf42",
+                "resourcePath": "sprites\\spr_multi_select\\spr_multi_select.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

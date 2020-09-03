@@ -14,7 +14,7 @@ var quest_array = [
 	[enum_objective_type.tut_start, noone, noone, 
 	noone, enum_objective_type.tut_find_key, noone, noone,
 	noone, noone, noone, noone, 
-	noone, enum_objective_type.ero_start, noone]],
+	noone, noone, enum_objective_type.ero_start, noone]],
 	
 	["erosion_investigation", 0,
 	[noone,                                  enum_objective_type.ero_weeraway0,             noone, 

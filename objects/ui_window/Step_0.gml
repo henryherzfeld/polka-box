@@ -33,6 +33,14 @@ if game.canvas_change {
 	var prevx = x1;
 	var prevy = y1;
 	
+	// testing for window larger than gui width
+	if game.gui_width < window_w {
+		window_w = game.gui_width * .85;
+	} 
+	if game.gui_height < window_h {
+		window_h = game.gui_height * .85;
+	}
+	
 	x1 = (game.gui_width - window_w)/2;
 	y1 = (game.gui_height - window_h)/2;
 	
@@ -48,7 +56,9 @@ if game.canvas_change {
 			x1 = absx + newx;
 			y1 = absy + newy;
 			update = true;
+			
 		}
+		
 	}
 }
 
@@ -132,6 +142,11 @@ if build_buttons {
 				inst.text = scr_wrap_text(but_text[k], inst.spr_w);
 				inst.event = but_event;
 				inst.attr = but_attr[k];
+				
+				// changing sprite depending on button type
+				inst.spr = spr_multi_unselect;
+				inst.spr_disabled = spr_multi_unselect;
+				inst.spr_enabled = spr_multi_select;
 			}
 
 			j += n-1;

@@ -45,7 +45,11 @@
         "be183441-bbcb-4b1d-b406-58de0f0275ca",
         "2e6e60ef-adad-4c83-af03-cbfe5045eb7a",
         "3a60ded4-39e1-4723-b454-2897fa9edbb7",
-        "a7c087f9-0204-4804-9910-c462d2f4c58f"
+        "a7c087f9-0204-4804-9910-c462d2f4c58f",
+        "381aa726-e2a0-43a5-a5b5-80cb8b9621d6",
+        "53e7f6cf-c5da-4a40-adf6-763f0d07716e",
+        "21f60a0a-cf0c-42d7-bdf4-b8c3bd4d8787",
+        "e44e6e01-d369-4e2e-9d54-de98a84f5baf"
     ],
     "filterType": "GMSprite",
     "folderName": "Game UI",

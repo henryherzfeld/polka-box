@@ -5,7 +5,7 @@ font = font_comic
 debug = false;
 randomize();
 
-hacks = true;
+hacks = false;
 
 name = "Default"
 
