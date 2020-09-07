@@ -18,6 +18,7 @@ for(var i = 0; i < n_but; i++) {
 	var but = button_context[i];
 	
 	with but {
+		
 		draw_sprite_stretched(spr, 0, x1*win_scale, y1*win_scale, (x2-x1)*win_scale, (y2-y1)*win_scale);
 		
 		// if the button has an additional sprite, draw it
@@ -28,7 +29,7 @@ for(var i = 0; i < n_but; i++) {
 		if win_scale < .6 {
 			draw_set_font(font_small);
 		} else {
-			draw_set_font(font_mid);
+			draw_set_font(font_small);
 		}
 	
 		if text != -1 {
@@ -39,10 +40,5 @@ for(var i = 0; i < n_but; i++) {
 
 if(text != -1){
 	var in_text = scr_wrap_text(text, window_w-48);
-	
-	
-	
 	draw_text(x1 + ((window_w - string_width(in_text))/2), y1 + 20, in_text);
 }
-
-draw_set_font(font_mid);

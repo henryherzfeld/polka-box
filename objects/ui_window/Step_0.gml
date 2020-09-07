@@ -41,8 +41,15 @@ if game.canvas_change {
 		window_h = game.gui_height * .85;
 	}
 	
-	x1 = (game.gui_width - window_w)/2;
-	y1 = (game.gui_height - window_h)/2;
+	/*
+	var temp = scr_translate_coords((1500-window_w)/2, (840-window_h)/2, enum_anchor.middle_center, 16/9);
+	x1 = temp[0];
+	y1 = temp[1];
+	
+	*/
+
+	x1 = (game.gui_width-window_w)/2;
+	y1 = (game.gui_height-window_h)/2;
 	
 	var newx = x1;
 	var newy = y1;
@@ -53,8 +60,14 @@ if game.canvas_change {
 			var absx = x1 - prevx;
 			var absy = y1 - prevy;
 		
-			x1 = absx + newx;
-			y1 = absy + newy;
+			/*
+			var temp = scr_translate_coords(absx + newx, absy + newy, enum_anchor.middle_left, 16/9);
+			x1 = temp[0];
+			y1 = temp[1];
+			*/
+			
+			x1 = absx+newx;
+			y1 = absy+newy;
 			update = true;
 			
 		}

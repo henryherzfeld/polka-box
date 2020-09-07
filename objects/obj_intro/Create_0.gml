@@ -4,7 +4,8 @@
 count = 0;
 page = 0;
 intro = false;
-initial = true;
+initial = false;
+draw = true;
 
 spawn_room = rm_polka_interior;
 box = spr_textbox2;
@@ -21,6 +22,7 @@ text = [
 		"It's time to make your move! Step into the world of Euboxia and start your story."
 ]
 
+thanks_str = "Thank you for playing our game. This is a concept piece where all elements are subject to change. If at any point the game becomes unplayable, refresh your browser and select the 'Load' option to resume from your most recent save.";
 spr_help_w = sprite_get_width(spr_help);
 spr_help_h = sprite_get_height(spr_help);
 outline = 5;

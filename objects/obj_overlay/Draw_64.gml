@@ -83,11 +83,6 @@ if(noti_lg_count){
 //notebook button
 if obj_notebook.draw_evidence or obj_quiz_manager.pending_choice { exit; }
 
-if game.canvas_change {
-	nb_x1 = game.gui_width*.9; nb_y1 = game.gui_height*.8;
-	nb_x2 = game.gui_width*.9+100; nb_y2 = game.gui_height*.8+100;
-}
-
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
 
