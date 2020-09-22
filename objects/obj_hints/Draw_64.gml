@@ -2,8 +2,8 @@
 draw_set_halign(fa_top);
 if(draw){
 	switch (step){
-		case 0: draw_sprite_stretched(arrow_keys, image_index*draw_time, xx, yy, arrow_keys_w, arrow_keys_h); 
-				draw_text(xx, yy+arrow_keys_h, "Use the Arrow Keys to Move"); 
+		case 0: draw_sprite_stretched(wasd_keys, image_index*draw_time, xx, yy, wasd_keys_w, wasd_keys_h); 
+				draw_text(xx, yy+wasd_keys_h, "Use the WASD Keys to Move"); 
 				break;
 		
 		case 1: draw_sprite_stretched(e_key, image_index*draw_time, xx, yy, e_key_w, e_key_h); 

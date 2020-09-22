@@ -1,6 +1,7 @@
 
 if(objective_change){
 
+	audio_play_sound(snd_objective_complete, 1, false);
 	objective_text = ds_grid_get(objectives, objective, enum_objective_state.text);
 			
 	// using temp to test for a change in objective phase, if so fire off a notification

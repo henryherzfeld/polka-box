@@ -44,3 +44,11 @@ if draw_help {
 	draw_rectangle((game.gui_width - spr_map_w)/2-outline, (game.gui_height - spr_map_h)/2-outline, (game.gui_width - spr_map_w)/2 + spr_map_w+outline, (game.gui_height - spr_map_h)/2+spr_map_h+outline, false);
 	draw_sprite(spr_map, 0, (game.gui_width - spr_map_w)/2, (game.gui_height - spr_map_h)/2);
 }
+
+if debug {
+	var grid = quests.quests_grid;
+	draw_text(10, 30, "tutorial: " + string(grid[# 1, 0]));
+	draw_text(10, 60, "investigation: " + string(grid[# 1, 1]));
+	draw_text(10, 90, "experiment: " + string(grid[# 1, 2]));
+	draw_text(10, 120, "hints: " + string(grid[# 1, 3]));
+}

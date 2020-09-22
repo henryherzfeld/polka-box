@@ -5,7 +5,8 @@ font = font_comic
 debug = false;
 randomize();
 
-hacks = false;
+hacks = true;
+music = false;
 
 name = "Default"
 
@@ -16,7 +17,7 @@ base_height = 840;
 width = base_width;
 height = base_height;
 
-play_music = false;
+play_audio = false;
 
 spawn_room = -1;
 black_alpha = 0;

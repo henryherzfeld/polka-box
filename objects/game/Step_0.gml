@@ -2,10 +2,9 @@
 
 
 // grabbing audio context for html5
-if not play_music and audio_system_is_available() {
-	play_music = true;
-	audio_play_sound(snd_orbit, 1, true);
-	
+if not play_audio and audio_system_is_available() {
+	play_audio = true;
+	if music audio_play_sound(snd_orbit, 100, true);
 }
 
 if rain and (room == erosion_forest or room == erosion_village) effect_create_below(ef_rain, 10, 10, 1, c_white);

@@ -211,6 +211,10 @@ if questions != noone and !response {
 			}
 			
 			if match {
+				
+				//sound effect
+				audio_play_sound(snd_question_correct, 1, false);
+				
 				match = false;
 				show_debug_message("MATCH");
 				
@@ -249,6 +253,10 @@ if questions != noone and !response {
 				}
 			} else {
 				// incorrect answer
+				
+				//sound effect
+				audio_play_sound(snd_question_wrong, 1, false);
+				
 				if fun_fact { 
 					fun_fact = false;
 					scr_fire_sm_noti("Incorrect Answer \nYou didn't find anything...");

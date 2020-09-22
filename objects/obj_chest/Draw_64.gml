@@ -49,6 +49,9 @@ repeat(noOfItem){
 				col = c_red;										//Change Color to Red
 				//If We are on the slot and clicked, than add the item to inventory
 				if (mouse_check_button_pressed(mb_left)) {
+					// sound effect
+					audio_play_sound(snd_item_get, 1, false);
+					
 				    //Slot Selected		
 					itemAddInventory(item[slot_no]);						//Add item to Inventory			
 					canOpen = false;										//Disable the Chest

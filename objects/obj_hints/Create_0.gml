@@ -17,6 +17,10 @@ arrow_keys = spr_arrow_keys;
 arrow_keys_h = sprite_get_height(arrow_keys) * scale;
 arrow_keys_w = sprite_get_width(arrow_keys) * scale;
 
+wasd_keys = spr_wasd;
+wasd_keys_h = sprite_get_height(wasd_keys) * scale;
+wasd_keys_w = sprite_get_width(wasd_keys) * scale;
+
 e_key = spr_e;
 e_key_h = sprite_get_height(e_key) * scale;
 e_key_w = sprite_get_width(e_key) * scale;

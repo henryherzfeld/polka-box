@@ -5,7 +5,8 @@
     "name": "e8585551-f916-4ce9-bce0-62149b37a675",
     "children": [
         "9fb8425b-e52b-42b0-be33-a98964a31ce3",
-        "09ccd466-ab06-428e-9e12-d57944db25ce"
+        "09ccd466-ab06-428e-9e12-d57944db25ce",
+        "2f82c837-156f-454f-8371-5e59cd72133a"
     ],
     "filterType": "GMScript",
     "folderName": "Notifications",

@@ -101,6 +101,8 @@ if !nb_button_pause {
 	}
 	if nb_button_pressed {
 		if mouse_check_button_released(mb_left) {
+			//sound effect
+			audio_play_sound(snd_click, 1, false);
 			with obj_notebook { 
 				draw_evidence = !draw_evidence;
 				draw_change = true;	

@@ -92,6 +92,8 @@ for (var ii = 0; ii < MAX_INV_ITEMS; ii++) {
 				//Slot Selected
 				//Use the item in the inventory slot
 				itemUseInventory(itemType);
+				//Sound effect
+				audio_play_sound(snd_click, 1, false);
 				}
 			}
 		}

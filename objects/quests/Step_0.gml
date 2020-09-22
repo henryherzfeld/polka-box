@@ -11,7 +11,7 @@ var i = 0; repeat(quests_grid_n) {
 	var objectives = grid[# 2, i];
 	var objectives_n = array_length_1d(objectives);
 	var ev = noone;
-	if i == quest.tutorial show_debug_message(step);
+//	if i == quest.tutorial show_debug_message(step);
 	var save = true;
 
 	switch(i) {
@@ -240,6 +240,7 @@ var i = 0; repeat(quests_grid_n) {
 					var inst = instance_find(obj_cutscene, 0);
 					if inst == noone {
 						scr_progress_quest(i);
+						audio_play_sound(snd_segment_complete, 1, false);
 					}
 				
 				break;}
@@ -299,6 +300,7 @@ var i = 0; repeat(quests_grid_n) {
 				case 6: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_tensiometer_tile, false, true);
 					if polka.itemEquiped == enum_item_type.camera and inst != noone and polka.input_use_item {
+						audio_play_sound(snd_clue_item, 1, false);
 						inst.draw_examine_box = false;
 						instance_destroy(ui_examine_box);
 						polka.move_override = false;
@@ -319,6 +321,7 @@ var i = 0; repeat(quests_grid_n) {
 				case 9: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_tensiometer_tile, false, true);
 					if polka.itemEquiped == enum_item_type.tensiometer and inst != noone and polka.input_use_item {
+						audio_play_sound(snd_clue_item, 1, false);
 						scr_progress_quest(i);
 						scr_evi_add_notebook(enum_evi_type.soil_moisture_tbl, true); 
 					}
@@ -337,6 +340,7 @@ var i = 0; repeat(quests_grid_n) {
 				case 12: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_tensiometer_tile, false, true);
 					if polka.itemEquiped == enum_item_type.tape and inst != noone and polka.input_use_item {
+						audio_play_sound(snd_clue_item, 1, false);
 						scr_progress_quest(i);
 						scr_evi_add_notebook(enum_evi_type.soil_depth_tbl, true); 
 						scr_draw_notification("Finding a clue will lead to more unanswered questions. Let's go back and tell the Villy what we found out. We might get some answers.");
@@ -353,6 +357,7 @@ var i = 0; repeat(quests_grid_n) {
 				case 14: {
 					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_tensiometer_tile, false, true);
 					if polka.itemEquiped == enum_item_type.camera and inst != noone and polka.input_use_item {
+						audio_play_sound(snd_clue_item, 1, false);
 						inst.draw_examine_box = false;
 						instance_destroy(ui_examine_box);
 						polka.move_override = false;
@@ -370,7 +375,9 @@ var i = 0; repeat(quests_grid_n) {
 				
 				case 16: ev = event.talk_poppy; if update scr_char_change_dialogue(obj_npc_poppy, 5); break;
 				
-				case 17: if room != rm_poppy_interior {
+				case 17: 
+						if update { audio_play_sound(snd_segment_complete, 1, false); }
+						if room != rm_poppy_interior {
 							scr_progress_quest(i);
 						} break;
 						
@@ -475,6 +482,7 @@ var i = 0; repeat(quests_grid_n) {
 						scr_save_game();
 						scr_progress_quest(quest.erosion_case);
 						scr_evi_add_notebook(enum_evi_type.soil_experiment_tbl, true);
+						audio_play_sound(snd_segment_complete, 1, false); // sound effect
 					}
 					if room != rm_weeraway_interior scr_progress_quest(i); break;
 				
@@ -532,8 +540,10 @@ var i = 0; repeat(quests_grid_n) {
 					
 				case 1: 
 					save = false;
+					
 					if room != rm_courthouse_interior {
 						scr_progress_quest(i);
+						audio_play_sound(snd_segment_complete, 1, false);
 					} 
 					break;
 					
@@ -652,6 +662,7 @@ var i = 0; repeat(quests_grid_n) {
 					save = false;
 					if room != rm_weeraway_interior and room != rm_weeraway_interior_dinner_1 and
 					   room != rm_weeraway_interior_dinner_2 and room != erosion_village and room != rm_empty {
+						audio_play_sound(snd_quest_complete, 1, false);
 						
 						ero_fin_text4a = ds_map_create();
 						scr_dia_segment(ero_fin_text4a, "GREET");

@@ -3,6 +3,8 @@
 
 var inst = instance_create_layer(0, 0, "Meta", par_menu);
 
+audio_play_sound(snd_prompt, 1, false);
+
 with inst {
 	window_map = ds_map_create();
 

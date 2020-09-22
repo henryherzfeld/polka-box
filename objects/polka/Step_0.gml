@@ -1,8 +1,8 @@
  //Test for keyboard inputs
-input_left = keyboard_check(vk_left);
-input_right = keyboard_check(vk_right);
-input_down = keyboard_check(vk_down);
-input_up = keyboard_check(vk_up);
+input_left = keyboard_check(vk_left) or keyboard_check(ord("A"));
+input_right = keyboard_check(vk_right) or keyboard_check(ord("D"));
+input_down = keyboard_check(vk_down) or keyboard_check(ord("S"));
+input_up = keyboard_check(vk_up) or keyboard_check(ord("W"));
 input_interact = keyboard_check_pressed(ord("E"));
 input_space = keyboard_check_pressed(vk_space) and not input_space;
 input_use_item = keyboard_check_pressed(ord("F"));
@@ -82,7 +82,8 @@ if(!in_dialogue and !move_override){
 //Check for collision with transition object
 var inst = instance_place(x, y, obj_transition);
 
-if (inst != noone and not inst.disable) {
+if (inst != noone and not inst.disable and not game.do_transition) {
+	audio_play_sound(snd_door_enter, 1, false);
 	with (game) {
 		if (!do_transition){
 			spawn_room = inst.target_room;
@@ -99,6 +100,7 @@ if(input_interact and !in_dialogue){
 	if(npc != noone){
 		var inst = scr_create_textbox(npc.text, npc.name, npc.portraits, npc.scripts);
 		inst.char = npc.object_index;
+		audio_play_sound(snd_dialogue_start, 1, false);
 	}
 }
      
