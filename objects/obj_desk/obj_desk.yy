@@ -2,7 +2,7 @@
     "id": "168431df-02ad-4e6e-b6b3-6be57f7fc095",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "object67",
+    "name": "obj_desk",
     "eventList": [
         {
             "id": "132bb72f-27f4-43dd-a119-8e4d9a86b15f",

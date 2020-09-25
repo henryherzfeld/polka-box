@@ -1,1 +1,1 @@
-text = "Villy Weeraway's humble home. Come on in!"
+text = "Villy Weeraway the Farmer's humble home. Come on in!"

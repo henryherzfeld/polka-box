@@ -2,7 +2,9 @@
 
 scr_init_badges();
 
-input_badge = ord("B");
+//input_badge = ord("B");
+input_badge = noone;
+
 bg_col = c_olive;
 draw = false;
 

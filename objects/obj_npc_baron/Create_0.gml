@@ -2,6 +2,9 @@
 // You can write your code in this editor
 event_inherited();
 
+portraits[enum_portrait.sad] = spr_portrait_baron; 
+portraits[enum_portrait.angry] = spr_portrait_baron; 
+portraits[enum_portrait.happy] = spr_portrait_baron; 
 portraits[enum_portrait.neutral] = spr_portrait_baron; 
 portrait = spr_portrait_baron;
 

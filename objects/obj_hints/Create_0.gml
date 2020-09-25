@@ -2,7 +2,7 @@
 
 step = 0;
 draw = false;
-draw_time = .05;
+draw_time = .075;
 radius = 30;
 
 counter = 0;

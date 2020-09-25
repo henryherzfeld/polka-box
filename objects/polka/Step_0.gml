@@ -95,7 +95,7 @@ if (inst != noone and not inst.disable and not game.do_transition) {
 }
 
 //Check for collision with NPC
-npc = collision_rectangle(x-radius, y-radius, x+radius, y+radius, par_NPC, false, true);
+npc = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, par_NPC, false, true);
 if(input_interact and !in_dialogue){
 	if(npc != noone){
 		var inst = scr_create_textbox(npc.text, npc.name, npc.portraits, npc.scripts);

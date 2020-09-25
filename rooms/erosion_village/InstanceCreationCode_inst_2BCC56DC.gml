@@ -1,1 +1,1 @@
-text = "Villy Poppy's Laboratory"
+text = "Villy Poppy the Botanist's Laboratory"

@@ -1,5 +1,8 @@
 /// @description Insert description here
 
+input_up = keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W"));
+input_down = keyboard_check_pressed(vk_down) or keyboard_check_pressed(ord("S"));
+
 //updating parameters on canvas change
 if game.canvas_change {
 	port_x=(game.gui_width-box_width-port_width)*0.5;
@@ -281,9 +284,9 @@ if color_format {
 }
 
 // moving up and down through options using arrow keys
-if(keyboard_check_pressed(vk_up)){
+if(input_up){
 	--selected;	
-} else if (keyboard_check_pressed(vk_down)){
+} else if (input_down){
 	++selected;
 }
 

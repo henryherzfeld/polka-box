@@ -2,6 +2,54 @@ text1 = ds_map_create();
 
 //BARON DIALOGUE
 scr_dia_segment(text1, "GREET");
+scr_dia_line("Good morning! Glad to have you on board, "+game.name, obj_npc_baron);
+scr_dia_options("A1", "A2", "A3", "EXIT");
+
+scr_dia_segment(text1, "A1");
+scr_dia_line("Who are you?", polka);
+scr_dia_line("I am the Baron! I train Quanta Knights to travel in space.", obj_npc_baron);
+scr_dia_options("A1", "A2", "A3", "EXIT");
+
+scr_dia_segment(text1, "A2");
+scr_dia_line("I like your cat.", polka);
+scr_dia_line("Why thanks, I got her from the planet Euboxia.", obj_npc_baron);
+scr_dia_options("A1", "A2", "A3", "EXIT");
+
+scr_dia_segment(text1, "A3");
+scr_dia_line("What am I doing here?", polka);
+scr_dia_line("The evil Virus has invaded this world and is causing chaos.", [obj_npc_baron, enum_portrait.sad]);
+scr_dia_line_color(c_red, 9, 14);
+scr_dia_line_sprite(spr_virus_henchmen);
+
+scr_dia_line("Our job as Quanta Knights is to help the world advance.", obj_npc_baron);
+scr_dia_line_sprite(spr_virus_henchmen);
+scr_dia_line_sprite(spr_advancement_invention);
+
+scr_dia_line("We use our powers of science and discovery to complete quests.", obj_npc_baron);
+scr_dia_line_sprite(spr_advancement_invention);
+
+scr_dia_line("To make sure that you will succeed out there, I have a little task for you.", obj_npc_baron);
+
+scr_dia_line("Perform well, and I'll be confident that you have what it takes to do your first quest.", obj_npc_baron);
+
+scr_dia_line("The task is this!: ", obj_npc_baron);
+
+scr_dia_line("I've hidden the key to the door. You will have to find it.", obj_npc_baron);
+
+scr_dia_line("To help you find the key, I'm giving you your first item: a camera!", obj_npc_baron);
+scr_dia_line_sprite(spr_new_camera);
+scr_dia_line_script(itemAddInventory, enum_item_type.camera);
+
+scr_dia_line("You can use it to make observations and take pictures of what you find.", obj_npc_baron);
+scr_dia_line_sprite(spr_new_camera);
+
+scr_dia_line("When you think you know where the key is, then let me know.", obj_npc_baron);
+scr_dia_options("EXIT", "EXIT");
+
+scr_dia_segment(text1, "EXIT");
+scr_dia_line("Okay, I'll get to it then.", polka);
+
+/*
 scr_dia_line("Good morning, young squire!", obj_npc_baron);
 scr_dia_line("All the other Quanta Knights are busy fixing the ship. You've been chosen to get back the missing Crystal pieces so that we can recreate the cure.", obj_npc_baron); //baron 
 scr_dia_line_sprite(spr_ship);
@@ -52,6 +100,7 @@ scr_dia_options("EXIT", "EXIT");
 
 scr_dia_segment(text1, "EXIT");
 scr_dia_line("Bye", polka);
+*/
 
 text2 = ds_map_create();
 
@@ -165,12 +214,13 @@ scr_quiz_question(enum_question_type.multi,
 1);
 scr_quiz_question_response("How did you find out?", 
 "Are you sure that's what happened?");
+scr_quiz_question_sprite(spr_animal_hairs_on_desk_photo_evidence); 
 
 scr_quiz_question(enum_question_type.multi, 
 "How did you find out?", 
 ["There was some toilet paper on the desk", "There was a jar of acid on the desk", "There were some animal hairs on the desk", "There were some animal hairs on the dining table"], 
 2);
-scr_quiz_question_response(["But how do I know you're telling the truth?", 
+scr_quiz_question_response(["Hm, that might be right...", "...But how do I know you're telling the truth?", 
 "I need to see evidence. Remember, showing evidence helps to support what you're saying.",
 "It makes it more likely for people to trust you."], 
 "You almost got it! Try again");

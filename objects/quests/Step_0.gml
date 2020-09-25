@@ -23,9 +23,12 @@ var i = 0; repeat(quests_grid_n) {
 				case 0: {
 					if room == rm_polka_interior {
 						scr_progress_quest(i);
+						scr_progress_quest(i);
+						scr_progress_quest(i);
 						
 						instance_create_layer(250, 200, "Characters", obj_npc_baron);
 					
+						/* TRY LOCKED DOOR CUTSCENE
 						var inst = instance_create_layer(100, 100, "Meta", obj_cutscene);
 						inst.scene_info = [	
 							[scr_cutscene_change_variable, polka, "move_override", true],
@@ -38,9 +41,18 @@ var i = 0; repeat(quests_grid_n) {
 							[scr_cutscene_change_variable, polka, "move_override", false],
 						];
 						inst.persistent = false;
+						*/
+						
+						/* INSTANTLY GREETED BY BARON
+						text = ds_map_create();
+						scr_dia_segment(text, "GREET");
+						scr_dia_line("Ah, you're awake. Come over here and talk to me.", obj_npc_baron);
+						var tbox = scr_create_textbox(text, obj_npc_baron, obj_npc_baron.portrait, []);
+						tbox.alarm[2] = 3*room_speed;
+						*/
 					}
 					
-						// set trigger scripts with cutscene pointer
+						/* // set trigger scripts with cutscene pointer
 						var trig = instance_find(obj_trigger, 0);
 						if trig != noone {
 							obj_trigger.scripts = [
@@ -48,6 +60,7 @@ var i = 0; repeat(quests_grid_n) {
 								[scr_activate_objective, enum_objective_type.tut_try_to_leave],
 							]
 						}
+						*/
 				break;}
 				
 				case 1: ev = event.talk_baron; 
@@ -101,15 +114,11 @@ var i = 0; repeat(quests_grid_n) {
 						if inst instance_destroy(inst);
 						
 						scr_progress_quest(quest.hints);  // PRESSING F TO USE ITEM
-						var inst = instance_create_layer(0, 0, "Meta", obj_cutscene);
-						inst.scene_info = [	
-							[scr_cutscene_wait, 1],
-							[scr_cutscene_move_character, polka, 383, 87, false, 3],
-							[scr_cutscene_wait, 1],
-							];
-						inst.active = true;
+						scr_draw_notification("Use your camera to find clues. Press the F key at any of the '!' to learn more.");
+						polka.move_override = false;
 					}
 					
+					var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_desk, false, true);
 					if polka.input_use_item {
 						scr_progress_quest(i);
 					}

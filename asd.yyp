@@ -626,7 +626,7 @@
             "Key": "168431df-02ad-4e6e-b6b3-6be57f7fc095",
             "Value": {
                 "id": "c10d3930-9635-4049-b627-3264a629abbd",
-                "resourcePath": "objects\/object67\/object67.yy",
+                "resourcePath": "objects\\obj_desk\\obj_desk.yy",
                 "resourceType": "GMObject"
             }
         },

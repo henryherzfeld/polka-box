@@ -1,5 +1,5 @@
 /// @description Insert description here
-
+exit;
 if(file_exists("savedgame.sav")){
 	
 	// get objects from JSON

@@ -2,8 +2,10 @@
 draw_set_halign(fa_top);
 if(draw){
 	switch (step){
-		case 0: draw_sprite_stretched(wasd_keys, image_index*draw_time, xx, yy, wasd_keys_w, wasd_keys_h); 
-				draw_text(xx, yy+wasd_keys_h, "Use the WASD Keys to Move"); 
+		case 0: //draw_sprite_stretched(wasd_keys, image_index*draw_time, xx, yy, wasd_keys_w, wasd_keys_h); 
+				//draw_text(xx, yy+wasd_keys_h, "Use the WASD Keys to Move");
+				scr_draw_notification("You're awake! Use the WASD keys to walk to the Baron.");
+				draw = false;
 				break;
 		
 		case 1: draw_sprite_stretched(e_key, image_index*draw_time, xx, yy, e_key_w, e_key_h); 
@@ -20,7 +22,7 @@ if(draw){
 				break;
 		
 		case 4: draw_sprite_stretched(f_key, image_index*draw_time, xx, yy, f_key_w, f_key_h); 
-				draw_text(xx, yy+e_key_h, "Use F to Use an Equipped Item."); 
+				//draw_text(xx, yy+e_key_h, "Use F to Use an Equipped Item."); 
 				break;
 		
 		case 5: draw_text(obj_overlay.nb_x1-72, obj_overlay.nb_y1-48, "Click on the Notebook Button \n    to View your Evidence."); break;
