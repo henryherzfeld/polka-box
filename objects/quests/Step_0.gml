@@ -176,7 +176,7 @@ var i = 0; repeat(quests_grid_n) {
 							[scr_cutscene_move_character, cursor, 1300, 320, false, 15],
 							[scr_cutscene_wait, 2],
 							[scr_cutscene_change_variable, cursor, "click_change", true],
-							[scr_cutscene_wait, 0.4],
+							[scr_cutscene_wait, 10],
 							[scr_cutscene_change_variable, obj_notebook, "draw_evidence", false],
 							[scr_cutscene_change_variable, obj_notebook, "draw_change", true],
 							[scr_cutscene_wait, 0.5],
@@ -275,7 +275,7 @@ var i = 0; repeat(quests_grid_n) {
 		#region erosion investigation
 		case quest.erosion_investigation:
 			switch(step) {
-				case 0: ev = event.talk_green_villy; break;
+				case 0: save = false; ev = event.talk_green_villy; break;
 				
 				case 1: {
 					if update {
@@ -446,11 +446,12 @@ var i = 0; repeat(quests_grid_n) {
 		
 		#region erosion experiment
 		case quest.erosion_experiment:
+			save = false;
 			switch(step) {
 				
-				case 0: save = false; ev = event.talk_baron; break;
+				case 0: ev = event.talk_baron; break;
 				
-				case 1: if room == rm_weeraway_interior {
+				case 1: save = true; if room == rm_weeraway_interior {
 					
 							scr_progress_quest(i);
 					
@@ -496,6 +497,7 @@ var i = 0; repeat(quests_grid_n) {
 					if room != rm_weeraway_interior scr_progress_quest(i); break;
 				
 				case 4: 
+					save = true;
 					if update {
 						survey_investigation = ds_list_create();
 						scr_quiz_list(survey_investigation);
@@ -804,7 +806,7 @@ var i = 0; repeat(quests_grid_n) {
 		}
 	}
 	
-	if update and save { scr_save_game(); }
+	if update and save { scr_save_game(); show_debug_message([i, step])}
 	
 	i++;
 	update = false;
