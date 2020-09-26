@@ -2047,6 +2047,14 @@
             }
         },
         {
+            "Key": "4941181c-ff7f-40c1-a3df-c28c0408aa10",
+            "Value": {
+                "id": "6b300891-5477-4d6f-b235-383b1c27888a",
+                "resourcePath": "scripts\\ADI_SCRIPT\\ADI_SCRIPT.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "49f550d5-35af-4686-bd1b-627b4d79d06a",
             "Value": {
                 "id": "f899d892-2c27-4724-818d-69f3c087fb7c",
@@ -6536,6 +6544,7 @@
         }
     ],
     "script_order": [
+        "4941181c-ff7f-40c1-a3df-c28c0408aa10",
         "df59834e-8569-4cbc-b1c1-e4d546f6b298",
         "1e2dd86c-f7d3-4e38-8236-66161ef51367",
         "5f2fa230-dffa-4ca2-86e2-4162136d4684",
