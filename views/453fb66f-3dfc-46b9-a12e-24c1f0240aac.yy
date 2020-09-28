@@ -15,7 +15,11 @@
         "bd61f34a-6925-442b-a0af-299beb2bebd7",
         "ebd1bb89-98e5-4947-9644-f380213735f1",
         "95b78073-b2e0-4576-a74f-27492dfe0a07",
-        "f424158c-6faa-4f76-b593-3356296e5791"
+        "f424158c-6faa-4f76-b593-3356296e5791",
+        "c58f4ef6-32e1-412f-9565-a4df9b3a9186",
+        "1b73fdb8-0cbf-48c2-8c1a-d5fac9c87963",
+        "92fe1382-8761-4e4e-a2e4-9aed5f9ff172",
+        "a9b57943-283c-4da2-acf9-4b8a0dfbb8bd"
     ],
     "filterType": "GMSprite",
     "folderName": "Beginning Tutorial",

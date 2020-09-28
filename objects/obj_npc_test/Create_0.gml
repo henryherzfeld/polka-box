@@ -5,15 +5,13 @@ event_inherited();
 
 
 questions = ds_list_create();
+
+
 scr_quiz_list(questions);
 
 scr_quiz_question(enum_question_type.multi, "QUESTION PROMPT", ["Right", "Wrong", "Wrong",], 0);
 
-scr_quiz_question(enum_question_type.checkbox, "The soil compaction in the patch surrounded by vegetation is 170 psi, while the soil compaction in the patch surrounded with no vegetation is 80 psi.", ["Right", "Wrong", "Right", "Right"], [0, 2, 3]);
-
-
-
-
+//scr_quiz_question(enum_question_type.checkbox, "The soil compaction in the patch surrounded by vegetation is 170 psi, while the soil compaction in the patch surrounded with no vegetation is 80 psi.", ["Right", "Wrong", "Right", "Right"], [0, 2, 3]);
 
 
 text = ds_map_create();

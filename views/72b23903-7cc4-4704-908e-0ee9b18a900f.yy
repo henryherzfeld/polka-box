@@ -12,7 +12,8 @@
         "bd7e74be-17ed-4856-a8af-edfc03fd488e",
         "f5d91d8c-4686-443f-8949-f6ed83facfcd",
         "2fcae9e9-b67a-4ec9-8807-f208b7db3d94",
-        "3d6c0879-675c-40fd-9c33-7c98e2419ad5"
+        "3d6c0879-675c-40fd-9c33-7c98e2419ad5",
+        "b6fd268d-f4a4-485f-bd44-95d579826307"
     ],
     "filterType": "GMSprite",
     "folderName": "Experiment Tutorial",

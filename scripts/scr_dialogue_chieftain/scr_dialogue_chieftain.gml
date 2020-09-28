@@ -5,7 +5,7 @@ text1 = ds_map_create();
 scr_dia_segment(text1, "GREET");
 scr_dia_line("Present your case!", obj_npc_chieftain);
 
-scr_dia_line("We found out that the farmer's crops are dying because the soil they need in order to grow the crops is being washed away by rainwater.", polka);
+scr_dia_line("We found out that the farmer's crops are dying because the soil they need in order to grow is being washed away by rainwater.", polka);
 scr_dia_line("To understand why the crops were dying, we first had to understand what crops need to live.", polka);
 
 //EROSION INVESTIGATION CASE QUIZ QUESTIONS
