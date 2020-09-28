@@ -6,6 +6,7 @@ input_up = keyboard_check(vk_up) or keyboard_check(ord("W"));
 input_interact = keyboard_check_pressed(ord("E"));
 input_space = keyboard_check_pressed(vk_space) and not input_space;
 input_use_item = keyboard_check_pressed(ord("F"));
+input_use_weapon = keyboard_check_pressed(vk_tab);
 
 //Calculate intended movement
 y_move = (input_down - input_up) * spd;
@@ -92,6 +93,29 @@ if (inst != noone and not inst.disable and not game.do_transition) {
 			do_transition = true;
 		}
 	}
+}
+
+//Check for attack on enemy
+if input_use_weapon and polka.itemEquiped == enum_item_type.pitchfork {
+	var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, par_enemy, false, true);
+	if inst != noone and not obj_combat_manager.attack {
+		
+		// Setting bg layer shader
+		var lay_id = layer_get_id("Background");
+		layer_shader(lay_id, shader0);
+		
+		// deactivating all other enemies
+		with par_enemy {
+			if id != inst.id {
+				instance_deactivate_object(id);
+			}
+		}
+		obj_combat_manager.enemy = inst;
+		obj_combat_manager.attack = true;
+		obj_combat_manager.alarm[0] = 600;
+		obj_combat_manager.fade = true;
+	}
+	
 }
 
 //Check for collision with NPC

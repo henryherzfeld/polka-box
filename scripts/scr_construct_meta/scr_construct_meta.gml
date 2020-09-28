@@ -15,3 +15,4 @@ instance_create_layer(0, 0, "Meta", obj_quiz_manager);
 instance_create_layer(0, 0, "Meta", quests);
 instance_create_layer(0, 0, "Meta", dialogue);
 instance_create_layer(0, 0, "Meta", obj_overlay);
+instance_create_layer(0, 0, "Meta", obj_combat_manager);

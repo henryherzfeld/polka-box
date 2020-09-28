@@ -263,6 +263,14 @@
             }
         },
         {
+            "Key": "084d4688-b1b4-4dcd-9d92-922eeb9964e2",
+            "Value": {
+                "id": "65210601-ef0e-4e34-89f8-1a00323f4855",
+                "resourcePath": "objects\\obj_combat_manager\\obj_combat_manager.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "084e61c3-d866-4f59-9078-acb2eb99c40b",
             "Value": {
                 "id": "4dcfda5e-1e1f-4cd5-abc6-92d52a2ca73b",
@@ -1463,6 +1471,14 @@
             }
         },
         {
+            "Key": "36146d29-b5dc-4b0a-b153-560d48447d56",
+            "Value": {
+                "id": "ded93a99-7551-431a-a74e-296ac093a63b",
+                "resourcePath": "shaders\\shader1\\shader1.yy",
+                "resourceType": "GMShader"
+            }
+        },
+        {
             "Key": "362f1d6f-7503-4549-bdc4-632881e8002f",
             "Value": {
                 "id": "1b0fec7c-f908-44fb-8a13-80f616de63b4",
@@ -2615,6 +2631,14 @@
             }
         },
         {
+            "Key": "5e2014df-de41-4732-a0f2-e56f09214dcc",
+            "Value": {
+                "id": "c7c14b7b-0a85-450b-b1b1-95b7b91d3600",
+                "resourcePath": "objects\\par_enemy\\par_enemy.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "5ec0588e-44ed-447d-8fb3-7c21c313be3a",
             "Value": {
                 "id": "54e40c0c-a9cd-4e43-bcc6-b35868c253b4",
@@ -3100,6 +3124,14 @@
                 "id": "3378cfb6-9baa-4e89-a0d7-73fe8a6b0356",
                 "resourcePath": "sounds\/snd_orbit\/snd_orbit.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "70d6f4fb-ac26-4df9-894b-02cc90f59f9d",
+            "Value": {
+                "id": "a4003af8-3161-4de9-bd36-41988c70bedb",
+                "resourcePath": "shaders\\shader0\\shader0.yy",
+                "resourceType": "GMShader"
             }
         },
         {
@@ -5476,6 +5508,14 @@
                 "id": "9338b732-8aed-46cd-9909-b886ad62c675",
                 "resourcePath": "sprites\/sprite216\/sprite216.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "cdcce5eb-920c-41fc-bee6-a076ca114879",
+            "Value": {
+                "id": "e942be6a-f3c1-4a7d-a7d3-36ffd46dd536",
+                "resourcePath": "rooms\\testing_combat\\testing_combat.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
