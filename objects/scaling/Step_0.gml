@@ -10,5 +10,3 @@ pos =   [
 		[[posx[0], posy[1]], [posx[1], posy[1]], [posx[2], posy[1]]],
 		[[posx[0], posy[2]], [posx[1], posy[2]], [posx[2], posy[2]]],
 	    ]
-
-show_debug_message(pos);

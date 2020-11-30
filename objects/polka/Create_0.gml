@@ -30,3 +30,18 @@ stand_left = spr_polka_stand_right;
 stand_right = spr_polka_stand_right;
 
 input_space = false;
+
+//dash
+prev_x = -1;
+prev_y = -1;
+dash_time = 25;
+dash = false;
+dash_delay = 7;
+dash_count = -1;
+dx = 0;
+dy = 0;
+dash_distance = 25;
+
+invincible = false;
+inv_count = 0;
+inv_bool = false;

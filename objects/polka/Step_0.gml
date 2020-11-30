@@ -8,9 +8,43 @@ input_space = keyboard_check_pressed(vk_space) and not input_space;
 input_use_item = keyboard_check_pressed(ord("F"));
 input_use_weapon = keyboard_check_pressed(vk_tab);
 
+// flip-flopping inv_bool for invincibility flash
+if invincible {
+	if inv_count >= 20 {
+		inv_count = 0;
+		inv_bool = !inv_bool
+	}
+
+	inv_count += 1;
+}
+
+// dash 
+if dash and dash_count < dash_time {
+	if not dash_count { // if first loop iter
+	
+		var _angle = point_direction(prev_x, prev_y, x, y);
+		dx = lengthdir_x(spd, _angle);
+		dy = lengthdir_y(spd, _angle);
+
+	}
+	dash_count += 1;
+
+	
+} else if dash and dash_count >= dash_time {
+	dash = false;
+	dash_count = -1;
+	spd = 2.5;
+	prev_x = -1;
+	prev_y = -1;
+	dx = 0;
+	dy = 0;
+	x_move = 0;
+	y_move = 0;
+}
+
 //Calculate intended movement
-y_move = (input_down - input_up) * spd;
-if (!y_move) { x_move = (input_right - input_left) * spd; }
+y_move = (input_down - input_up + (dy*dash_distance)) * spd;
+if (!y_move) { x_move = (input_right - input_left + (dx*dash_distance)) * spd; }
 
 //Assign facing variable with movement's direction, default to xmovement
 if(x_move != 0){
@@ -100,6 +134,7 @@ if input_use_weapon and polka.itemEquiped == enum_item_type.pitchfork {
 	var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, par_enemy, false, true);
 	if inst != noone and not obj_combat_manager.attack {
 		
+		/*
 		// Setting bg layer shader
 		var lay_id = layer_get_id("Background");
 		layer_shader(lay_id, shader0);
@@ -110,10 +145,13 @@ if input_use_weapon and polka.itemEquiped == enum_item_type.pitchfork {
 				instance_deactivate_object(id);
 			}
 		}
+		*/
 		obj_combat_manager.enemy = inst;
 		obj_combat_manager.attack = true;
-		obj_combat_manager.alarm[0] = 600;
+		//obj_combat_manager.alarm[0] = 600;
 		obj_combat_manager.fade = true;
+		obj_combat_manager.knock_count = 15;
+		obj_combat_manager.knock_angle = point_direction(inst.x, inst.y, polka.x, polka.y);
 	}
 	
 }
@@ -260,3 +298,4 @@ else{
 	interactable = false;
 	}
 }
+*/

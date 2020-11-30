@@ -49,3 +49,15 @@ if fade {
 		}
 	}
 }
+
+if knock_count >= 0 {
+	knock_count -= 1;
+	enemy.x -= lengthdir_x(spd*5, knock_angle);
+	enemy.y -= lengthdir_y(spd*5, knock_angle);
+	
+	polka.x += lengthdir_x(spd, knock_angle);
+	polka.y += lengthdir_y(spd, knock_angle);
+} else {
+	knock_count = -1;
+	knock_angle = 0;
+}

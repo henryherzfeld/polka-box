@@ -1,5 +1,29 @@
 /// @description Insert description here
 
+var inst = collision_circle(x, y, detection_radius, polka, false, false);
+if inst != noone and not engaged {
+	if engage_count < 0 {
+		engage_count = engage_time;
+	} else if engage_count == 0 {
+		engaged = true;
+		idle_movement = false;
+		x_move = 0;
+		y_move = 0;
+		engage_count = -1;
+	} else {
+		if point_distance(x, y, polka.x, polka.y) <= detection_radius/2 {
+			engaged = true;
+			idle_movement = false;
+			x_move = 0;
+			y_move = 0;
+			engage_count = -1;
+		} else {
+			engage_count -= 1;
+		}
+		
+	}
+}
+
 if(idle_movement){
 
 	//Manage x_move and y_move
@@ -46,38 +70,78 @@ if(idle_movement){
 		x_move = 0;
 		y_move = 0;
 	}
-	
-	//Assign facing variable with movement's direction, default to xmovement
-	if(x_move != 0){
-		switch(sign(x_move)){
-			case 1: facing = dir.right; break;
-			case -1: facing = dir.left; break;
-		}
-	} else if (y_move != 0) {
-		switch(sign(y_move)){
-			case 1: facing = dir.down; break;
-			case -1: facing = dir.up; break;
-		}
-	}
-	
-	//Assign walking sprite according to direction facing
-	if(x_move != 0 or y_move != 0){
-		switch(facing){ 
-			case 0: sprite_index = spr_villy_walk_back; break;
-			case 90: sprite_index = spr_villy_walk_right; break;
-			case 180: sprite_index = spr_villy_walk_front; break;
-			case 270: sprite_index = spr_villy_walk_left; break;
-		}
-	} else { // assign standing  sprite if polka is not moving
-		switch(facing){
-			case 0: sprite_index = spr_villy_stand_back; break;
-			case 90: sprite_index = spr_villy_stand_right; break;
-			case 180: sprite_index = spr_villy_stand_front; break;
-			case 270: sprite_index = spr_villy_stand_left; break;
-		}
-	}
-	
-	x += x_move;
-	y += y_move;
 
+} else if engaged {
+	var _angle = point_direction(x, y, polka.x, polka.y);
+	x_move = lengthdir_x(spd*3, _angle);
+	y_move = lengthdir_y(spd*3, _angle);
+	
+	if point_distance(x, y, polka.x, polka.y) >= spd*3 and not knock_count {
+
+	} else {
+		
+	}
+	
+	if fire_count <= -1 {
+		fire_count = fire_time;
+	} if not fire_count {
+		instance_create_layer(x, y, "Menus", obj_bullet);
+	}
+	fire_count -= 1;
+	
 }
+
+var inst = collision_rectangle(polka.x, polka.y, polka.x+polka.sprite_width, polka.y+polka.sprite_height, par_enemy, false, false);
+if inst != noone and inst.id == id and not polka.invincible and not polka.dash{
+		polka.invincible = true;
+		polka.alarm[1] = room_speed*3;
+		flags.hearts -= 1;
+		audio_play_sound(snd_question_wrong, 1, false);
+	
+		// get knockback values
+		knock_angle = point_direction(x, y, polka.x, polka.y);
+		knock_count = knock_time;
+}
+
+
+if knock_count >= 0 {
+	knock_count -= 1;
+	x_move -= lengthdir_x(5*spd-(knock_count*knock_count*.001), knock_angle);
+	y_move -= lengthdir_y(5*spd-(knock_count*knock_count*.001), knock_angle);
+	
+	polka.x += lengthdir_x(3*spd-(knock_count*knock_count*.001), knock_angle)
+	polka.y += lengthdir_y(3*spd-(knock_count*knock_count*.001), knock_angle);
+}
+
+//Assign facing variable with movement's direction, default to xmovement
+if(x_move != 0){
+	switch(sign(x_move)){
+		case 1: facing = dir.right; break;
+		case -1: facing = dir.left; break;
+	}
+} else if (y_move != 0) {
+	switch(sign(y_move)){
+		case 1: facing = dir.down; break;
+		case -1: facing = dir.up; break;
+	}
+}
+
+//Assign walking sprite according to direction facing
+if(x_move != 0 or y_move != 0){
+	switch(facing){ 
+		case 0: sprite_index = spr_villy_walk_back; break;
+		case 90: sprite_index = spr_villy_walk_right; break;
+		case 180: sprite_index = spr_villy_walk_front; break;
+		case 270: sprite_index = spr_villy_walk_left; break;
+	}
+} else { // assign standing  sprite if polka is not moving
+	switch(facing){
+		case 0: sprite_index = spr_villy_stand_back; break;
+		case 90: sprite_index = spr_villy_stand_right; break;
+		case 180: sprite_index = spr_villy_stand_front; break;
+		case 270: sprite_index = spr_villy_stand_left; break;
+	}
+}
+
+x += x_move;
+y += y_move;

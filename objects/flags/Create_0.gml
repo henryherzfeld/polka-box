@@ -22,7 +22,7 @@ progress = 0;
 max_progress = enum_objective_type.length;
 
 coins = 0;
-hearts = 5;
+hearts = 99;
 hearts_diff = hearts;
 
 time = 3600;

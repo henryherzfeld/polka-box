@@ -26,3 +26,8 @@ yy = 0;
 
 draw = true;
 alarm[1] = 500;
+
+knock_count = -1;
+knock_angle = 0;
+
+spd = 0.5

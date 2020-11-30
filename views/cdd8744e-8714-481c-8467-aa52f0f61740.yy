@@ -5,7 +5,6 @@
     "name": "cdd8744e-8714-481c-8467-aa52f0f61740",
     "children": [
         "19dafe6a-df83-4216-9481-df605d1a4d64",
-        "5e2014df-de41-4732-a0f2-e56f09214dcc",
         "efc12572-ca92-4d71-bda5-f899418e2dec",
         "7fae4a7f-b7da-4fdd-bae7-1d6957b6221f",
         "39122749-bdb0-4a37-8e6f-59ab367ddd0d",
@@ -19,7 +18,8 @@
         "02cedb9b-b489-46fe-92fb-925c16babae0",
         "cc7d16a0-f0ed-45d2-893b-564d22ecd939",
         "40894a46-ab9f-4bc9-b8b7-f67cd7190e8b",
-        "68045377-5c72-4aa4-b4cb-6b2e8eb8f527"
+        "68045377-5c72-4aa4-b4cb-6b2e8eb8f527",
+        "ec1823bc-7466-4f57-8d63-8340f06c6d57"
     ],
     "filterType": "GMObject",
     "folderName": "Characters",

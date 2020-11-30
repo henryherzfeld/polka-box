@@ -19,3 +19,14 @@ y_dest = -1;
 
 xx = x;
 yy = y;
+
+detection_radius = 100;
+engaged = false;
+engage_time = 100;
+engage_count = -1;
+
+fire_count = -1;
+fire_time = 200;
+
+knock_count = -1;
+knock_time = 30;
