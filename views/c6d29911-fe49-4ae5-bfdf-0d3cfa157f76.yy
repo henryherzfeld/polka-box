@@ -7,7 +7,8 @@
         "e3faba23-24d0-45d9-b718-fe756169f669",
         "8c445a7e-e781-4e26-b1ca-2ce3a424821a",
         "8881a463-2564-4cde-ac03-4eb7d2c8b360",
-        "3d415dd0-ff61-4473-82da-c0875827ce55"
+        "3d415dd0-ff61-4473-82da-c0875827ce55",
+        "d5a0755c-09cf-401e-8282-da56d7461fcc"
     ],
     "filterType": "GMRoom",
     "folderName": "Game",

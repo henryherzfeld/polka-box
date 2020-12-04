@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "00de25b6-efe7-43d0-9612-4bacdbed5d64",
+            "Value": {
+                "id": "a91658af-165e-479d-9ccb-ed58ec210495",
+                "resourcePath": "views\\00de25b6-efe7-43d0-9612-4bacdbed5d64.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "00ec010c-08bb-4d6f-b006-68c4a11d445c",
             "Value": {
                 "id": "44dbe834-fecb-4da6-9515-ae7ec8648941",
@@ -999,6 +1007,14 @@
             }
         },
         {
+            "Key": "23381aff-40da-4f43-81ef-c7063b5b8599",
+            "Value": {
+                "id": "cb2357ea-9d8f-491d-8fb5-7304a4ff9795",
+                "resourcePath": "objects\\BOOJUM\\BOOJUM.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "234f371c-c81a-4ff5-b861-b1c0f756fdb1",
             "Value": {
                 "id": "af45b9ab-1efb-4974-9009-436632de0f7b",
@@ -1148,6 +1164,14 @@
                 "id": "0ebea8ec-91b2-42b3-9b8f-6e3c48aaef39",
                 "resourcePath": "sprites\/spr_portrait_weeraway_neutral\/spr_portrait_weeraway_neutral.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "29682fbd-f7c6-4ba1-b3b9-654d91f034bf",
+            "Value": {
+                "id": "2d83fa56-771d-41ab-b425-af7d0b1e077c",
+                "resourcePath": "views\\29682fbd-f7c6-4ba1-b3b9-654d91f034bf.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1623,6 +1647,14 @@
             }
         },
         {
+            "Key": "3ab61843-f03d-44ec-a61b-79dc9316de21",
+            "Value": {
+                "id": "a7eb47ea-f161-4a29-b9ef-f5a65e28874a",
+                "resourcePath": "sprites\\HUMBLE_HOUSE\\HUMBLE_HOUSE.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3ac11fc2-f2bd-4a08-8715-c1d0a47ab737",
             "Value": {
                 "id": "33e3cc51-f105-4c5d-982f-0f6c80030395",
@@ -1932,6 +1964,14 @@
                 "id": "90492522-5044-47cd-87fb-001432692ba8",
                 "resourcePath": "sprites\/spr_soil_erosion_water_photo_evidence\/spr_soil_erosion_water_photo_evidence.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "452fcdaa-5634-4b64-ae0c-8f1f43b41700",
+            "Value": {
+                "id": "ddf015de-01ed-42ef-a22e-2849f3446119",
+                "resourcePath": "views\\452fcdaa-5634-4b64-ae0c-8f1f43b41700.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -2556,6 +2596,14 @@
                 "id": "5e9fe31a-cd03-4fc6-a265-2eed10cd8e0a",
                 "resourcePath": "sprites\/spr_soil_moisture_table\/spr_soil_moisture_table.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5b948593-97f4-4fa3-95c6-a8387c29daaf",
+            "Value": {
+                "id": "a3899470-d6f9-4de2-9c59-9d42d6f8a38d",
+                "resourcePath": "objects\\JIYO\\JIYO.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3463,6 +3511,14 @@
             }
         },
         {
+            "Key": "7ee955f8-e2cf-4039-9a00-f6ff5ba37fba",
+            "Value": {
+                "id": "32dfd2db-8b96-4a98-b68d-58ccdeb3342d",
+                "resourcePath": "views\\7ee955f8-e2cf-4039-9a00-f6ff5ba37fba.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "7eeac5c5-fe03-4082-983e-0666ba7eab8e",
             "Value": {
                 "id": "74018493-68c5-450f-b5ef-90db4cc688d4",
@@ -4055,6 +4111,14 @@
             }
         },
         {
+            "Key": "96a4dcba-aaca-4d30-9b6b-fbaecfacaa11",
+            "Value": {
+                "id": "6ac49a57-f1a0-48dc-81b3-195e27f90492",
+                "resourcePath": "sprites\\BOOJUM_HOUSE\\BOOJUM_HOUSE.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "972f9e7d-1e07-47a6-ae03-805b7a720154",
             "Value": {
                 "id": "0f9ac613-0d19-4775-9822-196a47470abc",
@@ -4084,6 +4148,14 @@
                 "id": "094394ca-7928-426a-ad85-50b8c427ab6a",
                 "resourcePath": "views\/979bdd7d-50b6-4671-bce0-72b5af6dd990.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "98b13899-f7f8-4946-a3f6-5b918d537fef",
+            "Value": {
+                "id": "acd2242c-16df-4ae0-a950-bf48cf0e69f1",
+                "resourcePath": "objects\\GULP\\GULP.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -4907,6 +4979,14 @@
             "Value": {
                 "id": "41febc0d-8555-4dd7-af2c-63ab437fcb03",
                 "resourcePath": "sprites\/spr_erosion_experiment_table_evidence\/spr_erosion_experiment_table_evidence.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b5249796-377a-4931-9771-a3badb9cd800",
+            "Value": {
+                "id": "d8b1d66f-3ac0-4096-baa8-ab4606c10fd9",
+                "resourcePath": "sprites\\GULP_HOUSE\\GULP_HOUSE.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5743,6 +5823,14 @@
             }
         },
         {
+            "Key": "d5a0755c-09cf-401e-8282-da56d7461fcc",
+            "Value": {
+                "id": "184eafc2-362f-428f-9d43-b1af9ca2e8c7",
+                "resourcePath": "rooms\\Second_village\\Second_village.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "d5b5fae3-11b7-4402-a471-2d4f07378968",
             "Value": {
                 "id": "62d4ff8b-3170-46da-9dec-411a82156a40",
@@ -5771,6 +5859,14 @@
             "Value": {
                 "id": "a0de5dbf-77be-4f2c-9a2e-f83ee9f4d598",
                 "resourcePath": "objects\/obj_signpost\/obj_signpost.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d7001793-ac3d-4bd4-91d7-9375e62d7017",
+            "Value": {
+                "id": "72024cc0-4fa6-4918-90b7-7019342e0118",
+                "resourcePath": "objects\\HUMBLE\\HUMBLE.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -6364,6 +6460,14 @@
                 "id": "dfcb3d01-c9f4-4be3-8f18-9e070ef7dd6f",
                 "resourcePath": "objects\/polka\/polka.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f0027791-6f8c-47fa-a2f6-81a74b68a5c9",
+            "Value": {
+                "id": "fe3b6c5f-1507-4544-bcbd-7374c564306a",
+                "resourcePath": "sprites\\JIYO_HOUSE\\JIYO_HOUSE.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
