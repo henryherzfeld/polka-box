@@ -8,7 +8,7 @@ if attack and polled_question {
 	
 }
 
-if draw draw_text_ext(50, 200, "Kill the Villies??? What!?\n Equip the pitchfork and use TAB key to attack. Type answers to the questions and press ENTER to submit them.", string_height("M"), game.gui_width/2);
+//if draw draw_text_ext(50, 200, "Kill the Villies??? What!?\n Equip the pitchfork and use TAB key to attack. Type answers to the questions and press ENTER to submit them.", string_height("M"), game.gui_width/2);
 
 
 draw_set_font(font_small);

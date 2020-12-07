@@ -13,7 +13,11 @@
         "c29aba59-14f8-4ce3-b888-6044dca4fbdf",
         "47b196d4-0749-45b4-94c8-ce11748be84b",
         "24d9ab1f-bd8b-45c7-b24e-428a7b5ad944",
-        "93ed4150-9715-4f7f-8969-584a49342e53"
+        "93ed4150-9715-4f7f-8969-584a49342e53",
+        "08d5cc37-b484-4058-80ef-c8f1e94be471",
+        "7caeb4cf-408d-43f5-a63a-962987995a48",
+        "9873de8d-2dd4-45e6-9fe8-cdbe6d5085b7",
+        "7a9788dd-a8a4-4de1-8078-93013edd1979"
     ],
     "filterType": "GMScript",
     "folderName": "Dialogues",

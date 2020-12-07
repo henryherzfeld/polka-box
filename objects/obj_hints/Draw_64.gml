@@ -4,7 +4,9 @@ if(draw){
 	switch (step){
 		case 0: //draw_sprite_stretched(wasd_keys, image_index*draw_time, xx, yy, wasd_keys_w, wasd_keys_h); 
 				//draw_text(xx, yy+wasd_keys_h, "Use the WASD Keys to Move");
-				scr_draw_notification("You're awake! Use the WASD keys to walk to the Baron.");
+				if room == rm_polka_interior {
+					scr_draw_notification("You're awake! Use the WASD keys to walk to the Baron.");
+				}
 				draw = false;
 				break;
 		
