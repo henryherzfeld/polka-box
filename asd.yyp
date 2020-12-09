@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "0144001a-ef8a-4037-bdb3-f2c4ed3d573f",
+            "Value": {
+                "id": "c0f95534-5853-4632-a2b9-45e00b1a4748",
+                "resourcePath": "views\\0144001a-ef8a-4037-bdb3-f2c4ed3d573f.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "01b31652-0e55-4105-a6a2-3a5bf11075f6",
             "Value": {
                 "id": "7a8538a1-72e1-4ee6-a8df-459a48d79673",
@@ -4839,6 +4847,14 @@
             }
         },
         {
+            "Key": "a94a3130-5723-4ae0-bc5b-418db979bc8b",
+            "Value": {
+                "id": "259cc1f4-4f61-4e3f-b024-805db95240e2",
+                "resourcePath": "sprites\\spr_signpost_incomplete\\spr_signpost_incomplete.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a9b57943-283c-4da2-acf9-4b8a0dfbb8bd",
             "Value": {
                 "id": "6be47e7c-e816-4979-94fd-e92df2a500c9",
@@ -5887,6 +5903,14 @@
             }
         },
         {
+            "Key": "cc49fe59-37a5-4064-a5d4-232d83606035",
+            "Value": {
+                "id": "e9c2bfed-1c11-4afe-a32c-8069dd7b9a06",
+                "resourcePath": "objects\\obj_progress_signpost\\obj_progress_signpost.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "cc7d16a0-f0ed-45d2-893b-564d22ecd939",
             "Value": {
                 "id": "bedbdf0f-ca4f-4a01-a436-2972771a246e",
@@ -6451,6 +6475,14 @@
             "Value": {
                 "id": "106e5cbc-12ce-4685-a627-8bb2fa5369a0",
                 "resourcePath": "sprites\/spr_dtop\/spr_dtop.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e1af1065-667f-463a-9f2a-ab3ee3198236",
+            "Value": {
+                "id": "9815846d-1295-431e-a5c9-802ae3c92d07",
+                "resourcePath": "sprites\\spr_signpost_complete\\spr_signpost_complete.yy",
                 "resourceType": "GMSprite"
             }
         },
