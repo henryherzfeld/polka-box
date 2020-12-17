@@ -1079,6 +1079,14 @@
             }
         },
         {
+            "Key": "23ae508e-247a-4827-8ffb-3cb5e22fe760",
+            "Value": {
+                "id": "2959ead0-6198-46e8-bc38-eb9d4ec0bdde",
+                "resourcePath": "scripts\\scr_cutscene_emote_character\\scr_cutscene_emote_character.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "23cd2d4a-1623-4369-9421-bcc1f9d9e467",
             "Value": {
                 "id": "b348d5c2-2069-4671-ac5a-f0788647fb4d",
@@ -1759,6 +1767,14 @@
             }
         },
         {
+            "Key": "3b4fdb99-43d4-4053-888a-10ad44738184",
+            "Value": {
+                "id": "87ec3cbe-a2bc-4ebc-b1e8-40b1869796fe",
+                "resourcePath": "sprites\\spr_emote_chuckle\\spr_emote_chuckle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3b93a8b1-cd0d-46a6-b829-1e3b907e5ae0",
             "Value": {
                 "id": "86bbe222-997c-4889-bddf-8c863ac08f01",
@@ -1780,6 +1796,14 @@
                 "id": "a10fa2c5-fcb3-4f5d-a1b9-b8059da0c256",
                 "resourcePath": "objects\/obj_cutscene\/obj_cutscene.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "3c1ec22b-2d6f-4dd1-a46f-7ee49cbecd0f",
+            "Value": {
+                "id": "4dbca108-18b4-4637-9535-c7d980ecf509",
+                "resourcePath": "sprites\\spr_emote_angel\\spr_emote_angel.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1819,6 +1843,14 @@
             "Value": {
                 "id": "a295a429-5ee4-46a3-8853-d766d8394218",
                 "resourcePath": "sprites\/spr_lemonade_stand\/spr_lemonade_stand.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3d79c63b-b7e5-4589-9f70-4679bc8acc35",
+            "Value": {
+                "id": "b1c2aef1-7faa-4637-bb4f-e31b36992315",
+                "resourcePath": "sprites\\spr_emote_sad\\spr_emote_sad.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3623,6 +3655,14 @@
             }
         },
         {
+            "Key": "7cf6c38c-ac33-4be2-9caf-b09b4c3cee09",
+            "Value": {
+                "id": "5457962c-d4b8-4a9b-87bf-49504268ff9e",
+                "resourcePath": "sprites\\spr_emote_whoa\\spr_emote_whoa.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7d597bef-5b8f-4137-a06d-61058bd1e7d7",
             "Value": {
                 "id": "5e3355d7-3226-47d9-aa5c-126ca9794b12",
@@ -4179,6 +4219,14 @@
             "Value": {
                 "id": "1d5928a6-21ad-405a-a62b-d5e961dc040d",
                 "resourcePath": "sprites\/spr_portrait_poppy_happy\/spr_portrait_poppy_happy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "92370243-8914-4a5a-bde5-607ed7b991a1",
+            "Value": {
+                "id": "334f716e-7a0f-4744-965f-1dac5f6d57ff",
+                "resourcePath": "sprites\\spr_emote_angry\\spr_emote_angry.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5295,6 +5343,14 @@
             }
         },
         {
+            "Key": "b705497b-58d8-42ac-9fce-8d5e9007581d",
+            "Value": {
+                "id": "819d75d0-7d02-4503-86b0-2acd47262bf5",
+                "resourcePath": "sprites\\spr_emote_haha\\spr_emote_haha.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b7299223-3aa2-4914-8c41-b81c7d8020c3",
             "Value": {
                 "id": "b7326d71-91d8-4d56-9b4c-2dba16d48ea8",
@@ -5364,6 +5420,14 @@
                 "id": "5e588806-9de5-4b6f-9864-e72f75934f6c",
                 "resourcePath": "rooms\\rm_proc1\\rm_proc1.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "bae0d355-e84e-48d2-98b2-5008446803c1",
+            "Value": {
+                "id": "a9978d95-5671-4cf9-811d-0494546e3284",
+                "resourcePath": "sprites\\spr_emote_shocked\\spr_emote_shocked.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -5476,6 +5540,14 @@
                 "id": "4fb1445c-2233-4664-85c3-151c410e110d",
                 "resourcePath": "rooms\/rm_courthouse_interior\/rm_courthouse_interior.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "bd5c7dbc-2017-4153-8d39-0ab4cb1923dc",
+            "Value": {
+                "id": "be6d05eb-e7db-4772-b53c-30242ccbbe4c",
+                "resourcePath": "sprites\\spr_emote_love\\spr_emote_love.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -6279,6 +6351,14 @@
             }
         },
         {
+            "Key": "daacb027-4624-4a13-bdbf-51be76e7d874",
+            "Value": {
+                "id": "82c6815e-11ce-475c-9ff2-98b13cabf405",
+                "resourcePath": "sprites\\spr_emote_cool\\spr_emote_cool.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "dab63398-e709-4009-9ece-4b594cbf8cc5",
             "Value": {
                 "id": "1a3f4c8a-2f73-447a-90c0-57571972031d",
@@ -6324,6 +6404,14 @@
                 "id": "4c25f331-b6bd-4570-b8cc-86447914a371",
                 "resourcePath": "views\/db7bc9c9-b46c-46b5-ac5a-56bada3ba209.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "db9e410b-472e-4943-b574-d95a2411c7a7",
+            "Value": {
+                "id": "26225be3-465f-4f39-b3c1-69e961f636eb",
+                "resourcePath": "sprites\\spr_emote_blush\\spr_emote_blush.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -7210,6 +7298,7 @@
         "8c795b7b-85d5-4ad0-a9dd-3a5a4e92048d",
         "eaa8c35c-683e-4598-848a-eee27761bb71",
         "5bde3f2f-1b07-4f84-a4c1-4da13a12ef13",
+        "23ae508e-247a-4827-8ffb-3cb5e22fe760",
         "35e47bd1-5914-451b-afd3-9bebdb5bcb65",
         "0e0a68c5-5fbe-4ac2-800a-4f2144f69c77",
         "02cdf6fe-72ac-4a41-bccc-f08c9ca1c58d",

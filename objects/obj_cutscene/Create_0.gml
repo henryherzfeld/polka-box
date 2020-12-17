@@ -17,4 +17,11 @@ dialogue_inst = -1;
 
 notification_inst = -1;
 
+emote_inst = -1;
+emote_char = -1;
+emote_count = -1;
+emote_count2 = 0;
+emote_subimg_count = -1;
+
+
 active = false;

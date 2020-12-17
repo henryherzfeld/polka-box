@@ -1,4 +1,4 @@
-active = false;
+active = true;
 
 
 ero_fin_text4a = ds_map_create();
@@ -23,6 +23,13 @@ scr_dia_line("Ok", polka);
 
 
 scene_info = [
+	[scr_cutscene_wait, 2],
+	[scr_cutscene_emote_character, polka, spr_emote_angel,50],
+	[scr_cutscene_change_room, second_village, 340, 170],
+
+]
+
+/*
 	[scr_cutscene_change_room, rm_polka_interior, 340, 170],
 	[scr_cutscene_change_variable, obj_camera, "x", 512],
 	[scr_cutscene_change_variable, obj_camera, "y", 800],

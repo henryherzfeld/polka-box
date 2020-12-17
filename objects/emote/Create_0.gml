@@ -3,3 +3,4 @@
 
 sprite_draw = spr_question_mark;
 char = polka;
+subimg_idx = 0;

@@ -38,7 +38,7 @@ if(keyboard_check_pressed(vk_escape)){
 
 canvas_change = false;
 
-if(browser_width != width || browser_height != height){
+if(browser_width != width || browser_height != height && !window_get_fullscreen()){
 	canvas_change = true;
     width = min(base_width, browser_width);
     height = min(base_height, browser_height);
