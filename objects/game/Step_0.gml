@@ -1,11 +1,13 @@
 /// @description Insert description here
 
 
+/*
 // grabbing audio context for html5
 if not play_audio and audio_system_is_available() {
 	play_audio = true;
 	if music audio_play_sound(snd_orbit, 100, true);
 }
+*/
 
 if rain and (room == erosion_forest or room == erosion_village) effect_create_below(ef_rain, 10, 10, 1, c_white);
 
@@ -38,12 +40,14 @@ if(keyboard_check_pressed(vk_escape)){
 
 canvas_change = false;
 
+/*
 if(browser_width != width || browser_height != height && !window_get_fullscreen()){
 	canvas_change = true;
     width = min(base_width, browser_width);
     height = min(base_height, browser_height);
     scr_scale_canvas(base_width, base_height, width, height, true);
 }
+*/
 
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();

@@ -1,7 +1,7 @@
 /// @description Insert description here
 if disable exit;
 
-show_debug_message([in_procedural_room, next_room==room]);
+//show_debug_message([in_procedural_room, next_room==room]);
 
 if game.do_transition and in_procedural_room {
 	game.spawn_room = next_room;
