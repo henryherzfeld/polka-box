@@ -26,7 +26,7 @@ walk_right = spr_polka_walk_right;
 
 stand_front = spr_polka_stand_right;
 stand_back = spr_polka_stand_right;
-stand_left = spr_polka_stand_right;
+stand_left = spr_polka_stand_left;
 stand_right = spr_polka_stand_right;
 
 input_space = false;
@@ -45,3 +45,6 @@ dash_distance = 25;
 invincible = false;
 inv_count = 0;
 inv_bool = false;
+
+//tree planting
+curr_tree = noone;

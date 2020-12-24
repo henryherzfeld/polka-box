@@ -1,4 +1,4 @@
-active = true;
+active = false;
 
 
 ero_fin_text4a = ds_map_create();

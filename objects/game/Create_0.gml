@@ -5,13 +5,17 @@ font = font_comic
 debug = false;
 randomize();
 
-hacks = false;
+mode = "pb";
+hacks = true;
 music = false;
 
 name = "Default"
 
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
+
+display_set_gui_size(1500, 840);
+
 base_width = 1500;
 base_height = 840;
 width = base_width;

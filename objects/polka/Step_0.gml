@@ -299,3 +299,27 @@ else{
 	}
 }
 */
+
+//check for plantable tree
+var inst = collision_circle(obj_tile_manager.x_proj, obj_tile_manager.y_proj, obj_tile_manager.cell_size/2, obj_plantable_tree, false, true);
+if inst != noone {
+	
+	// outline newly stored tree
+	if inst != curr_tree {
+		inst.outline = true;
+		
+		// negate old tree's outline if polka stored one
+		if curr_tree != noone {
+			curr_tree.outline = false;
+		}
+		
+		//store new tree reference
+		curr_tree = inst;
+	}
+	
+	if input_interact {
+		inst.curr_tree += 1;
+	}
+} else {
+	curr_tree = noone;
+}

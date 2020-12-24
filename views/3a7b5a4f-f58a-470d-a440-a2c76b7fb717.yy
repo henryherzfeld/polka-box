@@ -17,7 +17,8 @@
         "08d5cc37-b484-4058-80ef-c8f1e94be471",
         "7caeb4cf-408d-43f5-a63a-962987995a48",
         "9873de8d-2dd4-45e6-9fe8-cdbe6d5085b7",
-        "7a9788dd-a8a4-4de1-8078-93013edd1979"
+        "7a9788dd-a8a4-4de1-8078-93013edd1979",
+        "6b0116d5-dd31-42e8-ae7b-aafc18dc0cc0"
     ],
     "filterType": "GMScript",
     "folderName": "Dialogues",

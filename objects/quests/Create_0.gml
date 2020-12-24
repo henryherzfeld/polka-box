@@ -1,15 +1,23 @@
 /// @description Insert description here
 
-enum quest {
+
+enum quest_pb {
+	// POLKA BOX
 	tutorial,
 	erosion_investigation,
 	erosion_experiment,
 	erosion_case,
 	hints,
-	length,
+	length
 }
 
-var quest_array = [
+enum quest_mtv {
+	polka,
+	gilly,
+	length
+}
+
+var quest_pb_array = [
 	["tutorial", 0, 
 	[enum_objective_type.tut_start, noone, noone, 
 	noone, enum_objective_type.tut_find_key, noone, noone,
@@ -34,13 +42,30 @@ var quest_array = [
 	[noone, noone, noone, noone, noone, noone, noone, noone, noone, noone, noone, noone, noone, noone, noone, noone]]
 ]
 
-quests_grid = scr_create_ds_grid_from_array(quest_array);
-quests_grid_n = ds_grid_height(quests_grid);
+var quest_mtv_array = [
+	["polka", 0,
+	[noone, noone, noone]],
+	["gilly", 0,
+	[noone, noone, noone]]
+]
 
 update = false;
-
 update_map = ds_map_create();
-var i = 0; repeat(quest.length) {
+
+if game.mode == "pb" {
+	quests_grid = scr_create_ds_grid_from_array(quest_pb_array);
+	var i = 0; repeat(quest_pb.length) {
 	update_map[? i] = true;
 	i++;
+	}
+} else if game.mode == "mtv" {
+	quests_grid = scr_create_ds_grid_from_array(quest_mtv_array);
+	var i = 0; repeat(quest_mtv.length) {
+	update_map[? i] = true;
+	i++;
+	}
 }
+
+quests_grid_n = ds_grid_height(quests_grid);
+
+

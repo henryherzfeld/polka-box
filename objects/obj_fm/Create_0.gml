@@ -1,5 +1,5 @@
 // config
-global.GMS2 = false; // set true when using GMS2
+global.GMS2 = true; // set true when using GMS2
 
 global.desktop_scale = 99; // desktop scale limiter; try values like 0.75 or 99
 global.force_xratio = true;
