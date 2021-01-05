@@ -1,5 +1,6 @@
 /// @description Insert description here
 
-villies = ds_list_create();
-x_coords = ds_list_create();
-y_coords = ds_list_create();
+trees = ds_list_create();
+curr_trees = ds_list_create();
+trees_x = ds_list_create();
+trees_y = ds_list_create();

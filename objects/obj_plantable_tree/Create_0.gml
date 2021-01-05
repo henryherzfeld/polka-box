@@ -1,13 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+default_ = digged_in_soil_tile;
+
 trees = [
-		sprite74,
-		spr_tree,
-		sprite50,
-		spr_grown,
-		spr_plant,
-		spr_dead
+		default_,
+		spr_peace_lily,
+		spr_gerbera_daisy,
+		spr_snake_plant,
 ]
 
 n_trees = array_length_1d(trees);
@@ -24,3 +24,5 @@ for(var i = 0; i < n_trees; i++){
 curr_tree = 0;
 
 outline = false;
+lock = false;
+tree_change = false;

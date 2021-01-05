@@ -11,7 +11,7 @@ var i = 0; repeat(quests_grid_n) {
 	var objectives = grid[# 2, i];
 	var objectives_n = array_length_1d(objectives);
 	var ev = noone;
-//	if i == quest.tutorial show_debug_message(step);
+	//if i == quest_mtv.polka show_debug_message(step);
 	var save = true;
 
 	if game.mode == "pb" {
@@ -789,14 +789,67 @@ var i = 0; repeat(quests_grid_n) {
 			case quest_mtv.polka: {
 				switch(step) {
 					case 0: {
-						
-					
+						ev = event.talk_poppy;
 						break;
 					}
 					case 1: {
-						scr_char_change_dialogue(polka, 1);
+						if room == rm_poppy {
+							var inst = instance_find(obj_transition, 0);
+							inst.target_x = 333;
+							inst.target_y = 1318;
+							inst.target_room = second_village_planting;
+						} else if room == second_village_planting {
+							scr_progress_quest(i);
+						}
 						break;
 					}
+					case 2: {
+						if room == second_village_planting {
+							
+							// THIS INTRO MUST BE CONDITIONED ON ENTER PLANTING OBJECTIVE
+							var inst = instance_create_layer(0, 0, "Meta", obj_minigame_intro);
+							inst.do_animation = true;
+							
+							scr_progress_quest(i);
+						}
+						break;
+					}
+					
+					case 3: {
+						var n = instance_number(obj_plantable_tree);
+						var is_done = true;
+
+						for(var ii = 0; ii < n; ii++){
+							var inst = instance_find(obj_plantable_tree, ii);
+							with inst {
+								if trees[curr_tree] == default_ {
+									is_done = false;
+								}
+							}
+						}
+
+						if is_done and room == second_village_planting { 
+							scr_progress_quest(i);
+							audio_play_sound(snd_segment_complete, 0, false);
+						}
+						else if room == rm_poppy { grid[# 1, i] = 1; }
+						break;
+					}
+					case 4: {
+						if room == rm_poppy {
+							scr_char_change_dialogue(obj_npc_poppy, 1);
+							scr_char_update_dialogue(obj_npc_poppy);
+							scr_progress_quest(i);
+						}
+						break;
+					}
+					case 5:
+						if room == second_village {
+							var inst = instance_nearest(polka.x, polka.y, obj_progress_signpost);
+							inst.do_animation = true;
+							audio_play_sound(snd_quest_complete, 0, false);
+							scr_progress_quest(i);
+						}
 				}
 			}
 			 

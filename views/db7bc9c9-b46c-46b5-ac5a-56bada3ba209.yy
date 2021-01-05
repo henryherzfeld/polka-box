@@ -14,7 +14,10 @@
         "388478f2-a2d2-4eee-8986-7cb135d60d76",
         "0de93ce7-c57d-4bf7-88d3-409e190af8dc",
         "e92059d4-5af0-4d77-b427-ce16811b85a3",
-        "4579297c-4251-4c1b-b01a-0eb4699c6891"
+        "4579297c-4251-4c1b-b01a-0eb4699c6891",
+        "de3c64d4-05c9-4a5d-8a5a-d0c6eb2bd648",
+        "acdeb4fc-e7fe-497e-ac74-9153dcadab36",
+        "bfbd0ccf-be78-41c5-b3e7-34b8a4b96549"
     ],
     "filterType": "GMSprite",
     "folderName": "Landscape",

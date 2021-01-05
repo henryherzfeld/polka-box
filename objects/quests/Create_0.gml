@@ -44,7 +44,7 @@ var quest_pb_array = [
 
 var quest_mtv_array = [
 	["polka", 0,
-	[noone, noone, noone]],
+	[noone, noone, noone, noone, noone, noone]],
 	["gilly", 0,
 	[noone, noone, noone]]
 ]

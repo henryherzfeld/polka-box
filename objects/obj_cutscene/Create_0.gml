@@ -23,5 +23,5 @@ emote_count = -1;
 emote_count2 = 0;
 emote_subimg_count = -1;
 
-
+destroy = true;
 active = false;

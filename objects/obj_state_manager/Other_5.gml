@@ -1,5 +1,20 @@
 /// @description Insert description here
+
+if(room == second_village_planting and !game.do_load){
+
+	var n = instance_number(obj_plantable_tree);
+
+	for (var i = 0; i < n; i ++){
+		var inst = instance_find(obj_plantable_tree, i);
+		trees[| i] = inst;
+		trees_x[| i] = inst.x;
+		trees_y[| i] = inst.y;
+		curr_trees[| i] = inst.curr_tree;
+	}
+}
+
 exit;
+
 if(room == erosion_village and !game.do_load){
 	if(!ds_list_empty(villies)){
 		ds_list_destroy(x_coords);

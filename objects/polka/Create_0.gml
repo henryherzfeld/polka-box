@@ -19,15 +19,35 @@ facing = -1;
 curr_x = 0;
 curr_y = 0;
 
-walk_front = spr_polka_walk_front;
-walk_back = spr_polka_walk_back;
-walk_left = spr_polka_walk_left;
-walk_right = spr_polka_walk_right;
+if game.mode == "pb" {
+	walk_front = spr_polka_walk_front;
+	walk_back = spr_polka_walk_back;
+	walk_left = spr_polka_walk_left;
+	walk_right = spr_polka_walk_right;
 
-stand_front = spr_polka_stand_right;
-stand_back = spr_polka_stand_right;
-stand_left = spr_polka_stand_left;
-stand_right = spr_polka_stand_right;
+	stand_front = spr_polka_stand_right;
+	stand_back = spr_polka_stand_right;
+	stand_left = spr_polka_stand_left;
+	stand_right = spr_polka_stand_right;
+} else if game.mode == "mtv" {
+
+	walk_front = spr_villy_walk_front;
+	walk_back = spr_villy_walk_back;
+	walk_left = spr_villy_walk_left;
+	walk_right = spr_villy_walk_right;
+
+	stand_front = spr_villy_stand_front;
+	stand_back = spr_villy_stand_back;
+	stand_left = spr_villy_stand_left;
+	stand_right = spr_villy_stand_right;
+}
+
+boop_front = spr_villy_boop_front;
+boop_back = spr_villy_boop_back;
+boop_left = spr_villy_boop_left;
+boop_right = spr_villy_boop_right;
+
+sprite_index = stand_right;
 
 input_space = false;
 

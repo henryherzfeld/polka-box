@@ -40,19 +40,19 @@ var quests_str = ds_grid_write(quests.quests_grid);
 ds_map_add(grid_map, "objectives", objectives_str);
 ds_map_add(grid_map, "quests", quests_str);
 
-// lists
 var list_map = ds_map_create();
+if game.mode == "pb" {
+	// lists
+	if array_length_1d(InventoryManager.inventorySlot) {
+		var inventory_list = scr_convert_array_to_list(InventoryManager.inventorySlot);
+		ds_map_add_list(list_map, "inventory", inventory_list);
+	}
 
-if array_length_1d(InventoryManager.inventorySlot) {
-	var inventory_list = scr_convert_array_to_list(InventoryManager.inventorySlot);
-	ds_map_add_list(list_map, "inventory", inventory_list);
+	if array_length_1d(obj_notebook.evidence_slot) { 
+		var evidence_list = scr_convert_array_to_list(obj_notebook.evidence_slot);
+		ds_map_add_list(list_map, "evidence", evidence_list);
+	}
 }
-
-if array_length_1d(obj_notebook.evidence_slot) { 
-	var evidence_list = scr_convert_array_to_list(obj_notebook.evidence_slot);
-	ds_map_add_list(list_map, "evidence", evidence_list);
-}
-
 
 /*
 // villy locations

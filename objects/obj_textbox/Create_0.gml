@@ -34,7 +34,10 @@ textbox_padded_y = textbox_y + text_padding;
 //textbox_x = (gui_width / 2) - (box_width / 2);
 //textbox_y = gui_height - box_height;
 
-InventoryManager.disable = true;
+if game.mode == "pb" {
+	InventoryManager.disable = true;
+}
+
 exiting = false;
 first = true;
 page = 0;

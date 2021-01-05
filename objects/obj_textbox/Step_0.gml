@@ -296,7 +296,9 @@ selected = clamp(selected, 0, n_options-2);
 // executing all exit scripts upon final dialogue sequence
 // maybe this behavior should change in light of string "modifications"
 if(exiting){
-	InventoryManager.disable = false;
+	if game.mode == "pb" {
+		InventoryManager.disable = false;
+	}
 	
 	if char != noone { 
 		scr_event_fire_char(action.talk, char); 

@@ -81,7 +81,8 @@ if(noti_lg_count){
 }
 
 //notebook button
-if obj_notebook.draw_evidence or obj_quiz_manager.pending_choice { exit; }
+if game.mode == "pb" and obj_notebook.draw_evidence { exit; }
+if obj_quiz_manager.pending_choice { exit; }
 
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);

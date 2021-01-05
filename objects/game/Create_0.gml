@@ -5,7 +5,7 @@ font = font_comic
 debug = false;
 randomize();
 
-mode = "pb";
+mode = "mtv";
 hacks = true;
 music = false;
 

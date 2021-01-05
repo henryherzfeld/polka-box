@@ -47,15 +47,17 @@ y_move = (input_down - input_up + (dy*dash_distance)) * spd;
 if (!y_move) { x_move = (input_right - input_left + (dx*dash_distance)) * spd; }
 
 //Assign facing variable with movement's direction, default to xmovement
-if(x_move != 0){
-	switch(sign(x_move)){
-		case 1: facing = dir.right; break;
-		case -1: facing = dir.left; break;
-	}
-} else if (y_move != 0) {
-	switch(sign(y_move)){
-		case 1: facing = dir.down; break;
-		case -1: facing = dir.up; break;
+if not move_override {
+	if(x_move != 0){
+		switch(sign(x_move)){
+			case 1: facing = dir.right; break;
+			case -1: facing = dir.left; break;
+		}
+	} else if (y_move != 0) {
+		switch(sign(y_move)){
+			case 1: facing = dir.down; break;
+			case -1: facing = dir.up; break;
+		}
 	}
 }
 
@@ -76,7 +78,7 @@ if(!in_dialogue and !move_override){
 			case 270: sprite_index = stand_left; break;
 		}
 	}
-} else {
+} else if curr_tree == noone {
 	switch(facing){
 		case 0: sprite_index = stand_back; break;
 		case 90: sprite_index = stand_right; break;
@@ -84,6 +86,7 @@ if(!in_dialogue and !move_override){
 		case 270: sprite_index = stand_left; break;
 	}
 }
+
 
 //Check for collision with collision object
 if(x_move != 0){
@@ -196,7 +199,7 @@ if(inst != noone){
 					scr_script_execute_array_1d(args);
 				}
 			}
-			instance_destroy();
+			if destroy instance_destroy();
 		}
 	}
 }
@@ -317,8 +320,20 @@ if inst != noone {
 		curr_tree = inst;
 	}
 	
-	if input_interact {
-		inst.curr_tree += 1;
+	// on input change tree sprite
+	if input_space and not inst.lock {
+		inst.tree_change = true;
+		move_override = true;
+		audio_play_sound(snd_find_clue_with_item, 0, false);
+		
+		// assign plant anim sprite
+		switch(facing){
+			case 0: sprite_index = boop_back; break;
+			case 90: sprite_index = boop_right; break;
+			case 180: sprite_index = boop_front; break;
+			case 270: sprite_index = boop_left; break;
+		}
+	} else { // 
 	}
 } else {
 	curr_tree = noone;
