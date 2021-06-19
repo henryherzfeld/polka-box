@@ -1,0 +1,1 @@
+scripts = [[scr_change_variable, obj_cutscene.id, "active", true]]
