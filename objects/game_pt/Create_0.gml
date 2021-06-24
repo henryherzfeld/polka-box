@@ -48,7 +48,7 @@ coll_h = coll_obj.bbox_bottom+1-coll_obj.bbox_top;
 coll_diag = sqrt(power(coll_w, 2) + power(coll_h, 2));
 spd = 20;
 
-path_position_margin = .1;
+path_position_margin = .025;
 
 enum path {
 	path,
@@ -99,7 +99,7 @@ grid_h = ds_grid_height(path_grid);
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 
-grab_coll_count_max = 10;
+grab_coll_count_max = 30;
 grab_coll_count = -1;
 
 grab_resolution_dir = 0;

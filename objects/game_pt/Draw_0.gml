@@ -14,7 +14,7 @@ if input_draw and drawing {
 	var mx_mod = cos(_dir*pi/180)*coll_w;
 	var my_mod = sin(_dir*pi/180)*coll_w;
 		
-	// calculating shorted line terminal coordinate based upon maximum length
+	// calculating shortened line terminal coordinate based upon maximum length
 	extra_len = max(0, point_distance(mx_prev, my_prev, mx_curr, my_curr) - max_line_len);
 	var xx = cos(_dir*pi/180)*extra_len;
 	var yy = sin(_dir*pi/180)*extra_len;

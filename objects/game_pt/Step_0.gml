@@ -144,7 +144,7 @@ if player.path_position >= 1-path_position_margin or (to_destroy_idx != -1 and t
 		
 		// player jumps off path upon exit but not on path type "slide"
 		if other.path_grid[# other.curr_path_idx, path.type] != path_type.slide {
-			input_jump = true;
+			//input_jump = true;
 		}
 		path_position = 0;
 		
@@ -219,44 +219,32 @@ var grab_coll = rectangle_in_rectangle(player.x, player.y, player.x+player.bbox_
 										px-mx, py+my+gy, px+mx, py+(2*my)+gy
 										);
 
+var start_path = false;
+
 // TEST FOR MOVING PLAYER TO PATH
+// if we've successfully passed time buffer for ending a path and currently not on a path
 if path_ended_count == 0 and curr_path_idx == -1 {
 	
 	var _type = path_grid[# closest, path.type];
 	
-	// if there is a grab collision, begin player placement resolution	
-	if grab_coll and _type != path_type.wall {
+	// if there is a grab collision, not a wall, and grab isnt timing out, begin player placement resolution	
+	if grab_coll and _type != path_type.wall and grab_coll_count <= 0 {
 		
+		show_debug_message("GRAB");
+		
+		// kick off grab collision timeout
 		grab_coll_count = grab_coll_count_max;
 		
+		// set grab target to closest point on closest path
 		grab_resolution_x = px;
 		grab_resolution_y = py;
 		
 		grab_resolution_dir = point_direction(player.x, player.y, px, py);
+
 	}
 	
-	if grab_coll_count > 0 {
-		grab_coll_count -= 1;
-		
-		var ldirx = lengthdir_x(grab_resolution_spd, grab_resolution_dir);
-		var ldiry = lengthdir_y(grab_resolution_spd, grab_resolution_dir);
-		
-		if point_distance(player.x, player.y, px, py) >= grab_resolution_spd {
-			with player {
-				x += ldirx;
-				y += ldiry;
-			}
-		} else {
-			player.x = px;
-			player.y = py;
-		}
-	}
-
-	if path_coll and grab_coll_count <= 0 {
-		grab_coll_count = -1;
-		
-		var _angle = path_grid[# closest, path.angle];
-
+	// if we're eligible for collision determine speed on path start
+	if grab_coll_count > 0 or (path_coll and grab_coll_count <= 0) {
 		// assign speed and change player direction based upon path angle
 		var _spd;
 		
@@ -272,6 +260,43 @@ if path_ended_count == 0 and curr_path_idx == -1 {
 				player.run_dir *= -1;
 				break;
 		}
+	}
+	
+	if grab_coll_count > 0 {
+		grab_coll_count -= 1;
+		
+		player.is_jumping = false;
+		player.jump_count = 0;
+		player.y_move = 0;
+		
+		if curr_path_idx == -1 {
+			var ldirx = lengthdir_x(grab_resolution_spd, grab_resolution_dir);
+			var ldiry = lengthdir_y(grab_resolution_spd, grab_resolution_dir);
+		
+			if point_distance(player.x, player.y, px, py) >= grab_resolution_spd {
+				with player {
+					x += ldirx;
+					y += ldiry;
+				}
+			} else {
+				with player {
+					// end grab collision resolution
+					//player.x = px;
+					//player.y = py;
+				}
+
+				path_coll = false;
+				start_path = true;
+			}
+		}
+	}
+
+	if path_coll and grab_coll_count <= 0 {
+		
+		show_debug_message("NO GRAB");
+		//grab_coll_count = -1;
+		
+		var _angle = path_grid[# closest, path.angle];
 		
 		if _type != path_type.wall {
 			// if starting a path, change player run direction dependent on path angle
@@ -291,17 +316,24 @@ if path_ended_count == 0 and curr_path_idx == -1 {
 				}
 			}
 			
-			with player {
-				path_start(other.path_grid[# closest, path.path], _spd, path_action_continue, true);
-			}
-			
-			curr_path_idx = closest;
-		
-			// calculate normalized position value for use as path_position
-			var target_path_position = _pt/path_get_number(path_grid[# closest, path.path]);
-			player.x = path_get_x(path_grid[# closest, path.path], target_path_position);
-			player.y = path_get_y(path_grid[# closest, path.path], target_path_position);
-			player.path_position = _pt/path_get_number(path_grid[# closest, path.path]);
+			start_path = true;
 		}
 	}
+}
+
+if start_path { 
+	with player {
+		path_start(other.path_grid[# closest, path.path], _spd, path_action_continue, true);
+	}
+	
+	curr_path_idx = closest;
+	// calculate normalized position value for use as path_position
+	var target_path_position = _pt/path_get_number(path_grid[# closest, path.path]);
+	player.x = path_get_x(path_grid[# closest, path.path], target_path_position);
+	player.y = path_get_y(path_grid[# closest, path.path], target_path_position);
+	player.path_position = _pt/path_get_number(path_grid[# closest, path.path]);
+}
+
+if player.jump_count > 0 {
+	show_debug_message("we jumping: " + string(player.jump_count))
 }

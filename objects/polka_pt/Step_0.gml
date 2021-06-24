@@ -209,3 +209,5 @@ if input_right or input_left {
 }
 
 input_jump = false;
+
+show_debug_message(input_jump);
