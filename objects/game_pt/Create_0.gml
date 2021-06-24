@@ -77,6 +77,7 @@ path_grid = ds_grid_create(max_paths, path.length);
 var i = 0;
 repeat(max_paths) {
 	path_grid[# i, path.path] = noone;
+	path_grid[# i, path.objects] = array_create(max_path_objects, noone);
 	i += 1;
 }
 

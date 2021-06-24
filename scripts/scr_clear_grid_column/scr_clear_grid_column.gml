@@ -1,5 +1,7 @@
 ///@description scr_remove_grid_column
 function scr_clear_grid_column(argument0, argument1) {
+	
+	show_debug_message("CLEAR!");
 	//@arg0 grid1
 	//@arg1 idx
 
@@ -7,7 +9,7 @@ function scr_clear_grid_column(argument0, argument1) {
 	var _idx = argument1;
 
 	var w = ds_grid_width(_grid);
-	var h = ds_grid_width(_grid);
+	var h = ds_grid_height(_grid);
 
 	if _idx == w-1 {
 		var i = 0;

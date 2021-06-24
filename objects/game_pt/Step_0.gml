@@ -172,7 +172,7 @@ if to_destroy_idx != -1 {
 	}
 			
 	// reorganize path_grid to reflect removed path
-	path_grid = scr_clear_grid_column(path_grid, to_destroy_idx);
+	path_grid = scr_clear_path_grid_column(path_grid, to_destroy_idx);
 	path_idx -= 1;
 	if curr_path_idx > to_destroy_idx {
 		curr_path_idx -= 1;
@@ -205,7 +205,6 @@ repeat(n_paths) {
 var _pt = scr_get_closest_path_point(path_grid[# closest, path.path], player.x, player.y);
 px = path_get_point_x(path_grid[# closest, path.path], _pt);
 py = path_get_point_y(path_grid[# closest, path.path], _pt);
-
 
 
 // using rectangle in rectangle to detect player contact with path
@@ -251,7 +250,6 @@ if path_ended_count == 0 and curr_path_idx == -1 {
 			player.x = px;
 			player.y = py;
 		}
-		
 	}
 
 	if path_coll and grab_coll_count <= 0 {

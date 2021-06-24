@@ -27,13 +27,15 @@ on_ground = place_meeting(x, y+1, par_collision);
 
 // check for presence on ceiling, assign to var
 on_ceiling = place_meeting(x, y-1, par_collision);
-on_wall = place_meeting(x+1, y, par_collision);
+on_wall = place_meeting(x+1, y, par_collision) or place_meeting(x-1, y, par_collision);
 
+/*
 // test for climb action
 var cm = bbox_h;
 if on_wall {
 	var inst = instance_place(x+1, y, par_collision);
 	if inst != noone and (y <= inst.y+cm and inst.y >= inst.y-cm){
+		show_debug_message("CLIMBING");
 		x = inst.x
 		y = inst.y-bbox_h;
 		
@@ -42,9 +44,11 @@ if on_wall {
 		y_move = 0;
 	} else {
 		// swap player run direction if we've encountered a wall without a possible grab action
+		show_debug_message("SWAPPING");
 		run_dir = run_dir*-1;
 	}
 }
+*/
 
 if input_run {
 	if spd == base_spd {

@@ -1,12 +1,12 @@
 /// @description Insert description here
 
 //input listener for switching to platformer
-/*
+
 if device_mouse_check_button_pressed(0, mb_left) {
 	instance_deactivate_all(false);
 	room_goto(rm_platformer_test_drawing);
 }
-*/
+
 
 /*
 // grabbing audio context for html5

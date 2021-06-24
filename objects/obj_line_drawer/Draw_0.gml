@@ -17,7 +17,7 @@ if game_pt.curr_path_idx != -1 {
 
 // iterate thru grid
 var i = 0;
-repeat(ds_grid_width(game_pt.path_grid)) {
+repeat(game_pt.max_paths) {
 	var _objects = game_pt.path_grid[# i, path.objects];
 	var _time = game_pt.path_grid[# i, path.time];
 	var _angle = game_pt.path_grid[# i, path.angle];
@@ -43,7 +43,7 @@ repeat(ds_grid_width(game_pt.path_grid)) {
 			}
 
 			gpu_set_blendmode(bm_normal);
-			draw_sprite_ext(_object.sprite_index, 0, _object.x, _object.y, 1, 1, _angle, c_white, _time/180);
+			draw_sprite_ext(_object.sprite_index, 0, _object.x, _object.y, 1, 1, _angle, c_white, ((_time+80)/game_pt.path_timeout)*1.2);
 			
 		}
 		j += 1;

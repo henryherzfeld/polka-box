@@ -169,7 +169,6 @@ repeat(array_length_1d(resolution_tiles_x)) { // loop through desired number of 
 					resolutions_x[k] = curr_xs;
 					resolutions_y[k] = curr_ys;
 					
-					//show_debug_message("Zet Det Barg");
 					//show_debug_message(resolutions_x[k]);
 					//show_debug_message(resolutions_y[k]);
 				}
