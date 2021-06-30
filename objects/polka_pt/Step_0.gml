@@ -176,7 +176,7 @@ if collision {
 if move_override {exit;}
 
 x += x_move;
-y += y_move;
+y += clamp(y_move, -y_move_max, y_move_max);
 
 
 //handle slopes
@@ -209,5 +209,3 @@ if input_right or input_left {
 }
 
 input_jump = false;
-
-show_debug_message(input_jump);

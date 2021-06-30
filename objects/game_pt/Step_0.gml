@@ -21,7 +21,13 @@ var to_destroy_idx = -1;
 repeat(ds_grid_width(path_grid)) {
 	var p = path_grid[# i, path.path];
 	if path_exists(p) {
-		path_grid[# i, path.time] -= 1; // time decrement for all paths
+		
+		// test bool flag for "stop player" debug
+		if not debug_path_timeout {
+			path_grid[# i, path.time] -= 1; // time decrement for all paths
+		}
+
+		
 		if not drawing and path_grid[# i, path.time] < 0 { // path deletion on timeout
 
 			// if the player is on this path (i), turn on a flag which will dismount the player
@@ -62,7 +68,8 @@ if input_draw_start {
 	
 	// test for collision on position of line end and
 	// test for collision on line between start and line end
-	if not collision_line(mx_prev, my_prev, mx_coll, my_coll, par_collision, false, false) {
+	if not collision_line(mx_prev, my_prev, mx_coll, my_coll, par_collision, false, false) and
+	   not collision_line(mx_prev, my_prev, mx_coll, my_coll, coll_obj, false, false) {
 		
 		path_grid[# path_idx, path.path] = path_add();
 		
@@ -144,7 +151,7 @@ if player.path_position >= 1-path_position_margin or (to_destroy_idx != -1 and t
 		
 		// player jumps off path upon exit but not on path type "slide"
 		if other.path_grid[# other.curr_path_idx, path.type] != path_type.slide {
-			//input_jump = true;
+			input_jump = true;
 		}
 		path_position = 0;
 		
@@ -209,7 +216,7 @@ py = path_get_point_y(path_grid[# closest, path.path], _pt);
 
 // using rectangle in rectangle to detect player contact with path
 var my = 2;
-var mx = 24;
+var mx = 12;
 var path_coll = rectangle_in_rectangle(player.x, player.y, player.x+player.bbox_w, player.y+player.bbox_h,
 										px-mx, py+my, px+mx, py+(2*my)
 										);
@@ -232,6 +239,11 @@ if path_ended_count == 0 and curr_path_idx == -1 {
 		
 		show_debug_message("GRAB");
 		
+		// kill player jump
+		player.jump_count = 0;
+		player.input_jump = false;
+		player.is_jumping = false;
+		
 		// kick off grab collision timeout
 		grab_coll_count = grab_coll_count_max;
 		
@@ -239,7 +251,8 @@ if path_ended_count == 0 and curr_path_idx == -1 {
 		grab_resolution_x = px;
 		grab_resolution_y = py;
 		
-		grab_resolution_dir = point_direction(player.x, player.y, px, py);
+		// use center of player object for moving to target point on path (bbox_w/2, bbox_h/2)
+		grab_resolution_dir = point_direction(player.x+player.bbox_w/2, player.y+player.bbox_h/2, px, py);
 
 	}
 	
@@ -270,20 +283,21 @@ if path_ended_count == 0 and curr_path_idx == -1 {
 		player.y_move = 0;
 		
 		if curr_path_idx == -1 {
-			var ldirx = lengthdir_x(grab_resolution_spd, grab_resolution_dir);
-			var ldiry = lengthdir_y(grab_resolution_spd, grab_resolution_dir);
 		
 			if point_distance(player.x, player.y, px, py) >= grab_resolution_spd {
+				
+				var ldirx = lengthdir_x(grab_resolution_spd, grab_resolution_dir);
+				var ldiry = lengthdir_y(grab_resolution_spd, grab_resolution_dir);
+				
 				with player {
 					x += ldirx;
 					y += ldiry;
 				}
 			} else {
-				with player {
-					// end grab collision resolution
-					//player.x = px;
-					//player.y = py;
-				}
+				// end grab collision resolution
+				player.x = px;
+				player.y = py;
+				grab_coll_count = -1;
 
 				path_coll = false;
 				start_path = true;
@@ -294,7 +308,7 @@ if path_ended_count == 0 and curr_path_idx == -1 {
 	if path_coll and grab_coll_count <= 0 {
 		
 		show_debug_message("NO GRAB");
-		//grab_coll_count = -1;
+		grab_coll_count = -1;
 		
 		var _angle = path_grid[# closest, path.angle];
 		
@@ -332,8 +346,4 @@ if start_path {
 	player.x = path_get_x(path_grid[# closest, path.path], target_path_position);
 	player.y = path_get_y(path_grid[# closest, path.path], target_path_position);
 	player.path_position = _pt/path_get_number(path_grid[# closest, path.path]);
-}
-
-if player.jump_count > 0 {
-	show_debug_message("we jumping: " + string(player.jump_count))
 }

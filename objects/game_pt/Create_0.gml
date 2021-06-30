@@ -81,6 +81,9 @@ repeat(max_paths) {
 	i += 1;
 }
 
+debug_path_timeout = false;
+debug_time_slowed = false;
+
 path_idx = 0;
 curr_path_idx = -1;
 
@@ -99,7 +102,7 @@ grid_h = ds_grid_height(path_grid);
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 
-grab_coll_count_max = 30;
+grab_coll_count_max = 20;
 grab_coll_count = -1;
 
 grab_resolution_dir = 0;

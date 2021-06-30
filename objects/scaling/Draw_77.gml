@@ -83,11 +83,8 @@ if update or input_any {
 		var curr_x = curr_resolution[0];
 		var curr_y = curr_resolution[1];
 		
-		show_debug_message([curr_x, curr_y]);
-		
 		if curr_x <= max_disp_width and curr_y <= max_disp_height {
 			if curr_x > max_x and curr_y > max_y {
-				show_debug_message("max found")
 				max_x = curr_x;
 				max_y = curr_y;
 			}
@@ -101,9 +98,6 @@ if update or input_any {
 	show_debug_message([window_target_x, window_target_y]);
 	show_debug_message([target_x, target_y]);
     show_debug_message([scale, ratio_names[ratio_idx]]);
-	show_debug_message("DEE BUG");
-	show_debug_message([display_get_width(), display_get_height()]);
-	show_debug_message([window_get_width(), window_get_height()]);
 
 	window_target_x = target_x;
 	window_target_y = target_y;

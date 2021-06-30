@@ -4,3 +4,5 @@
 scr_clear_path_grid(path_grid);
 ds_grid_destroy(path_grid);
 room_goto(room);
+
+room_speed = 60;

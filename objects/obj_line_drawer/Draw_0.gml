@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description draws the player and drawn lines for platforming, performs masking to hide player sprite behind line
 
 if not surface_exists(surface_mask) {
 	surface_mask = surface_create(room_width, room_height);
@@ -6,6 +6,7 @@ if not surface_exists(surface_mask) {
 
 surface_set_target(surface_mask);
 draw_clear_alpha(c_white, 0);
+
 
 // draw player
 draw_sprite_ext(polka_pt.sprite_index, 0, polka_pt.x, polka_pt.y, 1, 1, polka_pt.roll_degree, c_white, 1);
@@ -54,3 +55,7 @@ repeat(game_pt.max_paths) {
 surface_reset_target();
 draw_surface(surface_mask, 0, 0);
 
+if !global.debug { exit; }
+
+// draw player x and y for debug
+draw_circle_color(game_pt.player.x, game_pt.player.y, 5, c_black, c_black, false);

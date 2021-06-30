@@ -37,6 +37,8 @@ is_slow = false;
 x_move = 0;
 y_move = 0;
 
+y_move_max = 25;
+
 accel = 2;
 decel = .5;
 

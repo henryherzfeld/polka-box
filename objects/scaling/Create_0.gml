@@ -151,8 +151,9 @@ repeat(array_length_1d(resolution_tiles_x)) { // loop through desired number of 
 			}
 			k += 1;
 		}
-		show_debug_message(_ratio);
-		show_debug_message(ratio_names[ratio_idx]);
+		
+		//show_debug_message(_ratio);
+		//show_debug_message(ratio_names[ratio_idx]);
 	
 		k = 0;
 		if ratio_idx != -1 {
@@ -183,20 +184,6 @@ repeat(array_length_1d(resolution_tiles_x)) { // loop through desired number of 
 	i += 1;
 }
 
-show_debug_message(open_idxs);
-show_debug_message(resolutions_18_9_x);
-show_debug_message(resolutions_18_9_y);
-show_debug_message(resolutions_18_5_9_x);
-show_debug_message(resolutions_18_5_9_y);
-show_debug_message(resolutions_17_9_x);
-show_debug_message(resolutions_17_9_y);
-show_debug_message(resolutions_16_9_x);
-show_debug_message(resolutions_16_9_y);
-show_debug_message(resolutions_16_10_x);
-show_debug_message(resolutions_16_10_y);
-show_debug_message(resolutions_3_2_x);
-show_debug_message(resolutions_3_2_y);
-
 var idx = 1;
 var curr_arr = resolutions_x[idx];
 var acc = 0;
@@ -207,7 +194,6 @@ repeat(array_length_1d(curr_arr)) {
 	}
 	i += 1;
 }
-show_debug_message([acc, i, open_idxs[idx]]);
 
 // get length of longest resolution array
 var _resolution_n = 0;

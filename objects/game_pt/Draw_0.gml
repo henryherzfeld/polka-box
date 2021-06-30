@@ -1,7 +1,7 @@
 /// @description Insert description here
 
 var my = 2;
-var mx = 24;
+var mx = 12;
 var gy = 25;
 
 // drawing tooltip like line to preview drawn line
@@ -28,9 +28,11 @@ if input_draw and drawing {
 
 if(!global.debug) {exit;}
 
+// draw outlines for grab and standard path collision areas 
 draw_rectangle_color(px-mx, py+my+gy, px+mx, py+(2*my)+gy, c_red, c_red, c_red, c_red, true);
 draw_rectangle_color(px-mx, py+my, px+mx, py+(2*my), c_blue, c_blue, c_blue, c_blue, true);
 
+// draw points on each path, if the path is closest, color closest point on that path red
 var i = 0;
 repeat(ds_grid_width(path_grid)) {
 	var curr_path = path_grid[# i, path.path];
