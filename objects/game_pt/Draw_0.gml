@@ -29,11 +29,13 @@ if input_draw and drawing {
 if(!global.debug) {exit;}
 
 // draw outlines for grab and standard path collision areas 
-draw_rectangle_color(px-mx, py+my+gy, px+mx, py+(2*my)+gy, c_red, c_red, c_red, c_red, true);
-draw_rectangle_color(px-mx, py+my, px+mx, py+(2*my), c_blue, c_blue, c_blue, c_blue, true);
+//draw_rectangle_color(px-mx, py+my+gy, px+mx, py+(2*my)+gy, c_red, c_red, c_red, c_red, true);
+//draw_rectangle_color(px-mx, py+my, px+mx, py+(2*my), c_blue, c_blue, c_blue, c_blue, true);
+
 
 // draw points on each path, if the path is closest, color closest point on that path red
 var i = 0;
+var closest = -1;
 repeat(ds_grid_width(path_grid)) {
 	var curr_path = path_grid[# i, path.path];
 	
@@ -46,12 +48,66 @@ repeat(ds_grid_width(path_grid)) {
 			var col = c_black;
 			if xx == px and yy == py {
 				col = c_red;
+				closest = i;
 			}
 			draw_circle_color(xx, yy, 5, col, col, false);
 			j += 1;
 		}
 	}
 	i += 1;
+}
+
+
+
+if closest != -1 {
+	
+	var i = 0;
+	repeat(n_paths) { 
+	
+		// change grab behavior dependant on wall type, maybe incorporate something more general based off angle?
+		var _type = path_grid[# i, path.type];
+		var _angle = path_grid[# i, path.angle];
+
+		var grab_y_diff;
+		var coll_rad;
+		switch _type {
+			case path_type.wall: {
+				grab_y_diff = 0;	
+				break;
+			}
+			case path_type.normal: {
+				grab_y_diff = 40;
+				break;
+			}
+			case path_type.slide: {
+				grab_y_diff = 25;
+				break;
+			}
+		}
+
+		coll_rad = 10;
+
+		var mod_x;
+		var mod_y;
+		if _angle < 90 or _angle > 270 {
+			mod_x = sin(_angle*pi/180)*player.bbox_w;
+			mod_y = cos(_angle*pi/180)*player.bbox_h;
+		} else {
+			mod_x = -sin(_angle*pi/180)*player.bbox_w;
+			mod_y = -cos(_angle*pi/180)*player.bbox_h;
+		}
+		
+		var _pt = scr_get_closest_path_point(path_grid[# i, path.path], player.x, player.y);
+		var _px = path_get_point_x(path_grid[# i, path.path], _pt);
+		var _py = path_get_point_y(path_grid[# i, path.path], _pt);
+	
+		draw_circle_color(_px, _py, coll_rad, c_blue, c_blue, true);
+		draw_circle_color(_px+mod_x, _py+grab_y_diff, coll_rad, c_red, c_red, true);
+		draw_text_color(_px+25, _py+5, string(round(_angle))+": "+string(round(mod_x))+", "+string(grab_y_diff), c_black, c_black, c_black, c_black, 1);
+		
+		
+		i += 1;
+	}
 }
 
 with(par_collision){

@@ -77,7 +77,7 @@ repeat(ds_grid_width(path_grid)) {
 		var acc = array_create(grid_h, 0);
 		repeat(grid_h) {
 			if j != path.objects {
-				var txt = string(path_grid[# i, j]);
+				var txt = string(round(path_grid[# i, j]));
 				draw_text(xx+margin2, yy+margin+(j*m), txt);
 				acc[j] = string_width(txt + " ");
 			}
@@ -108,9 +108,8 @@ draw_text(xx, yy+margin, "Path End Buffer: " + string(path_ended_count))
 margin += m;
 draw_text(xx, yy+margin, "Ridden Path Idx: " + string(curr_path_idx));
 margin += m;
-draw_text(xx, yy+margin, "Grab Collision Buffer" + string(grab_coll_count));
+draw_text(xx, yy+margin, "Grab Collision Buffer: " + string(path_coll_count));
 margin += m;
-draw_text(xx, yy+margin, "Jump Count" + string(player.jump_count));
-
+draw_text(xx, yy+margin, "Jump Count: " + string(player.jump_count));
 
 draw_set_color(c_white);

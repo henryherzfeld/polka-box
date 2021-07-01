@@ -7,7 +7,6 @@ if not surface_exists(surface_mask) {
 surface_set_target(surface_mask);
 draw_clear_alpha(c_white, 0);
 
-
 // draw player
 draw_sprite_ext(polka_pt.sprite_index, 0, polka_pt.x, polka_pt.y, 1, 1, polka_pt.roll_degree, c_white, 1);
 
@@ -22,6 +21,7 @@ repeat(game_pt.max_paths) {
 	var _objects = game_pt.path_grid[# i, path.objects];
 	var _time = game_pt.path_grid[# i, path.time];
 	var _angle = game_pt.path_grid[# i, path.angle];
+	var mask_line = game_pt.curr_path_idx == i
 	
 	var j = 0;
 	
@@ -29,7 +29,6 @@ repeat(game_pt.max_paths) {
 		var _object = _objects[j];
 		if instance_exists(_object) {
 			gpu_set_blendmode(bm_subtract);
-			draw_sprite_ext(spr_draw_line_subtract, 0, _object.x, _object.y, 1, 1, _angle, c_black, 1);
 			
 			if _angle < 90 or _angle > 270 {
 				var mod_x = sin(_angle*pi/180)*24;
@@ -40,6 +39,7 @@ repeat(game_pt.max_paths) {
 			}
 			
 			if mask_line {
+				draw_sprite_ext(spr_draw_line_subtract, 0, _object.x, _object.y, 1, 1, _angle, c_black, 1);
 				draw_sprite_ext(spr_draw_line_subtract_tall, 0, _object.x+mod_x, _object.y+mod_y, 1, 1, _angle, c_black, 1);
 			}
 

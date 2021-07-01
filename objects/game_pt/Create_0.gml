@@ -1,4 +1,4 @@
-
+draw_set_font(font_small);
 
 application_surface_draw_enable(false);
 
@@ -65,7 +65,7 @@ enum path_type {
 	wall
 }
 
-path_timeout = 3*room_speed;
+path_timeout = 3*60;
 
 n_paths = 0;
 max_paths = 100;
@@ -81,8 +81,11 @@ repeat(max_paths) {
 	i += 1;
 }
 
-debug_path_timeout = false;
+// @@@@@@@@@@@@ DEBUG @@@@@@@@@@@@@@@
+debug_path_timeout = true;
 debug_time_slowed = false;
+player.move_override = true;
+global.debug = true;
 
 path_idx = 0;
 curr_path_idx = -1;
@@ -102,8 +105,8 @@ grid_h = ds_grid_height(path_grid);
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 
-grab_coll_count_max = 20;
-grab_coll_count = -1;
+path_coll_count_max = 20;
+path_coll_count = -1;
 
 grab_resolution_dir = 0;
 grab_resolution_x = 0;

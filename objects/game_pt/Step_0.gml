@@ -213,7 +213,7 @@ var _pt = scr_get_closest_path_point(path_grid[# closest, path.path], player.x, 
 px = path_get_point_x(path_grid[# closest, path.path], _pt);
 py = path_get_point_y(path_grid[# closest, path.path], _pt);
 
-
+/*
 // using rectangle in rectangle to detect player contact with path
 var my = 2;
 var mx = 12;
@@ -225,6 +225,7 @@ var gy = 25;
 var grab_coll = rectangle_in_rectangle(player.x, player.y, player.x+player.bbox_w, player.y+player.bbox_h,
 										px-mx, py+my+gy, px+mx, py+(2*my)+gy
 										);
+										*/
 
 var start_path = false;
 
@@ -233,11 +234,46 @@ var start_path = false;
 if path_ended_count == 0 and curr_path_idx == -1 {
 	
 	var _type = path_grid[# closest, path.type];
+	var _angle = path_grid[# closest, path.angle];
 	
-	// if there is a grab collision, not a wall, and grab isnt timing out, begin player placement resolution	
-	if grab_coll and _type != path_type.wall and grab_coll_count <= 0 {
-		
-		show_debug_message("GRAB");
+	// change grab behavior dependant on wall type, maybe incorporate something more general based off angle?
+	var grab_y_diff;
+	var coll_rad;
+	switch _type {
+		case path_type.wall: {
+			grab_y_diff = 0;	
+			break;
+		}
+		case path_type.normal: {
+			grab_y_diff = 40;
+			break;
+		}
+		case path_type.slide: {
+			grab_y_diff = 25;
+			break;
+		}
+	}
+	
+	coll_rad = 10;
+	
+	var mod_x;
+	var mod_y;
+	if _angle < 90 or _angle > 270 {
+		mod_x = sin(_angle*pi/180)*player.bbox_w;
+		mod_y = cos(_angle*pi/180)*player.bbox_h;
+	} else {
+		mod_x = -sin(_angle*pi/180)*player.bbox_w;
+		mod_y = -cos(_angle*pi/180)*player.bbox_h;
+	}
+
+	with player {
+		var path_coll = rectangle_in_circle(x, y, x+bbox_w, y+bbox_h, other.px, other.py, coll_rad);
+
+		var grab_coll = rectangle_in_circle(x, y, x+bbox_w, y+bbox_h, other.px+mod_x, other.py+grab_y_diff, coll_rad);
+	}
+	
+	// if there is a path or grab collision, not a wall, and grab isnt timing out, begin player placement resolution	
+	if (grab_coll or path_coll) and _type != path_type.wall and path_coll_count <= 0 {
 		
 		// kill player jump
 		player.jump_count = 0;
@@ -245,39 +281,21 @@ if path_ended_count == 0 and curr_path_idx == -1 {
 		player.is_jumping = false;
 		
 		// kick off grab collision timeout
-		grab_coll_count = grab_coll_count_max;
+		path_coll_count = path_coll_count_max;
 		
 		// set grab target to closest point on closest path
 		grab_resolution_x = px;
 		grab_resolution_y = py;
 		
 		// use center of player object for moving to target point on path (bbox_w/2, bbox_h/2)
-		grab_resolution_dir = point_direction(player.x+player.bbox_w/2, player.y+player.bbox_h/2, px, py);
+		grab_resolution_dir = point_direction(player.x, player.y, px, py);
+		//grab_resolution_dir = point_direction(player.x+player.bbox_w/2, player.y+player.bbox_h/2, px, py);
+	}
 
-	}
-	
-	// if we're eligible for collision determine speed on path start
-	if grab_coll_count > 0 or (path_coll and grab_coll_count <= 0) {
-		// assign speed and change player direction based upon path angle
-		var _spd;
+	if path_coll_count > 0 {
+		path_coll_count -= 1;
 		
-		// assign player behavior dependent on path type
-		switch _type {
-			case path_type.normal: 
-				_spd = spd;
-				break;
-			case path_type.slide:
-				_spd = spd*2.5;
-				break;
-			case path_type.wall:
-				player.run_dir *= -1;
-				break;
-		}
-	}
-	
-	if grab_coll_count > 0 {
-		grab_coll_count -= 1;
-		
+		// kill jump
 		player.is_jumping = false;
 		player.jump_count = 0;
 		player.y_move = 0;
@@ -285,6 +303,8 @@ if path_ended_count == 0 and curr_path_idx == -1 {
 		if curr_path_idx == -1 {
 		
 			if point_distance(player.x, player.y, px, py) >= grab_resolution_spd {
+				
+				grab_resolution_dir = point_direction(player.x, player.y, px, py);
 				
 				var ldirx = lengthdir_x(grab_resolution_spd, grab_resolution_dir);
 				var ldiry = lengthdir_y(grab_resolution_spd, grab_resolution_dir);
@@ -297,45 +317,52 @@ if path_ended_count == 0 and curr_path_idx == -1 {
 				// end grab collision resolution
 				player.x = px;
 				player.y = py;
-				grab_coll_count = -1;
+				path_coll_count = -1;
 
-				path_coll = false;
 				start_path = true;
 			}
 		}
 	}
-
-	if path_coll and grab_coll_count <= 0 {
-		
-		show_debug_message("NO GRAB");
-		grab_coll_count = -1;
-		
-		var _angle = path_grid[# closest, path.angle];
-		
-		if _type != path_type.wall {
-			// if starting a path, change player run direction dependent on path angle
-			// but first check if we're using an upwards slide, in which case do not change run direction
-			var can_dir_change = true;
-			if _type = path_type.slide {
-				if (_angle < 90 and _angle > 0) or (_angle > 90 and _angle < 180) {
-					can_dir_change = false;
-				}
-			}
-			
-			if can_dir_change {
-				if _angle > 270 or _angle < 90 { //facing right
-					player.run_dir = 1;
-				} else {
-					player.run_dir = -1;
-				}
-			}
-			
-			start_path = true;
-		}
+	
+	// resolve wall logic in presence of 
+	if (path_coll or grab_coll) and _type == path_type.wall {
+		player.run_dir *= -1;
 	}
 }
 
 if start_path { 
+	
+		// assign speed and change player direction based upon path angle
+		var _spd;
+		
+		switch _type {
+			case path_type.normal: 
+				_spd = spd;
+				break;
+			case path_type.slide:
+				_spd = spd*2.5;
+				break;
+		}
+		
+		var _angle = path_grid[# closest, path.angle];
+
+		// if starting a path, change player run direction dependent on path angle
+		// but first check if we're using an upwards slide, in which case do not change run direction
+		var can_dir_change = true;
+		if _type = path_type.slide {
+			if (_angle < 90 and _angle > 0) or (_angle > 90 and _angle < 180) {
+				can_dir_change = false;
+			}
+		}
+			
+		if can_dir_change {
+			if _angle > 270 or _angle < 90 { //facing right
+				player.run_dir = 1;
+			} else {
+				player.run_dir = -1;
+			}
+		}
+	
 	with player {
 		path_start(other.path_grid[# closest, path.path], _spd, path_action_continue, true);
 	}
@@ -347,3 +374,4 @@ if start_path {
 	player.y = path_get_y(path_grid[# closest, path.path], target_path_position);
 	player.path_position = _pt/path_get_number(path_grid[# closest, path.path]);
 }
+
