@@ -180,7 +180,7 @@ y += clamp(y_move, -y_move_max, y_move_max);
 
 
 //handle slopes
-if input_right or input_left {
+if on_ground {
 	var i = 1;
 	repeat(max_slope_y-1) {
 		var spdd;
@@ -190,14 +190,14 @@ if input_right or input_left {
 			var spdd = spd;
 		}
 		
-		if place_meeting(x+1, y, par_collision) and not place_meeting(x+1, y-i, par_collision) and (input_right or input_roll) {
+		if place_meeting(x+1, y, par_collision) and not place_meeting(x+1, y-i, par_collision) {
 			x += spdd div 2;
 			y -= i;
 			on_slope = true;
 			break;
 		}
 
-		if place_meeting(x-1, y, par_collision) and not place_meeting(x-1, y-i, par_collision) and (input_left or input_roll) {
+		if place_meeting(x-1, y, par_collision) and not place_meeting(x-1, y-i, par_collision) {
 			x -= spdd div 2;
 			y -= i;
 			on_slope = true;

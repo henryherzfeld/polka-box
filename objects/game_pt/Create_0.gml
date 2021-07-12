@@ -9,6 +9,12 @@ if instance_find(polka_pt, 0) {
 	player = polka_pt_rc;
 }
 
+// @@@@@@@@@@@@ DEBUG @@@@@@@@@@@@@@@
+debug_path_timeout = false;
+debug_time_slowed = false;
+player.move_override = false;
+global.debug = true;
+
 room_list = [rm_platformer_test, rm_platformer_test_drawing];
 in_pt_room = false;
 
@@ -48,7 +54,7 @@ coll_h = coll_obj.bbox_bottom+1-coll_obj.bbox_top;
 coll_diag = sqrt(power(coll_w, 2) + power(coll_h, 2));
 spd = 20;
 
-path_position_margin = .025;
+path_position_margin = .2;
 
 enum path {
 	path,
@@ -81,15 +87,11 @@ repeat(max_paths) {
 	i += 1;
 }
 
-// @@@@@@@@@@@@ DEBUG @@@@@@@@@@@@@@@
-debug_path_timeout = true;
-debug_time_slowed = false;
-player.move_override = true;
-global.debug = true;
-
 path_idx = 0;
 curr_path_idx = -1;
 
+closest_calc_counter = 0;
+closest = 0;
 py = 0;
 px = 0;
 
@@ -98,7 +100,7 @@ px = 0;
 max_line_len = 200;
 
 path_ended_count = 0;
-path_ended_timeout = 20;
+path_ended_timeout = 12;
 
 grid_h = ds_grid_height(path_grid);
 

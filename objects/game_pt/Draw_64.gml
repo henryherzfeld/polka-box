@@ -27,7 +27,8 @@ draw_rectangle_color(gui_width-m_but*2, m_but, gui_width-m_but, 0, col2, col2, c
 draw_text(gui_width-m_but*2, m_but/2, "Stop \nPlayer");
 draw_rectangle_color(gui_width-m_but*3, m_but, gui_width-m_but*2, 0, col3, col3, col3, col3, false);
 draw_text(gui_width-m_but*3, m_but/2, "Slow \nTime");
-
+draw_rectangle_color(gui_width-m_but*4, m_but, gui_width-m_but*3, 0, c_ltgray, c_ltgray, c_ltgray, c_ltgray, false);
+draw_text(gui_width-m_but*4, m_but/2, "Reset");
 
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
@@ -45,6 +46,9 @@ if input_draw_end {
 		} else {
 			room_speed = 60;
 		}
+	} else if mx < gui_width-m_but*3 and mx > gui_width-m_but*4 and my > 0 and my < m_but {
+		scr_restart_room();
+		exit;
 	}
 }
 
@@ -111,5 +115,7 @@ margin += m;
 draw_text(xx, yy+margin, "Grab Collision Buffer: " + string(path_coll_count));
 margin += m;
 draw_text(xx, yy+margin, "Jump Count: " + string(player.jump_count));
+margin +=m;
+draw_text(xx, yy+margin, "Player Ground Detection: " + string(player.on_ground));
 
 draw_set_color(c_white);

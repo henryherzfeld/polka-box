@@ -40,6 +40,7 @@ repeat(ds_grid_width(path_grid)) {
 }
 
 n_paths = n_temp;
+path_idx = n_paths;
 
 // handle start and end of draw action
 if input_draw_start {
@@ -139,13 +140,58 @@ if input_draw_start {
 		mx_prev = 0;
 		my_prev = 0;
 		drawing = false;
-		path_idx += 1;
+		//path_idx += 1;
 	} 
 }
 
+
+// get current path's closest path_point's x and y coords
+if not (closest_calc_counter mod 10) {
+	var max_ = 10000;
+	var temp;
+	var i = 0;
+	repeat(n_paths) {
+		var _pt = scr_get_closest_path_point(path_grid[# i, path.path], player.x, player.y);
+		px = path_get_point_x(path_grid[# i, path.path], _pt);
+		py = path_get_point_y(path_grid[# i, path.path], _pt);
+		
+		temp = point_distance(player.x, player.y, px, py);
+		if temp < max_ {
+			closest = i;
+			max_ = temp;
+		}
+		i += 1;
+	}
+}
+closest_calc_counter += 1;
+
+var _pt = scr_get_closest_path_point(path_grid[# closest, path.path], player.x, player.y);
+px = path_get_point_x(path_grid[# closest, path.path], _pt);
+py = path_get_point_y(path_grid[# closest, path.path], _pt);
+
+
+//test and turn on flag if player is going to collide with collision parent while on path
+var player_collision_on_path = false;
+if curr_path_idx != -1 {
+	
+	_angle = path_grid[# closest, path.angle];
+	with player {
+		
+		mod_x = cos(_angle*pi/180)*bbox_w;
+		mod_y = -sin(_angle*pi/180)*bbox_h;
+		
+		if collision_rectangle(x+mod_x, y+mod_y, x+bbox_w+mod_x, y+bbox_h+mod_y, par_collision, false, false) {
+			player_collision_on_path = true;
+		}
+	}
+}
+
+
 // test position on path and remove player from path if player is far enough on path
 // or if a path is flagged to be destroyed and the player is on that path
-if player.path_position >= 1-path_position_margin or (to_destroy_idx != -1 and to_destroy_idx == curr_path_idx) {
+if player.path_position >= 1-path_position_margin
+   or (to_destroy_idx != -1 and to_destroy_idx == curr_path_idx)
+   or player_collision_on_path {
 	with player {
 		path_end();
 		
@@ -180,38 +226,15 @@ if to_destroy_idx != -1 {
 			
 	// reorganize path_grid to reflect removed path
 	path_grid = scr_clear_path_grid_column(path_grid, to_destroy_idx);
-	path_idx -= 1;
+	//path_idx -= 1;
 	if curr_path_idx > to_destroy_idx {
 		curr_path_idx -= 1;
 	}
 }
 
-
 if path_ended_count > 0 {
 	path_ended_count -= 1;
 }
-
-// get current path's closest path_point's x and y coords
-var max_ = 10000;
-var temp;
-var closest = 0;
-var i = 0;
-repeat(n_paths) {
-	var _pt = scr_get_closest_path_point(path_grid[# i, path.path], player.x, player.y);
-	px = path_get_point_x(path_grid[# i, path.path], _pt);
-	py = path_get_point_y(path_grid[# i, path.path], _pt);
-		
-	temp = point_distance(player.x, player.y, px, py);
-	if temp < max_ {
-		closest = i;
-		max_ = temp;
-	}
-	i += 1;
-}
-
-var _pt = scr_get_closest_path_point(path_grid[# closest, path.path], player.x, player.y);
-px = path_get_point_x(path_grid[# closest, path.path], _pt);
-py = path_get_point_y(path_grid[# closest, path.path], _pt);
 
 /*
 // using rectangle in rectangle to detect player contact with path
@@ -364,7 +387,7 @@ if start_path {
 		}
 	
 	with player {
-		path_start(other.path_grid[# closest, path.path], _spd, path_action_continue, true);
+		path_start(other.path_grid[# other.closest, path.path], _spd, path_action_continue, true);
 	}
 	
 	curr_path_idx = closest;
