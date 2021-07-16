@@ -27,7 +27,6 @@ repeat(ds_grid_width(path_grid)) {
 			path_grid[# i, path.time] -= 1; // time decrement for all paths
 		}
 
-		
 		if not drawing and path_grid[# i, path.time] < 0 { // path deletion on timeout
 
 			// if the player is on this path (i), turn on a flag which will dismount the player
@@ -67,10 +66,19 @@ if input_draw_start {
 		my_coll += sin(_angle*pi/180)*coll_w*4;
 	}
 	
+	if _angle < 90 or _angle > 270 {
+		var mod_x = -sin(_angle*pi/180)*player.bbox_w - (player.bbox_w/2);
+		var mod_y = -cos(_angle*pi/180)*player.bbox_h;
+	} else {
+		var mod_x = sin(_angle*pi/180)*player.bbox_w;
+		var mod_y = cos(_angle*pi/180)*player.bbox_h;
+	}
+	
 	// test for collision on position of line end and
 	// test for collision on line between start and line end
 	if not collision_line(mx_prev, my_prev, mx_coll, my_coll, par_collision, false, false) and
-	   not collision_line(mx_prev, my_prev, mx_coll, my_coll, coll_obj, false, false) {
+	   not collision_line(mx_prev, my_prev, mx_coll, my_coll, coll_obj, false, false) and 
+	   not collision_line(mx_prev+mod_x, my_prev+mod_y, mx_coll+mod_x, my_coll+mod_y, par_collision, false, false) {
 		
 		path_grid[# path_idx, path.path] = path_add();
 		
@@ -90,8 +98,10 @@ if input_draw_start {
 		} else if (_angle > 270-ms and _angle < 270+ms) or
 			      (_angle > 90-ms and _angle < 90+ms) {
 			type = path_type.slide;
+			obj_line_drawer.line_draw_col = line_draw.slide;
 		} else { //normal
 			type = path_type.normal;
+			obj_line_drawer.line_draw_col = line_draw.normal;
 		}
 		
 		var arr = array_create(max_path_objects, noone);
@@ -141,9 +151,53 @@ if input_draw_start {
 		my_prev = 0;
 		drawing = false;
 		//path_idx += 1;
-	} 
-}
+	}
+} else if drawing { //if a line isnt being started or ended calculate its type to determine coloring behavior
+	var _dist_raw = point_distance(mx_prev, my_prev, mouse_x, mouse_y);
+	var _dist = min(_dist_raw, max_line_len);
+	var _angle = point_direction(mx_prev, my_prev, mouse_x, mouse_y);
 
+	// move collision line terminal from mouse position to regularized position according to maximum line length
+	var mx_coll = mouse_x + cos((_angle-180)*pi/180)*(_dist_raw-_dist);
+	var my_coll = mouse_y - sin((_angle-180)*pi/180)*(_dist_raw-_dist);
+	
+	// also move location of collision line terminal towards line start slightly to allow drawing slightly into coll
+	// but only if the line is a "horizontal" one
+	var mw = 7.5
+	if (_angle > 270-mw and _angle < 270+mw) or
+		(_angle > 90-mw and _angle < 90+mw) {
+		mx_coll -= cos(_angle*pi/180)*coll_w*4;
+		my_coll += sin(_angle*pi/180)*coll_w*4;
+	}
+	
+	if _angle < 90 or _angle > 270 {
+		var mod_x = -sin(_angle*pi/180)*player.bbox_w - (player.bbox_w/2);
+		var mod_y = -cos(_angle*pi/180)*player.bbox_h;
+	} else {
+		var mod_x = sin(_angle*pi/180)*player.bbox_w;
+		var mod_y = cos(_angle*pi/180)*player.bbox_h;
+	}
+
+	// calculate line type
+	var mw = 7.5;
+	var ms = 32.5;
+	var draw_type;
+	
+	if collision_line(mx_prev, my_prev, mx_coll, my_coll, par_collision, false, false) or
+	   collision_line(mx_prev, my_prev, mx_coll, my_coll, coll_obj, false, false) or 
+	   collision_line(mx_prev+mod_x, my_prev+mod_y, mx_coll+mod_x, my_coll+mod_y, par_collision, false, false) {
+		draw_type = line_draw.invalid;
+	} else if (_angle > 270-mw and _angle < 270+mw) or
+		(_angle > 90-mw and _angle < 90+mw) {
+		draw_type = line_draw.slide // wall
+	} else if (_angle > 270-ms and _angle < 270+ms) or
+			    (_angle > 90-ms and _angle < 90+ms) {
+		draw_type = line_draw.slide;
+	} else {
+		draw_type = line_draw.normal;
+	}
+	obj_line_drawer.line_draw_col = draw_type;
+}
 
 // get current path's closest path_point's x and y coords
 if not (closest_calc_counter mod 10) {
@@ -169,7 +223,6 @@ var _pt = scr_get_closest_path_point(path_grid[# closest, path.path], player.x, 
 px = path_get_point_x(path_grid[# closest, path.path], _pt);
 py = path_get_point_y(path_grid[# closest, path.path], _pt);
 
-
 //test and turn on flag if player is going to collide with collision parent while on path
 var player_collision_on_path = false;
 if curr_path_idx != -1 {
@@ -185,10 +238,10 @@ if curr_path_idx != -1 {
 		}
 	}
 }
-
-
+//var player_collision_on_path = false;
 // test position on path and remove player from path if player is far enough on path
 // or if a path is flagged to be destroyed and the player is on that path
+// or if there is a projected collision from player while on path
 if player.path_position >= 1-path_position_margin
    or (to_destroy_idx != -1 and to_destroy_idx == curr_path_idx)
    or player_collision_on_path {
@@ -200,7 +253,6 @@ if player.path_position >= 1-path_position_margin
 			input_jump = true;
 		}
 		path_position = 0;
-		
 	}
 
 	// kick off path end countdown for buffering player from starting new path

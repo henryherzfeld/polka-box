@@ -73,6 +73,7 @@ repeat(game_pt.max_paths) {
 		var _objects = game_pt.path_grid[# i, path.objects];
 		var _time = game_pt.path_grid[# i, path.time];
 		var _angle = game_pt.path_grid[# i, path.angle];
+		var _type = game_pt.path_grid[# i, path.type];
 		
 		if _angle < 90 or _angle > 270 {
 			var mod_x = sin(_angle*pi/180)*24;
@@ -82,11 +83,18 @@ repeat(game_pt.max_paths) {
 			var mod_y = -cos(_angle*pi/180)*24;
 		}
 		
+		var path_sprite;
+		switch _type { 
+			case 0: path_sprite = spr_collision_half_green; break;
+			case 1: path_sprite = spr_collision_half_blue; break;
+			case 2: path_sprite = spr_collision_half_blue; break;
+		}
+		
 		var j = 0;
 		repeat(array_length_1d(_objects)) {
 			var _object = _objects[j];
 			if instance_exists(_object) {
-				draw_sprite_ext(_object.sprite_index, 0, _object.x, _object.y, 1, 1, _angle, c_white, (_time+20)/game_pt.path_timeout);
+				draw_sprite_ext(path_sprite, 0, _object.x, _object.y, 1, 1, _angle, c_white, (_time+20)/game_pt.path_timeout);
 			}
 			j += 1;
 		}

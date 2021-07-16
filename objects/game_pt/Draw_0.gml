@@ -20,8 +20,17 @@ if input_draw and drawing {
 	var yy = sin(_dir*pi/180)*extra_len;
 	mx_curr -= xx;
 	my_curr += yy;
+	
+	show_debug_message(obj_line_drawer.line_draw_col);
+	
+	var path_sprite;
+	switch obj_line_drawer.line_draw_col { 
+		case 0: path_sprite = coll_obj.sprite_index; break;
+		case 1: path_sprite = spr_collision_half_green; break;
+		case 2: path_sprite = spr_collision_half_blue; break;
+	}
 
-	draw_sprite_pos(coll_obj.sprite_index, 0, mx_prev, my_prev, mx_prev, my_prev+my_mod,
+	draw_sprite_pos(path_sprite, 0, mx_prev, my_prev, mx_prev, my_prev+my_mod,
 												mx_curr, my_curr, mx_curr, my_curr+my_mod,
 												1);
 }
@@ -132,6 +141,10 @@ with(polka){
 
 with(polka_pt){
 	draw_rectangle_color(bbox_left, bbox_top, bbox_right, bbox_bottom, c_yellow, c_yellow, c_yellow, c_yellow, true);	
+}
+
+with(obj_wallclimb){
+	draw_rectangle_color(bbox_left, bbox_top, bbox_right, bbox_bottom,c_blue, c_blue, c_blue, c_blue, true);	
 }
 
 draw_set_alpha(0.3);

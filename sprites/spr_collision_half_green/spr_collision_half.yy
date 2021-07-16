@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_collision_half","path":"sprites/spr_collision_half/spr_collision_half.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_collision_half",
+    "name": "",
     "tags": [],
     "resourceType": "GMSequence",
   },

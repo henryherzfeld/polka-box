@@ -25,30 +25,6 @@ if not place_meeting(x, y+1, par_collision) and on_ground {
 
 on_ground = place_meeting(x, y+1, par_collision);
 
-// check for presence on ceiling, assign to var
-on_ceiling = place_meeting(x, y-1, par_collision);
-on_wall = place_meeting(x+1, y, par_collision) or place_meeting(x-1, y, par_collision);
-
-/*
-// test for climb action
-var cm = bbox_h;
-if on_wall {
-	var inst = instance_place(x+1, y, par_collision);
-	if inst != noone and (y <= inst.y+cm and inst.y >= inst.y-cm){
-		show_debug_message("CLIMBING");
-		x = inst.x
-		y = inst.y-bbox_h;
-		
-		is_jumping = false;
-		jump_count = 0;
-		y_move = 0;
-	} else {
-		// swap player run direction if we've encountered a wall without a possible grab action
-		show_debug_message("SWAPPING");
-		run_dir = run_dir*-1;
-	}
-}
-*/
 
 if input_run {
 	if spd == base_spd {
@@ -101,6 +77,7 @@ if do_roll {
 	}
 }
 
+on_ceiling = place_meeting(x, y-1, par_collision);
 // handle player jumps
 //if input_jump and not is_jumping and on_ground {
 if input_jump and not is_jumping {
@@ -190,14 +167,14 @@ if on_ground {
 			var spdd = spd;
 		}
 		
-		if place_meeting(x+1, y, par_collision) and not place_meeting(x+1, y-i, par_collision) {
+		if place_meeting(x+x_move, y, par_collision) and not place_meeting(x+x_move, y-i, par_collision) {
 			x += spdd div 2;
 			y -= i;
 			on_slope = true;
 			break;
 		}
 
-		if place_meeting(x-1, y, par_collision) and not place_meeting(x-1, y-i, par_collision) {
+		if place_meeting(x-x_move, y, par_collision) and not place_meeting(x-x_move, y-i, par_collision) {
 			x -= spdd div 2;
 			y -= i;
 			on_slope = true;
@@ -206,6 +183,41 @@ if on_ground {
 		i++;
 		on_slope = false;
 	}
+}
+
+on_wall = place_meeting(x+1, y, par_collision) or place_meeting(x-1, y, par_collision);
+
+if on_wall and not on_slope {
+	run_dir = run_dir*-1;
+}
+
+/*
+// test for climb action
+var cm = bbox_h;
+if on_wall and game_pt.path_ended_count == 0 and game_pt.curr_path_idx == -1 {
+	var inst = instance_place(x+1, y, par_collision);
+	if inst == noone {
+		inst = instance_place(x-1, y, par_collision);
+	}
+	if inst != noone and (y <= inst.y+cm and y >= inst.y){
+		show_debug_message("CLIMBING");
+		x = inst.x
+		y = inst.y-bbox_h;
+		
+		is_jumping = false;
+		jump_count = 0;
+		y_move = 0;
+	} else {
+		// swap player run direction if we've encountered a wall without a possible grab action
+		show_debug_message("SWAPPING");
+		run_dir = run_dir*-1;
+	}
+}
+*/
+var inst = collision_rectangle(x, y, x+bbox_w, y+bbox_h, obj_wallclimb, false, false);
+if inst != noone and inst.run_dir == run_dir {
+	x = inst.target_x;
+	y = inst.target_y;
 }
 
 input_jump = false;
