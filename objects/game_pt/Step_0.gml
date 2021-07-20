@@ -233,7 +233,8 @@ if curr_path_idx != -1 {
 		mod_x = cos(_angle*pi/180)*bbox_w;
 		mod_y = -sin(_angle*pi/180)*bbox_h;
 		
-		if collision_rectangle(x+mod_x, y+mod_y, x+bbox_w+mod_x, y+bbox_h+mod_y, par_collision, false, false) {
+		if collision_rectangle(x+mod_x, y+mod_y, x+bbox_w+mod_x, y+bbox_h+mod_y, par_collision, false, false) or 
+		   collision_rectangle(x, y, x+bbox_w, y+bbox_h, par_collision, false, false) {
 			player_collision_on_path = true;
 		}
 	}

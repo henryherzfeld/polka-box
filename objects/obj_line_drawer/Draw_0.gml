@@ -119,13 +119,22 @@ if game_pt.curr_path_idx >= 0 { // if we're riding a line, draw pc on new surfac
 	var _objects = game_pt.path_grid[# game_pt.curr_path_idx, path.objects];
 	var _time = game_pt.path_grid[# game_pt.curr_path_idx, path.time];
 	var _angle = game_pt.path_grid[# game_pt.curr_path_idx, path.angle];
+	var _type= game_pt.path_grid[# game_pt.curr_path_idx, path.type];
 	
+	// calculate modification of line location
 	if _angle < 90 or _angle > 270 {
 		var mod_x = sin(_angle*pi/180)*24;
 		var mod_y = cos(_angle*pi/180)*24;
 	} else {
 		var mod_x = -sin(_angle*pi/180)*24;
 		var mod_y = -cos(_angle*pi/180)*24;
+	}
+	
+	var spr;
+	switch _type {
+		case path_type.normal: spr = spr_collision_half_green; break;
+		case path_type.slide:
+		case path_type.wall: spr = spr_collision_half_blue; break;
 	}
 	
 	j = 0;
@@ -139,7 +148,8 @@ if game_pt.curr_path_idx >= 0 { // if we're riding a line, draw pc on new surfac
 			gpu_set_blendmode(bm_normal);
 		
 			gpu_set_blendenable(false);
-			draw_sprite_ext(_object.sprite_index, 0, _object.x, _object.y, 1, 1, _angle, c_white, (_time+20)/game_pt.path_timeout);
+			
+			draw_sprite_ext(spr, 0, _object.x, _object.y, 1, 1, _angle, c_white, (_time+20)/game_pt.path_timeout);
 			gpu_set_blendenable(true);
 		}
 		j += 1;

@@ -9,9 +9,12 @@ if input_draw and drawing {
 
 	var mx_curr = mouse_x;
 	var my_curr = mouse_y;
+	
+	var pt_draw_x = mx_prev;
+	var pt_draw_y = my_prev;
 		
 	var _dir = point_direction(mx_prev, my_prev, mx_curr, my_curr);
-	var mx_mod = cos(_dir*pi/180)*coll_w;
+	var mx_mod = cos(_dir*pi/180)*coll_h;
 	var my_mod = sin(_dir*pi/180)*coll_w;
 		
 	// calculating shortened line terminal coordinate based upon maximum length
@@ -21,18 +24,27 @@ if input_draw and drawing {
 	mx_curr -= xx;
 	my_curr += yy;
 	
-	show_debug_message(obj_line_drawer.line_draw_col);
-	
 	var path_sprite;
 	switch obj_line_drawer.line_draw_col { 
-		case 0: path_sprite = coll_obj.sprite_index; break;
+		case 0: path_sprite = spr_collision_half; break;
 		case 1: path_sprite = spr_collision_half_green; break;
 		case 2: path_sprite = spr_collision_half_blue; break;
 	}
 
+/*
 	draw_sprite_pos(path_sprite, 0, mx_prev, my_prev, mx_prev, my_prev+my_mod,
 												mx_curr, my_curr, mx_curr, my_curr+my_mod,
-												1);
+												.4);
+												*/
+	var _dist = point_distance(pt_draw_x, pt_draw_y, mx_curr, my_curr);
+												
+	while _dist > coll_w {
+		draw_sprite_ext(path_sprite, 0, pt_draw_x, pt_draw_y, 1, 1, _dir, c_white, .3);
+		pt_draw_x += mx_mod;
+		pt_draw_y -= my_mod;
+		
+		_dist = point_distance(pt_draw_x, pt_draw_y, mx_curr, my_curr);
+	}
 }
 
 if(!global.debug) {exit;}
