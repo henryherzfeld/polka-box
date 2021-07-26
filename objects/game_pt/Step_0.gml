@@ -78,7 +78,8 @@ if input_draw_start {
 	// test for collision on line between start and line end
 	if not collision_line(mx_prev, my_prev, mx_coll, my_coll, par_collision, false, false) and
 	   not collision_line(mx_prev, my_prev, mx_coll, my_coll, coll_obj, false, false) and 
-	   not collision_line(mx_prev+mod_x, my_prev+mod_y, mx_coll+mod_x, my_coll+mod_y, par_collision, false, false) {
+	   not collision_line(mx_prev+mod_x, my_prev+mod_y, mx_coll+mod_x, my_coll+mod_y, par_collision, false, false) and
+       not collision_line(mx_prev+mod_x+player.bbox_w, my_prev+mod_y, mx_coll+mod_x+player.bbox_w, my_coll+mod_y, par_collision, false, false) {
 		
 		path_grid[# path_idx, path.path] = path_add();
 		
@@ -185,7 +186,9 @@ if input_draw_start {
 	
 	if collision_line(mx_prev, my_prev, mx_coll, my_coll, par_collision, false, false) or
 	   collision_line(mx_prev, my_prev, mx_coll, my_coll, coll_obj, false, false) or 
-	   collision_line(mx_prev+mod_x, my_prev+mod_y, mx_coll+mod_x, my_coll+mod_y, par_collision, false, false) {
+	   collision_line(mx_prev+mod_x, my_prev+mod_y, mx_coll+mod_x, my_coll+mod_y, par_collision, false, false) or
+       collision_line(mx_prev+mod_x+player.bbox_w, my_prev+mod_y, mx_coll+mod_x+player.bbox_w, my_coll+mod_y, par_collision, false, false) {
+		   
 		draw_type = line_draw.invalid;
 	} else if (_angle > 270-mw and _angle < 270+mw) or
 		(_angle > 90-mw and _angle < 90+mw) {

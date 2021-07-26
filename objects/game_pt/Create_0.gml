@@ -11,7 +11,7 @@ if instance_find(polka_pt, 0) {
 
 // @@@@@@@@@@@@ DEBUG @@@@@@@@@@@@@@@
 debug_path_timeout = false;
-debug_time_slowed = false;
+debug_time_slowed = true;
 player.move_override = false;
 global.debug = true;
 

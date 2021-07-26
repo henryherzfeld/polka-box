@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Platforming",
-    "path": "folders/Objects/Platforming.yy",
+    "name": "obstacles",
+    "path": "folders/Objects/Platforming/obstacles.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_spike",

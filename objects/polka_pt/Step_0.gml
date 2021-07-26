@@ -185,11 +185,13 @@ if on_ground {
 	}
 }
 
+/*
 on_wall = place_meeting(x+1, y, par_collision) or place_meeting(x-1, y, par_collision);
-
+// reverse player direction on touching wall
 if on_wall and not on_slope {
 	run_dir = run_dir*-1;
 }
+*/
 
 /*
 // test for climb action
