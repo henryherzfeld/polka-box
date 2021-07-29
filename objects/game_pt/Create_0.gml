@@ -15,6 +15,10 @@ debug_time_slowed = true;
 player.move_override = false;
 global.debug = true;
 
+checkpoint = -1;
+spawn_x = 0;
+spawn_y = 0;
+
 room_list = [rm_platformer_test, rm_platformer_test_drawing];
 in_pt_room = false;
 
@@ -32,7 +36,7 @@ trans_instances = ds_list_create();
 // grab all still active instances, deactivate them
 for(var j = 0; j < instance_count; j++) {
 	curr_inst = instance_id[j];
-	if curr_inst.persistent and curr_inst.object_index != obj_fm {
+	if curr_inst.persistent and curr_inst.object_index != obj_fm and curr_inst.object_index != game_pt {
 		instance_deactivate_object(curr_inst);
 		trans_instances[| j] = curr_inst;
 	}
@@ -40,7 +44,6 @@ for(var j = 0; j < instance_count; j++) {
 
 // Create Camera
 var inst = instance_create_layer(0, 0, "Meta", obj_camera_pt);
-inst.persistent = false;
 inst.following = player;
 
 drawing = false;

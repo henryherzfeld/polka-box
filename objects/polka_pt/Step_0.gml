@@ -7,7 +7,7 @@ input_run = keyboard_check(vk_shift);
 //input_roll = keyboard_check(vk_control);
 input_roll = false;
 
-/*
+
 // buffering on_ground
 if not place_meeting(x, y+1, par_collision) and on_ground and ground_buffer {
 	on_ground = true;
@@ -16,10 +16,8 @@ if not place_meeting(x, y+1, par_collision) and on_ground and ground_buffer {
 	on_ground = place_meeting(x, y+1, par_collision);
 	ground_buffer = ground_buffer_len;
 }
-*/
 
-//
-if not place_meeting(x, y+1, par_collision) and on_ground {
+if not place_meeting(x, y+2, par_collision) and on_ground {
 	input_jump = true;
 }
 
@@ -185,13 +183,13 @@ if on_ground {
 	}
 }
 
-/*
+
 on_wall = place_meeting(x+1, y, par_collision) or place_meeting(x-1, y, par_collision);
 // reverse player direction on touching wall
 if on_wall and not on_slope {
 	run_dir = run_dir*-1;
 }
-*/
+
 
 /*
 // test for climb action

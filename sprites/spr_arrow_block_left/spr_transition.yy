@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_transition","path":"sprites/spr_transition/spr_transition.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_transition",
+    "name": "",
     "tags": [],
     "resourceType": "GMSequence",
   },

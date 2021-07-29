@@ -1,14 +1,20 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_arrow_block_bottom",
+    "path": "sprites/spr_arrow_block_bottom/spr_arrow_block_bottom.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
-  "persistent": true,
-  "parentObjectId": null,
+  "persistent": false,
+  "parentObjectId": {
+    "name": "par_collision",
+    "path": "objects/par_collision/par_collision.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
-  "physicsGroup": 0,
+  "physicsGroup": 1,
   "physicsDensity": 0.5,
   "physicsRestitution": 0.1,
   "physicsLinearDamping": 0.1,
@@ -20,6 +26,7 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -28,7 +35,7 @@
     "path": "folders/Objects/Platforming.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_camera_pt",
+  "name": "obj_arrow_block_bottom",
   "tags": [],
   "resourceType": "GMObject",
 }

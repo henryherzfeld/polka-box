@@ -1,9 +1,12 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_ground",
+    "path": "sprites/spr_ground/spr_ground.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
-  "persistent": true,
+  "persistent": false,
   "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
@@ -28,7 +31,7 @@
     "path": "folders/Objects/Platforming.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_camera_pt",
+  "name": "obj_ground_jump",
   "tags": [],
   "resourceType": "GMObject",
 }
