@@ -15,9 +15,9 @@ if(x_move != 0){
 	}
 }
 if(y_move != 0){
-	if(place_meeting(x, y+y_move, par_collision)) {
+	if(place_meeting(x, y+y_move, par_collision) or place_meeting(x, y+y_move, obj_ground_jump)) {
 		repeat(abs(y_move)){
-			if(!place_meeting(x, y+sign(y_move), par_collision)){
+			if(!place_meeting(x, y+sign(y_move), par_collision) and !place_meeting(x, y+sign(y_move), obj_ground_jump)){
 				y += sign(y_move);	
 			} else { break; }
 		}
@@ -25,7 +25,9 @@ if(y_move != 0){
 	}
 }
 
+if place_meeting(x, y, polka_pt) {
+	scr_restart_room();
+}
+
 x += x_move*run_dir;
 y += clamp(y_move, -y_move_max, y_move_max);
-
-show_debug_message(y_move)

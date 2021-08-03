@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "pt_test",
-    "path": "folders/Sprites/pt_test.yy",
+    "name": "Platforming",
+    "path": "folders/Sprites/Platforming.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_draw_line_subtract",

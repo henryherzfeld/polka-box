@@ -47,8 +47,63 @@ if is_slow  {
 
 // runner style fuckery
 //x_move = (input_right - input_left) * round(spd-spd_mod);
-x_move = 3.5*run_dir;
+x_move = spd*run_dir;
 
+//Check for collision with transition object
+var inst = instance_place(x, y, obj_transition);
+
+if (inst != noone and not inst.disable and not game_pt.do_transition) {
+	//scr_audio_play_sound(snd_door_enter, 1, false);
+	with (game_pt) {
+		if (!do_transition){
+			spawn_room = inst.target_room;
+			spawn_x = inst.target_x;
+			spawn_y = inst.target_y;
+			//spawn_facing = other.facing;
+			do_transition = true;
+		}
+	}
+}
+
+// check for collision with checkpoint object
+var inst = instance_place(x, y, obj_checkpoint);
+
+if inst != noone and not inst.pressed and game_pt.checkpoint != inst.checkpoint_id {
+	game_pt.checkpoint = inst.checkpoint_id;
+	game_pt.checkpoint_spawn_x = inst.x;
+	game_pt.checkpoint_spawn_y = inst.y;
+	game_pt.checkpoint_spawn_room = room;
+	inst.pressed = true;
+	
+	with game_pt {
+		//scr_room_snapshot_create();
+	}
+}
+
+// check for collision with collectable
+var inst = instance_place(x, y, par_collectable);
+
+if inst != noone and not inst._disabled { 
+	var _type = object_get_name(inst.object_index);
+	
+	// perform behavior for different collectable types
+	switch _type {
+		case "obj_coin": {
+			game_pt.coins += 1;
+			inst._disabled = true;
+	
+			if not (game_pt.coins mod 10) {
+				game_pt._lives += 1;
+			}
+			break;
+		}
+		case "obj_coin_star": {
+			game_pt.star_coins += 1;
+			inst._disabled = true;
+			break;
+		}
+	}
+}
 
 // performing roll
 if input_roll and on_ground {
@@ -214,7 +269,8 @@ if on_wall and game_pt.path_ended_count == 0 and game_pt.curr_path_idx == -1 {
 	}
 }
 */
-var inst = collision_rectangle(x, y, x+bbox_w, y+bbox_h, obj_wallclimb, false, false);
+//var inst = collision_rectangle(x, y, x+bbox_w, y+bbox_h, obj_wallclimb, false, false);
+var inst = instance_place(x, y, obj_wallclimb);
 if inst != noone and inst.run_dir == run_dir {
 	x = inst.target_x;
 	y = inst.target_y;

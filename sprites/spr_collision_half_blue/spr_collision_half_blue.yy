@@ -25,8 +25,6 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"dc0fc190-0b96-4d3c-b3df-a5defdec7bd5","path":"sprites/spr_collision_half_blue/spr_collision_half_blue.yy",},"LayerId":null,"resourceVersion":"1.0","name":"imported","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"dc0fc190-0b96-4d3c-b3df-a5defdec7bd5","path":"sprites/spr_collision_half_blue/spr_collision_half_blue.yy",},"LayerId":{"name":"6f7045fd-2624-4432-a27c-7f2f3c1e23c7","path":"sprites/spr_collision_half_blue/spr_collision_half_blue.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"dc0fc190-0b96-4d3c-b3df-a5defdec7bd5","path":"sprites/spr_collision_half_blue/spr_collision_half_blue.yy",},"LayerId":{"name":"b008eb4d-2d09-4f0b-957c-ae79b17c2c66","path":"sprites/spr_collision_half_blue/spr_collision_half_blue.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"dc0fc190-0b96-4d3c-b3df-a5defdec7bd5","path":"sprites/spr_collision_half_blue/spr_collision_half_blue.yy",},"LayerId":{"name":"d26a2b7a-42a9-463b-a4be-2f54ab893054","path":"sprites/spr_collision_half_blue/spr_collision_half_blue.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_collision_half_blue","path":"sprites/spr_collision_half_blue/spr_collision_half_blue.yy",},"resourceVersion":"1.0","name":"dc0fc190-0b96-4d3c-b3df-a5defdec7bd5","tags":[],"resourceType":"GMSpriteFrame",},
   ],
@@ -71,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "pt_test",
-    "path": "folders/Sprites/pt_test.yy",
+    "name": "Platforming",
+    "path": "folders/Sprites/Platforming.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_collision_half_blue",

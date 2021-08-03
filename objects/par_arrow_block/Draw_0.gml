@@ -2,4 +2,4 @@
 // You can write your code in this editor
 
 draw_self();
-draw_circle(x+bbox_w/2, y+bbox_h+rad, rad, true);
+draw_circle(coll_x, coll_y, rad, true);

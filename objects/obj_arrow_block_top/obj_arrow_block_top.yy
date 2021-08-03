@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_collision",
-    "path": "objects/par_collision/par_collision.yy",
+    "name": "par_arrow_block",
+    "path": "objects/par_arrow_block/par_arrow_block.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Platforming",
-    "path": "folders/Objects/Platforming.yy",
+    "name": "obstacles",
+    "path": "folders/Objects/Platforming/obstacles.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_arrow_block_top",

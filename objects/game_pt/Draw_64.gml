@@ -1,7 +1,33 @@
 /// @description Insert description here
-// You can write your code in this editor
+
+// handle fade out and room change for transitions from player coll with transition object
+if (do_transition) {
+	if (room != spawn_room) {
+		black_alpha += 0.1;
+		
+		if (black_alpha >= 1) {
+			room_goto(spawn_room);
+		}
+	} else {
+			//alarm[0] = 2 * room_speed;
+			black_alpha -= 0.1;
+			if (black_alpha <= 0){
+				 do_transition = false;
+			}
+		}
+	
+	// Draw fade
+	draw_set_alpha(black_alpha);
+	draw_rectangle_colour(0, 0, gui_width, gui_height, c_black, c_black, c_black, c_black, false);
+	draw_set_alpha(1);
+}
 
 var m_but = 128;
+
+// draw collectible count (coins and lives)
+draw_text(gui_width-m_but, gui_height-m_but, "Star Coins: " + string(star_coins));
+draw_text(gui_width-m_but, gui_height-m_but*1.25, "Coins: " + string(coins));
+draw_text(gui_width-m_but, gui_height-m_but*1.5, "Lives : " + string(_lives));
 
 if global.debug {
 	var col1 = c_black;

@@ -11,13 +11,26 @@ if instance_find(polka_pt, 0) {
 
 // @@@@@@@@@@@@ DEBUG @@@@@@@@@@@@@@@
 debug_path_timeout = false;
-debug_time_slowed = true;
+debug_time_slowed = false;
 player.move_override = false;
 global.debug = true;
 
 checkpoint = -1;
+checkpoint_spawn_x = 0;
+checkpoint_spawn_y = 0;
 spawn_x = 0;
 spawn_y = 0;
+initial_spawn_room = room;
+spawn_room = room;
+checkpoint_spawn_room = room;
+black_alpha = 0;
+
+_lives = 1;
+coins = 0;
+star_coins = 0;
+
+snapshot_exists = false;
+room_snapshot = noone;
 
 room_list = [rm_platformer_test, rm_platformer_test_drawing];
 in_pt_room = false;
@@ -31,15 +44,17 @@ for(var i = 0; i < array_length_1d(room_list); i++) {
 
 if not in_pt_room { instance_destroy(); }
 
+// grab all still active instances, deactivate them and put in trans_instances
 trans_instances = ds_list_create();
-
-// grab all still active instances, deactivate them
-for(var j = 0; j < instance_count; j++) {
-	curr_inst = instance_id[j];
+var curr_inst;
+var j = 0;
+repeat(instance_count) {
+	curr_inst = instance_find(all, j);
 	if curr_inst.persistent and curr_inst.object_index != obj_fm and curr_inst.object_index != game_pt {
 		instance_deactivate_object(curr_inst);
 		trans_instances[| j] = curr_inst;
 	}
+	j++;
 }
 
 // Create Camera
@@ -58,6 +73,8 @@ coll_diag = sqrt(power(coll_w, 2) + power(coll_h, 2));
 spd = 20;
 
 path_position_margin = .2;
+
+do_transition = false;
 
 enum path {
 	path,

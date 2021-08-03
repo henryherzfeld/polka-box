@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Platforming",
-    "path": "folders/Objects/Platforming.yy",
+    "name": "collisions",
+    "path": "folders/Objects/Platforming/collisions.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_collision_45",

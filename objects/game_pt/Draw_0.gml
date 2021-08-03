@@ -163,7 +163,7 @@ draw_set_alpha(0.3);
 
 var xx = 0;
 var yy = 0;
-var cs = 24;
+var cs = 32;
 
 var xr = room_width div cs;
 repeat(xr) {

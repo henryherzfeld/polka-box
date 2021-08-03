@@ -25,7 +25,6 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"dc0fc190-0b96-4d3c-b3df-a5defdec7bd5","path":"sprites/spr_collision_half_green/spr_collision_half_green.yy",},"LayerId":null,"resourceVersion":"1.0","name":"imported","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"dc0fc190-0b96-4d3c-b3df-a5defdec7bd5","path":"sprites/spr_collision_half_green/spr_collision_half_green.yy",},"LayerId":{"name":"6f7045fd-2624-4432-a27c-7f2f3c1e23c7","path":"sprites/spr_collision_half_green/spr_collision_half_green.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"dc0fc190-0b96-4d3c-b3df-a5defdec7bd5","path":"sprites/spr_collision_half_green/spr_collision_half_green.yy",},"LayerId":{"name":"8162bdd1-09f1-48f4-8866-2a4e2d1e43a2","path":"sprites/spr_collision_half_green/spr_collision_half_green.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_collision_half_green","path":"sprites/spr_collision_half_green/spr_collision_half_green.yy",},"resourceVersion":"1.0","name":"dc0fc190-0b96-4d3c-b3df-a5defdec7bd5","tags":[],"resourceType":"GMSpriteFrame",},
   ],
@@ -70,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "pt_test",
-    "path": "folders/Sprites/pt_test.yy",
+    "name": "Platforming",
+    "path": "folders/Sprites/Platforming.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_collision_half_green",

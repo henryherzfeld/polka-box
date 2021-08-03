@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_collision",
-    "path": "objects/par_collision/par_collision.yy",
+    "name": "par_arrow_block",
+    "path": "objects/par_arrow_block/par_arrow_block.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -25,14 +25,12 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Platforming",
-    "path": "folders/Objects/Platforming.yy",
+    "name": "obstacles",
+    "path": "folders/Objects/Platforming/obstacles.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_arrow_block_bottom",
