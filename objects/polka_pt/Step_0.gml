@@ -76,7 +76,7 @@ if inst != noone and not inst.pressed and game_pt.checkpoint != inst.checkpoint_
 	inst.pressed = true;
 	
 	with game_pt {
-		//scr_room_snapshot_create();
+		scr_room_snapshot_create();
 	}
 }
 

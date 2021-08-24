@@ -46,160 +46,171 @@ if input_draw_start {
 	mx_prev = mouse_x;
 	my_prev = mouse_y;
 	
+	camx_prev = camera_get_view_x(cam);
+	camy_prev = camera_get_view_y(cam);
+	
 	drawing = true;
 
-} else if input_draw_end and drawing {
-	var _dist_raw = point_distance(mx_prev, my_prev, mouse_x, mouse_y);
-	var _dist = min(_dist_raw, max_line_len);
-	var _angle = point_direction(mx_prev, my_prev, mouse_x, mouse_y);
-		
-	// move collision line terminal from mouse position to regularized position according to maximum line length
-	var mx_coll = mouse_x + cos((_angle-180)*pi/180)*(_dist_raw-_dist);
-	var my_coll = mouse_y - sin((_angle-180)*pi/180)*(_dist_raw-_dist);
+} else if drawing {
+	var mx_diff = camera_get_view_x(cam) - camx_prev; 
+	var my_diff = camera_get_view_y(cam) - camy_prev; 
+
+	var mx_curr = mouse_x - mx_diff;
+	var my_curr = mouse_y - my_diff;
 	
-	// also move location of collision line terminal towards line start slightly to allow drawing slightly into coll
-	// but only if the line is a "horizontal" one
-	var mw = 7.5
-	if (_angle > 270-mw and _angle < 270+mw) or
-		(_angle > 90-mw and _angle < 90+mw) {
-		mx_coll -= cos(_angle*pi/180)*coll_w*4;
-		my_coll += sin(_angle*pi/180)*coll_w*4;
-	}
+	if input_draw_end {
+		var _dist_raw = point_distance(mx_prev, my_prev, mx_curr, my_curr);
+		var _dist = min(_dist_raw, max_line_len);
+		var _angle = point_direction(mx_prev, my_prev, mx_curr, my_curr);
+		
+		// move collision line terminal from mouse position to regularized position according to maximum line length
+		var mx_coll = mx_curr + cos((_angle-180)*pi/180)*(_dist_raw-_dist);
+		var my_coll = my_curr - sin((_angle-180)*pi/180)*(_dist_raw-_dist);
 	
-	if _angle < 90 or _angle > 270 {
-		var mod_x = -sin(_angle*pi/180)*player.bbox_w - (player.bbox_w/2);
-		var mod_y = -cos(_angle*pi/180)*player.bbox_h;
-	} else {
-		var mod_x = sin(_angle*pi/180)*player.bbox_w;
-		var mod_y = cos(_angle*pi/180)*player.bbox_h;
-	}
+		// also move location of collision line terminal towards line start slightly to allow drawing slightly into coll
+		// but only if the line is a "horizontal" one
+		var mw = 7.5
+		if (_angle > 270-mw and _angle < 270+mw) or
+			(_angle > 90-mw and _angle < 90+mw) {
+			mx_coll -= cos(_angle*pi/180)*coll_w*4;
+			my_coll += sin(_angle*pi/180)*coll_w*4;
+		}
 	
-	// test for collision on position of line end and
-	// test for collision on line between start and line end
-	if not collision_line(mx_prev, my_prev, mx_coll, my_coll, par_collision, false, false) and
-	   not collision_line(mx_prev, my_prev, mx_coll, my_coll, coll_obj, false, false) and 
-	   not collision_line(mx_prev+mod_x, my_prev+mod_y, mx_coll+mod_x, my_coll+mod_y, par_collision, false, false) and
-       not collision_line(mx_prev+mod_x+player.bbox_w, my_prev+mod_y, mx_coll+mod_x+player.bbox_w, my_coll+mod_y, par_collision, false, false) {
+		if _angle < 90 or _angle > 270 {
+			var mod_x = -sin(_angle*pi/180)*player.bbox_w - (player.bbox_w/2);
+			var mod_y = -cos(_angle*pi/180)*player.bbox_h;
+		} else {
+			var mod_x = sin(_angle*pi/180)*player.bbox_w;
+			var mod_y = cos(_angle*pi/180)*player.bbox_h;
+		}
+	
+		// test for collision on position of line end and
+		// test for collision on line between start and line end
+		if not collision_line(mx_prev, my_prev, mx_coll, my_coll, par_collision, false, false) and
+		   not collision_line(mx_prev, my_prev, mx_coll, my_coll, coll_obj, false, false) and 
+		   not collision_line(mx_prev+mod_x, my_prev+mod_y, mx_coll+mod_x, my_coll+mod_y, par_collision, false, false) and
+	       not collision_line(mx_prev+mod_x+player.bbox_w, my_prev+mod_y, mx_coll+mod_x+player.bbox_w, my_coll+mod_y, par_collision, false, false) {
 		
-		path_grid[# path_idx, path.path] = path_add();
+			path_grid[# path_idx, path.path] = path_add();
 		
-		// add x and y components of player bounding box and collision object to path start coord before building line
-		//var mx_curr = mx_prev + cos(_dir*pi/180)*(player.bbox_h+(coll_diag*.5));
-		//var my_curr = my_prev - sin(_dir*pi/180)*(player.bbox_h+(coll_diag*.5));
-		var mx_curr = mx_prev;
-		var my_curr = my_prev;
+			// add x and y components of player bounding box and collision object to path start coord before building line
+			//var mx_curr = mx_prev + cos(_dir*pi/180)*(player.bbox_h+(coll_diag*.5));
+			//var my_curr = my_prev - sin(_dir*pi/180)*(player.bbox_h+(coll_diag*.5));
+			var mx_curr = mx_prev;
+			var my_curr = my_prev;
 		
+			// calculate line type
+			var mw = 7.5;
+			var ms = 32.5;
+			var type;
+			if (_angle > 270-mw and _angle < 270+mw) or
+				(_angle > 90-mw and _angle < 90+mw) {
+				type = path_type.wall;
+			} else if (_angle > 270-ms and _angle < 270+ms) or
+				      (_angle > 90-ms and _angle < 90+ms) {
+				type = path_type.slide;
+				obj_line_drawer.line_draw_col = line_draw.slide;
+			} else { //normal
+				type = path_type.normal;
+				obj_line_drawer.line_draw_col = line_draw.normal;
+			}
+		
+			var arr = array_create(max_path_objects, noone);
+			var i = 0;
+			repeat((_dist div coll_w)+1) {
+			
+				if _angle < 90 or _angle > 270 {
+					var mod_x = -sin(_angle*pi/180)*player.bbox_w - (player.bbox_w/2);
+					var mod_y = -cos(_angle*pi/180)*player.bbox_h;
+				} else {
+					var mod_x = sin(_angle*pi/180)*player.bbox_w;
+					var mod_y = cos(_angle*pi/180)*player.bbox_h;
+				}
+			
+				path_add_point(path_grid[# path_idx, path.path], mx_curr+mod_x, my_curr+mod_y, spd);
+
+				var inst = instance_create_layer(mx_curr, my_curr, "Meta", coll_obj);
+				arr[i] = inst;
+				inst.image_angle = _angle;
+				mx_curr += cos(_angle*pi/180)*coll_w;
+				my_curr -= sin(_angle*pi/180)*coll_w;
+				i += 1;
+			}
+		
+			// associate line objects with path in grid
+			path_grid[# path_idx, path.objects] = arr;
+		
+			// path meta configuration
+			path_set_kind(path_grid[# path_idx, path.path], 1);
+			path_set_precision(path_grid[# path_idx, path.path], 8);
+			path_set_closed(path_grid[# path_idx, path.path], false);
+	
+			// assign metadata to path grid entry
+			path_grid[# path_idx, path.angle] = _angle;
+			path_grid[# path_idx, path.time] = path_timeout;
+		
+			// change slide behavior dependent on player direction
+			if type = path_type.slide {
+				if (_angle < 90 and _angle > 0) or (_angle > 90 and _angle < 180) { // player moving right, slide moving right 
+					path_reverse(path_grid[# path_idx, path.path]);
+				}
+			}
+		
+			path_grid[# path_idx, path.type] = type;
+		
+			mx_prev = 0;
+			my_prev = 0;
+			drawing = false;
+			//path_idx += 1;
+		}
+	} else { //if a line isnt being started or ended calculate its type to determine coloring behavior
+		var _dist_raw = point_distance(mx_prev, my_prev, mx_curr, my_curr);
+		var _dist = min(_dist_raw, max_line_len);
+		var _angle = point_direction(mx_prev, my_prev, mx_curr, my_curr);
+
+		// move collision line terminal from mouse position to regularized position according to maximum line length
+		var mx_coll = mx_curr + cos((_angle-180)*pi/180)*(_dist_raw-_dist);
+		var my_coll = my_curr - sin((_angle-180)*pi/180)*(_dist_raw-_dist);
+	
+		// also move location of collision line terminal towards line start slightly to allow drawing slightly into coll
+		// but only if the line is a "horizontal" one
+		var mw = 7.5
+		if (_angle > 270-mw and _angle < 270+mw) or
+			(_angle > 90-mw and _angle < 90+mw) {
+			mx_coll -= cos(_angle*pi/180)*coll_w*4;
+			my_coll += sin(_angle*pi/180)*coll_w*4;
+		}
+	
+		if _angle < 90 or _angle > 270 {
+			var mod_x = -sin(_angle*pi/180)*player.bbox_w - (player.bbox_w/2);
+			var mod_y = -cos(_angle*pi/180)*player.bbox_h;
+		} else {
+			var mod_x = sin(_angle*pi/180)*player.bbox_w;
+			var mod_y = cos(_angle*pi/180)*player.bbox_h;
+		}
+
 		// calculate line type
 		var mw = 7.5;
 		var ms = 32.5;
-		var type;
-		if (_angle > 270-mw and _angle < 270+mw) or
-			(_angle > 90-mw and _angle < 90+mw) {
-			type = path_type.wall;
-		} else if (_angle > 270-ms and _angle < 270+ms) or
-			      (_angle > 90-ms and _angle < 90+ms) {
-			type = path_type.slide;
-			obj_line_drawer.line_draw_col = line_draw.slide;
-		} else { //normal
-			type = path_type.normal;
-			obj_line_drawer.line_draw_col = line_draw.normal;
-		}
-		
-		var arr = array_create(max_path_objects, noone);
-		var i = 0;
-		repeat((_dist div coll_w)+1) {
-			
-			if _angle < 90 or _angle > 270 {
-				var mod_x = -sin(_angle*pi/180)*player.bbox_w - (player.bbox_w/2);
-				var mod_y = -cos(_angle*pi/180)*player.bbox_h;
-			} else {
-				var mod_x = sin(_angle*pi/180)*player.bbox_w;
-				var mod_y = cos(_angle*pi/180)*player.bbox_h;
-			}
-			
-			path_add_point(path_grid[# path_idx, path.path], mx_curr+mod_x, my_curr+mod_y, spd);
-
-			var inst = instance_create_layer(mx_curr, my_curr, "Meta", coll_obj);
-			arr[i] = inst;
-			inst.image_angle = _angle;
-			mx_curr += cos(_angle*pi/180)*coll_w;
-			my_curr -= sin(_angle*pi/180)*coll_w;
-			i += 1;
-		}
-		
-		// associate line objects with path in grid
-		path_grid[# path_idx, path.objects] = arr;
-		
-		// path meta configuration
-		path_set_kind(path_grid[# path_idx, path.path], 1);
-		path_set_precision(path_grid[# path_idx, path.path], 8);
-		path_set_closed(path_grid[# path_idx, path.path], false);
+		var draw_type;
 	
-		// assign metadata to path grid entry
-		path_grid[# path_idx, path.angle] = _angle;
-		path_grid[# path_idx, path.time] = path_timeout;
-		
-		// change slide behavior dependent on player direction
-		if type = path_type.slide {
-			if (_angle < 90 and _angle > 0) or (_angle > 90 and _angle < 180) { // player moving right, slide moving right 
-				path_reverse(path_grid[# path_idx, path.path]);
-			}
-		}
-		
-		path_grid[# path_idx, path.type] = type;
-		
-		mx_prev = 0;
-		my_prev = 0;
-		drawing = false;
-		//path_idx += 1;
-	}
-} else if drawing { //if a line isnt being started or ended calculate its type to determine coloring behavior
-	var _dist_raw = point_distance(mx_prev, my_prev, mouse_x, mouse_y);
-	var _dist = min(_dist_raw, max_line_len);
-	var _angle = point_direction(mx_prev, my_prev, mouse_x, mouse_y);
-
-	// move collision line terminal from mouse position to regularized position according to maximum line length
-	var mx_coll = mouse_x + cos((_angle-180)*pi/180)*(_dist_raw-_dist);
-	var my_coll = mouse_y - sin((_angle-180)*pi/180)*(_dist_raw-_dist);
-	
-	// also move location of collision line terminal towards line start slightly to allow drawing slightly into coll
-	// but only if the line is a "horizontal" one
-	var mw = 7.5
-	if (_angle > 270-mw and _angle < 270+mw) or
-		(_angle > 90-mw and _angle < 90+mw) {
-		mx_coll -= cos(_angle*pi/180)*coll_w*4;
-		my_coll += sin(_angle*pi/180)*coll_w*4;
-	}
-	
-	if _angle < 90 or _angle > 270 {
-		var mod_x = -sin(_angle*pi/180)*player.bbox_w - (player.bbox_w/2);
-		var mod_y = -cos(_angle*pi/180)*player.bbox_h;
-	} else {
-		var mod_x = sin(_angle*pi/180)*player.bbox_w;
-		var mod_y = cos(_angle*pi/180)*player.bbox_h;
-	}
-
-	// calculate line type
-	var mw = 7.5;
-	var ms = 32.5;
-	var draw_type;
-	
-	if collision_line(mx_prev, my_prev, mx_coll, my_coll, par_collision, false, false) or
-	   collision_line(mx_prev, my_prev, mx_coll, my_coll, coll_obj, false, false) or 
-	   collision_line(mx_prev+mod_x, my_prev+mod_y, mx_coll+mod_x, my_coll+mod_y, par_collision, false, false) or
-       collision_line(mx_prev+mod_x+player.bbox_w, my_prev+mod_y, mx_coll+mod_x+player.bbox_w, my_coll+mod_y, par_collision, false, false) {
+		if collision_line(mx_prev, my_prev, mx_coll, my_coll, par_collision, false, false) or
+		   collision_line(mx_prev, my_prev, mx_coll, my_coll, coll_obj, false, false) or 
+		   collision_line(mx_prev+mod_x, my_prev+mod_y, mx_coll+mod_x, my_coll+mod_y, par_collision, false, false) or
+	       collision_line(mx_prev+mod_x+player.bbox_w, my_prev+mod_y, mx_coll+mod_x+player.bbox_w, my_coll+mod_y, par_collision, false, false) {
 		   
-		draw_type = line_draw.invalid;
-	} else if (_angle > 270-mw and _angle < 270+mw) or
-		(_angle > 90-mw and _angle < 90+mw) {
-		draw_type = line_draw.slide // wall
-	} else if (_angle > 270-ms and _angle < 270+ms) or
-			    (_angle > 90-ms and _angle < 90+ms) {
-		draw_type = line_draw.slide;
-	} else {
-		draw_type = line_draw.normal;
+			draw_type = line_draw.invalid;
+		} else if (_angle > 270-mw and _angle < 270+mw) or
+			(_angle > 90-mw and _angle < 90+mw) {
+			draw_type = line_draw.slide // wall
+		} else if (_angle > 270-ms and _angle < 270+ms) or
+				    (_angle > 90-ms and _angle < 90+ms) {
+			draw_type = line_draw.slide;
+		} else {
+			draw_type = line_draw.normal;
+		}
+		obj_line_drawer.line_draw_col = draw_type;
 	}
-	obj_line_drawer.line_draw_col = draw_type;
 }
 
 // get current path's closest path_point's x and y coords

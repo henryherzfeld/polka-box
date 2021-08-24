@@ -1,5 +1,53 @@
 /// @description draws the player and drawn lines for platforming, performs masking to hide player sprite behind line
 
+with game_pt {
+	// drawing tooltip like line to preview drawn line
+	if input_draw and drawing {
+		
+		var mx_diff = camera_get_view_x(cam) - camx_prev; 
+		var my_diff = camera_get_view_y(cam) - camy_prev; 
+
+		var mx_curr = mouse_x - mx_diff;
+		var my_curr = mouse_y - my_diff;
+	
+		var pt_draw_x = mx_prev;
+		var pt_draw_y = my_prev;
+		
+		var _dir = point_direction(mx_prev, my_prev, mx_curr, my_curr);
+		var mx_mod = cos(_dir*pi/180)*coll_h;
+		var my_mod = sin(_dir*pi/180)*coll_w;
+		
+		// calculating shortened line terminal coordinate based upon maximum length
+		extra_len = max(0, point_distance(mx_prev, my_prev, mx_curr, my_curr) - max_line_len);
+		var xx = cos(_dir*pi/180)*extra_len;
+		var yy = sin(_dir*pi/180)*extra_len;
+		mx_curr -= xx;
+		my_curr += yy;
+	
+		var path_sprite;
+		switch obj_line_drawer.line_draw_col { 
+			case 0: path_sprite = spr_collision_half; break;
+			case 1: path_sprite = spr_collision_half_green; break;
+			case 2: path_sprite = spr_collision_half_blue; break;
+		}
+
+	/*
+		draw_sprite_pos(path_sprite, 0, mx_prev, my_prev, mx_prev, my_prev+my_mod,
+													mx_curr, my_curr, mx_curr, my_curr+my_mod,
+													.4);
+													*/
+		var _dist = point_distance(pt_draw_x, pt_draw_y, mx_curr, my_curr);
+												
+		while _dist > coll_w {
+			draw_sprite_ext(path_sprite, 0, pt_draw_x, pt_draw_y, 1, 1, _dir, c_white, .3);
+			pt_draw_x += mx_mod;
+			pt_draw_y -= my_mod;
+		
+			_dist = point_distance(pt_draw_x, pt_draw_y, mx_curr, my_curr);
+		}
+	}
+}
+
 /*
 
 if not surface_exists(surface_mask) {
@@ -59,7 +107,6 @@ if !global.debug { exit; }
 // draw player x and y for debug
 draw_circle_color(game_pt.player.x, game_pt.player.y, 5, c_black, c_black, false);
 */
-
 
 
 

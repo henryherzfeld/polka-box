@@ -1,58 +1,10 @@
 /// @description Insert description here
 
-var my = 2;
-var mx = 12;
-var gy = 25;
-
-// drawing tooltip like line to preview drawn line
-if input_draw and drawing {
-
-	var mx_curr = mouse_x;
-	var my_curr = mouse_y;
-	
-	var pt_draw_x = mx_prev;
-	var pt_draw_y = my_prev;
-		
-	var _dir = point_direction(mx_prev, my_prev, mx_curr, my_curr);
-	var mx_mod = cos(_dir*pi/180)*coll_h;
-	var my_mod = sin(_dir*pi/180)*coll_w;
-		
-	// calculating shortened line terminal coordinate based upon maximum length
-	extra_len = max(0, point_distance(mx_prev, my_prev, mx_curr, my_curr) - max_line_len);
-	var xx = cos(_dir*pi/180)*extra_len;
-	var yy = sin(_dir*pi/180)*extra_len;
-	mx_curr -= xx;
-	my_curr += yy;
-	
-	var path_sprite;
-	switch obj_line_drawer.line_draw_col { 
-		case 0: path_sprite = spr_collision_half; break;
-		case 1: path_sprite = spr_collision_half_green; break;
-		case 2: path_sprite = spr_collision_half_blue; break;
-	}
-
-/*
-	draw_sprite_pos(path_sprite, 0, mx_prev, my_prev, mx_prev, my_prev+my_mod,
-												mx_curr, my_curr, mx_curr, my_curr+my_mod,
-												.4);
-												*/
-	var _dist = point_distance(pt_draw_x, pt_draw_y, mx_curr, my_curr);
-												
-	while _dist > coll_w {
-		draw_sprite_ext(path_sprite, 0, pt_draw_x, pt_draw_y, 1, 1, _dir, c_white, .3);
-		pt_draw_x += mx_mod;
-		pt_draw_y -= my_mod;
-		
-		_dist = point_distance(pt_draw_x, pt_draw_y, mx_curr, my_curr);
-	}
-}
-
 if(!global.debug) {exit;}
 
 // draw outlines for grab and standard path collision areas 
 //draw_rectangle_color(px-mx, py+my+gy, px+mx, py+(2*my)+gy, c_red, c_red, c_red, c_red, true);
 //draw_rectangle_color(px-mx, py+my, px+mx, py+(2*my), c_blue, c_blue, c_blue, c_blue, true);
-
 
 // draw points on each path, if the path is closest, color closest point on that path red
 var i = 0;

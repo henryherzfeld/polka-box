@@ -32,6 +32,12 @@ star_coins = 0;
 snapshot_exists = false;
 room_snapshot = noone;
 
+// line drawing and placement
+mx_prev = 0;
+my_prev = 0;
+camx_prev = 0;
+camy_prev = 0;
+
 room_list = [rm_platformer_test, rm_platformer_test_drawing];
 in_pt_room = false;
 
@@ -58,8 +64,9 @@ repeat(instance_count) {
 }
 
 // Create Camera
-var inst = instance_create_layer(0, 0, "Meta", obj_camera_pt);
+inst = instance_create_layer(0, 0, "Meta", obj_camera_pt);
 inst.following = player;
+cam = view_camera[0];
 
 drawing = false;
 

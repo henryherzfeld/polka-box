@@ -8,6 +8,17 @@ if checkpoint >= 0 {
 		player.y = checkpoint_spawn_y;
 		//polka.facing = spawn_facing;
 	}
+	
+	// disable collectables
+	var disabled_coins = room_snapshot[? "disabled_coins"];
+			
+	var i = 0;
+	repeat(ds_list_size(disabled_coins)) {
+		var _id = disabled_coins[| i];
+		show_debug_message(_id)
+		_id._disabled = true;
+		i++;
+	}
 }
 
 scr_clear_path_grid(path_grid);
