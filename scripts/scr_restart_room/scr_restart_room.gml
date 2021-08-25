@@ -16,10 +16,6 @@ function scr_restart_room(){
 			//update map to store updated life count, only way to reach checkpoint is death
 			_map[? "lives"] = _lives-1;
 			
-			game_pt.coins = coins;
-			game_pt.star_coins = star_coins;
-			game_pt._lives = _lives-1;
-			
 			var i = 0;
 			repeat(ds_list_size(disabled_coins)) {
 				var _id = disabled_coins[| i];
@@ -33,7 +29,19 @@ function scr_restart_room(){
 				_id._disabled = true;
 				i++;
 			}
+			
+			// set coins and star coins to recorded state
+			game_pt.coins = coins;
+			game_pt.star_coins = star_coins;
+			
+		} else {
+			
+			// no snapshot, set coins and star coins back to 0
+			game_pt.coins = 0;
+			game_pt.star_coins = 0;
 		}	
+		
+		game_pt._lives -= 1;
 		
 	} else { // reset collectibles and return to beginning of level
 		room_goto(game_pt.initial_spawn_room);
