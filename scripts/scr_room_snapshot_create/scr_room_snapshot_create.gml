@@ -27,5 +27,21 @@ function scr_room_snapshot_create(){
 	
 	_map[? "disabled_coins"] = disabled_coins;
 	
+	// collect and store all modified arrow blocks
+	var disabled_arrow_walls = ds_list_create();
+	var inst = instance_find(obj_arrow_wall, 0);
+	
+	var i = 1;
+	while inst != noone {
+		if inst._disabled {
+			ds_list_add(disabled_arrow_walls, inst.id);
+		}
+		
+		inst = instance_find(obj_arrow_wall, i);
+		i += 1;
+	}
+	
+	_map[? "disabled_arrow_walls"] = disabled_arrow_walls;
+	
 	game_pt.snapshot_exists = true;
 }

@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "spr_arrow_block_top",
-    "path": "sprites/spr_arrow_block_top/spr_arrow_block_top.yy",
+    "name": "spr_transition",
+    "path": "sprites/spr_transition/spr_transition.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_arrow_block",
-    "path": "objects/par_arrow_block/par_arrow_block.yy",
+    "name": "par_collision",
+    "path": "objects/par_collision/par_collision.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -26,7 +26,6 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -35,7 +34,7 @@
     "path": "folders/Objects/Platforming/obstacles/arrow_blocks.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_arrow_block_top",
+  "name": "obj_arrow_wall",
   "tags": [],
   "resourceType": "GMObject",
 }

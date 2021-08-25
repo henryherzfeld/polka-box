@@ -22,7 +22,7 @@ walk_back = spr_polka_pt;
 walk_left = spr_polka_pt;
 walk_right = spr_polka_pt;
 
-spd = 3;
+spd = 2.5;
 base_spd = spd;
 run_spd = 3.75;
 max_spd = 5.5;

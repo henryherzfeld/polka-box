@@ -11,6 +11,7 @@ function scr_restart_room(){
 			var star_coins = _map[? "star_coins"];
 			var _lives = _map[? "lives"];
 			var disabled_coins = _map[? "disabled_coins"];
+			var disabled_arrow_walls = _map[? "disabled_arrow_walls"];
 			
 			//update map to store updated life count, only way to reach checkpoint is death
 			_map[? "lives"] = _lives-1;
@@ -22,6 +23,13 @@ function scr_restart_room(){
 			var i = 0;
 			repeat(ds_list_size(disabled_coins)) {
 				var _id = disabled_coins[| i];
+				_id._disabled = true;
+				i++;
+			}
+			
+			var i = 0;
+			repeat(ds_list_size(disabled_arrow_walls)) {
+				var _id = disabled_arrow_walls[| i];
 				_id._disabled = true;
 				i++;
 			}

@@ -29,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "obstacles",
-    "path": "folders/Objects/Platforming/obstacles.yy",
+    "name": "arrow_blocks",
+    "path": "folders/Objects/Platforming/obstacles/arrow_blocks.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_arrow_block_bottom",

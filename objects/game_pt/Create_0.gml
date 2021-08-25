@@ -64,7 +64,7 @@ repeat(instance_count) {
 }
 
 // Create Camera
-inst = instance_create_layer(0, 0, "Meta", obj_camera_pt);
+var inst = instance_create_layer(0, 0, "Meta", obj_camera_pt);
 inst.following = player;
 cam = view_camera[0];
 
@@ -77,7 +77,7 @@ inst.visible = false;
 coll_w = coll_obj.bbox_right+1-coll_obj.bbox_left;
 coll_h = coll_obj.bbox_bottom+1-coll_obj.bbox_top;
 coll_diag = sqrt(power(coll_w, 2) + power(coll_h, 2));
-spd = 20;
+spd = 15;
 
 path_position_margin = .2;
 
