@@ -4,8 +4,10 @@ with game_pt {
 	// drawing tooltip like line to preview drawn line
 	if input_draw and drawing {
 		
-		var mx_diff = camera_get_view_x(cam) - camx_prev; 
-		var my_diff = camera_get_view_y(cam) - camy_prev; 
+		var mx_diff = camera_get_view_x(view_camera[0]) - camx_prev; 
+		var my_diff = camera_get_view_y(view_camera[0]) - camy_prev; 
+		
+		show_debug_message(camera_get_view_x(view_camera[0]));
 
 		var mx_curr = mouse_x - mx_diff;
 		var my_curr = mouse_y - my_diff;

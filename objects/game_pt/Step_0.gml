@@ -46,19 +46,28 @@ if input_draw_start {
 	mx_prev = mouse_x;
 	my_prev = mouse_y;
 	
-	camx_prev = camera_get_view_x(cam);
-	camy_prev = camera_get_view_y(cam);
+	camx_prev = camera_get_view_x(view_camera[0]);
+	camy_prev = camera_get_view_y(view_camera[0]);
 	
 	drawing = true;
+	draw_count = draw_count_max;
+	room_speed = line_slowdown_spd;
 
 } else if drawing {
-	var mx_diff = camera_get_view_x(cam) - camx_prev; 
-	var my_diff = camera_get_view_y(cam) - camy_prev; 
+	var mx_diff = camera_get_view_x(view_camera[0]) - camx_prev; 
+	var my_diff = camera_get_view_y(view_camera[0]) - camy_prev; 
 
 	var mx_curr = mouse_x - mx_diff;
 	var my_curr = mouse_y - my_diff;
 	
-	if input_draw_end {
+	draw_count -= 1;
+	
+	if draw_count <= 0 {
+		mx_prev = 0;
+		my_prev = 0;
+		drawing = false;
+		room_speed = 60;
+	} else if input_draw_end {
 		var _dist_raw = point_distance(mx_prev, my_prev, mx_curr, my_curr);
 		var _dist = min(_dist_raw, max_line_len);
 		var _angle = point_direction(mx_prev, my_prev, mx_curr, my_curr);
@@ -149,18 +158,23 @@ if input_draw_start {
 			path_grid[# path_idx, path.angle] = _angle;
 			path_grid[# path_idx, path.time] = path_timeout;
 		
-			// change slide behavior dependent on player direction
-			if type = path_type.slide {
-				if (_angle < 90 and _angle > 0) or (_angle > 90 and _angle < 180) { // player moving right, slide moving right 
-					path_reverse(path_grid[# path_idx, path.path]);
-				}
+			// change path behavior dependent on player direction
+			//if (_angle < 90 and _angle > 0) or (_angle > 90 and _angle < 180) { // player moving right, slide moving right 
+			var path_forward = (_angle < 90 and _angle > 0) or (_angle < 360 and _angle > 270);
+			if not path_forward {
+				path_forward = -1;
 			}
-		
+
+			if path_forward != player.run_dir { // if direction of player and path don't match, reverse it
+				path_reverse(path_grid[# path_idx, path.path]);
+			}
+
 			path_grid[# path_idx, path.type] = type;
 		
 			mx_prev = 0;
 			my_prev = 0;
 			drawing = false;
+			room_speed = 60;
 			//path_idx += 1;
 		}
 	} else { //if a line isnt being started or ended calculate its type to determine coloring behavior
@@ -269,6 +283,8 @@ if player.path_position >= 1-path_position_margin
 		}
 		path_position = 0;
 	}
+	
+	to_destroy_idx = curr_path_idx;
 
 	// kick off path end countdown for buffering player from starting new path
 	path_ended_count = path_ended_timeout;
@@ -279,7 +295,7 @@ if player.path_position >= 1-path_position_margin
 }
 
 // destroy path flagged for destruction
-if to_destroy_idx != -1 {
+if to_destroy_idx != -1 and path_exists(path_grid[# to_destroy_idx, path.path]) {
 	path_delete(path_grid[# to_destroy_idx, path.path]);
 	var curr_objects = path_grid[# to_destroy_idx, path.objects];
 	var j = 0;
@@ -422,36 +438,38 @@ if path_ended_count == 0 and curr_path_idx == -1 {
 
 if start_path { 
 	
-		// assign speed and change player direction based upon path angle
-		var _spd;
+	// assign speed and change player direction based upon path angle
+	var _spd;
 		
-		switch _type {
-			case path_type.normal: 
-				_spd = spd;
-				break;
-			case path_type.slide:
-				_spd = spd*2.5;
-				break;
-		}
+	switch _type {
+		case path_type.normal: 
+			_spd = spd;
+			break;
+		case path_type.slide:
+			_spd = spd*2.5;
+			break;
+	}
 		
-		var _angle = path_grid[# closest, path.angle];
+	var _angle = path_grid[# closest, path.angle];
 
-		// if starting a path, change player run direction dependent on path angle
-		// but first check if we're using an upwards slide, in which case do not change run direction
-		var can_dir_change = true;
-		if _type = path_type.slide {
-			if (_angle < 90 and _angle > 0) or (_angle > 90 and _angle < 180) {
-				can_dir_change = false;
-			}
+	// if starting a path, change player run direction dependent on path angle
+	// but first check if we're using an upwards slide, in which case do not change run direction
+	var can_dir_change = true;
+	if _type = path_type.slide {
+		if (_angle < 90 and _angle > 0) or (_angle > 90 and _angle < 180) {
+			can_dir_change = false;
 		}
-			
-		if can_dir_change {
-			if _angle > 270 or _angle < 90 { //facing right
-				player.run_dir = 1;
-			} else {
-				player.run_dir = -1;
-			}
+	}
+		
+	/*
+	if can_dir_change {
+		if _angle > 270 or _angle < 90 { //facing right
+			player.run_dir = 1;
+		} else {
+			player.run_dir = -1;
 		}
+	}
+	*/
 	
 	with player {
 		path_start(other.path_grid[# other.closest, path.path], _spd, path_action_continue, true);

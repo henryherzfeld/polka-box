@@ -15,6 +15,7 @@ debug_time_slowed = false;
 player.move_override = false;
 global.debug = true;
 
+
 checkpoint = -1;
 checkpoint_spawn_x = 0;
 checkpoint_spawn_y = 0;
@@ -24,6 +25,7 @@ initial_spawn_room = room;
 spawn_room = room;
 checkpoint_spawn_room = room;
 black_alpha = 0;
+line_slowdown_spd = 25;
 
 _lives = 1;
 coins = 0;
@@ -66,9 +68,11 @@ repeat(instance_count) {
 // Create Camera
 var inst = instance_create_layer(0, 0, "Meta", obj_camera_pt);
 inst.following = player;
-cam = view_camera[0];
+
 
 drawing = false;
+draw_count_max = 60*1.45;
+draw_count = draw_count_max;
 
 coll_obj = obj_drawn_line;
 
