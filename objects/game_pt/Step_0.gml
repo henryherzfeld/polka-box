@@ -54,6 +54,7 @@ if input_draw_start {
 	room_speed = line_slowdown_spd;
 
 } else if drawing {
+	// use camera position as offset for path terminal to remove change in terminal from movement of character in x, y plane
 	var mx_diff = camera_get_view_x(view_camera[0]) - camx_prev; 
 	var my_diff = camera_get_view_y(view_camera[0]) - camy_prev; 
 
@@ -170,13 +171,13 @@ if input_draw_start {
 			}
 
 			path_grid[# path_idx, path.type] = type;
-		
-			mx_prev = 0;
-			my_prev = 0;
-			drawing = false;
-			room_speed = 60;
-			//path_idx += 1;
 		}
+		
+		mx_prev = 0;
+		my_prev = 0;
+		drawing = false;
+		room_speed = 60;
+		
 	} else { //if a line isnt being started or ended calculate its type to determine coloring behavior
 		var _dist_raw = point_distance(mx_prev, my_prev, mx_curr, my_curr);
 		var _dist = min(_dist_raw, max_line_len);

@@ -143,5 +143,7 @@ margin += m;
 draw_text(xx, yy+margin, "Jump Count: " + string(player.jump_count));
 margin +=m;
 draw_text(xx, yy+margin, "Player Ground Detection: " + string(player.on_ground));
+margin +=m;
+draw_text(xx, yy+margin, "Player Path Position: " + string(player.path_position));
 
 draw_set_color(c_white);
