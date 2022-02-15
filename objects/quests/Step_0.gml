@@ -1,5 +1,5 @@
 /// @description Insert description here
-if room == testing_dialogue or room == testing_cutscene exit;
+if room == testing_platforming or room == testing_cutscene exit;
 
 var grid = quests_grid;
 
