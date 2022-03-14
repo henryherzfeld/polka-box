@@ -15,7 +15,15 @@ if (do_transition) {
 				 do_transition = false;
 			}
 		}
-	
+} else {
+	if drawing {
+		if black_alpha <= .2 {
+			black_alpha += 0.1;
+		}
+	}
+}
+
+if drawing or do_transition {
 	// Draw fade
 	draw_set_alpha(black_alpha);
 	draw_rectangle_colour(0, 0, gui_width, gui_height, c_black, c_black, c_black, c_black, false);

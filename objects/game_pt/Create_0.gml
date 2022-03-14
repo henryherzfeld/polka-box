@@ -25,7 +25,6 @@ initial_spawn_room = room;
 spawn_room = room;
 checkpoint_spawn_room = room;
 black_alpha = 0;
-line_slowdown_spd = 25;
 
 _lives = 1;
 coins = 0;
@@ -129,9 +128,17 @@ px = 0;
 //pbar = instance_create_layer(0, 0, "Meta", obj_progress_bar);
 
 max_line_len = 200;
+line_slowdown_spd = 25;
+min_line_len = 15;
 
+wall_coll_count = 0;
+wall_coll_timeout = 35;
 path_ended_count = 0;
 path_ended_timeout = 12;
+
+draw_timeout = 0;
+draw_timeout_max = 8;
+
 
 grid_h = ds_grid_height(path_grid);
 

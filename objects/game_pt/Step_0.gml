@@ -1,5 +1,7 @@
 /// @description Insert description here
 
+show_debug_message([drawing, draw_count, draw_timeout])
+
 input_draw_start = device_mouse_check_button_pressed(0, mb_left);
 input_draw = device_mouse_check_button(0, mb_left);
 input_draw_end = device_mouse_check_button_released(0, mb_left);
@@ -42,15 +44,15 @@ n_paths = n_temp;
 path_idx = n_paths;
 
 // handle start and end of draw action
-if input_draw_start {
+if input_draw_start and draw_timeout == 0 {
 	mx_prev = mouse_x;
 	my_prev = mouse_y;
 	
 	camx_prev = camera_get_view_x(view_camera[0]);
 	camy_prev = camera_get_view_y(view_camera[0]);
 	
-	drawing = true;
 	draw_count = draw_count_max;
+	drawing = true;
 	room_speed = line_slowdown_spd;
 
 } else if drawing {
@@ -63,11 +65,14 @@ if input_draw_start {
 	
 	draw_count -= 1;
 	
+	// cancel drawing after draw_count_max has elapsed
 	if draw_count <= 0 {
 		mx_prev = 0;
 		my_prev = 0;
 		drawing = false;
+		draw_timeout = draw_timeout_max;
 		room_speed = 60;
+		
 	} else if input_draw_end {
 		var _dist_raw = point_distance(mx_prev, my_prev, mx_curr, my_curr);
 		var _dist = min(_dist_raw, max_line_len);
@@ -93,13 +98,30 @@ if input_draw_start {
 			var mod_x = sin(_angle*pi/180)*player.bbox_w;
 			var mod_y = cos(_angle*pi/180)*player.bbox_h;
 		}
+		
+		// calculate line type
+		var mw = 7.5;
+		var ms = 32.5;
+		var type;
+		if (_angle > 270-mw and _angle < 270+mw) or
+			(_angle > 90-mw and _angle < 90+mw) {
+			type = path_type.wall;
+		} else if (_angle > 270-ms and _angle < 270+ms) or
+				    (_angle > 90-ms and _angle < 90+ms) {
+			type = path_type.slide;
+			obj_line_drawer.line_draw_col = line_draw.slide;
+		} else { //normal
+			type = path_type.normal;
+			obj_line_drawer.line_draw_col = line_draw.normal;
+		}
 	
 		// test for collision on position of line end and
 		// test for collision on line between start and line end
 		if not collision_line(mx_prev, my_prev, mx_coll, my_coll, par_collision, false, false) and
 		   not collision_line(mx_prev, my_prev, mx_coll, my_coll, coll_obj, false, false) and 
 		   not collision_line(mx_prev+mod_x, my_prev+mod_y, mx_coll+mod_x, my_coll+mod_y, par_collision, false, false) and
-	       not collision_line(mx_prev+mod_x+player.bbox_w, my_prev+mod_y, mx_coll+mod_x+player.bbox_w, my_coll+mod_y, par_collision, false, false) {
+	       not collision_line(mx_prev+mod_x+player.bbox_w, my_prev+mod_y, mx_coll+mod_x+player.bbox_w, my_coll+mod_y, par_collision, false, false) and
+		   abs(mx_curr - mx_prev) + abs(my_curr - my_prev) > min_line_len {
 		
 			path_grid[# path_idx, path.path] = path_add();
 		
@@ -108,22 +130,7 @@ if input_draw_start {
 			//var my_curr = my_prev - sin(_dir*pi/180)*(player.bbox_h+(coll_diag*.5));
 			var mx_curr = mx_prev;
 			var my_curr = my_prev;
-		
-			// calculate line type
-			var mw = 7.5;
-			var ms = 32.5;
-			var type;
-			if (_angle > 270-mw and _angle < 270+mw) or
-				(_angle > 90-mw and _angle < 90+mw) {
-				type = path_type.wall;
-			} else if (_angle > 270-ms and _angle < 270+ms) or
-				      (_angle > 90-ms and _angle < 90+ms) {
-				type = path_type.slide;
-				obj_line_drawer.line_draw_col = line_draw.slide;
-			} else { //normal
-				type = path_type.normal;
-				obj_line_drawer.line_draw_col = line_draw.normal;
-			}
+	
 		
 			var arr = array_create(max_path_objects, noone);
 			var i = 0;
@@ -176,6 +183,7 @@ if input_draw_start {
 		mx_prev = 0;
 		my_prev = 0;
 		drawing = false;
+		draw_timeout = draw_timeout_max;
 		room_speed = 60;
 		
 	} else { //if a line isnt being started or ended calculate its type to determine coloring behavior
@@ -226,6 +234,11 @@ if input_draw_start {
 		}
 		obj_line_drawer.line_draw_col = draw_type;
 	}
+}
+
+// decrement draw_timeout after starting draw
+if draw_timeout > 0 {
+	draw_timeout -= 1;
 }
 
 // get current path's closest path_point's x and y coords
@@ -431,10 +444,15 @@ if path_ended_count == 0 and curr_path_idx == -1 {
 		}
 	}
 	
-	// resolve wall logic in presence of 
-	if (path_coll or grab_coll) and _type == path_type.wall {
+	// resolve wall logic in presence of wall
+	if (path_coll or grab_coll) and _type == path_type.wall and wall_coll_count == 0 {
+		wall_coll_count = wall_coll_timeout;
 		player.run_dir *= -1;
 	}
+}
+
+if wall_coll_count > 0 {
+	wall_coll_count -= 1;
 }
 
 if start_path { 
